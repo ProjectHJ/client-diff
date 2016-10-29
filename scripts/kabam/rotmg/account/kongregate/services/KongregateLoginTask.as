@@ -43,7 +43,7 @@ package kabam.rotmg.account.kongregate.services
       private function onGetCredentialsDone(param1:String) : void
       {
          var _loc2_:XML = new XML(param1);
-         this.account.updateUser(_loc2_.GUID,_loc2_.Secret);
+         this.account.updateUser(_loc2_.GUID,_loc2_.Secret,"");
          this.account.setPlatformToken(_loc2_.PlatformToken);
          completeTask(true);
       }

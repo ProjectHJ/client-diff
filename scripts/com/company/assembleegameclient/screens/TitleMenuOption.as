@@ -184,5 +184,15 @@ package com.company.assembleegameclient.screens
       {
          return "[TitleMenuOption " + this.textField.getText() + "]";
       }
+      
+      public function createNoticeTag(param1:String, param2:int, param3:uint, param4:Boolean) : void
+      {
+         var _loc5_:TextFieldDisplayConcrete = new TextFieldDisplayConcrete();
+         _loc5_.setSize(param2).setColor(param3).setBold(param4);
+         _loc5_.setStringBuilder(new LineBuilder().setParams(param1));
+         _loc5_.x = this.textField.x - 4;
+         _loc5_.y = this.textField.y - 20;
+         addChild(_loc5_);
+      }
    }
 }

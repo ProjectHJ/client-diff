@@ -238,6 +238,14 @@ package com.company.assembleegameclient.objects
             _loc3_.updateMetrics();
             _loc1_.draw(_loc3_,DOSE_MATRIX);
          }
+         if(_loc2_.hasOwnProperty("Quantity"))
+         {
+            _loc1_ = _loc1_.clone();
+            _loc3_ = new BaseSimpleText(12,16777215,false,0,0);
+            _loc3_.text = String(_loc2_.Quantity);
+            _loc3_.updateMetrics();
+            _loc1_.draw(_loc3_,DOSE_MATRIX);
+         }
          return _loc1_;
       }
       

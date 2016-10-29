@@ -9,6 +9,7 @@ package kabam.rotmg.account.core.services
    import robotlegs.bender.framework.api.ILogger;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
    import flash.utils.Timer;
    import com.company.assembleegameclient.parameters.Parameters;
    import com.company.util.MoreObjectUtil;
@@ -51,6 +52,9 @@ package kabam.rotmg.account.core.services
       
       [Inject]
       public var closeDialogs:CloseDialogsSignal;
+      
+      [Inject]
+      public var securityQuestionsModel:SecurityQuestionsModel;
       
       private var requestData:Object;
       
@@ -106,6 +110,7 @@ package kabam.rotmg.account.core.services
       {
          var _loc3_:Number = NaN;
          var _loc4_:MigrationDialog = null;
+         var _loc5_:XML = null;
          var _loc2_:XML = new XML(param1);
          if(_loc2_.hasOwnProperty("MigrateStatus"))
          {
@@ -127,6 +132,16 @@ package kabam.rotmg.account.core.services
                if(this.account is WebAccount)
                {
                   WebAccount(this.account).userDisplayName = _loc2_.Account[0].Name;
+                  WebAccount(this.account).paymentProvider = _loc2_.Account[0].PaymentProvider;
+               }
+               if(_loc2_.Account[0].hasOwnProperty("SecurityQuestions"))
+               {
+                  this.securityQuestionsModel.showSecurityQuestionsOnStartup = _loc2_.Account[0].SecurityQuestions[0].ShowSecurityQuestionsDialog[0] == "1";
+                  this.securityQuestionsModel.clearQuestionsList();
+                  for each(_loc5_ in _loc2_.Account[0].SecurityQuestions[0].SecurityQuestionsKeys[0].SecurityQuestionsKey)
+                  {
+                     this.securityQuestionsModel.addSecurityQuestion(_loc5_.toString());
+                  }
                }
             }
             this.charListData.dispatch(XML(param1));

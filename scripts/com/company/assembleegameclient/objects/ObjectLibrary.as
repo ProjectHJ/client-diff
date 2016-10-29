@@ -46,6 +46,12 @@ package com.company.assembleegameclient.objects
       
       public static const skinSetXMLDataLibrary_:Dictionary = new Dictionary();
       
+      public static const dungeonsXMLLibrary_:Dictionary = new Dictionary(true);
+      
+      public static const ENEMY_FILTER_LIST:Vector.<String> = new <String>["None","Hp","Defense"];
+      
+      public static const TILE_FILTER_LIST:Vector.<String> = new <String>["ALL","Walkable","Unwalkable","Slow","Speed=1"];
+      
       public static const defaultProps_:com.company.assembleegameclient.objects.ObjectProperties = new com.company.assembleegameclient.objects.ObjectProperties(null);
       
       public static const TYPE_MAP:Object = {
@@ -85,6 +91,8 @@ package com.company.assembleegameclient.objects
          "PetUpgrader":PetUpgrader,
          "YardUpgrader":YardUpgrader
       };
+      
+      private static var currentDungeon:String = "";
        
       
       public function ObjectLibrary()
@@ -92,67 +100,89 @@ package com.company.assembleegameclient.objects
          super();
       }
       
-      public static function parseFromXML(param1:XML) : void
+      public static function parseDungeonXML(param1:String, param2:XML) : void
       {
-         var _loc2_:XML = null;
-         var _loc3_:String = null;
-         var _loc4_:String = null;
-         var _loc5_:int = 0;
-         var _loc6_:Boolean = false;
-         var _loc7_:int = 0;
-         for each(_loc2_ in param1.Object)
+         var _loc3_:int = param1.indexOf("_") + 1;
+         var _loc4_:int = param1.indexOf("CXML");
+         currentDungeon = param1.substr(_loc3_,_loc4_ - _loc3_);
+         dungeonsXMLLibrary_[currentDungeon] = new Dictionary(true);
+         parseFromXML(param2,parseDungeonCallbak);
+      }
+      
+      private static function parseDungeonCallbak(param1:int, param2:XML) : *
+      {
+         if(currentDungeon != "" && dungeonsXMLLibrary_[currentDungeon] != null)
          {
-            _loc3_ = String(_loc2_.@id);
-            _loc4_ = _loc3_;
-            if(_loc2_.hasOwnProperty("DisplayId"))
+            dungeonsXMLLibrary_[currentDungeon][param1] = param2;
+            propsLibrary_[param1].belonedDungeon = currentDungeon;
+         }
+      }
+      
+      public static function parseFromXML(param1:XML, param2:Function = null) : void
+      {
+         var _loc3_:XML = null;
+         var _loc4_:String = null;
+         var _loc5_:String = null;
+         var _loc6_:int = 0;
+         var _loc7_:Boolean = false;
+         var _loc8_:int = 0;
+         for each(_loc3_ in param1.Object)
+         {
+            _loc4_ = String(_loc3_.@id);
+            _loc5_ = _loc4_;
+            if(_loc3_.hasOwnProperty("DisplayId"))
             {
-               _loc4_ = _loc2_.DisplayId;
+               _loc5_ = _loc3_.DisplayId;
             }
-            if(_loc2_.hasOwnProperty("Group"))
+            if(_loc3_.hasOwnProperty("Group"))
             {
-               if(_loc2_.Group == "Hexable")
+               if(_loc3_.Group == "Hexable")
                {
-                  hexTransforms_.push(_loc2_);
+                  hexTransforms_.push(_loc3_);
                }
             }
-            _loc5_ = int(_loc2_.@type);
-            if(_loc2_.hasOwnProperty("PetBehavior") || _loc2_.hasOwnProperty("PetAbility"))
+            _loc6_ = int(_loc3_.@type);
+            if(_loc3_.hasOwnProperty("PetBehavior") || _loc3_.hasOwnProperty("PetAbility"))
             {
-               petXMLDataLibrary_[_loc5_] = _loc2_;
+               petXMLDataLibrary_[_loc6_] = _loc3_;
             }
             else
             {
-               propsLibrary_[_loc5_] = new com.company.assembleegameclient.objects.ObjectProperties(_loc2_);
-               xmlLibrary_[_loc5_] = _loc2_;
-               idToType_[_loc3_] = _loc5_;
-               typeToDisplayId_[_loc5_] = _loc4_;
-               if(String(_loc2_.Class) == "Player")
+               propsLibrary_[_loc6_] = new com.company.assembleegameclient.objects.ObjectProperties(_loc3_);
+               xmlLibrary_[_loc6_] = _loc3_;
+               idToType_[_loc4_] = _loc6_;
+               typeToDisplayId_[_loc6_] = _loc5_;
+               if(param2 != null)
                {
-                  playerClassAbbr_[_loc5_] = String(_loc2_.@id).substr(0,2);
-                  _loc6_ = false;
-                  _loc7_ = 0;
-                  while(_loc7_ < playerChars_.length)
+                  param2(_loc6_,_loc3_);
+               }
+               if(String(_loc3_.Class) == "Player")
+               {
+                  playerClassAbbr_[_loc6_] = String(_loc3_.@id).substr(0,2);
+                  _loc7_ = false;
+                  _loc8_ = 0;
+                  while(_loc8_ < playerChars_.length)
                   {
-                     if(int(playerChars_[_loc7_].@type) == _loc5_)
+                     if(int(playerChars_[_loc8_].@type) == _loc6_)
                      {
-                        playerChars_[_loc7_] = _loc2_;
-                        _loc6_ = true;
+                        playerChars_[_loc8_] = _loc3_;
+                        _loc7_ = true;
                      }
-                     _loc7_++;
+                     _loc8_++;
                   }
-                  if(!_loc6_)
+                  if(!_loc7_)
                   {
-                     playerChars_.push(_loc2_);
+                     playerChars_.push(_loc3_);
                   }
                }
-               typeToTextureData_[_loc5_] = textureDataFactory.create(_loc2_);
-               if(_loc2_.hasOwnProperty("Top"))
+               typeToTextureData_[_loc6_] = textureDataFactory.create(_loc3_);
+               if(_loc3_.hasOwnProperty("Top"))
                {
-                  typeToTopTextureData_[_loc5_] = textureDataFactory.create(XML(_loc2_.Top));
+                  typeToTopTextureData_[_loc6_] = textureDataFactory.create(XML(_loc3_.Top));
                }
-               if(_loc2_.hasOwnProperty("Animation"))
+               if(_loc3_.hasOwnProperty("Animation"))
                {
-                  typeToAnimationsData_[_loc5_] = new AnimationsData(_loc2_);
+                  typeToAnimationsData_[_loc6_] = new AnimationsData(_loc3_);
                }
             }
          }
@@ -300,7 +330,7 @@ package com.company.assembleegameclient.objects
       
       public static function isUsableByPlayer(param1:int, param2:Player) : Boolean
       {
-         if(param2 == null)
+         if(param2 == null || param2.slotTypes_ == null)
          {
             return true;
          }

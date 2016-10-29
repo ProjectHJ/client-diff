@@ -10,6 +10,7 @@ package kabam.rotmg.account.core.commands
    import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.promotions.model.BeginnersPackageModel;
    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+   import kabam.rotmg.account.web.WebAccount;
    import flash.net.URLVariables;
    import flash.net.URLRequest;
    import flash.net.URLRequestMethod;
@@ -86,19 +87,33 @@ package kabam.rotmg.account.core.commands
       
       private function handleValidMoneyWindowRequest() : void
       {
-         try
+         if(this.account is WebAccount && WebAccount(this.account).paymentProvider == "paymentwall")
          {
-            this.openMoneyWindowFromBrowser();
-            return;
+            try
+            {
+               this.openPaymentwallMoneyWindowFromBrowser();
+            }
+            catch(e:Error)
+            {
+               openPaymentwallMoneyWindowFromStandalonePlayer();
+            }
          }
-         catch(e:Error)
+         else
          {
-            openMoneyWindowFromStandalonePlayer();
-            return;
+            try
+            {
+               this.openKabamMoneyWindowFromBrowser();
+               return;
+            }
+            catch(e:Error)
+            {
+               openKabamMoneyWindowFromStandalonePlayer();
+               return;
+            }
          }
       }
       
-      private function openMoneyWindowFromStandalonePlayer() : void
+      private function openKabamMoneyWindowFromStandalonePlayer() : void
       {
          var _loc1_:String = this.applicationSetup.getAppEngineUrl(true);
          var _loc2_:URLVariables = new URLVariables();
@@ -120,11 +135,17 @@ package kabam.rotmg.account.core.commands
          this.logger.debug("Opening window from standalone player");
       }
       
-      private function openMoneyWindowFromBrowser() : void
+      private function openPaymentwallMoneyWindowFromStandalonePlayer() : void
       {
-         this.initializeMoneyWindow();
-         this.logger.debug("Attempting External Payments");
-         ExternalInterface.call("rotmg.KabamPayment.displayPaymentWall");
+         var _loc1_:String = this.applicationSetup.getAppEngineUrl(true);
+         var _loc2_:URLVariables = new URLVariables();
+         var _loc3_:URLRequest = new URLRequest();
+         _loc2_.guid = this.account.getCredentials()["guid"];
+         _loc3_.url = _loc1_ + "/credits/pwpurchase";
+         _loc3_.method = URLRequestMethod.POST;
+         _loc3_.data = _loc2_;
+         navigateToURL(_loc3_,"_blank");
+         this.logger.debug("Opening window from standalone player");
       }
       
       private function initializeMoneyWindow() : void
@@ -143,6 +164,19 @@ package kabam.rotmg.account.core.commands
             ExternalInterface.call(this.moneyConfig.jsInitializeFunction(),this.account.getMoneyUserId(),this.account.getMoneyAccessToken(),_loc1_);
             this.moneyWindowModel.isInitialized = true;
          }
+      }
+      
+      private function openKabamMoneyWindowFromBrowser() : void
+      {
+         this.initializeMoneyWindow();
+         this.logger.debug("Attempting External Payments");
+         ExternalInterface.call("rotmg.KabamPayment.displayPaymentWall");
+      }
+      
+      private function openPaymentwallMoneyWindowFromBrowser() : void
+      {
+         this.logger.debug("Attempting External Payments via Paymentwall");
+         ExternalInterface.call("rotmg.Paymentwall.showPaymentwall",this.account.getCredentials()["guid"]);
       }
       
       private function isGoldPurchaseEnabled() : Boolean

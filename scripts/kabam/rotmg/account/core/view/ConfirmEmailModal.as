@@ -123,7 +123,7 @@ package kabam.rotmg.account.core.view
          var _loc1_:Account = StaticInjectorContext.getInjector().getInstance(Account);
          if(!this.isKabam)
          {
-            _loc1_.updateUser(this.emailInput.text(),_loc1_.getPassword());
+            _loc1_.updateUser(this.emailInput.text(),_loc1_.getPassword(),_loc1_.getToken());
          }
          removeChild(titleText_);
          titleText_ = new TextFieldDisplayConcrete().setSize(12).setColor(11776947);

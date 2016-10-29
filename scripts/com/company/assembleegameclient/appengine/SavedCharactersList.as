@@ -67,6 +67,8 @@ package com.company.assembleegameclient.appengine
       
       public var isAdmin_:Boolean;
       
+      public var canMapEdit_:Boolean;
+      
       public var news_:Vector.<com.company.assembleegameclient.appengine.SavedNewsItem>;
       
       public var myPos_:LatLong;
@@ -139,6 +141,8 @@ package com.company.assembleegameclient.appengine
          this.converted_ = param1.hasOwnProperty("Converted");
          this.isAdmin_ = param1.hasOwnProperty("Admin");
          Player.isAdmin = this.isAdmin_;
+         Player.isMod = param1.hasOwnProperty("Mod");
+         this.canMapEdit_ = param1.hasOwnProperty("MapEditor");
          this.totalFame_ = int(param1.Stats.TotalFame);
          this.fame_ = int(param1.Stats.Fame);
          this.credits_ = int(param1.Credits);
@@ -242,6 +246,11 @@ package com.company.assembleegameclient.appengine
          {
             StaticInjectorContext.getInjector().getInstance(OpenDialogSignal).dispatch(new TOSPopup());
          }
+      }
+      
+      public function isFirstTimeLogin() : Boolean
+      {
+         return !this.charsXML_.hasOwnProperty("TOSPopup");
       }
       
       public function bestLevel(param1:int) : int

@@ -163,6 +163,8 @@ package com.company.assembleegameclient.objects
       
       private var isDazedImmune_:Boolean = false;
       
+      private var ishpScaleSet:Boolean = false;
+      
       protected var lastTickUpdateTime_:int = 0;
       
       protected var myLastTickId_:int = -1;
@@ -1262,6 +1264,12 @@ package com.company.assembleegameclient.objects
             this.hpbarPath_ = new GraphicsPath(GraphicsUtil.QUAD_COMMANDS,new Vector.<Number>());
          }
          var _loc3_:Number = this.maxHP_;
+         if(!this.ishpScaleSet && this.hp_ > this.maxHP_)
+         {
+            this.maxHP_ = this.hp_;
+            _loc3_ = this.maxHP_;
+            this.ishpScaleSet = true;
+         }
          if(this.hp_ <= _loc3_)
          {
             _loc7_ = (_loc3_ - this.hp_) / _loc3_;

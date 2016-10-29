@@ -22,6 +22,7 @@ package kabam.rotmg.messaging.impl
    import kabam.rotmg.arena.control.ImminentArenaWaveSignal;
    import kabam.rotmg.questrewards.controller.QuestFetchCompleteSignal;
    import kabam.rotmg.questrewards.controller.QuestRedeemCompleteSignal;
+   import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
    import kabam.rotmg.arena.model.CurrentArenaRunModel;
    import kabam.rotmg.classes.model.ClassesModel;
    import org.swiftsuspenders.Injector;
@@ -74,6 +75,7 @@ package kabam.rotmg.messaging.impl
    import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
    import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
    import kabam.rotmg.messaging.impl.outgoing.arena.QuestRedeem;
+   import kabam.rotmg.messaging.impl.outgoing.KeyInfoRequest;
    import kabam.rotmg.messaging.impl.incoming.Failure;
    import kabam.rotmg.messaging.impl.incoming.CreateSuccess;
    import kabam.rotmg.messaging.impl.incoming.ServerPlayerShoot;
@@ -117,6 +119,7 @@ package kabam.rotmg.messaging.impl
    import kabam.rotmg.messaging.impl.incoming.PasswordPrompt;
    import kabam.rotmg.messaging.impl.incoming.QuestFetchResponse;
    import kabam.rotmg.messaging.impl.incoming.QuestRedeemResponse;
+   import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
    import kabam.rotmg.pets.controller.HatchPetSignal;
    import kabam.rotmg.pets.controller.DeletePetSignal;
    import kabam.rotmg.pets.controller.NewAbilitySignal;
@@ -268,6 +271,8 @@ package kabam.rotmg.messaging.impl
       
       private var questRedeemComplete:QuestRedeemCompleteSignal;
       
+      private var keyInfoResponse:KeyInfoResponseSignal;
+      
       private var currentArenaRun:CurrentArenaRunModel;
       
       private var classesModel:ClassesModel;
@@ -303,6 +308,7 @@ package kabam.rotmg.messaging.impl
          this.imminentWave = this.injector.getInstance(ImminentArenaWaveSignal);
          this.questFetchComplete = this.injector.getInstance(QuestFetchCompleteSignal);
          this.questRedeemComplete = this.injector.getInstance(QuestRedeemCompleteSignal);
+         this.keyInfoResponse = this.injector.getInstance(KeyInfoResponseSignal);
          this.logger = this.injector.getInstance(ILogger);
          this.handleDeath = this.injector.getInstance(HandleDeathSignal);
          this.zombify = this.injector.getInstance(ZombifySignal);
@@ -416,6 +422,7 @@ package kabam.rotmg.messaging.impl
          _loc1_.map(ACCEPT_ARENA_DEATH).toMessage(OutgoingMessage);
          _loc1_.map(QUEST_FETCH_ASK).toMessage(OutgoingMessage);
          _loc1_.map(QUEST_REDEEM).toMessage(QuestRedeem);
+         _loc1_.map(KEY_INFO_REQUEST).toMessage(KeyInfoRequest);
          _loc1_.map(PET_CHANGE_FORM_MSG).toMessage(ReskinPet);
          _loc1_.map(FAILURE).toMessage(Failure).toMethod(this.onFailure);
          _loc1_.map(CREATE_SUCCESS).toMessage(CreateSuccess).toMethod(this.onCreateSuccess);
@@ -463,6 +470,7 @@ package kabam.rotmg.messaging.impl
          _loc1_.map(PASSWORD_PROMPT).toMessage(PasswordPrompt).toMethod(this.onPasswordPrompt);
          _loc1_.map(QUEST_FETCH_RESPONSE).toMessage(QuestFetchResponse).toMethod(this.onQuestFetchResponse);
          _loc1_.map(QUEST_REDEEM_RESPONSE).toMessage(QuestRedeemResponse).toMethod(this.onQuestRedeemResponse);
+         _loc1_.map(KEY_INFO_RESPONSE).toMessage(KeyInfoResponse).toMethod(this.onKeyInfoResponse);
       }
       
       private function onHatchPet(param1:HatchPetMessage) : void
@@ -795,8 +803,16 @@ package kabam.rotmg.messaging.impl
       
       override public function useItem_new(param1:GameObject, param2:int) : Boolean
       {
+         var _loc4_:XML = null;
          var _loc3_:int = param1.equipment_[param2];
-         var _loc4_:XML = ObjectLibrary.xmlLibrary_[_loc3_];
+         if(_loc3_ >= 36864 && _loc3_ < 61440)
+         {
+            _loc4_ = ObjectLibrary.xmlLibrary_[36863];
+         }
+         else
+         {
+            _loc4_ = ObjectLibrary.xmlLibrary_[_loc3_];
+         }
          if(_loc4_ && !param1.isPaused() && (_loc4_.hasOwnProperty("Consumable") || _loc4_.hasOwnProperty("InvUse")))
          {
             if(!this.validStatInc(_loc3_,param1))
@@ -1088,6 +1104,7 @@ package kabam.rotmg.messaging.impl
          _loc2_.gameNetUserId = _loc1_.gameNetworkUserId();
          _loc2_.playPlatform = _loc1_.playPlatform();
          _loc2_.platformToken = _loc1_.getPlatformToken();
+         _loc2_.userToken = _loc1_.getToken();
          serverConnection.sendMessage(_loc2_);
       }
       
@@ -1502,7 +1519,7 @@ package kabam.rotmg.messaging.impl
                break;
             case ShowEffect.COLLAPSE_EFFECT_TYPE:
                _loc3_ = _loc2_.goDict_[param1.targetObjectId_];
-               if(_loc3_ == null || this.canShowEffect(_loc3_))
+               if(_loc3_ == null || !this.canShowEffect(_loc3_))
                {
                   break;
                }
@@ -1677,10 +1694,10 @@ package kabam.rotmg.messaging.impl
                   }
                   continue;
                case StatData.TEX1_STAT:
-                  param1.setTex1(_loc8_);
+                  _loc8_ >= 0 && param1.setTex1(_loc8_);
                   continue;
                case StatData.TEX2_STAT:
-                  param1.setTex2(_loc8_);
+                  _loc8_ >= 0 && param1.setTex2(_loc8_);
                   continue;
                case StatData.MERCHANDISE_TYPE_STAT:
                   _loc5_.setMerchandiseType(_loc8_);
@@ -1804,7 +1821,7 @@ package kabam.rotmg.messaging.impl
                   _loc4_.magicPotionCount_ = _loc8_;
                   continue;
                case StatData.TEXTURE_STAT:
-                  _loc4_.skinId != _loc8_ && this.setPlayerSkinTemplate(_loc4_,_loc8_);
+                  _loc4_.skinId != _loc8_ && _loc8_ >= 0 && this.setPlayerSkinTemplate(_loc4_,_loc8_);
                   continue;
                case StatData.HASBACKPACK_STAT:
                   (param1 as Player).hasBackpack_ = Boolean(_loc8_);
@@ -2239,6 +2256,18 @@ package kabam.rotmg.messaging.impl
          _loc4_.slotObject.slotId_ = param2;
          _loc4_.slotObject.objectType_ = param3;
          serverConnection.sendMessage(_loc4_);
+      }
+      
+      override public function keyInfoRequest(param1:int) : void
+      {
+         var _loc2_:KeyInfoRequest = this.messages.require(KEY_INFO_REQUEST) as KeyInfoRequest;
+         _loc2_.itemType_ = param1;
+         serverConnection.sendMessage(_loc2_);
+      }
+      
+      private function onKeyInfoResponse(param1:KeyInfoResponse) : void
+      {
+         this.keyInfoResponse.dispatch(param1);
       }
       
       private function onClosed() : void

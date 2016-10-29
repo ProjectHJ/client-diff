@@ -20,6 +20,8 @@ package kabam.rotmg.account.web
       
       private var password:String;
       
+      private var token:String = "";
+      
       private var entryTag:String = "";
       
       private var isVerifiedEmail:Boolean;
@@ -27,6 +29,10 @@ package kabam.rotmg.account.web
       private var platformToken:String;
       
       private var _userDisplayName:String = "";
+      
+      private var _rememberMe:Boolean = true;
+      
+      private var _paymentProvider:String = "";
       
       public var signedRequest:String;
       
@@ -61,6 +67,11 @@ package kabam.rotmg.account.web
          return this.password || "";
       }
       
+      public function getToken() : String
+      {
+         return "";
+      }
+      
       public function getCredentials() : Object
       {
          return {
@@ -71,20 +82,25 @@ package kabam.rotmg.account.web
       
       public function isRegistered() : Boolean
       {
-         return this.getPassword() != "";
+         return this.getPassword() != "" || this.getToken() != "";
       }
       
-      public function updateUser(param1:String, param2:String) : void
+      public function updateUser(param1:String, param2:String, param3:String) : void
       {
-         var _loc3_:SharedObject = null;
+         var _loc4_:SharedObject = null;
          this.userId = param1;
          this.password = param2;
+         this.token = param3;
          try
          {
-            _loc3_ = SharedObject.getLocal("RotMG","/");
-            _loc3_.data["GUID"] = param1;
-            _loc3_.data["Password"] = param2;
-            _loc3_.flush();
+            if(this._rememberMe)
+            {
+               _loc4_ = SharedObject.getLocal("RotMG","/");
+               _loc4_.data["GUID"] = param1;
+               _loc4_.data["Token"] = param3;
+               _loc4_.data["Password"] = param2;
+               _loc4_.flush();
+            }
             return;
          }
          catch(error:Error)
@@ -95,7 +111,8 @@ package kabam.rotmg.account.web
       
       public function clear() : void
       {
-         this.updateUser(GUID.create(),null);
+         this._rememberMe = true;
+         this.updateUser(GUID.create(),null,null);
          Parameters.sendLogin_ = true;
          Parameters.data_.charIdUseMap = {};
          Parameters.save();
@@ -173,6 +190,26 @@ package kabam.rotmg.account.web
       public function set userDisplayName(param1:String) : void
       {
          this._userDisplayName = param1;
+      }
+      
+      public function set rememberMe(param1:Boolean) : void
+      {
+         this._rememberMe = param1;
+      }
+      
+      public function get rememberMe() : Boolean
+      {
+         return this._rememberMe;
+      }
+      
+      public function set paymentProvider(param1:String) : *
+      {
+         this._paymentProvider = param1;
+      }
+      
+      public function get paymentProvider() : String
+      {
+         return this._paymentProvider;
       }
    }
 }

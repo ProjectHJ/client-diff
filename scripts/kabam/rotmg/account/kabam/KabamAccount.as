@@ -48,7 +48,7 @@ package kabam.rotmg.account.kabam
          }
       }
       
-      public function updateUser(param1:String, param2:String) : void
+      public function updateUser(param1:String, param2:String, param3:String) : void
       {
          this.userId = param1;
          this.password = param2;
@@ -168,6 +168,11 @@ package kabam.rotmg.account.kabam
       public function getMoneyUserId() : String
       {
          return this.gameNetworkUserId();
+      }
+      
+      public function getToken() : String
+      {
+         return "";
       }
    }
 }

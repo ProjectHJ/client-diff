@@ -14,6 +14,9 @@ package kabam.rotmg.ui.view
    import kabam.rotmg.packages.control.BeginnersPackageAvailableSignal;
    import kabam.rotmg.packages.control.PackageAvailableSignal;
    import kabam.rotmg.promotions.model.BeginnersPackageModel;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
+   import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
    import kabam.rotmg.core.service.TrackingData;
    import com.company.util.MoreDateUtil;
    import com.company.assembleegameclient.parameters.Parameters;
@@ -65,6 +68,12 @@ package kabam.rotmg.ui.view
       [Inject]
       public var beginnerModel:BeginnersPackageModel;
       
+      [Inject]
+      public var openDialog:OpenDialogSignal;
+      
+      [Inject]
+      public var securityQuestionsModel:SecurityQuestionsModel;
+      
       public function CurrentCharacterMediator()
       {
          super();
@@ -84,6 +93,10 @@ package kabam.rotmg.ui.view
          this.beginnersPackageAvailable.add(this.onBeginner);
          this.packageAvailable.add(this.onPackage);
          this.initPackages.dispatch();
+         if(this.securityQuestionsModel.showSecurityQuestionsOnStartup)
+         {
+            this.openDialog.dispatch(new SecurityQuestionsInfoDialog());
+         }
       }
       
       private function onPackage() : void

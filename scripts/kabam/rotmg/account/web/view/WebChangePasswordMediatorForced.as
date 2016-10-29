@@ -108,7 +108,7 @@ package kabam.rotmg.account.web.view
          }
          else
          {
-            this.account.updateUser(this.account.getUserId(),this.newPassword);
+            this.account.updateUser(this.account.getUserId(),this.newPassword,this.account.getToken());
             this.closeDialogs.dispatch();
          }
       }

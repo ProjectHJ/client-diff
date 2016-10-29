@@ -3,7 +3,10 @@ package com.company.assembleegameclient.mapeditor
    import com.company.assembleegameclient.editor.CommandMenu;
    import com.company.assembleegameclient.editor.CommandMenuItem;
    import com.company.assembleegameclient.editor.CommandEvent;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.core.model.PlayerModel;
    import com.company.util.KeyCodes;
+   import kabam.rotmg.application.DynamicSettings;
    
    public class MECommandMenu extends CommandMenu
    {
@@ -23,15 +26,24 @@ package com.company.assembleegameclient.mapeditor
       public static const COPY_COMMAND:int = 6;
       
       public static const PASTE_COMMAND:int = 7;
+      
+      public static const PICK_UP_COMMAND:int = 8;
+      
+      public static const DROP_COMMAND:int = 9;
        
       
       public function MECommandMenu()
       {
          super();
+         var _loc1_:PlayerModel = StaticInjectorContext.getInjector().getInstance(PlayerModel);
          addCommandMenuItem("(D)raw",KeyCodes.D,this.select,DRAW_COMMAND);
          addCommandMenuItem("(E)rase",KeyCodes.E,this.select,ERASE_COMMAND);
-         addCommandMenuItem("S(A)mple",KeyCodes.A,this.select,SAMPLE_COMMAND);
-         addCommandMenuItem("Ed(I)t",KeyCodes.I,this.select,EDIT_COMMAND);
+         if(_loc1_ != null && _loc1_.isAdmin())
+         {
+            addCommandMenuItem("S(A)mple",KeyCodes.A,this.select,SAMPLE_COMMAND);
+         }
+         addCommandMenuItem("(P)ick Up",KeyCodes.P,this.select,PICK_UP_COMMAND);
+         addCommandMenuItem("Drop",-1,this.select,DROP_COMMAND);
          addCommandMenuItem("(U)ndo",KeyCodes.U,this.onUndo,NONE_COMMAND);
          addCommandMenuItem("(R)edo",KeyCodes.R,this.onRedo,NONE_COMMAND);
          addCommandMenuItem("(C)lear",KeyCodes.C,this.onClear,NONE_COMMAND);
@@ -41,6 +53,14 @@ package com.company.assembleegameclient.mapeditor
          addCommandMenuItem("(L)oad",KeyCodes.L,this.onLoad,NONE_COMMAND);
          addCommandMenuItem("(S)ave",KeyCodes.S,this.onSave,NONE_COMMAND);
          addCommandMenuItem("(T)est",KeyCodes.T,this.onTest,NONE_COMMAND);
+         if(_loc1_.isAdmin() || DynamicSettings.settingExists("UGDOpenSubmission") && DynamicSettings.getSettingValue("UGDOpenSubmission") == 1)
+         {
+            addCommandMenuItem("Submit",-1,this.onSubmit,NONE_COMMAND);
+         }
+         else
+         {
+            addBreak();
+         }
       }
       
       private function select(param1:CommandMenuItem) : void
@@ -72,6 +92,11 @@ package com.company.assembleegameclient.mapeditor
       private function onSave(param1:CommandMenuItem) : void
       {
          dispatchEvent(new CommandEvent(CommandEvent.SAVE_COMMAND_EVENT));
+      }
+      
+      private function onSubmit(param1:CommandMenuItem) : void
+      {
+         dispatchEvent(new CommandEvent(CommandEvent.SUBMIT_COMMAND_EVENT));
       }
       
       private function onTest(param1:CommandMenuItem) : void

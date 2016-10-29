@@ -5,7 +5,9 @@ package kabam.rotmg.account.web.view
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
    import kabam.rotmg.core.signals.TaskErrorSignal;
+   import kabam.rotmg.account.core.Account;
    import kabam.rotmg.account.web.model.AccountData;
+   import kabam.rotmg.account.web.WebAccount;
    import kabam.lib.tasks.Task;
    
    public class WebLoginMediator extends Mediator
@@ -26,6 +28,9 @@ package kabam.rotmg.account.web.view
       
       [Inject]
       public var loginError:TaskErrorSignal;
+      
+      [Inject]
+      public var account:Account;
       
       public function WebLoginMediator()
       {
@@ -52,6 +57,10 @@ package kabam.rotmg.account.web.view
       
       private function onSignIn(param1:AccountData) : void
       {
+         if(this.account is WebAccount)
+         {
+            WebAccount(this.account).rememberMe = this.view.isRememberMeSelected();
+         }
          this.view.disable();
          this.login.dispatch(param1);
       }

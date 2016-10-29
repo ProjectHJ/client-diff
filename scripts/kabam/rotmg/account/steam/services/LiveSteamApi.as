@@ -107,6 +107,11 @@ package kabam.rotmg.account.steam.services
          return this._paymentAuthorized;
       }
       
+      public function get isOverlayEnabled() : Boolean
+      {
+         return this.api.isOverlayEnabled();
+      }
+      
       public function getPersonaName() : String
       {
          return this.api.getPersonaName();

@@ -5,7 +5,6 @@ package com.company.assembleegameclient.util
    import com.company.util.ImageSet;
    import flash.display.BitmapData;
    import com.company.assembleegameclient.map.Square;
-   import flash.utils.ByteArray;
    import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.map.GroundLibrary;
    import com.company.assembleegameclient.map.Map;
@@ -81,7 +80,7 @@ package com.company.assembleegameclient.util
       
       public static function redraw(param1:Square, param2:Boolean) : BitmapData
       {
-         var _loc3_:ByteArray = null;
+         var _loc3_:Array = null;
          var _loc5_:BitmapData = null;
          if(Parameters.blendType_ == 0)
          {
@@ -227,11 +226,11 @@ package com.company.assembleegameclient.util
          param1.copyPixels(_loc9_,param2,param3,_loc10_,p0,true);
       }
       
-      private static function getSig(param1:Square) : ByteArray
+      private static function getSig(param1:Square) : Array
       {
          var _loc6_:int = 0;
          var _loc7_:Square = null;
-         var _loc2_:ByteArray = new ByteArray();
+         var _loc2_:Array = new Array();
          var _loc3_:Map = param1.map_;
          var _loc4_:uint = param1.tileType_;
          var _loc5_:int = param1.y_ - 1;
@@ -242,18 +241,18 @@ package com.company.assembleegameclient.util
             {
                if(_loc6_ < 0 || _loc6_ >= _loc3_.width_ || _loc5_ < 0 || _loc5_ >= _loc3_.height_ || _loc6_ == param1.x_ && _loc5_ == param1.y_)
                {
-                  _loc2_.writeByte(_loc4_);
+                  _loc2_.push(_loc4_);
                }
                else
                {
                   _loc7_ = _loc3_.squares_[_loc6_ + _loc5_ * _loc3_.width_];
                   if(_loc7_ == null || _loc7_.props_.blendPriority_ <= param1.props_.blendPriority_)
                   {
-                     _loc2_.writeByte(_loc4_);
+                     _loc2_.push(_loc4_);
                   }
                   else
                   {
-                     _loc2_.writeByte(_loc7_.tileType_);
+                     _loc2_.push(_loc7_.tileType_);
                   }
                }
                _loc6_++;
@@ -290,13 +289,13 @@ package com.company.assembleegameclient.util
          return _loc3_;
       }
       
-      private static function getCompositeSig(param1:Square) : ByteArray
+      private static function getCompositeSig(param1:Square) : Array
       {
          var _loc14_:Square = null;
          var _loc15_:Square = null;
          var _loc16_:Square = null;
          var _loc17_:Square = null;
-         var _loc2_:ByteArray = new ByteArray();
+         var _loc2_:Array = new Array();
          _loc2_.length = 4;
          var _loc3_:Map = param1.map_;
          var _loc4_:int = param1.x_;
@@ -364,7 +363,7 @@ package com.company.assembleegameclient.util
          return _loc2_;
       }
       
-      private static function buildComposite(param1:ByteArray) : BitmapData
+      private static function buildComposite(param1:Array) : BitmapData
       {
          var _loc3_:BitmapData = null;
          var _loc2_:BitmapData = new BitmapDataSpy(8,8,false,0);
@@ -391,12 +390,12 @@ package com.company.assembleegameclient.util
          return _loc2_;
       }
       
-      private static function getEdgeSig(param1:Square) : ByteArray
+      private static function getEdgeSig(param1:Square) : Array
       {
          var _loc7_:int = 0;
          var _loc8_:Square = null;
          var _loc9_:Boolean = false;
-         var _loc2_:ByteArray = new ByteArray();
+         var _loc2_:Array = new Array();
          var _loc3_:Map = param1.map_;
          var _loc4_:Boolean = false;
          var _loc5_:Boolean = param1.props_.sameTypeEdgeMode_;
@@ -409,7 +408,7 @@ package com.company.assembleegameclient.util
                _loc8_ = _loc3_.lookupSquare(_loc7_,_loc6_);
                if(_loc7_ == param1.x_ && _loc6_ == param1.y_)
                {
-                  _loc2_.writeByte(_loc8_.tileType_);
+                  _loc2_.push(_loc8_.tileType_);
                }
                else
                {
@@ -421,7 +420,7 @@ package com.company.assembleegameclient.util
                   {
                      _loc9_ = _loc8_ == null || _loc8_.tileType_ != 255;
                   }
-                  _loc2_.writeBoolean(_loc9_);
+                  _loc2_.push(_loc9_);
                   _loc4_ = _loc4_ || !_loc9_;
                }
                _loc7_++;
@@ -431,7 +430,7 @@ package com.company.assembleegameclient.util
          return !!_loc4_?_loc2_:null;
       }
       
-      private static function drawEdges(param1:ByteArray) : BitmapData
+      private static function drawEdges(param1:Array) : BitmapData
       {
          var _loc2_:BitmapData = GroundLibrary.getBitmapData(param1[4]);
          var _loc3_:BitmapData = _loc2_.clone();
