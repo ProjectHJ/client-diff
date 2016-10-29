@@ -1,0 +1,39 @@
+package kabam.rotmg.packages.control
+{
+   import kabam.rotmg.promotions.model.BeginnersPackageModel;
+   import kabam.rotmg.packages.services.PackageModel;
+   
+   public class InitPackagesCommand
+   {
+       
+      
+      [Inject]
+      public var beginnersPackageModel:BeginnersPackageModel;
+      
+      [Inject]
+      public var packageModel:PackageModel;
+      
+      [Inject]
+      public var beginnersPackageAvailable:kabam.rotmg.packages.control.BeginnersPackageAvailableSignal;
+      
+      [Inject]
+      public var packageAvailable:kabam.rotmg.packages.control.PackageAvailableSignal;
+      
+      public function InitPackagesCommand()
+      {
+         super();
+      }
+      
+      public function execute() : void
+      {
+         if(this.beginnersPackageModel.isBeginnerAvailable())
+         {
+            this.beginnersPackageAvailable.dispatch();
+         }
+         else if(this.packageModel.hasPackages())
+         {
+            this.packageAvailable.dispatch();
+         }
+      }
+   }
+}
