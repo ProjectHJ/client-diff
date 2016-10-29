@@ -805,7 +805,7 @@ package kabam.rotmg.messaging.impl
       {
          var _loc4_:XML = null;
          var _loc3_:int = param1.equipment_[param2];
-         if(_loc3_ >= 36864)
+         if(_loc3_ >= 36864 && _loc3_ < 61440)
          {
             _loc4_ = ObjectLibrary.xmlLibrary_[36863];
          }
@@ -1694,10 +1694,10 @@ package kabam.rotmg.messaging.impl
                   }
                   continue;
                case StatData.TEX1_STAT:
-                  param1.setTex1(_loc8_);
+                  _loc8_ >= 0 && param1.setTex1(_loc8_);
                   continue;
                case StatData.TEX2_STAT:
-                  param1.setTex2(_loc8_);
+                  _loc8_ >= 0 && param1.setTex2(_loc8_);
                   continue;
                case StatData.MERCHANDISE_TYPE_STAT:
                   _loc5_.setMerchandiseType(_loc8_);
@@ -1821,7 +1821,7 @@ package kabam.rotmg.messaging.impl
                   _loc4_.magicPotionCount_ = _loc8_;
                   continue;
                case StatData.TEXTURE_STAT:
-                  _loc4_.skinId != _loc8_ && this.setPlayerSkinTemplate(_loc4_,_loc8_);
+                  _loc4_.skinId != _loc8_ && _loc8_ >= 0 && this.setPlayerSkinTemplate(_loc4_,_loc8_);
                   continue;
                case StatData.HASBACKPACK_STAT:
                   (param1 as Player).hasBackpack_ = Boolean(_loc8_);

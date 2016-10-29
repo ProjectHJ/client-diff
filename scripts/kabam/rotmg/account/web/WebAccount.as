@@ -32,6 +32,8 @@ package kabam.rotmg.account.web
       
       private var _rememberMe:Boolean = true;
       
+      private var _paymentProvider:String = "";
+      
       public var signedRequest:String;
       
       public var kabamId:String;
@@ -198,6 +200,16 @@ package kabam.rotmg.account.web
       public function get rememberMe() : Boolean
       {
          return this._rememberMe;
+      }
+      
+      public function set paymentProvider(param1:String) : *
+      {
+         this._paymentProvider = param1;
+      }
+      
+      public function get paymentProvider() : String
+      {
+         return this._paymentProvider;
       }
    }
 }

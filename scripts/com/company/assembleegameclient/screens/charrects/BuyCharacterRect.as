@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.screens.charrects
 {
    import kabam.rotmg.core.model.PlayerModel;
+   import flash.display.Bitmap;
    import kabam.rotmg.assets.services.IconFactory;
    import flash.display.BitmapData;
-   import flash.display.Bitmap;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import flash.text.TextFieldAutoSize;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
@@ -36,8 +36,9 @@ package com.company.assembleegameclient.screens.charrects
       
       private function makeCoin() : void
       {
+         var _loc2_:Bitmap = null;
          var _loc1_:BitmapData = IconFactory.makeCoin();
-         var _loc2_:Bitmap = new Bitmap(_loc1_);
+         _loc2_ = new Bitmap(_loc1_);
          _loc2_.x = WIDTH - 43;
          _loc2_.y = (HEIGHT - _loc2_.height) * 0.5 - 1;
          selectContainer.addChild(_loc2_);

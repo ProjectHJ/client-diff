@@ -424,9 +424,11 @@ package kabam.rotmg.mysterybox.components
          var _loc4_:Player = null;
          var _loc5_:PlayerModel = null;
          var _loc6_:OpenDialogSignal = null;
-         var _loc7_:Dialog = null;
-         var _loc8_:Injector = null;
-         var _loc9_:GetMysteryBoxesTask = null;
+         var _loc7_:String = null;
+         var _loc8_:Dialog = null;
+         var _loc9_:Injector = null;
+         var _loc10_:GetMysteryBoxesTask = null;
+         var _loc11_:Array = null;
          this.requestComplete = true;
          if(param1)
          {
@@ -467,13 +469,30 @@ package kabam.rotmg.mysterybox.components
          else
          {
             _loc6_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
-            _loc7_ = new Dialog("MysteryBoxRollModal.purchaseFailedString","MysteryBoxRollModal.pleaseTryAgainString","MysteryBoxRollModal.okString",null,null);
-            _loc7_.addEventListener(Dialog.LEFT_BUTTON,this.onErrorOk);
-            _loc6_.dispatch(_loc7_);
-            _loc8_ = StaticInjectorContext.getInjector();
-            _loc9_ = _loc8_.getInstance(GetMysteryBoxesTask);
-            _loc9_.clearLastRanBlock();
-            _loc9_.start();
+            _loc7_ = "MysteryBoxRollModal.pleaseTryAgainString";
+            if(LineBuilder.getLocalizedStringFromKey(param2) != "")
+            {
+               _loc7_ = param2;
+            }
+            if(_loc7_ == "MysteryBoxError.soldOut")
+            {
+               this.mbi.soldOut = true;
+            }
+            if(param2.indexOf("blockedForUser") >= 0)
+            {
+               _loc11_ = param2.split("|");
+               if(_loc11_.length == 2)
+               {
+                  _loc7_ = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.blockedForUser",{"date":_loc11_[1]});
+               }
+            }
+            _loc8_ = new Dialog("MysteryBoxRollModal.purchaseFailedString",_loc7_,"MysteryBoxRollModal.okString",null,null);
+            _loc8_.addEventListener(Dialog.LEFT_BUTTON,this.onErrorOk);
+            _loc6_.dispatch(_loc8_);
+            _loc9_ = StaticInjectorContext.getInjector();
+            _loc10_ = _loc9_.getInstance(GetMysteryBoxesTask);
+            _loc10_.clearLastRanBlock();
+            _loc10_.start();
             this.close(true);
          }
       }

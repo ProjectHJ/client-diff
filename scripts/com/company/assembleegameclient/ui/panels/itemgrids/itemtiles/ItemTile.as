@@ -95,7 +95,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
       public function updateUseability(param1:Player) : void
       {
          var _loc2_:int = this.itemSprite.itemId;
-         if(_loc2_ >= 36864)
+         if(_loc2_ >= 36864 && _loc2_ < 61440)
          {
             _loc2_ = 36863;
          }
@@ -121,7 +121,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
       
       public function getItemId() : int
       {
-         if(this.itemSprite.itemId >= 36864)
+         if(this.itemSprite.itemId >= 36864 && this.itemSprite.itemId < 61440)
          {
             return 36863;
          }

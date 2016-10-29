@@ -100,7 +100,7 @@ package com.company.assembleegameclient.ui.tooltip
          this.invType = param3;
          this.inventoryOwnerType = param4;
          this.isInventoryFull = !!param2?Boolean(param2.isInventoryFull()):false;
-         if(this.objectType >= 36864 && this.objectType <= 65535)
+         if(this.objectType >= 36864 && this.objectType <= 61440)
          {
             this.objectType = 36863;
          }
@@ -126,7 +126,7 @@ package com.company.assembleegameclient.ui.tooltip
             }
          }
          this.addIcon();
-         if(this.originalObjectType >= 36864 && this.originalObjectType <= 65535)
+         if(this.originalObjectType >= 36864 && this.originalObjectType <= 61440)
          {
             if(keyInfo[this.originalObjectType] == null)
             {
@@ -423,6 +423,10 @@ package com.company.assembleegameclient.ui.tooltip
          if(this.objectXML.hasOwnProperty("Doses"))
          {
             this.effects.push(new Effect(TextKey.DOSES,{"dose":this.objectXML.Doses}));
+         }
+         if(this.objectXML.hasOwnProperty("Quantity"))
+         {
+            this.effects.push(new Effect("Quantity: {quantity}",{"quantity":this.objectXML.Quantity}));
          }
       }
       

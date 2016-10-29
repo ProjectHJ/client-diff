@@ -33,8 +33,9 @@ package kabam.rotmg.chat.view
       
       private function makeTextField() : TextFieldDisplayConcrete
       {
+         var _loc2_:TextFieldDisplayConcrete = null;
          var _loc1_:LineBuilder = new LineBuilder().setParams(TextKey.CHAT_REGISTER_TO_CHAT);
-         var _loc2_:TextFieldDisplayConcrete = new TextFieldDisplayConcrete();
+         _loc2_ = new TextFieldDisplayConcrete();
          _loc2_.setStringBuilder(_loc1_);
          _loc2_.x = 29;
          addChild(_loc2_);

@@ -58,7 +58,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
          var _loc1_:int = this.itemId;
          if(_loc1_ != ItemConstants.NO_ITEM)
          {
-            if(_loc1_ >= 36864)
+            if(_loc1_ >= 36864 && _loc1_ < 61440)
             {
                _loc1_ = 36863;
             }
@@ -68,6 +68,12 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
             {
                _loc2_ = _loc2_.clone();
                _loc4_ = this.bitmapFactory.make(new StaticStringBuilder(String(_loc3_.Doses)),12,16777215,false,IDENTITY_MATRIX,false);
+               _loc2_.draw(_loc4_,DOSE_MATRIX);
+            }
+            if(_loc3_ && _loc3_.hasOwnProperty("Quantity") && this.bitmapFactory)
+            {
+               _loc2_ = _loc2_.clone();
+               _loc4_ = this.bitmapFactory.make(new StaticStringBuilder(String(_loc3_.Quantity)),12,16777215,false,IDENTITY_MATRIX,false);
                _loc2_.draw(_loc4_,DOSE_MATRIX);
             }
             this.itemBitmap.bitmapData = _loc2_;

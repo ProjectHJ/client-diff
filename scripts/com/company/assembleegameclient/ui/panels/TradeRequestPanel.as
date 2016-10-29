@@ -3,8 +3,10 @@ package com.company.assembleegameclient.ui.panels
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
    import flash.utils.Timer;
-   import flash.events.TimerEvent;
    import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import flash.events.TimerEvent;
    import flash.events.MouseEvent;
    import com.company.assembleegameclient.game.AGameSprite;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
@@ -51,6 +53,8 @@ package com.company.assembleegameclient.ui.panels
          var _loc3_:SignalWaiter = new SignalWaiter();
          _loc3_.pushArgs(this.rejectButton_.textChanged,this.acceptButton_.textChanged);
          _loc3_.complete.addOnce(this.onComplete);
+         addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
+         addEventListener(Event.REMOVED_FROM_STAGE,this.onRemovedFromStage);
       }
       
       private function onComplete() : void
@@ -59,6 +63,24 @@ package com.company.assembleegameclient.ui.panels
          this.acceptButton_.x = 3 * WIDTH / 4 - this.acceptButton_.width / 2;
          this.rejectButton_.y = HEIGHT - this.rejectButton_.height - 4;
          this.acceptButton_.y = HEIGHT - this.acceptButton_.height - 4;
+      }
+      
+      private function onAddedToStage(param1:Event) : void
+      {
+         stage.addEventListener(KeyboardEvent.KEY_DOWN,this.onKeyDown);
+      }
+      
+      private function onRemovedFromStage(param1:Event) : void
+      {
+         stage.removeEventListener(KeyboardEvent.KEY_DOWN,this.onKeyDown);
+      }
+      
+      private function onKeyDown(param1:KeyboardEvent) : void
+      {
+         if(param1.keyCode == Parameters.data_.interact && stage.focus == null)
+         {
+            dispatchEvent(new Event(Event.COMPLETE));
+         }
       }
       
       private function onTimer(param1:TimerEvent) : void

@@ -6,6 +6,7 @@ package kabam.rotmg.mysterybox.components
    import flash.display.DisplayObject;
    import kabam.rotmg.pets.view.components.PopupWindowBackground;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import com.company.assembleegameclient.util.Currency;
    import flash.events.MouseEvent;
    import flash.events.Event;
    import flash.utils.getTimer;
@@ -18,7 +19,6 @@ package kabam.rotmg.mysterybox.components
    import flash.geom.Point;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.core.StaticInjectorContext;
-   import com.company.assembleegameclient.util.Currency;
    import kabam.rotmg.util.components.UIAssetsHelper;
    
    public class MysteryBoxSelectEntry extends Sprite
@@ -34,6 +34,8 @@ package kabam.rotmg.mysterybox.components
       private var leftNavSprite:Sprite;
       
       private var rightNavSprite:Sprite;
+      
+      private var soldOut:Boolean;
       
       private var iconImage:DisplayObject;
       
@@ -74,12 +76,17 @@ package kabam.rotmg.mysterybox.components
          _loc2_.alpha = 0;
          addChild(_loc2_);
          this.mbi = param1;
+         this.soldOut = this.mbi.soldOut;
          this.quantity_ = 1;
          var _loc3_:TextFieldDisplayConcrete = this.getText(this.mbi.title,74,18,20,true);
          addChild(_loc3_);
          this.addNewText();
          this.addSaleText();
-         if(this.mbi.isOnSale())
+         if(this.mbi.soldOut)
+         {
+            this.buyButton.setText("Sold out");
+         }
+         else if(this.mbi.isOnSale())
          {
             this.buyButton.setPrice(this.mbi.saleAmount,this.mbi.saleCurrency);
          }
@@ -90,7 +97,10 @@ package kabam.rotmg.mysterybox.components
          this.buyButton.x = MysteryBoxSelectModal.modalWidth - 120;
          this.buyButton.y = 16;
          this.buyButton._width = 70;
-         this.buyButton.addEventListener(MouseEvent.CLICK,this.onBoxBuy);
+         if(!this.mbi.soldOut)
+         {
+            this.buyButton.addEventListener(MouseEvent.CLICK,this.onBoxBuy);
+         }
          addChild(this.buyButton);
          this.iconImage = this.mbi.iconImage;
          this.infoImage = this.mbi.infoImage;
@@ -111,19 +121,38 @@ package kabam.rotmg.mysterybox.components
             this.addInfoImageChild();
          }
          this.mbi.quantity = this.quantity_.toString();
-         this.leftNavSprite = UIAssetsHelper.createLeftNevigatorIcon(UIAssetsHelper.LEFT_NEVIGATOR,3);
-         this.leftNavSprite.x = this.buyButton.x + this.buyButton.width + 45;
-         this.leftNavSprite.y = this.buyButton.y + this.buyButton.height / 2 - 2;
-         this.leftNavSprite.addEventListener(MouseEvent.CLICK,this.onClick);
-         addChild(this.leftNavSprite);
-         this.rightNavSprite = UIAssetsHelper.createLeftNevigatorIcon(UIAssetsHelper.RIGHT_NEVIGATOR,3);
-         this.rightNavSprite.x = this.buyButton.x + this.buyButton.width + 45;
-         this.rightNavSprite.y = this.buyButton.y + this.buyButton.height / 2 - 16;
-         this.rightNavSprite.addEventListener(MouseEvent.CLICK,this.onClick);
-         addChild(this.rightNavSprite);
+         if(!this.mbi.soldOut)
+         {
+            this.leftNavSprite = UIAssetsHelper.createLeftNevigatorIcon(UIAssetsHelper.LEFT_NEVIGATOR,3);
+            this.leftNavSprite.x = this.buyButton.x + this.buyButton.width + 45;
+            this.leftNavSprite.y = this.buyButton.y + this.buyButton.height / 2 - 2;
+            this.leftNavSprite.addEventListener(MouseEvent.CLICK,this.onClick);
+            addChild(this.leftNavSprite);
+            this.rightNavSprite = UIAssetsHelper.createLeftNevigatorIcon(UIAssetsHelper.RIGHT_NEVIGATOR,3);
+            this.rightNavSprite.x = this.buyButton.x + this.buyButton.width + 45;
+            this.rightNavSprite.y = this.buyButton.y + this.buyButton.height / 2 - 16;
+            this.rightNavSprite.addEventListener(MouseEvent.CLICK,this.onClick);
+            addChild(this.rightNavSprite);
+         }
          addEventListener(MouseEvent.ROLL_OVER,this.onHover);
          addEventListener(MouseEvent.ROLL_OUT,this.onRemoveHover);
          addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
+      }
+      
+      private function markAsSold() : *
+      {
+         this.buyButton.setPrice(0,Currency.INVALID);
+         this.buyButton.setText("Sold out");
+         if(this.leftNavSprite && this.leftNavSprite.parent == this)
+         {
+            removeChild(this.leftNavSprite);
+            this.leftNavSprite.removeEventListener(MouseEvent.CLICK,this.onClick);
+         }
+         if(this.rightNavSprite && this.rightNavSprite.parent == this)
+         {
+            removeChild(this.rightNavSprite);
+            this.rightNavSprite.removeEventListener(MouseEvent.CLICK,this.onClick);
+         }
       }
       
       private function onHover(param1:MouseEvent) : void
@@ -194,6 +223,11 @@ package kabam.rotmg.mysterybox.components
          {
             this.sale.scaleX = _loc2_;
             this.sale.scaleY = _loc2_;
+         }
+         if(this.mbi.soldOut && !this.soldOut)
+         {
+            this.soldOut = true;
+            this.markAsSold();
          }
       }
       
