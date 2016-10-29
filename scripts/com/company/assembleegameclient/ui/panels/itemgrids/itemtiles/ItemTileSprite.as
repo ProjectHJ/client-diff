@@ -52,33 +52,22 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
       
       public function drawTile() : void
       {
-         var _loc2_:BitmapData = null;
-         var _loc3_:XML = null;
-         var _loc4_:BitmapData = null;
-         var _loc1_:int = this.itemId;
-         if(_loc1_ != ItemConstants.NO_ITEM)
+         var _loc1_:BitmapData = null;
+         var _loc2_:XML = null;
+         var _loc3_:BitmapData = null;
+         if(this.itemId != ItemConstants.NO_ITEM)
          {
-            if(_loc1_ >= 36864 && _loc1_ < 61440)
+            _loc1_ = ObjectLibrary.getRedrawnTextureFromType(this.itemId,80,true);
+            _loc2_ = ObjectLibrary.xmlLibrary_[this.itemId];
+            if(_loc2_ && _loc2_.hasOwnProperty("Doses") && this.bitmapFactory)
             {
-               _loc1_ = 36863;
+               _loc1_ = _loc1_.clone();
+               _loc3_ = this.bitmapFactory.make(new StaticStringBuilder(String(_loc2_.Doses)),12,16777215,false,IDENTITY_MATRIX,false);
+               _loc1_.draw(_loc3_,DOSE_MATRIX);
             }
-            _loc2_ = ObjectLibrary.getRedrawnTextureFromType(_loc1_,80,true);
-            _loc3_ = ObjectLibrary.xmlLibrary_[_loc1_];
-            if(_loc3_ && _loc3_.hasOwnProperty("Doses") && this.bitmapFactory)
-            {
-               _loc2_ = _loc2_.clone();
-               _loc4_ = this.bitmapFactory.make(new StaticStringBuilder(String(_loc3_.Doses)),12,16777215,false,IDENTITY_MATRIX,false);
-               _loc2_.draw(_loc4_,DOSE_MATRIX);
-            }
-            if(_loc3_ && _loc3_.hasOwnProperty("Quantity") && this.bitmapFactory)
-            {
-               _loc2_ = _loc2_.clone();
-               _loc4_ = this.bitmapFactory.make(new StaticStringBuilder(String(_loc3_.Quantity)),12,16777215,false,IDENTITY_MATRIX,false);
-               _loc2_.draw(_loc4_,DOSE_MATRIX);
-            }
-            this.itemBitmap.bitmapData = _loc2_;
-            this.itemBitmap.x = -_loc2_.width / 2;
-            this.itemBitmap.y = -_loc2_.height / 2;
+            this.itemBitmap.bitmapData = _loc1_;
+            this.itemBitmap.x = -_loc1_.width / 2;
+            this.itemBitmap.y = -_loc1_.height / 2;
             visible = true;
          }
          else

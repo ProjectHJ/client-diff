@@ -327,11 +327,6 @@ package kabam.rotmg.text.view
          }
       }
       
-      public function getTextHeight() : Number
-      {
-         return !!this.textField?Number(this.textField.height):Number(0);
-      }
-      
       private function setYToMiddle() : void
       {
          this.textField.height;

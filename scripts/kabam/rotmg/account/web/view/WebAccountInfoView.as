@@ -13,8 +13,6 @@ package kabam.rotmg.account.web.view
    import flash.filters.DropShadowFilter;
    import flash.display.DisplayObject;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.build.api.BuildData;
    
    public class WebAccountInfoView extends Sprite implements AccountInfoView
    {
@@ -26,8 +24,6 @@ package kabam.rotmg.account.web.view
       
       private var _register:Signal;
       
-      private var _reset:Signal;
-      
       private var userName:String = "";
       
       private var isRegistered:Boolean;
@@ -37,8 +33,6 @@ package kabam.rotmg.account.web.view
       private var registerButton:TitleMenuOption;
       
       private var loginButton:TitleMenuOption;
-      
-      private var resetButton:TitleMenuOption;
       
       public function WebAccountInfoView()
       {
@@ -57,24 +51,17 @@ package kabam.rotmg.account.web.view
          return this._register;
       }
       
-      public function get reset() : Signal
-      {
-         return this._reset;
-      }
-      
       private function makeUIElements() : void
       {
          this.makeAccountText();
          this.makeLoginButton();
          this.makeRegisterButton();
-         this.makeResetButton();
       }
       
       private function makeSignals() : void
       {
          this._login = new NativeMappedSignal(this.loginButton,MouseEvent.CLICK);
          this._register = new NativeMappedSignal(this.registerButton,MouseEvent.CLICK);
-         this._reset = new NativeMappedSignal(this.resetButton,MouseEvent.CLICK);
       }
       
       private function makeAccountText() : void
@@ -85,8 +72,7 @@ package kabam.rotmg.account.web.view
       
       private function makeTextFieldConcrete() : TextFieldDisplayConcrete
       {
-         var _loc1_:TextFieldDisplayConcrete = null;
-         _loc1_ = new TextFieldDisplayConcrete();
+         var _loc1_:TextFieldDisplayConcrete = new TextFieldDisplayConcrete();
          _loc1_.setAutoSize(TextFieldAutoSize.RIGHT);
          _loc1_.setSize(FONT_SIZE).setColor(11776947);
          _loc1_.filters = [new DropShadowFilter(0,0,0,1,4,4)];
@@ -97,12 +83,6 @@ package kabam.rotmg.account.web.view
       {
          this.loginButton = new TitleMenuOption(TextKey.LOG_IN,FONT_SIZE,false);
          this.loginButton.setAutoSize(TextFieldAutoSize.RIGHT);
-      }
-      
-      private function makeResetButton() : void
-      {
-         this.resetButton = new TitleMenuOption("reset",FONT_SIZE,false);
-         this.resetButton.setAutoSize(TextFieldAutoSize.RIGHT);
       }
       
       private function makeRegisterButton() : void
@@ -151,7 +131,6 @@ package kabam.rotmg.account.web.view
       private function showUIForRegisteredAccount() : void
       {
          this.accountText.setStringBuilder(new LineBuilder().setParams(TextKey.LOGGED_IN_TEXT,{"userName":this.userName}));
-         var _loc1_:BuildData = StaticInjectorContext.getInjector().getInstance(BuildData);
          this.loginButton.setTextKey(TextKey.LOG_OUT);
          this.addAndAlignHorizontally(this.accountText,this.loginButton);
       }

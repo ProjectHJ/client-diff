@@ -86,10 +86,7 @@ package com.company.assembleegameclient.editor
          var _loc5_:com.company.assembleegameclient.editor.CommandMenuItem = new com.company.assembleegameclient.editor.CommandMenuItem(param1,param3,param4);
          _loc5_.y = this.yOffset_;
          addChild(_loc5_);
-         if(param2 != -1)
-         {
-            this.keyCodeDict_[param2] = _loc5_;
-         }
+         this.keyCodeDict_[param2] = _loc5_;
          if(this.selected_ == null)
          {
             this.setSelected(_loc5_);

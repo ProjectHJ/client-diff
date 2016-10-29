@@ -10,19 +10,15 @@ package com.company.assembleegameclient.ui.dialogs
    import flash.display.IGraphicsData;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
    import kabam.rotmg.ui.view.SignalWaiter;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.build.api.BuildData;
-   import kabam.rotmg.build.api.BuildEnvironment;
    import flash.text.TextFieldAutoSize;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import flash.filters.DropShadowFilter;
    import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.application.api.ApplicationSetup;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.text.model.TextKey;
    import flash.events.MouseEvent;
    import com.company.util.GraphicsUtil;
    import flash.display.Graphics;
+   import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
@@ -47,8 +43,6 @@ package com.company.assembleegameclient.ui.dialogs
       public var textText_:TextFieldDisplayConcrete;
       
       public var textText2_:TextFieldDisplayConcrete;
-      
-      public var textText3_:TextFieldDisplayConcrete;
       
       public var offsetX:Number = 0;
       
@@ -104,19 +98,10 @@ package com.company.assembleegameclient.ui.dialogs
       private function _makeUIAndAdd() : void
       {
          this.makeButton();
-         var _loc1_:BuildData = StaticInjectorContext.getInjector().getInstance(BuildData);
-         if(_loc1_.getEnvironment() != BuildEnvironment.PRODUCTION)
-         {
-            this.initText3();
-            this.addTextFieldDisplay(this.textText3_);
-         }
-         else
-         {
-            this.initText();
-            this.addTextFieldDisplay(this.textText_);
-            this.initText2();
-            this.addTextFieldDisplay(this.textText2_);
-         }
+         this.initText();
+         this.initText2();
+         this.addTextFieldDisplay(this.textText_);
+         this.addTextFieldDisplay(this.textText2_);
       }
       
       protected function initText() : void
@@ -124,7 +109,6 @@ package com.company.assembleegameclient.ui.dialogs
          this.textText_ = new TextFieldDisplayConcrete().setSize(16).setColor(GREY);
          this.textText_.setTextWidth(this.dialogWidth - this.textMargin * 2);
          this.textText_.x = this.textMargin;
-         this.textText_.y = this.textTextYPosition;
          this.textText_.setMultiLine(true).setWordWrap(true).setAutoSize(TextFieldAutoSize.CENTER);
          var _loc1_:LineBuilder = new LineBuilder().setParams("Legal.tos1");
          _loc1_.setPrefix("<p align=\"center\">").setPostfix("</p>");
@@ -139,7 +123,6 @@ package com.company.assembleegameclient.ui.dialogs
          this.textText2_ = new TextFieldDisplayConcrete().setSize(16).setColor(GREY);
          this.textText2_.setTextWidth(this.dialogWidth - this.textMargin * 2);
          this.textText2_.x = this.textMargin;
-         this.textText2_.y = this.textText_.y + this.textText_.height + 15;
          this.textText2_.setMultiLine(true).setWordWrap(true).setAutoSize(TextFieldAutoSize.CENTER);
          var _loc1_:* = "<font color=\"#7777EE\"><a href=\"" + Parameters.TERMS_OF_USE_URL + "\" target=\"_blank\">";
          var _loc2_:* = "<font color=\"#7777EE\"><a href=\"" + Parameters.PRIVACY_POLICY_URL + "\" target=\"_blank\">";
@@ -153,23 +136,6 @@ package com.company.assembleegameclient.ui.dialogs
          this.textText2_.setHTML(true);
          this.textText2_.mouseEnabled = true;
          this.textText2_.filters = [new DropShadowFilter(0,0,0,1,6,6,1)];
-      }
-      
-      protected function initText3() : void
-      {
-         this.textText3_ = new TextFieldDisplayConcrete().setSize(16).setColor(GREY);
-         this.textText3_.setTextWidth(this.dialogWidth - this.textMargin * 2);
-         this.textText3_.x = this.textMargin;
-         this.textText3_.y = this.textTextYPosition;
-         this.textText3_.setMultiLine(true).setWordWrap(true).setAutoSize(TextFieldAutoSize.CENTER);
-         var _loc1_:ApplicationSetup = StaticInjectorContext.getInjector().getInstance(ApplicationSetup);
-         var _loc2_:String = _loc1_.getAppEngineUrl(true) + Parameters.USER_GENERATED_CONTENT_TERMS;
-         var _loc3_:* = "I agree to Kabam\'s <font color=\"#7777EE\"><a href=\"" + Parameters.TERMS_OF_USE_URL + "\">terms of service</a></font>, " + "<font color=\"#7777EE\"><a href=\"" + Parameters.PRIVACY_POLICY_URL + "\">privacy policy</a></font>, and " + "<font color=\"#7777EE\"><a href=\"" + _loc2_ + "\">user generated content terms</a></font>.";
-         var _loc4_:StaticStringBuilder = new StaticStringBuilder(_loc3_);
-         this.textText3_.setStringBuilder(_loc4_);
-         this.textText3_.setHTML(true);
-         this.textText3_.mouseEnabled = true;
-         this.textText3_.filters = [new DropShadowFilter(0,0,0,1,6,6,1)];
       }
       
       private function addTextFieldDisplay(param1:TextFieldDisplayConcrete) : void
@@ -198,7 +164,13 @@ package com.company.assembleegameclient.ui.dialogs
       
       private function draw() : void
       {
+         this.drawTitleAndText();
+         this.drawAdditionalUI();
          this.drawButtonsAndBackground();
+      }
+      
+      protected function drawAdditionalUI() : void
+      {
       }
       
       protected function drawButtonsAndBackground() : void
@@ -234,6 +206,12 @@ package com.company.assembleegameclient.ui.dialogs
          this.box_.addChild(this.buttonAccept);
          this.buttonAccept.y = _loc1_;
          this.buttonAccept.x = this.dialogWidth / 2 - this.buttonAccept.width / 2;
+      }
+      
+      private function drawTitleAndText() : void
+      {
+         this.textText_.y = this.textTextYPosition;
+         this.textText2_.y = this.textText_.y + this.textText_.height + 15;
       }
       
       private function removeButtonsIfAlreadyAdded() : void

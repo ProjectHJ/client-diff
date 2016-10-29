@@ -10,9 +10,7 @@ package kabam.rotmg.ui.view
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.application.api.ApplicationSetup;
    import kabam.rotmg.core.view.Layers;
-   import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
    import robotlegs.bender.framework.api.ILogger;
-   import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
    import flash.net.URLVariables;
    import flash.net.URLRequest;
    import kabam.rotmg.application.DynamicSettings;
@@ -64,9 +62,6 @@ package kabam.rotmg.ui.view
       public var layers:Layers;
       
       [Inject]
-      public var securityQuestionsModel:SecurityQuestionsModel;
-      
-      [Inject]
       public var logger:ILogger;
       
       public function TitleMediator()
@@ -83,15 +78,7 @@ package kabam.rotmg.ui.view
          this.view.accountClicked.add(this.handleIntentionToReviewAccount);
          this.view.legendsClicked.add(this.showLegendsScreen);
          this.view.supportClicked.add(this.openSupportPage);
-         if(this.playerModel.isNewToEditing())
-         {
-            this.view.putNoticeTagToOption(ButtonFactory.getEditorButton(),"new");
-         }
          this.view.kabamTransferClicked.add(this.openKabamTransferView);
-         if(this.securityQuestionsModel.showSecurityQuestionsOnStartup)
-         {
-            this.openDialog.dispatch(new SecurityQuestionsInfoDialog());
-         }
       }
       
       private function openSupportPage() : void
@@ -151,7 +138,7 @@ package kabam.rotmg.ui.view
       {
          var _loc1_:EnvironmentData = new EnvironmentData();
          _loc1_.isDesktop = Capabilities.playerType == "Desktop";
-         _loc1_.canMapEdit = this.playerModel.isAdmin() || this.playerModel.mapEditor();
+         _loc1_.isAdmin = this.playerModel.isAdmin();
          _loc1_.buildLabel = this.setup.getBuildLabel();
          return _loc1_;
       }
@@ -164,6 +151,7 @@ package kabam.rotmg.ui.view
          this.view.legendsClicked.remove(this.showLegendsScreen);
          this.view.supportClicked.remove(this.openSupportPage);
          this.view.optionalButtonsAdded.remove(this.onOptionalButtonsAdded);
+         this.view.kabamTransferClicked.remove(this.openKabamTransferView);
          this.view.editorClicked && this.view.editorClicked.remove(this.showMapEditor);
          this.view.quitClicked && this.view.quitClicked.remove(this.attemptToCloseClient);
       }

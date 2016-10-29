@@ -8,15 +8,13 @@ package kabam.rotmg.account.core
       
       function setPlatformToken(param1:String) : void;
       
-      function updateUser(param1:String, param2:String, param3:String) : void;
+      function updateUser(param1:String, param2:String) : void;
       
       function getUserName() : String;
       
       function getUserId() : String;
       
       function getPassword() : String;
-      
-      function getToken() : String;
       
       function getSecret() : String;
       

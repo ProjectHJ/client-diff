@@ -9,15 +9,12 @@ package com.company.assembleegameclient.objects.particles
       
       public var go_:GameObject;
       
-      public var color_:uint;
-      
       public var lastUpdate_:int = -1;
       
-      public function FountainEffect(param1:GameObject, param2:EffectProperties)
+      public function FountainEffect(param1:GameObject)
       {
          super();
          this.go_ = param1;
-         this.color_ = param2.color;
       }
       
       override public function update(param1:int, param2:int) : Boolean
@@ -39,7 +36,6 @@ package com.company.assembleegameclient.objects.particles
          {
             _loc4_ = _loc3_ * 50;
             _loc5_ = FreeList.newObject(FountainParticle) as FountainParticle;
-            _loc5_.setColor(this.color_);
             _loc5_.restart(_loc4_,param1);
             map_.addObj(_loc5_,x_,y_);
             _loc3_++;
@@ -68,19 +64,20 @@ class FountainParticle extends Particle
    
    protected var moveVec_:Vector3D;
    
-   function FountainParticle(param1:uint = 4285909)
+   function FountainParticle()
    {
       this.moveVec_ = new Vector3D();
-      super(param1,ZI,100);
+      super(4285909,ZI,100);
    }
    
    public function restart(param1:int, param2:int) : void
    {
+      var _loc4_:int = 0;
       var _loc3_:Number = 2 * Math.PI * Math.random();
       this.moveVec_.x = Math.cos(_loc3_);
       this.moveVec_.y = Math.sin(_loc3_);
       this.startTime_ = param1;
-      var _loc4_:int = param2 - this.startTime_;
+      _loc4_ = param2 - this.startTime_;
       x_ = x_ + this.moveVec_.x * _loc4_ * 0.0008;
       y_ = y_ + this.moveVec_.y * _loc4_ * 0.0008;
       var _loc5_:Number = (param2 - this.startTime_) / 1000;

@@ -20,14 +20,12 @@ package kabam.rotmg.account.kongregate
       
       private var platformToken:String;
       
-      private var _rememberMe:Boolean;
-      
       public function KongregateAccount()
       {
          super();
       }
       
-      public function updateUser(param1:String, param2:String, param3:String) : void
+      public function updateUser(param1:String, param2:String) : void
       {
          this.userId = param1;
          this.password = param2;
@@ -128,21 +126,6 @@ package kabam.rotmg.account.kongregate
       public function getMoneyUserId() : String
       {
          throw new Error("No current support for new Kabam offer wall on Kongregate.");
-      }
-      
-      public function set rememberMe(param1:Boolean) : void
-      {
-         this._rememberMe = param1;
-      }
-      
-      public function get rememberMe() : Boolean
-      {
-         return this._rememberMe;
-      }
-      
-      public function getToken() : String
-      {
-         return "";
       }
    }
 }

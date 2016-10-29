@@ -2,8 +2,6 @@ package kabam.rotmg.chat.control
 {
    import kabam.rotmg.ui.model.HUDModel;
    import kabam.rotmg.game.signals.AddTextLineSignal;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.account.core.Account;
    import kabam.rotmg.chat.model.ChatMessage;
    import com.company.assembleegameclient.parameters.Parameters;
    import kabam.rotmg.text.model.TextKey;
@@ -21,12 +19,6 @@ package kabam.rotmg.chat.control
       [Inject]
       public var addTextLine:AddTextLineSignal;
       
-      [Inject]
-      public var client:AppEngineClient;
-      
-      [Inject]
-      public var account:Account;
-      
       public function ParseChatMessageCommand()
       {
          super();
@@ -34,13 +26,13 @@ package kabam.rotmg.chat.control
       
       public function execute() : void
       {
-         switch(this.data)
+         if(this.data == "/help")
          {
-            case "/help":
-               this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME,TextKey.HELP_COMMAND));
-               break;
-            default:
-               this.hudModel.gameSprite.gsc_.playerText(this.data);
+            this.addTextLine.dispatch(ChatMessage.make(Parameters.HELP_CHAT_NAME,TextKey.HELP_COMMAND));
+         }
+         else
+         {
+            this.hudModel.gameSprite.gsc_.playerText(this.data);
          }
       }
    }

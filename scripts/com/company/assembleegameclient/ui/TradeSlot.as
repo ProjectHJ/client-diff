@@ -9,12 +9,12 @@ package com.company.assembleegameclient.ui
    import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
    import kabam.rotmg.text.view.BitmapTextFactory;
+   import flash.geom.Point;
    import flash.display.Bitmap;
    import flash.display.BitmapData;
    import com.company.util.SpriteUtil;
    import com.company.assembleegameclient.objects.ObjectLibrary;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.geom.Point;
    import com.company.util.GraphicsUtil;
    import kabam.rotmg.core.signals.ShowTooltipSignal;
    import kabam.rotmg.core.signals.HideTooltipsSignal;
@@ -96,6 +96,7 @@ package com.company.assembleegameclient.ui
       
       private function drawItem() : void
       {
+         var _loc3_:Point = null;
          var _loc4_:Bitmap = null;
          var _loc5_:BitmapData = null;
          SpriteUtil.safeRemoveChild(this,backgroundImage_);
@@ -107,13 +108,7 @@ package com.company.assembleegameclient.ui
             _loc5_ = this.bitmapFactory.make(new StaticStringBuilder(String(_loc2_.Doses)),12,16777215,false,IDENTITY_MATRIX,false);
             _loc1_.draw(_loc5_,DOSE_MATRIX);
          }
-         if(_loc2_.hasOwnProperty("Quantity") && this.bitmapFactory)
-         {
-            _loc1_ = _loc1_.clone();
-            _loc5_ = this.bitmapFactory.make(new StaticStringBuilder(String(_loc2_.Quantity)),12,16777215,false,IDENTITY_MATRIX,false);
-            _loc1_.draw(_loc5_,DOSE_MATRIX);
-         }
-         var _loc3_:Point = offsets(this.item_,type_,false);
+         _loc3_ = offsets(this.item_,type_,false);
          _loc4_ = new Bitmap(_loc1_);
          _loc4_.x = WIDTH / 2 - _loc4_.width / 2 + _loc3_.x;
          _loc4_.y = HEIGHT / 2 - _loc4_.height / 2 + _loc3_.y;

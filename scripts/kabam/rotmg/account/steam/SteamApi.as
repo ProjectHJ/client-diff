@@ -24,7 +24,5 @@ package kabam.rotmg.account.steam
       function get paymentAuthorized() : OnceSignal;
       
       function getPersonaName() : String;
-      
-      function get isOverlayEnabled() : Boolean;
    }
 }

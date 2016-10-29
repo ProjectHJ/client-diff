@@ -4,10 +4,7 @@ package kabam.rotmg.friends.controller
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.friends.model.FriendRequestVO;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.game.signals.AddTextLineSignal;
    import kabam.rotmg.friends.model.FriendConstant;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.chat.model.ChatMessage;
    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
    
    public class FriendActionCommand
@@ -33,12 +30,6 @@ package kabam.rotmg.friends.controller
       
       public function execute() : void
       {
-         var _loc3_:AddTextLineSignal = null;
-         if(this.vo.request == FriendConstant.INVITE)
-         {
-            _loc3_ = StaticInjectorContext.getInjector().getInstance(AddTextLineSignal);
-            _loc3_.dispatch(ChatMessage.make("","Friend request sent"));
-         }
          var _loc1_:String = FriendConstant.getURL(this.vo.request);
          var _loc2_:Object = this.account.getCredentials();
          _loc2_["targetName"] = this.vo.target;

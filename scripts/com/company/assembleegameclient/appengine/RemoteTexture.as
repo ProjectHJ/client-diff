@@ -40,7 +40,7 @@ package com.company.assembleegameclient.appengine
       
       public function run() : void
       {
-         var _loc1_:String = this.instance_ == "testing"?"rotmghrdtesting.appspot.com":"realmofthemadgodhrd.appspot.com";
+         var _loc1_:String = this.instance_ == "testing"?"rotmgtesting.appspot.com":"realmofthemadgod.appspot.com";
          var _loc2_:String = URL_PATTERN.replace("{DOMAIN}",_loc1_);
          var _loc3_:Object = {};
          _loc3_.id = this.id_;

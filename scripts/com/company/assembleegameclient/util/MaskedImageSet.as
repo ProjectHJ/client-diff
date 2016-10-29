@@ -24,14 +24,11 @@ package com.company.assembleegameclient.util
          {
             _loc6_ = new ImageSet();
             _loc6_.addFromBitmapData(param2,param3,param4);
-            if(_loc5_.images_.length > _loc6_.images_.length)
-            {
-            }
          }
          var _loc7_:int = 0;
          while(_loc7_ < _loc5_.images_.length)
          {
-            this.images_.push(new com.company.assembleegameclient.util.MaskedImage(_loc5_.images_[_loc7_],_loc6_ == null?null:_loc7_ >= _loc6_.images_.length?null:_loc6_.images_[_loc7_]));
+            this.images_.push(new com.company.assembleegameclient.util.MaskedImage(_loc5_.images_[_loc7_],_loc6_ == null?null:_loc6_.images_[_loc7_]));
             _loc7_++;
          }
       }

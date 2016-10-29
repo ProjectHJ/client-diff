@@ -13,8 +13,8 @@ package com.company.assembleegameclient.util
    import kabam.rotmg.assets.EmbeddedData;
    import com.company.assembleegameclient.map.GroundLibrary;
    import com.company.assembleegameclient.objects.ObjectLibrary;
-   import flash.utils.getQualifiedClassName;
    import com.company.assembleegameclient.map.RegionLibrary;
+   import flash.utils.getQualifiedClassName;
    
    public class AssetLoader
    {
@@ -168,17 +168,11 @@ package com.company.assembleegameclient.util
       
       private function parseObjectFiles() : void
       {
-         var _loc1_:int = 0;
-         while(_loc1_ < 25)
+         var _loc1_:* = undefined;
+         for each(_loc1_ in EmbeddedData.objectFiles)
          {
-            currentXmlIsTesting = this.checkIsTestingXML(EmbeddedData.objectFiles[_loc1_]);
-            ObjectLibrary.parseFromXML(XML(EmbeddedData.objectFiles[_loc1_]));
-            _loc1_++;
-         }
-         while(_loc1_ < EmbeddedData.objectFiles.length)
-         {
-            ObjectLibrary.parseDungeonXML(getQualifiedClassName(EmbeddedData.objectFiles[_loc1_]),XML(EmbeddedData.objectFiles[_loc1_]));
-            _loc1_++;
+            currentXmlIsTesting = this.checkIsTestingXML(_loc1_);
+            ObjectLibrary.parseFromXML(XML(_loc1_));
          }
          currentXmlIsTesting = false;
       }

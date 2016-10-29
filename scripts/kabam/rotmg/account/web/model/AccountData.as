@@ -14,8 +14,6 @@ package kabam.rotmg.account.web.model
       
       public var name:String;
       
-      public var token:String;
-      
       public function AccountData()
       {
          super();

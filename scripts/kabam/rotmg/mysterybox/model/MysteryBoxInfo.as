@@ -1,6 +1,5 @@
 package kabam.rotmg.mysterybox.model
 {
-   import flash.events.EventDispatcher;
    import flash.events.Event;
    import flash.events.IOErrorEvent;
    import flash.net.URLRequest;
@@ -11,7 +10,7 @@ package kabam.rotmg.mysterybox.model
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.display.Loader.LoaderProxyConcrete;
    
-   public class MysteryBoxInfo extends EventDispatcher
+   public class MysteryBoxInfo
    {
       
       public static var chestImageEmbed:Class = MysteryBoxInfo_chestImageEmbed;
@@ -38,8 +37,6 @@ package kabam.rotmg.mysterybox.model
       public var _quantity:String;
       
       public var _saleEnd:Date;
-      
-      private var _soldOut:Boolean;
       
       public var _iconImageUrl:String;
       
@@ -178,16 +175,6 @@ package kabam.rotmg.mysterybox.model
       public function set saleEnd(param1:Date) : void
       {
          this._saleEnd = param1;
-      }
-      
-      public function set soldOut(param1:Boolean) : void
-      {
-         this._soldOut = param1;
-      }
-      
-      public function get soldOut() : Boolean
-      {
-         return this._soldOut;
       }
       
       public function get iconImageUrl() : *

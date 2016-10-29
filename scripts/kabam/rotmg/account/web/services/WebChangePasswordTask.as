@@ -47,7 +47,7 @@ package kabam.rotmg.account.web.services
       
       private function onChangeDone() : void
       {
-         this.account.updateUser(this.account.getUserId(),this.data.newPassword,this.account.getToken());
+         this.account.updateUser(this.account.getUserId(),this.data.newPassword);
          completeTask(true);
       }
    }

@@ -59,12 +59,12 @@ package kabam.rotmg.account.transfer.services
          var _loc2_:PlatformModel = StaticInjectorContext.getInjector().getInstance(PlatformModel);
          if(_loc2_.getPlatform() == PlatformType.WEB)
          {
-            this.account.updateUser(this.transferData.newEmail,this.transferData.newPassword,"");
+            this.account.updateUser(this.transferData.newEmail,this.transferData.newPassword);
          }
          else
          {
             _loc3_ = new XML(param1);
-            this.account.updateUser(_loc3_.GUID,_loc3_.Secret,"");
+            this.account.updateUser(_loc3_.GUID,_loc3_.Secret);
             this.account.setPlatformToken(_loc3_.PlatformToken);
          }
       }

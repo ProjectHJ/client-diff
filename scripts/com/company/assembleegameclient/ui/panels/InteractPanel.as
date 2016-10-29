@@ -70,10 +70,10 @@ package com.company.assembleegameclient.ui.panels
          if(this.currentPanel == null || _loc1_ != this.currObj_)
          {
             this.currObj_ = _loc1_;
-            this.partyPanel_ = new com.company.assembleegameclient.ui.panels.PartyPanel(this.gs_);
             if(this.currObj_ != null)
             {
                _loc2_ = this.currObj_.getPanel(this.gs_);
+               this.partyPanel_ = new com.company.assembleegameclient.ui.panels.PartyPanel(this.gs_);
             }
             else
             {

@@ -171,7 +171,6 @@ package kabam.rotmg.mysterybox.services
                _loc5_.saleCurrency = _loc4_.Sale.attribute("currency").toString();
                _loc5_.saleEnd = TimeUtil.parseUTCDate(_loc4_.Sale.End.toString());
             }
-            _loc5_.soldOut = _loc4_.hasOwnProperty("SoldOut") && _loc4_.SoldOut == "1";
             _loc5_.iconImageUrl = _loc4_.Icon.toString();
             _loc5_.infoImageUrl = _loc4_.Image.toString();
             _loc5_.startTime = TimeUtil.parseUTCDate(_loc4_.StartTime.toString());

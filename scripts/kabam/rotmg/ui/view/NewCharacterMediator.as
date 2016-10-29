@@ -11,9 +11,6 @@ package kabam.rotmg.ui.view
    import kabam.rotmg.core.signals.BuyCharacterPendingSignal;
    import kabam.rotmg.core.signals.PurchaseCharacterSignal;
    import kabam.rotmg.classes.model.ClassesModel;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
-   import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
    import kabam.rotmg.classes.view.CharacterSkinView;
    import flash.display.Sprite;
@@ -52,12 +49,6 @@ package kabam.rotmg.ui.view
       [Inject]
       public var classesModel:ClassesModel;
       
-      [Inject]
-      public var openDialog:OpenDialogSignal;
-      
-      [Inject]
-      public var securityQuestionsModel:SecurityQuestionsModel;
-      
       public function NewCharacterMediator()
       {
          super();
@@ -72,10 +63,6 @@ package kabam.rotmg.ui.view
          this.updateNewCharacterScreen.add(this.onUpdate);
          this.buyCharacterPending.add(this.onBuyCharacterPending);
          this.view.initialize(this.playerModel);
-         if(this.securityQuestionsModel.showSecurityQuestionsOnStartup)
-         {
-            this.openDialog.dispatch(new SecurityQuestionsInfoDialog());
-         }
       }
       
       private function onBuyCharacterPending(param1:int) : void

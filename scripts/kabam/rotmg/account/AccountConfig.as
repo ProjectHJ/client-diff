@@ -13,15 +13,9 @@ package kabam.rotmg.account
    import kabam.rotmg.account.core.services.VerifyAgeTask;
    import kabam.rotmg.account.core.services.GetCharListTask;
    import kabam.rotmg.core.signals.MoneyFrameEnableCancelSignal;
-   import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
    import kabam.rotmg.account.core.model.OfferModel;
-   import kabam.rotmg.account.securityQuestions.tasks.SaveSecurityQuestionsTask;
    import kabam.rotmg.account.core.view.MoneyFrame;
    import com.company.assembleegameclient.account.ui.MoneyFrameMediator;
-   import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsDialog;
-   import kabam.rotmg.account.securityQuestions.mediators.SecurityQuestionsMediator;
-   import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
-   import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsConfirmDialog;
    import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
    import kabam.rotmg.account.core.BuyCharacterSlotCommand;
    import kabam.rotmg.account.core.control.IsAccountRegisteredToBuyGoldGuard;
@@ -29,8 +23,6 @@ package kabam.rotmg.account
    import kabam.rotmg.account.core.commands.PurchaseGoldCommand;
    import kabam.rotmg.account.core.signals.VerifyAgeSignal;
    import kabam.rotmg.account.core.commands.VerifyAgeCommand;
-   import kabam.rotmg.account.securityQuestions.signals.SaveSecurityQuestionsSignal;
-   import kabam.rotmg.account.securityQuestions.commands.SaveSecurityQuestionsCommand;
    import kabam.rotmg.account.kongregate.KongregateAccountConfig;
    import kabam.rotmg.account.steam.SteamAccountConfig;
    import kabam.rotmg.account.kabam.KabamAccountConfig;
@@ -81,17 +73,11 @@ package kabam.rotmg.account
          this.injector.map(VerifyAgeTask);
          this.injector.map(GetCharListTask);
          this.injector.map(MoneyFrameEnableCancelSignal).asSingleton();
-         this.injector.map(SecurityQuestionsModel).asSingleton();
          this.injector.map(OfferModel).asSingleton();
-         this.injector.map(SaveSecurityQuestionsTask);
          this.mediatorMap.map(MoneyFrame).toMediator(MoneyFrameMediator);
-         this.mediatorMap.map(SecurityQuestionsDialog).toMediator(SecurityQuestionsMediator);
-         this.mediatorMap.map(SecurityQuestionsInfoDialog).toMediator(SecurityQuestionsMediator);
-         this.mediatorMap.map(SecurityQuestionsConfirmDialog).toMediator(SecurityQuestionsMediator);
          this.commandMap.map(BuyCharacterSlotSignal).toCommand(BuyCharacterSlotCommand).withGuards(IsAccountRegisteredToBuyGoldGuard);
          this.commandMap.map(PurchaseGoldSignal).toCommand(PurchaseGoldCommand);
          this.commandMap.map(VerifyAgeSignal).toCommand(VerifyAgeCommand);
-         this.commandMap.map(SaveSecurityQuestionsSignal).toCommand(SaveSecurityQuestionsCommand);
       }
       
       private function configureAccountSpecificFunctionality() : void

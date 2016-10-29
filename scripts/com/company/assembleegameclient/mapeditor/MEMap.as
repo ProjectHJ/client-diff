@@ -17,8 +17,6 @@ package com.company.assembleegameclient.mapeditor
    import flash.display.Graphics;
    import flash.geom.Matrix;
    import com.company.util.PointUtil;
-   import flash.utils.ByteArray;
-   import com.adobe.images.PNGEncoder;
    import flash.display.Bitmap;
    import com.company.util.AssetLibrary;
    
@@ -29,13 +27,15 @@ package com.company.assembleegameclient.mapeditor
       
       private static var transbackgroundBD_:BitmapData = new transbackgroundEmbed_().bitmapData;
       
-      public static var NUM_SQUARES:int = 128;
-      
-      public static const MAX_ALLOWED_SQUARES:int = 512;
+      public static const NUM_SQUARES:int = 512;
       
       public static const SQUARE_SIZE:int = 16;
       
       public static const SIZE:int = 512;
+      
+      public static const MIN_ZOOM:Number = 0.0625;
+      
+      public static const MAX_ZOOM:Number = 16;
        
       
       public var tileDict_:Dictionary;
@@ -47,8 +47,6 @@ package com.company.assembleegameclient.mapeditor
       public var map_:BitmapData;
       
       public var overlay_:Shape;
-      
-      public var anchorLock:Boolean = false;
       
       public var posT_:IntPoint;
       
@@ -66,15 +64,7 @@ package com.company.assembleegameclient.mapeditor
       
       private var replaceTexture_:BitmapData;
       
-      private var objectLayer_:com.company.assembleegameclient.mapeditor.BigBitmapData;
-      
-      private var groundLayer_:com.company.assembleegameclient.mapeditor.BigBitmapData;
-      
-      private var ifShowObjectLayer_:Boolean = true;
-      
-      private var ifShowGroundLayer_:Boolean = true;
-      
-      private var ifShowRegionLayer_:Boolean = true;
+      public var anchorLock:Boolean = false;
       
       function MEMap()
       {
@@ -83,8 +73,6 @@ package com.company.assembleegameclient.mapeditor
          this.regionMap_ = new BitmapDataSpy(NUM_SQUARES,NUM_SQUARES,true,0);
          this.map_ = new BitmapDataSpy(SIZE,SIZE,true,0);
          this.overlay_ = new Shape();
-         this.objectLayer_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
-         this.groundLayer_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
          super();
          graphics.beginBitmapFill(transbackgroundBD_,null,true);
          graphics.drawRect(0,0,SIZE,SIZE);
@@ -96,68 +84,6 @@ package com.company.assembleegameclient.mapeditor
          this.draw();
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
          addEventListener(Event.REMOVED_FROM_STAGE,this.onRemovedFromStage);
-      }
-      
-      private static function minZoom() : Number
-      {
-         return SQUARE_SIZE / NUM_SQUARES * 2;
-      }
-      
-      private static function maxZoom() : Number
-      {
-         return SQUARE_SIZE;
-      }
-      
-      public function set ifShowObjectLayer(param1:Boolean) : void
-      {
-         this.ifShowObjectLayer_ = param1;
-      }
-      
-      public function set ifShowGroundLayer(param1:Boolean) : void
-      {
-         this.ifShowGroundLayer_ = param1;
-      }
-      
-      public function set ifShowRegionLayer(param1:Boolean) : void
-      {
-         this.ifShowRegionLayer_ = param1;
-      }
-      
-      public function resize(param1:Number) : void
-      {
-         var _loc4_:METile = null;
-         var _loc5_:int = 0;
-         var _loc6_:int = 0;
-         var _loc7_:int = 0;
-         var _loc8_:* = null;
-         var _loc2_:* = this.tileDict_;
-         var _loc3_:* = NUM_SQUARES;
-         NUM_SQUARES = param1;
-         this.setZoom(minZoom());
-         this.tileDict_ = new Dictionary();
-         this.fullMap_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
-         this.objectLayer_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
-         this.groundLayer_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
-         this.regionMap_ = new BitmapDataSpy(NUM_SQUARES,NUM_SQUARES,true,0);
-         for(_loc8_ in _loc2_)
-         {
-            _loc4_ = _loc2_[_loc8_];
-            if(_loc4_.isEmpty())
-            {
-               _loc4_ = null;
-            }
-            else
-            {
-               _loc5_ = int(_loc8_);
-               _loc6_ = _loc5_ % _loc3_;
-               _loc7_ = _loc5_ / _loc3_;
-               if(_loc6_ < NUM_SQUARES && _loc7_ < NUM_SQUARES)
-               {
-                  this.setTile(_loc6_,_loc7_,_loc4_);
-               }
-            }
-         }
-         _loc2_ = null;
       }
       
       public function getType(param1:int, param2:int, param3:int) : int
@@ -220,17 +146,12 @@ package com.company.assembleegameclient.mapeditor
          param3 = param3.clone();
          this.tileDict_[param1 + param2 * NUM_SQUARES] = param3;
          this.drawTile(param1,param2,param3);
-         param3 = null;
       }
       
       public function eraseTile(param1:int, param2:int) : void
       {
          this.clearTile(param1,param2);
          this.drawTile(param1,param2,null);
-      }
-      
-      public function toggleLayers(param1:Array) : void
-      {
       }
       
       public function clear() : void
@@ -295,7 +216,7 @@ package com.company.assembleegameclient.mapeditor
       
       private function modifyZoom(param1:Number) : void
       {
-         if(param1 > 1 && this.zoom_ >= maxZoom() || param1 < 1 && this.zoom_ <= minZoom())
+         if(param1 > 1 && this.zoom_ >= MAX_ZOOM || param1 < 1 && this.zoom_ <= MIN_ZOOM)
          {
             return;
          }
@@ -303,30 +224,6 @@ package com.company.assembleegameclient.mapeditor
          this.zoom_ = this.zoom_ * param1;
          var _loc3_:IntPoint = this.mousePosT();
          this.movePosT(_loc2_.x_ - _loc3_.x_,_loc2_.y_ - _loc3_.y_);
-      }
-      
-      private function setZoom(param1:Number) : void
-      {
-         if(param1 > maxZoom() || param1 < minZoom())
-         {
-            return;
-         }
-         var _loc2_:IntPoint = this.mousePosT();
-         this.zoom_ = param1;
-         var _loc3_:IntPoint = this.mousePosT();
-         this.movePosT(_loc2_.x_ - _loc3_.x_,_loc2_.y_ - _loc3_.y_);
-      }
-      
-      public function setMinZoom(param1:Number = 0) : void
-      {
-         if(param1 != 0)
-         {
-            this.setZoom(param1);
-         }
-         else
-         {
-            this.setZoom(minZoom());
-         }
       }
       
       private function canMove() : Boolean
@@ -445,7 +342,6 @@ package com.company.assembleegameclient.mapeditor
          addEventListener(MouseEvent.MOUSE_WHEEL,this.onMouseWheel);
          addEventListener(MouseEvent.MOUSE_DOWN,this.onMouseDown);
          addEventListener(MouseEvent.MOUSE_MOVE,this.onMouseMove);
-         addEventListener(MouseEvent.RIGHT_CLICK,this.onMouseRightClick);
          stage.addEventListener(KeyboardEvent.KEY_DOWN,this.onKeyDown);
          stage.addEventListener(KeyboardEvent.KEY_UP,this.onKeyUp);
       }
@@ -469,7 +365,6 @@ package com.company.assembleegameclient.mapeditor
                   break;
                }
                this.mouseRectAnchorT_ = this.mousePosT();
-               this.draw();
                break;
             case Keyboard.CONTROL:
                if(this.mouseMoveAnchorT_ != null)
@@ -477,7 +372,6 @@ package com.company.assembleegameclient.mapeditor
                   break;
                }
                this.mouseMoveAnchorT_ = this.mousePosT();
-               this.draw();
                break;
             case Keyboard.LEFT:
                this.moveLeft();
@@ -497,6 +391,7 @@ package com.company.assembleegameclient.mapeditor
             case KeyCodes.EQUAL:
                this.increaseZoom();
          }
+         this.draw();
       }
       
       private function onKeyUp(param1:KeyboardEvent) : void
@@ -505,22 +400,11 @@ package com.company.assembleegameclient.mapeditor
          {
             case Keyboard.SHIFT:
                this.mouseRectAnchorT_ = null;
-               this.draw();
                break;
             case Keyboard.CONTROL:
                this.mouseMoveAnchorT_ = null;
-               this.draw();
          }
-      }
-      
-      public function clearSelectRect() : void
-      {
-         this.mouseRectAnchorT_ = null;
-         this.anchorLock = false;
-      }
-      
-      private function onMouseRightClick(param1:MouseEvent) : void
-      {
+         this.draw();
       }
       
       private function onMouseWheel(param1:MouseEvent) : void
@@ -629,30 +513,26 @@ package com.company.assembleegameclient.mapeditor
          var _loc7_:uint = 0;
          var _loc4_:Rectangle = new Rectangle(param1 * SQUARE_SIZE,param2 * SQUARE_SIZE,SQUARE_SIZE,SQUARE_SIZE);
          this.fullMap_.erase(_loc4_);
-         this.groundLayer_.erase(_loc4_);
-         this.objectLayer_.erase(_loc4_);
          this.regionMap_.setPixel32(param1,param2,0);
          if(param3 == null)
          {
-            this.groundLayer_.erase(_loc4_);
-            this.objectLayer_.erase(_loc4_);
             return;
          }
          if(param3.types_[Layer.GROUND] != -1)
          {
             _loc5_ = GroundLibrary.getBitmapData(param3.types_[Layer.GROUND]);
-            this.groundLayer_.copyTo(_loc5_,_loc5_.rect,_loc4_);
+            this.fullMap_.copyTo(_loc5_,_loc5_.rect,_loc4_);
          }
          if(param3.types_[Layer.OBJECT] != -1)
          {
             _loc6_ = ObjectLibrary.getTextureFromType(param3.types_[Layer.OBJECT]);
             if(_loc6_ == null || _loc6_ == this.invisibleTexture_)
             {
-               this.objectLayer_.copyTo(_loc5_,_loc5_.rect,_loc4_);
+               this.fullMap_.copyTo(this.replaceTexture_,this.replaceTexture_.rect,_loc4_);
             }
             else
             {
-               this.objectLayer_.copyTo(_loc6_,_loc6_.rect,_loc4_);
+               this.fullMap_.copyTo(_loc6_,_loc6_.rect,_loc4_);
             }
          }
          if(param3.types_[Layer.REGION] != -1)
@@ -681,90 +561,24 @@ package com.company.assembleegameclient.mapeditor
          var _loc4_:BitmapData = null;
          var _loc1_:int = SIZE / this.zoom_;
          this.map_.fillRect(this.map_.rect,0);
-         if(this.ifShowGroundLayer_)
+         this.fullMap_.copyFrom(new Rectangle(this.posT_.x_ * SQUARE_SIZE,this.posT_.y_ * SQUARE_SIZE,_loc1_,_loc1_),this.map_,this.map_.rect);
+         _loc2_ = new Matrix();
+         _loc2_.identity();
+         _loc3_ = SQUARE_SIZE * this.zoom_;
+         if(this.zoom_ > 2)
          {
-            this.groundLayer_.copyFrom(new Rectangle(this.posT_.x_ * SQUARE_SIZE,this.posT_.y_ * SQUARE_SIZE,_loc1_,_loc1_),this.map_,this.map_.rect);
+            _loc4_ = new BitmapDataSpy(SIZE / _loc3_,SIZE / _loc3_);
+            _loc4_.copyPixels(this.regionMap_,new Rectangle(this.posT_.x_,this.posT_.y_,_loc1_,_loc1_),PointUtil.ORIGIN);
+            _loc2_.scale(_loc3_,_loc3_);
+            this.map_.draw(_loc4_,_loc2_);
          }
-         if(this.ifShowObjectLayer_)
+         else
          {
-            this.objectLayer_.copyFrom(new Rectangle(this.posT_.x_ * SQUARE_SIZE,this.posT_.y_ * SQUARE_SIZE,_loc1_,_loc1_),this.map_,this.map_.rect);
-         }
-         if(this.ifShowRegionLayer_)
-         {
-            _loc2_ = new Matrix();
-            _loc2_.identity();
-            _loc3_ = SQUARE_SIZE * this.zoom_;
-            if(this.zoom_ > 2)
-            {
-               _loc4_ = new BitmapDataSpy(SIZE / _loc3_,SIZE / _loc3_);
-               _loc4_.copyPixels(this.regionMap_,new Rectangle(this.posT_.x_,this.posT_.y_,_loc1_,_loc1_),PointUtil.ORIGIN);
-               _loc2_.scale(_loc3_,_loc3_);
-               this.map_.draw(_loc4_,_loc2_);
-            }
-            else
-            {
-               _loc2_.translate(-this.posT_.x_,-this.posT_.y_);
-               _loc2_.scale(_loc3_,_loc3_);
-               this.map_.draw(this.regionMap_,_loc2_,null,null,this.map_.rect);
-            }
+            _loc2_.translate(-this.posT_.x_,-this.posT_.y_);
+            _loc2_.scale(_loc3_,_loc3_);
+            this.map_.draw(this.regionMap_,_loc2_,null,null,this.map_.rect);
          }
          this.drawOverlay();
-      }
-      
-      private function generateThumbnail() : ByteArray
-      {
-         var _loc1_:Rectangle = this.getTileBounds();
-         var _loc2_:int = 8;
-         var _loc3_:BitmapData = new BitmapData(_loc1_.width * _loc2_,_loc1_.height * _loc2_);
-         this.groundLayer_.copyFrom(new Rectangle(_loc1_.x * SQUARE_SIZE,_loc1_.y * SQUARE_SIZE,_loc1_.width * SQUARE_SIZE,_loc1_.height * SQUARE_SIZE),_loc3_,_loc3_.rect);
-         this.objectLayer_.copyFrom(new Rectangle(_loc1_.x * SQUARE_SIZE,_loc1_.y * SQUARE_SIZE,_loc1_.width * SQUARE_SIZE,_loc1_.height * SQUARE_SIZE),_loc3_,_loc3_.rect);
-         var _loc4_:Matrix = new Matrix();
-         _loc4_.identity();
-         _loc4_.translate(-_loc1_.x,-_loc1_.y);
-         _loc4_.scale(_loc2_,_loc2_);
-         _loc3_.draw(this.regionMap_,_loc4_);
-         return PNGEncoder.encode(_loc3_);
-      }
-      
-      public function getMapStatistics() : Object
-      {
-         var _loc6_:METile = null;
-         var _loc1_:int = 0;
-         var _loc2_:int = 0;
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         var _loc5_:int = 0;
-         for each(_loc6_ in this.tileDict_)
-         {
-            _loc5_++;
-            if(_loc6_.types_[Layer.GROUND] != -1)
-            {
-               _loc1_++;
-            }
-            if(_loc6_.types_[Layer.OBJECT] != -1)
-            {
-               _loc2_++;
-            }
-            if(_loc6_.types_[Layer.REGION] != -1)
-            {
-               if(_loc6_.types_[Layer.REGION] == RegionLibrary.EXIT_REGION_TYPE)
-               {
-                  _loc3_++;
-               }
-               if(_loc6_.types_[Layer.REGION] == RegionLibrary.ENTRY_REGION_TYPE)
-               {
-                  _loc4_++;
-               }
-            }
-         }
-         return {
-            "numObjects":_loc2_,
-            "numGrounds":_loc1_,
-            "numExits":_loc3_,
-            "numEntries":_loc4_,
-            "numTiles":_loc5_,
-            "thumbnail":this.generateThumbnail()
-         };
       }
    }
 }

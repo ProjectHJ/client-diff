@@ -47,7 +47,7 @@ package kabam.rotmg.ui
          return param1;
       }
       
-      public static function toggleQuality(param1:Boolean) : void
+      public static function toggleQuality(param1:Boolean) : *
       {
          if(WebMain.STAGE != null)
          {

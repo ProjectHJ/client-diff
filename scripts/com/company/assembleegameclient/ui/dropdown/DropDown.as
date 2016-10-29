@@ -16,8 +16,6 @@ package com.company.assembleegameclient.ui.dropdown
       
       protected var h_:int;
       
-      protected var maxItems_:int;
-      
       protected var labelText_:BaseSimpleText;
       
       protected var xOffset_:int = 0;
@@ -26,24 +24,23 @@ package com.company.assembleegameclient.ui.dropdown
       
       protected var all_:Sprite;
       
-      public function DropDown(param1:Vector.<String>, param2:int, param3:int, param4:String = null, param5:Number = 0, param6:int = 17)
+      public function DropDown(param1:Vector.<String>, param2:int, param3:int, param4:String = null)
       {
          this.all_ = new Sprite();
          super();
          this.strings_ = param1;
          this.w_ = param2;
          this.h_ = param3;
-         this.maxItems_ = param6;
          if(param4 != null)
          {
-            this.labelText_ = new BaseSimpleText(14,16777215,false,0,0);
+            this.labelText_ = new BaseSimpleText(16,16777215,false,0,0);
             this.labelText_.setBold(true);
             this.labelText_.text = param4 + ":";
             this.labelText_.updateMetrics();
             addChild(this.labelText_);
             this.xOffset_ = this.labelText_.width + 5;
          }
-         this.setIndex(param5);
+         this.setIndex(0);
       }
       
       public function getValue() : String
@@ -51,12 +48,7 @@ package com.company.assembleegameclient.ui.dropdown
          return this.selected_.getValue();
       }
       
-      public function setListItems(param1:Vector.<String>) : void
-      {
-         this.strings_ = param1;
-      }
-      
-      public function setValue(param1:String) : Boolean
+      public function setValue(param1:String) : void
       {
          var _loc2_:int = 0;
          while(_loc2_ < this.strings_.length)
@@ -64,19 +56,14 @@ package com.company.assembleegameclient.ui.dropdown
             if(param1 == this.strings_[_loc2_])
             {
                this.setIndex(_loc2_);
-               return true;
+               return;
             }
             _loc2_++;
          }
-         return false;
       }
       
       public function setIndex(param1:int) : void
       {
-         if(param1 >= this.strings_.length)
-         {
-            param1 = 0;
-         }
          this.setSelected(this.strings_[param1]);
       }
       
@@ -96,7 +83,8 @@ package com.company.assembleegameclient.ui.dropdown
       
       private function setSelected(param1:String) : void
       {
-         var _loc2_:String = this.selected_ != null?this.selected_.getValue():null;
+         var _loc2_:String = null;
+         _loc2_ = this.selected_ != null?this.selected_.getValue():null;
          this.selected_ = new com.company.assembleegameclient.ui.dropdown.DropDownItem(param1,this.w_,this.h_);
          this.selected_.x = this.xOffset_;
          this.selected_.y = 0;
@@ -121,42 +109,26 @@ package com.company.assembleegameclient.ui.dropdown
       
       private function showAll() : void
       {
+         var _loc1_:int = 0;
+         var _loc2_:Point = null;
+         var _loc4_:com.company.assembleegameclient.ui.dropdown.DropDownItem = null;
+         _loc1_ = 0;
+         _loc2_ = parent.localToGlobal(new Point(x,y));
+         this.all_.x = _loc2_.x;
+         this.all_.y = _loc2_.y;
          var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         var _loc5_:int = 0;
-         var _loc1_:Point = parent.localToGlobal(new Point(x,y));
-         this.all_.x = _loc1_.x;
-         this.all_.y = _loc1_.y;
-         var _loc2_:int = Math.ceil(this.strings_.length / this.maxItems_);
-         var _loc6_:int = 0;
-         while(_loc6_ < _loc2_)
+         while(_loc3_ < this.strings_.length)
          {
-            _loc3_ = _loc6_ * this.maxItems_;
-            _loc4_ = Math.min(_loc3_ + this.maxItems_,this.strings_.length);
-            _loc5_ = this.xOffset_ - this.w_ * _loc6_;
-            this.listItems(_loc3_,_loc4_,_loc5_);
-            _loc6_++;
+            _loc4_ = new com.company.assembleegameclient.ui.dropdown.DropDownItem(this.strings_[_loc3_],this.w_,this.h_);
+            _loc4_.addEventListener(MouseEvent.CLICK,this.onSelect);
+            _loc4_.x = this.xOffset_;
+            _loc4_.y = _loc1_;
+            this.all_.addChild(_loc4_);
+            _loc1_ = _loc1_ + _loc4_.h_;
+            _loc3_++;
          }
          this.all_.addEventListener(MouseEvent.ROLL_OUT,this.onOut);
          stage.addChild(this.all_);
-      }
-      
-      private function listItems(param1:int, param2:int, param3:int) : void
-      {
-         var _loc4_:int = 0;
-         var _loc5_:com.company.assembleegameclient.ui.dropdown.DropDownItem = null;
-         _loc4_ = 0;
-         var _loc6_:int = param1;
-         while(_loc6_ < param2)
-         {
-            _loc5_ = new com.company.assembleegameclient.ui.dropdown.DropDownItem(this.strings_[_loc6_],this.w_,this.h_);
-            _loc5_.addEventListener(MouseEvent.CLICK,this.onSelect);
-            _loc5_.x = param3;
-            _loc5_.y = _loc4_;
-            this.all_.addChild(_loc5_);
-            _loc4_ = _loc4_ + _loc5_.h_;
-            _loc6_++;
-         }
       }
       
       private function hideAll() : void

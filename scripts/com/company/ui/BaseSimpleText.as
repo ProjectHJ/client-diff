@@ -47,10 +47,8 @@ package com.company.ui
             selectable = true;
             mouseEnabled = true;
             type = TextFieldType.INPUT;
-            embedFonts = true;
             border = true;
             borderColor = param2;
-            setTextFormat(_loc7_);
             addEventListener(Event.CHANGE,this.onChange);
          }
          else
@@ -98,12 +96,6 @@ package com.company.ui
       public function setText(param1:String) : void
       {
          this.text = param1;
-      }
-      
-      public function setMultiLine(param1:Boolean) : void
-      {
-         multiline = param1;
-         wordWrap = param1;
       }
       
       private function applyFormat(param1:TextFormat) : void
