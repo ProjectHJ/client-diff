@@ -133,6 +133,10 @@ package kabam.rotmg.account.core.services
                {
                   WebAccount(this.account).userDisplayName = _loc2_.Account[0].Name;
                   WebAccount(this.account).paymentProvider = _loc2_.Account[0].PaymentProvider;
+                  if(_loc2_.Account[0].hasOwnProperty("PaymentData"))
+                  {
+                     WebAccount(this.account).paymentData = _loc2_.Account[0].PaymentData;
+                  }
                }
                if(_loc2_.Account[0].hasOwnProperty("SecurityQuestions"))
                {

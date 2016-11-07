@@ -15,6 +15,7 @@ package kabam.rotmg.account.web.view
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.build.api.BuildData;
+   import kabam.rotmg.build.api.BuildEnvironment;
    
    public class WebAccountInfoView extends Sprite implements AccountInfoView
    {
@@ -153,7 +154,14 @@ package kabam.rotmg.account.web.view
          this.accountText.setStringBuilder(new LineBuilder().setParams(TextKey.LOGGED_IN_TEXT,{"userName":this.userName}));
          var _loc1_:BuildData = StaticInjectorContext.getInjector().getInstance(BuildData);
          this.loginButton.setTextKey(TextKey.LOG_OUT);
-         this.addAndAlignHorizontally(this.accountText,this.loginButton);
+         if(_loc1_.getEnvironment() == BuildEnvironment.TESTING || _loc1_.getEnvironment() == BuildEnvironment.LOCALHOST)
+         {
+            this.addAndAlignHorizontally(this.accountText,this.makeDividerText(),this.resetButton,this.makeDividerText(),this.loginButton);
+         }
+         else
+         {
+            this.addAndAlignHorizontally(this.accountText,this.loginButton);
+         }
       }
       
       private function showUIForGuestAccount() : void

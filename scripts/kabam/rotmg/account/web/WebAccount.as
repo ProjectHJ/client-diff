@@ -34,6 +34,8 @@ package kabam.rotmg.account.web
       
       private var _paymentProvider:String = "";
       
+      private var _paymentData:String = "";
+      
       public var signedRequest:String;
       
       public var kabamId:String;
@@ -210,6 +212,16 @@ package kabam.rotmg.account.web
       public function get paymentProvider() : String
       {
          return this._paymentProvider;
+      }
+      
+      public function set paymentData(param1:String) : *
+      {
+         this._paymentData = param1;
+      }
+      
+      public function get paymentData() : String
+      {
+         return this._paymentData;
       }
    }
 }

@@ -75,15 +75,16 @@ package kabam.rotmg.legends.model
          var _loc5_:CharacterSkin = _loc4_.skins.getSkin(_loc3_);
          var _loc6_:int = !!param1.hasOwnProperty("Tex1")?int(param1.Tex1):0;
          var _loc7_:int = !!param1.hasOwnProperty("Tex2")?int(param1.Tex2):0;
-         var _loc8_:kabam.rotmg.legends.model.Legend = new kabam.rotmg.legends.model.Legend();
-         _loc8_.accountId = param1.@accountId;
-         _loc8_.charId = param1.@charId;
-         _loc8_.name = param1.Name;
-         _loc8_.totalFame = param1.TotalFame;
-         _loc8_.character = this.factory.makeIcon(_loc5_.template,100,_loc6_,_loc7_);
-         _loc8_.equipmentSlots = _loc4_.slotTypes;
-         _loc8_.equipment = ConversionUtil.toIntVector(param1.Equipment);
-         return _loc8_;
+         var _loc8_:int = !!_loc5_.is16x16?50:100;
+         var _loc9_:kabam.rotmg.legends.model.Legend = new kabam.rotmg.legends.model.Legend();
+         _loc9_.accountId = param1.@accountId;
+         _loc9_.charId = param1.@charId;
+         _loc9_.name = param1.Name;
+         _loc9_.totalFame = param1.TotalFame;
+         _loc9_.character = this.factory.makeIcon(_loc5_.template,_loc8_,_loc6_,_loc7_);
+         _loc9_.equipmentSlots = _loc4_.slotTypes;
+         _loc9_.equipment = ConversionUtil.toIntVector(param1.Equipment);
+         return _loc9_;
       }
    }
 }

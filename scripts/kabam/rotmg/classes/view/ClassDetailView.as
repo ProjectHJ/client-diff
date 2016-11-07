@@ -10,7 +10,6 @@ package kabam.rotmg.classes.view
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.text.model.TextKey;
    import flash.filters.DropShadowFilter;
-   import flash.text.TextFieldAutoSize;
    import kabam.rotmg.assets.services.IconFactory;
    
    public class ClassDetailView extends Sprite
@@ -62,7 +61,7 @@ package kabam.rotmg.classes.view
          this.animContainer = new Sprite();
          this.animContainer.x = (WIDTH - 104) * 0.5;
          addChild(this.animContainer);
-         this.classNameText = new TextFieldDisplayConcrete().setSize(20).setColor(16777215).setBold(true).setAutoSize(TextFieldAutoSize.CENTER).setTextWidth(TEXT_WIDTH);
+         this.classNameText = new TextFieldDisplayConcrete().setSize(20).setColor(16777215).setBold(true).setTextWidth(TEXT_WIDTH);
          this.classNameText.filters = [_loc1_];
          this.waiter.push(this.classNameText.textChanged);
          addChild(this.classNameText);

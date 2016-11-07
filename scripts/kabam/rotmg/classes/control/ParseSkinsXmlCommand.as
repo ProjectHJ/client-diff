@@ -77,6 +77,10 @@ package kabam.rotmg.classes.control
             _loc4_.unlockSpecial = param1.UnlockSpecial;
          }
          _loc4_.template = new CharacterTemplate(_loc2_,_loc3_);
+         if(_loc2_.indexOf("16") >= 0)
+         {
+            _loc4_.is16x16 = true;
+         }
          var _loc5_:CharacterClass = this.model.getCharacterClass(param1.PlayerClassType);
          _loc5_.skins.addSkin(_loc4_);
       }

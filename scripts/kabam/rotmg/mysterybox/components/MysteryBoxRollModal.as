@@ -125,6 +125,8 @@ package kabam.rotmg.mysterybox.components
       
       private var goldBackgroundMask:DisplayObject;
       
+      private var rewardsList:Array;
+      
       public function MysteryBoxRollModal(param1:MysteryBoxInfo, param2:int)
       {
          this.spinners = new Sprite();
@@ -309,13 +311,13 @@ package kabam.rotmg.mysterybox.components
          _loc1_.boxId = this.mbi.id;
          if(this.mbi.isOnSale())
          {
-            _loc1_.quantity = this.mbi._quantity;
+            _loc1_.quantity = this.quantity_;
             _loc1_.price = this.mbi._saleAmount;
             _loc1_.currency = this.mbi._saleCurrency;
          }
          else
          {
-            _loc1_.quantity = this.mbi._quantity;
+            _loc1_.quantity = this.quantity_;
             _loc1_.price = this.mbi._priceAmount;
             _loc1_.currency = this.mbi._priceCurrency;
          }
@@ -326,6 +328,7 @@ package kabam.rotmg.mysterybox.components
          addChild(this.infoText);
          this.playRollAnimation();
          this.lastReward = "";
+         this.rewardsList = [];
          this.requestComplete = false;
          this.timerComplete = false;
          this.totalRollTimer.addEventListener(TimerEvent.TIMER,this.onTotalRollTimeComplete);
@@ -354,7 +357,7 @@ package kabam.rotmg.mysterybox.components
          this.timerComplete = true;
          if(this.requestComplete)
          {
-            this.showReward(this.lastReward);
+            this.showReward();
          }
          this.totalRollTimer.removeEventListener(TimerEvent.TIMER,this.onTotalRollTimeComplete);
       }
@@ -366,7 +369,20 @@ package kabam.rotmg.mysterybox.components
          this.shelveReward();
          this.clearReward();
          this.rollCount++;
-         this.sendRollRequest();
+         this.prepareNextRoll();
+      }
+      
+      private function prepareNextRoll() : *
+      {
+         this.titleText = this.getText(this.mbi._title,TEXT_MARGIN,6,true).setSize(18);
+         this.titleText.setColor(16768512);
+         addChild(this.titleText);
+         addChild(this.infoText);
+         this.playRollAnimation();
+         this.timerComplete = false;
+         this.lastReward = this.rewardsList[0];
+         this.totalRollTimer.addEventListener(TimerEvent.TIMER,this.onTotalRollTimeComplete);
+         this.totalRollTimer.start();
       }
       
       private function swapItemImage(param1:TimerEvent) : void
@@ -421,78 +437,82 @@ package kabam.rotmg.mysterybox.components
       private function onComplete(param1:Boolean, param2:*) : void
       {
          var _loc3_:XML = null;
-         var _loc4_:Player = null;
-         var _loc5_:PlayerModel = null;
-         var _loc6_:OpenDialogSignal = null;
-         var _loc7_:String = null;
-         var _loc8_:Dialog = null;
-         var _loc9_:Injector = null;
-         var _loc10_:GetMysteryBoxesTask = null;
-         var _loc11_:Array = null;
+         var _loc4_:XML = null;
+         var _loc5_:Player = null;
+         var _loc6_:PlayerModel = null;
+         var _loc7_:OpenDialogSignal = null;
+         var _loc8_:String = null;
+         var _loc9_:Dialog = null;
+         var _loc10_:Injector = null;
+         var _loc11_:GetMysteryBoxesTask = null;
+         var _loc12_:Array = null;
          this.requestComplete = true;
          if(param1)
          {
             _loc3_ = new XML(param2);
-            this.lastReward = _loc3_.Awards;
+            for each(_loc4_ in _loc3_.elements("Awards"))
+            {
+               this.rewardsList.push(_loc4_.toString());
+            }
+            this.lastReward = this.rewardsList[0];
             if(this.timerComplete)
             {
-               this.showReward(_loc3_.Awards);
+               this.showReward();
             }
-            _loc4_ = StaticInjectorContext.getInjector().getInstance(GameModel).player;
-            if(_loc4_ != null)
+            _loc5_ = StaticInjectorContext.getInjector().getInstance(GameModel).player;
+            if(_loc5_ != null)
             {
                if(_loc3_.hasOwnProperty("Gold"))
                {
-                  _loc4_.setCredits(int(_loc3_.Gold));
+                  _loc5_.setCredits(int(_loc3_.Gold));
                }
                else if(_loc3_.hasOwnProperty("Fame"))
                {
-                  _loc4_.fame_ = _loc3_.Fame;
+                  _loc5_.fame_ = _loc3_.Fame;
                }
             }
             else
             {
-               _loc5_ = StaticInjectorContext.getInjector().getInstance(PlayerModel);
-               if(_loc5_ != null)
+               _loc6_ = StaticInjectorContext.getInjector().getInstance(PlayerModel);
+               if(_loc6_ != null)
                {
                   if(_loc3_.hasOwnProperty("Gold"))
                   {
-                     _loc5_.setCredits(int(_loc3_.Gold));
+                     _loc6_.setCredits(int(_loc3_.Gold));
                   }
                   else if(_loc3_.hasOwnProperty("Fame"))
                   {
-                     _loc5_.setFame(int(_loc3_.Fame));
+                     _loc6_.setFame(int(_loc3_.Fame));
                   }
                }
             }
          }
          else
          {
-            _loc6_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
-            _loc7_ = "MysteryBoxRollModal.pleaseTryAgainString";
+            _loc7_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+            _loc8_ = "MysteryBoxRollModal.pleaseTryAgainString";
             if(LineBuilder.getLocalizedStringFromKey(param2) != "")
             {
-               _loc7_ = param2;
+               _loc8_ = param2;
             }
-            if(_loc7_ == "MysteryBoxError.soldOut")
+            if(_loc8_ == "MysteryBoxError.soldOut")
             {
-               this.mbi.soldOut = true;
             }
             if(param2.indexOf("blockedForUser") >= 0)
             {
-               _loc11_ = param2.split("|");
-               if(_loc11_.length == 2)
+               _loc12_ = param2.split("|");
+               if(_loc12_.length == 2)
                {
-                  _loc7_ = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.blockedForUser",{"date":_loc11_[1]});
+                  _loc8_ = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.blockedForUser",{"date":_loc12_[1]});
                }
             }
-            _loc8_ = new Dialog("MysteryBoxRollModal.purchaseFailedString",_loc7_,"MysteryBoxRollModal.okString",null,null);
-            _loc8_.addEventListener(Dialog.LEFT_BUTTON,this.onErrorOk);
-            _loc6_.dispatch(_loc8_);
-            _loc9_ = StaticInjectorContext.getInjector();
-            _loc10_ = _loc9_.getInstance(GetMysteryBoxesTask);
-            _loc10_.clearLastRanBlock();
-            _loc10_.start();
+            _loc9_ = new Dialog("MysteryBoxRollModal.purchaseFailedString",_loc8_,"MysteryBoxRollModal.okString",null,null);
+            _loc9_.addEventListener(Dialog.LEFT_BUTTON,this.onErrorOk);
+            _loc7_.dispatch(_loc9_);
+            _loc10_ = StaticInjectorContext.getInjector();
+            _loc11_ = _loc10_.getInstance(GetMysteryBoxesTask);
+            _loc11_.clearLastRanBlock();
+            _loc11_.start();
             this.close(true);
          }
       }
@@ -585,7 +605,7 @@ package kabam.rotmg.mysterybox.components
          open = false;
       }
       
-      private function showReward(param1:String) : void
+      private function showReward() : void
       {
          var _loc4_:String = null;
          var _loc5_:uint = 0;
@@ -599,7 +619,8 @@ package kabam.rotmg.mysterybox.components
             this.nextRollTimer.start();
          }
          this.closeButton.visible = true;
-         var _loc2_:Array = param1.split(",");
+         var _loc1_:String = this.rewardsList.shift();
+         var _loc2_:Array = _loc1_.split(",");
          removeChild(this.infoText);
          this.titleText.setStringBuilder(new LineBuilder().setParams(this.youWonString));
          this.titleText.setColor(16768512);

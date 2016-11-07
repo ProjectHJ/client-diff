@@ -68,7 +68,7 @@ package kabam.rotmg.arena.model
          this.clear();
          this.entry.name = this.gameModel.player.name_;
          var _loc1_:CharacterSkin = this.classesModel.getCharacterClass(this.gameModel.player.objectType_).skins.getSkin(this.gameModel.player.skinId);
-         this.entry.playerBitmap = this.factory.makeIcon(_loc1_.template,100,this.gameModel.player.getTex1(),this.gameModel.player.getTex2());
+         this.entry.playerBitmap = this.factory.makeIcon(_loc1_.template,!!_loc1_.is16x16?50:100,this.gameModel.player.getTex1(),this.gameModel.player.getTex2());
          this.entry.pet = this.petModel.getActivePet();
          this.entry.guildName = this.gameModel.player.guildName_;
          this.entry.guildRank = this.gameModel.player.guildRank_;

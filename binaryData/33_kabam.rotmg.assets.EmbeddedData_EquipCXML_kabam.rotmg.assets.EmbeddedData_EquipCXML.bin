@@ -15364,7 +15364,7 @@
          <Index>0x59b</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>{equip.Customize_your_pet_with_the_Giant_Vampire_Bat_Skin._The_app}</Description>
+      <Description>{equip.Transform_your_pet_into_Giant_Vampire_Bat_of_the_Spooky_fam}</Description>
       <Activate skinId="32763">PetSkin</Activate>
       <Consumable/>
       <Soulbound/>
@@ -15380,7 +15380,7 @@
          <Index>0x1f</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>{equip.Customize_your_pet_with_the_Pumpkin_Head_Skin._The_appearan}</Description>
+      <Description>{equip.Transform_your_pet_into_Pumpkin_Head_of_the_Spooky_family._}</Description>
       <Activate skinId="32651">PetSkin</Activate>
       <Consumable/>
       <Soulbound/>

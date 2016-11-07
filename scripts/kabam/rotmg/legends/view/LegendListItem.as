@@ -75,10 +75,6 @@ package kabam.rotmg.legends.view
          this.characterBitmap = new Bitmap(this.legend.character);
          this.characterBitmap.x = 104 + 12;
          this.characterBitmap.y = HEIGHT / 2 - this.characterBitmap.height / 2 - 2;
-         if(this.characterBitmap.height > 50)
-         {
-            this.characterBitmap.scaleX = this.characterBitmap.scaleY = 0.5;
-         }
          addChild(this.characterBitmap);
       }
       

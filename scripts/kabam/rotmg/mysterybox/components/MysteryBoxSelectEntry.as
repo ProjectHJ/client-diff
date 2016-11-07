@@ -15,8 +15,8 @@ package kabam.rotmg.mysterybox.components
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormatAlign;
    import flash.filters.DropShadowFilter;
-   import flash.filters.ColorMatrixFilter;
    import flash.geom.Point;
+   import flash.filters.ColorMatrixFilter;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.util.components.UIAssetsHelper;
@@ -224,11 +224,6 @@ package kabam.rotmg.mysterybox.components
             this.sale.scaleX = _loc2_;
             this.sale.scaleY = _loc2_;
          }
-         if(this.mbi.soldOut && !this.soldOut)
-         {
-            this.soldOut = true;
-            this.markAsSold();
-         }
       }
       
       private function addSaleText() : void
@@ -297,6 +292,7 @@ package kabam.rotmg.mysterybox.components
       
       private function addInfoImageChild() : void
       {
+         var _loc2_:Point = null;
          var _loc3_:Array = null;
          var _loc4_:ColorMatrixFilter = null;
          if(this.infoImage == null)
@@ -306,7 +302,7 @@ package kabam.rotmg.mysterybox.components
          var _loc1_:int = 8;
          this.infoImage.width = 291 - _loc1_;
          this.infoImage.height = 598 - _loc1_ * 2 - 2;
-         var _loc2_:Point = this.globalToLocal(new Point(MysteryBoxSelectModal.getRightBorderX() + 1 + 14,2 + _loc1_));
+         _loc2_ = this.globalToLocal(new Point(MysteryBoxSelectModal.getRightBorderX() + 1 + 14,2 + _loc1_));
          this.infoImage.x = _loc2_.x;
          this.infoImage.y = _loc2_.y;
          if(this.hoverState && !this.descriptionShowing)

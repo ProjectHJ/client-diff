@@ -91,11 +91,11 @@ package kabam.rotmg.account.core.commands
          {
             try
             {
-               this.openPaymentwallMoneyWindowFromBrowser();
+               this.openPaymentwallMoneyWindowFromBrowser(WebAccount(this.account).paymentData);
             }
             catch(e:Error)
             {
-               openPaymentwallMoneyWindowFromStandalonePlayer();
+               openPaymentwallMoneyWindowFromStandalonePlayer(WebAccount(account).paymentData);
             }
          }
          else
@@ -135,16 +135,16 @@ package kabam.rotmg.account.core.commands
          this.logger.debug("Opening window from standalone player");
       }
       
-      private function openPaymentwallMoneyWindowFromStandalonePlayer() : void
+      private function openPaymentwallMoneyWindowFromStandalonePlayer(param1:String) : void
       {
-         var _loc1_:String = this.applicationSetup.getAppEngineUrl(true);
-         var _loc2_:URLVariables = new URLVariables();
-         var _loc3_:URLRequest = new URLRequest();
-         _loc2_.guid = this.account.getCredentials()["guid"];
-         _loc3_.url = _loc1_ + "/credits/pwpurchase";
-         _loc3_.method = URLRequestMethod.POST;
-         _loc3_.data = _loc2_;
-         navigateToURL(_loc3_,"_blank");
+         var _loc2_:String = this.applicationSetup.getAppEngineUrl(true);
+         var _loc3_:URLVariables = new URLVariables();
+         var _loc4_:URLRequest = new URLRequest();
+         _loc3_.iframeUrl = param1;
+         _loc4_.url = _loc2_ + "/credits/pwpurchase";
+         _loc4_.method = URLRequestMethod.POST;
+         _loc4_.data = _loc3_;
+         navigateToURL(_loc4_,"_blank");
          this.logger.debug("Opening window from standalone player");
       }
       
@@ -173,10 +173,10 @@ package kabam.rotmg.account.core.commands
          ExternalInterface.call("rotmg.KabamPayment.displayPaymentWall");
       }
       
-      private function openPaymentwallMoneyWindowFromBrowser() : void
+      private function openPaymentwallMoneyWindowFromBrowser(param1:String) : void
       {
          this.logger.debug("Attempting External Payments via Paymentwall");
-         ExternalInterface.call("rotmg.Paymentwall.showPaymentwall",this.account.getCredentials()["guid"]);
+         ExternalInterface.call("rotmg.Paymentwall.showPaymentwall",param1);
       }
       
       private function isGoldPurchaseEnabled() : Boolean
