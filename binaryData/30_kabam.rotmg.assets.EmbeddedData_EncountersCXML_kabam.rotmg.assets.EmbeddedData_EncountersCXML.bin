@@ -1323,6 +1323,7 @@
       <Hero/>
       <Quest/>
       <God/>
+      <Encounter/>
       <StasisImmune/>
       <Level>20</Level>
       <Projectile>
@@ -1394,7 +1395,6 @@
       <Hero/>
       <Quest/>
       <God/>
-      <Encounter/>
       <StasisImmune/>
       <Level>20</Level>
       <Projectile>
@@ -1980,7 +1980,6 @@
       <God/>
       <Hero/>
       <Quest/>
-      <Encounter/>
       <Level>20</Level>
       <PerRealmMax>10</PerRealmMax>
       <DisplayId>{encounters.Zombie_Horde}</DisplayId>

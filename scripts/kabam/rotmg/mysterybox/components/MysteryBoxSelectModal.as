@@ -40,6 +40,8 @@ package kabam.rotmg.mysterybox.components
       
       private var titleString:String = "MysteryBoxSelectModal.titleString";
       
+      private var selectEntries:Vector.<kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry>;
+      
       public function MysteryBoxSelectModal()
       {
          this.box_ = new Sprite();
@@ -47,6 +49,7 @@ package kabam.rotmg.mysterybox.components
          modalWidth = 385;
          modalHeight = 60;
          aMysteryBoxHeight = 77;
+         this.selectEntries = new Vector.<kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry>();
          var _loc1_:Injector = StaticInjectorContext.getInjector();
          var _loc2_:MysteryBoxModel = _loc1_.getInstance(MysteryBoxModel);
          this.mysteryData = _loc2_.getBoxesOrderByWeight();
@@ -94,8 +97,9 @@ package kabam.rotmg.mysterybox.components
       {
          var _loc1_:MysteryBoxInfo = null;
          var _loc2_:DisplayObject = null;
+         var _loc4_:Number = NaN;
          var _loc5_:int = 0;
-         var _loc6_:MysteryBoxSelectEntry = null;
+         var _loc6_:kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry = null;
          for each(_loc1_ in this.mysteryData)
          {
             modalHeight = modalHeight + aMysteryBoxHeight;
@@ -111,7 +115,7 @@ package kabam.rotmg.mysterybox.components
          this.box_.addChild(this.closeButton);
          this.box_.addChild(this.getText(this.titleString,TEXT_MARGIN,6).setSize(18));
          var _loc3_:Number = 20;
-         var _loc4_:Number = 50;
+         _loc4_ = 50;
          _loc5_ = 0;
          for each(_loc1_ in this.mysteryData)
          {
@@ -119,12 +123,22 @@ package kabam.rotmg.mysterybox.components
             {
                break;
             }
-            _loc6_ = new MysteryBoxSelectEntry(_loc1_);
+            _loc6_ = new kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry(_loc1_);
             _loc6_.x = x + _loc3_;
             _loc6_.y = y + _loc4_;
             _loc4_ = _loc4_ + aMysteryBoxHeight;
             this.box_.addChild(_loc6_);
+            this.selectEntries.push(_loc6_);
             _loc5_++;
+         }
+      }
+      
+      public function updateContent() : *
+      {
+         var _loc1_:kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry = null;
+         for each(_loc1_ in this.selectEntries)
+         {
+            _loc1_.updateContent();
          }
       }
       

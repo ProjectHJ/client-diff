@@ -39,8 +39,6 @@ package kabam.rotmg.mysterybox.model
       
       public var _saleEnd:Date;
       
-      private var _soldOut:Boolean;
-      
       public var _iconImageUrl:String;
       
       private var _iconImage:DisplayObject;
@@ -60,6 +58,10 @@ package kabam.rotmg.mysterybox.model
       public var _rollsWithContents:Vector.<Vector.<int>>;
       
       public var _rollsWithContentsUnique:Vector.<int>;
+      
+      private var _unitsLeft:int = -1;
+      
+      private var _totalUnits:int = -1;
       
       public function MysteryBoxInfo()
       {
@@ -178,16 +180,6 @@ package kabam.rotmg.mysterybox.model
       public function set saleEnd(param1:Date) : void
       {
          this._saleEnd = param1;
-      }
-      
-      public function set soldOut(param1:Boolean) : void
-      {
-         this._soldOut = param1;
-      }
-      
-      public function get soldOut() : Boolean
-      {
-         return this._soldOut;
       }
       
       public function get iconImageUrl() : *
@@ -352,6 +344,19 @@ package kabam.rotmg.mysterybox.model
          return _loc4_;
       }
       
+      public function get currencyName() : String
+      {
+         switch(this._priceCurrency)
+         {
+            case "0":
+               return LineBuilder.getLocalizedStringFromKey("Currency.gold").toLowerCase();
+            case "1":
+               return LineBuilder.getLocalizedStringFromKey("Currency.fame").toLowerCase();
+            default:
+               return "";
+         }
+      }
+      
       public function get infoImage() : DisplayObject
       {
          return this._infoImage;
@@ -380,6 +385,26 @@ package kabam.rotmg.mysterybox.model
       public function set infoImageLoader(param1:LoaderProxy) : void
       {
          this._infoImageLoader = param1;
+      }
+      
+      public function get unitsLeft() : int
+      {
+         return this._unitsLeft;
+      }
+      
+      public function set unitsLeft(param1:int) : void
+      {
+         this._unitsLeft = param1;
+      }
+      
+      public function get totalUnits() : int
+      {
+         return this._totalUnits;
+      }
+      
+      public function set totalUnits(param1:int) : void
+      {
+         this._totalUnits = param1;
       }
    }
 }

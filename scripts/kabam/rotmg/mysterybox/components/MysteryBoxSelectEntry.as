@@ -6,18 +6,19 @@ package kabam.rotmg.mysterybox.components
    import flash.display.DisplayObject;
    import kabam.rotmg.pets.view.components.PopupWindowBackground;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import com.company.assembleegameclient.util.Currency;
    import flash.events.MouseEvent;
    import flash.events.Event;
    import flash.utils.getTimer;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormatAlign;
    import flash.filters.DropShadowFilter;
-   import flash.geom.Point;
    import flash.filters.ColorMatrixFilter;
+   import flash.geom.Point;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import com.company.assembleegameclient.ui.dialogs.Dialog;
    import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.util.components.UIAssetsHelper;
    
@@ -29,13 +30,11 @@ package kabam.rotmg.mysterybox.components
       
       public var mbi:MysteryBoxInfo;
       
-      private const buyButton:LegacyBuyButton = new LegacyBuyButton("",16,0,Currency.INVALID);
+      private var buyButton:LegacyBuyButton;
       
       private var leftNavSprite:Sprite;
       
       private var rightNavSprite:Sprite;
-      
-      private var soldOut:Boolean;
       
       private var iconImage:DisplayObject;
       
@@ -46,6 +45,8 @@ package kabam.rotmg.mysterybox.components
       private var newText:TextFieldDisplayConcrete;
       
       private var sale:TextFieldDisplayConcrete;
+      
+      private var left:TextFieldDisplayConcrete;
       
       private var hoverState:Boolean = false;
       
@@ -59,32 +60,37 @@ package kabam.rotmg.mysterybox.components
       
       private const saleEndString:String = "MysteryBoxSelectEntry.saleEndString";
       
+      private var soldOut:Boolean;
+      
       private var quantity_:int;
+      
+      private var title:TextFieldDisplayConcrete;
       
       public function MysteryBoxSelectEntry(param1:MysteryBoxInfo)
       {
+         var _loc2_:DisplayObject = null;
          super();
          this.redbar = new redBarEmbed();
          this.redbar.y = -5;
          this.redbar.width = MysteryBoxSelectModal.modalWidth - 5;
          this.redbar.height = MysteryBoxSelectModal.aMysteryBoxHeight - 8;
          addChild(this.redbar);
-         var _loc2_:DisplayObject = new redBarEmbed();
+         _loc2_ = new redBarEmbed();
          _loc2_.y = 0;
          _loc2_.width = MysteryBoxSelectModal.modalWidth - 5;
          _loc2_.height = MysteryBoxSelectModal.aMysteryBoxHeight - 8 + 5;
          _loc2_.alpha = 0;
          addChild(_loc2_);
          this.mbi = param1;
-         this.soldOut = this.mbi.soldOut;
          this.quantity_ = 1;
-         var _loc3_:TextFieldDisplayConcrete = this.getText(this.mbi.title,74,18,20,true);
-         addChild(_loc3_);
+         this.title = this.getText(this.mbi.title,74,20,18,true);
+         this.title.textChanged.addOnce(this.updateTextPosition);
+         addChild(this.title);
          this.addNewText();
-         this.addSaleText();
-         if(this.mbi.soldOut)
+         this.buyButton = new LegacyBuyButton("",16,0,Currency.INVALID,false,this.mbi.isOnSale());
+         if(this.mbi.unitsLeft == 0)
          {
-            this.buyButton.setText("Sold out");
+            this.buyButton.setText(LineBuilder.getLocalizedStringFromKey("MysteryBoxError.soldOutButton"));
          }
          else if(this.mbi.isOnSale())
          {
@@ -97,7 +103,8 @@ package kabam.rotmg.mysterybox.components
          this.buyButton.x = MysteryBoxSelectModal.modalWidth - 120;
          this.buyButton.y = 16;
          this.buyButton._width = 70;
-         if(!this.mbi.soldOut)
+         this.addSaleText();
+         if(this.mbi.unitsLeft > 0 || this.mbi.unitsLeft == -1)
          {
             this.buyButton.addEventListener(MouseEvent.CLICK,this.onBoxBuy);
          }
@@ -121,7 +128,7 @@ package kabam.rotmg.mysterybox.components
             this.addInfoImageChild();
          }
          this.mbi.quantity = this.quantity_.toString();
-         if(!this.mbi.soldOut)
+         if(this.mbi.unitsLeft > 0 || this.mbi.unitsLeft == -1)
          {
             this.leftNavSprite = UIAssetsHelper.createLeftNevigatorIcon(UIAssetsHelper.LEFT_NEVIGATOR,3);
             this.leftNavSprite.x = this.buyButton.x + this.buyButton.width + 45;
@@ -134,15 +141,57 @@ package kabam.rotmg.mysterybox.components
             this.rightNavSprite.addEventListener(MouseEvent.CLICK,this.onClick);
             addChild(this.rightNavSprite);
          }
+         this.addUnitsLeftText();
          addEventListener(MouseEvent.ROLL_OVER,this.onHover);
          addEventListener(MouseEvent.ROLL_OUT,this.onRemoveHover);
          addEventListener(Event.ENTER_FRAME,this.onEnterFrame);
       }
       
+      private function updateTextPosition() : *
+      {
+         this.title.y = Math.round((this.redbar.height - (this.title.getTextHeight() + (this.title.textField.numLines == 1?8:10))) / 2);
+         if((this.mbi.isNew() || this.mbi.isOnSale()) && this.title.textField.numLines == 2)
+         {
+            this.title.y = this.title.y + 6;
+         }
+      }
+      
+      public function updateContent() : *
+      {
+         if(this.left)
+         {
+            this.left.setStringBuilder(new LineBuilder().setParams(this.mbi.unitsLeft + " " + LineBuilder.getLocalizedStringFromKey("MysteryBoxSelectEntry.left")));
+         }
+      }
+      
+      private function addUnitsLeftText() : *
+      {
+         var _loc1_:uint = 0;
+         var _loc2_:int = 0;
+         if(this.mbi.unitsLeft >= 0)
+         {
+            _loc2_ = this.mbi.unitsLeft / this.mbi.totalUnits;
+            if(_loc2_ <= 0.1)
+            {
+               _loc1_ = 16711680;
+            }
+            else if(_loc2_ <= 0.5)
+            {
+               _loc1_ = 16754944;
+            }
+            else
+            {
+               _loc1_ = 65280;
+            }
+            this.left = this.getText(this.mbi.unitsLeft + " left",20,46,11).setColor(_loc1_);
+            addChild(this.left);
+         }
+      }
+      
       private function markAsSold() : *
       {
          this.buyButton.setPrice(0,Currency.INVALID);
-         this.buyButton.setText("Sold out");
+         this.buyButton.setText(LineBuilder.getLocalizedStringFromKey("MysteryBoxError.soldOutButton"));
          if(this.leftNavSprite && this.leftNavSprite.parent == this)
          {
             removeChild(this.leftNavSprite);
@@ -204,7 +253,7 @@ package kabam.rotmg.mysterybox.components
       
       private function addNewText() : void
       {
-         if(this.mbi.isNew())
+         if(this.mbi.isNew() && !this.mbi.isOnSale())
          {
             this.newText = this.getText(this.newString,74,0).setColor(16768512);
             addChild(this.newText);
@@ -214,15 +263,20 @@ package kabam.rotmg.mysterybox.components
       private function onEnterFrame(param1:Event) : void
       {
          var _loc2_:Number = 1.05 + 0.05 * Math.sin(getTimer() / 200);
+         if(this.sale)
+         {
+            this.sale.scaleX = _loc2_;
+            this.sale.scaleY = _loc2_;
+         }
          if(this.newText)
          {
             this.newText.scaleX = _loc2_;
             this.newText.scaleY = _loc2_;
          }
-         if(this.sale)
+         if(this.mbi.unitsLeft == 0 && !this.soldOut)
          {
-            this.sale.scaleX = _loc2_;
-            this.sale.scaleY = _loc2_;
+            this.soldOut = true;
+            this.markAsSold();
          }
       }
       
@@ -230,14 +284,17 @@ package kabam.rotmg.mysterybox.components
       {
          var _loc1_:LineBuilder = null;
          var _loc2_:TextFieldDisplayConcrete = null;
+         var _loc3_:TextFieldDisplayConcrete = null;
          if(this.mbi.isOnSale())
          {
-            this.sale = this.getText(this.onSaleString,int(320 * MysteryBoxSelectModal.modalWidth / 415),0).setColor(65280);
+            this.sale = this.getText(this.onSaleString,74,0).setColor(65280);
             addChild(this.sale);
             _loc1_ = this.mbi.getSaleTimeLeftStringBuilder();
-            _loc2_ = this.getText("",int(250 * MysteryBoxSelectModal.modalWidth / 415) - 32,46).setColor(16711680);
+            _loc2_ = this.getText("",this.buyButton.x,this.buyButton.y + this.buyButton.height + 10,10).setColor(16711680);
             _loc2_.setStringBuilder(_loc1_);
             addChild(_loc2_);
+            _loc3_ = this.getText(LineBuilder.getLocalizedStringFromKey("MysteryBoxSelectEntry.was") + " " + this.mbi.priceAmount + " " + this.mbi.currencyName,this.buyButton.x,this.buyButton.y - 14,10).setColor(16711680);
+            addChild(_loc3_);
          }
       }
       
@@ -283,16 +340,22 @@ package kabam.rotmg.mysterybox.components
          {
             return;
          }
-         this.iconImage.width = 48;
-         this.iconImage.height = 48;
+         this.iconImage.width = 58;
+         this.iconImage.height = 58;
          this.iconImage.x = 14;
-         this.iconImage.y = 6;
+         if(this.mbi.unitsLeft != -1)
+         {
+            this.iconImage.y = -6;
+         }
+         else
+         {
+            this.iconImage.y = 1;
+         }
          addChild(this.iconImage);
       }
       
       private function addInfoImageChild() : void
       {
-         var _loc2_:Point = null;
          var _loc3_:Array = null;
          var _loc4_:ColorMatrixFilter = null;
          if(this.infoImage == null)
@@ -302,7 +365,7 @@ package kabam.rotmg.mysterybox.components
          var _loc1_:int = 8;
          this.infoImage.width = 291 - _loc1_;
          this.infoImage.height = 598 - _loc1_ * 2 - 2;
-         _loc2_ = this.globalToLocal(new Point(MysteryBoxSelectModal.getRightBorderX() + 1 + 14,2 + _loc1_));
+         var _loc2_:Point = this.globalToLocal(new Point(MysteryBoxSelectModal.getRightBorderX() + 1 + 14,2 + _loc1_));
          this.infoImage.x = _loc2_.x;
          this.infoImage.y = _loc2_.y;
          if(this.hoverState && !this.descriptionShowing)
@@ -333,15 +396,48 @@ package kabam.rotmg.mysterybox.components
       
       private function onBoxBuy(param1:MouseEvent) : void
       {
-         var _loc4_:OpenDialogSignal = null;
-         var _loc2_:MysteryBoxRollModal = new MysteryBoxRollModal(this.mbi,this.quantity_);
-         var _loc3_:Boolean = _loc2_.moneyCheckPass();
-         if(_loc3_)
+         var _loc2_:OpenDialogSignal = null;
+         var _loc3_:String = null;
+         var _loc4_:Dialog = null;
+         var _loc5_:MysteryBoxRollModal = null;
+         var _loc6_:Boolean = false;
+         if(this.mbi.unitsLeft != -1 && this.quantity_ > this.mbi.unitsLeft)
          {
-            _loc2_.parentSelectModal = MysteryBoxSelectModal(parent.parent);
-            _loc4_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
-            _loc4_.dispatch(_loc2_);
+            _loc2_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+            _loc3_ = "";
+            if(this.mbi.unitsLeft == 0)
+            {
+               _loc3_ = "MysteryBoxError.soldOutAll";
+            }
+            else
+            {
+               _loc3_ = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.soldOutLeft",{
+                  "left":this.mbi.unitsLeft,
+                  "box":(this.mbi.unitsLeft == 1?LineBuilder.getLocalizedStringFromKey("MysteryBoxError.box"):LineBuilder.getLocalizedStringFromKey("MysteryBoxError.boxes"))
+               });
+            }
+            _loc4_ = new Dialog("MysteryBoxRollModal.purchaseFailedString",_loc3_,"MysteryBoxRollModal.okString",null,null);
+            _loc4_.addEventListener(Dialog.LEFT_BUTTON,this.onErrorOk);
+            _loc2_.dispatch(_loc4_);
          }
+         else
+         {
+            _loc5_ = new MysteryBoxRollModal(this.mbi,this.quantity_);
+            _loc6_ = _loc5_.moneyCheckPass();
+            if(_loc6_)
+            {
+               _loc5_.parentSelectModal = MysteryBoxSelectModal(parent.parent);
+               _loc2_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+               _loc2_.dispatch(_loc5_);
+            }
+         }
+      }
+      
+      private function onErrorOk(param1:Event) : void
+      {
+         var _loc2_:OpenDialogSignal = null;
+         _loc2_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+         _loc2_.dispatch(new MysteryBoxSelectModal());
       }
    }
 }

@@ -446,6 +446,10 @@ package kabam.rotmg.mysterybox.components
          var _loc10_:Injector = null;
          var _loc11_:GetMysteryBoxesTask = null;
          var _loc12_:Array = null;
+         var _loc13_:int = 0;
+         var _loc14_:Array = null;
+         var _loc15_:int = 0;
+         var _loc16_:Array = null;
          this.requestComplete = true;
          if(param1)
          {
@@ -458,6 +462,10 @@ package kabam.rotmg.mysterybox.components
             if(this.timerComplete)
             {
                this.showReward();
+            }
+            if(_loc3_.hasOwnProperty("Left") && this.mbi.unitsLeft != -1)
+            {
+               this.mbi.unitsLeft = int(_loc3_.Left);
             }
             _loc5_ = StaticInjectorContext.getInjector().getInstance(GameModel).player;
             if(_loc5_ != null)
@@ -489,21 +497,55 @@ package kabam.rotmg.mysterybox.components
          }
          else
          {
+            this.totalRollTimer.removeEventListener(TimerEvent.TIMER,this.onTotalRollTimeComplete);
+            this.totalRollTimer.stop();
             _loc7_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
             _loc8_ = "MysteryBoxRollModal.pleaseTryAgainString";
             if(LineBuilder.getLocalizedStringFromKey(param2) != "")
             {
                _loc8_ = param2;
             }
-            if(_loc8_ == "MysteryBoxError.soldOut")
-            {
-            }
-            if(param2.indexOf("blockedForUser") >= 0)
+            if(param2.indexOf("MysteryBoxError.soldOut") >= 0)
             {
                _loc12_ = param2.split("|");
                if(_loc12_.length == 2)
                {
-                  _loc8_ = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.blockedForUser",{"date":_loc12_[1]});
+                  _loc13_ = _loc12_[1];
+                  if(_loc13_ == 0)
+                  {
+                     _loc8_ = "MysteryBoxError.soldOutAll";
+                  }
+                  else
+                  {
+                     _loc8_ = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.soldOutLeft",{
+                        "left":this.mbi.unitsLeft,
+                        "box":(this.mbi.unitsLeft == 1?LineBuilder.getLocalizedStringFromKey("MysteryBoxError.box"):LineBuilder.getLocalizedStringFromKey("MysteryBoxError.boxes"))
+                     });
+                  }
+               }
+            }
+            if(param2.indexOf("MysteryBoxError.maxPurchase") >= 0)
+            {
+               _loc14_ = param2.split("|");
+               if(_loc14_.length == 2)
+               {
+                  _loc15_ = _loc14_[1];
+                  if(_loc15_ == 0)
+                  {
+                     _loc8_ = "MysteryBoxError.maxPurchase";
+                  }
+                  else
+                  {
+                     _loc8_ = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.maxPurchaseLeft",{"left":_loc15_});
+                  }
+               }
+            }
+            if(param2.indexOf("blockedForUser") >= 0)
+            {
+               _loc16_ = param2.split("|");
+               if(_loc16_.length == 2)
+               {
+                  _loc8_ = LineBuilder.getLocalizedStringFromKey("MysteryBoxError.blockedForUser",{"date":_loc16_[1]});
                }
             }
             _loc9_ = new Dialog("MysteryBoxRollModal.purchaseFailedString",_loc8_,"MysteryBoxRollModal.okString",null,null);
@@ -590,6 +632,7 @@ package kabam.rotmg.mysterybox.components
             _loc2_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
             if(this.parentSelectModal != null)
             {
+               this.parentSelectModal.updateContent();
                _loc2_.dispatch(this.parentSelectModal);
             }
             else

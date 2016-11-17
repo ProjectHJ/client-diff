@@ -477,7 +477,7 @@
          <File>lofiObj2</File>
          <Index>0x43</Index>
       </Texture>
-      <Rotation>0.2</Rotation>
+      <Rotation>50</Rotation>
    </Object>
    <Object type="0x003f" id="Eldritch Zap">
       <Class>Projectile</Class>

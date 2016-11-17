@@ -77,16 +77,16 @@ package kabam.rotmg.util.components
       
       private var textVertMargin:int = 4;
       
-      public function LegacyBuyButton(param1:String, param2:int, param3:int, param4:int, param5:Boolean = false)
+      public function LegacyBuyButton(param1:String, param2:int, param3:int, param4:int, param5:Boolean = false, param6:Boolean = false)
       {
          this.staticStringBuilder = new StaticStringBuilder("");
          this.lineBuilder = new LineBuilder();
          super();
          this.prefix = param1;
-         this.text = new TextFieldDisplayConcrete().setSize(param2).setColor(3552822).setBold(true);
+         this.text = new TextFieldDisplayConcrete().setSize(param2).setColor(!!param6?uint(15544368):uint(3552822)).setBold(true);
          this.waiter.push(this.text.textChanged);
-         var _loc6_:StringBuilder = param1 != ""?this.lineBuilder.setParams(param1,{"cost":param3.toString()}):this.staticStringBuilder.setString(param3.toString());
-         this.text.setStringBuilder(_loc6_);
+         var _loc7_:StringBuilder = param1 != ""?this.lineBuilder.setParams(param1,{"cost":param3.toString()}):this.staticStringBuilder.setString(param3.toString());
+         this.text.setStringBuilder(_loc7_);
          this.waiter.complete.add(this.updateUI);
          this.waiter.complete.addOnce(this.readyForPlacementDispatch);
          addChild(this.text);
