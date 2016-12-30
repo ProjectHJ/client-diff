@@ -177,13 +177,25 @@ package com.company.assembleegameclient.mapeditor
       
       public function modifyTile(param1:int, param2:int, param3:int, param4:int) : void
       {
-         var _loc5_:METile = this.getOrCreateTile(param1,param2);
-         if(_loc5_.types_[param3] == param4)
+         var x:int = param1;
+         var y:int = param2;
+         var layer:int = param3;
+         var type:int = param4;
+         var tile:METile = this.getOrCreateTile(x,y);
+         if(tile.types_[layer] == type)
          {
             return;
          }
-         _loc5_.types_[param3] = param4;
-         this.drawTile(param1,param2,_loc5_);
+         tile.types_[layer] = type;
+         try
+         {
+            this.drawTile(x,y,tile);
+            return;
+         }
+         catch(error:Error)
+         {
+            throw new Error("Invalid type: 0x" + type.toString(16) + " at location: " + x + " x, " + y + " y");
+         }
       }
       
       public function getObjectName(param1:int, param2:int) : String
