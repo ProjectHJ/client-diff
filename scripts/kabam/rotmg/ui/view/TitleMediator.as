@@ -87,7 +87,6 @@ package kabam.rotmg.ui.view
          {
             this.view.putNoticeTagToOption(ButtonFactory.getEditorButton(),"new");
          }
-         this.view.kabamTransferClicked.add(this.openKabamTransferView);
          if(this.securityQuestionsModel.showSecurityQuestionsOnStartup)
          {
             this.openDialog.dispatch(new SecurityQuestionsInfoDialog());

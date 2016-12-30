@@ -3881,4 +3881,12 @@
       </Texture>
       <AngleCorrection>1</AngleCorrection>
    </Object>
+   <Object type="0x7fcc" id="Dragon Arrow">
+      <Class>Projectile</Class>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x0a</Index>
+      </Texture>
+      <AngleCorrection>1</AngleCorrection>
+   </Object>
 </Objects>

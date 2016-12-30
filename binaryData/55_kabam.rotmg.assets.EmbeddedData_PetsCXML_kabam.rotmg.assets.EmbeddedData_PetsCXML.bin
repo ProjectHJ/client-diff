@@ -3316,6 +3316,162 @@
          <Index>111</Index>
       </AnimatedTexture>
    </Object>
+   <Object id="Red Bagston" type="0x7fbf">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>? ? ? ?</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Red Bagston Skin</DefaultSkin>
+      <ShadowSize>40</ShadowSize>
+      <Size>80</Size>
+      <DisplayId>{pets.Red_Bagston}</DisplayId>
+   </Object>
+   <Object type="0x7fc0" id="Red Bagston Skin">
+      <PetSkin/>
+      <DisplayId>{pets.Red_Bagston_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>116</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x7fc1" id="Red Bagston Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5a2</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Red_Bagston_of_the_?_?_?_?_family._T}</Description>
+      <Activate skinId="32703">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Red_Bagston_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Helper Bagston" type="0x7fc2">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>? ? ? ?</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Helper Bagston Skin</DefaultSkin>
+      <ShadowSize>40</ShadowSize>
+      <Size>80</Size>
+      <DisplayId>{pets.Helper_Bagston}</DisplayId>
+   </Object>
+   <Object type="0x7fc3" id="Helper Bagston Skin">
+      <PetSkin/>
+      <DisplayId>{pets.Helper_Bagston_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>115</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x7fc4" id="Helper Bagston Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5a3</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Helper_Bagston_of_the_?_?_?_?_family}</Description>
+      <Activate skinId="32706">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Helper_Bagston_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Red Helper Bagston" type="0x7fc5">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>? ? ? ?</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Red Helper Bagston Skin</DefaultSkin>
+      <ShadowSize>40</ShadowSize>
+      <Size>80</Size>
+      <DisplayId>{pets.Red_Helper_Bagston}</DisplayId>
+   </Object>
+   <Object type="0x7fc6" id="Red Helper Bagston Skin">
+      <PetSkin/>
+      <DisplayId>{pets.Red_Helper_Bagston_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>113</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x7fc7" id="Red Helper Bagston Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x5a4</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Red_Helper_Bagston_of_the_?_?_?_?_fa}</Description>
+      <Activate skinId="32709">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Red_Helper_Bagston_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Muddy Tidechaser" type="0x7fc9">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Humanoid</Family>
+      <Rarity>Common</Rarity>
+      <DefaultSkin>Muddy Tidechaser Skin</DefaultSkin>
+      <ShadowSize>40</ShadowSize>
+      <Size>80</Size>
+      <DisplayId>{pets.Muddy_Tidechaser}</DisplayId>
+   </Object>
+   <Object type="0x7fcd" id="Muddy Tidechaser Skin">
+      <PetSkin/>
+      <DisplayId>{pets.Muddy_Tidechaser_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>117</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x7fcf" id="Muddy Tidechaser Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x0b</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Muddy_Tidechaser_of_the_Humanoid_fam}</Description>
+      <Activate skinId="32713">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Muddy_Tidechaser_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
    <Object type="0x8090" id="Disabled Pet Skin">
       <PetSkin/>
       <DisplayId>{pets.Disabled_Pet_Skin}</DisplayId>

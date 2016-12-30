@@ -13,6 +13,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_1_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>1</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -29,6 +35,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_2_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>2</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -45,6 +57,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_3_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>3</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -61,6 +79,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_4_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>4</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -77,6 +101,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_5_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>5</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -93,6 +123,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_6_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>6</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -109,6 +145,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_7_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>7</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -125,6 +167,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_8_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>8</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -141,6 +189,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_9_-_Can_be_stacked_up_to_50_times,_just_click_a}</Description>
       <Quantity>9</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -157,6 +211,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_10_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>10</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -173,6 +233,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_11_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>11</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -189,6 +255,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_12_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>12</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -205,6 +277,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_13_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>13</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -221,6 +299,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_14_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>14</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -237,6 +321,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_15_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>15</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -253,6 +343,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_16_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>16</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -269,6 +365,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_17_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>17</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -285,6 +387,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_18_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>18</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -301,6 +409,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_19_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>19</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -317,6 +431,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_20_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>20</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -333,6 +453,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_21_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>21</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -349,6 +475,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_22_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>22</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -365,6 +497,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_23_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>23</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -381,6 +519,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_24_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>24</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -397,6 +541,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_25_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>25</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -413,6 +563,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_26_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>26</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -429,6 +585,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_27_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>27</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -445,6 +607,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_28_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>28</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -461,6 +629,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_29_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>29</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -477,6 +651,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_30_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>30</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -493,6 +673,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_31_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>31</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -509,6 +695,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_32_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>32</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -525,6 +717,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_33_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>33</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -541,6 +739,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_34_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>34</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -557,6 +761,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_35_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>35</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -573,6 +783,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_36_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>36</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -589,6 +805,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_37_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>37</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -605,6 +827,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_38_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>38</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -621,6 +849,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_39_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>39</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -637,6 +871,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_40_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>40</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -653,6 +893,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_41_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>41</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -669,6 +915,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_42_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>42</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -685,6 +937,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_43_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>43</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -701,6 +959,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_44_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>44</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -717,12 +981,18 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_45_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>45</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
       <DisplayId>{token.Snowflake_Token_x_45}</DisplayId>
    </Object>
-   <Object type="0xffce" id="Snowflake Token x 46">
+   <Object type="0xfece" id="Snowflake Token x 46">
       <Displayid>Snowflake Token x 46</Displayid>
       <Class>Equipment</Class>
       <Item/>
@@ -733,12 +1003,18 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_46_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>46</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
       <DisplayId>{token.Snowflake_Token_x_46}</DisplayId>
    </Object>
-   <Object type="0xffcf" id="Snowflake Token x 47">
+   <Object type="0xfecf" id="Snowflake Token x 47">
       <Displayid>Snowflake Token x 47</Displayid>
       <Class>Equipment</Class>
       <Item/>
@@ -749,12 +1025,18 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_47_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>47</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
       <DisplayId>{token.Snowflake_Token_x_47}</DisplayId>
    </Object>
-   <Object type="0xffd0" id="Snowflake Token x 48">
+   <Object type="0xfed0" id="Snowflake Token x 48">
       <Displayid>Snowflake Token x 48</Displayid>
       <Class>Equipment</Class>
       <Item/>
@@ -765,12 +1047,18 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_48_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>48</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
       <DisplayId>{token.Snowflake_Token_x_48}</DisplayId>
    </Object>
-   <Object type="0xffd1" id="Snowflake Token x 49">
+   <Object type="0xfed1" id="Snowflake Token x 49">
       <Displayid>Snowflake Token x 49</Displayid>
       <Class>Equipment</Class>
       <Item/>
@@ -781,12 +1069,18 @@
       <SlotType>10</SlotType>
       <Description>{token.Snowflake_x_49_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>49</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
       <DisplayId>{token.Snowflake_Token_x_49}</DisplayId>
    </Object>
-   <Object type="0xffd2" id="Snowflake Token x 50">
+   <Object type="0xfed2" id="Snowflake Token x 50">
       <Displayid>Snowflake Token x 50</Displayid>
       <Class>Equipment</Class>
       <Item/>
@@ -795,11 +1089,20 @@
          <Index>0x04</Index>
       </Texture>
       <SlotType>10</SlotType>
-      <Description>{token.Snowflake_x_50}</Description>
+      <Description>{token.Snowflake_x_50_-_Double_click_to_create_a_valuable_surprise}</Description>
       <Quantity>50</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.February_2nd_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
+      <Activate id="Freezing Quiver">Exchange</Activate>
       <BagType>2</BagType>
       <Treasure/>
+      <Track/>
+      <Consumable/>
       <DisplayId>{token.Snowflake_Token_x_50}</DisplayId>
    </Object>
    <Object type="0xfed3" id="Candy Cane Token x 1">
@@ -813,6 +1116,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_1_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>1</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -829,6 +1138,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_2_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>2</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -845,6 +1160,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_3_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>3</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -861,6 +1182,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_4_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>4</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -877,6 +1204,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_5_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>5</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -893,6 +1226,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_6_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>6</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -925,6 +1264,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_8_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>8</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -941,6 +1286,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_9_-_Can_be_stacked_up_to_50_times,_just_click_}</Description>
       <Quantity>9</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -957,6 +1308,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_10_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>10</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -973,6 +1330,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_11_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>11</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -989,6 +1352,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_12_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>12</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1005,6 +1374,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_13_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>13</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1021,6 +1396,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_14_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>14</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1037,6 +1418,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_15_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>15</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1053,6 +1440,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_16_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>16</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1069,6 +1462,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_17_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>17</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1085,6 +1484,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_18_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>18</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1101,6 +1506,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_19_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>19</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1117,6 +1528,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_20_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>20</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1133,6 +1550,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_21_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>21</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1149,6 +1572,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_22_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>22</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1165,6 +1594,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_23_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>23</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1181,6 +1616,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_24_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>24</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1197,6 +1638,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_25_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>25</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1213,6 +1660,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_26_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>26</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1229,6 +1682,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_27_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>27</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1245,6 +1704,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_28_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>28</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1261,6 +1726,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_29_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>29</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1277,6 +1748,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_30_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>30</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1293,6 +1770,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_31_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>31</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1309,6 +1792,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_32_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>32</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1325,6 +1814,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_33_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>33</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1341,6 +1836,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_34_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>34</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1357,6 +1858,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_35_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>35</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1373,6 +1880,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_36_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>36</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1389,6 +1902,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_37_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>37</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1405,6 +1924,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_38_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>38</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1421,6 +1946,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_39_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>39</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1437,6 +1968,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_40_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>40</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1453,6 +1990,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_41_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>41</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1469,6 +2012,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_42_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>42</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1485,6 +2034,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_43_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>43</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1501,6 +2056,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_44_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>44</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1517,6 +2078,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_45_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>45</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1533,6 +2100,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_46_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>46</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1549,6 +2122,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_47_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>47</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1565,6 +2144,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_48_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>48</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1581,6 +2166,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_49_-_Can_be_stacked_up_to_50_times,_just_click}</Description>
       <Quantity>49</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <BagType>2</BagType>
       <Treasure/>
@@ -1597,6 +2188,12 @@
       <SlotType>10</SlotType>
       <Description>{token.Candy_Cane_x_50_-_Double_click_to_create_a_Rudolph_the_Berz}</Description>
       <Quantity>50</Quantity>
+      <ExtraTooltipData>
+         <EffectInfo name="{token.Stack_limit}" description=""/>
+         <EffectInfo name="" description="{token.50}"/>
+         <EffectInfo name="{token.Vanishes_on}" description=""/>
+         <EffectInfo name="" description="{token.January_12th_2017}"/>
+      </ExtraTooltipData>
       <Soulbound/>
       <Activate id="Rudolph the Berzerk Skin">Exchange</Activate>
       <Track/>

@@ -1063,6 +1063,18 @@
       <NoSkinSelect/>
       <DisplayId>{skins.Twilight_Archmage_Set_Skin}</DisplayId>
    </Object>
+   <Object type="0x7fce" id="Dragon Tamer Set Skin">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins16</File>
+         <Index>0x0a</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031d</PlayerClassType>
+      <UnlockSpecial>Set Skin</UnlockSpecial>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Dragon_Tamer_Set_Skin}</DisplayId>
+   </Object>
    <Object type="0x0403" id="Olive Gladiator">
       <Skin/>
       <Class>Skin</Class>
@@ -1106,6 +1118,17 @@
       <PlayerClassType>0x0326</PlayerClassType>
       <NoSkinSelect/>
       <DisplayId>{skins.Djinja}</DisplayId>
+   </Object>
+   <Object type="0x7fc8" id="Dragon Tamer 16">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins16</File>
+         <Index>0x0a</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031d</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Dragon_Tamer_16}</DisplayId>
    </Object>
    <Object type="0x7ffe" id="Vampire Lord">
       <Skin/>
@@ -1194,5 +1217,16 @@
       <PlayerClassType>0x030e</PlayerClassType>
       <NoSkinSelect/>
       <DisplayId>{skins.Snow_Queen}</DisplayId>
+   </Object>
+   <Object type="0x7fbd" id="Dragon Tamer">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>116</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031d</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Dragon_Tamer}</DisplayId>
    </Object>
 </Objects>

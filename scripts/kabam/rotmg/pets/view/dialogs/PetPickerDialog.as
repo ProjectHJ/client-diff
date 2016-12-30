@@ -54,7 +54,8 @@ package kabam.rotmg.pets.view.dialogs
       
       private function addLineBreak() : void
       {
-         var _loc1_:LineBreakDesign = new LineBreakDesign(dialogWidth - padding * 2,0);
+         var _loc1_:LineBreakDesign = null;
+         _loc1_ = new LineBreakDesign(dialogWidth - padding * 2,0);
          _loc1_.x = padding;
          _loc1_.y = this.getBoxBottomWithPadding();
          box_.addChild(_loc1_);

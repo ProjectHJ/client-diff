@@ -115,13 +115,11 @@ package kabam.rotmg.util.components
       
       private function refreshScrollbar() : void
       {
-         var _loc3_:int = 0;
-         var _loc5_:* = false;
          var _loc1_:Size = this.list.getSize();
          var _loc2_:int = _loc1_.height;
-         _loc3_ = this.list.getSizeOfItems().height;
+         var _loc3_:int = this.list.getSizeOfItems().height;
          var _loc4_:* = _loc3_ > _loc2_;
-         _loc5_ = this.scrollbar.visible != _loc4_;
+         var _loc5_:* = this.scrollbar.visible != _loc4_;
          this.scrollbar.setIsEnabled(false);
          this.scrollbar.visible = _loc4_;
          _loc4_ && this.scrollbar.setIsEnabled(true);

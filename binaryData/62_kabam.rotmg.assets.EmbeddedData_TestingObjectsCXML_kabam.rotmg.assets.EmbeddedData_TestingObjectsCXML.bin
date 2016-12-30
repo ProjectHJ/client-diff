@@ -995,6 +995,21 @@
       <Defense>0</Defense>
       <XpMult>300</XpMult>
    </Object>
+   <Object type="0x0969" id="XP Gift H">
+      <Group>Evaluators</Group>
+      <Enemy/>
+      <Class>Character</Class>
+      <Texture>
+         <File>lofiChar8x8</File>
+         <Index>0xcd</Index>
+      </Texture>
+      <HitSound>monster/chicken_hit</HitSound>
+      <DeathSound>monster/chicken_death</DeathSound>
+      <MaxHitPoints>200</MaxHitPoints>
+      <Size>180</Size>
+      <Defense>0</Defense>
+      <XpMult>10000</XpMult>
+   </Object>
    <Object type="0x0941" id="Crystal Prisoner">
       <Enemy/>
       <Class>Character</Class>

@@ -343,8 +343,8 @@
 93;com.company.rotmg.graphics.DeleteXGraphic
 247;kabam.rotmg.ui.view.KeysView_purpleKeyPng
 201;kabam.rotmg.assets.EmbeddedAssets_chars16x8dEncountersEmbed_
-249;kabam.rotmg.pets.view.YardUpgraderView_PetYardImage
-248;kabam.rotmg.news.view.NewsCell_DefaultGraphicSmall
+249;kabam.rotmg.news.view.NewsCell_DefaultGraphicSmall
+248;kabam.rotmg.pets.view.YardUpgraderView_PetYardImage
 179;kabam.rotmg.assets.EmbeddedAssets_starsEmbed_
 140;kabam.rotmg.assets.EmbeddedAssets_chars16x16rEncountersEmbed_
 250;kabam.rotmg.classes.view.CharacterSkinLimitedBanner_LimitedBanner

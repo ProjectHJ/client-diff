@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <Objects>
-   <Object type="0x7fb9" id="Mysterious Ice Shard">
-      <DisplayId>{iceTomb.Mysterious_Ice_Shard}</DisplayId>
+   <Object type="0x7fd0" id="Ice Golem">
+      <Group>Ice Golems</Group>
+      <Enemy/>
+      <Class>Character</Class>
+      <AnimatedTexture>
+         <File>chars16x16dEncounters</File>
+         <Index>28</Index>
+      </AnimatedTexture>
+      <HitSound>monster/spiders_hit</HitSound>
+      <DeathSound>monster/spiders_death</DeathSound>
+      <Size>60</Size>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Defense>0</Defense>
+      <XpMult>0.0</XpMult>
+      <Projectile id="0">
+         <ObjectId>Blue Magic</ObjectId>
+         <Damage>50</Damage>
+         <Speed>70</Speed>
+         <LifetimeMS>200</LifetimeMS>
+      </Projectile>
+      <Projectile id="1">
+         <ObjectId>Violet Claw</ObjectId>
+         <Damage>20</Damage>
+         <Speed>70</Speed>
+         <LifetimeMS>200</LifetimeMS>
+         <ConditionEffect duration="0.8">Paralyzed</ConditionEffect>
+         <Size>40</Size>
+      </Projectile>
+      <DisplayId>{iceTomb.Ice_Golem}</DisplayId>
+   </Object>
+   <Object type="0x7fd1" id="Ice Tomb Chest">
+      <Enemy/>
+      <Class>Character</Class>
+      <Texture>
+         <File>lofiObj3</File>
+         <Index>0x466</Index>
+      </Texture>
+      <Size>160</Size>
+      <MaxHitPoints>100000</MaxHitPoints>
+      <Defense>0</Defense>
+      <XpMult>0.0</XpMult>
+      <DisplayId>{iceTomb.Ice_Tomb_Chest}</DisplayId>
    </Object>
    <Object type="0x7fab" id="Ice Artifact 1">
       <DisplayId>{iceTomb.Ice_Artifact_1}</DisplayId>
@@ -10,14 +50,14 @@
       <Class>Character</Class>
       <AnimatedTexture>
          <File>chars8x8dEncounters</File>
-         <Index>11</Index>
+         <Index>13</Index>
       </AnimatedTexture>
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
       <XpMult>0.0</XpMult>
       <Projectile id="0">
-         <ObjectId>Green Spinner</ObjectId>
+         <ObjectId>Blue Shuriken</ObjectId>
          <Damage>90</Damage>
          <Speed>80</Speed>
          <Size>80</Size>
@@ -25,7 +65,7 @@
          <ConditionEffect duration="3">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="1">
-         <ObjectId>Green Spinner</ObjectId>
+         <ObjectId>Blue Shuriken</ObjectId>
          <Damage>130</Damage>
          <Speed>80</Speed>
          <Size>120</Size>
@@ -39,14 +79,14 @@
       <Class>Character</Class>
       <AnimatedTexture>
          <File>chars8x8dEncounters</File>
-         <Index>11</Index>
+         <Index>13</Index>
       </AnimatedTexture>
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
       <XpMult>0.0</XpMult>
       <Projectile id="0">
-         <ObjectId>Green Spinner</ObjectId>
+         <ObjectId>Blue Shuriken</ObjectId>
          <Damage>90</Damage>
          <Speed>80</Speed>
          <Size>80</Size>
@@ -54,7 +94,7 @@
          <ConditionEffect duration="3">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="1">
-         <ObjectId>Green Spinner</ObjectId>
+         <ObjectId>Blue Shuriken</ObjectId>
          <Damage>130</Damage>
          <Speed>80</Speed>
          <Size>120</Size>
@@ -68,14 +108,14 @@
       <Class>Character</Class>
       <AnimatedTexture>
          <File>chars8x8dEncounters</File>
-         <Index>11</Index>
+         <Index>13</Index>
       </AnimatedTexture>
       <Size>100</Size>
       <MaxHitPoints>2000</MaxHitPoints>
       <Defense>20</Defense>
       <XpMult>0.0</XpMult>
       <Projectile id="0">
-         <ObjectId>Green Spinner</ObjectId>
+         <ObjectId>Blue Shuriken</ObjectId>
          <Damage>90</Damage>
          <Speed>100</Speed>
          <Size>80</Size>
@@ -83,7 +123,7 @@
          <ConditionEffect duration="3">Slowed</ConditionEffect>
       </Projectile>
       <Projectile id="1">
-         <ObjectId>Green Spinner</ObjectId>
+         <ObjectId>Blue Shuriken</ObjectId>
          <Damage>130</Damage>
          <Speed>80</Speed>
          <Size>120</Size>
@@ -97,7 +137,7 @@
       <Class>Character</Class>
       <AnimatedTexture>
          <File>chars8x8dEncounters</File>
-         <Index>12</Index>
+         <Index>62</Index>
       </AnimatedTexture>
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
@@ -117,7 +157,7 @@
       <Class>Character</Class>
       <AnimatedTexture>
          <File>chars8x8dEncounters</File>
-         <Index>12</Index>
+         <Index>62</Index>
       </AnimatedTexture>
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
@@ -137,7 +177,7 @@
       <Class>Character</Class>
       <AnimatedTexture>
          <File>chars8x8dEncounters</File>
-         <Index>12</Index>
+         <Index>62</Index>
       </AnimatedTexture>
       <Size>100</Size>
       <MaxHitPoints>2500</MaxHitPoints>
@@ -156,10 +196,10 @@
       <Enemy/>
       <Class>Character</Class>
       <AnimatedTexture>
-         <File>chars16x8dEncounters</File>
-         <Index>0</Index>
+         <File>chars16x16dEncounters</File>
+         <Index>29</Index>
       </AnimatedTexture>
-      <Size>120</Size>
+      <Size>80</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
       <XpMult>0.0</XpMult>
@@ -177,10 +217,10 @@
       <Enemy/>
       <Class>Character</Class>
       <AnimatedTexture>
-         <File>chars16x8dEncounters</File>
-         <Index>0</Index>
+         <File>chars16x16dEncounters</File>
+         <Index>29</Index>
       </AnimatedTexture>
-      <Size>120</Size>
+      <Size>80</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
       <XpMult>0.0</XpMult>
@@ -198,10 +238,10 @@
       <Enemy/>
       <Class>Character</Class>
       <AnimatedTexture>
-         <File>chars16x8dEncounters</File>
-         <Index>0</Index>
+         <File>chars16x16dEncounters</File>
+         <Index>29</Index>
       </AnimatedTexture>
-      <Size>120</Size>
+      <Size>80</Size>
       <MaxHitPoints>3000</MaxHitPoints>
       <Defense>50</Defense>
       <XpMult>0.0</XpMult>
@@ -233,7 +273,7 @@
          <Index>0x179</Index>
       </Texture>
       <Size>100</Size>
-      <MaxHitPoints>100000</MaxHitPoints>
+      <MaxHitPoints>50000</MaxHitPoints>
       <Defense>0</Defense>
       <XpMult>0.0</XpMult>
       <NoMiniMap/>
@@ -286,8 +326,8 @@
       <Size>140</Size>
       <MaxHitPoints>100000</MaxHitPoints>
       <Texture>
-         <File>lofiChar216x16</File>
-         <Index>0x3a</Index>
+         <File>lofiObjBig</File>
+         <Index>0x180</Index>
       </Texture>
    </Object>
    <Object type="0x7fa9" id="Ice Tomb Attacker Statue">
@@ -298,8 +338,8 @@
       <Size>140</Size>
       <MaxHitPoints>100000</MaxHitPoints>
       <Texture>
-         <File>lofiChar216x16</File>
-         <Index>0x3b</Index>
+         <File>lofiObjBig</File>
+         <Index>0x181</Index>
       </Texture>
    </Object>
    <Object type="0x7faa" id="Ice Tomb Defender Statue">
@@ -310,8 +350,8 @@
       <Size>140</Size>
       <MaxHitPoints>100000</MaxHitPoints>
       <Texture>
-         <File>lofiChar216x16</File>
-         <Index>0x3c</Index>
+         <File>lofiObjBig</File>
+         <Index>0x182</Index>
       </Texture>
    </Object>
    <Object type="0x7fb4" id="Ice Tomb Support">
@@ -334,7 +374,7 @@
       <God/>
       <NoArticle/>
       <Projectile id="0">
-         <ObjectId>Darkness Bolt</ObjectId>
+         <ObjectId>Blue Bolt Shot</ObjectId>
          <Damage>180</Damage>
          <Speed>100</Speed>
          <LifetimeMS>2000</LifetimeMS>
@@ -360,7 +400,7 @@
          <MultiHit/>
       </Projectile>
       <Projectile id="3">
-         <ObjectId>Green Boomerang</ObjectId>
+         <ObjectId>Ninja Star Ice</ObjectId>
          <Damage>40</Damage>
          <Speed>20</Speed>
          <LifetimeMS>4000</LifetimeMS>
@@ -378,7 +418,7 @@
          <MultiHit/>
       </Projectile>
       <Projectile id="5">
-         <ObjectId>Black Arrow</ObjectId>
+         <ObjectId>Frozen Arrow</ObjectId>
          <Damage>40</Damage>
          <Speed>80</Speed>
          <LifetimeMS>4000</LifetimeMS>
@@ -386,7 +426,7 @@
          <Size>100</Size>
       </Projectile>
       <Projectile id="6">
-         <ObjectId>Spring Green Arrow</ObjectId>
+         <ObjectId>Jester Bolt</ObjectId>
          <Damage>200</Damage>
          <Speed>40</Speed>
          <LifetimeMS>4000</LifetimeMS>
@@ -395,13 +435,13 @@
          <Size>200</Size>
       </Projectile>
       <Projectile id="7">
-         <ObjectId>Dark Gray Spinner</ObjectId>
+         <ObjectId>snow flakes</ObjectId>
          <Damage>0</Damage>
          <Speed>120</Speed>
          <LifetimeMS>5000</LifetimeMS>
          <ConditionEffect duration="10">Weak</ConditionEffect>
          <MultiHit/>
-         <Size>200</Size>
+         <Size>150</Size>
       </Projectile>
       <Projectile id="8">
          <ObjectId>Ice Magic</ObjectId>
@@ -432,7 +472,7 @@
       <God/>
       <NoArticle/>
       <Projectile id="0">
-         <ObjectId>Darkness Bolt</ObjectId>
+         <ObjectId>Blue Bolt Shot</ObjectId>
          <Damage>280</Damage>
          <Speed>80</Speed>
          <LifetimeMS>2000</LifetimeMS>
@@ -440,7 +480,7 @@
          <MultiHit/>
       </Projectile>
       <Projectile id="1">
-         <ObjectId>Green Boomerang</ObjectId>
+         <ObjectId>Ninja Star Ice</ObjectId>
          <Damage>100</Damage>
          <Speed>40</Speed>
          <LifetimeMS>3600</LifetimeMS>
@@ -449,7 +489,7 @@
          <MultiHit/>
       </Projectile>
       <Projectile id="2">
-         <ObjectId>Fire Magic</ObjectId>
+         <ObjectId>Icey Magic Attack</ObjectId>
          <Damage>30</Damage>
          <Speed>100</Speed>
          <LifetimeMS>2000</LifetimeMS>
@@ -457,7 +497,7 @@
          <Size>100</Size>
       </Projectile>
       <Projectile id="3">
-         <ObjectId>Dark Gray Spinner</ObjectId>
+         <ObjectId>snow flakes</ObjectId>
          <Damage>0</Damage>
          <Speed>120</Speed>
          <LifetimeMS>5000</LifetimeMS>
@@ -466,7 +506,7 @@
          <Size>200</Size>
       </Projectile>
       <Projectile id="4">
-         <ObjectId>Fireball</ObjectId>
+         <ObjectId>Frozen Wand Icicle</ObjectId>
          <Damage>80</Damage>
          <Speed>60</Speed>
          <LifetimeMS>2000</LifetimeMS>
@@ -474,7 +514,7 @@
          <Parametric/>
       </Projectile>
       <Projectile id="5">
-         <ObjectId>Darkness Bolt</ObjectId>
+         <ObjectId>Blue Bolt Shot</ObjectId>
          <Damage>200</Damage>
          <Speed>50</Speed>
          <LifetimeMS>4000</LifetimeMS>
@@ -502,7 +542,7 @@
       <God/>
       <NoArticle/>
       <Projectile id="0">
-         <ObjectId>Darkness Bolt</ObjectId>
+         <ObjectId>Blue Bolt Shot</ObjectId>
          <Damage>240</Damage>
          <Speed>60</Speed>
          <LifetimeMS>2000</LifetimeMS>
@@ -510,7 +550,7 @@
          <MultiHit/>
       </Projectile>
       <Projectile id="1">
-         <ObjectId>Fire Boomerang</ObjectId>
+         <ObjectId>Water Storm</ObjectId>
          <Damage>150</Damage>
          <Speed>60</Speed>
          <LifetimeMS>5000</LifetimeMS>
@@ -527,7 +567,7 @@
          <Size>200</Size>
       </Projectile>
       <Projectile id="3">
-         <ObjectId>Dark Gray Spinner</ObjectId>
+         <ObjectId>snow flakes</ObjectId>
          <Damage>0</Damage>
          <Speed>120</Speed>
          <LifetimeMS>5000</LifetimeMS>
@@ -550,8 +590,8 @@
       <DisplayId>{iceTomb.Ice_Tomb_Portal}</DisplayId>
       <DungeonName>Ice Tomb</DungeonName>
       <Texture>
-         <File>lofiEnvironment</File>
-         <Index>0x5d</Index>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x09</Index>
       </Texture>
    </Object>
 </Objects>

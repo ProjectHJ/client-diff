@@ -215,7 +215,6 @@
          <Index>0x0e</Index>
       </Texture>
       <SlotTypes>0, 0, 0, 0, 0, 0, 0, 0</SlotTypes>
-      <Static/>
       <DisplayId>{objects.Vault_Chest}</DisplayId>
    </Object>
    <Object type="0x0505" id="Closed Vault Chest">
@@ -835,7 +834,7 @@
       <ShadowSize>0</ShadowSize>
       <DisplayId>{objects.Winter_Fountain_Frozen}</DisplayId>
    </Object>
-   <Object type="0x0203" id="Winter Fountain Snowy">
+   <Object type="0x0ddb" id="Winter Fountain Snowy">
       <Class>GameObject</Class>
       <Model>Tower</Model>
       <Effect color="0xF0F0FF">FountainSnowy</Effect>
@@ -1099,8 +1098,6 @@
          <Index>0x7e</Index>
       </Texture>
       <Size>120</Size>
-      <Static/>
-      <Color>0x643011</Color>
       <DisplayId>{objects.Gift_Chest_Closed}</DisplayId>
    </Object>
    <Object type="0x0744" id="Gift Chest">

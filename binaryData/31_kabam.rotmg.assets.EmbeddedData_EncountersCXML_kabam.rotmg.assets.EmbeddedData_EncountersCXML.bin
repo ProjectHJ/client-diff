@@ -1317,7 +1317,7 @@
       <HitSound>monster/skull_shrine_hit</HitSound>
       <DeathSound>monster/skull_shrine_death</DeathSound>
       <Size>120</Size>
-      <MaxHitPoints>10000</MaxHitPoints>
+      <MaxHitPoints>15000</MaxHitPoints>
       <Defense>40</Defense>
       <Enemy/>
       <Hero/>
@@ -1389,7 +1389,7 @@
       <HitSound>monster/skull_shrine_hit</HitSound>
       <DeathSound>monster/skull_shrine_death</DeathSound>
       <Size>120</Size>
-      <MaxHitPoints>20000</MaxHitPoints>
+      <MaxHitPoints>15000</MaxHitPoints>
       <Defense>40</Defense>
       <Enemy/>
       <Hero/>
@@ -1573,7 +1573,7 @@
       <HitSound>monster/cubes_hit</HitSound>
       <DeathSound>monster/cubes_death</DeathSound>
       <Size>120</Size>
-      <MaxHitPoints>20000</MaxHitPoints>
+      <MaxHitPoints>15000</MaxHitPoints>
       <Hero/>
       <Quest/>
       <God/>
@@ -1677,13 +1677,13 @@
          <File>lofiChar8x8</File>
          <Index>0xb5</Index>
       </Texture>
-      <MaxHitPoints>500</MaxHitPoints>
+      <MaxHitPoints>650</MaxHitPoints>
       <Size>80</Size>
       <XpMult>0.1</XpMult>
       <Projectile id="0">
          <ObjectId>White Bolt</ObjectId>
          <Speed>150</Speed>
-         <Damage>50</Damage>
+         <Damage>80</Damage>
          <LifetimeMS>500</LifetimeMS>
          <MultiHit/>
       </Projectile>
@@ -1696,6 +1696,14 @@
          <File>lofiChar216x16</File>
          <Index>0x38</Index>
       </Texture>
+      <Projectile id="0">
+         <ObjectId>Silver Shield</ObjectId>
+         <Damage>150</Damage>
+         <Speed>60</Speed>
+         <LifetimeMS>600</LifetimeMS>
+         <ConditionEffect duration="2">Stunned</ConditionEffect>
+         <Size>160</Size>
+      </Projectile>
       <Animation prob="1.0" period="0.0">
          <Frame time="0.2">
             <Texture>
@@ -1746,7 +1754,7 @@
             </Texture>
          </Frame>
       </Animation>
-      <MaxHitPoints>5000</MaxHitPoints>
+      <MaxHitPoints>8000</MaxHitPoints>
       <Size>120</Size>
       <XpMult>0.1</XpMult>
       <God/>
@@ -1777,7 +1785,7 @@
          <File>lofiChar216x16</File>
          <Index>0x38</Index>
       </Texture>
-      <MaxHitPoints>5000</MaxHitPoints>
+      <MaxHitPoints>8000</MaxHitPoints>
       <Size>0</Size>
       <XpMult>0</XpMult>
       <God/>

@@ -20,9 +20,6 @@ package kabam.rotmg.ui.view
    import kabam.rotmg.ui.view.components.DarkLayer;
    import com.company.assembleegameclient.screens.AccountScreen;
    import com.company.assembleegameclient.ui.SoundIcon;
-   import kabam.rotmg.application.model.PlatformModel;
-   import kabam.rotmg.application.model.PlatformType;
-   import flash.external.ExternalInterface;
    
    public class TitleView extends Sprite
    {
@@ -74,7 +71,6 @@ package kabam.rotmg.ui.view
       
       public function TitleView()
       {
-         var _loc2_:String = null;
          this.menuOptionsBar = this.makeMenuOptionsBar();
          this.optionalButtonsAdded = new Signal();
          super();
@@ -85,30 +81,6 @@ package kabam.rotmg.ui.view
          addChild(new AccountScreen());
          this.makeChildren();
          addChild(new SoundIcon());
-         var _loc1_:PlatformModel = StaticInjectorContext.getInjector().getInstance(PlatformModel);
-         if(_loc1_.getPlatform() == PlatformType.WEB)
-         {
-            this.makeMigrateButton();
-            addChild(this.migrateButton);
-            _loc2_ = "";
-            try
-            {
-               _loc2_ = ExternalInterface.call("window.location.search.substring",1);
-            }
-            catch(err:Error)
-            {
-            }
-            if(!kabammigrateOpened && _loc2_ && _loc2_ == "kabammigrate")
-            {
-               kabammigrateOpened = true;
-               this.openKabamTransferView();
-            }
-         }
-         else if(_loc1_.getPlatform() == PlatformType.KABAM)
-         {
-            this.makeMigrateButton();
-            addChild(this.migrateButton);
-         }
       }
       
       public function openKabamTransferView() : void
@@ -153,8 +125,7 @@ package kabam.rotmg.ui.view
       
       public function makeText() : TextFieldDisplayConcrete
       {
-         var _loc1_:TextFieldDisplayConcrete = null;
-         _loc1_ = new TextFieldDisplayConcrete().setSize(12).setColor(8355711);
+         var _loc1_:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(12).setColor(8355711);
          _loc1_.filters = [new DropShadowFilter(0,0,0)];
          return _loc1_;
       }
