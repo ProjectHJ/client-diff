@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.background
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.map.Camera;
+   import flash.display.Sprite;
    
    public class Background extends Sprite
    {

@@ -1,17 +1,17 @@
 package kabam.rotmg.account.web.view
 {
-   import kabam.rotmg.account.core.view.EmptyFrame;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.util.components.SimpleButton;
-   import flash.utils.Timer;
-   import flash.events.TimerEvent;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import org.osflash.signals.natives.NativeMappedSignal;
    import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.view.EmptyFrame;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.appengine.impl.SimpleAppEngineClient;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.util.components.SimpleButton;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeMappedSignal;
    
    public class MigrationDialog extends EmptyFrame
    {
@@ -31,7 +31,7 @@ package kabam.rotmg.account.web.view
       
       private var total:Number = 100;
       
-      private var progBar:kabam.rotmg.account.web.view.ProgressBar;
+      private var progBar:ProgressBar;
       
       protected var leftButton_:SimpleButton;
       
@@ -206,7 +206,7 @@ package kabam.rotmg.account.web.view
          _loc2_ = modalHeight / 3;
          var _loc3_:Number = modalWidth - _loc1_ * 2;
          var _loc4_:Number = 40;
-         this.progBar = new kabam.rotmg.account.web.view.ProgressBar(_loc3_,_loc4_);
+         this.progBar = new ProgressBar(_loc3_,_loc4_);
          addChild(this.progBar);
          this.progBar.x = _loc1_;
          this.progBar.y = _loc2_;

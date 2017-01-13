@@ -1,12 +1,12 @@
 package kabam.rotmg.account.core.services
 {
+   import com.company.assembleegameclient.util.offer.Offers;
+   import flash.utils.getTimer;
    import kabam.lib.tasks.BaseTask;
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.account.core.model.OfferModel;
-   import robotlegs.bender.framework.api.ILogger;
    import kabam.rotmg.appengine.api.AppEngineClient;
-   import flash.utils.getTimer;
-   import com.company.assembleegameclient.util.offer.Offers;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class GetOffersTask extends BaseTask
    {

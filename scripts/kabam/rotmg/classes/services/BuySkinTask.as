@@ -1,13 +1,13 @@
 package kabam.rotmg.classes.services
 {
+   import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
    import kabam.lib.tasks.BaseTask;
-   import kabam.rotmg.classes.model.CharacterSkin;
-   import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.classes.model.CharacterSkin;
+   import kabam.rotmg.classes.model.CharacterSkinState;
    import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.classes.model.CharacterSkinState;
-   import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
    
    public class BuySkinTask extends BaseTask
    {

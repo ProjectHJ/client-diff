@@ -1,11 +1,11 @@
 package kabam.rotmg.fortune
 {
-   import robotlegs.bender.framework.api.IConfig;
+   import kabam.rotmg.fortune.services.FortuneModel;
+   import kabam.rotmg.startup.control.StartupSequence;
    import org.swiftsuspenders.Injector;
    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-   import kabam.rotmg.startup.control.StartupSequence;
-   import kabam.rotmg.fortune.services.FortuneModel;
+   import robotlegs.bender.framework.api.IConfig;
    
    public class FortuneConfig implements IConfig
    {

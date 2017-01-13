@@ -1,14 +1,14 @@
 package kabam.rotmg.ui.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.account.core.signals.OpenAccountInfoSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class ChooseNameRegisterMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.ui.view.ChooseNameRegisterDialog;
+      public var view:ChooseNameRegisterDialog;
       
       [Inject]
       public var openAccountManagement:OpenAccountInfoSignal;

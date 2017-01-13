@@ -1,21 +1,21 @@
 package kabam.rotmg.questrewards.components
 {
-   import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
-   import flash.text.TextField;
-   import kabam.rotmg.util.components.LegacyBuyButton;
-   import flash.display.Shape;
    import flash.display.Bitmap;
+   import flash.display.Shape;
    import flash.display.Sprite;
    import flash.events.Event;
-   import kabam.rotmg.fortune.components.TimerCallback;
-   import kabam.rotmg.text.model.FontModel;
-   import flash.text.TextFormat;
    import flash.events.MouseEvent;
-   import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.core.StaticInjectorContext;
    import flash.geom.ColorTransform;
+   import flash.text.TextField;
+   import flash.text.TextFieldAutoSize;
+   import flash.text.TextFormat;
    import flash.utils.getTimer;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.fortune.components.TimerCallback;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
+   import kabam.rotmg.text.model.FontModel;
+   import kabam.rotmg.util.components.LegacyBuyButton;
    
    public class ModalItemSlot extends FoodFeedFuseSlot
    {

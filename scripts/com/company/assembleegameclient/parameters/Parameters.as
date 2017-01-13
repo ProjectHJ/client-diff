@@ -1,20 +1,20 @@
 package com.company.assembleegameclient.parameters
 {
-   import flash.display.DisplayObject;
-   import flash.net.SharedObject;
-   import flash.utils.Dictionary;
-   import com.company.util.KeyCodes;
    import com.company.assembleegameclient.map.Map;
-   import flash.events.Event;
+   import com.company.util.KeyCodes;
    import com.company.util.MoreDateUtil;
+   import flash.display.DisplayObject;
+   import flash.events.Event;
+   import flash.net.SharedObject;
    import flash.system.Capabilities;
+   import flash.utils.Dictionary;
    
    public class Parameters
    {
       
       public static const BUILD_VERSION:String = "27.7";
       
-      public static const MINOR_VERSION:String = "XMAS";
+      public static const MINOR_VERSION:String = "X10";
       
       public static const ENABLE_ENCRYPTION:Boolean = true;
       

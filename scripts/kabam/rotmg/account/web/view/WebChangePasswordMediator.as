@@ -1,19 +1,19 @@
 package kabam.rotmg.account.web.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.account.web.signals.WebChangePasswordSignal;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.core.signals.TaskErrorSignal;
-   import kabam.rotmg.account.web.model.ChangePasswordData;
-   import kabam.rotmg.text.model.TextKey;
    import kabam.lib.tasks.Task;
+   import kabam.rotmg.account.web.model.ChangePasswordData;
+   import kabam.rotmg.account.web.signals.WebChangePasswordSignal;
+   import kabam.rotmg.core.signals.TaskErrorSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.text.model.TextKey;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class WebChangePasswordMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.account.web.view.WebChangePasswordDialog;
+      public var view:WebChangePasswordDialog;
       
       [Inject]
       public var change:WebChangePasswordSignal;

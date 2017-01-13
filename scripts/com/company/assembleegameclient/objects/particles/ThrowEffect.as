@@ -43,9 +43,9 @@ package com.company.assembleegameclient.objects.particles
 }
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import flash.geom.Point;
 import com.company.assembleegameclient.objects.particles.SparkParticle;
 import com.company.assembleegameclient.util.RandomUtil;
+import flash.geom.Point;
 
 class ThrowParticle extends Particle
 {

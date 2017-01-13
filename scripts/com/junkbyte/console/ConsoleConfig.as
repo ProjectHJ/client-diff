@@ -58,7 +58,7 @@ package com.junkbyte.console
       
       public var alwaysOnTop:Boolean = true;
       
-      private var _style:com.junkbyte.console.ConsoleStyle;
+      private var _style:ConsoleStyle;
       
       public function ConsoleConfig()
       {
@@ -73,7 +73,7 @@ package com.junkbyte.console
             return this.makeTimeDigit(_loc2_ / 60) + ":" + this.makeTimeDigit(_loc2_ % 60);
          };
          super();
-         this._style = new com.junkbyte.console.ConsoleStyle();
+         this._style = new ConsoleStyle();
       }
       
       private function makeTimeDigit(param1:uint) : String
@@ -85,7 +85,7 @@ package com.junkbyte.console
          return String(param1);
       }
       
-      public function get style() : com.junkbyte.console.ConsoleStyle
+      public function get style() : ConsoleStyle
       {
          return this._style;
       }

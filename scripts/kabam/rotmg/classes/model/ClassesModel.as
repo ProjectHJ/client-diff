@@ -8,15 +8,15 @@ package kabam.rotmg.classes.model
       public static const WIZARD_ID:int = 782;
        
       
-      public const selected:Signal = new Signal(kabam.rotmg.classes.model.CharacterClass);
+      public const selected:Signal = new Signal(CharacterClass);
       
       private const map:Object = {};
       
-      private const classes:Vector.<kabam.rotmg.classes.model.CharacterClass> = new Vector.<kabam.rotmg.classes.model.CharacterClass>(0);
+      private const classes:Vector.<CharacterClass> = new Vector.<CharacterClass>(0);
       
       private var count:uint = 0;
       
-      private var selectedChar:kabam.rotmg.classes.model.CharacterClass;
+      private var selectedChar:CharacterClass;
       
       public function ClassesModel()
       {
@@ -28,25 +28,25 @@ package kabam.rotmg.classes.model
          return this.count;
       }
       
-      public function getClassAtIndex(param1:int) : kabam.rotmg.classes.model.CharacterClass
+      public function getClassAtIndex(param1:int) : CharacterClass
       {
          return this.classes[param1];
       }
       
-      public function getCharacterClass(param1:int) : kabam.rotmg.classes.model.CharacterClass
+      public function getCharacterClass(param1:int) : CharacterClass
       {
          return this.map[param1] = this.map[param1] || this.makeCharacterClass();
       }
       
-      private function makeCharacterClass() : kabam.rotmg.classes.model.CharacterClass
+      private function makeCharacterClass() : CharacterClass
       {
-         var _loc1_:kabam.rotmg.classes.model.CharacterClass = new kabam.rotmg.classes.model.CharacterClass();
+         var _loc1_:CharacterClass = new CharacterClass();
          _loc1_.selected.add(this.onClassSelected);
          this.count = this.classes.push(_loc1_);
          return _loc1_;
       }
       
-      private function onClassSelected(param1:kabam.rotmg.classes.model.CharacterClass) : void
+      private function onClassSelected(param1:CharacterClass) : void
       {
          if(this.selectedChar != param1)
          {
@@ -56,7 +56,7 @@ package kabam.rotmg.classes.model
          }
       }
       
-      public function getSelected() : kabam.rotmg.classes.model.CharacterClass
+      public function getSelected() : CharacterClass
       {
          return this.selectedChar || this.getCharacterClass(WIZARD_ID);
       }
@@ -64,7 +64,7 @@ package kabam.rotmg.classes.model
       public function getCharacterSkin(param1:int) : CharacterSkin
       {
          var _loc2_:CharacterSkin = null;
-         var _loc3_:kabam.rotmg.classes.model.CharacterClass = null;
+         var _loc3_:CharacterClass = null;
          for each(_loc3_ in this.classes)
          {
             _loc2_ = _loc3_.skins.getSkin(param1);

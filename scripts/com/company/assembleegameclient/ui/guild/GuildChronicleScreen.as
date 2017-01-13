@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.ui.guild
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.game.AGameSprite;
-   import com.company.assembleegameclient.screens.TitleMenuOption;
-   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.game.events.GuildResultEvent;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.screens.TitleMenuOption;
    import com.company.assembleegameclient.ui.dialogs.Dialog;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   import flash.events.KeyboardEvent;
    import com.company.rotmg.graphics.ScreenGraphic;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    
    public class GuildChronicleScreen extends Sprite
@@ -22,7 +22,7 @@ package com.company.assembleegameclient.ui.guild
       
       private var container:Sprite;
       
-      private var guildPlayerList_:com.company.assembleegameclient.ui.guild.GuildPlayerList;
+      private var guildPlayerList_:GuildPlayerList;
       
       private var continueButton_:TitleMenuOption;
       
@@ -53,7 +53,7 @@ package com.company.assembleegameclient.ui.guild
             this.container.removeChild(this.guildPlayerList_);
          }
          var _loc1_:Player = this.gs_.map.player_;
-         this.guildPlayerList_ = new com.company.assembleegameclient.ui.guild.GuildPlayerList(50,0,_loc1_ == null?"":_loc1_.name_,_loc1_.guildRank_);
+         this.guildPlayerList_ = new GuildPlayerList(50,0,_loc1_ == null?"":_loc1_.name_,_loc1_.guildRank_);
          this.guildPlayerList_.addEventListener(GuildPlayerListEvent.SET_RANK,this.onSetRank);
          this.guildPlayerList_.addEventListener(GuildPlayerListEvent.REMOVE_MEMBER,this.onRemoveMember);
          this.container.addChild(this.guildPlayerList_);

@@ -1,11 +1,11 @@
 package kabam.rotmg.pets.view.components
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-   import org.osflash.signals.natives.NativeSignal;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import kabam.rotmg.pets.util.PetsConstants;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
+   import kabam.rotmg.pets.util.PetsConstants;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.natives.NativeSignal;
    
    public class PetsButtonBar extends Sprite
    {

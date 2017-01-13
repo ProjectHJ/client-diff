@@ -1,11 +1,11 @@
 package kabam.rotmg.tooltips
 {
+   import flash.display.DisplayObject;
    import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import kabam.rotmg.core.signals.HideTooltipsSignal;
    import kabam.rotmg.core.signals.ShowTooltipSignal;
-   import flash.display.DisplayObject;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
    
    public class HoverTooltipDelegate implements TooltipAble
    {

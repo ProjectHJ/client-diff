@@ -1,8 +1,8 @@
 package kabam.rotmg.pets.view
 {
+   import com.company.assembleegameclient.util.StageProxy;
    import flash.display.Sprite;
    import kabam.rotmg.pets.view.dialogs.ClearsPetSlots;
-   import com.company.assembleegameclient.util.StageProxy;
    
    public class PetInteractionView extends Sprite implements ClearsPetSlots
    {

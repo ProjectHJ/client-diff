@@ -1,16 +1,16 @@
 package kabam.rotmg.pets.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.pets.data.PetsModel;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.pets.data.PetSlotsState;
+   import kabam.rotmg.pets.data.PetsModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PetFuserMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.components.PetFuser;
+      public var view:PetFuser;
       
       [Inject]
       public var petsModel:PetsModel;

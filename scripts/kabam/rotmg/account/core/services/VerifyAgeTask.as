@@ -2,8 +2,8 @@ package kabam.rotmg.account.core.services
 {
    import kabam.lib.tasks.BaseTask;
    import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.core.model.PlayerModel;
    
    public class VerifyAgeTask extends BaseTask
    {

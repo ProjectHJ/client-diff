@@ -1,7 +1,7 @@
 package kabam.rotmg.ui.signals
 {
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.objects.Player;
+   import org.osflash.signals.Signal;
    
    public class UpdateHUDSignal extends Signal
    {

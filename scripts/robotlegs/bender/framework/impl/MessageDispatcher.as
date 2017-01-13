@@ -1,7 +1,7 @@
 package robotlegs.bender.framework.impl
 {
-   import robotlegs.bender.framework.api.IMessageDispatcher;
    import flash.utils.Dictionary;
+   import robotlegs.bender.framework.api.IMessageDispatcher;
    
    public final class MessageDispatcher implements IMessageDispatcher
    {

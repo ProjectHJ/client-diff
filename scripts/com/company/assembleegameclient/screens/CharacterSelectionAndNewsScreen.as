@@ -1,28 +1,28 @@
 package com.company.assembleegameclient.screens
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.promotions.view.BeginnersPackageButton;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-   import kabam.rotmg.game.view.CreditDisplay;
-   import flash.display.Shape;
    import com.company.assembleegameclient.ui.Scrollbar;
-   import kabam.rotmg.packages.view.PackageButton;
-   import kabam.rotmg.ui.view.components.MenuOptionsBar;
-   import kabam.rotmg.news.view.NewsView;
-   import flash.events.Event;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.events.MouseEvent;
-   import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.geom.Rectangle;
    import flash.display.DisplayObject;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.geom.Rectangle;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.game.view.CreditDisplay;
+   import kabam.rotmg.news.view.NewsView;
+   import kabam.rotmg.packages.view.PackageButton;
+   import kabam.rotmg.promotions.view.BeginnersPackageButton;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.ui.view.ButtonFactory;
+   import kabam.rotmg.ui.view.components.MenuOptionsBar;
    import kabam.rotmg.ui.view.components.ScreenBase;
+   import org.osflash.signals.Signal;
    
    public class CharacterSelectionAndNewsScreen extends Sprite
    {
@@ -70,7 +70,7 @@ package com.company.assembleegameclient.screens
       
       private var newsText:TextFieldDisplayConcrete;
       
-      private var characterList:com.company.assembleegameclient.screens.CharacterList;
+      private var characterList:CharacterList;
       
       private var characterListType:int = 1;
       
@@ -82,11 +82,11 @@ package com.company.assembleegameclient.screens
       
       private var packageButton:PackageButton;
       
-      private var playButton:com.company.assembleegameclient.screens.TitleMenuOption;
+      private var playButton:TitleMenuOption;
       
-      private var classesButton:com.company.assembleegameclient.screens.TitleMenuOption;
+      private var classesButton:TitleMenuOption;
       
-      private var backButton:com.company.assembleegameclient.screens.TitleMenuOption;
+      private var backButton:TitleMenuOption;
       
       private var menuOptionsBar:MenuOptionsBar;
       
@@ -182,8 +182,8 @@ package com.company.assembleegameclient.screens
       
       private function createCharacterListChar() : void
       {
-         this.characterListType = com.company.assembleegameclient.screens.CharacterList.TYPE_CHAR_SELECT;
-         this.characterList = new com.company.assembleegameclient.screens.CharacterList(this.model,com.company.assembleegameclient.screens.CharacterList.TYPE_CHAR_SELECT);
+         this.characterListType = CharacterList.TYPE_CHAR_SELECT;
+         this.characterList = new CharacterList(this.model,CharacterList.TYPE_CHAR_SELECT);
          this.characterList.x = this.CHARACTER_LIST_X_POS;
          this.characterList.y = this.CHARACTER_LIST_Y_POS;
          this.characterListHeight = this.characterList.height;
@@ -196,8 +196,8 @@ package com.company.assembleegameclient.screens
       
       private function createCharacterListGrave() : void
       {
-         this.characterListType = com.company.assembleegameclient.screens.CharacterList.TYPE_GRAVE_SELECT;
-         this.characterList = new com.company.assembleegameclient.screens.CharacterList(this.model,com.company.assembleegameclient.screens.CharacterList.TYPE_GRAVE_SELECT);
+         this.characterListType = CharacterList.TYPE_GRAVE_SELECT;
+         this.characterList = new CharacterList(this.model,CharacterList.TYPE_GRAVE_SELECT);
          this.characterList.x = this.CHARACTER_LIST_X_POS;
          this.characterList.y = this.CHARACTER_LIST_Y_POS;
          this.characterListHeight = this.characterList.height;
@@ -236,7 +236,7 @@ package com.company.assembleegameclient.screens
       
       private function onOpenCharacters(param1:MouseEvent) : void
       {
-         if(this.characterListType != com.company.assembleegameclient.screens.CharacterList.TYPE_CHAR_SELECT)
+         if(this.characterListType != CharacterList.TYPE_CHAR_SELECT)
          {
             this.removeCharacterList();
             this.openCharactersText.setColor(TAB_SELECTED);
@@ -259,7 +259,7 @@ package com.company.assembleegameclient.screens
       
       private function onOpenGraveyard(param1:MouseEvent) : void
       {
-         if(this.characterListType != com.company.assembleegameclient.screens.CharacterList.TYPE_GRAVE_SELECT)
+         if(this.characterListType != CharacterList.TYPE_GRAVE_SELECT)
          {
             this.removeCharacterList();
             this.openCharactersText.setColor(TAB_UNSELECTED);

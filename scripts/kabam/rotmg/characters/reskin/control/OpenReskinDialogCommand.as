@@ -1,13 +1,13 @@
 package kabam.rotmg.characters.reskin.control
 {
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import flash.display.DisplayObject;
    import kabam.lib.console.signals.HideConsoleSignal;
-   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.characters.reskin.view.ReskinCharacterView;
+   import kabam.rotmg.classes.model.CharacterSkins;
    import kabam.rotmg.classes.model.ClassesModel;
    import kabam.rotmg.classes.view.CharacterSkinListItemFactory;
-   import kabam.rotmg.characters.reskin.view.ReskinCharacterView;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.classes.model.CharacterSkins;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    
    public class OpenReskinDialogCommand
    {

@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.MouseEvent;
    

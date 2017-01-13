@@ -1,10 +1,10 @@
 package kabam.display.Loader
 {
-   import flash.display.Sprite;
    import flash.display.DisplayObject;
-   import kabam.display.LoaderInfo.LoaderInfoProxy;
+   import flash.display.Sprite;
    import flash.net.URLRequest;
    import flash.system.LoaderContext;
+   import kabam.display.LoaderInfo.LoaderInfoProxy;
    
    public class LoaderProxy extends Sprite
    {

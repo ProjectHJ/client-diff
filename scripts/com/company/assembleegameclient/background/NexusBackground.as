@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.background
 {
-   import flash.geom.Point;
+   import com.company.assembleegameclient.map.Camera;
+   import com.company.util.GraphicsUtil;
    import flash.display.BitmapData;
-   import flash.display.IGraphicsData;
+   import flash.display.BitmapDataChannel;
    import flash.display.GraphicsBitmapFill;
    import flash.display.GraphicsPath;
-   import com.company.assembleegameclient.map.Camera;
+   import flash.display.IGraphicsData;
    import flash.geom.Matrix;
+   import flash.geom.Point;
    import flash.geom.Rectangle;
-   import com.company.util.GraphicsUtil;
-   import flash.display.BitmapDataChannel;
    
    public class NexusBackground extends Background
    {
@@ -71,16 +71,16 @@ package com.company.assembleegameclient.background
    }
 }
 
-import flash.geom.Point;
+import com.company.assembleegameclient.background.NexusBackground;
+import com.company.assembleegameclient.map.Camera;
+import com.company.util.AssetLibrary;
+import com.company.util.GraphicsUtil;
 import flash.display.BitmapData;
 import flash.display.GraphicsBitmapFill;
 import flash.display.GraphicsPath;
-import com.company.assembleegameclient.map.Camera;
 import flash.display.IGraphicsData;
-import com.company.assembleegameclient.background.NexusBackground;
 import flash.geom.Matrix;
-import com.company.util.GraphicsUtil;
-import com.company.util.AssetLibrary;
+import flash.geom.Point;
 
 class Island
 {

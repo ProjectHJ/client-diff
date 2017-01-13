@@ -1,27 +1,27 @@
 package com.company.assembleegameclient.map.mapoverlay
 {
-   import flash.display.Sprite;
+   import com.company.assembleegameclient.map.Camera;
    import com.company.assembleegameclient.objects.GameObject;
-   import flash.geom.Point;
-   import flash.text.TextField;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.util.GraphicsUtil;
+   import flash.display.CapsStyle;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsPathCommand;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.ui.model.HUDModel;
-   import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import com.company.assembleegameclient.map.Camera;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
    import flash.display.JointStyle;
-   import com.company.util.GraphicsUtil;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.geom.Point;
+   import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
-   import flash.display.GraphicsPathCommand;
-   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.ui.model.HUDModel;
    
    public class SpeechBalloon extends Sprite implements IMapOverlayElement
    {

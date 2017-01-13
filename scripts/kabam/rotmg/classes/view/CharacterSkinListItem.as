@@ -1,28 +1,28 @@
 package kabam.rotmg.classes.view
 {
-   import flash.display.Sprite;
-   import flash.filters.ColorMatrixFilter;
-   import flash.display.Shape;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.util.components.RadioButton;
-   import flash.display.Bitmap;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.classes.model.CharacterSkin;
-   import kabam.rotmg.classes.model.CharacterSkinState;
-   import kabam.rotmg.util.components.api.BuyButton;
-   import flash.filters.DropShadowFilter;
-   import flash.display.BitmapData;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import com.company.assembleegameclient.util.Currency;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import com.company.util.MoreColorUtil;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.filters.ColorMatrixFilter;
+   import flash.filters.DropShadowFilter;
+   import flash.geom.ColorTransform;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormatAlign;
+   import kabam.rotmg.classes.model.CharacterSkin;
+   import kabam.rotmg.classes.model.CharacterSkinState;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import flash.geom.ColorTransform;
-   import flash.display.Graphics;
-   import com.company.util.MoreColorUtil;
+   import kabam.rotmg.util.components.RadioButton;
+   import kabam.rotmg.util.components.api.BuyButton;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeMappedSignal;
    
    public class CharacterSkinListItem extends Sprite
@@ -57,7 +57,7 @@ package kabam.rotmg.classes.view
       
       private const buyButtonContainer:Sprite = this.makeBuyButtonContainer();
       
-      private const limitedBanner:kabam.rotmg.classes.view.CharacterSkinLimitedBanner = this.makeLimitedBanner();
+      private const limitedBanner:CharacterSkinLimitedBanner = this.makeLimitedBanner();
       
       public const buy:Signal = new NativeMappedSignal(this.buyButtonContainer,MouseEvent.CLICK);
       
@@ -159,10 +159,10 @@ package kabam.rotmg.classes.view
          return _loc1_;
       }
       
-      private function makeLimitedBanner() : kabam.rotmg.classes.view.CharacterSkinLimitedBanner
+      private function makeLimitedBanner() : CharacterSkinLimitedBanner
       {
-         var _loc1_:kabam.rotmg.classes.view.CharacterSkinLimitedBanner = null;
-         _loc1_ = new kabam.rotmg.classes.view.CharacterSkinLimitedBanner();
+         var _loc1_:CharacterSkinLimitedBanner = null;
+         _loc1_ = new CharacterSkinLimitedBanner();
          _loc1_.readyForPositioning.addOnce(this.setLimitedBannerVisibility);
          _loc1_.y = -1;
          _loc1_.visible = false;

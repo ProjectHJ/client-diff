@@ -1,12 +1,12 @@
 package kabam.rotmg.arena.view
 {
    import flash.display.Sprite;
-   import kabam.rotmg.text.view.StaticTextDisplay;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
    import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
+   import kabam.rotmg.text.view.StaticTextDisplay;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
    
    public class ArenaLeaderboardTab extends Sprite
    {

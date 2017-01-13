@@ -1,22 +1,22 @@
 package com.company.assembleegameclient.ui.guild
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.ui.BaseSimpleText;
-   import flash.display.Bitmap;
-   import flash.display.Shape;
    import com.company.assembleegameclient.ui.Scrollbar;
-   import flash.display.Graphics;
-   import flash.filters.DropShadowFilter;
    import com.company.assembleegameclient.util.GuildUtil;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.text.TextFieldAutoSize;
-   import flash.events.Event;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.account.core.Account;
+   import com.company.ui.BaseSimpleText;
    import com.company.util.MoreObjectUtil;
+   import flash.display.Bitmap;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class GuildPlayerList extends Sprite
    {

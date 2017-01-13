@@ -1,21 +1,21 @@
 package kabam.rotmg.classes.view
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.ui.view.components.ScreenBase;
+   import com.company.assembleegameclient.constants.ScreenTypes;
    import com.company.assembleegameclient.screens.AccountScreen;
-   import flash.display.Shape;
-   import kabam.rotmg.game.view.CreditDisplay;
-   import com.company.rotmg.graphics.ScreenGraphic;
    import com.company.assembleegameclient.screens.TitleMenuOption;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.ui.view.SignalWaiter;
+   import com.company.rotmg.graphics.ScreenGraphic;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.text.TextFieldAutoSize;
    import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.core.model.PlayerModel;
-   import com.company.assembleegameclient.constants.ScreenTypes;
-   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.game.view.CreditDisplay;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import kabam.rotmg.ui.view.components.ScreenBase;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeMappedSignal;
-   import flash.events.MouseEvent;
    
    public class CharacterSkinView extends Sprite
    {
@@ -35,9 +35,9 @@ package kabam.rotmg.classes.view
       
       private const backBtn:TitleMenuOption = this.makeBackButton();
       
-      private const list:kabam.rotmg.classes.view.CharacterSkinListView = this.makeListView();
+      private const list:CharacterSkinListView = this.makeListView();
       
-      private const detail:kabam.rotmg.classes.view.ClassDetailView = this.makeClassDetailView();
+      private const detail:ClassDetailView = this.makeClassDetailView();
       
       public const play:Signal = new NativeMappedSignal(this.playBtn,MouseEvent.CLICK);
       
@@ -122,20 +122,20 @@ package kabam.rotmg.classes.view
          return _loc1_;
       }
       
-      private function makeListView() : kabam.rotmg.classes.view.CharacterSkinListView
+      private function makeListView() : CharacterSkinListView
       {
-         var _loc1_:kabam.rotmg.classes.view.CharacterSkinListView = null;
-         _loc1_ = new kabam.rotmg.classes.view.CharacterSkinListView();
+         var _loc1_:CharacterSkinListView = null;
+         _loc1_ = new CharacterSkinListView();
          _loc1_.x = 351;
          _loc1_.y = 110;
          addChild(_loc1_);
          return _loc1_;
       }
       
-      private function makeClassDetailView() : kabam.rotmg.classes.view.ClassDetailView
+      private function makeClassDetailView() : ClassDetailView
       {
-         var _loc1_:kabam.rotmg.classes.view.ClassDetailView = null;
-         _loc1_ = new kabam.rotmg.classes.view.ClassDetailView();
+         var _loc1_:ClassDetailView = null;
+         _loc1_ = new ClassDetailView();
          _loc1_.x = 5;
          _loc1_.y = 110;
          addChild(_loc1_);

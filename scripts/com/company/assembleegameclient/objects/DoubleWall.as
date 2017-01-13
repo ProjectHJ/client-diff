@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.objects
 {
    import com.company.assembleegameclient.engine3d.Face3D;
-   import flash.display.BitmapData;
-   import com.company.util.BitmapUtil;
-   import flash.display.IGraphicsData;
    import com.company.assembleegameclient.map.Camera;
-   import com.company.assembleegameclient.map.Square;
+   import com.company.assembleegameclient.map.Square#55;
+   import com.company.util.BitmapUtil;
+   import flash.display.BitmapData;
+   import flash.display.IGraphicsData;
    
    public class DoubleWall extends GameObject
    {

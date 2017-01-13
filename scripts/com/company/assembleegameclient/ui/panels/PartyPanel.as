@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.ui.panels
 {
-   import flash.display.DisplayObjectContainer;
-   import com.company.assembleegameclient.ui.PlayerGameObjectListItem;
-   import com.company.assembleegameclient.ui.menu.PlayerMenu;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
+   import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.objects.Party;
    import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.GameObjectListItem;
-   import flash.geom.ColorTransform;
-   import com.company.assembleegameclient.objects.Party;
-   import flash.utils.getTimer;
+   import com.company.assembleegameclient.ui.PlayerGameObjectListItem;
+   import com.company.assembleegameclient.ui.menu.PlayerMenu;
    import com.company.util.MoreColorUtil;
-   import com.company.assembleegameclient.game.GameSprite;
+   import flash.display.DisplayObjectContainer;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.geom.ColorTransform;
+   import flash.utils.getTimer;
    
    public class PartyPanel extends Panel
    {

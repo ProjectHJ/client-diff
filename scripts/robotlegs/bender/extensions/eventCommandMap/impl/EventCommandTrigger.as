@@ -1,11 +1,11 @@
 package robotlegs.bender.extensions.eventCommandMap.impl
 {
-   import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
-   import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
-   import robotlegs.bender.extensions.commandCenter.impl.CommandMappingList;
    import flash.events.IEventDispatcher;
    import flash.utils.describeType;
    import org.swiftsuspenders.Injector;
+   import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
+   import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
+   import robotlegs.bender.extensions.commandCenter.impl.CommandMappingList;
    
    public class EventCommandTrigger implements ICommandTrigger
    {
@@ -19,14 +19,14 @@ package robotlegs.bender.extensions.eventCommandMap.impl
       
       private var _type:String;
       
-      private var _executor:robotlegs.bender.extensions.eventCommandMap.impl.EventCommandExecutor;
+      private var _executor:EventCommandExecutor;
       
       public function EventCommandTrigger(param1:Injector, param2:IEventDispatcher, param3:String, param4:Class = null)
       {
          super();
          this._dispatcher = param2;
          this._type = param3;
-         this._executor = new robotlegs.bender.extensions.eventCommandMap.impl.EventCommandExecutor(this,this._mappingList,param1,param4);
+         this._executor = new EventCommandExecutor(this,this._mappingList,param1,param4);
       }
       
       public function addMapping(param1:ICommandMapping) : void

@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.screens.charrects
 {
-   import flash.display.Bitmap;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.appengine.SavedCharacter;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.util.AnimatedChar;
-   import flash.display.BitmapData;
-   import com.company.util.BitmapUtil;
-   import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
    import com.company.assembleegameclient.util.FameUtil;
+   import com.company.util.BitmapUtil;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class CreateNewCharacterRect extends CharacterRect
    {

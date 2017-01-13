@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.account.ui.TextInputField;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.ui.dropdown.DropDown;
    import com.company.ui.BaseSimpleText;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.FocusEvent;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
    
    public class Filter extends Sprite
    {

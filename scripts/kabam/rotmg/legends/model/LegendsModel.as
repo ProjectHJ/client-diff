@@ -4,22 +4,22 @@ package kabam.rotmg.legends.model
    {
        
       
-      private var timespan:kabam.rotmg.legends.model.Timespan;
+      private var timespan:Timespan;
       
       private const map:Object = {};
       
       public function LegendsModel()
       {
-         this.timespan = kabam.rotmg.legends.model.Timespan.WEEK;
+         this.timespan = Timespan.WEEK;
          super();
       }
       
-      public function getTimespan() : kabam.rotmg.legends.model.Timespan
+      public function getTimespan() : Timespan
       {
          return this.timespan;
       }
       
-      public function setTimespan(param1:kabam.rotmg.legends.model.Timespan) : void
+      public function setTimespan(param1:Timespan) : void
       {
          this.timespan = param1;
       }

@@ -3138,22 +3138,6 @@
          <Index>31</Index>
       </AnimatedTexture>
    </Object>
-   <Object type="0x6e9" id="Gutsbot Pet Stone">
-      <Class>Equipment</Class>
-      <Item/>
-      <AnimatedTexture>
-         <File>petsDivine</File>
-         <Index>31</Index>
-      </AnimatedTexture>
-      <Size>60</Size>
-      <SlotType>10</SlotType>
-      <Description>{pets.Customize_your_pet_with_the_Gutsbot_Skin}</Description>
-      <Activate skinId="32648">PetSkin</Activate>
-      <Consumable/>
-      <Soulbound/>
-      <BagType>4</BagType>
-      <DisplayId>{pets.Gutsbot_Pet_Stone}</DisplayId>
-   </Object>
    <Object type="0x89a2" id="Marid Skin">
       <PetSkin/>
       <DisplayId>{pets.Marid_Skin}</DisplayId>
@@ -3690,5 +3674,620 @@
       <Group>RisingFury</Group>
       <Description>{pets.Standing_still_will_charge_this_attack._Begin_moving_to_rele}</Description>
       <DisplayId>{pets.Rising_Fury}</DisplayId>
+   </Object>
+   <Object type="0x1997" id="Turtle Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>24</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Turtle_of_the_Aquatic_family._This_i}</Description>
+      <Activate skinId="32561">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Turtle_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x1998" id="Peppermint Snail Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>58</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Peppermint_Snail_of_the_Aquatic_fami}</Description>
+      <Activate skinId="32601">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Peppermint_Snail_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x1999" id="Golden Crab Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x0f</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Golden_Crab_of_the_Aquatic_family._T}</Description>
+      <Activate skinId="32634">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Golden_Crab_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x199a" id="Robobuddy Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>51</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Robobuddy_of_the_Automaton_family._T}</Description>
+      <Activate skinId="32572">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Robobuddy_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x199b" id="Redbot Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>86</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Redbot_of_the_Automaton_family._This}</Description>
+      <Activate skinId="32614">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Redbot_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x199c" id="Gutsbot Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x10</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Gutsbot_of_the_Automaton_family._Thi}</Description>
+      <Activate skinId="32648">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Gutsbot_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x199d" id="Cardinal Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>62</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Cardinal_of_the_Avian_family._This_i}</Description>
+      <Activate skinId="32534">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Cardinal_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x199e" id="USA Eagle Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>71</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_USA_Eagle_of_the_Avian_family._This_}</Description>
+      <Activate skinId="32582">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.USA_Eagle_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x199f" id="Griffin Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x11</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Griffin_of_the_Avian_family._This_is}</Description>
+      <Activate skinId="32621">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Griffin_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x19a0" id="Sheepdog Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>0x0a</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Sheepdog_of_the_Canine_family._This_}</Description>
+      <Activate skinId="32528">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Sheepdog_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19a1" id="Gold Bulldog Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>79</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Gold_Bulldog_of_the_Canine_family._T}</Description>
+      <Activate skinId="32579">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Gold_Bulldog_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19a2" id="Golden Hyena Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x12</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Golden_Hyena_of_the_Canine_family._T}</Description>
+      <Activate skinId="32619">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Golden_Hyena_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x19a3" id="Elephant Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>35</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Elephant_of_the_Exotic_family._This_}</Description>
+      <Activate skinId="32535">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Elephant_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19a4" id="Panda Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>0x0b</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Panda_of_the_Exotic_family._This_is_}</Description>
+      <Activate skinId="32584">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Panda_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19a5" id="King Gorilla Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x13</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_King_Gorilla_of_the_Exotic_family._T}</Description>
+      <Activate skinId="32623">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.King_Gorilla_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x19a6" id="Duck Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>22</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Duck_of_the_Farm_family._This_is_irr}</Description>
+      <Activate skinId="32540">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Duck_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19a7" id="Mallard Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>21</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Mallard_of_the_Farm_family._This_is_}</Description>
+      <Activate skinId="32587">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Mallard_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19a8" id="Enraged Yack Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x14</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Enraged_Yack_of_the_Farm_family._Thi}</Description>
+      <Activate skinId="32624">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Enraged_Yack_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x19a9" id="Tan Cat Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>90</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Tan_Cat_of_the_Feline_family._This_i}</Description>
+      <Activate skinId="32520">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Tan_Cat_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19aa" id="White Lion Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>88</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_White_Lion_of_the_Feline_family._Thi}</Description>
+      <Activate skinId="32575">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.White_Lion_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19ab" id="Tiger Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x15</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Tiger_of_the_Feline_family._This_is_}</Description>
+      <Activate skinId="32616">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Tiger_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x19ac" id="Leprechaun Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>17</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Leprechaun_of_the_Humanoid_family._T}</Description>
+      <Activate skinId="32607">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Leprechaun_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19ad" id="Red Ant Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>56</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Red_Ant_of_the_Insect_family._This_i}</Description>
+      <Activate skinId="32550">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Red_Ant_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19ae" id="Bee Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>26</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Bee_of_the_Insect_family._This_is_ir}</Description>
+      <Activate skinId="32594">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Bee_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19af" id="Beetleman Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x16</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Beetleman_of_the_Insect_family._This}</Description>
+      <Activate skinId="32630">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Beetleman_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x19b0" id="Penguin Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>0x09</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Penguin_of_the_Penguin_family._This_}</Description>
+      <Activate skinId="32552">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Penguin_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19b1" id="Karate Purple Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>50</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Karate_Purple_of_the_Penguin_family.}</Description>
+      <Activate skinId="32599">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Karate_Purple_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19b2" id="Tank Penguin Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x17</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Tank_Penguin_of_the_Penguin_family._}</Description>
+      <Activate skinId="32633">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Tank_Penguin_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x19b3" id="Dino Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>34</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Dino_of_the_Reptile_family._This_is_}</Description>
+      <Activate skinId="32543">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Dino_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object id="Frilled Lizard" type="0x19b4">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Reptile</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Frilled Lizard Skin</DefaultSkin>
+      <Size>80</Size>
+      <DisplayId>{pets.Frilled_Lizard}</DisplayId>
+   </Object>
+   <Object type="0x19b5" id="Frilled Lizard Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Frilled_Lizard_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>106</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19b6" id="Frilled Lizard Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>106</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Frilled_Lizard_of_the_Reptile_family}</Description>
+      <Activate skinId="6580">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Frilled_Lizard_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19b7" id="Poison Drake Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x18</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Poison_Drake_of_the_Reptile_family._}</Description>
+      <Activate skinId="32629">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Poison_Drake_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object type="0x19b8" id="Spirit Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>101</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Spirit_of_the_Spooky_family._This_is}</Description>
+      <Activate skinId="32566">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Spirit_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19b9" id="Werewolf Cub Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>63</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Werewolf_Cub_of_the_Spooky_family._T}</Description>
+      <Activate skinId="32604">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Werewolf_Cub_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19ba" id="Hamster Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>33</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Hamster_of_the_Woodland_family._This}</Description>
+      <Activate skinId="32541">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Hamster_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19bb" id="Snowy Owl Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>43</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Snowy_Owl_of_the_Woodland_family._Th}</Description>
+      <Activate skinId="32590">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Snowy_Owl_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
+   </Object>
+   <Object type="0x19bc" id="Sprite Star Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>102</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Sprite_Star_of_the_?_?_?_?_family._T}</Description>
+      <Activate skinId="32570">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Sprite_Star_Pet_Stone}</DisplayId>
+      <feedPower>50</feedPower>
+   </Object>
+   <Object type="0x19bd" id="Gummy Bear Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>38</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Gummy_Bear_of_the_?_?_?_?_family._Th}</Description>
+      <Activate skinId="32611">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Gummy_Bear_Pet_Stone}</DisplayId>
+      <feedPower>500</feedPower>
    </Object>
 </Objects>

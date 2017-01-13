@@ -1,8 +1,8 @@
 package kabam.rotmg.game.model
 {
    import flash.utils.Dictionary;
-   import org.osflash.signals.Signal;
    import kabam.rotmg.ui.model.PotionModel;
+   import org.osflash.signals.Signal;
    
    public class PotionInventoryModel
    {

@@ -1,8 +1,8 @@
 package kabam.rotmg.core.service
 {
+   import com.company.googleanalytics.GA;
    import com.google.analytics.GATracker;
    import flash.display.Stage;
-   import com.company.googleanalytics.GA;
    
    public class GoogleAnalytics
    {

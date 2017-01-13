@@ -1,7 +1,7 @@
 package kabam.rotmg.death.control
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.messaging.impl.incoming.Death;
+   import org.osflash.signals.Signal;
    
    public class ZombifySignal extends Signal
    {

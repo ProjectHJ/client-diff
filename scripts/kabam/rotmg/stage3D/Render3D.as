@@ -1,9 +1,9 @@
 package kabam.rotmg.stage3D
 {
-   import org.osflash.signals.Signal;
+   import com.company.assembleegameclient.map.Camera;
    import flash.display.IGraphicsData;
    import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-   import com.company.assembleegameclient.map.Camera;
+   import org.osflash.signals.Signal;
    
    public class Render3D extends Signal
    {

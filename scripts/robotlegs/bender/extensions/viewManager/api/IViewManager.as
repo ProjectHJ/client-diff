@@ -1,7 +1,7 @@
 package robotlegs.bender.extensions.viewManager.api
 {
-   import flash.events.IEventDispatcher;
    import flash.display.DisplayObjectContainer;
+   import flash.events.IEventDispatcher;
    
    public interface IViewManager extends IEventDispatcher
    {

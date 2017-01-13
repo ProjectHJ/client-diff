@@ -1,16 +1,16 @@
 package org.swiftsuspenders.mapping
 {
    import org.swiftsuspenders.Injector;
-   import org.swiftsuspenders.dependencyproviders.ClassProvider;
-   import org.swiftsuspenders.dependencyproviders.SingletonProvider;
-   import org.swiftsuspenders.dependencyproviders.ValueProvider;
-   import org.swiftsuspenders.dependencyproviders.DependencyProvider;
    import org.swiftsuspenders.InjectorError;
-   import org.swiftsuspenders.utils.SsInternal;
+   import org.swiftsuspenders.dependencyproviders.ClassProvider;
+   import org.swiftsuspenders.dependencyproviders.DependencyProvider;
    import org.swiftsuspenders.dependencyproviders.ForwardingProvider;
-   import org.swiftsuspenders.dependencyproviders.SoftDependencyProvider;
-   import org.swiftsuspenders.dependencyproviders.LocalOnlyProvider;
    import org.swiftsuspenders.dependencyproviders.InjectorUsingProvider;
+   import org.swiftsuspenders.dependencyproviders.LocalOnlyProvider;
+   import org.swiftsuspenders.dependencyproviders.SingletonProvider;
+   import org.swiftsuspenders.dependencyproviders.SoftDependencyProvider;
+   import org.swiftsuspenders.dependencyproviders.ValueProvider;
+   import org.swiftsuspenders.utils.SsInternal;
    
    public class InjectionMapping implements ProviderlessMapping, UnsealedMapping
    {

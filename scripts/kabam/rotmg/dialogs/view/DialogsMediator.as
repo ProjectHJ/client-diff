@@ -1,20 +1,20 @@
 package kabam.rotmg.dialogs.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import flash.display.Sprite;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
    import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.dialogs.control.ShowDialogBackgroundSignal;
-   import kabam.rotmg.dialogs.control.PushDialogSignal;
    import kabam.rotmg.dialogs.control.PopDialogSignal;
-   import flash.display.Sprite;
+   import kabam.rotmg.dialogs.control.PushDialogSignal;
+   import kabam.rotmg.dialogs.control.ShowDialogBackgroundSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class DialogsMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.dialogs.view.DialogsView;
+      public var view:DialogsView;
       
       [Inject]
       public var openDialogNoModal:OpenDialogNoModalSignal;

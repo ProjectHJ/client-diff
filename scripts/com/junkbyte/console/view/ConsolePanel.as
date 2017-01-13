@@ -1,16 +1,16 @@
 package com.junkbyte.console.view
 {
-   import flash.display.Sprite;
-   import flash.events.MouseEvent;
-   import flash.text.TextField;
-   import flash.events.TextEvent;
-   import flash.geom.Point;
    import com.junkbyte.console.Console;
    import com.junkbyte.console.ConsoleConfig;
    import com.junkbyte.console.ConsoleStyle;
-   import flash.geom.Rectangle;
-   import flash.events.Event;
    import flash.display.DisplayObject;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.events.TextEvent;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
    
    public class ConsolePanel extends Sprite

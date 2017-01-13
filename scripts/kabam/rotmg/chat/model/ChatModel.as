@@ -14,11 +14,11 @@ package kabam.rotmg.chat.model
       
       public var storedItemCount:int;
       
-      public var chatMessages:Vector.<kabam.rotmg.chat.model.ChatMessage>;
+      public var chatMessages:Vector.<ChatMessage>;
       
       public function ChatModel()
       {
-         this.chatMessages = new Vector.<kabam.rotmg.chat.model.ChatMessage>();
+         this.chatMessages = new Vector.<ChatMessage>();
          super();
          this.bounds = new Rectangle(0,0,600,300);
          this.lineHeight = 20;
@@ -26,7 +26,7 @@ package kabam.rotmg.chat.model
          this.storedItemCount = 150;
       }
       
-      public function pushMessage(param1:kabam.rotmg.chat.model.ChatMessage) : void
+      public function pushMessage(param1:ChatMessage) : void
       {
          this.chatMessages.push(param1);
          if(this.chatMessages.length > this.storedItemCount)

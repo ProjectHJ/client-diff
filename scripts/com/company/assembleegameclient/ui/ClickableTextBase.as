@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class ClickableTextBase extends Sprite
    {

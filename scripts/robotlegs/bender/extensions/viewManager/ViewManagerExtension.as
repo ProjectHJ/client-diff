@@ -1,11 +1,11 @@
 package robotlegs.bender.extensions.viewManager
 {
-   import robotlegs.bender.framework.api.IExtension;
-   import robotlegs.bender.extensions.viewManager.impl.ContainerRegistry;
    import org.swiftsuspenders.Injector;
    import robotlegs.bender.extensions.viewManager.api.IViewManager;
-   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.extensions.viewManager.impl.ContainerRegistry;
    import robotlegs.bender.extensions.viewManager.impl.ViewManager;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
    import robotlegs.bender.framework.impl.UID;
    
    public class ViewManagerExtension implements IExtension

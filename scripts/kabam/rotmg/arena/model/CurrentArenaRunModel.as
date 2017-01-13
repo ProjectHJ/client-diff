@@ -1,11 +1,11 @@
 package kabam.rotmg.arena.model
 {
+   import kabam.rotmg.assets.services.CharacterFactory;
+   import kabam.rotmg.classes.model.CharacterSkin;
+   import kabam.rotmg.classes.model.ClassesModel;
    import kabam.rotmg.game.model.GameModel;
    import kabam.rotmg.pets.data.PetsModel;
-   import kabam.rotmg.classes.model.ClassesModel;
-   import kabam.rotmg.assets.services.CharacterFactory;
    import org.osflash.signals.Signal;
-   import kabam.rotmg.classes.model.CharacterSkin;
    
    public class CurrentArenaRunModel
    {
@@ -25,7 +25,7 @@ package kabam.rotmg.arena.model
       
       public var died:Boolean = false;
       
-      public var entry:kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+      public var entry:ArenaLeaderboardEntry;
       
       public const waveUpdated:Signal = new Signal();
       
@@ -33,7 +33,7 @@ package kabam.rotmg.arena.model
       
       public function CurrentArenaRunModel()
       {
-         this.entry = new kabam.rotmg.arena.model.ArenaLeaderboardEntry();
+         this.entry = new ArenaLeaderboardEntry();
          super();
          this.clear();
       }

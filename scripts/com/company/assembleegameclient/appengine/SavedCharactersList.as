@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.appengine
 {
-   import flash.events.Event;
-   import kabam.rotmg.servers.api.LatLong;
-   import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.promotions.model.BeginnersPackageModel;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import org.swiftsuspenders.Injector;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import com.company.assembleegameclient.ui.dialogs.TOSPopup;
    import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.ui.dialogs.TOSPopup;
+   import flash.events.Event;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.promotions.model.BeginnersPackageModel;
+   import kabam.rotmg.servers.api.LatLong;
+   import org.swiftsuspenders.Injector;
    
    public class SavedCharactersList extends Event
    {
@@ -39,7 +39,7 @@ package com.company.assembleegameclient.appengine
       
       public var numChars_:int = 0;
       
-      public var savedChars_:Vector.<com.company.assembleegameclient.appengine.SavedCharacter>;
+      public var savedChars_:Vector.<SavedCharacter>;
       
       public var charStats_:Object;
       
@@ -69,7 +69,7 @@ package com.company.assembleegameclient.appengine
       
       public var canMapEdit_:Boolean;
       
-      public var news_:Vector.<com.company.assembleegameclient.appengine.SavedNewsItem>;
+      public var news_:Vector.<SavedNewsItem>;
       
       public var myPos_:LatLong;
       
@@ -87,9 +87,9 @@ package com.company.assembleegameclient.appengine
       {
          var _loc4_:* = undefined;
          var _loc5_:Account = null;
-         this.savedChars_ = new Vector.<com.company.assembleegameclient.appengine.SavedCharacter>();
+         this.savedChars_ = new Vector.<SavedCharacter>();
          this.charStats_ = {};
-         this.news_ = new Vector.<com.company.assembleegameclient.appengine.SavedNewsItem>();
+         this.news_ = new Vector.<SavedNewsItem>();
          super(SAVED_CHARS_LIST);
          this.origData_ = param1;
          this.charsXML_ = new XML(this.origData_);
@@ -120,9 +120,9 @@ package com.company.assembleegameclient.appengine
          }
       }
       
-      public function getCharById(param1:int) : com.company.assembleegameclient.appengine.SavedCharacter
+      public function getCharById(param1:int) : SavedCharacter
       {
-         var _loc2_:com.company.assembleegameclient.appengine.SavedCharacter = null;
+         var _loc2_:SavedCharacter = null;
          for each(_loc2_ in this.savedChars_)
          {
             if(_loc2_.charId() == param1)
@@ -189,10 +189,10 @@ package com.company.assembleegameclient.appengine
          this.maxNumChars_ = int(this.charsXML_.@maxNumChars);
          for each(_loc1_ in this.charsXML_.Char)
          {
-            this.savedChars_.push(new com.company.assembleegameclient.appengine.SavedCharacter(_loc1_,this.name_));
+            this.savedChars_.push(new SavedCharacter(_loc1_,this.name_));
             this.numChars_++;
          }
-         this.savedChars_.sort(com.company.assembleegameclient.appengine.SavedCharacter.compare);
+         this.savedChars_.sort(SavedCharacter.compare);
       }
       
       private function parseCharacterStatsData() : void
@@ -216,7 +216,7 @@ package com.company.assembleegameclient.appengine
          var _loc1_:XML = XML(this.charsXML_.News);
          for each(_loc2_ in _loc1_.Item)
          {
-            this.news_.push(new com.company.assembleegameclient.appengine.SavedNewsItem(_loc2_.Icon,_loc2_.Title,_loc2_.TagLine,_loc2_.Link,int(_loc2_.Date)));
+            this.news_.push(new SavedNewsItem(_loc2_.Icon,_loc2_.Title,_loc2_.TagLine,_loc2_.Link,int(_loc2_.Date)));
          }
       }
       

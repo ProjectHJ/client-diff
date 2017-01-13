@@ -1,13 +1,13 @@
 package kabam.rotmg.core.commands
 {
+   import com.company.assembleegameclient.screens.LoadingScreen;
+   import flash.display.Sprite;
+   import kabam.lib.tasks.DispatchSignalTask;
+   import kabam.lib.tasks.TaskMonitor;
+   import kabam.lib.tasks.TaskSequence;
+   import kabam.rotmg.account.core.services.GetCharListTask;
    import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.core.signals.SetScreenSignal;
-   import flash.display.Sprite;
-   import kabam.lib.tasks.TaskMonitor;
-   import kabam.rotmg.account.core.services.GetCharListTask;
-   import com.company.assembleegameclient.screens.LoadingScreen;
-   import kabam.lib.tasks.TaskSequence;
-   import kabam.lib.tasks.DispatchSignalTask;
    
    public class SetScreenWithValidDataCommand
    {

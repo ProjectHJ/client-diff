@@ -1,24 +1,24 @@
 package com.company.assembleegameclient.ui.tooltip
 {
-   import kabam.rotmg.assets.services.CharacterFactory;
-   import kabam.rotmg.classes.model.ClassesModel;
+   import com.company.assembleegameclient.appengine.CharacterStats;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.GameObjectListItem;
-   import com.company.assembleegameclient.ui.StatusBar;
    import com.company.assembleegameclient.ui.LineBreakDesign;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import com.company.assembleegameclient.ui.StatusBar;
    import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
    import com.company.assembleegameclient.ui.panels.itemgrids.InventoryGrid;
-   import com.company.assembleegameclient.appengine.CharacterStats;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.assembleegameclient.util.FameUtil;
+   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.assets.services.CharacterFactory;
    import kabam.rotmg.classes.model.CharacterClass;
    import kabam.rotmg.classes.model.CharacterSkin;
-   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.classes.model.ClassesModel;
    import kabam.rotmg.constants.GeneralConstants;
-   import com.company.assembleegameclient.util.FameUtil;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.filters.DropShadowFilter;
    
    public class MyPlayerToolTip extends ToolTip
    {

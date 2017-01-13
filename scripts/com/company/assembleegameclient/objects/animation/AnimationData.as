@@ -12,12 +12,12 @@ package com.company.assembleegameclient.objects.animation
       
       public var sync_:Boolean = false;
       
-      public var frames:Vector.<com.company.assembleegameclient.objects.animation.FrameData>;
+      public var frames:Vector.<FrameData>;
       
       public function AnimationData(param1:XML)
       {
          var _loc2_:XML = null;
-         this.frames = new Vector.<com.company.assembleegameclient.objects.animation.FrameData>();
+         this.frames = new Vector.<FrameData>();
          super();
          if("@prob" in param1)
          {
@@ -28,7 +28,7 @@ package com.company.assembleegameclient.objects.animation
          this.sync_ = String(param1.@sync) == "true";
          for each(_loc2_ in param1.Frame)
          {
-            this.frames.push(new com.company.assembleegameclient.objects.animation.FrameData(_loc2_));
+            this.frames.push(new FrameData(_loc2_));
          }
       }
       

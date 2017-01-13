@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.util.AnimatedChar;
-   import flash.utils.Dictionary;
    import com.company.assembleegameclient.objects.particles.EffectProperties;
+   import com.company.assembleegameclient.util.AnimatedChar;
+   import flash.display.BitmapData;
+   import flash.utils.Dictionary;
    
    public class TextureData
    {
@@ -15,7 +15,7 @@ package com.company.assembleegameclient.objects
       
       public var animatedChar_:AnimatedChar = null;
       
-      public var randomTextureData_:Vector.<com.company.assembleegameclient.objects.TextureData> = null;
+      public var randomTextureData_:Vector.<TextureData> = null;
       
       public var altTextures_:Dictionary = null;
       
@@ -33,7 +33,7 @@ package com.company.assembleegameclient.objects
          return null;
       }
       
-      public function getAltTextureData(param1:int) : com.company.assembleegameclient.objects.TextureData
+      public function getAltTextureData(param1:int) : TextureData
       {
          return null;
       }

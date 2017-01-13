@@ -1,9 +1,9 @@
 package kabam.rotmg.death.control
 {
-   import kabam.rotmg.messaging.impl.incoming.Death;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.death.model.DeathModel;
    import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.death.model.DeathModel;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.messaging.impl.incoming.Death;
    
    public class HandleDeathCommand
    {
@@ -22,13 +22,13 @@ package kabam.rotmg.death.control
       public var player:PlayerModel;
       
       [Inject]
-      public var resurrect:kabam.rotmg.death.control.ResurrectPlayerSignal;
+      public var resurrect:ResurrectPlayerSignal;
       
       [Inject]
-      public var zombify:kabam.rotmg.death.control.ZombifySignal;
+      public var zombify:ZombifySignal;
       
       [Inject]
-      public var normal:kabam.rotmg.death.control.HandleNormalDeathSignal;
+      public var normal:HandleNormalDeathSignal;
       
       public function HandleDeathCommand()
       {

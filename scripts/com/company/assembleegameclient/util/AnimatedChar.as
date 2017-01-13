@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.util
 {
-   import flash.utils.Dictionary;
+   import com.company.assembleegameclient.map.Camera;
+   import com.company.util.Trig;
    import flash.display.BitmapData;
    import flash.geom.Point;
    import flash.geom.Rectangle;
-   import com.company.assembleegameclient.map.Camera;
-   import com.company.util.Trig;
+   import flash.utils.Dictionary;
    
    public class AnimatedChar
    {
@@ -33,7 +33,7 @@ package com.company.assembleegameclient.util
       private static const PIOVER4:Number = Math.PI / 4;
        
       
-      public var origImage_:com.company.assembleegameclient.util.MaskedImage;
+      public var origImage_:MaskedImage;
       
       private var width_:int;
       
@@ -43,7 +43,7 @@ package com.company.assembleegameclient.util
       
       private var dict_:Dictionary;
       
-      public function AnimatedChar(param1:com.company.assembleegameclient.util.MaskedImage, param2:int, param3:int, param4:int)
+      public function AnimatedChar(param1:MaskedImage, param2:int, param3:int, param4:int)
       {
          this.dict_ = new Dictionary();
          super();
@@ -86,7 +86,7 @@ package com.company.assembleegameclient.util
       {
          var _loc1_:BitmapData = new BitmapDataSpy(this.width_ * 7,this.height_,true,0);
          var _loc2_:Dictionary = this.dict_[this.firstDir_];
-         var _loc3_:Vector.<com.company.assembleegameclient.util.MaskedImage> = _loc2_[STAND];
+         var _loc3_:Vector.<MaskedImage> = _loc2_[STAND];
          if(_loc3_.length > 0)
          {
             _loc1_.copyPixels(_loc3_[0].image_,_loc3_[0].image_.rect,new Point(0,0));
@@ -112,20 +112,20 @@ package com.company.assembleegameclient.util
          return _loc1_;
       }
       
-      public function imageVec(param1:int, param2:int) : Vector.<com.company.assembleegameclient.util.MaskedImage>
+      public function imageVec(param1:int, param2:int) : Vector.<MaskedImage>
       {
          return this.dict_[param1][param2];
       }
       
-      public function imageFromDir(param1:int, param2:int, param3:Number) : com.company.assembleegameclient.util.MaskedImage
+      public function imageFromDir(param1:int, param2:int, param3:Number) : MaskedImage
       {
-         var _loc4_:Vector.<com.company.assembleegameclient.util.MaskedImage> = this.dict_[param1][param2];
+         var _loc4_:Vector.<MaskedImage> = this.dict_[param1][param2];
          param3 = Math.max(0,Math.min(0.99999,param3));
          var _loc5_:int = param3 * _loc4_.length;
          return _loc4_[_loc5_];
       }
       
-      public function imageFromAngle(param1:Number, param2:int, param3:Number) : com.company.assembleegameclient.util.MaskedImage
+      public function imageFromAngle(param1:Number, param2:int, param3:Number) : MaskedImage
       {
          var _loc4_:int = int(param1 / PIOVER4 + 4) % 8;
          var _loc5_:Vector.<int> = SEC_TO_DIRS[_loc4_];
@@ -138,13 +138,13 @@ package com.company.assembleegameclient.util
                _loc6_ = this.dict_[_loc5_[2]];
             }
          }
-         var _loc7_:Vector.<com.company.assembleegameclient.util.MaskedImage> = _loc6_[param2];
+         var _loc7_:Vector.<MaskedImage> = _loc6_[param2];
          param3 = Math.max(0,Math.min(0.99999,param3));
          var _loc8_:int = param3 * _loc7_.length;
          return _loc7_[_loc8_];
       }
       
-      public function imageFromFacing(param1:Number, param2:Camera, param3:int, param4:Number) : com.company.assembleegameclient.util.MaskedImage
+      public function imageFromFacing(param1:Number, param2:Camera, param3:int, param4:Number) : MaskedImage
       {
          var _loc5_:Number = Trig.boundToPI(param1 - param2.angleRad_);
          var _loc6_:int = int(_loc5_ / PIOVER4 + 4) % 8;
@@ -158,7 +158,7 @@ package com.company.assembleegameclient.util
                _loc8_ = this.dict_[_loc7_[2]];
             }
          }
-         var _loc9_:Vector.<com.company.assembleegameclient.util.MaskedImage> = _loc8_[param3];
+         var _loc9_:Vector.<MaskedImage> = _loc8_[param3];
          param4 = Math.max(0,Math.min(0.99999,param4));
          var _loc10_:int = param4 * _loc9_.length;
          return _loc9_[_loc10_];
@@ -166,19 +166,19 @@ package com.company.assembleegameclient.util
       
       private function loadDir(param1:int, param2:Boolean, param3:Boolean, param4:MaskedImageSet) : Dictionary
       {
-         var _loc14_:Vector.<com.company.assembleegameclient.util.MaskedImage> = null;
+         var _loc14_:Vector.<MaskedImage> = null;
          var _loc15_:BitmapData = null;
          var _loc16_:BitmapData = null;
          var _loc5_:Dictionary = new Dictionary();
-         var _loc6_:com.company.assembleegameclient.util.MaskedImage = param4.images_[param1 + 0];
-         var _loc7_:com.company.assembleegameclient.util.MaskedImage = param4.images_[param1 + 1];
-         var _loc8_:com.company.assembleegameclient.util.MaskedImage = param4.images_[param1 + 2];
+         var _loc6_:MaskedImage = param4.images_[param1 + 0];
+         var _loc7_:MaskedImage = param4.images_[param1 + 1];
+         var _loc8_:MaskedImage = param4.images_[param1 + 2];
          if(_loc8_.amountTransparent() == 1)
          {
             _loc8_ = null;
          }
-         var _loc9_:com.company.assembleegameclient.util.MaskedImage = param4.images_[param1 + 4];
-         var _loc10_:com.company.assembleegameclient.util.MaskedImage = param4.images_[param1 + 5];
+         var _loc9_:MaskedImage = param4.images_[param1 + 4];
+         var _loc10_:MaskedImage = param4.images_[param1 + 5];
          if(_loc9_.amountTransparent() == 1)
          {
             _loc9_ = null;
@@ -187,7 +187,7 @@ package com.company.assembleegameclient.util
          {
             _loc10_ = null;
          }
-         var _loc11_:com.company.assembleegameclient.util.MaskedImage = param4.images_[param1 + 6];
+         var _loc11_:MaskedImage = param4.images_[param1 + 6];
          if(_loc10_ != null && _loc11_.amountTransparent() != 1)
          {
             _loc15_ = new BitmapDataSpy(this.width_ * 3,this.height_,true,0);
@@ -206,12 +206,12 @@ package com.company.assembleegameclient.util
             {
                _loc16_.copyPixels(_loc11_.mask_,new Rectangle(0,0,this.width_,this.height_),new Point(this.width_ * 2,0));
             }
-            _loc10_ = new com.company.assembleegameclient.util.MaskedImage(_loc15_,_loc16_);
+            _loc10_ = new MaskedImage(_loc15_,_loc16_);
          }
-         var _loc12_:Vector.<com.company.assembleegameclient.util.MaskedImage> = new Vector.<com.company.assembleegameclient.util.MaskedImage>();
+         var _loc12_:Vector.<MaskedImage> = new Vector.<MaskedImage>();
          _loc12_.push(!!param2?_loc6_.mirror():_loc6_);
          _loc5_[STAND] = _loc12_;
-         var _loc13_:Vector.<com.company.assembleegameclient.util.MaskedImage> = new Vector.<com.company.assembleegameclient.util.MaskedImage>();
+         var _loc13_:Vector.<MaskedImage> = new Vector.<MaskedImage>();
          _loc13_.push(!!param2?_loc7_.mirror():_loc7_);
          if(_loc8_ != null)
          {
@@ -232,7 +232,7 @@ package com.company.assembleegameclient.util
          }
          else
          {
-            _loc14_ = new Vector.<com.company.assembleegameclient.util.MaskedImage>();
+            _loc14_ = new Vector.<MaskedImage>();
             if(_loc9_ != null)
             {
                _loc14_.push(!!param2?_loc9_.mirror():_loc9_);
@@ -244,6 +244,11 @@ package com.company.assembleegameclient.util
          }
          _loc5_[ATTACK] = _loc14_;
          return _loc5_;
+      }
+      
+      public function getHeight() : int
+      {
+         return this.height_;
       }
    }
 }

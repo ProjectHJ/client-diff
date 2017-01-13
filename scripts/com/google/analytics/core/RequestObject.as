@@ -1,7 +1,7 @@
 package com.google.analytics.core
 {
-   import flash.utils.getTimer;
    import flash.net.URLRequest;
+   import flash.utils.getTimer;
    
    public class RequestObject
    {

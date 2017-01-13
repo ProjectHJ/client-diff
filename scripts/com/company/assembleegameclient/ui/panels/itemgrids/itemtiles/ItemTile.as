@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-   import flash.display.Sprite;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
-   import flash.display.Shape;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
    import com.company.util.GraphicsUtil;
-   import com.company.assembleegameclient.objects.Player;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.display.Shape;
+   import flash.display.Sprite;
    import kabam.rotmg.constants.ItemConstants;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
    
    public class ItemTile extends Sprite
    {
@@ -33,7 +33,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
       
       private var restrictedUseIndicator:Shape;
       
-      public var itemSprite:com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileSprite;
+      public var itemSprite:ItemTileSprite;
       
       public var tileId:int;
       
@@ -51,7 +51,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
          this.ownerGrid = param2;
          this.restrictedUseIndicator = new Shape();
          addChild(this.restrictedUseIndicator);
-         this.setItemSprite(new com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileSprite());
+         this.setItemSprite(new ItemTileSprite());
       }
       
       public function drawBackground(param1:Array) : void
@@ -84,7 +84,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
          return true;
       }
       
-      public function setItemSprite(param1:com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileSprite) : void
+      public function setItemSprite(param1:ItemTileSprite) : void
       {
          this.itemSprite = param1;
          this.itemSprite.x = WIDTH / 2;

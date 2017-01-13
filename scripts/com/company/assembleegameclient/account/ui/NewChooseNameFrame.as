@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.account.ui
 {
-   import org.osflash.signals.Signal;
    import flash.events.MouseEvent;
    import kabam.rotmg.text.model.TextKey;
+   import org.osflash.signals.Signal;
    
    public class NewChooseNameFrame extends Frame
    {
@@ -12,12 +12,12 @@ package com.company.assembleegameclient.account.ui
       
       public const cancel:Signal = new Signal();
       
-      private var name_:com.company.assembleegameclient.account.ui.TextInputField;
+      private var name_:TextInputField;
       
       public function NewChooseNameFrame()
       {
          super(TextKey.CHOOSE_NAME_TITLE,TextKey.FRAME_CANCEL,TextKey.CHOOSE_NAME_CHOOSE,"/newChooseName");
-         this.name_ = new com.company.assembleegameclient.account.ui.TextInputField(TextKey.NEWCHOOSENAMEFRAME_NAME,false);
+         this.name_ = new TextInputField(TextKey.NEWCHOOSENAMEFRAME_NAME,false);
          this.name_.inputText_.restrict = "A-Za-z";
          var _loc1_:int = 10;
          this.name_.inputText_.maxChars = _loc1_;

@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.incoming.arena
 {
-   import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
    import flash.utils.IDataInput;
+   import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
    
    public class ImminentArenaWave extends IncomingMessage
    {

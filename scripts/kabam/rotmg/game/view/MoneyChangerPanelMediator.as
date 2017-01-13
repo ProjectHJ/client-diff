@@ -1,11 +1,11 @@
 package kabam.rotmg.game.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
    import kabam.rotmg.account.core.view.RegisterPromptDialog;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.text.model.TextKey;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class MoneyChangerPanelMediator extends Mediator
    {
@@ -15,7 +15,7 @@ package kabam.rotmg.game.view
       public var account:Account;
       
       [Inject]
-      public var view:kabam.rotmg.game.view.MoneyChangerPanel;
+      public var view:MoneyChangerPanel;
       
       [Inject]
       public var openDialog:OpenDialogSignal;

@@ -1,14 +1,14 @@
 package kabam.rotmg.account.core.commands
 {
-   import kabam.rotmg.account.core.services.VerifyAgeTask;
-   import kabam.lib.tasks.TaskMonitor;
-   import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.lib.tasks.BranchingTask;
-   import kabam.lib.tasks.Task;
-   import kabam.lib.tasks.DispatchSignalTask;
    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+   import kabam.lib.tasks.BranchingTask;
+   import kabam.lib.tasks.DispatchSignalTask;
+   import kabam.lib.tasks.Task;
+   import kabam.lib.tasks.TaskMonitor;
+   import kabam.rotmg.account.core.services.VerifyAgeTask;
+   import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    
    public class VerifyAgeCommand
    {

@@ -1,14 +1,14 @@
 package kabam.rotmg.pets.view.dialogs
 {
-   import com.company.assembleegameclient.ui.dialogs.DialogCloser;
    import com.company.assembleegameclient.ui.dialogs.CloseDialogComponent;
+   import com.company.assembleegameclient.ui.dialogs.Dialog;
+   import com.company.assembleegameclient.ui.dialogs.DialogCloser;
    import flash.display.DisplayObjectContainer;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.pets.view.components.FusionStrengthFactory;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import org.osflash.signals.Signal;
-   import kabam.rotmg.pets.view.components.FusionStrengthFactory;
-   import com.company.assembleegameclient.ui.dialogs.Dialog;
    
    public class NewAbility extends PetDialog implements DialogCloser
    {

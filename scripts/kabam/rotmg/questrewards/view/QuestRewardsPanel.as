@@ -1,16 +1,16 @@
 package kabam.rotmg.questrewards.view
 {
-   import com.company.assembleegameclient.ui.panels.Panel;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.ui.model.HUDModel;
-   import kabam.rotmg.questrewards.controller.QuestFetchCompleteSignal;
-   import kabam.rotmg.messaging.impl.incoming.QuestFetchResponse;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.display.Bitmap;
-   import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
    import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.ui.DeprecatedTextButtonStatic;
+   import com.company.assembleegameclient.ui.panels.Panel;
+   import flash.display.Bitmap;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.messaging.impl.incoming.QuestFetchResponse;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.questrewards.controller.QuestFetchCompleteSignal;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.ui.model.HUDModel;
    
    public class QuestRewardsPanel extends Panel
    {

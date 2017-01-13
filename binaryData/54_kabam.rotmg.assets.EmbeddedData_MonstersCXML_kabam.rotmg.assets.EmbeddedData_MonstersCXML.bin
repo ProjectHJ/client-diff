@@ -1637,4 +1637,44 @@
       <Sound id="0">weapon/firework</Sound>
       <DisplayId>{monsters.Fake_White_Bag}</DisplayId>
    </Object>
+   <Object type="0x6b6" id="Dragon Chain 1">
+      <Class>Character</Class>
+      <Texture>
+         <File>lofiChar16x8</File>
+         <Index>0x7a</Index>
+      </Texture>
+      <Size>100</Size>
+      <NoMiniMap/>
+      <DisplayId>{monsters.Dragon_Chain_1}</DisplayId>
+   </Object>
+   <Object type="0x6b7" id="Dragon Chain 2">
+      <Class>Character</Class>
+      <Texture>
+         <File>lofiChar16x8</File>
+         <Index>0x7a</Index>
+      </Texture>
+      <Size>80</Size>
+      <NoMiniMap/>
+      <DisplayId>{monsters.Dragon_Chain_2}</DisplayId>
+   </Object>
+   <Object type="0x6b8" id="Dragon Chain 3">
+      <Class>Character</Class>
+      <Texture>
+         <File>lofiChar16x8</File>
+         <Index>0x7a</Index>
+      </Texture>
+      <Size>60</Size>
+      <NoMiniMap/>
+      <DisplayId>{monsters.Dragon_Chain_3}</DisplayId>
+   </Object>
+   <Object type="0x6b9" id="Dragon Chain 4">
+      <Class>Character</Class>
+      <Texture>
+         <File>lofiChar16x8</File>
+         <Index>0x7a</Index>
+      </Texture>
+      <Size>40</Size>
+      <NoMiniMap/>
+      <DisplayId>{monsters.Dragon_Chain_4}</DisplayId>
+   </Object>
 </Objects>

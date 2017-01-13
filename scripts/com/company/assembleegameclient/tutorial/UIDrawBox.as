@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.tutorial
 {
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
-   import flash.display.Graphics;
    import com.company.util.ConversionUtil;
+   import flash.display.Graphics;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
    
    public class UIDrawBox
    {

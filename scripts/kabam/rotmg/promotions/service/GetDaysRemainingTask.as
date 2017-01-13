@@ -2,8 +2,8 @@ package kabam.rotmg.promotions.service
 {
    import kabam.lib.tasks.BaseTask;
    import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.promotions.model.BeginnersPackageModel;
    import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.promotions.model.BeginnersPackageModel;
    
    public class GetDaysRemainingTask extends BaseTask
    {

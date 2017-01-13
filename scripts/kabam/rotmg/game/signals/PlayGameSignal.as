@@ -1,7 +1,7 @@
 package kabam.rotmg.game.signals
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.game.model.GameInitData;
+   import org.osflash.signals.Signal;
    
    public class PlayGameSignal extends Signal
    {

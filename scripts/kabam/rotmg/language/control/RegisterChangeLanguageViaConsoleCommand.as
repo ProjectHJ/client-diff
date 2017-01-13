@@ -11,7 +11,7 @@ package kabam.rotmg.language.control
       public var registerConsoleAction:RegisterConsoleActionSignal;
       
       [Inject]
-      public var setLanguage:kabam.rotmg.language.control.SetLanguageSignal;
+      public var setLanguage:SetLanguageSignal;
       
       public function RegisterChangeLanguageViaConsoleCommand()
       {

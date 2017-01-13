@@ -1,20 +1,20 @@
 package kabam.rotmg.mysterybox.components
 {
+   import flash.display.DisplayObject;
    import flash.display.Sprite;
-   import kabam.rotmg.pets.view.components.PopupWindowBackground;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import flash.events.Event;
+   import flash.filters.DropShadowFilter;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormatAlign;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.pets.util.PetsViewAssetFactory;
-   import flash.events.Event;
    import kabam.rotmg.core.StaticInjectorContext;
-   import org.swiftsuspenders.Injector;
+   import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
    import kabam.rotmg.mysterybox.services.MysteryBoxModel;
+   import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.pets.view.components.PopupWindowBackground;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.swiftsuspenders.Injector;
    
    public class MysteryBoxSelectModal extends Sprite
    {
@@ -40,7 +40,7 @@ package kabam.rotmg.mysterybox.components
       
       private var titleString:String = "MysteryBoxSelectModal.titleString";
       
-      private var selectEntries:Vector.<kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry>;
+      private var selectEntries:Vector.<MysteryBoxSelectEntry>;
       
       public function MysteryBoxSelectModal()
       {
@@ -49,7 +49,7 @@ package kabam.rotmg.mysterybox.components
          modalWidth = 385;
          modalHeight = 60;
          aMysteryBoxHeight = 77;
-         this.selectEntries = new Vector.<kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry>();
+         this.selectEntries = new Vector.<MysteryBoxSelectEntry>();
          var _loc1_:Injector = StaticInjectorContext.getInjector();
          var _loc2_:MysteryBoxModel = _loc1_.getInstance(MysteryBoxModel);
          this.mysteryData = _loc2_.getBoxesOrderByWeight();
@@ -99,7 +99,7 @@ package kabam.rotmg.mysterybox.components
          var _loc2_:DisplayObject = null;
          var _loc4_:Number = NaN;
          var _loc5_:int = 0;
-         var _loc6_:kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry = null;
+         var _loc6_:MysteryBoxSelectEntry = null;
          for each(_loc1_ in this.mysteryData)
          {
             modalHeight = modalHeight + aMysteryBoxHeight;
@@ -123,7 +123,7 @@ package kabam.rotmg.mysterybox.components
             {
                break;
             }
-            _loc6_ = new kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry(_loc1_);
+            _loc6_ = new MysteryBoxSelectEntry(_loc1_);
             _loc6_.x = x + _loc3_;
             _loc6_.y = y + _loc4_;
             _loc4_ = _loc4_ + aMysteryBoxHeight;
@@ -135,7 +135,7 @@ package kabam.rotmg.mysterybox.components
       
       public function updateContent() : *
       {
-         var _loc1_:kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry = null;
+         var _loc1_:MysteryBoxSelectEntry = null;
          for each(_loc1_ in this.selectEntries)
          {
             _loc1_.updateContent();

@@ -1,9 +1,9 @@
 package com.junkbyte.console.core
 {
+   import com.junkbyte.console.Console;
    import com.junkbyte.console.vos.Log;
    import flash.events.Event;
    import flash.utils.ByteArray;
-   import com.junkbyte.console.Console;
    
    public class Logs extends ConsoleCore
    {

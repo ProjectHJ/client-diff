@@ -1,17 +1,17 @@
 package com.junkbyte.console.core
 {
-   import flash.net.LocalConnection;
-   import flash.net.Socket;
-   import flash.utils.ByteArray;
-   import flash.utils.Dictionary;
-   import flash.events.StatusEvent;
+   import com.junkbyte.console.Console;
    import flash.events.AsyncErrorEvent;
-   import flash.system.Security;
    import flash.events.Event;
    import flash.events.IOErrorEvent;
-   import flash.events.SecurityErrorEvent;
    import flash.events.ProgressEvent;
-   import com.junkbyte.console.Console;
+   import flash.events.SecurityErrorEvent;
+   import flash.events.StatusEvent;
+   import flash.net.LocalConnection;
+   import flash.net.Socket;
+   import flash.system.Security;
+   import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
    
    public class Remoting extends ConsoleCore
    {

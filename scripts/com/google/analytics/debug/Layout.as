@@ -1,11 +1,11 @@
 package com.google.analytics.debug
 {
-   import flash.events.KeyboardEvent;
+   import com.google.analytics.GATracker;
+   import com.google.analytics.core.GIFRequest;
    import flash.display.DisplayObject;
    import flash.events.Event;
-   import com.google.analytics.GATracker;
+   import flash.events.KeyboardEvent;
    import flash.net.URLRequest;
-   import com.google.analytics.core.GIFRequest;
    
    public class Layout implements ILayout
    {
@@ -25,17 +25,17 @@ package com.google.analytics.debug
       
       private var _hasWarning:Boolean;
       
-      private var _mainPanel:com.google.analytics.debug.Panel;
+      private var _mainPanel:Panel;
       
       private var _GRAlertQueue:Array;
       
-      private var _debug:com.google.analytics.debug.DebugConfiguration;
+      private var _debug:DebugConfiguration;
       
-      public var visualDebug:com.google.analytics.debug.Debug;
+      public var visualDebug:Debug;
       
       private var _hasGRAlert:Boolean;
       
-      public function Layout(param1:com.google.analytics.debug.DebugConfiguration, param2:DisplayObject)
+      public function Layout(param1:DebugConfiguration, param2:DisplayObject)
       {
          super();
          _display = param2;
@@ -114,7 +114,7 @@ package com.google.analytics.debug
          var _loc1_:int = 10;
          var _loc2_:uint = _display.stage.stageWidth - _loc1_ * 2;
          var _loc3_:uint = _display.stage.stageHeight - _loc1_ * 2;
-         var _loc4_:com.google.analytics.debug.Panel = new com.google.analytics.debug.Panel("analytics",_loc2_,_loc3_);
+         var _loc4_:Panel = new Panel("analytics",_loc2_,_loc3_);
          _loc4_.alignement = Align.top;
          _loc4_.stickToEdge = false;
          _loc4_.title = "Google Analytics v" + GATracker.version;
@@ -131,11 +131,11 @@ package com.google.analytics.debug
       
       public function addToPanel(param1:String, param2:DisplayObject) : void
       {
-         var _loc4_:com.google.analytics.debug.Panel = null;
+         var _loc4_:Panel = null;
          var _loc3_:DisplayObject = _display.stage.getChildByName(param1);
          if(_loc3_)
          {
-            _loc4_ = _loc3_ as com.google.analytics.debug.Panel;
+            _loc4_ = _loc3_ as Panel;
             _loc4_.addData(param2);
          }
          else
@@ -280,7 +280,7 @@ package com.google.analytics.debug
       {
          if(!visualDebug)
          {
-            visualDebug = new com.google.analytics.debug.Debug();
+            visualDebug = new Debug();
             visualDebug.alignement = Align.bottom;
             visualDebug.stickToEdge = true;
             addToPanel("analytics",visualDebug);
@@ -304,7 +304,7 @@ package com.google.analytics.debug
       
       public function createPanel(param1:String, param2:uint, param3:uint) : void
       {
-         var _loc4_:com.google.analytics.debug.Panel = new com.google.analytics.debug.Panel(param1,param2,param3);
+         var _loc4_:Panel = new Panel(param1,param2,param3);
          _loc4_.alignement = Align.center;
          _loc4_.stickToEdge = false;
          addToStage(_loc4_);

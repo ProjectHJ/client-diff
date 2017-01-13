@@ -1,11 +1,11 @@
 package kabam.rotmg.chat.control
 {
-   import robotlegs.bender.bundles.mvcs.Command;
-   import kabam.rotmg.chat.model.ChatMessage;
-   import kabam.rotmg.text.model.TextAndMapProvider;
-   import kabam.rotmg.chat.model.ChatModel;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import com.company.assembleegameclient.parameters.Parameters;
+   import kabam.rotmg.chat.model.ChatMessage;
+   import kabam.rotmg.chat.model.ChatModel;
+   import kabam.rotmg.text.model.TextAndMapProvider;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import robotlegs.bender.bundles.mvcs.Command;
    
    public class ParseAddTextLineCommand extends Command
    {
@@ -18,7 +18,7 @@ package kabam.rotmg.chat.control
       public var textStringMap:TextAndMapProvider;
       
       [Inject]
-      public var addChat:kabam.rotmg.chat.control.AddChatSignal;
+      public var addChat:AddChatSignal;
       
       [Inject]
       public var model:ChatModel;

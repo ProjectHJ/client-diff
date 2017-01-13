@@ -1,15 +1,15 @@
 package robotlegs.bender.extensions.viewManager.impl
 {
-   import flash.display.DisplayObjectContainer;
    import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
    
    public class ManualStageObserver
    {
        
       
-      private var _registry:robotlegs.bender.extensions.viewManager.impl.ContainerRegistry;
+      private var _registry:ContainerRegistry;
       
-      public function ManualStageObserver(param1:robotlegs.bender.extensions.viewManager.impl.ContainerRegistry)
+      public function ManualStageObserver(param1:ContainerRegistry)
       {
          var _loc2_:ContainerBinding = null;
          super();

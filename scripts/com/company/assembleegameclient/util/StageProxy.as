@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.util
 {
-   import flash.events.IEventDispatcher;
    import flash.display.DisplayObject;
    import flash.display.DisplayObjectContainer;
    import flash.display.InteractiveObject;
    import flash.events.Event;
+   import flash.events.IEventDispatcher;
    
    public class StageProxy implements IEventDispatcher
    {
       
-      private static var stage3D:com.company.assembleegameclient.util.Stage3DProxy = null;
+      private static var stage3D:Stage3DProxy = null;
        
       
       protected var reference:DisplayObject;
@@ -88,11 +88,11 @@ package com.company.assembleegameclient.util
          this.reference.stage.quality = param1;
       }
       
-      public function getStage3Ds(param1:int) : com.company.assembleegameclient.util.Stage3DProxy
+      public function getStage3Ds(param1:int) : Stage3DProxy
       {
          if(stage3D == null)
          {
-            stage3D = new com.company.assembleegameclient.util.Stage3DProxy(this.reference.stage.stage3Ds[param1]);
+            stage3D = new Stage3DProxy(this.reference.stage.stage3Ds[param1]);
          }
          return stage3D;
       }

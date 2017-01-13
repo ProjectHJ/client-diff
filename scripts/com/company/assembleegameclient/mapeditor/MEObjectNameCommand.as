@@ -6,7 +6,7 @@ package com.company.assembleegameclient.mapeditor
    {
        
       
-      private var map_:com.company.assembleegameclient.mapeditor.MEMap;
+      private var map_:MEMap;
       
       private var x_:int;
       
@@ -16,7 +16,7 @@ package com.company.assembleegameclient.mapeditor
       
       private var newName_:String;
       
-      public function MEObjectNameCommand(param1:com.company.assembleegameclient.mapeditor.MEMap, param2:int, param3:int, param4:String, param5:String)
+      public function MEObjectNameCommand(param1:MEMap, param2:int, param3:int, param4:String, param5:String)
       {
          super();
          this.map_ = param1;

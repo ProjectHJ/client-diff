@@ -1,7 +1,7 @@
 package robotlegs.bender.extensions.viewManager.impl
 {
-   import flash.events.Event;
    import flash.display.DisplayObject;
+   import flash.events.Event;
    
    public class ConfigureViewEvent extends Event
    {

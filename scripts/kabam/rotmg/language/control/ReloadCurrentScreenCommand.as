@@ -1,9 +1,9 @@
 package kabam.rotmg.language.control
 {
+   import kabam.rotmg.core.model.ScreenModel;
    import kabam.rotmg.core.signals.InvalidateDataSignal;
    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.core.model.ScreenModel;
    import kabam.rotmg.ui.view.TitleView;
    
    public class ReloadCurrentScreenCommand

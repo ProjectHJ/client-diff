@@ -1,14 +1,14 @@
 package kabam.rotmg.packages.view
 {
-   import flash.display.Sprite;
-   import flash.display.DisplayObject;
-   import com.company.util.AssetLibrary;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.util.AssetLibrary;
    import com.company.util.BitmapUtil;
    import flash.display.Bitmap;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.display.Sprite;
    import flash.geom.Rectangle;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    
    public class BasePackageButton extends Sprite
    {

@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.utils.Dictionary;
-   import com.company.util.MoreStringUtil;
    import com.company.assembleegameclient.map.GroundLibrary;
    import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.util.MoreStringUtil;
+   import flash.utils.Dictionary;
    
    class GroundChooser extends Chooser
    {

@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl
 {
-   import com.company.googleanalytics.GA;
    import com.company.assembleegameclient.util.Currency;
+   import com.company.googleanalytics.GA;
    
    class OutstandingBuy
    {

@@ -1,12 +1,12 @@
 package kabam.rotmg.appengine.impl
 {
+   import com.company.assembleegameclient.parameters.Parameters;
+   import flash.net.URLLoaderDataFormat;
+   import kabam.rotmg.account.core.Account;
    import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.appengine.api.RetryLoader;
    import kabam.rotmg.application.api.ApplicationSetup;
-   import kabam.rotmg.account.core.Account;
    import org.osflash.signals.OnceSignal;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import flash.net.URLLoaderDataFormat;
    
    public class SimpleAppEngineClient implements AppEngineClient
    {

@@ -1,13 +1,13 @@
 package kabam.rotmg.messaging.impl
 {
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.game.AGameSprite;
-   import kabam.rotmg.servers.api.Server;
+   import com.company.assembleegameclient.objects.GameObject;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.objects.Projectile;
    import flash.utils.ByteArray;
    import kabam.lib.net.impl.SocketServer;
-   import com.company.assembleegameclient.objects.GameObject;
-   import com.company.assembleegameclient.objects.Projectile;
-   import com.company.assembleegameclient.objects.Player;
+   import kabam.rotmg.servers.api.Server;
+   import org.osflash.signals.Signal;
    
    public class GameServerConnection
    {
@@ -198,7 +198,7 @@ package kabam.rotmg.messaging.impl
       
       public static const KEY_INFO_RESPONSE:int = 97;
       
-      public static var instance:kabam.rotmg.messaging.impl.GameServerConnection;
+      public static var instance:GameServerConnection;
        
       
       public var changeMapSignal:Signal;
@@ -223,11 +223,11 @@ package kabam.rotmg.messaging.impl
       
       public var lastTickId_:int = -1;
       
-      public var jitterWatcher_:kabam.rotmg.messaging.impl.JitterWatcher;
+      public var jitterWatcher_:JitterWatcher;
       
       public var serverConnection:SocketServer;
       
-      public var outstandingBuy_:kabam.rotmg.messaging.impl.OutstandingBuy = null;
+      public var outstandingBuy_:OutstandingBuy = null;
       
       public function GameServerConnection()
       {

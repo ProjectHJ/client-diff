@@ -1,9 +1,9 @@
 package org.osflash.signals.natives
 {
-   import flash.utils.getQualifiedClassName;
    import flash.events.Event;
-   import org.osflash.signals.SlotList;
    import flash.events.IEventDispatcher;
+   import flash.utils.getQualifiedClassName;
+   import org.osflash.signals.SlotList;
    
    public class NativeMappedSignal extends NativeRelaySignal
    {

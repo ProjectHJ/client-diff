@@ -1,7 +1,7 @@
 package robotlegs.bender.framework.api
 {
-   import org.swiftsuspenders.Injector;
    import org.hamcrest.Matcher;
+   import org.swiftsuspenders.Injector;
    
    public interface IContext
    {

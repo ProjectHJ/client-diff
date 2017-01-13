@@ -1,9 +1,9 @@
 package com.google.analytics.debug
 {
-   import flash.utils.getTimer;
-   import flash.net.URLRequest;
    import com.google.analytics.core.GIFRequest;
+   import flash.net.URLRequest;
    import flash.ui.Keyboard;
+   import flash.utils.getTimer;
    
    public class DebugConfiguration
    {
@@ -11,7 +11,7 @@ package com.google.analytics.debug
       
       public var showHideKey:Number;
       
-      private var _mode:com.google.analytics.debug.VisualDebugMode;
+      private var _mode:VisualDebugMode;
       
       private var _verbose:Boolean = false;
       
@@ -29,7 +29,7 @@ package com.google.analytics.debug
       
       public var traceOutput:Boolean = false;
       
-      public var layout:com.google.analytics.debug.ILayout;
+      public var layout:ILayout;
       
       public var warningTimeout:Number = 1500;
       
@@ -41,7 +41,7 @@ package com.google.analytics.debug
       
       public function DebugConfiguration()
       {
-         _mode = com.google.analytics.debug.VisualDebugMode.basic;
+         _mode = VisualDebugMode.basic;
          showHideKey = Keyboard.SPACE;
          destroyKey = Keyboard.BACKSPACE;
          super();
@@ -64,14 +64,14 @@ package com.google.analytics.debug
             switch(param1)
             {
                case "geek":
-                  param1 = com.google.analytics.debug.VisualDebugMode.geek;
+                  param1 = VisualDebugMode.geek;
                   break;
                case "advanced":
-                  param1 = com.google.analytics.debug.VisualDebugMode.advanced;
+                  param1 = VisualDebugMode.advanced;
                   break;
                default:
                case "basic":
-                  param1 = com.google.analytics.debug.VisualDebugMode.basic;
+                  param1 = VisualDebugMode.basic;
             }
          }
          _mode = param1;
@@ -111,7 +111,7 @@ package com.google.analytics.debug
          }
       }
       
-      public function warning(param1:String, param2:com.google.analytics.debug.VisualDebugMode = null) : void
+      public function warning(param1:String, param2:VisualDebugMode = null) : void
       {
          if(_filter(param2))
          {
@@ -127,7 +127,7 @@ package com.google.analytics.debug
          }
       }
       
-      private function _filter(param1:com.google.analytics.debug.VisualDebugMode = null) : Boolean
+      private function _filter(param1:VisualDebugMode = null) : Boolean
       {
          return param1 && int(param1) >= int(this.mode);
       }
@@ -169,7 +169,7 @@ package com.google.analytics.debug
          var _loc2_:Array = [];
          var _loc3_:* = "";
          var _loc4_:* = "";
-         if(this.mode == com.google.analytics.debug.VisualDebugMode.geek)
+         if(this.mode == VisualDebugMode.geek)
          {
             _loc3_ = getTimer() + " - ";
             _loc4_ = new Array(_loc3_.length).join(" ") + " ";
@@ -219,7 +219,7 @@ package com.google.analytics.debug
          }
       }
       
-      public function info(param1:String, param2:com.google.analytics.debug.VisualDebugMode = null) : void
+      public function info(param1:String, param2:VisualDebugMode = null) : void
       {
          if(_filter(param2))
          {

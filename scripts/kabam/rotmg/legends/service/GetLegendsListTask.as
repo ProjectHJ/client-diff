@@ -3,10 +3,10 @@ package kabam.rotmg.legends.service
    import kabam.lib.tasks.BaseTask;
    import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.legends.model.LegendsModel;
-   import kabam.rotmg.legends.model.LegendFactory;
-   import kabam.rotmg.legends.model.Timespan;
    import kabam.rotmg.legends.model.Legend;
+   import kabam.rotmg.legends.model.LegendFactory;
+   import kabam.rotmg.legends.model.LegendsModel;
+   import kabam.rotmg.legends.model.Timespan;
    
    public class GetLegendsListTask extends BaseTask
    {

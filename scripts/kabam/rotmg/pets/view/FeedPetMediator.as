@@ -1,24 +1,24 @@
 package kabam.rotmg.pets.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.pets.data.PetsModel;
-   import kabam.rotmg.pets.data.PetSlotsState;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.messaging.impl.PetUpgradeRequest;
+   import kabam.rotmg.messaging.impl.data.SlotObjectData;
    import kabam.rotmg.pets.controller.PetFeedResultSignal;
    import kabam.rotmg.pets.controller.UpgradePetSignal;
-   import org.swiftsuspenders.Injector;
-   import kabam.rotmg.pets.data.PetVO;
-   import kabam.rotmg.pets.view.dialogs.PetPickerDialog;
-   import kabam.rotmg.messaging.impl.data.SlotObjectData;
    import kabam.rotmg.pets.data.FeedPetRequestVO;
-   import kabam.rotmg.messaging.impl.PetUpgradeRequest;
+   import kabam.rotmg.pets.data.PetSlotsState;
+   import kabam.rotmg.pets.data.PetVO;
+   import kabam.rotmg.pets.data.PetsModel;
+   import kabam.rotmg.pets.view.dialogs.PetPickerDialog;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class FeedPetMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.FeedPetView;
+      public var view:FeedPetView;
       
       [Inject]
       public var petsModel:PetsModel;
@@ -75,7 +75,7 @@ package kabam.rotmg.pets.view
       
       private function onOpenPetPicker() : void
       {
-         this.petSlotsState.caller = kabam.rotmg.pets.view.FeedPetView;
+         this.petSlotsState.caller = FeedPetView;
          this.openDialog.dispatch(this.injector.getInstance(PetPickerDialog));
       }
       

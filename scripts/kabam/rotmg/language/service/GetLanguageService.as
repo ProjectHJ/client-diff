@@ -1,11 +1,11 @@
 package kabam.rotmg.language.service
 {
+   import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
    import kabam.lib.tasks.BaseTask;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.language.model.LanguageModel;
    import kabam.rotmg.language.model.StringMap;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
    
    public class GetLanguageService extends BaseTask
    {

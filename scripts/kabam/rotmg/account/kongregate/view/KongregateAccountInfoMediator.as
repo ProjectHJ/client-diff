@@ -7,10 +7,10 @@ package kabam.rotmg.account.kongregate.view
        
       
       [Inject]
-      public var view:kabam.rotmg.account.kongregate.view.KongregateAccountInfoView;
+      public var view:KongregateAccountInfoView;
       
       [Inject]
-      public var api:kabam.rotmg.account.kongregate.view.KongregateApi;
+      public var api:KongregateApi;
       
       public function KongregateAccountInfoMediator()
       {

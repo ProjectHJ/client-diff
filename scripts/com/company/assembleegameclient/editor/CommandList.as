@@ -4,11 +4,11 @@ package com.company.assembleegameclient.editor
    {
        
       
-      private var list_:Vector.<com.company.assembleegameclient.editor.Command>;
+      private var list_:Vector.<Command>;
       
       public function CommandList()
       {
-         this.list_ = new Vector.<com.company.assembleegameclient.editor.Command>();
+         this.list_ = new Vector.<Command>();
          super();
       }
       
@@ -17,14 +17,14 @@ package com.company.assembleegameclient.editor
          return this.list_.length == 0;
       }
       
-      public function addCommand(param1:com.company.assembleegameclient.editor.Command) : void
+      public function addCommand(param1:Command) : void
       {
          this.list_.push(param1);
       }
       
       public function execute() : void
       {
-         var _loc1_:com.company.assembleegameclient.editor.Command = null;
+         var _loc1_:Command = null;
          for each(_loc1_ in this.list_)
          {
             _loc1_.execute();
@@ -33,7 +33,7 @@ package com.company.assembleegameclient.editor
       
       public function unexecute() : void
       {
-         var _loc1_:com.company.assembleegameclient.editor.Command = null;
+         var _loc1_:Command = null;
          for each(_loc1_ in this.list_)
          {
             _loc1_.unexecute();

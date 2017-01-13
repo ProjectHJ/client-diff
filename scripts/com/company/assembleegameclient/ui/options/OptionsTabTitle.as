@@ -1,10 +1,10 @@
 package com.company.assembleegameclient.ui.options
 {
    import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import flash.events.MouseEvent;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import flash.filters.DropShadowFilter;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class OptionsTabTitle extends Sprite
    {

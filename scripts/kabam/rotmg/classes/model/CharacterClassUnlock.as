@@ -6,7 +6,7 @@ package kabam.rotmg.classes.model
       
       public var level:int;
       
-      public var character:kabam.rotmg.classes.model.CharacterClass;
+      public var character:CharacterClass;
       
       public function CharacterClassUnlock()
       {

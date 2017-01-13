@@ -1,10 +1,10 @@
 package kabam.rotmg.news.model
 {
-   import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
-   import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.news.view.NewsModalPage;
    import com.company.assembleegameclient.parameters.Parameters;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.news.controller.NewsButtonRefreshSignal;
+   import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
+   import kabam.rotmg.news.view.NewsModalPage;
    
    public class NewsModel
    {
@@ -23,11 +23,11 @@ package kabam.rotmg.news.model
       [Inject]
       public var account:Account;
       
-      public var news:Vector.<kabam.rotmg.news.model.NewsCellVO>;
+      public var news:Vector.<NewsCellVO>;
       
       public var modalPages:Vector.<NewsModalPage>;
       
-      public var modalPageData:Vector.<kabam.rotmg.news.model.NewsCellVO>;
+      public var modalPageData:Vector.<NewsCellVO>;
       
       public function NewsModel()
       {
@@ -36,7 +36,7 @@ package kabam.rotmg.news.model
       
       public function initNews() : void
       {
-         this.news = new Vector.<kabam.rotmg.news.model.NewsCellVO>(COUNT,true);
+         this.news = new Vector.<NewsCellVO>(COUNT,true);
          var _loc1_:int = 0;
          while(_loc1_ < COUNT)
          {
@@ -45,14 +45,14 @@ package kabam.rotmg.news.model
          }
       }
       
-      public function updateNews(param1:Vector.<kabam.rotmg.news.model.NewsCellVO>) : void
+      public function updateNews(param1:Vector.<NewsCellVO>) : void
       {
-         var _loc3_:kabam.rotmg.news.model.NewsCellVO = null;
+         var _loc3_:NewsCellVO = null;
          var _loc4_:int = 0;
          var _loc5_:int = 0;
          this.initNews();
-         var _loc2_:Vector.<kabam.rotmg.news.model.NewsCellVO> = new Vector.<kabam.rotmg.news.model.NewsCellVO>();
-         this.modalPageData = new Vector.<kabam.rotmg.news.model.NewsCellVO>(4,true);
+         var _loc2_:Vector.<NewsCellVO> = new Vector.<NewsCellVO>();
+         this.modalPageData = new Vector.<NewsCellVO>(4,true);
          for each(_loc3_ in param1)
          {
             if(_loc3_.slot <= 3)
@@ -95,9 +95,9 @@ package kabam.rotmg.news.model
          return true;
       }
       
-      private function sortByPriority(param1:Vector.<kabam.rotmg.news.model.NewsCellVO>) : void
+      private function sortByPriority(param1:Vector.<NewsCellVO>) : void
       {
-         var _loc2_:kabam.rotmg.news.model.NewsCellVO = null;
+         var _loc2_:NewsCellVO = null;
          for each(_loc2_ in param1)
          {
             if(this.isNewsTimely(_loc2_) && this.isValidForPlatform(_loc2_))
@@ -107,7 +107,7 @@ package kabam.rotmg.news.model
          }
       }
       
-      private function prioritize(param1:kabam.rotmg.news.model.NewsCellVO) : void
+      private function prioritize(param1:NewsCellVO) : void
       {
          var _loc2_:uint = param1.slot - 1;
          if(this.news[_loc2_])
@@ -117,12 +117,12 @@ package kabam.rotmg.news.model
          this.news[_loc2_] = param1;
       }
       
-      private function comparePriority(param1:kabam.rotmg.news.model.NewsCellVO, param2:kabam.rotmg.news.model.NewsCellVO) : kabam.rotmg.news.model.NewsCellVO
+      private function comparePriority(param1:NewsCellVO, param2:NewsCellVO) : NewsCellVO
       {
          return param1.priority < param2.priority?param1:param2;
       }
       
-      private function isNewsTimely(param1:kabam.rotmg.news.model.NewsCellVO) : Boolean
+      private function isNewsTimely(param1:NewsCellVO) : Boolean
       {
          var _loc2_:Number = new Date().getTime();
          return param1.startDate < _loc2_ && _loc2_ < param1.endDate;
@@ -138,7 +138,7 @@ package kabam.rotmg.news.model
          var _loc1_:int = 0;
          while(_loc1_ < MODAL_PAGE_COUNT)
          {
-            this.modalPages[_loc1_] = new NewsModalPage((this.modalPageData[_loc1_] as kabam.rotmg.news.model.NewsCellVO).headline,(this.modalPageData[_loc1_] as kabam.rotmg.news.model.NewsCellVO).linkDetail);
+            this.modalPages[_loc1_] = new NewsModalPage((this.modalPageData[_loc1_] as NewsCellVO).headline,(this.modalPageData[_loc1_] as NewsCellVO).linkDetail);
             _loc1_++;
          }
       }
@@ -152,7 +152,7 @@ package kabam.rotmg.news.model
          return new NewsModalPage("No new information","Please check back later.");
       }
       
-      private function isValidForPlatform(param1:kabam.rotmg.news.model.NewsCellVO) : Boolean
+      private function isValidForPlatform(param1:NewsCellVO) : Boolean
       {
          var _loc2_:String = this.account.gameNetwork();
          return param1.networks.indexOf(_loc2_) != -1;

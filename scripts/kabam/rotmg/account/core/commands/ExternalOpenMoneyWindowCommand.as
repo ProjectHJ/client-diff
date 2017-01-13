@@ -1,22 +1,22 @@
 package kabam.rotmg.account.core.commands
 {
-   import kabam.rotmg.account.core.model.JSInitializedModel;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.account.core.model.MoneyConfig;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import robotlegs.bender.framework.api.ILogger;
-   import kabam.rotmg.build.api.BuildData;
-   import kabam.rotmg.application.api.ApplicationSetup;
-   import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.promotions.model.BeginnersPackageModel;
    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
-   import kabam.rotmg.account.web.WebAccount;
-   import flash.net.URLVariables;
+   import flash.external.ExternalInterface;
    import flash.net.URLRequest;
    import flash.net.URLRequestMethod;
+   import flash.net.URLVariables;
    import flash.net.navigateToURL;
-   import flash.external.ExternalInterface;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.model.JSInitializedModel;
+   import kabam.rotmg.account.core.model.MoneyConfig;
+   import kabam.rotmg.account.web.WebAccount;
+   import kabam.rotmg.application.api.ApplicationSetup;
+   import kabam.rotmg.build.api.BuildData;
    import kabam.rotmg.build.api.BuildEnvironment;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.promotions.model.BeginnersPackageModel;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class ExternalOpenMoneyWindowCommand
    {

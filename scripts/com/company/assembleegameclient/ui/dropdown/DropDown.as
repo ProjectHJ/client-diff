@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.ui.dropdown
 {
-   import flash.display.Sprite;
    import com.company.ui.BaseSimpleText;
-   import flash.events.MouseEvent;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.geom.Point;
    
    public class DropDown extends Sprite
@@ -22,7 +22,7 @@ package com.company.assembleegameclient.ui.dropdown
       
       protected var xOffset_:int = 0;
       
-      protected var selected_:com.company.assembleegameclient.ui.dropdown.DropDownItem;
+      protected var selected_:DropDownItem;
       
       protected var all_:Sprite;
       
@@ -97,7 +97,7 @@ package com.company.assembleegameclient.ui.dropdown
       private function setSelected(param1:String) : void
       {
          var _loc2_:String = this.selected_ != null?this.selected_.getValue():null;
-         this.selected_ = new com.company.assembleegameclient.ui.dropdown.DropDownItem(param1,this.w_,this.h_);
+         this.selected_ = new DropDownItem(param1,this.w_,this.h_);
          this.selected_.x = this.xOffset_;
          this.selected_.y = 0;
          addChild(this.selected_);
@@ -144,12 +144,12 @@ package com.company.assembleegameclient.ui.dropdown
       private function listItems(param1:int, param2:int, param3:int) : void
       {
          var _loc4_:int = 0;
-         var _loc5_:com.company.assembleegameclient.ui.dropdown.DropDownItem = null;
+         var _loc5_:DropDownItem = null;
          _loc4_ = 0;
          var _loc6_:int = param1;
          while(_loc6_ < param2)
          {
-            _loc5_ = new com.company.assembleegameclient.ui.dropdown.DropDownItem(this.strings_[_loc6_],this.w_,this.h_);
+            _loc5_ = new DropDownItem(this.strings_[_loc6_],this.w_,this.h_);
             _loc5_.addEventListener(MouseEvent.CLICK,this.onSelect);
             _loc5_.x = param3;
             _loc5_.y = _loc4_;
@@ -169,7 +169,7 @@ package com.company.assembleegameclient.ui.dropdown
       {
          param1.stopImmediatePropagation();
          this.hideAll();
-         var _loc2_:com.company.assembleegameclient.ui.dropdown.DropDownItem = param1.target as com.company.assembleegameclient.ui.dropdown.DropDownItem;
+         var _loc2_:DropDownItem = param1.target as DropDownItem;
          this.setSelected(_loc2_.getValue());
       }
       

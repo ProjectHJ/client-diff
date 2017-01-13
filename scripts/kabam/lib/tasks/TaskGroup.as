@@ -1,20 +1,20 @@
 package kabam.lib.tasks
 {
-   public class TaskGroup extends kabam.lib.tasks.BaseTask
+   public class TaskGroup extends BaseTask
    {
        
       
-      private var tasks:Vector.<kabam.lib.tasks.BaseTask>;
+      private var tasks:Vector.<BaseTask>;
       
       private var pending:int;
       
       public function TaskGroup()
       {
          super();
-         this.tasks = new Vector.<kabam.lib.tasks.BaseTask>();
+         this.tasks = new Vector.<BaseTask>();
       }
       
-      public function add(param1:kabam.lib.tasks.BaseTask) : void
+      public function add(param1:BaseTask) : void
       {
          this.tasks.push(param1);
       }
@@ -34,7 +34,7 @@ package kabam.lib.tasks
       
       override protected function onReset() : void
       {
-         var _loc1_:kabam.lib.tasks.BaseTask = null;
+         var _loc1_:BaseTask = null;
          for each(_loc1_ in this.tasks)
          {
             _loc1_.reset();
@@ -51,7 +51,7 @@ package kabam.lib.tasks
          }
       }
       
-      private function onTaskFinished(param1:kabam.lib.tasks.BaseTask, param2:Boolean, param3:String) : void
+      private function onTaskFinished(param1:BaseTask, param2:Boolean, param3:String) : void
       {
          if(param2)
          {

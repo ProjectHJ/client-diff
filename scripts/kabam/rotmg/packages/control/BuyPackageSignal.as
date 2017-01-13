@@ -1,7 +1,7 @@
 package kabam.rotmg.packages.control
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.packages.model.PackageInfo;
+   import org.osflash.signals.Signal;
    
    public class BuyPackageSignal extends Signal
    {

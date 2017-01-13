@@ -1,26 +1,26 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.Sprite;
-   import flash.display.BitmapData;
-   import flash.utils.Dictionary;
-   import flash.display.Shape;
-   import com.company.util.IntPoint;
-   import flash.geom.Rectangle;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   import flash.events.KeyboardEvent;
-   import flash.ui.Keyboard;
-   import com.company.util.KeyCodes;
-   import com.company.assembleegameclient.map.GroundLibrary;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import com.company.assembleegameclient.map.RegionLibrary;
-   import flash.display.Graphics;
-   import flash.geom.Matrix;
-   import com.company.util.PointUtil;
-   import flash.utils.ByteArray;
    import com.adobe.images.PNGEncoder;
-   import flash.display.Bitmap;
+   import com.company.assembleegameclient.map.GroundLibrary;
+   import com.company.assembleegameclient.map.RegionLibrary;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.util.AssetLibrary;
+   import com.company.util.IntPoint;
+   import com.company.util.KeyCodes;
+   import com.company.util.PointUtil;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import flash.geom.Matrix;
+   import flash.geom.Rectangle;
+   import flash.ui.Keyboard;
+   import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
    
    class MEMap extends Sprite
    {
@@ -40,7 +40,7 @@ package com.company.assembleegameclient.mapeditor
       
       public var tileDict_:Dictionary;
       
-      public var fullMap_:com.company.assembleegameclient.mapeditor.BigBitmapData;
+      public var fullMap_:BigBitmapData;
       
       public var regionMap_:BitmapData;
       
@@ -66,9 +66,9 @@ package com.company.assembleegameclient.mapeditor
       
       private var replaceTexture_:BitmapData;
       
-      private var objectLayer_:com.company.assembleegameclient.mapeditor.BigBitmapData;
+      private var objectLayer_:BigBitmapData;
       
-      private var groundLayer_:com.company.assembleegameclient.mapeditor.BigBitmapData;
+      private var groundLayer_:BigBitmapData;
       
       private var ifShowObjectLayer_:Boolean = true;
       
@@ -79,12 +79,12 @@ package com.company.assembleegameclient.mapeditor
       function MEMap()
       {
          this.tileDict_ = new Dictionary();
-         this.fullMap_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
+         this.fullMap_ = new BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
          this.regionMap_ = new BitmapDataSpy(NUM_SQUARES,NUM_SQUARES,true,0);
          this.map_ = new BitmapDataSpy(SIZE,SIZE,true,0);
          this.overlay_ = new Shape();
-         this.objectLayer_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
-         this.groundLayer_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
+         this.objectLayer_ = new BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
+         this.groundLayer_ = new BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
          super();
          graphics.beginBitmapFill(transbackgroundBD_,null,true);
          graphics.drawRect(0,0,SIZE,SIZE);
@@ -135,9 +135,9 @@ package com.company.assembleegameclient.mapeditor
          NUM_SQUARES = param1;
          this.setZoom(minZoom());
          this.tileDict_ = new Dictionary();
-         this.fullMap_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
-         this.objectLayer_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
-         this.groundLayer_ = new com.company.assembleegameclient.mapeditor.BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
+         this.fullMap_ = new BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
+         this.objectLayer_ = new BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
+         this.groundLayer_ = new BigBitmapData(NUM_SQUARES * SQUARE_SIZE,NUM_SQUARES * SQUARE_SIZE,true,0);
          this.regionMap_ = new BitmapDataSpy(NUM_SQUARES,NUM_SQUARES,true,0);
          for(_loc8_ in _loc2_)
          {

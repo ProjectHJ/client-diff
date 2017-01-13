@@ -1,15 +1,15 @@
 package kabam.rotmg.arena.view
 {
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.util.components.DialogBackground;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
    import kabam.rotmg.arena.component.BattleSummaryText;
-   import kabam.rotmg.text.view.StaticTextDisplay;
    import kabam.rotmg.editor.view.StaticTextButton;
    import kabam.rotmg.text.model.TextKey;
-   import flash.events.MouseEvent;
+   import kabam.rotmg.text.view.StaticTextDisplay;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.util.components.DialogBackground;
+   import org.osflash.signals.Signal;
    
    public class BattleSummaryDialog extends Sprite
    {

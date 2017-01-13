@@ -1,18 +1,18 @@
 package com.junkbyte.console.core
 {
-   import flash.utils.getQualifiedClassName;
+   import com.junkbyte.console.Console;
    import com.junkbyte.console.vos.WeakObject;
-   import flash.utils.Dictionary;
-   import flash.utils.ByteArray;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
-   import flash.geom.Matrix;
-   import flash.events.Event;
    import flash.display.DisplayObject;
    import flash.display.DisplayObjectContainer;
+   import flash.events.Event;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
    import flash.utils.describeType;
    import flash.utils.getDefinitionByName;
-   import com.junkbyte.console.Console;
+   import flash.utils.getQualifiedClassName;
    
    public class LogReferences extends ConsoleCore
    {

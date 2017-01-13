@@ -1,10 +1,10 @@
 package robotlegs.bender.extensions.eventDispatcher
 {
-   import robotlegs.bender.framework.api.IExtension;
+   import flash.events.EventDispatcher;
    import flash.events.IEventDispatcher;
    import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
    import robotlegs.bender.framework.impl.UID;
-   import flash.events.EventDispatcher;
    
    public class EventDispatcherExtension implements IExtension
    {

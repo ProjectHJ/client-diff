@@ -1,7 +1,7 @@
 package org.osflash.signals
 {
-   import flash.utils.getQualifiedClassName;
    import flash.errors.IllegalOperationError;
+   import flash.utils.getQualifiedClassName;
    
    public class OnceSignal implements IOnceSignal
    {
@@ -9,11 +9,11 @@ package org.osflash.signals
       
       protected var _valueClasses:Array;
       
-      protected var slots:org.osflash.signals.SlotList;
+      protected var slots:SlotList;
       
       public function OnceSignal(... rest)
       {
-         this.slots = org.osflash.signals.SlotList.NIL;
+         this.slots = SlotList.NIL;
          super();
          this.valueClasses = rest.length == 1 && rest[0] is Array?rest[0]:rest;
       }
@@ -60,7 +60,7 @@ package org.osflash.signals
       
       public function removeAll() : void
       {
-         this.slots = org.osflash.signals.SlotList.NIL;
+         this.slots = SlotList.NIL;
       }
       
       public function dispatch(... rest) : void
@@ -81,7 +81,7 @@ package org.osflash.signals
             }
             throw new ArgumentError("Value object <" + rest[_loc4_] + "> is not an instance of <" + this._valueClasses[_loc4_] + ">.");
          }
-         var _loc5_:org.osflash.signals.SlotList = this.slots;
+         var _loc5_:SlotList = this.slots;
          if(_loc5_.nonEmpty)
          {
             while(_loc5_.nonEmpty)

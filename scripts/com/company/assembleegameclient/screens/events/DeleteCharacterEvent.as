@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.screens.events
 {
-   import flash.events.Event;
    import com.company.assembleegameclient.appengine.SavedCharacter;
+   import flash.events.Event;
    
    public class DeleteCharacterEvent extends Event
    {

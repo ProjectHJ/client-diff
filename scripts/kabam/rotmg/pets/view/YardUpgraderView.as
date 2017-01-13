@@ -1,18 +1,18 @@
 package kabam.rotmg.pets.view
 {
+   import flash.display.DisplayObject;
    import flash.display.Sprite;
+   import flash.text.TextFormatAlign;
+   import kabam.rotmg.pets.data.YardUpgraderVO;
+   import kabam.rotmg.pets.util.PetsConstants;
+   import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.pets.view.components.FameOrGoldBuyButtons;
    import kabam.rotmg.pets.view.components.PopupWindowBackground;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.pets.view.components.FameOrGoldBuyButtons;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import flash.display.DisplayObject;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.pets.data.YardUpgraderVO;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.pets.util.PetsConstants;
-   import flash.text.TextFormatAlign;
    import kabam.rotmg.ui.view.SignalWaiter;
-   import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import org.osflash.signals.Signal;
    
    public class YardUpgraderView extends Sprite
    {
@@ -34,7 +34,7 @@ package kabam.rotmg.pets.view
       
       private const petYardImage:DisplayObject = new this.PetYardImage();
       
-      private const currentMaxBox:kabam.rotmg.pets.view.StatusBox = new kabam.rotmg.pets.view.StatusBox();
+      private const currentMaxBox:StatusBox = new StatusBox();
       
       public const closed:Signal = new Signal();
       

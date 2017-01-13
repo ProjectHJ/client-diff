@@ -1,10 +1,10 @@
 package kabam.rotmg.util.components
 {
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
+   import flash.events.MouseEvent;
    import kabam.rotmg.util.graphics.BevelRect;
    import kabam.rotmg.util.graphics.GraphicsHelper;
-   import flash.events.MouseEvent;
+   import org.osflash.signals.Signal;
    
    final class VerticalScrollbarGroove extends Sprite
    {

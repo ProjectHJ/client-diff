@@ -1,21 +1,21 @@
 package kabam.rotmg.pets.view.petPanel
 {
-   import com.company.assembleegameclient.ui.panels.Panel;
-   import kabam.rotmg.editor.view.StaticTextButton;
-   import org.osflash.signals.natives.NativeSignal;
-   import flash.display.Sprite;
-   import kabam.rotmg.pets.data.PetVO;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.display.Bitmap;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.pets.util.PetsConstants;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.pets.view.components.PetTooltip;
    import com.company.assembleegameclient.game.AGameSprite;
+   import com.company.assembleegameclient.ui.panels.Panel;
    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import flash.display.Bitmap;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.editor.view.StaticTextButton;
+   import kabam.rotmg.pets.data.PetVO;
+   import kabam.rotmg.pets.util.PetsConstants;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.PetTooltip;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeSignal;
    
    public class PetPanel extends Panel
    {

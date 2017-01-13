@@ -1,12 +1,12 @@
 package kabam.rotmg.account.kabam.view
 {
    import flash.display.Sprite;
-   import kabam.rotmg.account.core.view.AccountInfoView;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.text.TextFieldAutoSize;
    import flash.filters.DropShadowFilter;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.account.core.view.AccountInfoView;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class KabamAccountInfoView extends Sprite implements AccountInfoView
    {

@@ -1,17 +1,17 @@
 package kabam.rotmg.ui.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.ui.signals.ShowKeySignal;
-   import kabam.rotmg.ui.signals.HideKeySignal;
    import kabam.rotmg.game.signals.GameClosedSignal;
    import kabam.rotmg.ui.model.Key;
+   import kabam.rotmg.ui.signals.HideKeySignal;
+   import kabam.rotmg.ui.signals.ShowKeySignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class KeysMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.ui.view.KeysView;
+      public var view:KeysView;
       
       [Inject]
       public var showKey:ShowKeySignal;

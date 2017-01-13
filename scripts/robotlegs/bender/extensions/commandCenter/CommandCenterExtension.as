@@ -1,9 +1,9 @@
 package robotlegs.bender.extensions.commandCenter
 {
-   import robotlegs.bender.framework.api.IExtension;
-   import robotlegs.bender.framework.api.IContext;
    import robotlegs.bender.extensions.commandCenter.api.ICommandCenter;
    import robotlegs.bender.extensions.commandCenter.impl.CommandCenter;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
    import robotlegs.bender.framework.impl.UID;
    
    public class CommandCenterExtension implements IExtension

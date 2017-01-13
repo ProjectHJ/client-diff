@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.events.Event;
    import com.company.util.IntPoint;
+   import flash.events.Event;
    
    class TilesEvent extends Event
    {

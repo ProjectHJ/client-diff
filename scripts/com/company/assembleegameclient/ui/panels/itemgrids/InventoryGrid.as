@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.ui.panels.itemgrids
 {
-   import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
    import com.company.assembleegameclient.objects.GameObject;
    import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InventoryTile;
    
    public class InventoryGrid extends ItemGrid
    {

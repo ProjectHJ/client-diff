@@ -1,13 +1,13 @@
 package kabam.rotmg.packages.services
 {
-   import kabam.lib.tasks.BaseTask;
-   import flash.utils.Timer;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.account.core.Account;
-   import robotlegs.bender.framework.api.ILogger;
-   import kabam.rotmg.language.model.LanguageModel;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import kabam.lib.tasks.BaseTask;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.language.model.LanguageModel;
    import kabam.rotmg.packages.model.PackageInfo;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class GetPackagesTask extends BaseTask
    {
@@ -21,7 +21,7 @@ package kabam.rotmg.packages.services
       public var client:AppEngineClient;
       
       [Inject]
-      public var packageModel:kabam.rotmg.packages.services.PackageModel;
+      public var packageModel:PackageModel;
       
       [Inject]
       public var account:Account;

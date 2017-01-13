@@ -1,17 +1,17 @@
 package com.hurlant.crypto.symmetric
 {
-   import flash.utils.ByteArray;
    import com.hurlant.util.Memory;
+   import flash.utils.ByteArray;
    
    public class ECBMode implements IMode, ICipher
    {
        
       
-      private var key:com.hurlant.crypto.symmetric.ISymmetricKey;
+      private var key:ISymmetricKey;
       
-      private var padding:com.hurlant.crypto.symmetric.IPad;
+      private var padding:IPad;
       
-      public function ECBMode(param1:com.hurlant.crypto.symmetric.ISymmetricKey, param2:com.hurlant.crypto.symmetric.IPad = null)
+      public function ECBMode(param1:ISymmetricKey, param2:IPad = null)
       {
          super();
          this.key = param1;

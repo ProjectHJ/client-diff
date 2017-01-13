@@ -1,14 +1,14 @@
 package kabam.rotmg.game.view.components
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-   import org.osflash.signals.natives.NativeSignal;
-   import flash.text.TextFieldAutoSize;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.events.MouseEvent;
+   import org.osflash.signals.natives.NativeSignal;
    
    public class StatView extends Sprite
    {

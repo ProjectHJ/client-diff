@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.display.BitmapData;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.text.view.BitmapTextFactory;
-   import flash.display.IGraphicsData;
+   import com.company.assembleegameclient.game.GameSprite;
    import com.company.assembleegameclient.map.Camera;
    import com.company.assembleegameclient.ui.panels.Panel;
-   import com.company.assembleegameclient.game.GameSprite;
    import com.company.assembleegameclient.ui.panels.PortalPanel;
+   import flash.display.BitmapData;
+   import flash.display.IGraphicsData;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.text.view.BitmapTextFactory;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public class Portal extends GameObject implements IInteractiveObject
    {

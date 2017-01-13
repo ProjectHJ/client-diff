@@ -1,12 +1,12 @@
 package org.swiftsuspenders.dependencyproviders
 {
-   import org.swiftsuspenders.Injector;
    import flash.utils.Dictionary;
-   import org.swiftsuspenders.InjectorError;
    import flash.utils.getQualifiedClassName;
-   import org.swiftsuspenders.utils.SsInternal;
-   import org.swiftsuspenders.typedescriptions.TypeDescription;
+   import org.swiftsuspenders.Injector;
+   import org.swiftsuspenders.InjectorError;
    import org.swiftsuspenders.typedescriptions.PreDestroyInjectionPoint;
+   import org.swiftsuspenders.typedescriptions.TypeDescription;
+   import org.swiftsuspenders.utils.SsInternal;
    
    public class SingletonProvider implements DependencyProvider
    {

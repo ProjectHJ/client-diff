@@ -1,7 +1,7 @@
 package kabam.rotmg.account.core.commands
 {
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.account.core.view.MoneyFrame;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    
    public class InternalOpenMoneyWindowCommand
    {

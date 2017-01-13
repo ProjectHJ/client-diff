@@ -22,9 +22,9 @@ package org.swiftsuspenders.mapping
       
       public var mappedName:String;
       
-      public var mapping:org.swiftsuspenders.mapping.InjectionMapping;
+      public var mapping:InjectionMapping;
       
-      public function MappingEvent(param1:String, param2:Class, param3:String, param4:org.swiftsuspenders.mapping.InjectionMapping)
+      public function MappingEvent(param1:String, param2:Class, param3:String, param4:InjectionMapping)
       {
          super(param1);
          this.mappedType = param2;

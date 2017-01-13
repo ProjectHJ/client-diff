@@ -1,8 +1,8 @@
 package kabam.rotmg.protip.commands
 {
    import kabam.rotmg.core.view.Layers;
-   import kabam.rotmg.protip.view.ProTipView;
    import kabam.rotmg.protip.model.IProTipModel;
+   import kabam.rotmg.protip.view.ProTipView;
    
    public class ShowProTipCommand
    {

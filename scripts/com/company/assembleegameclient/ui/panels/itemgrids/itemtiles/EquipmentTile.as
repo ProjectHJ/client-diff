@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-   import flash.filters.ColorMatrixFilter;
-   import com.company.util.MoreColorUtil;
-   import flash.display.Bitmap;
    import com.company.assembleegameclient.objects.ObjectLibrary;
-   import flash.display.BitmapData;
-   import com.company.util.AssetLibrary;
-   import kabam.rotmg.constants.ItemConstants;
    import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+   import com.company.util.AssetLibrary;
+   import com.company.util.MoreColorUtil;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.filters.ColorMatrixFilter;
+   import kabam.rotmg.constants.ItemConstants;
    
    public class EquipmentTile extends InteractiveItemTile
    {

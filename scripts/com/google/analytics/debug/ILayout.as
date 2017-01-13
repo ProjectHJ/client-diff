@@ -1,8 +1,8 @@
 package com.google.analytics.debug
 {
+   import com.google.analytics.core.GIFRequest;
    import flash.display.DisplayObject;
    import flash.net.URLRequest;
-   import com.google.analytics.core.GIFRequest;
    
    public interface ILayout
    {

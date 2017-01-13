@@ -10,7 +10,7 @@ package kabam.rotmg.servers.api
       
       public var port:int;
       
-      public var latLong:kabam.rotmg.servers.api.LatLong;
+      public var latLong:LatLong;
       
       public var usage:Number;
       
@@ -41,7 +41,7 @@ package kabam.rotmg.servers.api
       
       public function setLatLong(param1:Number, param2:Number) : Server
       {
-         this.latLong = new kabam.rotmg.servers.api.LatLong(param1,param2);
+         this.latLong = new LatLong(param1,param2);
          return this;
       }
       

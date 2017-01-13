@@ -1,10 +1,10 @@
 package mx.core
 {
-   import flash.geom.Point;
+   import flash.display.BitmapData;
    import flash.display.DisplayObjectContainer;
    import flash.events.Event;
+   import flash.geom.Point;
    import flash.system.ApplicationDomain;
-   import flash.display.BitmapData;
    
    use namespace mx_internal;
    
@@ -20,7 +20,7 @@ package mx.core
       
       private var layoutFeaturesClass:Class;
       
-      private var layoutFeatures:mx.core.IAssetLayoutFeatures;
+      private var layoutFeatures:IAssetLayoutFeatures;
       
       private var _height:Number;
       
@@ -413,7 +413,7 @@ package mx.core
       private function initAdvancedLayoutFeatures() : void
       {
          var _loc1_:ApplicationDomain = null;
-         var _loc2_:mx.core.IAssetLayoutFeatures = null;
+         var _loc2_:IAssetLayoutFeatures = null;
          if(this.layoutFeaturesClass == null)
          {
             _loc1_ = ApplicationDomain.currentDomain;

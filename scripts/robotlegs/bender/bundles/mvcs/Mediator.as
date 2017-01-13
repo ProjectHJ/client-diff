@@ -1,9 +1,9 @@
 package robotlegs.bender.bundles.mvcs
 {
-   import robotlegs.bender.extensions.mediatorMap.api.IMediator;
-   import robotlegs.bender.extensions.localEventMap.api.IEventMap;
-   import flash.events.IEventDispatcher;
    import flash.events.Event;
+   import flash.events.IEventDispatcher;
+   import robotlegs.bender.extensions.localEventMap.api.IEventMap;
+   import robotlegs.bender.extensions.mediatorMap.api.IMediator;
    
    public class Mediator implements IMediator
    {

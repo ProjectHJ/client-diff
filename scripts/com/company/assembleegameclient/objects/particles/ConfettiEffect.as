@@ -58,8 +58,8 @@ package com.company.assembleegameclient.objects.particles
 }
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import flash.geom.Vector3D;
 import flash.geom.Point;
+import flash.geom.Vector3D;
 
 class ConfettiParticle extends Particle
 {

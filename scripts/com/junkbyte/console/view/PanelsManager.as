@@ -1,10 +1,10 @@
 package com.junkbyte.console.view
 {
    import com.junkbyte.console.Console;
-   import flash.text.TextField;
-   import flash.geom.Rectangle;
    import com.junkbyte.console.vos.GraphGroup;
    import flash.events.Event;
+   import flash.geom.Rectangle;
+   import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
    
    public class PanelsManager
@@ -13,15 +13,15 @@ package com.junkbyte.console.view
       
       private var console:Console;
       
-      private var _mainPanel:com.junkbyte.console.view.MainPanel;
+      private var _mainPanel:MainPanel;
       
-      private var _ruler:com.junkbyte.console.view.Ruler;
+      private var _ruler:Ruler;
       
-      private var _chsPanel:com.junkbyte.console.view.ChannelsPanel;
+      private var _chsPanel:ChannelsPanel;
       
-      private var _fpsPanel:com.junkbyte.console.view.GraphingPanel;
+      private var _fpsPanel:GraphingPanel;
       
-      private var _memPanel:com.junkbyte.console.view.GraphingPanel;
+      private var _memPanel:GraphingPanel;
       
       private var _graphsMap:Object;
       
@@ -36,7 +36,7 @@ package com.junkbyte.console.view
          this._graphsMap = {};
          super();
          this.console = param1;
-         this._mainPanel = new com.junkbyte.console.view.MainPanel(this.console);
+         this._mainPanel = new MainPanel(this.console);
          this._tooltipField = this.mainPanel.makeTF("tooltip",true);
          this._tooltipField.mouseEnabled = false;
          this._tooltipField.autoSize = TextFieldAutoSize.CENTER;
@@ -72,7 +72,7 @@ package com.junkbyte.console.view
          return this.console.getChildByName(param1) as ConsolePanel;
       }
       
-      public function get mainPanel() : com.junkbyte.console.view.MainPanel
+      public function get mainPanel() : MainPanel
       {
          return this._mainPanel;
       }
@@ -103,7 +103,7 @@ package com.junkbyte.console.view
       public function updateMenu() : void
       {
          this._mainPanel.updateMenu();
-         var _loc1_:com.junkbyte.console.view.ChannelsPanel = this.getPanel(com.junkbyte.console.view.ChannelsPanel.NAME) as com.junkbyte.console.view.ChannelsPanel;
+         var _loc1_:ChannelsPanel = this.getPanel(ChannelsPanel.NAME) as ChannelsPanel;
          if(_loc1_)
          {
             _loc1_.update();
@@ -131,7 +131,7 @@ package com.junkbyte.console.view
          var _loc5_:GraphGroup = null;
          var _loc6_:* = null;
          var _loc7_:String = null;
-         var _loc8_:com.junkbyte.console.view.GraphingPanel = null;
+         var _loc8_:GraphingPanel = null;
          var _loc9_:Rectangle = null;
          var _loc10_:Number = NaN;
          var _loc11_:Number = NaN;
@@ -151,7 +151,7 @@ package com.junkbyte.console.view
             else
             {
                _loc7_ = _loc5_.name;
-               _loc8_ = this._graphsMap[_loc7_] as com.junkbyte.console.view.GraphingPanel;
+               _loc8_ = this._graphsMap[_loc7_] as GraphingPanel;
                if(!_loc8_)
                {
                   _loc9_ = _loc5_.rect;
@@ -185,7 +185,7 @@ package com.junkbyte.console.view
                   {
                      _loc9_.height = _loc10_;
                   }
-                  _loc8_ = new com.junkbyte.console.view.GraphingPanel(this.console,_loc9_.width,_loc9_.height);
+                  _loc8_ = new GraphingPanel(this.console,_loc9_.width,_loc9_.height);
                   _loc8_.x = _loc9_.x;
                   _loc8_.y = _loc9_.y;
                   _loc8_.name = "graph_" + _loc7_;
@@ -212,8 +212,8 @@ package com.junkbyte.console.view
          {
             if(this._fpsPanel == null)
             {
-               this._fpsPanel = new com.junkbyte.console.view.GraphingPanel(this.console,80,40,com.junkbyte.console.view.GraphingPanel.FPS);
-               this._fpsPanel.name = com.junkbyte.console.view.GraphingPanel.FPS;
+               this._fpsPanel = new GraphingPanel(this.console,80,40,GraphingPanel.FPS);
+               this._fpsPanel.name = GraphingPanel.FPS;
                this._fpsPanel.x = this._mainPanel.x + this._mainPanel.width - 160;
                this._fpsPanel.y = this._mainPanel.y + 15;
                this.addPanel(this._fpsPanel);
@@ -223,15 +223,15 @@ package com.junkbyte.console.view
          }
          else if(this._fpsPanel != null)
          {
-            this.removePanel(com.junkbyte.console.view.GraphingPanel.FPS);
+            this.removePanel(GraphingPanel.FPS);
             this._fpsPanel = null;
          }
          if(_loc4_ != null)
          {
             if(this._memPanel == null)
             {
-               this._memPanel = new com.junkbyte.console.view.GraphingPanel(this.console,80,40,com.junkbyte.console.view.GraphingPanel.MEM);
-               this._memPanel.name = com.junkbyte.console.view.GraphingPanel.MEM;
+               this._memPanel = new GraphingPanel(this.console,80,40,GraphingPanel.MEM);
+               this._memPanel.name = GraphingPanel.MEM;
                this._memPanel.x = this._mainPanel.x + this._mainPanel.width - 80;
                this._memPanel.y = this._mainPanel.y + 15;
                this.addPanel(this._memPanel);
@@ -241,7 +241,7 @@ package com.junkbyte.console.view
          }
          else if(this._memPanel != null)
          {
-            this.removePanel(com.junkbyte.console.view.GraphingPanel.MEM);
+            this.removePanel(GraphingPanel.MEM);
             this._memPanel = null;
          }
          this._canDraw = false;
@@ -249,7 +249,7 @@ package com.junkbyte.console.view
       
       public function removeGraph(param1:GraphGroup) : void
       {
-         var _loc2_:com.junkbyte.console.view.GraphingPanel = null;
+         var _loc2_:GraphingPanel = null;
          if(this._fpsPanel && param1 == this._fpsPanel.group)
          {
             this._fpsPanel.close();
@@ -315,7 +315,7 @@ package com.junkbyte.console.view
             this.console.logs.cleanChannels();
             if(param1)
             {
-               this._chsPanel = new com.junkbyte.console.view.ChannelsPanel(this.console);
+               this._chsPanel = new ChannelsPanel(this.console);
                this._chsPanel.x = this._mainPanel.x + this._mainPanel.width - 332;
                this._chsPanel.y = this._mainPanel.y - 2;
                this.addPanel(this._chsPanel);
@@ -324,7 +324,7 @@ package com.junkbyte.console.view
             }
             else
             {
-               this.removePanel(com.junkbyte.console.view.ChannelsPanel.NAME);
+               this.removePanel(ChannelsPanel.NAME);
                this._chsPanel = null;
             }
             this.updateMenu();
@@ -407,7 +407,7 @@ package com.junkbyte.console.view
          {
             return;
          }
-         this._ruler = new com.junkbyte.console.view.Ruler(this.console);
+         this._ruler = new Ruler(this.console);
          this._ruler.addEventListener(Event.COMPLETE,this.onRulerExit,false,0,true);
          this.console.addChild(this._ruler);
          this._mainPanel.updateMenu();

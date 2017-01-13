@@ -11,7 +11,7 @@ package kabam.rotmg.pets.controller
       public var register:RegisterConsoleActionSignal;
       
       [Inject]
-      public var openCaretakerQuerySignal:kabam.rotmg.pets.controller.OpenCaretakerQueryDialogSignal;
+      public var openCaretakerQuerySignal:OpenCaretakerQueryDialogSignal;
       
       public function AddPetsConsoleActionsCommand()
       {

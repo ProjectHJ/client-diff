@@ -8,11 +8,11 @@ package kabam.rotmg.pets.data
       public static const RIGHT:String = "rightSide";
        
       
-      public var leftSlotPetVO:kabam.rotmg.pets.data.PetVO;
+      public var leftSlotPetVO:PetVO;
       
       public var rightSlotItemId:int = -1;
       
-      public var rightSlotPetVO:kabam.rotmg.pets.data.PetVO;
+      public var rightSlotPetVO:PetVO;
       
       public var rightSlotOwnerId:int = -1;
       

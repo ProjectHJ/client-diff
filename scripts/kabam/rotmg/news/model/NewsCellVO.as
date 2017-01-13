@@ -16,7 +16,7 @@ package kabam.rotmg.news.model
       
       public var networks:Array;
       
-      public var linkType:kabam.rotmg.news.model.NewsCellLinkType;
+      public var linkType:NewsCellLinkType;
       
       public var priority:uint;
       

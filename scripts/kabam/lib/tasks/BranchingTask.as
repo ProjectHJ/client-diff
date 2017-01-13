@@ -4,13 +4,13 @@ package kabam.lib.tasks
    {
        
       
-      private var task:kabam.lib.tasks.Task;
+      private var task:Task;
       
-      private var success:kabam.lib.tasks.Task;
+      private var success:Task;
       
-      private var failure:kabam.lib.tasks.Task;
+      private var failure:Task;
       
-      public function BranchingTask(param1:kabam.lib.tasks.Task, param2:kabam.lib.tasks.Task = null, param3:kabam.lib.tasks.Task = null)
+      public function BranchingTask(param1:Task, param2:Task = null, param3:Task = null)
       {
          super();
          this.task = param1;
@@ -18,12 +18,12 @@ package kabam.lib.tasks
          this.failure = param3;
       }
       
-      public function addSuccessTask(param1:kabam.lib.tasks.Task) : void
+      public function addSuccessTask(param1:Task) : void
       {
          this.success = param1;
       }
       
-      public function addFailureTask(param1:kabam.lib.tasks.Task) : void
+      public function addFailureTask(param1:Task) : void
       {
          this.failure = param1;
       }
@@ -34,7 +34,7 @@ package kabam.lib.tasks
          this.task.start();
       }
       
-      private function onTaskFinished(param1:kabam.lib.tasks.Task, param2:Boolean, param3:String = "") : void
+      private function onTaskFinished(param1:Task, param2:Boolean, param3:String = "") : void
       {
          if(param2)
          {
@@ -46,7 +46,7 @@ package kabam.lib.tasks
          }
       }
       
-      private function handleBranchTask(param1:kabam.lib.tasks.Task) : void
+      private function handleBranchTask(param1:Task) : void
       {
          if(param1)
          {
@@ -59,7 +59,7 @@ package kabam.lib.tasks
          }
       }
       
-      private function onBranchComplete(param1:kabam.lib.tasks.Task, param2:Boolean, param3:String = "") : void
+      private function onBranchComplete(param1:Task, param2:Boolean, param3:String = "") : void
       {
          completeTask(param2,param3);
       }

@@ -1,21 +1,21 @@
 package kabam.rotmg.pets.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.pets.data.PetsModel;
-   import kabam.rotmg.pets.controller.UpgradePetSignal;
    import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.pets.data.YardUpgraderVO;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.pets.controller.UpgradePetSignal;
    import kabam.rotmg.pets.data.PetRarityEnum;
+   import kabam.rotmg.pets.data.PetsModel;
    import kabam.rotmg.pets.data.UpgradePetYardRequestVO;
+   import kabam.rotmg.pets.data.YardUpgraderVO;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class YardUpgraderMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.YardUpgraderView;
+      public var view:YardUpgraderView;
       
       [Inject]
       public var petModel:PetsModel;

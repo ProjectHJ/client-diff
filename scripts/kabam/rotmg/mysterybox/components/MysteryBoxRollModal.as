@@ -1,45 +1,45 @@
 package kabam.rotmg.mysterybox.components
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.pets.view.components.PopupWindowBackground;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
-   import flash.display.Bitmap;
-   import kabam.rotmg.fortune.components.ItemWithTooltip;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
    import com.company.assembleegameclient.map.ParticleModalMap;
-   import kabam.rotmg.util.components.LegacyBuyButton;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.utils.Timer;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.text.TextFieldAutoSize;
-   import flash.text.TextFormatAlign;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.pets.view.dialogs.evolving.Spinner;
-   import flash.events.TimerEvent;
    import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import com.company.assembleegameclient.ui.dialogs.Dialog;
-   import org.swiftsuspenders.Injector;
-   import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.game.model.GameModel;
-   import flash.events.Event;
-   import com.company.assembleegameclient.util.Currency;
-   import kabam.rotmg.ui.view.NotEnoughGoldDialog;
    import com.company.assembleegameclient.ui.dialogs.NotEnoughFameDialog;
-   import flash.events.MouseEvent;
+   import com.company.assembleegameclient.util.Currency;
    import com.gskinner.motion.GTween;
    import com.gskinner.motion.easing.Sine;
-   import kabam.rotmg.pets.util.PetsViewAssetFactory;
-   import kabam.rotmg.assets.EmbeddedAssets;
-   import kabam.rotmg.util.components.UIAssetsHelper;
+   import flash.display.Bitmap;
+   import flash.display.DisplayObject;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.filters.DropShadowFilter;
    import flash.filters.GlowFilter;
+   import flash.text.TextFieldAutoSize;
+   import flash.text.TextFormatAlign;
+   import flash.utils.Timer;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.assets.EmbeddedAssets;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.fortune.components.ItemWithTooltip;
+   import kabam.rotmg.game.model.GameModel;
+   import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
+   import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
+   import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.pets.view.components.PopupWindowBackground;
+   import kabam.rotmg.pets.view.dialogs.evolving.Spinner;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+   import kabam.rotmg.util.components.LegacyBuyButton;
+   import kabam.rotmg.util.components.UIAssetsHelper;
+   import org.swiftsuspenders.Injector;
    
    public class MysteryBoxRollModal extends Sprite
    {
@@ -63,7 +63,7 @@ package kabam.rotmg.mysterybox.components
       
       public var account:Account;
       
-      public var parentSelectModal:kabam.rotmg.mysterybox.components.MysteryBoxSelectModal;
+      public var parentSelectModal:MysteryBoxSelectModal;
       
       private var state:int;
       
@@ -563,7 +563,7 @@ package kabam.rotmg.mysterybox.components
       {
          var _loc2_:OpenDialogSignal = null;
          _loc2_ = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
-         _loc2_.dispatch(new kabam.rotmg.mysterybox.components.MysteryBoxSelectModal());
+         _loc2_.dispatch(new MysteryBoxSelectModal());
       }
       
       public function moneyCheckPass() : Boolean
@@ -637,7 +637,7 @@ package kabam.rotmg.mysterybox.components
             }
             else
             {
-               _loc2_.dispatch(new kabam.rotmg.mysterybox.components.MysteryBoxSelectModal());
+               _loc2_.dispatch(new MysteryBoxSelectModal());
             }
          }
          open = false;

@@ -1,10 +1,10 @@
 package kabam.rotmg.pets.view.dialogs.evolving
 {
+   import flash.display.DisplayObject;
    import flash.display.Sprite;
+   import kabam.rotmg.pets.data.PetVO;
    import kabam.rotmg.pets.view.components.PetIconFactory;
    import org.swiftsuspenders.Injector;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.pets.data.PetVO;
    
    public class EvolvedPet extends Sprite
    {
@@ -16,9 +16,9 @@ package kabam.rotmg.pets.view.dialogs.evolving
       [Inject]
       public var injector:Injector;
       
-      public var littleSpinner:kabam.rotmg.pets.view.dialogs.evolving.Spinner;
+      public var littleSpinner:Spinner;
       
-      public var bigSpinner:kabam.rotmg.pets.view.dialogs.evolving.Spinner;
+      public var bigSpinner:Spinner;
       
       public var petIcon:DisplayObject;
       
@@ -62,9 +62,9 @@ package kabam.rotmg.pets.view.dialogs.evolving
          this.littleSpinner.alpha = this.bigSpinner.alpha = 0.7;
       }
       
-      private function addSpinner() : kabam.rotmg.pets.view.dialogs.evolving.Spinner
+      private function addSpinner() : Spinner
       {
-         var _loc1_:kabam.rotmg.pets.view.dialogs.evolving.Spinner = this.injector.getInstance(kabam.rotmg.pets.view.dialogs.evolving.Spinner);
+         var _loc1_:Spinner = this.injector.getInstance(Spinner);
          addChild(_loc1_);
          return _loc1_;
       }

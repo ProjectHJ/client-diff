@@ -1,18 +1,18 @@
 package com.junkbyte.console.view
 {
-   import flash.events.Event;
-   import flash.events.KeyboardEvent;
-   import flash.text.TextFieldAutoSize;
+   import com.junkbyte.console.Console;
+   import com.junkbyte.console.KeyBind;
+   import com.junkbyte.console.core.LogReferences;
    import flash.display.DisplayObject;
    import flash.display.DisplayObjectContainer;
    import flash.display.Stage;
-   import flash.geom.Point;
-   import flash.utils.Dictionary;
-   import com.junkbyte.console.core.LogReferences;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
    import flash.events.TextEvent;
-   import com.junkbyte.console.KeyBind;
+   import flash.geom.Point;
    import flash.text.TextField;
-   import com.junkbyte.console.Console;
+   import flash.text.TextFieldAutoSize;
+   import flash.utils.Dictionary;
    
    public class RollerPanel extends ConsolePanel
    {

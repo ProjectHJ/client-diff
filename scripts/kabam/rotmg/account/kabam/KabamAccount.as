@@ -1,8 +1,8 @@
 package kabam.rotmg.account.kabam
 {
-   import kabam.rotmg.account.core.Account;
-   import kabam.lib.json.JsonParser;
    import flash.external.ExternalInterface;
+   import kabam.lib.json.JsonParser;
+   import kabam.rotmg.account.core.Account;
    
    public class KabamAccount implements Account
    {

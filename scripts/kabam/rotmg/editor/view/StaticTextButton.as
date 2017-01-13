@@ -1,8 +1,8 @@
 package kabam.rotmg.editor.view
 {
    import com.company.assembleegameclient.ui.TextButtonBase;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.StaticTextDisplay;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class StaticTextButton extends TextButtonBase

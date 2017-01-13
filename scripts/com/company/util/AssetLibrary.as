@@ -1,9 +1,9 @@
 package com.company.util
 {
-   import flash.utils.Dictionary;
    import flash.display.BitmapData;
    import flash.media.Sound;
    import flash.media.SoundTransform;
+   import flash.utils.Dictionary;
    
    public class AssetLibrary
    {
@@ -17,7 +17,7 @@ package com.company.util
       private static var imageLookup_:Dictionary = new Dictionary();
        
       
-      public function AssetLibrary(param1:StaticEnforcer)
+      public function AssetLibrary(param1:StaticEnforcer#90)
       {
          super();
       }
@@ -108,11 +108,11 @@ package com.company.util
    }
 }
 
-class StaticEnforcer
+class StaticEnforcer#90
 {
     
    
-   function StaticEnforcer()
+   function StaticEnforcer#90()
    {
       super();
    }

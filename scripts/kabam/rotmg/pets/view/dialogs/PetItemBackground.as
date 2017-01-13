@@ -1,10 +1,10 @@
 package kabam.rotmg.pets.view.dialogs
 {
-   import flash.display.Sprite;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
    import com.company.util.GraphicsUtil;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.display.Sprite;
    
    public class PetItemBackground extends Sprite
    {

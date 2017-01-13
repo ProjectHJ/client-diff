@@ -1,7 +1,7 @@
 package kabam.rotmg.pets.view.dialogs.evolving
 {
-   import flash.display.Sprite;
    import flash.display.DisplayObject;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.utils.getTimer;
    import kabam.rotmg.assets.EmbeddedAssets;

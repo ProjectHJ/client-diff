@@ -1,8 +1,8 @@
 package kabam.rotmg.util.components
 {
-   import flash.display.Sprite;
    import com.company.rotmg.graphics.StarGraphic;
    import flash.display.Graphics;
+   import flash.display.Sprite;
    import flash.geom.ColorTransform;
    
    public class StarsView extends Sprite

@@ -1,8 +1,8 @@
 package kabam.rotmg.ui.view
 {
    import flash.display.Sprite;
-   import mx.core.BitmapAsset;
    import kabam.rotmg.ui.model.Key;
+   import mx.core.BitmapAsset;
    
    public class KeysView extends Sprite
    {

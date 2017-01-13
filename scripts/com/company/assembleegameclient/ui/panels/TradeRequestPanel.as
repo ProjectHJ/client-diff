@@ -1,18 +1,18 @@
 package com.company.assembleegameclient.ui.panels
 {
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import com.company.assembleegameclient.game.AGameSprite;
+   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-   import flash.utils.Timer;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import flash.events.TimerEvent;
    import flash.events.MouseEvent;
-   import com.company.assembleegameclient.game.AGameSprite;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.text.TextFieldAutoSize;
+   import flash.events.TimerEvent;
    import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import flash.utils.Timer;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.ui.view.SignalWaiter;
    
    public class TradeRequestPanel extends Panel

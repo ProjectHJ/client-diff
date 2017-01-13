@@ -1,12 +1,12 @@
 package kabam.rotmg.messaging.impl
 {
-   import kabam.rotmg.pets.data.PetsModel;
    import com.company.assembleegameclient.game.AGameSprite;
    import com.company.assembleegameclient.objects.Pet;
+   import com.company.assembleegameclient.util.ConditionEffect;
    import kabam.rotmg.messaging.impl.data.StatData;
    import kabam.rotmg.pets.data.AbilityVO;
    import kabam.rotmg.pets.data.PetVO;
-   import com.company.assembleegameclient.util.ConditionEffect;
+   import kabam.rotmg.pets.data.PetsModel;
    
    public class PetUpdater
    {

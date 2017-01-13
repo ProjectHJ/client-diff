@@ -1,17 +1,17 @@
 package kabam.rotmg.pets.view.components
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import org.osflash.signals.ISlot;
-   import kabam.rotmg.pets.data.AbilityVO;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.pets.util.PetsViewAssetFactory;
-   import kabam.rotmg.pets.util.PetsConstants;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.ui.view.SignalWaiter;
    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.pets.data.AbilityVO;
+   import kabam.rotmg.pets.util.PetsConstants;
+   import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.ISlot;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeSignal;
    
    public class PetAbilityDisplay extends Sprite
@@ -32,7 +32,7 @@ package kabam.rotmg.pets.view.components
       
       private var textColor:int;
       
-      private var tooltip:kabam.rotmg.pets.view.components.PetAbilityTooltip;
+      private var tooltip:PetAbilityTooltip;
       
       public function PetAbilityDisplay(param1:AbilityVO, param2:int)
       {
@@ -58,7 +58,7 @@ package kabam.rotmg.pets.view.components
       
       private function onRollOver(param1:MouseEvent) : void
       {
-         this.tooltip = new kabam.rotmg.pets.view.components.PetAbilityTooltip(this.vo);
+         this.tooltip = new PetAbilityTooltip(this.vo);
          this.tooltip.attachToTarget(this);
          this.addToolTip.dispatch(this.tooltip);
       }

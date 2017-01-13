@@ -1,10 +1,10 @@
 package kabam.rotmg.account.web
 {
-   import kabam.rotmg.account.core.Account;
-   import com.company.assembleegameclient.util.GUID;
-   import flash.net.SharedObject;
    import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.util.GUID;
    import flash.external.ExternalInterface;
+   import flash.net.SharedObject;
+   import kabam.rotmg.account.core.Account;
    
    public class WebAccount implements Account
    {

@@ -1,21 +1,21 @@
 package kabam.rotmg.account.core
 {
-   import kabam.rotmg.account.core.services.BuyCharacterSlotTask;
-   import kabam.lib.tasks.TaskMonitor;
-   import kabam.rotmg.core.signals.SetScreenSignal;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.core.signals.TrackEventSignal;
-   import kabam.rotmg.ui.view.CharacterSlotNeedGoldDialog;
-   import kabam.rotmg.account.core.view.BuyingDialog;
-   import kabam.lib.tasks.TaskSequence;
+   import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+   import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
    import kabam.lib.tasks.BranchingTask;
    import kabam.lib.tasks.DispatchSignalTask;
    import kabam.lib.tasks.Task;
-   import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+   import kabam.lib.tasks.TaskMonitor;
+   import kabam.lib.tasks.TaskSequence;
+   import kabam.rotmg.account.core.services.BuyCharacterSlotTask;
+   import kabam.rotmg.account.core.view.BuyingDialog;
+   import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.core.service.TrackingData;
-   import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+   import kabam.rotmg.core.signals.SetScreenSignal;
+   import kabam.rotmg.core.signals.TrackEventSignal;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.ui.view.CharacterSlotNeedGoldDialog;
    
    public class BuyCharacterSlotCommand
    {
@@ -43,7 +43,7 @@ package kabam.rotmg.account.core
       public var model:PlayerModel;
       
       [Inject]
-      public var account:kabam.rotmg.account.core.Account;
+      public var account:Account;
       
       [Inject]
       public var track:TrackEventSignal;

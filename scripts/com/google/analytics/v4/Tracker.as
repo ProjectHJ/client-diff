@@ -1,26 +1,26 @@
 package com.google.analytics.v4
 {
-   import com.google.analytics.utils.Protocols;
-   import com.google.analytics.external.AdSenseGlobals;
-   import com.google.analytics.debug.VisualDebugMode;
-   import com.google.analytics.data.X10;
-   import com.google.analytics.ecommerce.Transaction;
-   import com.google.analytics.core.BrowserInfo;
+   import com.google.analytics.campaign.CampaignInfo;
    import com.google.analytics.campaign.CampaignManager;
-   import com.google.analytics.utils.Variables;
-   import com.google.analytics.core.EventInfo;
-   import com.google.analytics.debug.DebugConfiguration;
-   import com.google.analytics.utils.URL;
-   import com.google.analytics.core.EventTracker;
+   import com.google.analytics.core.BrowserInfo;
    import com.google.analytics.core.Buffer;
-   import com.google.analytics.core.DomainNameMode;
    import com.google.analytics.core.DocumentInfo;
-   import com.google.analytics.utils.Environment;
+   import com.google.analytics.core.DomainNameMode;
+   import com.google.analytics.core.Ecommerce;
+   import com.google.analytics.core.EventInfo;
+   import com.google.analytics.core.EventTracker;
+   import com.google.analytics.core.GIFRequest;
    import com.google.analytics.core.ServerOperationMode;
    import com.google.analytics.core.Utils;
-   import com.google.analytics.campaign.CampaignInfo;
-   import com.google.analytics.core.GIFRequest;
-   import com.google.analytics.core.Ecommerce;
+   import com.google.analytics.data.X10;
+   import com.google.analytics.debug.DebugConfiguration;
+   import com.google.analytics.debug.VisualDebugMode;
+   import com.google.analytics.ecommerce.Transaction;
+   import com.google.analytics.external.AdSenseGlobals;
+   import com.google.analytics.utils.Environment;
+   import com.google.analytics.utils.Protocols;
+   import com.google.analytics.utils.URL;
+   import com.google.analytics.utils.Variables;
    import flash.net.URLRequest;
    import flash.net.navigateToURL;
    
@@ -46,7 +46,7 @@ package com.google.analytics.v4
       
       private var _buffer:Buffer;
       
-      private var _config:com.google.analytics.v4.Configuration;
+      private var _config:Configuration;
       
       private var _x10Module:X10;
       
@@ -76,7 +76,7 @@ package com.google.analytics.v4
       
       private var _account:String;
       
-      public function Tracker(param1:String, param2:com.google.analytics.v4.Configuration, param3:DebugConfiguration, param4:Environment, param5:Buffer, param6:GIFRequest, param7:AdSenseGlobals, param8:Ecommerce)
+      public function Tracker(param1:String, param2:Configuration, param3:DebugConfiguration, param4:Environment, param5:Buffer, param6:GIFRequest, param7:AdSenseGlobals, param8:Ecommerce)
       {
          var _loc9_:* = null;
          super();

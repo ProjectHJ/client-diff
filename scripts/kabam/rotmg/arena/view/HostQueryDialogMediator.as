@@ -1,17 +1,17 @@
 package kabam.rotmg.arena.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.objects.ObjectLibrary;
+   import flash.display.BitmapData;
    import flash.events.Event;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class HostQueryDialogMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.arena.view.HostQueryDialog;
+      public var view:HostQueryDialog;
       
       [Inject]
       public var closeDialogs:CloseDialogsSignal;

@@ -1,20 +1,20 @@
 package kabam.rotmg.legends.view
 {
+   import com.company.assembleegameclient.ui.Slot;
+   import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+   import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
+   import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.util.AssetLibrary;
+   import com.company.util.IIterator;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
    import kabam.rotmg.legends.model.Legend;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.display.Bitmap;
-   import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.filters.DropShadowFilter;
-   import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
-   import com.company.util.IIterator;
-   import com.company.assembleegameclient.ui.Slot;
-   import com.company.util.AssetLibrary;
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.util.TextureRedrawer;
-   import flash.events.MouseEvent;
+   import org.osflash.signals.Signal;
    
    public class LegendListItem extends Sprite
    {

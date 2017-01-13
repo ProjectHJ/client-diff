@@ -2,8 +2,8 @@ package kabam.rotmg.account.securityQuestions.view
 {
    import com.company.assembleegameclient.account.ui.Frame;
    import com.company.assembleegameclient.account.ui.TextInputField;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class SecurityQuestionsDialog extends Frame
    {

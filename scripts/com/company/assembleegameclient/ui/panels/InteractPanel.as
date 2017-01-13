@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.ui.panels
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.game.GameSprite;
-   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.objects.IInteractiveObject;
-   import flash.events.Event;
+   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.panels.itemgrids.ItemGrid;
+   import flash.display.Sprite;
+   import flash.events.Event;
    
    public class InteractPanel extends Sprite
    {
@@ -21,13 +21,13 @@ package com.company.assembleegameclient.ui.panels
       
       public var h_:int;
       
-      public var currentPanel:com.company.assembleegameclient.ui.panels.Panel = null;
+      public var currentPanel:Panel = null;
       
       public var currObj_:IInteractiveObject = null;
       
-      public var partyPanel_:com.company.assembleegameclient.ui.panels.PartyPanel;
+      public var partyPanel_:PartyPanel;
       
-      private var overridePanel_:com.company.assembleegameclient.ui.panels.Panel;
+      private var overridePanel_:Panel;
       
       public var requestInteractive:Function;
       
@@ -38,10 +38,10 @@ package com.company.assembleegameclient.ui.panels
          this.player_ = param2;
          this.w_ = param3;
          this.h_ = param4;
-         this.partyPanel_ = new com.company.assembleegameclient.ui.panels.PartyPanel(param1);
+         this.partyPanel_ = new PartyPanel(param1);
       }
       
-      public function setOverride(param1:com.company.assembleegameclient.ui.panels.Panel) : void
+      public function setOverride(param1:Panel) : void
       {
          if(this.overridePanel_ != null)
          {
@@ -59,7 +59,7 @@ package com.company.assembleegameclient.ui.panels
       public function draw() : void
       {
          var _loc1_:IInteractiveObject = null;
-         var _loc2_:com.company.assembleegameclient.ui.panels.Panel = null;
+         var _loc2_:Panel = null;
          if(this.overridePanel_ != null)
          {
             this.setPanel(this.overridePanel_);
@@ -70,7 +70,7 @@ package com.company.assembleegameclient.ui.panels
          if(this.currentPanel == null || _loc1_ != this.currObj_)
          {
             this.currObj_ = _loc1_;
-            this.partyPanel_ = new com.company.assembleegameclient.ui.panels.PartyPanel(this.gs_);
+            this.partyPanel_ = new PartyPanel(this.gs_);
             if(this.currObj_ != null)
             {
                _loc2_ = this.currObj_.getPanel(this.gs_);
@@ -98,7 +98,7 @@ package com.company.assembleegameclient.ui.panels
          this.draw();
       }
       
-      public function setPanel(param1:com.company.assembleegameclient.ui.panels.Panel) : void
+      public function setPanel(param1:Panel) : void
       {
          if(param1 != this.currentPanel)
          {

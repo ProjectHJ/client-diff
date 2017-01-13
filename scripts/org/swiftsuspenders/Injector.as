@@ -1,28 +1,28 @@
 package org.swiftsuspenders
 {
-   import flash.events.EventDispatcher;
-   import flash.utils.Dictionary;
-   import org.swiftsuspenders.utils.SsInternal;
-   import flash.system.ApplicationDomain;
-   import org.swiftsuspenders.utils.TypeDescriptor;
-   import org.swiftsuspenders.reflection.Reflector;
-   import org.swiftsuspenders.mapping.InjectionMapping;
-   import flash.utils.getQualifiedClassName;
-   import org.swiftsuspenders.mapping.MappingEvent;
-   import org.swiftsuspenders.errors.InjectorMissingMappingError;
-   import org.swiftsuspenders.typedescriptions.ConstructorInjectionPoint;
-   import org.swiftsuspenders.dependencyproviders.DependencyProvider;
-   import org.swiftsuspenders.typedescriptions.TypeDescription;
-   import org.swiftsuspenders.typedescriptions.PreDestroyInjectionPoint;
-   import org.swiftsuspenders.errors.InjectorInterfaceConstructionError;
-   import org.swiftsuspenders.dependencyproviders.SoftDependencyProvider;
-   import org.swiftsuspenders.dependencyproviders.LocalOnlyProvider;
-   import flash.utils.getDefinitionByName;
-   import org.swiftsuspenders.dependencyproviders.ClassProvider;
-   import org.swiftsuspenders.typedescriptions.InjectionPoint;
    import avmplus.DescribeTypeJSON;
+   import flash.events.EventDispatcher;
+   import flash.system.ApplicationDomain;
+   import flash.utils.Dictionary;
+   import flash.utils.getDefinitionByName;
+   import flash.utils.getQualifiedClassName;
+   import org.swiftsuspenders.dependencyproviders.ClassProvider;
+   import org.swiftsuspenders.dependencyproviders.DependencyProvider;
+   import org.swiftsuspenders.dependencyproviders.LocalOnlyProvider;
+   import org.swiftsuspenders.dependencyproviders.SoftDependencyProvider;
+   import org.swiftsuspenders.errors.InjectorInterfaceConstructionError;
+   import org.swiftsuspenders.errors.InjectorMissingMappingError;
+   import org.swiftsuspenders.mapping.InjectionMapping;
+   import org.swiftsuspenders.mapping.MappingEvent;
    import org.swiftsuspenders.reflection.DescribeTypeJSONReflector;
    import org.swiftsuspenders.reflection.DescribeTypeReflector;
+   import org.swiftsuspenders.reflection.Reflector;
+   import org.swiftsuspenders.typedescriptions.ConstructorInjectionPoint;
+   import org.swiftsuspenders.typedescriptions.InjectionPoint;
+   import org.swiftsuspenders.typedescriptions.PreDestroyInjectionPoint;
+   import org.swiftsuspenders.typedescriptions.TypeDescription;
+   import org.swiftsuspenders.utils.SsInternal;
+   import org.swiftsuspenders.utils.TypeDescriptor;
    
    use namespace SsInternal;
    
@@ -32,7 +32,7 @@ package org.swiftsuspenders
       private static var INJECTION_POINTS_CACHE:Dictionary = new Dictionary(true);
        
       
-      private var _parentInjector:org.swiftsuspenders.Injector;
+      private var _parentInjector:Injector;
       
       private var _applicationDomain:ApplicationDomain;
       
@@ -178,20 +178,20 @@ package org.swiftsuspenders
          this._managedObjects = new Dictionary();
       }
       
-      public function createChildInjector(param1:ApplicationDomain = null) : org.swiftsuspenders.Injector
+      public function createChildInjector(param1:ApplicationDomain = null) : Injector
       {
-         var _loc2_:org.swiftsuspenders.Injector = new org.swiftsuspenders.Injector();
+         var _loc2_:Injector = new Injector();
          _loc2_.applicationDomain = param1 || this.applicationDomain;
          _loc2_.parentInjector = this;
          return _loc2_;
       }
       
-      public function set parentInjector(param1:org.swiftsuspenders.Injector) : void
+      public function set parentInjector(param1:Injector) : void
       {
          this._parentInjector = param1;
       }
       
-      public function get parentInjector() : org.swiftsuspenders.Injector
+      public function get parentInjector() : Injector
       {
          return this._parentInjector;
       }
@@ -233,7 +233,7 @@ package org.swiftsuspenders
       {
          var _loc3_:DependencyProvider = null;
          var _loc5_:DependencyProvider = null;
-         var _loc4_:org.swiftsuspenders.Injector = this;
+         var _loc4_:Injector = this;
          while(_loc4_)
          {
             _loc5_ = _loc4_.providerMappings[param1];

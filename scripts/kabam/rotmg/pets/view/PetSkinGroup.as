@@ -1,19 +1,19 @@
 package kabam.rotmg.pets.view
 {
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.pets.data.PetSkinGroupVO;
-   import kabam.rotmg.pets.view.components.slot.FeedFuseSlot;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.pets.util.PetsConstants;
-   import kabam.rotmg.pets.view.components.PetIcon;
-   import kabam.rotmg.pets.view.dialogs.PetItem;
-   import org.osflash.signals.natives.NativeSignal;
    import flash.events.MouseEvent;
+   import kabam.rotmg.pets.data.PetSkinGroupVO;
    import kabam.rotmg.pets.data.PetVO;
-   import kabam.rotmg.pets.view.components.PetIconFactory;
+   import kabam.rotmg.pets.util.PetsConstants;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.PetIcon;
+   import kabam.rotmg.pets.view.components.PetIconFactory;
+   import kabam.rotmg.pets.view.components.slot.FeedFuseSlot;
+   import kabam.rotmg.pets.view.dialogs.PetItem;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeSignal;
    
    public class PetSkinGroup extends Sprite
    {

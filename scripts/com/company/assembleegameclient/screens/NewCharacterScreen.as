@@ -1,24 +1,24 @@
 package com.company.assembleegameclient.screens
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.game.view.CreditDisplay;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.core.model.PlayerModel;
-   import com.company.assembleegameclient.constants.ScreenTypes;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.appengine.SavedCharactersList;
+   import com.company.assembleegameclient.constants.ScreenTypes;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.googleanalytics.GA;
-   import flash.events.Event;
-   import kabam.rotmg.ui.view.components.ScreenBase;
    import com.company.rotmg.graphics.ScreenGraphic;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.game.view.CreditDisplay;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.ui.view.components.ScreenBase;
+   import org.osflash.signals.Signal;
    
    public class NewCharacterScreen extends Sprite
    {
        
       
-      private var backButton_:com.company.assembleegameclient.screens.TitleMenuOption;
+      private var backButton_:TitleMenuOption;
       
       private var creditDisplay_:CreditDisplay;
       
@@ -60,7 +60,7 @@ package com.company.assembleegameclient.screens
             return;
          }
          this.isInitialized = true;
-         this.backButton_ = new com.company.assembleegameclient.screens.TitleMenuOption(ScreenTypes.BACK,36,false);
+         this.backButton_ = new TitleMenuOption(ScreenTypes.BACK,36,false);
          this.backButton_.addEventListener(MouseEvent.CLICK,this.onBackClick);
          this.backButton_.setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
          addChild(this.backButton_);

@@ -1,11 +1,11 @@
 package kabam.rotmg.core.service
 {
    import kabam.lib.tasks.BaseTask;
-   import robotlegs.bender.framework.api.ILogger;
-   import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
+   import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.application.DynamicSettings;
+   import kabam.rotmg.core.signals.AppInitDataReceivedSignal;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class RequestAppInitTask extends BaseTask
    {

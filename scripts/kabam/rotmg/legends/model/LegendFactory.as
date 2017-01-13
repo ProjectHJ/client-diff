@@ -1,11 +1,11 @@
 package kabam.rotmg.legends.model
 {
-   import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.classes.model.ClassesModel;
+   import com.company.util.ConversionUtil;
    import kabam.rotmg.assets.services.CharacterFactory;
    import kabam.rotmg.classes.model.CharacterClass;
    import kabam.rotmg.classes.model.CharacterSkin;
-   import com.company.util.ConversionUtil;
+   import kabam.rotmg.classes.model.ClassesModel;
+   import kabam.rotmg.core.model.PlayerModel;
    
    public class LegendFactory
    {
@@ -22,17 +22,17 @@ package kabam.rotmg.legends.model
       
       private var ownAccountId:String;
       
-      private var legends:Vector.<kabam.rotmg.legends.model.Legend>;
+      private var legends:Vector.<Legend>;
       
       public function LegendFactory()
       {
          super();
       }
       
-      public function makeLegends(param1:XML) : Vector.<kabam.rotmg.legends.model.Legend>
+      public function makeLegends(param1:XML) : Vector.<Legend>
       {
          this.ownAccountId = this.playerModel.getAccountId();
-         this.legends = new Vector.<kabam.rotmg.legends.model.Legend>(0);
+         this.legends = new Vector.<Legend>(0);
          this.makeLegendsFromList(param1.FameListElem,false);
          this.makeLegendsFromList(param1.MyFameListElem,true);
          return this.legends;
@@ -41,7 +41,7 @@ package kabam.rotmg.legends.model
       private function makeLegendsFromList(param1:XMLList, param2:Boolean) : void
       {
          var _loc3_:XML = null;
-         var _loc4_:kabam.rotmg.legends.model.Legend = null;
+         var _loc4_:Legend = null;
          for each(_loc3_ in param1)
          {
             if(!this.legendsContains(_loc3_))
@@ -56,7 +56,7 @@ package kabam.rotmg.legends.model
       
       private function legendsContains(param1:XML) : Boolean
       {
-         var _loc2_:kabam.rotmg.legends.model.Legend = null;
+         var _loc2_:Legend = null;
          for each(_loc2_ in this.legends)
          {
             if(_loc2_.accountId == param1.@accountId && _loc2_.charId == param1.@charId)
@@ -67,7 +67,7 @@ package kabam.rotmg.legends.model
          return false;
       }
       
-      public function makeLegend(param1:XML) : kabam.rotmg.legends.model.Legend
+      public function makeLegend(param1:XML) : Legend
       {
          var _loc2_:int = param1.ObjectType;
          var _loc3_:int = param1.Texture;
@@ -76,7 +76,7 @@ package kabam.rotmg.legends.model
          var _loc6_:int = !!param1.hasOwnProperty("Tex1")?int(param1.Tex1):0;
          var _loc7_:int = !!param1.hasOwnProperty("Tex2")?int(param1.Tex2):0;
          var _loc8_:int = !!_loc5_.is16x16?50:100;
-         var _loc9_:kabam.rotmg.legends.model.Legend = new kabam.rotmg.legends.model.Legend();
+         var _loc9_:Legend = new Legend();
          _loc9_.accountId = param1.@accountId;
          _loc9_.charId = param1.@charId;
          _loc9_.name = param1.Name;

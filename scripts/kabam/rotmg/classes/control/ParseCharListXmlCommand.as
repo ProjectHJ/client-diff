@@ -1,10 +1,10 @@
 package kabam.rotmg.classes.control
 {
-   import kabam.rotmg.classes.model.ClassesModel;
-   import robotlegs.bender.framework.api.ILogger;
    import kabam.rotmg.classes.model.CharacterClass;
    import kabam.rotmg.classes.model.CharacterSkin;
    import kabam.rotmg.classes.model.CharacterSkinState;
+   import kabam.rotmg.classes.model.ClassesModel;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class ParseCharListXmlCommand
    {

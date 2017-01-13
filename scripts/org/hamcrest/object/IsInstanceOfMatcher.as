@@ -1,8 +1,8 @@
 package org.hamcrest.object
 {
+   import flash.utils.getQualifiedClassName;
    import org.hamcrest.BaseMatcher;
    import org.hamcrest.Description;
-   import flash.utils.getQualifiedClassName;
    
    public class IsInstanceOfMatcher extends BaseMatcher
    {

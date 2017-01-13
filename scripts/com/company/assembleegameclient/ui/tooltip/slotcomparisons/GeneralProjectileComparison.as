@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-   import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
    
    public class GeneralProjectileComparison extends SlotComparison
    {

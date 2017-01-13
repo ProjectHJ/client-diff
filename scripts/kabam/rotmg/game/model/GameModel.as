@@ -1,8 +1,8 @@
 package kabam.rotmg.game.model
 {
+   import com.company.assembleegameclient.objects.GameObject;
    import com.company.assembleegameclient.objects.Player;
    import flash.utils.Dictionary;
-   import com.company.assembleegameclient.objects.GameObject;
    
    public class GameModel
    {

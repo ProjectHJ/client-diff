@@ -59,8 +59,8 @@ package kabam.rotmg.text.view.stringBuilder
 }
 
 import kabam.rotmg.language.model.StringMap;
-import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 import kabam.rotmg.text.model.TextKey;
+import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
 class LineData
 {

@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.ui
 {
+   import flash.display.IGraphicsData;
    import flash.events.MouseEvent;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.display.IGraphicsData;
    
    public class TextButtonBase extends BackgroundFilledText
    {

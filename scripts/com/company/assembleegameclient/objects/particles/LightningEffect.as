@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.objects.particles
 {
-   import flash.geom.Point;
-   import com.company.assembleegameclient.util.RandomUtil;
    import com.company.assembleegameclient.objects.GameObject;
+   import com.company.assembleegameclient.util.RandomUtil;
+   import flash.geom.Point;
    import kabam.rotmg.messaging.impl.data.WorldPosData;
    
    public class LightningEffect extends ParticleEffect

@@ -1,15 +1,15 @@
 package org.swiftsuspenders.dependencyproviders
 {
-   import org.swiftsuspenders.Injector;
    import flash.utils.Dictionary;
+   import org.swiftsuspenders.Injector;
    
-   public class ForwardingProvider implements org.swiftsuspenders.dependencyproviders.DependencyProvider
+   public class ForwardingProvider implements DependencyProvider
    {
        
       
-      public var provider:org.swiftsuspenders.dependencyproviders.DependencyProvider;
+      public var provider:DependencyProvider;
       
-      public function ForwardingProvider(param1:org.swiftsuspenders.dependencyproviders.DependencyProvider)
+      public function ForwardingProvider(param1:DependencyProvider)
       {
          super();
          this.provider = param1;

@@ -1,14 +1,14 @@
 package com.company.util
 {
-   import flash.geom.Rectangle;
    import flash.geom.Point;
+   import flash.geom.Rectangle;
    import flash.geom.Vector3D;
    
    public class ConversionUtil
    {
        
       
-      public function ConversionUtil(param1:StaticEnforcer)
+      public function ConversionUtil(param1:StaticEnforcer#109)
       {
          super();
       }
@@ -174,11 +174,11 @@ package com.company.util
    }
 }
 
-class StaticEnforcer
+class StaticEnforcer#109
 {
     
    
-   function StaticEnforcer()
+   function StaticEnforcer#109()
    {
       super();
    }

@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
-   import flash.display.Bitmap;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.util.SpriteUtil;
    import com.company.assembleegameclient.util.GuildUtil;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.text.TextFieldAutoSize;
+   import com.company.util.SpriteUtil;
+   import flash.display.Bitmap;
+   import flash.display.Sprite;
    import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    
    public class GuildText extends Sprite
    {

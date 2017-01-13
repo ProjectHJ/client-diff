@@ -7,11 +7,11 @@ package kabam.lib.net.impl
    {
        
       
-      public var pool:kabam.lib.net.impl.MessagePool;
+      public var pool:MessagePool;
       
-      public var prev:kabam.lib.net.impl.Message;
+      public var prev:Message;
       
-      public var next:kabam.lib.net.impl.Message;
+      public var next:Message;
       
       private var isCallback:Boolean;
       

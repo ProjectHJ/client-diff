@@ -8,10 +8,10 @@ package kabam.rotmg.account.steam.services
        
       
       [Inject]
-      public var loadAPI:kabam.rotmg.account.steam.services.SteamLoadApiTask;
+      public var loadAPI:SteamLoadApiTask;
       
       [Inject]
-      public var getCredentials:kabam.rotmg.account.steam.services.SteamGetCredentialsTask;
+      public var getCredentials:SteamGetCredentialsTask;
       
       public function SteamLoadAccountTask()
       {

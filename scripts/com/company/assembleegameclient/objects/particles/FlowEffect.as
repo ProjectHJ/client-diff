@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.objects.particles
 {
-   import flash.geom.Point;
    import com.company.assembleegameclient.objects.GameObject;
+   import flash.geom.Point;
    import kabam.rotmg.messaging.impl.data.WorldPosData;
    
    public class FlowEffect extends ParticleEffect
@@ -68,9 +68,9 @@ package com.company.assembleegameclient.objects.particles
    }
 }
 
+import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.particles.Particle;
 import flash.geom.Point;
-import com.company.assembleegameclient.objects.GameObject;
 
 class FlowParticle extends Particle
 {
@@ -125,9 +125,9 @@ class FlowParticle extends Particle
    }
 }
 
+import com.company.assembleegameclient.objects.GameObject;
 import com.company.assembleegameclient.objects.particles.Particle;
 import flash.geom.Point;
-import com.company.assembleegameclient.objects.GameObject;
 
 class FlowParticle2 extends Particle
 {

@@ -1,9 +1,9 @@
 package com.junkbyte.console.core
 {
-   import flash.events.EventDispatcher;
-   import flash.events.Event;
-   import flash.utils.getDefinitionByName;
    import com.junkbyte.console.vos.WeakObject;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.utils.getDefinitionByName;
    
    public class Executer extends EventDispatcher
    {

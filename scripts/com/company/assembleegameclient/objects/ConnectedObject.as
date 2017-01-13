@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.utils.Dictionary;
-   import flash.geom.Vector3D;
-   import flash.display.IGraphicsData;
-   import com.company.assembleegameclient.map.Camera;
-   import com.company.assembleegameclient.engine3d.ObjectFace3D;
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.map.Square;
-   import flash.geom.Utils3D;
    import com.company.assembleegameclient.engine3d.Object3D;
+   import com.company.assembleegameclient.engine3d.ObjectFace3D;
+   import com.company.assembleegameclient.map.Camera;
+   import com.company.assembleegameclient.map.Square#55;
+   import flash.display.BitmapData;
+   import flash.display.IGraphicsData;
+   import flash.geom.Utils3D;
+   import flash.geom.Vector3D;
+   import flash.utils.Dictionary;
    
    public class ConnectedObject extends GameObject
    {

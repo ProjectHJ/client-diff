@@ -1,7 +1,7 @@
 package kabam.rotmg.account.core.model
 {
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    import com.company.assembleegameclient.util.offer.Offer;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public interface MoneyConfig
    {

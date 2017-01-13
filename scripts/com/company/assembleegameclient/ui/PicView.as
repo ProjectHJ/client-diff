@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
+   import com.adobe.images.PNGEncoder;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.MouseEvent;
    import flash.net.FileReference;
-   import com.adobe.images.PNGEncoder;
-   import flash.display.BitmapData;
    
    public class PicView extends Sprite
    {
@@ -14,18 +14,18 @@ package com.company.assembleegameclient.ui
       
       private var bitmap_:Bitmap;
       
-      private var saveButton_:com.company.assembleegameclient.ui.DeprecatedTextButton;
+      private var saveButton_:DeprecatedTextButton;
       
-      private var closeButton_:com.company.assembleegameclient.ui.DeprecatedTextButton;
+      private var closeButton_:DeprecatedTextButton;
       
       public function PicView(param1:BitmapData)
       {
          super();
          this.bitmap_ = new Bitmap(param1);
          addChild(this.bitmap_);
-         this.saveButton_ = new com.company.assembleegameclient.ui.DeprecatedTextButton(16,"Save");
+         this.saveButton_ = new DeprecatedTextButton(16,"Save");
          addChild(this.saveButton_);
-         this.closeButton_ = new com.company.assembleegameclient.ui.DeprecatedTextButton(16,"Close");
+         this.closeButton_ = new DeprecatedTextButton(16,"Close");
          addChild(this.closeButton_);
          addEventListener(Event.ADDED_TO_STAGE,this.onAddedToStage);
          addEventListener(Event.REMOVED_FROM_STAGE,this.onRemovedFromStage);

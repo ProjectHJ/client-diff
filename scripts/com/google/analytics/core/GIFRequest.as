@@ -1,17 +1,17 @@
 package com.google.analytics.core
 {
-   import flash.events.IOErrorEvent;
-   import com.google.analytics.debug.VisualDebugMode;
-   import com.google.analytics.utils.Variables;
-   import flash.net.URLRequest;
-   import com.google.analytics.utils.Protocols;
-   import flash.events.SecurityErrorEvent;
-   import com.google.analytics.utils.Environment;
    import com.google.analytics.debug.DebugConfiguration;
+   import com.google.analytics.debug.VisualDebugMode;
+   import com.google.analytics.utils.Environment;
+   import com.google.analytics.utils.Protocols;
+   import com.google.analytics.utils.Variables;
    import com.google.analytics.v4.Configuration;
-   import flash.system.LoaderContext;
    import flash.display.Loader;
    import flash.events.Event;
+   import flash.events.IOErrorEvent;
+   import flash.events.SecurityErrorEvent;
+   import flash.net.URLRequest;
+   import flash.system.LoaderContext;
    
    public class GIFRequest
    {
@@ -29,13 +29,13 @@ package com.google.analytics.core
       
       private var _lastRequest:URLRequest;
       
-      private var _buffer:com.google.analytics.core.Buffer;
+      private var _buffer:Buffer;
       
       private var _config:Configuration;
       
       private var _requests:Array;
       
-      public function GIFRequest(param1:Configuration, param2:DebugConfiguration, param3:com.google.analytics.core.Buffer, param4:Environment)
+      public function GIFRequest(param1:Configuration, param2:DebugConfiguration, param3:Buffer, param4:Environment)
       {
          super();
          _config = param1;

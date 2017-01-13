@@ -1,20 +1,20 @@
 package kabam.rotmg.chat.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.chat.model.ChatModel;
-   import kabam.rotmg.chat.control.ShowChatInputSignal;
-   import kabam.rotmg.chat.control.ScrollListSignal;
-   import kabam.rotmg.chat.control.AddChatSignal;
-   import kabam.rotmg.application.api.ApplicationSetup;
-   import kabam.rotmg.chat.model.ChatMessage;
    import com.company.assembleegameclient.parameters.Parameters;
+   import kabam.rotmg.application.api.ApplicationSetup;
+   import kabam.rotmg.chat.control.AddChatSignal;
+   import kabam.rotmg.chat.control.ScrollListSignal;
+   import kabam.rotmg.chat.control.ShowChatInputSignal;
+   import kabam.rotmg.chat.model.ChatMessage;
+   import kabam.rotmg.chat.model.ChatModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class ChatListMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.chat.view.ChatList;
+      public var view:ChatList;
       
       [Inject]
       public var model:ChatModel;
@@ -29,7 +29,7 @@ package kabam.rotmg.chat.view
       public var addChat:AddChatSignal;
       
       [Inject]
-      public var itemFactory:kabam.rotmg.chat.view.ChatListItemFactory;
+      public var itemFactory:ChatListItemFactory;
       
       [Inject]
       public var setup:ApplicationSetup;

@@ -1,13 +1,13 @@
 package robotlegs.bender.extensions.signalCommandMap.impl
 {
-   import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
-   import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
-   import org.osflash.signals.ISignal;
-   import org.swiftsuspenders.Injector;
    import flash.utils.Dictionary;
    import flash.utils.describeType;
-   import robotlegs.bender.framework.impl.guardsApprove;
+   import org.osflash.signals.ISignal;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
+   import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
    import robotlegs.bender.framework.impl.applyHooks;
+   import robotlegs.bender.framework.impl.guardsApprove;
    
    public class SignalCommandTrigger implements ICommandTrigger
    {

@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.utils.Dictionary;
    import com.company.assembleegameclient.util.ConditionEffect;
+   import flash.utils.Dictionary;
    
    public class ProjectileProperties
    {

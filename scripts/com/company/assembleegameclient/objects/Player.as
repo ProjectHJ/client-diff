@@ -1,54 +1,54 @@
 package com.company.assembleegameclient.objects
 {
-   import com.company.util.ConversionUtil;
-   import flash.geom.Point;
-   import flash.geom.Matrix;
-   import com.company.assembleegameclient.util.AnimatedChar;
-   import com.company.assembleegameclient.objects.particles.HealingEffect;
-   import kabam.rotmg.game.signals.AddTextLineSignal;
-   import kabam.rotmg.assets.services.CharacterFactory;
-   import flash.utils.getTimer;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.chat.model.ChatMessage;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.game.view.components.QueuedStatusText;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import com.company.assembleegameclient.sound.SoundEffectLibrary;
-   import com.company.assembleegameclient.objects.particles.LevelUpEffect;
+   import com.company.assembleegameclient.map.Camera;
+   import com.company.assembleegameclient.map.Square#55;
    import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
-   import com.company.util.IntPoint;
-   import com.company.util.PointUtil;
-   import com.company.assembleegameclient.map.Square;
-   import flash.geom.Vector3D;
+   import com.company.assembleegameclient.objects.particles.HealingEffect;
+   import com.company.assembleegameclient.objects.particles.LevelUpEffect;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.sound.SoundEffectLibrary;
+   import com.company.assembleegameclient.tutorial.Tutorial;
+   import com.company.assembleegameclient.tutorial.doneAction;
+   import com.company.assembleegameclient.util.AnimatedChar;
    import com.company.assembleegameclient.util.ConditionEffect;
+   import com.company.assembleegameclient.util.FameUtil;
+   import com.company.assembleegameclient.util.FreeList;
+   import com.company.assembleegameclient.util.MaskedImage;
+   import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+   import com.company.util.CachingColorTransformer;
+   import com.company.util.ConversionUtil;
+   import com.company.util.GraphicsUtil;
+   import com.company.util.IntPoint;
+   import com.company.util.MoreColorUtil;
+   import com.company.util.PointUtil;
+   import com.company.util.Trig;
    import flash.display.BitmapData;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Vector3D;
+   import flash.utils.Dictionary;
+   import flash.utils.getTimer;
+   import kabam.rotmg.assets.services.CharacterFactory;
+   import kabam.rotmg.chat.model.ChatMessage;
+   import kabam.rotmg.constants.ActivationType;
+   import kabam.rotmg.constants.GeneralConstants;
+   import kabam.rotmg.constants.UseType;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.game.model.PotionInventoryModel;
+   import kabam.rotmg.game.signals.AddTextLineSignal;
+   import kabam.rotmg.game.view.components.QueuedStatusText;
+   import kabam.rotmg.stage3D.GraphicsFillExtra;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.BitmapTextFactory;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.text.view.BitmapTextFactory;
-   import com.company.assembleegameclient.util.FameUtil;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
-   import com.company.util.GraphicsUtil;
-   import com.company.util.MoreColorUtil;
-   import kabam.rotmg.stage3D.GraphicsFillExtra;
-   import com.company.assembleegameclient.map.Camera;
-   import com.company.assembleegameclient.util.MaskedImage;
-   import flash.utils.Dictionary;
-   import flash.geom.ColorTransform;
-   import com.company.assembleegameclient.util.TextureRedrawer;
-   import com.company.util.CachingColorTransformer;
-   import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-   import kabam.rotmg.constants.ActivationType;
-   import kabam.rotmg.constants.UseType;
-   import com.company.assembleegameclient.tutorial.doneAction;
-   import com.company.assembleegameclient.tutorial.Tutorial;
-   import com.company.util.Trig;
-   import com.company.assembleegameclient.util.FreeList;
-   import kabam.rotmg.constants.GeneralConstants;
    import kabam.rotmg.ui.model.TabStripModel;
-   import kabam.rotmg.game.model.PotionInventoryModel;
    import org.swiftsuspenders.Injector;
    
    public class Player extends Character
@@ -199,7 +199,7 @@ package com.company.assembleegameclient.objects
       
       protected var healingEffect_:HealingEffect = null;
       
-      protected var nearestMerchant_:com.company.assembleegameclient.objects.Merchant = null;
+      protected var nearestMerchant_:Merchant = null;
       
       public var isDefaultAnimatedChar:Boolean = true;
       
@@ -407,10 +407,10 @@ package com.company.assembleegameclient.objects
          map_.mapOverlay_.addStatusText(_loc2_);
       }
       
-      private function getNearbyMerchant() : com.company.assembleegameclient.objects.Merchant
+      private function getNearbyMerchant() : Merchant
       {
          var _loc3_:Point = null;
-         var _loc4_:com.company.assembleegameclient.objects.Merchant = null;
+         var _loc4_:Merchant = null;
          var _loc1_:int = x_ - int(x_) > 0.5?1:-1;
          var _loc2_:int = y_ - int(y_) > 0.5?1:-1;
          for each(_loc3_ in NEARBY)

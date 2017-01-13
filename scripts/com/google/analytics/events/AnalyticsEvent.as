@@ -1,7 +1,7 @@
 package com.google.analytics.events
 {
-   import flash.events.Event;
    import com.google.analytics.AnalyticsTracker;
+   import flash.events.Event;
    
    public class AnalyticsEvent extends Event
    {

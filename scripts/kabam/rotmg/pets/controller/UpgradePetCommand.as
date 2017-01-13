@@ -1,17 +1,17 @@
 package kabam.rotmg.pets.controller
 {
-   import robotlegs.bender.bundles.mvcs.Command;
-   import kabam.rotmg.pets.data.IUpgradePetRequestVO;
    import kabam.lib.net.api.MessageProvider;
    import kabam.lib.net.impl.SocketServer;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.view.RegisterPromptDialog;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.messaging.impl.PetUpgradeRequest;
-   import kabam.rotmg.pets.data.UpgradePetYardRequestVO;
    import kabam.rotmg.messaging.impl.GameServerConnection;
+   import kabam.rotmg.messaging.impl.PetUpgradeRequest;
    import kabam.rotmg.pets.data.FeedPetRequestVO;
    import kabam.rotmg.pets.data.FusePetRequestVO;
-   import kabam.rotmg.account.core.view.RegisterPromptDialog;
+   import kabam.rotmg.pets.data.IUpgradePetRequestVO;
+   import kabam.rotmg.pets.data.UpgradePetYardRequestVO;
+   import robotlegs.bender.bundles.mvcs.Command;
    
    public class UpgradePetCommand extends Command
    {

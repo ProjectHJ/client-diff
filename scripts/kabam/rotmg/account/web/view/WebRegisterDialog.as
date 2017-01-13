@@ -1,19 +1,19 @@
 package kabam.rotmg.account.web.view
 {
-   import com.company.assembleegameclient.account.ui.Frame;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.account.ui.CheckBoxField;
-   import kabam.rotmg.account.ui.components.DateField;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.events.TextEvent;
+   import com.company.assembleegameclient.account.ui.Frame;
    import com.company.assembleegameclient.parameters.Parameters;
-   import flash.filters.DropShadowFilter;
-   import org.osflash.signals.natives.NativeMappedSignal;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.account.web.model.AccountData;
    import com.company.util.EmailValidator;
+   import flash.events.MouseEvent;
+   import flash.events.TextEvent;
+   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.account.ui.components.DateField;
+   import kabam.rotmg.account.web.model.AccountData;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeMappedSignal;
    
    public class WebRegisterDialog extends Frame
    {
@@ -27,11 +27,11 @@ package kabam.rotmg.account.web.view
       
       private const errors:Array = [];
       
-      private var emailInput:kabam.rotmg.account.web.view.LabeledField;
+      private var emailInput:LabeledField;
       
-      private var passwordInput:kabam.rotmg.account.web.view.LabeledField;
+      private var passwordInput:LabeledField;
       
-      private var retypePasswordInput:kabam.rotmg.account.web.view.LabeledField;
+      private var retypePasswordInput:LabeledField;
       
       private var checkbox:CheckBoxField;
       
@@ -52,9 +52,9 @@ package kabam.rotmg.account.web.view
       
       private function makeUIElements() : void
       {
-         this.emailInput = new kabam.rotmg.account.web.view.LabeledField(TextKey.REGISTER_WEB_ACCOUNT_EMAIL,false,275);
-         this.passwordInput = new kabam.rotmg.account.web.view.LabeledField(TextKey.REGISTER_WEB_ACCOUNT_PASSWORD,true,275);
-         this.retypePasswordInput = new kabam.rotmg.account.web.view.LabeledField(TextKey.RETYPE_PASSWORD,true,275);
+         this.emailInput = new LabeledField(TextKey.REGISTER_WEB_ACCOUNT_EMAIL,false,275);
+         this.passwordInput = new LabeledField(TextKey.REGISTER_WEB_ACCOUNT_PASSWORD,true,275);
+         this.retypePasswordInput = new LabeledField(TextKey.RETYPE_PASSWORD,true,275);
          this.ageVerificationInput = new DateField();
          this.ageVerificationInput.setTitle(TextKey.BIRTHDAY);
          addLabeledField(this.emailInput);

@@ -1,7 +1,7 @@
 package kabam.rotmg.legends.control
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.legends.model.Timespan;
+   import org.osflash.signals.Signal;
    
    public class RequestFameListSignal extends Signal
    {

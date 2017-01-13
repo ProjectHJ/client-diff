@@ -1,18 +1,18 @@
 package kabam.rotmg.classes.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.assembleegameclient.screens.NewCharacterScreen;
    import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.core.signals.SetScreenSignal;
-   import kabam.rotmg.game.signals.PlayGameSignal;
-   import com.company.assembleegameclient.screens.NewCharacterScreen;
    import kabam.rotmg.game.model.GameInitData;
+   import kabam.rotmg.game.signals.PlayGameSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class CharacterSkinMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.classes.view.CharacterSkinView;
+      public var view:CharacterSkinView;
       
       [Inject]
       public var model:PlayerModel;

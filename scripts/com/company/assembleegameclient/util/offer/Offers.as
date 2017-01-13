@@ -12,7 +12,7 @@ package com.company.assembleegameclient.util.offer
       
       public var exp:String;
       
-      public var offerList:Vector.<com.company.assembleegameclient.util.offer.Offer>;
+      public var offerList:Vector.<Offer>;
       
       public function Offers(param1:XML)
       {
@@ -34,14 +34,14 @@ package com.company.assembleegameclient.util.offer
       private function makeOfferList(param1:XML) : void
       {
          var _loc2_:XML = null;
-         this.offerList = new Vector.<com.company.assembleegameclient.util.offer.Offer>(0);
+         this.offerList = new Vector.<Offer>(0);
          for each(_loc2_ in param1.Offer)
          {
             this.offerList.push(this.makeOffer(_loc2_));
          }
       }
       
-      private function makeOffer(param1:XML) : com.company.assembleegameclient.util.offer.Offer
+      private function makeOffer(param1:XML) : Offer
       {
          var _loc2_:String = param1.Id;
          var _loc3_:Number = Number(param1.Price);
@@ -49,7 +49,7 @@ package com.company.assembleegameclient.util.offer
          var _loc5_:String = param1.CheckoutJWT;
          var _loc6_:String = param1.Data;
          var _loc7_:String = !!param1.hasOwnProperty("Currency")?param1.Currency:null;
-         return new com.company.assembleegameclient.util.offer.Offer(_loc2_,_loc3_,_loc4_,_loc5_,_loc6_,_loc7_);
+         return new Offer(_loc2_,_loc3_,_loc4_,_loc5_,_loc6_,_loc7_);
       }
       
       private function sortOfferList() : void
@@ -82,14 +82,14 @@ package com.company.assembleegameclient.util.offer
          }
       }
       
-      private function sortOffers(param1:com.company.assembleegameclient.util.offer.Offer, param2:com.company.assembleegameclient.util.offer.Offer) : int
+      private function sortOffers(param1:Offer, param2:Offer) : int
       {
          return param1.price_ - param2.price_;
       }
       
       private function defineMostPopularTagline() : void
       {
-         var _loc1_:com.company.assembleegameclient.util.offer.Offer = null;
+         var _loc1_:Offer = null;
          for each(_loc1_ in this.offerList)
          {
             if(_loc1_.price_ == 10)

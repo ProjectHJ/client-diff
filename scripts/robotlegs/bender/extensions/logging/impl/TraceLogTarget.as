@@ -1,14 +1,14 @@
 package robotlegs.bender.extensions.logging.impl
 {
-   import robotlegs.bender.framework.api.ILogTarget;
    import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.ILogTarget;
    import robotlegs.bender.framework.api.LogLevel;
    
    public class TraceLogTarget implements ILogTarget
    {
        
       
-      private const _messageParser:robotlegs.bender.extensions.logging.impl.LogMessageParser = new robotlegs.bender.extensions.logging.impl.LogMessageParser();
+      private const _messageParser:LogMessageParser = new LogMessageParser();
       
       private var _context:IContext;
       

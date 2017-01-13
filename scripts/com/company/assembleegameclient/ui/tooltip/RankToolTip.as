@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.ui.tooltip
 {
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.rotmg.graphics.StarGraphic;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.ui.LineBreakDesign;
+   import com.company.assembleegameclient.util.FameUtil;
+   import com.company.rotmg.graphics.StarGraphic;
+   import flash.filters.DropShadowFilter;
    import flash.geom.ColorTransform;
    import flash.geom.Rectangle;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import com.company.assembleegameclient.util.FameUtil;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.model.TextKey;
-   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.ui.view.SignalWaiter;
    
    public class RankToolTip extends ToolTip
@@ -88,12 +88,12 @@ package com.company.assembleegameclient.ui.tooltip
    }
 }
 
-import flash.display.Sprite;
 import com.company.rotmg.graphics.StarGraphic;
-import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-import flash.geom.ColorTransform;
-import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import flash.display.Sprite;
 import flash.filters.DropShadowFilter;
+import flash.geom.ColorTransform;
+import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 class LegendLine extends Sprite
 {

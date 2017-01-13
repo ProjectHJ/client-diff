@@ -1,28 +1,28 @@
 package kabam.rotmg.minimap.view
 {
-   import flash.utils.Dictionary;
-   import com.company.assembleegameclient.objects.GameObject;
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
-   import flash.display.BitmapData;
-   import flash.display.Shape;
-   import com.company.assembleegameclient.ui.tooltip.PlayerGroupToolTip;
-   import com.company.assembleegameclient.ui.menu.PlayerGroupMenu;
-   import flash.geom.Matrix;
-   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.map.AbstractMap;
-   import com.company.util.AssetLibrary;
-   import flash.geom.ColorTransform;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
-   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.map.GroundLibrary;
-   import flash.display.Graphics;
-   import com.company.util.PointUtil;
    import com.company.assembleegameclient.objects.Character;
-   import com.company.assembleegameclient.objects.Portal;
+   import com.company.assembleegameclient.objects.GameObject;
    import com.company.assembleegameclient.objects.GuildHallPortal;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.objects.Portal;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.ui.menu.PlayerGroupMenu;
+   import com.company.assembleegameclient.ui.tooltip.PlayerGroupToolTip;
+   import com.company.util.AssetLibrary;
+   import com.company.util.PointUtil;
    import com.company.util.RectangleUtil;
+   import flash.display.BitmapData;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.utils.Dictionary;
    
    public class MiniMapImp extends MiniMap
    {
@@ -56,7 +56,7 @@ package kabam.rotmg.minimap.view
       
       private var focus:GameObject;
       
-      private var zoomButtons:kabam.rotmg.minimap.view.MiniMapZoomButtons;
+      private var zoomButtons:MiniMapZoomButtons;
       
       private var isMouseOver:Boolean = false;
       
@@ -142,7 +142,7 @@ package kabam.rotmg.minimap.view
          this.characterLayer_.x = this._width / 2;
          this.characterLayer_.y = this._height / 2;
          addChild(this.characterLayer_);
-         this.zoomButtons = new kabam.rotmg.minimap.view.MiniMapZoomButtons();
+         this.zoomButtons = new MiniMapZoomButtons();
          this.zoomButtons.x = this._width - 20;
          this.zoomButtons.zoom.add(this.onZoomChanged);
          this.zoomButtons.setZoomLevels(this.zoomLevels.length);

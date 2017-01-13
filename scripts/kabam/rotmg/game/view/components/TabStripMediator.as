@@ -1,28 +1,28 @@
 package kabam.rotmg.game.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.assembleegameclient.objects.ImageFactory;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.assets.services.IconFactory;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.friends.view.FriendListView;
+   import kabam.rotmg.pets.controller.NotifyActivePetUpdated;
+   import kabam.rotmg.pets.data.PetsModel;
+   import kabam.rotmg.pets.view.components.PetsTabContentView;
    import kabam.rotmg.ui.model.HUDModel;
    import kabam.rotmg.ui.model.TabStripModel;
-   import kabam.rotmg.ui.signals.UpdateHUDSignal;
    import kabam.rotmg.ui.signals.UpdateBackpackTabSignal;
-   import kabam.rotmg.pets.controller.NotifyActivePetUpdated;
-   import kabam.rotmg.assets.services.IconFactory;
-   import com.company.assembleegameclient.objects.ImageFactory;
-   import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+   import kabam.rotmg.ui.signals.UpdateHUDSignal;
    import kabam.rotmg.ui.view.StatsDockedSignal;
-   import kabam.rotmg.pets.data.PetsModel;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.friends.view.FriendListView;
-   import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.pets.view.components.PetsTabContentView;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class TabStripMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.game.view.components.TabStripView;
+      public var view:TabStripView;
       
       [Inject]
       public var hudModel:HUDModel;
@@ -49,13 +49,13 @@ package kabam.rotmg.game.view.components
       public var iconButtonFactory:IconButtonFactory;
       
       [Inject]
-      public var statsUndocked:kabam.rotmg.game.view.components.StatsUndockedSignal;
+      public var statsUndocked:StatsUndockedSignal;
       
       [Inject]
       public var statsDocked:StatsDockedSignal;
       
       [Inject]
-      public var statsTabHotKeyInput:kabam.rotmg.game.view.components.StatsTabHotKeyInputSignal;
+      public var statsTabHotKeyInput:StatsTabHotKeyInputSignal;
       
       [Inject]
       public var petModel:PetsModel;

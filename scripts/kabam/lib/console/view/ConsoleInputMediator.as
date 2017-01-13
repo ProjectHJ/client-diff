@@ -1,8 +1,8 @@
 package kabam.lib.console.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.lib.console.model.Console;
    import kabam.lib.console.signals.ConsoleLogSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public final class ConsoleInputMediator extends Mediator
    {
@@ -13,7 +13,7 @@ package kabam.lib.console.view
        
       
       [Inject]
-      public var view:kabam.lib.console.view.ConsoleInputView;
+      public var view:ConsoleInputView;
       
       [Inject]
       public var console:Console;

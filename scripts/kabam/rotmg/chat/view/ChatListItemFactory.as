@@ -1,21 +1,21 @@
 package kabam.rotmg.chat.view
 {
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.util.FameUtil;
+   import com.company.assembleegameclient.util.StageProxy;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.display.StageQuality;
    import flash.geom.Matrix;
    import flash.text.TextField;
    import flash.text.TextFormat;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.text.view.BitmapTextFactory;
+   import kabam.rotmg.chat.model.ChatMessage;
    import kabam.rotmg.chat.model.ChatModel;
    import kabam.rotmg.text.model.FontModel;
-   import com.company.assembleegameclient.util.StageProxy;
-   import kabam.rotmg.chat.model.ChatMessage;
-   import flash.display.DisplayObject;
-   import com.company.assembleegameclient.util.FameUtil;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import flash.display.BitmapData;
+   import kabam.rotmg.text.view.BitmapTextFactory;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.display.Bitmap;
-   import flash.display.StageQuality;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public class ChatListItemFactory
    {

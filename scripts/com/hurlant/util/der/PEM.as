@@ -1,8 +1,8 @@
 package com.hurlant.util.der
 {
    import com.hurlant.crypto.rsa.RSAKey;
-   import flash.utils.ByteArray;
    import com.hurlant.util.Base64;
+   import flash.utils.ByteArray;
    
    public class PEM
    {

@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.tooltip.EquipmentToolTip;
+   import flash.display.Sprite;
    
    public class EquipmentToolTipFactory
    {

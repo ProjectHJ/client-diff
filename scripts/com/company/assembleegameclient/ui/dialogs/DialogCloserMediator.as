@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.ui.dialogs
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
    import org.osflash.signals.Signal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class DialogCloserMediator extends Mediator
    {
        
       
       [Inject]
-      public var dialog:com.company.assembleegameclient.ui.dialogs.DialogCloser;
+      public var dialog:DialogCloser;
       
       [Inject]
       public var closeDialogsSignal:CloseDialogsSignal;

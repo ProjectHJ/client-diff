@@ -1,12 +1,12 @@
 package kabam.rotmg.account.steam.services
 {
    import kabam.lib.tasks.BaseTask;
-   import kabam.rotmg.account.core.services.RegisterAccountTask;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.services.RegisterAccountTask;
    import kabam.rotmg.account.steam.SteamApi;
    import kabam.rotmg.account.web.model.AccountData;
-   import robotlegs.bender.framework.api.ILogger;
    import kabam.rotmg.appengine.api.AppEngineClient;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class SteamRegisterAccountTask extends BaseTask implements RegisterAccountTask
    {

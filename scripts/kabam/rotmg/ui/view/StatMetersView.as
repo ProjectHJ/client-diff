@@ -1,11 +1,11 @@
 package kabam.rotmg.ui.view
 {
-   import flash.display.Sprite;
-   import com.company.assembleegameclient.ui.StatusBar;
-   import com.company.assembleegameclient.ui.ExperienceBoostTimerPopup;
    import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.text.model.TextKey;
+   import com.company.assembleegameclient.ui.ExperienceBoostTimerPopup;
+   import com.company.assembleegameclient.ui.StatusBar;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import kabam.rotmg.text.model.TextKey;
    
    public class StatMetersView extends Sprite
    {

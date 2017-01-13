@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.map
 {
-   import flash.utils.getTimer;
    import com.company.assembleegameclient.objects.GameObject;
+   import flash.utils.getTimer;
    
    public class Quest
    {
        
       
-      public var map_:com.company.assembleegameclient.map.Map;
+      public var map_:Map;
       
       public var objectId_:int = -1;
       
@@ -15,7 +15,7 @@ package com.company.assembleegameclient.map
       
       private var questOldAt_:int = 0;
       
-      public function Quest(param1:com.company.assembleegameclient.map.Map)
+      public function Quest(param1:Map)
       {
          super();
          this.map_ = param1;

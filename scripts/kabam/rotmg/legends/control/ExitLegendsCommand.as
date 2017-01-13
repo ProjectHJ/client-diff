@@ -1,9 +1,9 @@
 package kabam.rotmg.legends.control
 {
-   import kabam.rotmg.death.model.DeathModel;
+   import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
    import kabam.rotmg.core.signals.InvalidateDataSignal;
    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
-   import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+   import kabam.rotmg.death.model.DeathModel;
    import kabam.rotmg.ui.view.TitleView;
    
    public class ExitLegendsCommand

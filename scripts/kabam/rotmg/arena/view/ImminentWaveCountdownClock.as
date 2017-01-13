@@ -1,14 +1,14 @@
 package kabam.rotmg.arena.view
 {
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.StaticTextDisplay;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.utils.Timer;
    import flash.events.TimerEvent;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
    import flash.filters.DropShadowFilter;
+   import flash.utils.Timer;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.StaticTextDisplay;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import org.osflash.signals.Signal;
    
    public class ImminentWaveCountdownClock extends Sprite
    {

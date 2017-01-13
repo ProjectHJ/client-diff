@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.screens.charrects
 {
-   import flash.display.Sprite;
-   import flash.filters.DropShadowFilter;
+   import com.company.rotmg.graphics.StarGraphic;
    import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.geom.ColorTransform;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import flash.events.MouseEvent;
-   import com.company.rotmg.graphics.StarGraphic;
-   import flash.geom.ColorTransform;
    
    public class CharacterRect extends Sprite
    {

@@ -7,7 +7,7 @@ package kabam.rotmg.startup.control
        
       
       [Inject]
-      public var startup:kabam.rotmg.startup.control.StartupSequence;
+      public var startup:StartupSequence;
       
       [Inject]
       public var monitor:TaskMonitor;

@@ -1,9 +1,9 @@
 package kabam.rotmg.pets.view.dialogs
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.util.components.VerticalScrollingList;
-   import kabam.lib.ui.api.Size;
    import flash.display.DisplayObject;
+   import flash.display.Sprite;
+   import kabam.lib.ui.api.Size;
+   import kabam.rotmg.util.components.VerticalScrollingList;
    
    public class GridList extends Sprite
    {

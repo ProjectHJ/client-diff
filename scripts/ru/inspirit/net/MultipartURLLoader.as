@@ -1,23 +1,23 @@
 package ru.inspirit.net
 {
-   import flash.events.EventDispatcher;
-   import flash.net.URLLoader;
-   import flash.utils.Dictionary;
-   import flash.utils.ByteArray;
    import flash.errors.IllegalOperationError;
-   import flash.utils.clearInterval;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
+   import flash.events.HTTPStatusEvent;
+   import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
+   import flash.events.SecurityErrorEvent;
+   import flash.net.URLLoader;
    import flash.net.URLLoaderDataFormat;
    import flash.net.URLRequest;
-   import flash.net.URLRequestMethod;
    import flash.net.URLRequestHeader;
+   import flash.net.URLRequestMethod;
+   import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
    import flash.utils.Endian;
-   import ru.inspirit.net.events.MultipartURLLoaderEvent;
-   import flash.events.ProgressEvent;
-   import flash.events.Event;
-   import flash.events.IOErrorEvent;
-   import flash.events.SecurityErrorEvent;
-   import flash.events.HTTPStatusEvent;
+   import flash.utils.clearInterval;
    import flash.utils.setTimeout;
+   import ru.inspirit.net.events.MultipartURLLoaderEvent;
    
    public class MultipartURLLoader extends EventDispatcher
    {

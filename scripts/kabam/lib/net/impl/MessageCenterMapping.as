@@ -1,8 +1,8 @@
 package kabam.lib.net.impl
 {
+   import kabam.lib.net.api.MessageHandlerProxy;
    import kabam.lib.net.api.MessageMapping;
    import org.swiftsuspenders.Injector;
-   import kabam.lib.net.api.MessageHandlerProxy;
    
    public class MessageCenterMapping implements MessageMapping
    {

@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.mapeditor
 {
+   import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.game.events.DeathEvent;
+   import com.company.assembleegameclient.game.events.ReconnectEvent;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.screens.TitleMenuOption;
    import flash.display.Sprite;
+   import flash.events.Event;
    import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.servers.api.Server;
-   import com.company.assembleegameclient.game.GameSprite;
-   import com.company.assembleegameclient.screens.TitleMenuOption;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import flash.events.Event;
-   import com.company.assembleegameclient.game.events.ReconnectEvent;
-   import com.company.assembleegameclient.game.events.DeathEvent;
    
    public class MapEditor extends Sprite
    {
@@ -18,7 +18,7 @@ package com.company.assembleegameclient.mapeditor
       
       private var server:Server;
       
-      public var editingScreen_:com.company.assembleegameclient.mapeditor.EditingScreen;
+      public var editingScreen_:EditingScreen;
       
       private var gameSprite_:GameSprite;
       
@@ -29,7 +29,7 @@ package com.company.assembleegameclient.mapeditor
       public function MapEditor()
       {
          super();
-         this.editingScreen_ = new com.company.assembleegameclient.mapeditor.EditingScreen();
+         this.editingScreen_ = new EditingScreen();
          this.editingScreen_.addEventListener(MapTestEvent.MAP_TEST,this.onMapTest);
          this.editingScreen_.addEventListener(SubmitJMEvent.SUBMIT_JM_EVENT,this.onSubmitMapPopup);
          addChild(this.editingScreen_);

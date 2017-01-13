@@ -1,8 +1,8 @@
 package robotlegs.bender.extensions.logging
 {
-   import robotlegs.bender.framework.api.IExtension;
-   import robotlegs.bender.framework.api.IContext;
    import robotlegs.bender.extensions.logging.impl.TraceLogTarget;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
    import robotlegs.bender.framework.impl.UID;
    
    public class TraceLoggingExtension implements IExtension

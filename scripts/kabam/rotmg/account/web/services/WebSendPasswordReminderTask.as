@@ -2,9 +2,9 @@ package kabam.rotmg.account.web.services
 {
    import kabam.lib.tasks.BaseTask;
    import kabam.rotmg.account.core.services.SendPasswordReminderTask;
-   import kabam.rotmg.core.signals.TrackEventSignal;
    import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.core.service.TrackingData;
+   import kabam.rotmg.core.signals.TrackEventSignal;
    
    public class WebSendPasswordReminderTask extends BaseTask implements SendPasswordReminderTask
    {

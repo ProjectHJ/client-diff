@@ -1,9 +1,9 @@
 package robotlegs.bender.extensions.viewManager.impl
 {
-   import flash.events.EventDispatcher;
-   import robotlegs.bender.extensions.viewManager.api.IViewManager;
    import flash.display.DisplayObjectContainer;
+   import flash.events.EventDispatcher;
    import robotlegs.bender.extensions.viewManager.api.IViewHandler;
+   import robotlegs.bender.extensions.viewManager.api.IViewManager;
    
    public class ViewManager extends EventDispatcher implements IViewManager
    {
@@ -13,9 +13,9 @@ package robotlegs.bender.extensions.viewManager.impl
       
       private const _handlers:Vector.<IViewHandler> = new Vector.<IViewHandler>();
       
-      private var _registry:robotlegs.bender.extensions.viewManager.impl.ContainerRegistry;
+      private var _registry:ContainerRegistry;
       
-      public function ViewManager(param1:robotlegs.bender.extensions.viewManager.impl.ContainerRegistry)
+      public function ViewManager(param1:ContainerRegistry)
       {
          super();
          this._registry = param1;

@@ -1,7 +1,7 @@
 package com.company.util
 {
-   import flash.geom.Point;
    import flash.geom.Matrix;
+   import flash.geom.Point;
    
    public class IntPoint
    {
@@ -20,7 +20,7 @@ package com.company.util
       
       public static function unitTest() : void
       {
-         var _loc1_:UnitTest = new UnitTest();
+         var _loc1_:UnitTest = new UnitTest#2690();
       }
       
       public static function fromPoint(param1:Point) : IntPoint
@@ -116,11 +116,11 @@ package com.company.util
 
 import com.company.util.IntPoint;
 
-class UnitTest
+class UnitTest#2690
 {
     
    
-   function UnitTest()
+   function UnitTest#2690()
    {
       var _loc1_:IntPoint = null;
       var _loc2_:IntPoint = null;

@@ -1,14 +1,14 @@
 package com.company.util
 {
-   import flash.display.GraphicsEndFill;
-   import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
-   import flash.geom.Matrix;
-   import flash.display.GraphicsPathCommand;
-   import flash.display.LineScaleMode;
    import flash.display.CapsStyle;
-   import flash.display.JointStyle;
+   import flash.display.GraphicsEndFill;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsPathCommand;
    import flash.display.GraphicsSolidFill;
+   import flash.display.GraphicsStroke;
+   import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.geom.Matrix;
    
    public class GraphicsUtil
    {

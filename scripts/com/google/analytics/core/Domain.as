@@ -7,22 +7,22 @@ package com.google.analytics.core
    {
        
       
-      private var _mode:com.google.analytics.core.DomainNameMode;
+      private var _mode:DomainNameMode;
       
       private var _debug:DebugConfiguration;
       
       private var _name:String;
       
-      public function Domain(param1:com.google.analytics.core.DomainNameMode = null, param2:String = "", param3:DebugConfiguration = null)
+      public function Domain(param1:DomainNameMode = null, param2:String = "", param3:DebugConfiguration = null)
       {
          super();
          _debug = param3;
          if(param1 == null)
          {
-            param1 = com.google.analytics.core.DomainNameMode.auto;
+            param1 = DomainNameMode.auto;
          }
          _mode = param1;
-         if(param1 == com.google.analytics.core.DomainNameMode.custom)
+         if(param1 == DomainNameMode.custom)
          {
             this.name = param2;
          }
@@ -32,15 +32,15 @@ package com.google.analytics.core
          }
       }
       
-      public function get mode() : com.google.analytics.core.DomainNameMode
+      public function get mode() : DomainNameMode
       {
          return _mode;
       }
       
-      public function set mode(param1:com.google.analytics.core.DomainNameMode) : void
+      public function set mode(param1:DomainNameMode) : void
       {
          _mode = param1;
-         if(_mode == com.google.analytics.core.DomainNameMode.none)
+         if(_mode == DomainNameMode.none)
          {
             _name = "";
          }

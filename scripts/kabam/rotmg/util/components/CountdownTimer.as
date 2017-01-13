@@ -1,14 +1,14 @@
 package kabam.rotmg.util.components
 {
-   import flash.display.Sprite;
-   import flash.utils.Timer;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import com.gskinner.motion.GTween;
+   import flash.display.Sprite;
    import flash.events.TimerEvent;
    import flash.filters.DropShadowFilter;
    import flash.filters.GlowFilter;
+   import flash.utils.Timer;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import org.osflash.signals.Signal;
    
    public class CountdownTimer extends Sprite
    {
@@ -22,7 +22,7 @@ package kabam.rotmg.util.components
       
       public var text:TextFieldDisplayConcrete;
       
-      public var background:kabam.rotmg.util.components.SpriteBackground;
+      public var background:SpriteBackground;
       
       public var timerComplete:Signal;
       

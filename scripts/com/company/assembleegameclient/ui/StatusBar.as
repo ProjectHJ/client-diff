@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.ui
 {
+   import com.company.assembleegameclient.parameters.Parameters;
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import flash.filters.DropShadowFilter;
+   import org.osflash.signals.Signal;
    
    public class StatusBar extends Sprite
    {

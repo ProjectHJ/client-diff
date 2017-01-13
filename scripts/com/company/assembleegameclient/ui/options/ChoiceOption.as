@@ -10,7 +10,7 @@ package com.company.assembleegameclient.ui.options
       
       private var callback_:Function;
       
-      private var choiceBox_:com.company.assembleegameclient.ui.options.ChoiceBox;
+      private var choiceBox_:ChoiceBox;
       
       public function ChoiceOption(param1:String, param2:Vector.<StringBuilder>, param3:Array, param4:String, param5:String, param6:Function, param7:Number = 16777215)
       {
@@ -18,7 +18,7 @@ package com.company.assembleegameclient.ui.options
          desc_.setColor(param7);
          tooltip_.tipText_.setColor(param7);
          this.callback_ = param6;
-         this.choiceBox_ = new com.company.assembleegameclient.ui.options.ChoiceBox(param2,param3,Parameters.data_[paramName_],param7);
+         this.choiceBox_ = new ChoiceBox(param2,param3,Parameters.data_[paramName_],param7);
          this.choiceBox_.addEventListener(Event.CHANGE,this.onChange);
          addChild(this.choiceBox_);
       }

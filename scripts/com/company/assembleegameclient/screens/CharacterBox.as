@@ -1,29 +1,29 @@
 package com.company.assembleegameclient.screens
 {
-   import flash.display.Sprite;
-   import flash.geom.ColorTransform;
    import com.company.assembleegameclient.appengine.CharacterStats;
-   import kabam.rotmg.core.model.PlayerModel;
+   import com.company.assembleegameclient.appengine.SavedCharacter;
+   import com.company.assembleegameclient.ui.tooltip.ClassToolTip;
+   import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import com.company.assembleegameclient.util.AnimatedChar;
+   import com.company.assembleegameclient.util.Currency;
+   import com.company.assembleegameclient.util.FameUtil;
+   import com.company.rotmg.graphics.FullCharBoxGraphic;
+   import com.company.rotmg.graphics.LockedCharBoxGraphic;
+   import com.company.rotmg.graphics.StarGraphic;
+   import com.company.util.AssetLibrary;
+   import com.gskinner.motion.GTween;
    import flash.display.Bitmap;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.geom.ColorTransform;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.util.components.LegacyBuyButton;
    import org.osflash.signals.natives.NativeSignal;
-   import com.gskinner.motion.GTween;
-   import com.company.rotmg.graphics.FullCharBoxGraphic;
-   import com.company.assembleegameclient.util.AnimatedChar;
-   import com.company.assembleegameclient.util.FameUtil;
-   import flash.filters.DropShadowFilter;
-   import com.company.assembleegameclient.ui.tooltip.ToolTip;
-   import com.company.assembleegameclient.ui.tooltip.ClassToolTip;
-   import com.company.assembleegameclient.appengine.SavedCharacter;
-   import com.company.rotmg.graphics.StarGraphic;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import com.company.assembleegameclient.util.Currency;
-   import flash.events.MouseEvent;
-   import flash.text.TextFieldAutoSize;
-   import com.company.rotmg.graphics.LockedCharBoxGraphic;
-   import com.company.util.AssetLibrary;
    
    public class CharacterBox extends Sprite
    {

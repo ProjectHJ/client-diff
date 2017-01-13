@@ -24,21 +24,21 @@ package kabam.rotmg.classes.model
       
       public var defaultEquipment:Vector.<int>;
       
-      public var hp:kabam.rotmg.classes.model.CharacterClassStat;
+      public var hp:CharacterClassStat;
       
-      public var mp:kabam.rotmg.classes.model.CharacterClassStat;
+      public var mp:CharacterClassStat;
       
-      public var attack:kabam.rotmg.classes.model.CharacterClassStat;
+      public var attack:CharacterClassStat;
       
-      public var defense:kabam.rotmg.classes.model.CharacterClassStat;
+      public var defense:CharacterClassStat;
       
-      public var speed:kabam.rotmg.classes.model.CharacterClassStat;
+      public var speed:CharacterClassStat;
       
-      public var dexterity:kabam.rotmg.classes.model.CharacterClassStat;
+      public var dexterity:CharacterClassStat;
       
-      public var hpRegeneration:kabam.rotmg.classes.model.CharacterClassStat;
+      public var hpRegeneration:CharacterClassStat;
       
-      public var mpRegeneration:kabam.rotmg.classes.model.CharacterClassStat;
+      public var mpRegeneration:CharacterClassStat;
       
       public var unlockCost:int;
       
@@ -46,9 +46,9 @@ package kabam.rotmg.classes.model
       
       private var isSelected:Boolean;
       
-      public const unlocks:Vector.<kabam.rotmg.classes.model.CharacterClassUnlock> = new Vector.<kabam.rotmg.classes.model.CharacterClassUnlock>(0);
+      public const unlocks:Vector.<CharacterClassUnlock> = new Vector.<CharacterClassUnlock>(0);
       
-      public const skins:kabam.rotmg.classes.model.CharacterSkins = new kabam.rotmg.classes.model.CharacterSkins();
+      public const skins:CharacterSkins = new CharacterSkins();
       
       public function CharacterClass()
       {

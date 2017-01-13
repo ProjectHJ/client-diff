@@ -1,9 +1,9 @@
 package kabam.rotmg.account.core.control
 {
-   import robotlegs.bender.framework.api.IGuard;
    import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.account.core.view.RegisterPromptDialog;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import robotlegs.bender.framework.api.IGuard;
    
    public class IsAccountRegisteredGuard implements IGuard
    {

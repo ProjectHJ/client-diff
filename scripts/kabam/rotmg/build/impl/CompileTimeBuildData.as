@@ -1,10 +1,10 @@
 package kabam.rotmg.build.impl
 {
-   import kabam.rotmg.build.api.BuildData;
    import flash.display.LoaderInfo;
-   import kabam.rotmg.build.api.BuildEnvironment;
    import flash.net.LocalConnection;
    import flash.system.Capabilities;
+   import kabam.rotmg.build.api.BuildData;
+   import kabam.rotmg.build.api.BuildEnvironment;
    
    public class CompileTimeBuildData implements BuildData
    {
@@ -28,7 +28,7 @@ package kabam.rotmg.build.impl
       public var loaderInfo:LoaderInfo;
       
       [Inject]
-      public var environments:kabam.rotmg.build.impl.BuildEnvironments;
+      public var environments:BuildEnvironments;
       
       private var isParsed:Boolean = false;
       
@@ -80,7 +80,7 @@ package kabam.rotmg.build.impl
       
       private function conditionsRequireTesting(param1:String) : Boolean
       {
-         return param1 == kabam.rotmg.build.impl.BuildEnvironments.PRODUCTION && !this.isMarkedAsProductionRelease();
+         return param1 == BuildEnvironments.PRODUCTION && !this.isMarkedAsProductionRelease();
       }
       
       private function isMarkedAsProductionRelease() : Boolean

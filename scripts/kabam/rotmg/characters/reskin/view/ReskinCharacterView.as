@@ -1,22 +1,22 @@
 package kabam.rotmg.characters.reskin.view
 {
+   import com.company.assembleegameclient.ui.DeprecatedTextButton;
+   import flash.display.CapsStyle;
+   import flash.display.DisplayObject;
+   import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
    import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.text.TextFieldAutoSize;
    import kabam.rotmg.classes.view.CharacterSkinListView;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.ui.view.SignalWaiter;
    import kabam.rotmg.util.components.DialogBackground;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.assembleegameclient.ui.DeprecatedTextButton;
-   import org.osflash.signals.Signal;
-   import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.display.DisplayObject;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
-   import flash.display.JointStyle;
    import kabam.rotmg.util.graphics.ButtonLayoutHelper;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeMappedSignal;
-   import flash.events.MouseEvent;
    
    public class ReskinCharacterView extends Sprite
    {

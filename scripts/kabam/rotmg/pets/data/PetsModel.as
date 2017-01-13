@@ -1,10 +1,10 @@
 package kabam.rotmg.pets.data
 {
-   import kabam.rotmg.pets.controller.NotifyActivePetUpdated;
-   import kabam.rotmg.core.model.PlayerModel;
    import com.company.assembleegameclient.appengine.SavedCharacter;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.map.AbstractMap;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.pets.controller.NotifyActivePetUpdated;
    
    public class PetsModel
    {
@@ -18,50 +18,50 @@ package kabam.rotmg.pets.data
       
       private var hash:Object;
       
-      private var pets:Vector.<kabam.rotmg.pets.data.PetVO>;
+      private var pets:Vector.<PetVO>;
       
       private var yardXmlData:XML;
       
       private var type:int;
       
-      private var activePet:kabam.rotmg.pets.data.PetVO;
+      private var activePet:PetVO;
       
       public function PetsModel()
       {
          this.hash = {};
-         this.pets = new Vector.<kabam.rotmg.pets.data.PetVO>();
+         this.pets = new Vector.<PetVO>();
          super();
       }
       
-      public function getPetVO(param1:int) : kabam.rotmg.pets.data.PetVO
+      public function getPetVO(param1:int) : PetVO
       {
-         var _loc2_:kabam.rotmg.pets.data.PetVO = null;
+         var _loc2_:PetVO = null;
          if(this.hash[param1] != null)
          {
             return this.hash[param1];
          }
-         _loc2_ = new kabam.rotmg.pets.data.PetVO(param1);
+         _loc2_ = new PetVO(param1);
          this.pets.push(_loc2_);
          this.hash[param1] = _loc2_;
          return _loc2_;
       }
       
-      public function getCachedVOOnly(param1:int) : kabam.rotmg.pets.data.PetVO
+      public function getCachedVOOnly(param1:int) : PetVO
       {
          return this.hash[param1];
       }
       
-      public function getAllPets() : Vector.<kabam.rotmg.pets.data.PetVO>
+      public function getAllPets() : Vector.<PetVO>
       {
          return this.pets;
       }
       
-      public function addPet(param1:kabam.rotmg.pets.data.PetVO) : void
+      public function addPet(param1:PetVO) : void
       {
          this.pets.push(param1);
       }
       
-      public function setActivePet(param1:kabam.rotmg.pets.data.PetVO) : void
+      public function setActivePet(param1:PetVO) : void
       {
          this.activePet = param1;
          var _loc2_:SavedCharacter = this.playerModel.getCharacterById(this.playerModel.currentCharId);
@@ -72,7 +72,7 @@ package kabam.rotmg.pets.data
          this.notifyActivePetUpdated.dispatch();
       }
       
-      public function getActivePet() : kabam.rotmg.pets.data.PetVO
+      public function getActivePet() : PetVO
       {
          return this.activePet;
       }
@@ -88,7 +88,7 @@ package kabam.rotmg.pets.data
          this.notifyActivePetUpdated.dispatch();
       }
       
-      public function getPet(param1:int) : kabam.rotmg.pets.data.PetVO
+      public function getPet(param1:int) : PetVO
       {
          var _loc2_:int = this.getPetIndex(param1);
          if(_loc2_ == -1)
@@ -100,7 +100,7 @@ package kabam.rotmg.pets.data
       
       private function getPetIndex(param1:int) : int
       {
-         var _loc2_:kabam.rotmg.pets.data.PetVO = null;
+         var _loc2_:PetVO = null;
          var _loc3_:uint = 0;
          while(_loc3_ < this.pets.length)
          {
@@ -158,7 +158,7 @@ package kabam.rotmg.pets.data
       public function clearPets() : void
       {
          this.hash = {};
-         this.pets = new Vector.<kabam.rotmg.pets.data.PetVO>();
+         this.pets = new Vector.<PetVO>();
          this.removeActivePet();
       }
    }

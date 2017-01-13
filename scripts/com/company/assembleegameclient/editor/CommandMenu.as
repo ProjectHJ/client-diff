@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.editor
 {
    import flash.display.Sprite;
-   import flash.utils.Dictionary;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
+   import flash.utils.Dictionary;
    
    public class CommandMenu extends Sprite
    {
@@ -13,7 +13,7 @@ package com.company.assembleegameclient.editor
       
       private var yOffset_:int = 0;
       
-      private var selected_:com.company.assembleegameclient.editor.CommandMenuItem = null;
+      private var selected_:CommandMenuItem = null;
       
       public function CommandMenu()
       {
@@ -30,11 +30,11 @@ package com.company.assembleegameclient.editor
       
       public function setCommand(param1:int) : void
       {
-         var _loc3_:com.company.assembleegameclient.editor.CommandMenuItem = null;
+         var _loc3_:CommandMenuItem = null;
          var _loc2_:int = 0;
          while(_loc2_ < numChildren)
          {
-            _loc3_ = getChildAt(_loc2_) as com.company.assembleegameclient.editor.CommandMenuItem;
+            _loc3_ = getChildAt(_loc2_) as CommandMenuItem;
             if(_loc3_ != null)
             {
                if(_loc3_.command_ == param1)
@@ -47,7 +47,7 @@ package com.company.assembleegameclient.editor
          }
       }
       
-      protected function setSelected(param1:com.company.assembleegameclient.editor.CommandMenuItem) : void
+      protected function setSelected(param1:CommandMenuItem) : void
       {
          if(this.selected_ != null)
          {
@@ -73,7 +73,7 @@ package com.company.assembleegameclient.editor
          {
             return;
          }
-         var _loc2_:com.company.assembleegameclient.editor.CommandMenuItem = this.keyCodeDict_[param1.keyCode];
+         var _loc2_:CommandMenuItem = this.keyCodeDict_[param1.keyCode];
          if(_loc2_ == null)
          {
             return;
@@ -83,7 +83,7 @@ package com.company.assembleegameclient.editor
       
       protected function addCommandMenuItem(param1:String, param2:int, param3:Function, param4:int) : void
       {
-         var _loc5_:com.company.assembleegameclient.editor.CommandMenuItem = new com.company.assembleegameclient.editor.CommandMenuItem(param1,param3,param4);
+         var _loc5_:CommandMenuItem = new CommandMenuItem(param1,param3,param4);
          _loc5_.y = this.yOffset_;
          addChild(_loc5_);
          if(param2 != -1)

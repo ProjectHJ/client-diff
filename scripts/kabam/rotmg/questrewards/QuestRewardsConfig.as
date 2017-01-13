@@ -1,17 +1,17 @@
 package kabam.rotmg.questrewards
 {
-   import robotlegs.bender.framework.api.IConfig;
-   import org.swiftsuspenders.Injector;
-   import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-   import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-   import robotlegs.bender.extensions.commandCenter.api.ICommandCenter;
-   import kabam.rotmg.questrewards.view.QuestRewardsPanel;
-   import kabam.rotmg.questrewards.view.QuestRewardsPanelMediator;
-   import kabam.rotmg.questrewards.view.QuestRewardsContainer;
-   import kabam.rotmg.questrewards.view.QuestRewardsMediator;
+   import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
    import kabam.rotmg.questrewards.controller.QuestFetchCompleteSignal;
    import kabam.rotmg.questrewards.controller.QuestRedeemCompleteSignal;
-   import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
+   import kabam.rotmg.questrewards.view.QuestRewardsContainer;
+   import kabam.rotmg.questrewards.view.QuestRewardsMediator;
+   import kabam.rotmg.questrewards.view.QuestRewardsPanel;
+   import kabam.rotmg.questrewards.view.QuestRewardsPanelMediator;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.extensions.commandCenter.api.ICommandCenter;
+   import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+   import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+   import robotlegs.bender.framework.api.IConfig;
    
    public class QuestRewardsConfig implements IConfig
    {

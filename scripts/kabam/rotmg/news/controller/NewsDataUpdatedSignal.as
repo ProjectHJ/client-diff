@@ -1,7 +1,7 @@
 package kabam.rotmg.news.controller
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.news.model.NewsCellVO;
+   import org.osflash.signals.Signal;
    
    public class NewsDataUpdatedSignal extends Signal
    {

@@ -1,18 +1,18 @@
 package kabam.rotmg.pets.view.components
 {
-   import flash.display.Sprite;
-   import flash.filters.ColorMatrixFilter;
-   import com.company.util.MoreColorUtil;
-   import org.osflash.signals.Signal;
-   import org.osflash.signals.IOnceSignal;
-   import kabam.rotmg.util.components.LegacyBuyButton;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.util.Currency;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import com.company.util.MoreColorUtil;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.MouseEvent;
+   import flash.filters.ColorMatrixFilter;
    import flash.filters.DropShadowFilter;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.util.components.LegacyBuyButton;
+   import org.osflash.signals.IOnceSignal;
+   import org.osflash.signals.Signal;
    
    public class FameOrGoldBuyButtons extends Sprite
    {

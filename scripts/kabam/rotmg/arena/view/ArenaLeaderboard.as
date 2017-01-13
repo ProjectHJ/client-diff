@@ -1,28 +1,28 @@
 package kabam.rotmg.arena.view
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.StaticTextDisplay;
-   import flash.display.Bitmap;
    import com.company.assembleegameclient.screens.TitleMenuOption;
-   import kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer;
+   import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.rotmg.graphics.ScreenGraphic;
+   import com.company.util.AssetLibrary;
+   import com.company.util.BitmapUtil;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.arena.component.LeaderboardWeeklyResetTimer;
    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
    import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
-   import kabam.rotmg.ui.view.SignalWaiter;
    import kabam.rotmg.arena.model.ArenaLeaderboardModel;
-   import com.company.assembleegameclient.util.TextureRedrawer;
-   import com.company.util.AssetLibrary;
-   import flash.display.BitmapData;
-   import com.company.util.BitmapUtil;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.model.TextKey;
-   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.view.StaticTextDisplay;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.display.Shape;
-   import flash.display.Graphics;
-   import com.company.rotmg.graphics.ScreenGraphic;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.Signal;
    
    public class ArenaLeaderboard extends Sprite
    {
@@ -32,7 +32,7 @@ package kabam.rotmg.arena.view
       
       public const close:Signal = new Signal();
       
-      private var list:kabam.rotmg.arena.view.ArenaLeaderboardList;
+      private var list:ArenaLeaderboardList;
       
       private var title:StaticTextDisplay;
       
@@ -40,9 +40,9 @@ package kabam.rotmg.arena.view
       
       private var rightSword:Bitmap;
       
-      private var tabs:Vector.<kabam.rotmg.arena.view.ArenaLeaderboardTab>;
+      private var tabs:Vector.<ArenaLeaderboardTab>;
       
-      private var selected:kabam.rotmg.arena.view.ArenaLeaderboardTab;
+      private var selected:ArenaLeaderboardTab;
       
       private var closeButton:TitleMenuOption;
       
@@ -69,7 +69,7 @@ package kabam.rotmg.arena.view
       
       public function init() : void
       {
-         var _loc1_:kabam.rotmg.arena.view.ArenaLeaderboardTab = this.tabs[0];
+         var _loc1_:ArenaLeaderboardTab = this.tabs[0];
          this.selected = _loc1_;
          _loc1_.setSelected(true);
          _loc1_.selected.dispatch(_loc1_);
@@ -77,7 +77,7 @@ package kabam.rotmg.arena.view
       
       public function destroy() : void
       {
-         var _loc1_:kabam.rotmg.arena.view.ArenaLeaderboardTab = null;
+         var _loc1_:ArenaLeaderboardTab = null;
          for each(_loc1_ in this.tabs)
          {
             _loc1_.selected.remove(this.onSelected);
@@ -95,7 +95,7 @@ package kabam.rotmg.arena.view
          this.close.dispatch();
       }
       
-      private function onSelected(param1:kabam.rotmg.arena.view.ArenaLeaderboardTab) : void
+      private function onSelected(param1:ArenaLeaderboardTab) : void
       {
          this.selected.setSelected(false);
          this.selected = param1;
@@ -116,15 +116,15 @@ package kabam.rotmg.arena.view
          this.list.setItems(param1,true);
       }
       
-      private function makeTabs() : Vector.<kabam.rotmg.arena.view.ArenaLeaderboardTab>
+      private function makeTabs() : Vector.<ArenaLeaderboardTab>
       {
          var _loc3_:ArenaLeaderboardFilter = null;
-         var _loc4_:kabam.rotmg.arena.view.ArenaLeaderboardTab = null;
+         var _loc4_:ArenaLeaderboardTab = null;
          var _loc1_:SignalWaiter = new SignalWaiter();
-         var _loc2_:Vector.<kabam.rotmg.arena.view.ArenaLeaderboardTab> = new Vector.<kabam.rotmg.arena.view.ArenaLeaderboardTab>();
+         var _loc2_:Vector.<ArenaLeaderboardTab> = new Vector.<ArenaLeaderboardTab>();
          for each(_loc3_ in ArenaLeaderboardModel.FILTERS)
          {
-            _loc4_ = new kabam.rotmg.arena.view.ArenaLeaderboardTab(_loc3_);
+            _loc4_ = new ArenaLeaderboardTab(_loc3_);
             _loc4_.y = 70;
             _loc4_.selected.add(this.onSelected);
             _loc2_.push(_loc4_);
@@ -179,9 +179,9 @@ package kabam.rotmg.arena.view
          _loc2_.lineTo(800,100);
       }
       
-      private function makeList() : kabam.rotmg.arena.view.ArenaLeaderboardList
+      private function makeList() : ArenaLeaderboardList
       {
-         var _loc1_:kabam.rotmg.arena.view.ArenaLeaderboardList = new kabam.rotmg.arena.view.ArenaLeaderboardList();
+         var _loc1_:ArenaLeaderboardList = new ArenaLeaderboardList();
          _loc1_.x = 15;
          _loc1_.y = 115;
          return _loc1_;
@@ -189,7 +189,7 @@ package kabam.rotmg.arena.view
       
       private function alignTabs() : void
       {
-         var _loc2_:kabam.rotmg.arena.view.ArenaLeaderboardTab = null;
+         var _loc2_:ArenaLeaderboardTab = null;
          var _loc1_:int = 20;
          for each(_loc2_ in this.tabs)
          {

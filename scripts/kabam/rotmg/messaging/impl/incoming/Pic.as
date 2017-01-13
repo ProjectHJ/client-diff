@@ -1,8 +1,8 @@
 package kabam.rotmg.messaging.impl.incoming
 {
    import flash.display.BitmapData;
-   import flash.utils.IDataInput;
    import flash.utils.ByteArray;
+   import flash.utils.IDataInput;
    
    public class Pic extends IncomingMessage
    {

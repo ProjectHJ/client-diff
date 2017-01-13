@@ -1,15 +1,15 @@
 package kabam.rotmg.core.view
 {
-   import flash.display.Sprite;
    import flash.display.DisplayObjectContainer;
-   import kabam.rotmg.tooltips.view.TooltipsView;
+   import flash.display.Sprite;
    import kabam.rotmg.dialogs.view.DialogsView;
+   import kabam.rotmg.tooltips.view.TooltipsView;
    
    public class Layers extends Sprite
    {
        
       
-      private var menu:kabam.rotmg.core.view.ScreensView;
+      private var menu:ScreensView;
       
       public var overlay:DisplayObjectContainer;
       
@@ -28,7 +28,7 @@ package kabam.rotmg.core.view
       public function Layers()
       {
          super();
-         addChild(this.menu = new kabam.rotmg.core.view.ScreensView());
+         addChild(this.menu = new ScreensView());
          addChild(this.overlay = new Sprite());
          addChild(this.top = new Sprite());
          addChild(this.mouseDisabledTop = new Sprite());

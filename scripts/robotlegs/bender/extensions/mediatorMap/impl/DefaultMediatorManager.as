@@ -1,10 +1,10 @@
 package robotlegs.bender.extensions.mediatorMap.impl
 {
+   import flash.display.DisplayObject;
+   import flash.events.Event;
    import flash.utils.getDefinitionByName;
    import robotlegs.bender.extensions.mediatorMap.api.IMediatorFactory;
    import robotlegs.bender.extensions.mediatorMap.api.MediatorFactoryEvent;
-   import flash.display.DisplayObject;
-   import flash.events.Event;
    
    public class DefaultMediatorManager
    {

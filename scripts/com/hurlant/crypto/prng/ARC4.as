@@ -1,8 +1,8 @@
 package com.hurlant.crypto.prng
 {
    import com.hurlant.crypto.symmetric.IStreamCipher;
-   import flash.utils.ByteArray;
    import com.hurlant.util.Memory;
+   import flash.utils.ByteArray;
    
    public class ARC4 implements IPRNG, IStreamCipher
    {

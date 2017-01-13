@@ -1,24 +1,24 @@
 package kabam.rotmg.game.view
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.display.Bitmap;
    import com.company.assembleegameclient.game.GameSprite;
-   import org.osflash.signals.Signal;
-   import flash.events.MouseEvent;
    import com.company.assembleegameclient.parameters.Parameters;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.fortune.services.FortuneModel;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import com.company.assembleegameclient.util.TimeUtil;
-   import kabam.rotmg.fortune.model.FortuneInfo;
-   import com.company.util.AssetLibrary;
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.util.TextureRedrawer;
    import com.company.assembleegameclient.util.FameUtil;
-   import kabam.rotmg.core.StaticInjectorContext;
+   import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.assembleegameclient.util.TimeUtil;
+   import com.company.util.AssetLibrary;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
    import kabam.rotmg.assets.services.IconFactory;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.fortune.model.FortuneInfo;
+   import kabam.rotmg.fortune.services.FortuneModel;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.Signal;
    
    public class CreditDisplay extends Sprite
    {

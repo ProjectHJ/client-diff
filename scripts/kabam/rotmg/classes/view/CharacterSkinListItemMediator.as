@@ -1,17 +1,17 @@
 package kabam.rotmg.classes.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.classes.model.ClassesModel;
    import kabam.rotmg.classes.control.BuyCharacterSkinSignal;
    import kabam.rotmg.classes.control.FocusCharacterSkinSignal;
    import kabam.rotmg.classes.model.CharacterSkin;
+   import kabam.rotmg.classes.model.ClassesModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class CharacterSkinListItemMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.classes.view.CharacterSkinListItem;
+      public var view:CharacterSkinListItem;
       
       [Inject]
       public var model:ClassesModel;

@@ -1,21 +1,21 @@
 package kabam.rotmg.pets.view.components
 {
    import flash.display.Sprite;
-   import kabam.rotmg.tooltips.TooltipAble;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.tooltips.HoverTooltipDelegate;
    import flash.events.Event;
+   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.core.signals.HideTooltipsSignal;
+   import kabam.rotmg.core.signals.ShowTooltipSignal;
    import kabam.rotmg.pets.data.AbilityVO;
    import kabam.rotmg.pets.util.PetsAbilityLevelHelper;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.pets.util.PetsConstants;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import kabam.rotmg.core.signals.ShowTooltipSignal;
-   import kabam.rotmg.core.signals.HideTooltipsSignal;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.tooltips.HoverTooltipDelegate;
+   import kabam.rotmg.tooltips.TooltipAble;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.Signal;
    
    public class PetAbilityMeter extends Sprite implements TooltipAble
    {
@@ -27,7 +27,7 @@ package kabam.rotmg.pets.view.components
       
       private const levelTextfield:TextFieldDisplayConcrete = PetsViewAssetFactory.returnTopAlignedTextfield(11776947,14,true,true);
       
-      private const abilityBar:kabam.rotmg.pets.view.components.AnimatedAbilityBar = new kabam.rotmg.pets.view.components.AnimatedAbilityBar(PetsConstants.PET_ABILITY_BAR_WIDTH,PetsConstants.PET_ABILITY_BAR_HEIGHT);
+      private const abilityBar:AnimatedAbilityBar = new AnimatedAbilityBar(PetsConstants.PET_ABILITY_BAR_WIDTH,PetsConstants.PET_ABILITY_BAR_HEIGHT);
       
       private var unlocked:Boolean = true;
       

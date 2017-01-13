@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.util
 {
-   import kabam.rotmg.text.model.TextKey;
-   import flash.display.BitmapData;
    import com.company.util.AssetLibrary;
+   import flash.display.BitmapData;
+   import kabam.rotmg.text.model.TextKey;
    
    public class GuildUtil
    {

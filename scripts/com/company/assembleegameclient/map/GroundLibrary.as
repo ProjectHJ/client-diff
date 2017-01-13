@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.map
 {
-   import flash.utils.Dictionary;
    import com.company.assembleegameclient.objects.TextureDataConcrete;
-   import flash.display.BitmapData;
    import com.company.util.BitmapUtil;
+   import flash.display.BitmapData;
+   import flash.utils.Dictionary;
    
    public class GroundLibrary
    {
@@ -18,7 +18,7 @@ package com.company.assembleegameclient.map
       
       public static var idToType_:Dictionary = new Dictionary();
       
-      public static var defaultProps_:com.company.assembleegameclient.map.GroundProperties;
+      public static var defaultProps_:GroundProperties;
       
       public static var GROUND_CATEGORY:String = "Ground";
        
@@ -35,7 +35,7 @@ package com.company.assembleegameclient.map
          for each(_loc2_ in param1.Ground)
          {
             _loc3_ = int(_loc2_.@type);
-            propsLibrary_[_loc3_] = new com.company.assembleegameclient.map.GroundProperties(_loc2_);
+            propsLibrary_[_loc3_] = new GroundProperties(_loc2_);
             xmlLibrary_[_loc3_] = _loc2_;
             typeToTextureData_[_loc3_] = new TextureDataConcrete(_loc2_);
             idToType_[String(_loc2_.@id)] = _loc3_;
@@ -45,7 +45,7 @@ package com.company.assembleegameclient.map
       
       public static function getIdFromType(param1:int) : String
       {
-         var _loc2_:com.company.assembleegameclient.map.GroundProperties = propsLibrary_[param1];
+         var _loc2_:GroundProperties = propsLibrary_[param1];
          if(_loc2_ == null)
          {
             return null;

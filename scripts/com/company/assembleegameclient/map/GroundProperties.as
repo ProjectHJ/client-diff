@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.map
 {
    import com.company.assembleegameclient.objects.TextureData;
-   import flash.display.BitmapData;
-   import com.company.util.BitmapUtil;
    import com.company.assembleegameclient.objects.TextureDataConcrete;
+   import com.company.util.BitmapUtil;
+   import flash.display.BitmapData;
    
    public class GroundProperties
    {
@@ -19,7 +19,7 @@ package com.company.assembleegameclient.map
       
       public var maxDamage_:int = 0;
       
-      public var animate_:com.company.assembleegameclient.map.AnimateProperties;
+      public var animate_:AnimateProperties;
       
       public var blendPriority_:int = -1;
       
@@ -57,11 +57,11 @@ package com.company.assembleegameclient.map
       
       public var topTD_:TextureData = null;
       
-      public var topAnimate_:com.company.assembleegameclient.map.AnimateProperties = null;
+      public var topAnimate_:AnimateProperties = null;
       
       public function GroundProperties(param1:XML)
       {
-         this.animate_ = new com.company.assembleegameclient.map.AnimateProperties();
+         this.animate_ = new AnimateProperties();
          super();
          this.type_ = int(param1.@type);
          this.id_ = String(param1.@id);
@@ -118,7 +118,7 @@ package com.company.assembleegameclient.map
          if(param1.hasOwnProperty("Top"))
          {
             this.topTD_ = new TextureDataConcrete(XML(param1.Top));
-            this.topAnimate_ = new com.company.assembleegameclient.map.AnimateProperties();
+            this.topAnimate_ = new AnimateProperties();
             if(param1.hasOwnProperty("TopAnimate"))
             {
                this.topAnimate_.parseXML(XML(param1.TopAnimate));

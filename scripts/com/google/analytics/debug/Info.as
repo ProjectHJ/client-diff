@@ -1,8 +1,8 @@
 package com.google.analytics.debug
 {
    import flash.events.TextEvent;
-   import flash.utils.Timer;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
    
    public class Info extends Label
    {

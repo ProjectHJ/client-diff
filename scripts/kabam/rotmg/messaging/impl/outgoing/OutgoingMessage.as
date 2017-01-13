@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.outgoing
 {
-   import kabam.lib.net.impl.Message;
    import flash.utils.IDataInput;
+   import kabam.lib.net.impl.Message;
    
    public class OutgoingMessage extends Message
    {

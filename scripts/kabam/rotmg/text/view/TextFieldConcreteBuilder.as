@@ -1,10 +1,10 @@
 package kabam.rotmg.text.view
 {
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import flash.filters.DropShadowFilter;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormatAlign;
-   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    
    public class TextFieldConcreteBuilder
    {

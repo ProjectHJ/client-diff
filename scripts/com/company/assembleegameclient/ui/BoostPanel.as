@@ -1,20 +1,20 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import flash.utils.Timer;
    import com.company.assembleegameclient.objects.Player;
-   import flash.events.TimerEvent;
-   import flash.display.Bitmap;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.util.TextureRedrawer;
    import com.company.util.AssetLibrary;
+   import flash.display.Bitmap;
    import flash.display.BitmapData;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
+   import flash.display.Sprite;
+   import flash.events.TimerEvent;
    import flash.filters.DropShadowFilter;
-   import kabam.rotmg.ui.view.SignalWaiter;
+   import flash.utils.Timer;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.Signal;
    
    public class BoostPanel extends Sprite
    {
@@ -28,9 +28,9 @@ package com.company.assembleegameclient.ui
       
       private var player:Player;
       
-      private var tierBoostTimer:com.company.assembleegameclient.ui.BoostTimer;
+      private var tierBoostTimer:BoostTimer;
       
-      private var dropBoostTimer:com.company.assembleegameclient.ui.BoostTimer;
+      private var dropBoostTimer:BoostTimer;
       
       private var posY:int;
       
@@ -56,7 +56,7 @@ package com.company.assembleegameclient.ui
          this.updateTimer(this.dropBoostTimer,this.player.dropBoost);
       }
       
-      private function updateTimer(param1:com.company.assembleegameclient.ui.BoostTimer, param2:int) : void
+      private function updateTimer(param1:BoostTimer, param2:int) : void
       {
          if(param1)
          {
@@ -137,7 +137,7 @@ package com.company.assembleegameclient.ui
          }
       }
       
-      private function addTimer(param1:SignalWaiter, param2:com.company.assembleegameclient.ui.BoostTimer) : void
+      private function addTimer(param1:SignalWaiter, param2:BoostTimer) : void
       {
          param1.push(param2.textChanged);
          addChild(param2);
@@ -160,9 +160,9 @@ package com.company.assembleegameclient.ui
          this.dropBoostTimer = null;
       }
       
-      private function returnBoostTimer(param1:StringBuilder, param2:int) : com.company.assembleegameclient.ui.BoostTimer
+      private function returnBoostTimer(param1:StringBuilder, param2:int) : BoostTimer
       {
-         var _loc3_:com.company.assembleegameclient.ui.BoostTimer = new com.company.assembleegameclient.ui.BoostTimer();
+         var _loc3_:BoostTimer = new BoostTimer();
          _loc3_.setLabelBuilder(param1);
          _loc3_.setTime(param2);
          return _loc3_;

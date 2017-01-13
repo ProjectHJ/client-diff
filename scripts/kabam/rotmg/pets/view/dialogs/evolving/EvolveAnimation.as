@@ -1,13 +1,13 @@
 package kabam.rotmg.pets.view.dialogs.evolving
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.pets.view.components.PetIconFactory;
-   import org.swiftsuspenders.Injector;
    import flash.display.DisplayObject;
-   import kabam.rotmg.pets.view.components.PetIcon;
+   import flash.display.Sprite;
+   import kabam.rotmg.assets.EmbeddedAssets;
    import kabam.rotmg.messaging.impl.EvolvePetInfo;
    import kabam.rotmg.pets.data.PetVO;
-   import kabam.rotmg.assets.EmbeddedAssets;
+   import kabam.rotmg.pets.view.components.PetIcon;
+   import kabam.rotmg.pets.view.components.PetIconFactory;
+   import org.swiftsuspenders.Injector;
    
    public class EvolveAnimation extends Sprite
    {
@@ -20,7 +20,7 @@ package kabam.rotmg.pets.view.dialogs.evolving
       public var injector:Injector;
       
       [Inject]
-      public var transition:kabam.rotmg.pets.view.dialogs.evolving.EvolveTransition;
+      public var transition:EvolveTransition;
       
       public const background:DisplayObject = new EmbeddedAssets.EvolveBackground();
       
@@ -28,7 +28,7 @@ package kabam.rotmg.pets.view.dialogs.evolving
       
       public var initialPet:PetIcon;
       
-      public var evolvedPet:kabam.rotmg.pets.view.dialogs.evolving.EvolvedPet;
+      public var evolvedPet:EvolvedPet;
       
       private var evolvePetInfo:EvolvePetInfo;
       
@@ -57,7 +57,7 @@ package kabam.rotmg.pets.view.dialogs.evolving
       
       private function makeEvolvedPet(param1:PetVO) : void
       {
-         this.evolvedPet = this.injector.getInstance(kabam.rotmg.pets.view.dialogs.evolving.EvolvedPet);
+         this.evolvedPet = this.injector.getInstance(EvolvedPet);
          this.evolvedPet.setPet(param1);
          this.evolvedPet.mask = this.backgroundMask;
          this.evolvedPet.x = this.background.width / 2;

@@ -140,8 +140,8 @@ package org.hamcrest
    }
 }
 
-import org.hamcrest.SelfDescribing;
 import org.hamcrest.Description;
+import org.hamcrest.SelfDescribing;
 
 class SelfDescribingValue implements SelfDescribing
 {

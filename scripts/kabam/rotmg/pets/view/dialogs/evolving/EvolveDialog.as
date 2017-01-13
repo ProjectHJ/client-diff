@@ -1,10 +1,10 @@
 package kabam.rotmg.pets.view.dialogs.evolving
 {
-   import kabam.rotmg.pets.view.dialogs.PetDialog;
-   import com.company.assembleegameclient.ui.dialogs.DialogCloser;
    import com.company.assembleegameclient.ui.dialogs.CloseDialogComponent;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.ui.dialogs.Dialog;
+   import com.company.assembleegameclient.ui.dialogs.DialogCloser;
+   import kabam.rotmg.pets.view.dialogs.PetDialog;
+   import org.osflash.signals.Signal;
    
    public class EvolveDialog extends PetDialog implements DialogCloser
    {
@@ -12,11 +12,11 @@ package kabam.rotmg.pets.view.dialogs.evolving
       private static const VERTICAL_SPACE:int = 6;
        
       
-      public var evolveAnimation:kabam.rotmg.pets.view.dialogs.evolving.EvolveAnimation;
+      public var evolveAnimation:EvolveAnimation;
       
       private const closeDialogComponent:CloseDialogComponent = new CloseDialogComponent();
       
-      public function EvolveDialog(param1:kabam.rotmg.pets.view.dialogs.evolving.EvolveAnimation)
+      public function EvolveDialog(param1:EvolveAnimation)
       {
          this.evolveAnimation = param1;
          super("EvolveDialog.title","","ErrorDialog.ok",null,null);

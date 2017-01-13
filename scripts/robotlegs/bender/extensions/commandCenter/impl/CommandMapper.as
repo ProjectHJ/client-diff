@@ -1,11 +1,11 @@
 package robotlegs.bender.extensions.commandCenter.impl
 {
-   import robotlegs.bender.extensions.commandCenter.dsl.ICommandMapper;
-   import robotlegs.bender.extensions.commandCenter.dsl.ICommandUnmapper;
    import flash.utils.Dictionary;
-   import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
-   import robotlegs.bender.extensions.commandCenter.dsl.ICommandMappingConfig;
    import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
+   import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
+   import robotlegs.bender.extensions.commandCenter.dsl.ICommandMapper;
+   import robotlegs.bender.extensions.commandCenter.dsl.ICommandMappingConfig;
+   import robotlegs.bender.extensions.commandCenter.dsl.ICommandUnmapper;
    
    public class CommandMapper implements ICommandMapper, ICommandUnmapper
    {

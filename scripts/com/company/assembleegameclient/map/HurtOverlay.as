@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.map
 {
-   import flash.display.Shape;
+   import com.company.util.GraphicsUtil;
+   import flash.display.GradientType;
    import flash.display.GraphicsGradientFill;
    import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import flash.display.GradientType;
-   import com.company.util.GraphicsUtil;
+   import flash.display.Shape;
    
    public class HurtOverlay extends Shape
    {

@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.objects.particles
 {
-   import flash.geom.Point;
    import com.company.assembleegameclient.objects.GameObject;
-   import flash.utils.Timer;
    import flash.events.TimerEvent;
+   import flash.geom.Point;
+   import flash.utils.Timer;
    
    public class RisingFuryEffect extends ParticleEffect
    {
@@ -17,7 +17,7 @@ package com.company.assembleegameclient.objects.particles
       
       private var startY:Number;
       
-      private var particleField:com.company.assembleegameclient.objects.particles.ParticleField;
+      private var particleField:ParticleField;
       
       private var time:uint;
       
@@ -72,7 +72,7 @@ package com.company.assembleegameclient.objects.particles
       
       private function createParticleField() : void
       {
-         this.particleField = new com.company.assembleegameclient.objects.particles.ParticleField(this.go.texture_.width,this.go.texture_.height);
+         this.particleField = new ParticleField(this.go.texture_.width,this.go.texture_.height);
       }
       
       override public function update(param1:int, param2:int) : Boolean

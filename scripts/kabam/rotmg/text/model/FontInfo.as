@@ -1,8 +1,8 @@
 package kabam.rotmg.text.model
 {
-   import flash.text.TextField;
    import flash.display.BitmapData;
    import flash.geom.Rectangle;
+   import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
    

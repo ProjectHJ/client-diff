@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.map
 {
-   import flash.geom.Vector3D;
-   import flash.geom.Rectangle;
-   import flash.geom.PerspectiveProjection;
-   import flash.geom.Matrix3D;
    import com.company.assembleegameclient.objects.GameObject;
    import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.util.RandomUtil;
+   import flash.geom.Matrix3D;
+   import flash.geom.PerspectiveProjection;
+   import flash.geom.Rectangle;
+   import flash.geom.Vector3D;
    
    public class Camera
    {

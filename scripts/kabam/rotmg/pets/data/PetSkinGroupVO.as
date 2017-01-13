@@ -8,11 +8,11 @@ package kabam.rotmg.pets.data
       
       public var icons:Array;
       
-      public var petRarityEnum:kabam.rotmg.pets.data.PetRarityEnum;
+      public var petRarityEnum:PetRarityEnum;
       
       public var selectedPetSkinID:int;
       
-      public function PetSkinGroupVO(param1:String, param2:Array, param3:kabam.rotmg.pets.data.PetRarityEnum, param4:int)
+      public function PetSkinGroupVO(param1:String, param2:Array, param3:PetRarityEnum, param4:int)
       {
          super();
          this.textKey = param1;

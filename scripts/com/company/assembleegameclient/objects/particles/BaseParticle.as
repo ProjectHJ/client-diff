@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.objects.particles
 {
-   import com.company.assembleegameclient.objects.BasicObject;
-   import flash.geom.Matrix;
-   import flash.display.GraphicsPath;
-   import flash.display.GraphicsBitmapFill;
-   import flash.display.IGraphicsData;
    import com.company.assembleegameclient.map.Camera;
+   import com.company.assembleegameclient.objects.BasicObject;
    import com.company.util.GraphicsUtil;
    import flash.display.BitmapData;
+   import flash.display.GraphicsBitmapFill;
+   import flash.display.GraphicsPath;
+   import flash.display.IGraphicsData;
+   import flash.geom.Matrix;
    
    public class BaseParticle extends BasicObject
    {

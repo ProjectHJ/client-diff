@@ -1,9 +1,9 @@
 package robotlegs.bender.extensions.mediatorMap.impl
 {
+   import robotlegs.bender.extensions.matching.ITypeFilter;
    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMapping;
    import robotlegs.bender.extensions.mediatorMap.dsl.IMediatorMappingConfig;
    import robotlegs.bender.framework.impl.MappingConfigValidator;
-   import robotlegs.bender.extensions.matching.ITypeFilter;
    
    public class MediatorMapping implements IMediatorMapping, IMediatorMappingConfig
    {

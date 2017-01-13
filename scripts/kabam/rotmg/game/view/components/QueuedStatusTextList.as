@@ -8,9 +8,9 @@ package kabam.rotmg.game.view.components
       
       public var target:DisplayObjectContainer;
       
-      private var head:kabam.rotmg.game.view.components.QueuedStatusText;
+      private var head:QueuedStatusText;
       
-      private var tail:kabam.rotmg.game.view.components.QueuedStatusText;
+      private var tail:QueuedStatusText;
       
       public function QueuedStatusTextList()
       {
@@ -31,7 +31,7 @@ package kabam.rotmg.game.view.components
          }
       }
       
-      public function append(param1:kabam.rotmg.game.view.components.QueuedStatusText) : void
+      public function append(param1:QueuedStatusText) : void
       {
          param1.list = this;
          if(this.tail)

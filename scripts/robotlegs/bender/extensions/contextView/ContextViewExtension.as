@@ -1,11 +1,11 @@
 package robotlegs.bender.extensions.contextView
 {
-   import robotlegs.bender.framework.api.IExtension;
-   import org.swiftsuspenders.Injector;
-   import robotlegs.bender.framework.api.ILogger;
-   import robotlegs.bender.framework.api.IContext;
-   import org.hamcrest.object.instanceOf;
    import flash.display.DisplayObjectContainer;
+   import org.hamcrest.object.instanceOf;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
+   import robotlegs.bender.framework.api.ILogger;
    import robotlegs.bender.framework.impl.UID;
    
    public class ContextViewExtension implements IExtension

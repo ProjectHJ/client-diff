@@ -1,18 +1,18 @@
 package com.company.assembleegameclient.util
 {
-   import flash.filters.GlowFilter;
-   import flash.utils.Dictionary;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+   import com.company.util.AssetLibrary;
+   import com.company.util.PointUtil;
+   import flash.display.BitmapData;
+   import flash.display.Shader;
+   import flash.filters.BitmapFilterQuality;
+   import flash.filters.GlowFilter;
+   import flash.filters.ShaderFilter;
+   import flash.geom.ColorTransform;
    import flash.geom.Matrix;
    import flash.geom.Rectangle;
-   import com.company.util.PointUtil;
-   import flash.geom.ColorTransform;
-   import com.company.util.AssetLibrary;
    import flash.utils.ByteArray;
-   import flash.display.Shader;
-   import flash.filters.ShaderFilter;
-   import flash.filters.BitmapFilterQuality;
+   import flash.utils.Dictionary;
    
    public class TextureRedrawer
    {

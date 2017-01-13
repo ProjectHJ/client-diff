@@ -1,15 +1,15 @@
 package kabam.rotmg.mysterybox.model
 {
-   import flash.events.EventDispatcher;
+   import com.company.assembleegameclient.util.TimeUtil;
+   import flash.display.DisplayObject;
    import flash.events.Event;
+   import flash.events.EventDispatcher;
    import flash.events.IOErrorEvent;
    import flash.net.URLRequest;
-   import flash.display.DisplayObject;
-   import kabam.display.Loader.LoaderProxy;
    import flash.utils.Dictionary;
-   import com.company.assembleegameclient.util.TimeUtil;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.display.Loader.LoaderProxy;
    import kabam.display.Loader.LoaderProxyConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class MysteryBoxInfo extends EventDispatcher
    {

@@ -1,36 +1,36 @@
 package com.company.assembleegameclient.map
 {
-   import flash.filters.ColorMatrixFilter;
-   import flash.geom.ColorTransform;
-   import flash.display.BitmapData;
-   import kabam.rotmg.game.logging.RollingMeanLoopMonitor;
-   import com.company.assembleegameclient.objects.BasicObject;
-   import flash.utils.Dictionary;
-   import flash.display.DisplayObject;
    import com.company.assembleegameclient.background.Background;
-   import com.company.assembleegameclient.objects.GameObject;
-   import kabam.rotmg.stage3D.graphic3D.TextureFactory;
-   import kabam.rotmg.stage3D.GraphicsFillExtra;
-   import kabam.rotmg.stage3D.graphic3D.Program3DFactory;
-   import flash.geom.Point;
-   import com.company.assembleegameclient.objects.particles.ParticleEffect;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import flash.display.IGraphicsData;
-   import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-   import kabam.rotmg.stage3D.Render3D;
-   import flash.geom.Rectangle;
-   import kabam.rotmg.stage3D.Renderer;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import flash.display.GraphicsBitmapFill;
-   import flash.display.GraphicsSolidFill;
-   import com.company.assembleegameclient.util.ConditionEffect;
-   import flash.filters.BlurFilter;
    import com.company.assembleegameclient.game.AGameSprite;
-   import kabam.rotmg.assets.EmbeddedAssets;
    import com.company.assembleegameclient.map.mapoverlay.MapOverlay;
    import com.company.assembleegameclient.map.partyoverlay.PartyOverlay;
+   import com.company.assembleegameclient.objects.BasicObject;
+   import com.company.assembleegameclient.objects.GameObject;
    import com.company.assembleegameclient.objects.Party;
+   import com.company.assembleegameclient.objects.particles.ParticleEffect;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.util.ConditionEffect;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.display.GraphicsBitmapFill;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.filters.BlurFilter;
+   import flash.filters.ColorMatrixFilter;
+   import flash.geom.ColorTransform;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.utils.Dictionary;
+   import kabam.rotmg.assets.EmbeddedAssets;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.game.logging.RollingMeanLoopMonitor;
    import kabam.rotmg.game.model.GameModel;
+   import kabam.rotmg.stage3D.GraphicsFillExtra;
+   import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
+   import kabam.rotmg.stage3D.Render3D;
+   import kabam.rotmg.stage3D.Renderer;
+   import kabam.rotmg.stage3D.graphic3D.Program3DFactory;
+   import kabam.rotmg.stage3D.graphic3D.TextureFactory;
    
    public class Map extends AbstractMap
    {
@@ -96,9 +96,9 @@ package com.company.assembleegameclient.map
       
       public var visibleUnder_:Array;
       
-      public var visibleSquares_:Vector.<com.company.assembleegameclient.map.Square>;
+      public var visibleSquares_:Vector.<Square#55>;
       
-      public var topSquares_:Vector.<com.company.assembleegameclient.map.Square>;
+      public var topSquares_:Vector.<Square#55>;
       
       public function Map(param1:AGameSprite)
       {
@@ -111,8 +111,8 @@ package com.company.assembleegameclient.map
          this.graphicsData3d_ = new Vector.<Object3DStage3D>();
          this.visible_ = new Array();
          this.visibleUnder_ = new Array();
-         this.visibleSquares_ = new Vector.<com.company.assembleegameclient.map.Square>();
-         this.topSquares_ = new Vector.<com.company.assembleegameclient.map.Square>();
+         this.visibleSquares_ = new Vector.<Square#55>();
+         this.topSquares_ = new Vector.<Square#55>();
          super();
          gs_ = param1;
          hurtOverlay_ = new HurtOverlay();
@@ -174,7 +174,7 @@ package com.company.assembleegameclient.map
       
       override public function dispose() : void
       {
-         var _loc1_:com.company.assembleegameclient.map.Square = null;
+         var _loc1_:Square = null;
          var _loc2_:GameObject = null;
          var _loc3_:BasicObject = null;
          gs_ = null;
@@ -248,7 +248,7 @@ package com.company.assembleegameclient.map
       
       override public function pSTopW(param1:Number, param2:Number) : Point
       {
-         var _loc3_:com.company.assembleegameclient.map.Square = null;
+         var _loc3_:Square = null;
          for each(_loc3_ in this.visibleSquares_)
          {
             if(_loc3_.faces_.length != 0 && _loc3_.faces_[0].face_.contains(param1,param2))
@@ -263,8 +263,8 @@ package com.company.assembleegameclient.map
       {
          var _loc8_:int = 0;
          var _loc9_:int = 0;
-         var _loc10_:com.company.assembleegameclient.map.Square = null;
-         var _loc4_:com.company.assembleegameclient.map.Square = this.getSquare(param1,param2);
+         var _loc10_:Square = null;
+         var _loc4_:Square = this.getSquare(param1,param2);
          _loc4_.setTileType(param3);
          var _loc5_:int = param1 < width_ - 1?int(param1 + 1):int(param1);
          var _loc6_:int = param2 < height_ - 1?int(param2 + 1):int(param2);
@@ -350,24 +350,24 @@ package com.company.assembleegameclient.map
          delete _loc2_[param1];
       }
       
-      public function getSquare(param1:Number, param2:Number) : com.company.assembleegameclient.map.Square
+      public function getSquare(param1:Number, param2:Number) : Square#55
       {
          if(param1 < 0 || param1 >= width_ || param2 < 0 || param2 >= height_)
          {
             return null;
          }
          var _loc3_:int = int(param1) + int(param2) * width_;
-         var _loc4_:com.company.assembleegameclient.map.Square = squares_[_loc3_];
+         var _loc4_:Square = squares_[_loc3_];
          if(_loc4_ == null)
          {
-            _loc4_ = new com.company.assembleegameclient.map.Square(this,int(param1),int(param2));
+            _loc4_ = new Square#55(this,int(param1),int(param2));
             squares_[_loc3_] = _loc4_;
             squareList_.push(_loc4_);
          }
          return _loc4_;
       }
       
-      public function lookupSquare(param1:int, param2:int) : com.company.assembleegameclient.map.Square
+      public function lookupSquare(param1:int, param2:int) : Square#55
       {
          if(param1 < 0 || param1 >= width_ || param2 < 0 || param2 >= height_)
          {
@@ -378,7 +378,7 @@ package com.company.assembleegameclient.map
       
       override public function draw(param1:Camera, param2:int) : void
       {
-         var _loc6_:com.company.assembleegameclient.map.Square = null;
+         var _loc6_:Square = null;
          var _loc13_:GameObject = null;
          var _loc14_:BasicObject = null;
          var _loc15_:int = 0;

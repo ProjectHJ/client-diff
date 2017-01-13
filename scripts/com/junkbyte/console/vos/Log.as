@@ -26,9 +26,9 @@ package com.junkbyte.console.vos
       
       public var chStr:String;
       
-      public var next:com.junkbyte.console.vos.Log;
+      public var next:Log;
       
-      public var prev:com.junkbyte.console.vos.Log;
+      public var prev:Log;
       
       public function Log(param1:String, param2:String, param3:int, param4:Boolean = false, param5:Boolean = false)
       {
@@ -40,13 +40,13 @@ package com.junkbyte.console.vos
          this.html = param5;
       }
       
-      public static function FromBytes(param1:ByteArray) : com.junkbyte.console.vos.Log
+      public static function FromBytes(param1:ByteArray) : Log
       {
          var _loc2_:String = param1.readUTFBytes(param1.readUnsignedInt());
          var _loc3_:String = param1.readUTF();
          var _loc4_:int = param1.readInt();
          var _loc5_:Boolean = param1.readBoolean();
-         return new com.junkbyte.console.vos.Log(_loc2_,_loc3_,_loc4_,_loc5_,true);
+         return new Log(_loc2_,_loc3_,_loc4_,_loc5_,true);
       }
       
       public function toBytes(param1:ByteArray) : void
@@ -70,9 +70,9 @@ package com.junkbyte.console.vos
          return "[" + this.ch + "] " + this.plainText();
       }
       
-      public function clone() : com.junkbyte.console.vos.Log
+      public function clone() : Log
       {
-         var _loc1_:com.junkbyte.console.vos.Log = new com.junkbyte.console.vos.Log(this.text,this.ch,this.priority,this.repeat,this.html);
+         var _loc1_:Log = new Log(this.text,this.ch,this.priority,this.repeat,this.html);
          _loc1_.line = this.line;
          _loc1_.time = this.time;
          return _loc1_;

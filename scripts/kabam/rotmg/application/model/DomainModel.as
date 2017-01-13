@@ -1,7 +1,7 @@
 package kabam.rotmg.application.model
 {
-   import flash.system.Security;
    import flash.net.LocalConnection;
+   import flash.system.Security;
    
    public class DomainModel
    {
@@ -20,7 +20,7 @@ package kabam.rotmg.application.model
       private const WHITELIST:Array = this.PRODUCTION_WHITELIST.concat(this.TESTING_WHITELIST).concat(this.TRANSLATION_WHITELIST).concat(this.TESTING2_WHITELIST);
       
       [Inject]
-      public var client:kabam.rotmg.application.model.PlatformModel;
+      public var client:PlatformModel;
       
       private var localDomain:String;
       

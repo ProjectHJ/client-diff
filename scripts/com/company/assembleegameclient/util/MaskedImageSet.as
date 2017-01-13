@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.util
 {
-   import flash.display.BitmapData;
    import com.company.util.ImageSet;
+   import flash.display.BitmapData;
    
    public class MaskedImageSet
    {
        
       
-      public var images_:Vector.<com.company.assembleegameclient.util.MaskedImage>;
+      public var images_:Vector.<MaskedImage>;
       
       public function MaskedImageSet()
       {
-         this.images_ = new Vector.<com.company.assembleegameclient.util.MaskedImage>();
+         this.images_ = new Vector.<MaskedImage>();
          super();
       }
       
@@ -31,12 +31,12 @@ package com.company.assembleegameclient.util
          var _loc7_:int = 0;
          while(_loc7_ < _loc5_.images_.length)
          {
-            this.images_.push(new com.company.assembleegameclient.util.MaskedImage(_loc5_.images_[_loc7_],_loc6_ == null?null:_loc7_ >= _loc6_.images_.length?null:_loc6_.images_[_loc7_]));
+            this.images_.push(new MaskedImage(_loc5_.images_[_loc7_],_loc6_ == null?null:_loc7_ >= _loc6_.images_.length?null:_loc6_.images_[_loc7_]));
             _loc7_++;
          }
       }
       
-      public function addFromMaskedImage(param1:com.company.assembleegameclient.util.MaskedImage, param2:int, param3:int) : void
+      public function addFromMaskedImage(param1:MaskedImage, param2:int, param3:int) : void
       {
          this.addFromBitmapData(param1.image_,param1.mask_,param2,param3);
       }

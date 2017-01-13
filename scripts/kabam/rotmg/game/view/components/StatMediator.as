@@ -1,14 +1,14 @@
 package kabam.rotmg.game.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import flash.events.MouseEvent;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class StatMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.game.view.components.StatView;
+      public var view:StatView;
       
       public function StatMediator()
       {

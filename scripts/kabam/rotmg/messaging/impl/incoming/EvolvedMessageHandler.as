@@ -1,10 +1,10 @@
 package kabam.rotmg.messaging.impl.incoming
 {
-   import org.swiftsuspenders.Injector;
    import kabam.rotmg.messaging.impl.EvolvePetInfo;
+   import kabam.rotmg.pets.controller.EvolvePetSignal;
    import kabam.rotmg.pets.data.PetVO;
    import kabam.rotmg.pets.data.PetsModel;
-   import kabam.rotmg.pets.controller.EvolvePetSignal;
+   import org.swiftsuspenders.Injector;
    
    public class EvolvedMessageHandler
    {
@@ -15,7 +15,7 @@ package kabam.rotmg.messaging.impl.incoming
       
       private var evolvePetInfo:EvolvePetInfo;
       
-      private var message:kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage;
+      private var message:EvolvedPetMessage;
       
       private var finalPet:PetVO;
       
@@ -26,7 +26,7 @@ package kabam.rotmg.messaging.impl.incoming
          super();
       }
       
-      public function handleMessage(param1:kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage) : void
+      public function handleMessage(param1:EvolvedPetMessage) : void
       {
          this.message = param1;
          this.evolvePetInfo = new EvolvePetInfo();
@@ -43,7 +43,7 @@ package kabam.rotmg.messaging.impl.incoming
          this.evolvePetInfo.finalPet = this.finalPet;
       }
       
-      private function addInitialPet(param1:kabam.rotmg.messaging.impl.incoming.EvolvedPetMessage) : void
+      private function addInitialPet(param1:EvolvedPetMessage) : void
       {
          this.initialPet = PetVO.clone(this.finalPet);
          this.initialPet.setSkin(param1.initialSkin);

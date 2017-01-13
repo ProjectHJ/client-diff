@@ -1,7 +1,7 @@
 package kabam.rotmg.account.kongregate.services
 {
-   import flash.net.SharedObject;
    import com.company.assembleegameclient.util.GUID;
+   import flash.net.SharedObject;
    
    public class KongregateSharedObject
    {

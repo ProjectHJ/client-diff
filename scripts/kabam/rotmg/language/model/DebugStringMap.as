@@ -2,15 +2,15 @@ package kabam.rotmg.language.model
 {
    import kabam.rotmg.text.model.DebugTextInfo;
    
-   public class DebugStringMap implements kabam.rotmg.language.model.StringMap
+   public class DebugStringMap implements StringMap
    {
        
       
       [Inject]
-      public var delegate:kabam.rotmg.language.model.StringMap;
+      public var delegate:StringMap;
       
       [Inject]
-      public var languageModel:kabam.rotmg.language.model.LanguageModel;
+      public var languageModel:LanguageModel;
       
       public var debugTextInfos:Vector.<DebugTextInfo>;
       

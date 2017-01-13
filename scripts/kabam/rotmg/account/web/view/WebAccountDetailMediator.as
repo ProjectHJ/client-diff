@@ -1,22 +1,22 @@
 package kabam.rotmg.account.web.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.core.signals.TrackEventSignal;
    import kabam.rotmg.account.core.signals.SendConfirmEmailSignal;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-   import kabam.rotmg.core.service.TrackingData;
-   import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.core.service.TrackingData;
+   import kabam.rotmg.core.signals.TrackEventSignal;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class WebAccountDetailMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.account.web.view.WebAccountDetailDialog;
+      public var view:WebAccountDetailDialog;
       
       [Inject]
       public var account:Account;

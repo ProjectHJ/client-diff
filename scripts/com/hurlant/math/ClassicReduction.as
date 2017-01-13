@@ -6,15 +6,15 @@ package com.hurlant.math
    {
        
       
-      private var m:com.hurlant.math.BigInteger;
+      private var m:BigInteger;
       
-      function ClassicReduction(param1:com.hurlant.math.BigInteger)
+      function ClassicReduction(param1:BigInteger)
       {
          super();
          this.m = param1;
       }
       
-      public function convert(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function convert(param1:BigInteger) : BigInteger
       {
          if(param1.s < 0 || param1.compareTo(this.m) >= 0)
          {
@@ -23,23 +23,23 @@ package com.hurlant.math
          return param1;
       }
       
-      public function revert(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function revert(param1:BigInteger) : BigInteger
       {
          return param1;
       }
       
-      public function reduce(param1:com.hurlant.math.BigInteger) : void
+      public function reduce(param1:BigInteger) : void
       {
          param1.divRemTo(this.m,null,param1);
       }
       
-      public function mulTo(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger, param3:com.hurlant.math.BigInteger) : void
+      public function mulTo(param1:BigInteger, param2:BigInteger, param3:BigInteger) : void
       {
          param1.multiplyTo(param2,param3);
          this.reduce(param3);
       }
       
-      public function sqrTo(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger) : void
+      public function sqrTo(param1:BigInteger, param2:BigInteger) : void
       {
          param1.squareTo(param2);
          this.reduce(param2);

@@ -1,10 +1,10 @@
 package robotlegs.bender.extensions.mediatorMap.impl
 {
-   import robotlegs.bender.extensions.mediatorMap.api.IMediatorViewHandler;
+   import flash.display.DisplayObject;
    import flash.utils.Dictionary;
    import robotlegs.bender.extensions.mediatorMap.api.IMediatorFactory;
    import robotlegs.bender.extensions.mediatorMap.api.IMediatorMapping;
-   import flash.display.DisplayObject;
+   import robotlegs.bender.extensions.mediatorMap.api.IMediatorViewHandler;
    
    public class MediatorViewHandler implements IMediatorViewHandler
    {

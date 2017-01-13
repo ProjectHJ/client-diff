@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.objects.particles
 {
+   import com.company.assembleegameclient.map.Camera;
    import com.company.assembleegameclient.objects.GameObject;
    import flash.display.IGraphicsData;
-   import com.company.assembleegameclient.map.Camera;
    
    public class ParticleEffect extends GameObject
    {

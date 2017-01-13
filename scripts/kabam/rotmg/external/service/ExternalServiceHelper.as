@@ -1,7 +1,7 @@
 package kabam.rotmg.external.service
 {
-   import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
    import flash.external.ExternalInterface;
+   import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
    
    public class ExternalServiceHelper
    {

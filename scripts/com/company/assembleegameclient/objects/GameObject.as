@@ -1,57 +1,57 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.filters.ColorMatrixFilter;
-   import flash.geom.Matrix;
-   import com.company.assembleegameclient.util.ConditionEffect;
-   import com.company.util.MoreColorUtil;
-   import flash.display.BitmapData;
-   import flash.display.GraphicsBitmapFill;
-   import flash.display.GraphicsPath;
-   import com.company.assembleegameclient.objects.particles.ShockerEffect;
-   import com.company.assembleegameclient.util.AnimatedChar;
+   import com.company.assembleegameclient.engine3d.Model3D;
    import com.company.assembleegameclient.engine3d.Object3D;
-   import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-   import com.company.assembleegameclient.objects.particles.ParticleEffect;
-   import com.company.assembleegameclient.objects.animation.Animations;
-   import flash.utils.Dictionary;
-   import com.company.assembleegameclient.sound.SoundEffectLibrary;
-   import com.company.util.BitmapUtil;
-   import kabam.rotmg.messaging.impl.data.WorldPosData;
-   import flash.geom.Point;
-   import flash.geom.Vector3D;
+   import com.company.assembleegameclient.map.Camera;
    import com.company.assembleegameclient.map.Map;
-   import com.company.assembleegameclient.map.Square;
+   import com.company.assembleegameclient.map.Square#55;
    import com.company.assembleegameclient.map.mapoverlay.CharacterStatusText;
-   import kabam.rotmg.pets.data.PetsModel;
-   import kabam.rotmg.pets.data.PetVO;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import com.company.assembleegameclient.util.BloodComposition;
+   import com.company.assembleegameclient.objects.animation.Animations;
+   import com.company.assembleegameclient.objects.animation.AnimationsData;
    import com.company.assembleegameclient.objects.particles.ExplosionEffect;
    import com.company.assembleegameclient.objects.particles.HitEffect;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import kabam.rotmg.text.view.BitmapTextFactory;
-   import flash.display.IGraphicsData;
-   import com.company.assembleegameclient.map.Camera;
-   import com.company.util.GraphicsUtil;
-   import com.company.util.AssetLibrary;
+   import com.company.assembleegameclient.objects.particles.ParticleEffect;
+   import com.company.assembleegameclient.objects.particles.ShockerEffect;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.sound.SoundEffectLibrary;
+   import com.company.assembleegameclient.util.AnimatedChar;
+   import com.company.assembleegameclient.util.BloodComposition;
+   import com.company.assembleegameclient.util.ConditionEffect;
    import com.company.assembleegameclient.util.MaskedImage;
-   import com.company.util.CachingColorTransformer;
    import com.company.assembleegameclient.util.TextureRedrawer;
    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-   import flash.utils.getTimer;
-   import flash.display.GraphicsSolidFill;
-   import kabam.rotmg.stage3D.GraphicsFillExtra;
-   import flash.geom.ColorTransform;
-   import flash.display.GraphicsGradientFill;
-   import flash.display.GradientType;
-   import flash.utils.getQualifiedClassName;
-   import com.company.assembleegameclient.engine3d.Model3D;
-   import com.company.assembleegameclient.objects.animation.AnimationsData;
+   import com.company.util.AssetLibrary;
+   import com.company.util.BitmapUtil;
+   import com.company.util.CachingColorTransformer;
    import com.company.util.ConversionUtil;
+   import com.company.util.GraphicsUtil;
+   import com.company.util.MoreColorUtil;
+   import flash.display.BitmapData;
+   import flash.display.GradientType;
+   import flash.display.GraphicsBitmapFill;
+   import flash.display.GraphicsGradientFill;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.filters.ColorMatrixFilter;
+   import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Vector3D;
+   import flash.utils.Dictionary;
+   import flash.utils.getQualifiedClassName;
+   import flash.utils.getTimer;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.messaging.impl.data.WorldPosData;
+   import kabam.rotmg.pets.data.PetVO;
+   import kabam.rotmg.pets.data.PetsModel;
+   import kabam.rotmg.stage3D.GraphicsFillExtra;
+   import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.BitmapTextFactory;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public class GameObject extends BasicObject
    {
@@ -85,7 +85,7 @@ package com.company.assembleegameclient.objects
       
       private var isChargingTransformSet:Boolean = false;
       
-      public var props_:com.company.assembleegameclient.objects.ObjectProperties;
+      public var props_:ObjectProperties;
       
       public var name_:String;
       
@@ -105,7 +105,7 @@ package com.company.assembleegameclient.objects
       
       public var mask_:BitmapData = null;
       
-      public var randomTextureData_:Vector.<com.company.assembleegameclient.objects.TextureData> = null;
+      public var randomTextureData_:Vector.<TextureData> = null;
       
       public var obj3D_:Object3D = null;
       
@@ -153,7 +153,7 @@ package com.company.assembleegameclient.objects
       
       public var hallucinatingTexture_:BitmapData = null;
       
-      public var flash_:com.company.assembleegameclient.objects.FlashDescription = null;
+      public var flash_:FlashDescription = null;
       
       public var connectType_:int = -1;
       
@@ -224,7 +224,7 @@ package com.company.assembleegameclient.objects
          this.objectType_ = int(param1.@type);
          this.props_ = ObjectLibrary.propsLibrary_[this.objectType_];
          hasShadow_ = this.props_.shadowSize_ > 0;
-         var _loc2_:com.company.assembleegameclient.objects.TextureData = ObjectLibrary.typeToTextureData_[this.objectType_];
+         var _loc2_:TextureData = ObjectLibrary.typeToTextureData_[this.objectType_];
          this.texture_ = _loc2_.texture_;
          this.mask_ = _loc2_.mask_;
          this.animatedChar_ = _loc2_.animatedChar_;
@@ -325,7 +325,7 @@ package com.company.assembleegameclient.objects
       
       public function setObjectId(param1:int) : void
       {
-         var _loc2_:com.company.assembleegameclient.objects.TextureData = null;
+         var _loc2_:TextureData = null;
          objectId_ = param1;
          if(this.randomTextureData_ != null)
          {
@@ -342,8 +342,8 @@ package com.company.assembleegameclient.objects
       
       public function setAltTexture(param1:int) : void
       {
-         var _loc3_:com.company.assembleegameclient.objects.TextureData = null;
-         var _loc2_:com.company.assembleegameclient.objects.TextureData = ObjectLibrary.typeToTextureData_[this.objectType_];
+         var _loc3_:TextureData = null;
+         var _loc2_:TextureData = ObjectLibrary.typeToTextureData_[this.objectType_];
          if(param1 == 0)
          {
             _loc3_ = _loc2_;

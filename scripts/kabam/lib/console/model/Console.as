@@ -7,15 +7,15 @@ package kabam.lib.console.model
    {
        
       
-      private var hash:kabam.lib.console.model.ActionHash;
+      private var hash:ActionHash;
       
-      private var history:kabam.lib.console.model.ActionHistory;
+      private var history:ActionHistory;
       
       public function Console()
       {
          super();
-         this.hash = new kabam.lib.console.model.ActionHash();
-         this.history = new kabam.lib.console.model.ActionHistory();
+         this.hash = new ActionHash();
+         this.history = new ActionHistory();
       }
       
       public function register(param1:ConsoleAction, param2:Signal) : void

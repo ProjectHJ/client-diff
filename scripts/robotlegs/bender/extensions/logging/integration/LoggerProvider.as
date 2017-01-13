@@ -1,9 +1,9 @@
 package robotlegs.bender.extensions.logging.integration
 {
+   import flash.utils.Dictionary;
+   import org.swiftsuspenders.Injector;
    import org.swiftsuspenders.dependencyproviders.DependencyProvider;
    import robotlegs.bender.framework.api.IContext;
-   import org.swiftsuspenders.Injector;
-   import flash.utils.Dictionary;
    
    public class LoggerProvider implements DependencyProvider
    {

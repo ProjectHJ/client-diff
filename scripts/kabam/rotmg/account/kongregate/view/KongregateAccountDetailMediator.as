@@ -1,18 +1,18 @@
 package kabam.rotmg.account.kongregate.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.util.EmailValidator;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import com.company.util.EmailValidator;
-   import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class KongregateAccountDetailMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.account.kongregate.view.KongregateAccountDetailDialog;
+      public var view:KongregateAccountDetailDialog;
       
       [Inject]
       public var account:Account;
@@ -24,7 +24,7 @@ package kabam.rotmg.account.kongregate.view
       public var openDialog:OpenDialogSignal;
       
       [Inject]
-      public var api:kabam.rotmg.account.kongregate.view.KongregateApi;
+      public var api:KongregateApi;
       
       public function KongregateAccountDetailMediator()
       {

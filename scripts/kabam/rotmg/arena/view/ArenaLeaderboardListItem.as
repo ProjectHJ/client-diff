@@ -1,21 +1,21 @@
 package kabam.rotmg.arena.view
 {
-   import flash.display.Sprite;
    import flash.display.Bitmap;
-   import kabam.rotmg.arena.component.AbridgedPlayerTooltip;
-   import kabam.rotmg.pets.view.components.PetTooltip;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.pets.view.components.PetIconFactory;
-   import kabam.rotmg.text.view.StaticTextDisplay;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
-   import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.pets.data.PetVO;
    import flash.filters.DropShadowFilter;
-   import kabam.rotmg.core.StaticInjectorContext;
    import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.arena.component.AbridgedPlayerTooltip;
+   import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.pets.data.PetVO;
+   import kabam.rotmg.pets.view.components.PetIconFactory;
+   import kabam.rotmg.pets.view.components.PetTooltip;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.StaticTextDisplay;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import org.osflash.signals.Signal;
    
    public class ArenaLeaderboardListItem extends Sprite
    {

@@ -1,20 +1,20 @@
 package kabam.rotmg.account.kongregate.services
 {
    import kabam.lib.tasks.BaseTask;
-   import kabam.rotmg.account.core.services.LoadAccountTask;
+   import kabam.lib.tasks.Task;
    import kabam.lib.tasks.TaskMonitor;
    import kabam.lib.tasks.TaskSequence;
-   import kabam.lib.tasks.Task;
+   import kabam.rotmg.account.core.services.LoadAccountTask;
    
    public class KongregateLoadAccountTask extends BaseTask implements LoadAccountTask
    {
        
       
       [Inject]
-      public var loadApi:kabam.rotmg.account.kongregate.services.KongregateLoadApiTask;
+      public var loadApi:KongregateLoadApiTask;
       
       [Inject]
-      public var getCredentials:kabam.rotmg.account.kongregate.services.KongregateGetCredentialsTask;
+      public var getCredentials:KongregateGetCredentialsTask;
       
       [Inject]
       public var monitor:TaskMonitor;

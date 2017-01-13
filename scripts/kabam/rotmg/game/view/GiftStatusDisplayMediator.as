@@ -1,7 +1,7 @@
 package kabam.rotmg.game.view
 {
-   import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
    import com.company.assembleegameclient.game.GiftStatusModel;
+   import kabam.rotmg.game.signals.UpdateGiftStatusDisplaySignal;
    
    public class GiftStatusDisplayMediator
    {
@@ -11,7 +11,7 @@ package kabam.rotmg.game.view
       public var updateGiftStatusDisplay:UpdateGiftStatusDisplaySignal;
       
       [Inject]
-      public var view:kabam.rotmg.game.view.GiftStatusDisplay;
+      public var view:GiftStatusDisplay;
       
       [Inject]
       public var giftStatusModel:GiftStatusModel;

@@ -1,19 +1,19 @@
 package com.company.assembleegameclient.engine3d
 {
-   import flash.display.BitmapData;
-   import flash.geom.Vector3D;
-   import flash.display.GraphicsPath;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsBitmapFill;
-   import flash.display.IGraphicsData;
    import com.company.assembleegameclient.parameters.Parameters;
-   import com.company.util.MoreColorUtil;
-   import flash.geom.ColorTransform;
    import com.company.assembleegameclient.util.TextureRedrawer;
    import com.company.util.GraphicsUtil;
-   import kabam.rotmg.stage3D.GraphicsFillExtra;
-   import flash.geom.Matrix;
+   import com.company.util.MoreColorUtil;
+   import flash.display.BitmapData;
+   import flash.display.GraphicsBitmapFill;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsPathCommand;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
+   import flash.geom.Vector3D;
+   import kabam.rotmg.stage3D.GraphicsFillExtra;
    
    public class ObjectFace3D
    {
@@ -21,7 +21,7 @@ package com.company.assembleegameclient.engine3d
       public static const blackBitmap:BitmapData = new BitmapData(1,1,true,4278190080);
        
       
-      public var obj_:com.company.assembleegameclient.engine3d.Object3D;
+      public var obj_:Object3D;
       
       public var indices_:Vector.<int>;
       
@@ -47,7 +47,7 @@ package com.company.assembleegameclient.engine3d
       
       private var tempMatrix_:Matrix;
       
-      public function ObjectFace3D(param1:com.company.assembleegameclient.engine3d.Object3D, param2:Vector.<int>, param3:Boolean = true)
+      public function ObjectFace3D(param1:Object3D, param2:Vector.<int>, param3:Boolean = true)
       {
          this.solidFill_ = new GraphicsSolidFill(16777215,1);
          this.tToS_ = new Matrix();

@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.util
 {
    import com.company.assembleegameclient.objects.ObjectLibrary;
-   import flash.geom.ColorTransform;
+   import com.company.rotmg.graphics.StarGraphic;
+   import com.company.util.AssetLibrary;
+   import flash.display.BitmapData;
    import flash.display.Sprite;
    import flash.filters.DropShadowFilter;
-   import com.company.rotmg.graphics.StarGraphic;
-   import flash.display.BitmapData;
-   import com.company.util.AssetLibrary;
+   import flash.geom.ColorTransform;
    
    public class FameUtil
    {

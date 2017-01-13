@@ -1,11 +1,11 @@
 package kabam.rotmg.assets.services
 {
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.util.TextureRedrawer;
-   import com.company.util.AssetLibrary;
    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+   import com.company.util.AssetLibrary;
    import com.company.util.BitmapUtil;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
    
    public class IconFactory
    {

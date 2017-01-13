@@ -1,15 +1,15 @@
 package net.hires.debug
 {
-   import flash.display.Sprite;
-   import flash.text.TextField;
-   import flash.text.StyleSheet;
    import flash.display.BitmapData;
-   import flash.geom.Rectangle;
+   import flash.display.Sprite;
    import flash.events.Event;
-   import flash.geom.Matrix;
    import flash.events.MouseEvent;
-   import flash.utils.getTimer;
+   import flash.geom.Matrix;
+   import flash.geom.Rectangle;
    import flash.system.System;
+   import flash.text.StyleSheet;
+   import flash.text.TextField;
+   import flash.utils.getTimer;
    
    public class Stats extends Sprite
    {

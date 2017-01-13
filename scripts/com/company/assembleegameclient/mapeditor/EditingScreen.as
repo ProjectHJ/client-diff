@@ -1,50 +1,50 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.Sprite;
-   import net.hires.debug.Stats;
-   import com.company.assembleegameclient.editor.CommandQueue;
-   import com.company.assembleegameclient.ui.dropdown.DropDown;
-   import flash.utils.Dictionary;
+   import com.company.assembleegameclient.account.ui.CheckBoxField;
    import com.company.assembleegameclient.account.ui.TextInputField;
+   import com.company.assembleegameclient.editor.CommandEvent;
+   import com.company.assembleegameclient.editor.CommandList;
+   import com.company.assembleegameclient.editor.CommandQueue;
+   import com.company.assembleegameclient.map.GroundLibrary;
+   import com.company.assembleegameclient.map.RegionLibrary;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.screens.TitleMenuOption;
    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-   import kabam.lib.json.JsonParser;
-   import com.company.assembleegameclient.account.ui.CheckBoxField;
-   import flash.text.TextFieldAutoSize;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
+   import com.company.assembleegameclient.ui.dropdown.DropDown;
    import com.company.util.IntPoint;
-   import flash.display.Bitmap;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import com.company.assembleegameclient.editor.CommandList;
    import com.company.util.SpriteUtil;
-   import com.company.assembleegameclient.map.GroundLibrary;
-   import com.company.assembleegameclient.editor.CommandEvent;
-   import flash.geom.Rectangle;
-   import flash.utils.ByteArray;
    import com.hurlant.util.Base64;
-   import flash.net.FileReference;
-   import com.company.assembleegameclient.map.RegionLibrary;
-   import flash.net.FileFilter;
+   import flash.display.Bitmap;
+   import flash.display.Sprite;
+   import flash.events.Event;
    import flash.events.IOErrorEvent;
-   import kabam.rotmg.ui.view.components.ScreenBase;
+   import flash.events.MouseEvent;
+   import flash.geom.Rectangle;
+   import flash.net.FileFilter;
+   import flash.net.FileReference;
+   import flash.text.TextFieldAutoSize;
+   import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
+   import kabam.lib.json.JsonParser;
    import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.ui.view.components.ScreenBase;
+   import net.hires.debug.Stats;
    
    public class EditingScreen extends Sprite
    {
       
-      private static const MAP_Y:int = 600 - com.company.assembleegameclient.mapeditor.MEMap.SIZE - 10;
+      private static const MAP_Y:int = 600 - MEMap.SIZE - 10;
       
       public static const stats_:Stats = new Stats();
        
       
-      public var commandMenu_:com.company.assembleegameclient.mapeditor.MECommandMenu;
+      public var commandMenu_:MECommandMenu;
       
       private var commandQueue_:CommandQueue;
       
-      public var meMap_:com.company.assembleegameclient.mapeditor.MEMap;
+      public var meMap_:MEMap;
       
-      public var infoPane_:com.company.assembleegameclient.mapeditor.InfoPane;
+      public var infoPane_:InfoPane;
       
       public var chooserDropDown_:DropDown;
       
@@ -52,29 +52,29 @@ package com.company.assembleegameclient.mapeditor
       
       public var choosers_:Dictionary;
       
-      public var groundChooser_:com.company.assembleegameclient.mapeditor.GroundChooser;
+      public var groundChooser_:GroundChooser;
       
-      public var objChooser_:com.company.assembleegameclient.mapeditor.ObjectChooser;
+      public var objChooser_:ObjectChooser;
       
-      public var enemyChooser_:com.company.assembleegameclient.mapeditor.EnemyChooser;
+      public var enemyChooser_:EnemyChooser;
       
-      public var object3DChooser_:com.company.assembleegameclient.mapeditor.Object3DChooser;
+      public var object3DChooser_:Object3DChooser;
       
-      public var wallChooser_:com.company.assembleegameclient.mapeditor.WallChooser;
+      public var wallChooser_:WallChooser;
       
-      public var allObjChooser_:com.company.assembleegameclient.mapeditor.AllObjectChooser;
+      public var allObjChooser_:AllObjectChooser;
       
-      public var regionChooser_:com.company.assembleegameclient.mapeditor.RegionChooser;
+      public var regionChooser_:RegionChooser;
       
-      public var dungeonChooser_:com.company.assembleegameclient.mapeditor.DungeonChooser;
+      public var dungeonChooser_:DungeonChooser;
       
       public var search:TextInputField;
       
-      public var filter:com.company.assembleegameclient.mapeditor.Filter;
+      public var filter:Filter;
       
       public var returnButton_:TitleMenuOption;
       
-      public var chooser_:com.company.assembleegameclient.mapeditor.Chooser;
+      public var chooser_:Chooser;
       
       public var filename_:String = null;
       
@@ -88,7 +88,7 @@ package com.company.assembleegameclient.mapeditor
       
       private var pickObjHolder:Sprite;
       
-      private var tilesBackup:Vector.<com.company.assembleegameclient.mapeditor.METile>;
+      private var tilesBackup:Vector.<METile>;
       
       private var loadedFile_:FileReference = null;
       
@@ -98,7 +98,7 @@ package com.company.assembleegameclient.mapeditor
          super();
          addChild(new ScreenBase());
          this.json = StaticInjectorContext.getInjector().getInstance(JsonParser);
-         this.commandMenu_ = new com.company.assembleegameclient.mapeditor.MECommandMenu();
+         this.commandMenu_ = new MECommandMenu();
          this.commandMenu_.x = 15;
          this.commandMenu_.y = MAP_Y - 60;
          this.commandMenu_.addEventListener(CommandEvent.UNDO_COMMAND_EVENT,this.onUndo);
@@ -111,36 +111,36 @@ package com.company.assembleegameclient.mapeditor
          this.commandMenu_.addEventListener(CommandEvent.SELECT_COMMAND_EVENT,this.onMenuSelect);
          addChild(this.commandMenu_);
          this.commandQueue_ = new CommandQueue();
-         this.meMap_ = new com.company.assembleegameclient.mapeditor.MEMap();
+         this.meMap_ = new MEMap();
          this.meMap_.addEventListener(TilesEvent.TILES_EVENT,this.onTilesEvent);
-         this.meMap_.x = 800 / 2 - com.company.assembleegameclient.mapeditor.MEMap.SIZE / 2;
+         this.meMap_.x = 800 / 2 - MEMap.SIZE / 2;
          this.meMap_.y = MAP_Y;
          addChild(this.meMap_);
-         this.infoPane_ = new com.company.assembleegameclient.mapeditor.InfoPane(this.meMap_);
+         this.infoPane_ = new InfoPane(this.meMap_);
          this.infoPane_.x = 4;
-         this.infoPane_.y = 600 - com.company.assembleegameclient.mapeditor.InfoPane.HEIGHT - 10;
+         this.infoPane_.y = 600 - InfoPane.HEIGHT - 10;
          addChild(this.infoPane_);
-         this.chooserDropDown_ = new DropDown(GroupDivider.GROUP_LABELS,com.company.assembleegameclient.mapeditor.Chooser.WIDTH,26);
+         this.chooserDropDown_ = new DropDown(GroupDivider.GROUP_LABELS,Chooser.WIDTH,26);
          addChild(this.chooserDropDown_);
-         this.chooserDropDown_.x = this.meMap_.x + com.company.assembleegameclient.mapeditor.MEMap.SIZE + 4;
+         this.chooserDropDown_.x = this.meMap_.x + MEMap.SIZE + 4;
          this.chooserDropDown_.y = MAP_Y - this.chooserDropDown_.height - 4;
          this.chooserDropDown_.addEventListener(Event.CHANGE,this.onDropDownChange);
          var _loc1_:Vector.<String> = new Vector.<String>(0);
-         var _loc2_:Number = com.company.assembleegameclient.mapeditor.MEMap.MAX_ALLOWED_SQUARES;
+         var _loc2_:Number = MEMap.MAX_ALLOWED_SQUARES;
          while(_loc2_ >= 64)
          {
             _loc1_.push(_loc2_ + "x" + _loc2_);
             _loc2_ = _loc2_ / 2;
          }
-         this.mapSizeDropDown_ = new DropDown(_loc1_,com.company.assembleegameclient.mapeditor.Chooser.WIDTH,26);
-         this.mapSizeDropDown_.setValue(com.company.assembleegameclient.mapeditor.MEMap.NUM_SQUARES + "x" + com.company.assembleegameclient.mapeditor.MEMap.NUM_SQUARES);
+         this.mapSizeDropDown_ = new DropDown(_loc1_,Chooser.WIDTH,26);
+         this.mapSizeDropDown_.setValue(MEMap.NUM_SQUARES + "x" + MEMap.NUM_SQUARES);
          this.mapSizeDropDown_.x = this.chooserDropDown_.x - this.chooserDropDown_.width - 4;
          this.mapSizeDropDown_.y = this.chooserDropDown_.y;
          this.mapSizeDropDown_.addEventListener(Event.CHANGE,this.onDropDownSizeChange);
          addChild(this.mapSizeDropDown_);
          this.createCheckboxes();
-         this.filter = new com.company.assembleegameclient.mapeditor.Filter();
-         this.filter.x = this.meMap_.x + com.company.assembleegameclient.mapeditor.MEMap.SIZE + 4;
+         this.filter = new Filter();
+         this.filter.x = this.meMap_.x + MEMap.SIZE + 4;
          this.filter.y = MAP_Y;
          addChild(this.filter);
          this.filter.addEventListener(Event.CHANGE,this.onFilterChange);
@@ -154,35 +154,35 @@ package com.company.assembleegameclient.mapeditor
          GroupDivider.divideObjects();
          this.choosers_ = new Dictionary(true);
          _loc3_ = MAP_Y + this.mapSizeDropDown_.height + 50;
-         this.groundChooser_ = new com.company.assembleegameclient.mapeditor.GroundChooser();
+         this.groundChooser_ = new GroundChooser();
          this.groundChooser_.x = this.chooserDropDown_.x;
          this.groundChooser_.y = _loc3_;
          this.choosers_[GroupDivider.GROUP_LABELS[0]] = this.groundChooser_;
-         this.objChooser_ = new com.company.assembleegameclient.mapeditor.ObjectChooser();
+         this.objChooser_ = new ObjectChooser();
          this.objChooser_.x = this.chooserDropDown_.x;
          this.objChooser_.y = _loc3_;
          this.choosers_[GroupDivider.GROUP_LABELS[1]] = this.objChooser_;
-         this.enemyChooser_ = new com.company.assembleegameclient.mapeditor.EnemyChooser();
+         this.enemyChooser_ = new EnemyChooser();
          this.enemyChooser_.x = this.chooserDropDown_.x;
          this.enemyChooser_.y = _loc3_;
          this.choosers_[GroupDivider.GROUP_LABELS[2]] = this.enemyChooser_;
-         this.wallChooser_ = new com.company.assembleegameclient.mapeditor.WallChooser();
+         this.wallChooser_ = new WallChooser();
          this.wallChooser_.x = this.chooserDropDown_.x;
          this.wallChooser_.y = _loc3_;
          this.choosers_[GroupDivider.GROUP_LABELS[3]] = this.wallChooser_;
-         this.object3DChooser_ = new com.company.assembleegameclient.mapeditor.Object3DChooser();
+         this.object3DChooser_ = new Object3DChooser();
          this.object3DChooser_.x = this.chooserDropDown_.x;
          this.object3DChooser_.y = _loc3_;
          this.choosers_[GroupDivider.GROUP_LABELS[4]] = this.object3DChooser_;
-         this.allObjChooser_ = new com.company.assembleegameclient.mapeditor.AllObjectChooser();
+         this.allObjChooser_ = new AllObjectChooser();
          this.allObjChooser_.x = this.chooserDropDown_.x;
          this.allObjChooser_.y = _loc3_;
          this.choosers_[GroupDivider.GROUP_LABELS[5]] = this.allObjChooser_;
-         this.regionChooser_ = new com.company.assembleegameclient.mapeditor.RegionChooser();
+         this.regionChooser_ = new RegionChooser();
          this.regionChooser_.x = this.chooserDropDown_.x;
          this.regionChooser_.y = _loc3_;
          this.choosers_[GroupDivider.GROUP_LABELS[6]] = this.regionChooser_;
-         this.dungeonChooser_ = new com.company.assembleegameclient.mapeditor.DungeonChooser();
+         this.dungeonChooser_ = new DungeonChooser();
          this.dungeonChooser_.x = this.chooserDropDown_.x;
          this.dungeonChooser_.y = _loc3_;
          this.choosers_[GroupDivider.GROUP_LABELS[7]] = this.dungeonChooser_;
@@ -296,24 +296,24 @@ package com.company.assembleegameclient.mapeditor
       private function onTilesEvent(param1:TilesEvent) : void
       {
          var _loc2_:IntPoint = null;
-         var _loc3_:com.company.assembleegameclient.mapeditor.METile = null;
+         var _loc3_:METile = null;
          var _loc4_:int = 0;
          var _loc5_:String = null;
          var _loc6_:String = null;
          var _loc7_:EditTileProperties = null;
-         var _loc8_:Vector.<com.company.assembleegameclient.mapeditor.METile> = null;
+         var _loc8_:Vector.<METile> = null;
          var _loc9_:Bitmap = null;
          var _loc10_:uint = 0;
          _loc2_ = param1.tiles_[0];
          switch(this.commandMenu_.getCommand())
          {
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.DRAW_COMMAND:
+            case MECommandMenu.DRAW_COMMAND:
                this.addModifyCommandList(param1.tiles_,this.chooser_.layer_,this.chooser_.selectedType());
                break;
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.ERASE_COMMAND:
+            case MECommandMenu.ERASE_COMMAND:
                this.addModifyCommandList(param1.tiles_,this.chooser_.layer_,-1);
                break;
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.SAMPLE_COMMAND:
+            case MECommandMenu.SAMPLE_COMMAND:
                _loc4_ = this.meMap_.getType(_loc2_.x_,_loc2_.y_,this.chooser_.layer_);
                if(_loc4_ == -1)
                {
@@ -327,17 +327,17 @@ package com.company.assembleegameclient.mapeditor
                this.chooser_ = this.choosers_[_loc5_];
                this.chooserDropDown_.setValue(_loc5_);
                this.chooser_.setSelectedType(_loc4_);
-               this.commandMenu_.setCommand(com.company.assembleegameclient.mapeditor.MECommandMenu.DRAW_COMMAND);
+               this.commandMenu_.setCommand(MECommandMenu.DRAW_COMMAND);
                break;
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.EDIT_COMMAND:
+            case MECommandMenu.EDIT_COMMAND:
                _loc6_ = this.meMap_.getObjectName(_loc2_.x_,_loc2_.y_);
                _loc7_ = new EditTileProperties(param1.tiles_,_loc6_);
                _loc7_.addEventListener(Event.COMPLETE,this.onEditComplete);
                addChild(_loc7_);
                break;
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.CUT_COMMAND:
-               this.tilesBackup = new Vector.<com.company.assembleegameclient.mapeditor.METile>();
-               _loc8_ = new Vector.<com.company.assembleegameclient.mapeditor.METile>();
+            case MECommandMenu.CUT_COMMAND:
+               this.tilesBackup = new Vector.<METile>();
+               _loc8_ = new Vector.<METile>();
                for each(_loc2_ in param1.tiles_)
                {
                   _loc3_ = this.meMap_.getTile(_loc2_.x_,_loc2_.y_);
@@ -350,10 +350,10 @@ package com.company.assembleegameclient.mapeditor
                }
                this.addPasteCommandList(param1.tiles_,_loc8_);
                this.meMap_.freezeSelect();
-               this.commandMenu_.setCommand(com.company.assembleegameclient.mapeditor.MECommandMenu.PASTE_COMMAND);
+               this.commandMenu_.setCommand(MECommandMenu.PASTE_COMMAND);
                break;
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.COPY_COMMAND:
-               this.tilesBackup = new Vector.<com.company.assembleegameclient.mapeditor.METile>();
+            case MECommandMenu.COPY_COMMAND:
+               this.tilesBackup = new Vector.<METile>();
                for each(_loc2_ in param1.tiles_)
                {
                   _loc3_ = this.meMap_.getTile(_loc2_.x_,_loc2_.y_);
@@ -364,12 +364,12 @@ package com.company.assembleegameclient.mapeditor
                   this.tilesBackup.push(_loc3_);
                }
                this.meMap_.freezeSelect();
-               this.commandMenu_.setCommand(com.company.assembleegameclient.mapeditor.MECommandMenu.PASTE_COMMAND);
+               this.commandMenu_.setCommand(MECommandMenu.PASTE_COMMAND);
                break;
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.PASTE_COMMAND:
+            case MECommandMenu.PASTE_COMMAND:
                this.addPasteCommandList(param1.tiles_,this.tilesBackup);
                break;
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.PICK_UP_COMMAND:
+            case MECommandMenu.PICK_UP_COMMAND:
                _loc3_ = this.meMap_.getTile(_loc2_.x_,_loc2_.y_);
                if(_loc3_ != null && _loc3_.types_[Layer.OBJECT] != -1)
                {
@@ -379,10 +379,10 @@ package com.company.assembleegameclient.mapeditor
                   this.pickObjHolder.startDrag();
                   this.pickObjHolder.name = String(_loc3_.types_[Layer.OBJECT]);
                   this.addModifyCommandList(param1.tiles_,Layer.OBJECT,-1);
-                  this.commandMenu_.setCommand(com.company.assembleegameclient.mapeditor.MECommandMenu.DROP_COMMAND);
+                  this.commandMenu_.setCommand(MECommandMenu.DROP_COMMAND);
                }
                break;
-            case com.company.assembleegameclient.mapeditor.MECommandMenu.DROP_COMMAND:
+            case MECommandMenu.DROP_COMMAND:
                if(this.pickObjHolder != null)
                {
                   _loc10_ = int(this.pickObjHolder.name);
@@ -390,7 +390,7 @@ package com.company.assembleegameclient.mapeditor
                   this.pickObjHolder.stopDrag();
                   this.pickObjHolder.removeChildAt(0);
                   this.pickObjHolder = null;
-                  this.commandMenu_.setCommand(com.company.assembleegameclient.mapeditor.MECommandMenu.PICK_UP_COMMAND);
+                  this.commandMenu_.setCommand(MECommandMenu.PICK_UP_COMMAND);
                }
          }
          this.meMap_.draw();
@@ -422,10 +422,10 @@ package com.company.assembleegameclient.mapeditor
          this.commandQueue_.addCommandList(_loc4_);
       }
       
-      private function addPasteCommandList(param1:Vector.<IntPoint>, param2:Vector.<com.company.assembleegameclient.mapeditor.METile>) : void
+      private function addPasteCommandList(param1:Vector.<IntPoint>, param2:Vector.<METile>) : void
       {
          var _loc5_:IntPoint = null;
-         var _loc6_:com.company.assembleegameclient.mapeditor.METile = null;
+         var _loc6_:METile = null;
          var _loc3_:CommandList = new CommandList();
          var _loc4_:int = 0;
          for each(_loc5_ in param1)
@@ -595,7 +595,7 @@ package com.company.assembleegameclient.mapeditor
       private function onClear(param1:CommandEvent) : void
       {
          var _loc4_:IntPoint = null;
-         var _loc5_:com.company.assembleegameclient.mapeditor.METile = null;
+         var _loc5_:METile = null;
          var _loc2_:Vector.<IntPoint> = this.meMap_.getAllTiles();
          var _loc3_:CommandList = new CommandList();
          for each(_loc4_ in _loc2_)
@@ -618,7 +618,7 @@ package com.company.assembleegameclient.mapeditor
       private function createMapJSON() : String
       {
          var _loc7_:int = 0;
-         var _loc8_:com.company.assembleegameclient.mapeditor.METile = null;
+         var _loc8_:METile = null;
          var _loc9_:Object = null;
          var _loc10_:String = null;
          var _loc11_:int = 0;
@@ -685,7 +685,7 @@ package com.company.assembleegameclient.mapeditor
          dispatchEvent(new SubmitJMEvent(_loc2_,this.meMap_.getMapStatistics()));
       }
       
-      private function getEntry(param1:com.company.assembleegameclient.mapeditor.METile) : Object
+      private function getEntry(param1:METile) : Object
       {
          var _loc3_:Vector.<int> = null;
          var _loc4_:String = null;
@@ -762,7 +762,7 @@ package com.company.assembleegameclient.mapeditor
          {
             _loc6_ = _loc6_ * 2;
          }
-         if(com.company.assembleegameclient.mapeditor.MEMap.NUM_SQUARES != _loc6_)
+         if(MEMap.NUM_SQUARES != _loc6_)
          {
             _loc7_ = _loc6_ + "x" + _loc6_;
             if(!this.mapSizeDropDown_.setValue(_loc7_))
@@ -770,7 +770,7 @@ package com.company.assembleegameclient.mapeditor
                this.mapSizeDropDown_.setValue("512x512");
             }
          }
-         var _loc8_:Rectangle = new Rectangle(int(com.company.assembleegameclient.mapeditor.MEMap.NUM_SQUARES / 2 - _loc4_ / 2),int(com.company.assembleegameclient.mapeditor.MEMap.NUM_SQUARES / 2 - _loc5_ / 2),_loc4_,_loc5_);
+         var _loc8_:Rectangle = new Rectangle(int(MEMap.NUM_SQUARES / 2 - _loc4_ / 2),int(MEMap.NUM_SQUARES / 2 - _loc5_ / 2),_loc4_,_loc5_);
          this.meMap_.clear();
          this.commandQueue_.clear();
          var _loc9_:Array = _loc3_["dict"];

@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.screens
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import com.company.assembleegameclient.ui.RankText;
    import com.company.assembleegameclient.ui.GuildText;
-   import kabam.rotmg.account.core.view.AccountInfoView;
+   import com.company.assembleegameclient.ui.RankText;
+   import com.company.assembleegameclient.ui.tooltip.RankToolTip;
    import flash.display.DisplayObject;
    import flash.display.Shape;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
-   import com.company.assembleegameclient.ui.tooltip.RankToolTip;
+   import kabam.rotmg.account.core.view.AccountInfoView;
+   import org.osflash.signals.Signal;
    
    public class AccountScreen extends Sprite
    {

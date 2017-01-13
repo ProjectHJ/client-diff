@@ -11,7 +11,7 @@ package kabam.rotmg.game.focus.control
       public var register:RegisterConsoleActionSignal;
       
       [Inject]
-      public var setFocus:kabam.rotmg.game.focus.control.SetGameFocusSignal;
+      public var setFocus:SetGameFocusSignal;
       
       public function AddGameFocusConsoleActionCommand()
       {

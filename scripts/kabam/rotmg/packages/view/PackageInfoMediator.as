@@ -1,14 +1,14 @@
 package kabam.rotmg.packages.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PackageInfoMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.packages.view.PackageInfoDialog;
+      public var view:PackageInfoDialog;
       
       [Inject]
       public var closeDialogs:CloseDialogsSignal;

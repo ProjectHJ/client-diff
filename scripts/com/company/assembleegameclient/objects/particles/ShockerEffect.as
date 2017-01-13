@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.objects.particles
 {
-   import flash.display.BitmapData;
-   import flash.geom.Point;
    import com.company.assembleegameclient.objects.GameObject;
-   import flash.utils.Timer;
+   import com.company.assembleegameclient.util.TextureRedrawer;
    import com.company.util.AssetLibrary;
    import com.company.util.ImageSet;
-   import com.company.assembleegameclient.util.TextureRedrawer;
+   import flash.display.BitmapData;
    import flash.events.TimerEvent;
+   import flash.geom.Point;
+   import flash.utils.Timer;
    
    public class ShockerEffect extends ParticleEffect
    {

@@ -1,7 +1,7 @@
 package kabam.rotmg.pets.data
 {
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.objects.ObjectLibrary;
+   import org.osflash.signals.Signal;
    
    public class AbilityVO
    {

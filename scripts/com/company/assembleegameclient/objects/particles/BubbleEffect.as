@@ -17,9 +17,9 @@ package com.company.assembleegameclient.objects.particles
       
       public var rate_:Number;
       
-      private var fxProps:com.company.assembleegameclient.objects.particles.EffectProperties;
+      private var fxProps:EffectProperties;
       
-      public function BubbleEffect(param1:GameObject, param2:com.company.assembleegameclient.objects.particles.EffectProperties)
+      public function BubbleEffect(param1:GameObject, param2:EffectProperties)
       {
          super();
          this.go_ = param1;

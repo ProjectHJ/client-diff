@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-   import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class PrismComparison extends SlotComparison
    {

@@ -1,16 +1,16 @@
 package com.company.assembleegameclient.screens
 {
-   import flash.display.Sprite;
-   import flash.geom.ColorTransform;
-   import flash.filters.DropShadowFilter;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.utils.getTimer;
-   import com.company.util.MoreColorUtil;
    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+   import com.company.util.MoreColorUtil;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.geom.ColorTransform;
+   import flash.utils.getTimer;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
    
    public class TitleMenuOption extends Sprite
    {

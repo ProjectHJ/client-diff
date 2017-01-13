@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.game
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import com.company.assembleegameclient.tutorial.Tutorial;
    import com.company.assembleegameclient.map.AbstractMap;
-   import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.ui.view.HUDView;
    import com.company.assembleegameclient.map.Camera;
-   import kabam.rotmg.messaging.impl.GameServerConnection;
    import com.company.assembleegameclient.objects.GameObject;
+   import com.company.assembleegameclient.tutorial.Tutorial;
+   import flash.display.Sprite;
+   import kabam.rotmg.core.model.PlayerModel;
+   import kabam.rotmg.messaging.impl.GameServerConnection;
    import kabam.rotmg.messaging.impl.incoming.MapInfo;
+   import kabam.rotmg.ui.view.HUDView;
+   import org.osflash.signals.Signal;
    
    public class AGameSprite extends Sprite
    {
@@ -21,11 +21,11 @@ package com.company.assembleegameclient.game
       
       public var tutorial_:Tutorial;
       
-      public var mui_:com.company.assembleegameclient.game.MapUserInput;
+      public var mui_:MapUserInput;
       
       public var lastUpdate_:int;
       
-      public var moveRecords_:com.company.assembleegameclient.game.MoveRecords;
+      public var moveRecords_:MoveRecords;
       
       public var map:AbstractMap;
       
@@ -39,7 +39,7 @@ package com.company.assembleegameclient.game
       
       public function AGameSprite()
       {
-         this.moveRecords_ = new com.company.assembleegameclient.game.MoveRecords();
+         this.moveRecords_ = new MoveRecords();
          this.camera_ = new Camera();
          super();
       }

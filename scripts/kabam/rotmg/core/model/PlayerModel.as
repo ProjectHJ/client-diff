@@ -1,13 +1,13 @@
 package kabam.rotmg.core.model
 {
-   import org.osflash.signals.Signal;
+   import com.company.assembleegameclient.appengine.SavedCharacter;
    import com.company.assembleegameclient.appengine.SavedCharactersList;
+   import com.company.assembleegameclient.appengine.SavedNewsItem;
+   import com.company.assembleegameclient.parameters.Parameters;
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.account.kongregate.KongregateAccount;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import com.company.assembleegameclient.appengine.SavedCharacter;
-   import com.company.assembleegameclient.appengine.SavedNewsItem;
    import kabam.rotmg.servers.api.LatLong;
+   import org.osflash.signals.Signal;
    
    public class PlayerModel
    {

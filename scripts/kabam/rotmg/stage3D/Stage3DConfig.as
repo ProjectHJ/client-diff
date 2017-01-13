@@ -1,20 +1,20 @@
 package kabam.rotmg.stage3D
 {
-   import robotlegs.bender.framework.api.IConfig;
-   import com.company.assembleegameclient.util.StageProxy;
-   import org.swiftsuspenders.Injector;
-   import com.company.assembleegameclient.util.Stage3DProxy;
-   import flash.events.ErrorEvent;
+   import com.company.assembleegameclient.engine3d.Model3D;
    import com.company.assembleegameclient.parameters.Parameters;
-   import flash.events.Event;
-   import kabam.rotmg.stage3D.graphic3D.TextureFactory;
-   import kabam.rotmg.stage3D.graphic3D.IndexBufferFactory;
-   import kabam.rotmg.stage3D.graphic3D.VertexBufferFactory;
-   import kabam.rotmg.stage3D.proxies.Context3DProxy;
+   import com.company.assembleegameclient.util.Stage3DProxy;
+   import com.company.assembleegameclient.util.StageProxy;
    import flash.display3D.Context3DBlendFactor;
    import flash.display3D.Context3DCompareMode;
+   import flash.events.ErrorEvent;
+   import flash.events.Event;
    import kabam.rotmg.stage3D.graphic3D.Graphic3DHelper;
-   import com.company.assembleegameclient.engine3d.Model3D;
+   import kabam.rotmg.stage3D.graphic3D.IndexBufferFactory;
+   import kabam.rotmg.stage3D.graphic3D.TextureFactory;
+   import kabam.rotmg.stage3D.graphic3D.VertexBufferFactory;
+   import kabam.rotmg.stage3D.proxies.Context3DProxy;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.framework.api.IConfig;
    
    public class Stage3DConfig implements IConfig
    {
@@ -34,7 +34,7 @@ package kabam.rotmg.stage3D
       [Inject]
       public var injector:Injector;
       
-      public var renderer:kabam.rotmg.stage3D.Renderer;
+      public var renderer:Renderer;
       
       private var stage3D:Stage3DProxy;
       
@@ -73,7 +73,7 @@ package kabam.rotmg.stage3D
          _loc2_.setDepthTest(false,Context3DCompareMode.LESS_EQUAL);
          this.injector.map(Context3DProxy).toValue(_loc2_);
          Graphic3DHelper.map(this.injector);
-         this.renderer = this.injector.getInstance(kabam.rotmg.stage3D.Renderer);
+         this.renderer = this.injector.getInstance(Renderer);
          this.renderer.init(_loc2_.GetContext3D());
          Model3D.Create3dBuffer(_loc2_.GetContext3D());
       }

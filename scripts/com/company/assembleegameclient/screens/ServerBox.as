@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.screens
 {
    import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.servers.api.Server;
-   import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.filters.DropShadowFilter;
    import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.servers.api.Server;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    
    public class ServerBox extends Sprite

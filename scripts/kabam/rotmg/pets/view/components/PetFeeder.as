@@ -1,12 +1,12 @@
 package kabam.rotmg.pets.view.components
 {
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.pets.view.components.slot.PetFeedFuseSlot;
-   import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
    import kabam.rotmg.pets.data.PetSlotsState;
    import kabam.rotmg.pets.data.PetVO;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
+   import kabam.rotmg.pets.view.components.slot.PetFeedFuseSlot;
+   import org.osflash.signals.Signal;
    
    public class PetFeeder extends Sprite
    {
@@ -20,7 +20,7 @@ package kabam.rotmg.pets.view.components
       
       private var leftSlot:PetFeedFuseSlot;
       
-      private var arrow:kabam.rotmg.pets.view.components.FeedFuseArrow;
+      private var arrow:FeedFuseArrow;
       
       private var rightSlot:FoodFeedFuseSlot;
       

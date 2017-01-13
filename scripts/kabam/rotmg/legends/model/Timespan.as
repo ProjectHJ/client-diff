@@ -5,13 +5,13 @@ package kabam.rotmg.legends.model
    public class Timespan
    {
       
-      public static const WEEK:kabam.rotmg.legends.model.Timespan = new kabam.rotmg.legends.model.Timespan(TextKey.TIMESPAN_WEEK,"week");
+      public static const WEEK:Timespan = new Timespan(TextKey.TIMESPAN_WEEK,"week");
       
-      public static const MONTH:kabam.rotmg.legends.model.Timespan = new kabam.rotmg.legends.model.Timespan(TextKey.TIMESPAN_MONTH,"month");
+      public static const MONTH:Timespan = new Timespan(TextKey.TIMESPAN_MONTH,"month");
       
-      public static const ALL:kabam.rotmg.legends.model.Timespan = new kabam.rotmg.legends.model.Timespan(TextKey.TIMESPAN_ALL,"all");
+      public static const ALL:Timespan = new Timespan(TextKey.TIMESPAN_ALL,"all");
       
-      public static const TIMESPANS:Vector.<kabam.rotmg.legends.model.Timespan> = new <kabam.rotmg.legends.model.Timespan>[WEEK,MONTH,ALL];
+      public static const TIMESPANS:Vector.<Timespan> = new <Timespan>[WEEK,MONTH,ALL];
        
       
       private var name:String;

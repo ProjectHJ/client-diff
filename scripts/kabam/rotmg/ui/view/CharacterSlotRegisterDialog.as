@@ -1,8 +1,8 @@
 package kabam.rotmg.ui.view
 {
+   import com.company.assembleegameclient.ui.dialogs.Dialog;
    import flash.display.Sprite;
    import org.osflash.signals.Signal;
-   import com.company.assembleegameclient.ui.dialogs.Dialog;
    import org.osflash.signals.natives.NativeMappedSignal;
    
    public class CharacterSlotRegisterDialog extends Sprite

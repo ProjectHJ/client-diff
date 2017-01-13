@@ -1,10 +1,10 @@
 package kabam.rotmg.game.focus.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.game.focus.control.SetGameFocusSignal;
    import com.company.assembleegameclient.game.GameSprite;
    import com.company.assembleegameclient.objects.GameObject;
    import flash.utils.Dictionary;
+   import kabam.rotmg.game.focus.control.SetGameFocusSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class GameFocusMediator extends Mediator
    {

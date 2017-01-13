@@ -1,12 +1,12 @@
 package kabam.rotmg.promotions.view
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.lib.ui.GroupMappedSignal;
-   import org.osflash.signals.natives.NativeMappedSignal;
-   import flash.events.MouseEvent;
    import com.company.assembleegameclient.util.PaymentMethod;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import kabam.lib.ui.GroupMappedSignal;
    import kabam.rotmg.promotions.view.components.TransparentButton;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeMappedSignal;
    
    public class WebChoosePaymentTypeDialog extends Sprite
    {

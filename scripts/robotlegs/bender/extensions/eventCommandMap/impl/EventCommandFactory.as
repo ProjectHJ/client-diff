@@ -2,8 +2,8 @@ package robotlegs.bender.extensions.eventCommandMap.impl
 {
    import org.swiftsuspenders.Injector;
    import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
-   import robotlegs.bender.framework.impl.guardsApprove;
    import robotlegs.bender.framework.impl.applyHooks;
+   import robotlegs.bender.framework.impl.guardsApprove;
    
    public class EventCommandFactory
    {

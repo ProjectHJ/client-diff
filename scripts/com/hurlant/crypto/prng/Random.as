@@ -1,17 +1,17 @@
 package com.hurlant.crypto.prng
 {
-   import flash.utils.ByteArray;
-   import flash.text.Font;
-   import flash.system.System;
-   import flash.system.Capabilities;
-   import flash.utils.getTimer;
    import com.hurlant.util.Memory;
+   import flash.system.Capabilities;
+   import flash.system.System;
+   import flash.text.Font;
+   import flash.utils.ByteArray;
+   import flash.utils.getTimer;
    
    public class Random
    {
        
       
-      private var state:com.hurlant.crypto.prng.IPRNG;
+      private var state:IPRNG;
       
       private var ready:Boolean = false;
       
@@ -31,7 +31,7 @@ package com.hurlant.crypto.prng
          {
             param1 = ARC4;
          }
-         this.state = new param1() as com.hurlant.crypto.prng.IPRNG;
+         this.state = new param1() as IPRNG;
          this.psize = this.state.getPoolSize();
          this.pool = new ByteArray();
          this.pptr = 0;

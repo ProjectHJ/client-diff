@@ -1,32 +1,32 @@
 package kabam.rotmg.game.view
 {
-   import com.company.assembleegameclient.ui.panels.Panel;
-   import org.osflash.signals.Signal;
+   import com.company.assembleegameclient.game.GameSprite;
    import com.company.assembleegameclient.objects.SellableObject;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.util.components.LegacyBuyButton;
+   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-   import flash.display.Sprite;
+   import com.company.assembleegameclient.ui.panels.Panel;
+   import com.company.assembleegameclient.util.Currency;
    import flash.display.Bitmap;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.KeyboardEvent;
    import flash.events.MouseEvent;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import org.swiftsuspenders.Injector;
-   import kabam.rotmg.mysterybox.services.MysteryBoxModel;
+   import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.view.RegisterPromptDialog;
+   import kabam.rotmg.arena.util.ArenaViewAssetFactory;
+   import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.mysterybox.components.MysteryBoxSelectModal;
-   import kabam.rotmg.account.core.view.RegisterPromptDialog;
-   import com.company.assembleegameclient.util.Currency;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import com.company.assembleegameclient.game.GameSprite;
    import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
+   import kabam.rotmg.mysterybox.services.MysteryBoxModel;
    import kabam.rotmg.text.model.TextKey;
-   import flash.text.TextFieldAutoSize;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.arena.util.ArenaViewAssetFactory;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.util.components.LegacyBuyButton;
+   import org.osflash.signals.Signal;
+   import org.swiftsuspenders.Injector;
    
    public class MysteryBoxPanel extends Panel
    {

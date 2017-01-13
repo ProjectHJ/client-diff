@@ -1,8 +1,8 @@
 package org.osflash.signals.natives
 {
-   import org.osflash.signals.IPrioritySignal;
-   import flash.events.IEventDispatcher;
    import flash.events.Event;
+   import flash.events.IEventDispatcher;
+   import org.osflash.signals.IPrioritySignal;
    
    public interface INativeDispatcher extends IPrioritySignal
    {

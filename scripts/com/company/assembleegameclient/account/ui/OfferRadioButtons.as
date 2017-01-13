@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.account.ui
 {
-   import flash.display.Sprite;
-   import com.company.assembleegameclient.util.offer.Offers;
-   import kabam.rotmg.account.core.model.MoneyConfig;
+   import com.company.assembleegameclient.account.ui.components.Selectable;
    import com.company.assembleegameclient.account.ui.components.SelectionGroup;
    import com.company.assembleegameclient.util.offer.Offer;
-   import flash.events.MouseEvent;
-   import com.company.assembleegameclient.account.ui.components.Selectable;
+   import com.company.assembleegameclient.util.offer.Offers;
    import flash.display.DisplayObject;
-   import kabam.lib.ui.impl.VerticalLayout;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
    import kabam.lib.ui.api.Layout;
+   import kabam.lib.ui.impl.VerticalLayout;
+   import kabam.rotmg.account.core.model.MoneyConfig;
    
    public class OfferRadioButtons extends Sprite
    {
@@ -19,7 +19,7 @@ package com.company.assembleegameclient.account.ui
       
       private var config:MoneyConfig;
       
-      private var choices:Vector.<com.company.assembleegameclient.account.ui.OfferRadioButton>;
+      private var choices:Vector.<OfferRadioButton>;
       
       private var group:SelectionGroup;
       
@@ -33,15 +33,15 @@ package com.company.assembleegameclient.account.ui
          this.makeSelectionGroup();
       }
       
-      public function getChoice() : com.company.assembleegameclient.account.ui.OfferRadioButton
+      public function getChoice() : OfferRadioButton
       {
-         return this.group.getSelected() as com.company.assembleegameclient.account.ui.OfferRadioButton;
+         return this.group.getSelected() as OfferRadioButton;
       }
       
       private function makeGoldChoices() : void
       {
          var _loc1_:int = this.offers.offerList.length;
-         this.choices = new Vector.<com.company.assembleegameclient.account.ui.OfferRadioButton>(_loc1_,true);
+         this.choices = new Vector.<OfferRadioButton>(_loc1_,true);
          var _loc2_:int = 0;
          while(_loc2_ < _loc1_)
          {
@@ -50,9 +50,9 @@ package com.company.assembleegameclient.account.ui
          }
       }
       
-      private function makeGoldChoice(param1:Offer) : com.company.assembleegameclient.account.ui.OfferRadioButton
+      private function makeGoldChoice(param1:Offer) : OfferRadioButton
       {
-         var _loc2_:com.company.assembleegameclient.account.ui.OfferRadioButton = new com.company.assembleegameclient.account.ui.OfferRadioButton(param1,this.config);
+         var _loc2_:OfferRadioButton = new OfferRadioButton(param1,this.config);
          _loc2_.addEventListener(MouseEvent.CLICK,this.onSelected);
          addChild(_loc2_);
          return _loc2_;

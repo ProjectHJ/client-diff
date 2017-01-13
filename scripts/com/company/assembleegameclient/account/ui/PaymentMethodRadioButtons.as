@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.account.ui
 {
-   import flash.display.Sprite;
-   import com.company.assembleegameclient.account.ui.components.SelectionGroup;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
    import com.company.assembleegameclient.account.ui.components.Selectable;
+   import com.company.assembleegameclient.account.ui.components.SelectionGroup;
    import flash.display.DisplayObject;
-   import kabam.lib.ui.impl.HorizontalLayout;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import kabam.lib.ui.api.Layout;
+   import kabam.lib.ui.impl.HorizontalLayout;
+   import kabam.rotmg.ui.view.SignalWaiter;
    
    public class PaymentMethodRadioButtons extends Sprite
    {
@@ -16,7 +16,7 @@ package com.company.assembleegameclient.account.ui
       
       private var labels:Vector.<String>;
       
-      private var boxes:Vector.<com.company.assembleegameclient.account.ui.PaymentMethodRadioButton>;
+      private var boxes:Vector.<PaymentMethodRadioButton>;
       
       private var group:SelectionGroup;
       
@@ -45,7 +45,7 @@ package com.company.assembleegameclient.account.ui
       private function makeRadioButtons() : void
       {
          var _loc1_:int = this.labels.length;
-         this.boxes = new Vector.<com.company.assembleegameclient.account.ui.PaymentMethodRadioButton>(_loc1_,true);
+         this.boxes = new Vector.<PaymentMethodRadioButton>(_loc1_,true);
          var _loc2_:int = 0;
          while(_loc2_ < _loc1_)
          {
@@ -54,9 +54,9 @@ package com.company.assembleegameclient.account.ui
          }
       }
       
-      private function makeRadioButton(param1:String) : com.company.assembleegameclient.account.ui.PaymentMethodRadioButton
+      private function makeRadioButton(param1:String) : PaymentMethodRadioButton
       {
-         var _loc2_:com.company.assembleegameclient.account.ui.PaymentMethodRadioButton = new com.company.assembleegameclient.account.ui.PaymentMethodRadioButton(param1);
+         var _loc2_:PaymentMethodRadioButton = new PaymentMethodRadioButton(param1);
          _loc2_.addEventListener(MouseEvent.CLICK,this.onSelected);
          this.waiter.push(_loc2_.textSet);
          addChild(_loc2_);

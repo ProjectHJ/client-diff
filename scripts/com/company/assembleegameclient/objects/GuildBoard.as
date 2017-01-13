@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.objects
 {
-   import com.company.assembleegameclient.ui.panels.Panel;
    import com.company.assembleegameclient.game.GameSprite;
    import com.company.assembleegameclient.ui.panels.GuildBoardPanel;
+   import com.company.assembleegameclient.ui.panels.Panel;
    
    public class GuildBoard extends GameObject implements IInteractiveObject
    {

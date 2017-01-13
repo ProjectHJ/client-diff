@@ -1,10 +1,10 @@
 package kabam.rotmg.ui.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.assembleegameclient.screens.NewCharacterScreen;
    import com.company.assembleegameclient.screens.charrects.CharacterRectList;
    import kabam.rotmg.core.signals.SetScreenWithValidDataSignal;
    import kabam.rotmg.ui.signals.BuyCharacterSlotSignal;
-   import com.company.assembleegameclient.screens.NewCharacterScreen;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class CharacterRectListMediator extends Mediator
    {

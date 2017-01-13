@@ -1,13 +1,13 @@
 package kabam.rotmg.stage3D.Object3D
 {
    import flash.display.BitmapData;
+   import flash.display3D.Context3D;
+   import flash.display3D.Context3DTextureFormat;
+   import flash.display3D.Context3DVertexBufferFormat;
+   import flash.display3D.textures.Texture;
    import flash.geom.Matrix3D;
    import flash.geom.Vector3D;
-   import flash.display3D.textures.Texture;
    import kabam.rotmg.stage3D.graphic3D.TextureFactory;
-   import flash.display3D.Context3D;
-   import flash.display3D.Context3DVertexBufferFormat;
-   import flash.display3D.Context3DTextureFormat;
    
    public class Object3DStage3D
    {
@@ -15,7 +15,7 @@ package kabam.rotmg.stage3D.Object3D
       public static const missingTextureBitmap:BitmapData = new BitmapData(1,1,true,2290649343);
        
       
-      public var model_:kabam.rotmg.stage3D.Object3D.Model3D_stage3d = null;
+      public var model_:Model3D_stage3d = null;
       
       private var bitmapData:BitmapData;
       
@@ -31,7 +31,7 @@ package kabam.rotmg.stage3D.Object3D
       
       private var texture_:Texture;
       
-      public function Object3DStage3D(param1:kabam.rotmg.stage3D.Object3D.Model3D_stage3d)
+      public function Object3DStage3D(param1:Model3D_stage3d)
       {
          super();
          this.model_ = param1;

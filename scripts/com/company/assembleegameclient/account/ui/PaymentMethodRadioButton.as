@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.account.ui
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.account.ui.components.Selectable;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.util.components.RadioButton;
    import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.filters.DropShadowFilter;
-   import flash.events.MouseEvent;
    
    public class PaymentMethodRadioButton extends Sprite implements Selectable
    {

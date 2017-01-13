@@ -1,15 +1,15 @@
 package kabam.rotmg.account.core.view
 {
-   import com.company.assembleegameclient.account.ui.Frame;
-   import org.osflash.signals.Signal;
-   import com.company.assembleegameclient.account.ui.TextInputField;
    import com.company.assembleegameclient.account.ui.CheckBoxField;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.text.model.TextKey;
+   import com.company.assembleegameclient.account.ui.Frame;
+   import com.company.assembleegameclient.account.ui.TextInputField;
    import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.account.web.model.AccountData;
    import com.company.util.EmailValidator;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.account.web.model.AccountData;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
    
    public class RegisterWebAccountDialog extends Frame
    {

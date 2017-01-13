@@ -1,17 +1,17 @@
 package kabam.rotmg.packages.view
 {
-   import flash.display.Sprite;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-   import org.osflash.signals.Signal;
+   import flash.display.DisplayObject;
+   import flash.display.Sprite;
    import flash.events.Event;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import flash.events.MouseEvent;
    import flash.text.TextFormatAlign;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.util.graphics.ButtonLayoutHelper;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeMappedSignal;
-   import flash.events.MouseEvent;
    
    public class PackageInfoDialog extends Sprite
    {

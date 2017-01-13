@@ -1,9 +1,9 @@
 package kabam.rotmg.account.kabam.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import flash.net.navigateToURL;
-   import flash.net.URLRequest;
    import flash.external.ExternalInterface;
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class AccountLoadErrorMediator extends Mediator
    {
@@ -16,7 +16,7 @@ package kabam.rotmg.account.kabam.view
        
       
       [Inject]
-      public var view:kabam.rotmg.account.kabam.view.AccountLoadErrorDialog;
+      public var view:AccountLoadErrorDialog;
       
       public function AccountLoadErrorMediator()
       {

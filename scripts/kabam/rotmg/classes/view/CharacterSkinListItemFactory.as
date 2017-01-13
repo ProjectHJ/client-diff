@@ -1,15 +1,15 @@
 package kabam.rotmg.classes.view
 {
-   import kabam.rotmg.assets.services.CharacterFactory;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.classes.model.CharacterSkins;
-   import kabam.rotmg.classes.model.CharacterSkin;
-   import com.company.util.AssetLibrary;
-   import kabam.rotmg.util.components.LegacyBuyButton;
-   import com.company.assembleegameclient.util.Currency;
-   import flash.display.Bitmap;
    import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.util.Currency;
+   import com.company.util.AssetLibrary;
+   import flash.display.Bitmap;
    import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import kabam.rotmg.assets.services.CharacterFactory;
+   import kabam.rotmg.classes.model.CharacterSkin;
+   import kabam.rotmg.classes.model.CharacterSkins;
+   import kabam.rotmg.util.components.LegacyBuyButton;
    
    public class CharacterSkinListItemFactory
    {

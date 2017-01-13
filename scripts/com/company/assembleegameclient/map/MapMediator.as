@@ -1,18 +1,18 @@
 package com.company.assembleegameclient.map
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.game.view.components.QueuedStatusText;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class MapMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:com.company.assembleegameclient.map.Map;
+      public var view:Map;
       
       [Inject]
-      public var queueStatusText:com.company.assembleegameclient.map.QueueStatusTextSignal;
+      public var queueStatusText:QueueStatusTextSignal;
       
       public function MapMediator()
       {

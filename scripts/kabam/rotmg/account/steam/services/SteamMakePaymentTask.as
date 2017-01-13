@@ -1,14 +1,14 @@
 package kabam.rotmg.account.steam.services
 {
+   import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+   import com.company.assembleegameclient.util.offer.Offer;
    import kabam.lib.tasks.BaseTask;
+   import kabam.rotmg.account.core.PaymentData;
    import kabam.rotmg.account.core.services.MakePaymentTask;
    import kabam.rotmg.account.steam.SteamApi;
-   import kabam.rotmg.account.core.PaymentData;
+   import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import robotlegs.bender.framework.api.ILogger;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import com.company.assembleegameclient.util.offer.Offer;
-   import com.company.assembleegameclient.ui.dialogs.DebugDialog;
    
    public class SteamMakePaymentTask extends BaseTask implements MakePaymentTask
    {

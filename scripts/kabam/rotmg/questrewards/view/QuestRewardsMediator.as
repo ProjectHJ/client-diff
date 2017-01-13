@@ -1,21 +1,21 @@
 package kabam.rotmg.questrewards.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import org.swiftsuspenders.Injector;
-   import kabam.rotmg.ui.model.HUDModel;
-   import kabam.rotmg.questrewards.controller.QuestFetchCompleteSignal;
-   import kabam.rotmg.questrewards.controller.QuestRedeemCompleteSignal;
-   import kabam.rotmg.questrewards.components.ModalItemSlot;
-   import kabam.rotmg.util.components.LegacyBuyButton;
-   import kabam.rotmg.messaging.impl.GameServerConnection;
    import com.gskinner.motion.GTween;
-   import kabam.rotmg.fortune.components.TimerCallback;
+   import flash.events.MouseEvent;
    import flash.events.TimerEvent;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.fortune.components.TimerCallback;
+   import kabam.rotmg.messaging.impl.GameServerConnection;
    import kabam.rotmg.messaging.impl.incoming.QuestFetchResponse;
    import kabam.rotmg.messaging.impl.incoming.QuestRedeemResponse;
-   import flash.events.MouseEvent;
+   import kabam.rotmg.questrewards.components.ModalItemSlot;
+   import kabam.rotmg.questrewards.controller.QuestFetchCompleteSignal;
+   import kabam.rotmg.questrewards.controller.QuestRedeemCompleteSignal;
+   import kabam.rotmg.ui.model.HUDModel;
+   import kabam.rotmg.util.components.LegacyBuyButton;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class QuestRewardsMediator extends Mediator
    {
@@ -24,7 +24,7 @@ package kabam.rotmg.questrewards.view
        
       
       [Inject]
-      public var container:kabam.rotmg.questrewards.view.QuestRewardsContainer;
+      public var container:QuestRewardsContainer;
       
       [Inject]
       public var openDialog:OpenDialogSignal;
@@ -52,9 +52,9 @@ package kabam.rotmg.questrewards.view
       
       public var gsc:GameServerConnection;
       
-      private var view:kabam.rotmg.questrewards.view.QuestRewardsView;
+      private var view:QuestRewardsView;
       
-      private var oldView:kabam.rotmg.questrewards.view.QuestRewardsView;
+      private var oldView:QuestRewardsView;
       
       private var state_tinkering:Boolean = false;
       
@@ -79,7 +79,7 @@ package kabam.rotmg.questrewards.view
             new TimerCallback(0.4,this.removeOldView);
             _loc1_ = 0.4;
          }
-         this.view = new kabam.rotmg.questrewards.view.QuestRewardsView();
+         this.view = new QuestRewardsView();
          this.container.addChild(this.view);
          this.view.alpha = 0;
          new GTween(this.view,_loc1_,{"alpha":1});
@@ -90,7 +90,7 @@ package kabam.rotmg.questrewards.view
             this.view.setCloseButton(true);
             this.questFetchComplete.add(this.onQuestFetchComplete);
             this.questRedeemComplete.add(this.onQuestRedeemComplete);
-            kabam.rotmg.questrewards.view.QuestRewardsView.closed.add(this.onClose);
+            QuestRewardsView.closed.add(this.onClose);
             return;
          }
          this.onClose();
@@ -112,7 +112,7 @@ package kabam.rotmg.questrewards.view
       
       private function onClose() : void
       {
-         kabam.rotmg.questrewards.view.QuestRewardsView.closed.removeAll();
+         QuestRewardsView.closed.removeAll();
          this.removeEvents();
          this.closeDialogs.dispatch();
       }

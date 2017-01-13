@@ -1,16 +1,16 @@
 package kabam.rotmg.ui.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.assembleegameclient.objects.Player;
    import kabam.rotmg.ui.model.HUDModel;
    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-   import com.company.assembleegameclient.objects.Player;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class StatMetersMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.ui.view.StatMetersView;
+      public var view:StatMetersView;
       
       [Inject]
       public var hudModel:HUDModel;

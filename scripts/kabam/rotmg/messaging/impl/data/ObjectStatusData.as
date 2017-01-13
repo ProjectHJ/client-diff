@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.data
 {
-   import flash.utils.IDataInput;
    import com.company.assembleegameclient.util.FreeList;
+   import flash.utils.IDataInput;
    import flash.utils.IDataOutput;
    
    public class ObjectStatusData
@@ -10,14 +10,14 @@ package kabam.rotmg.messaging.impl.data
       
       public var objectId_:int;
       
-      public var pos_:kabam.rotmg.messaging.impl.data.WorldPosData;
+      public var pos_:WorldPosData;
       
-      public var stats_:Vector.<kabam.rotmg.messaging.impl.data.StatData>;
+      public var stats_:Vector.<StatData>;
       
       public function ObjectStatusData()
       {
-         this.pos_ = new kabam.rotmg.messaging.impl.data.WorldPosData();
-         this.stats_ = new Vector.<kabam.rotmg.messaging.impl.data.StatData>();
+         this.pos_ = new WorldPosData();
+         this.stats_ = new Vector.<StatData>();
          super();
       }
       
@@ -36,7 +36,7 @@ package kabam.rotmg.messaging.impl.data
          this.stats_.length = Math.min(_loc2_,this.stats_.length);
          while(this.stats_.length < _loc2_)
          {
-            this.stats_.push(FreeList.newObject(kabam.rotmg.messaging.impl.data.StatData) as kabam.rotmg.messaging.impl.data.StatData);
+            this.stats_.push(FreeList.newObject(StatData) as StatData);
          }
          _loc3_ = 0;
          while(_loc3_ < _loc2_)

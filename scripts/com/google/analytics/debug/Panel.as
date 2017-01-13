@@ -1,18 +1,18 @@
 package com.google.analytics.debug
 {
-   import flash.display.Sprite;
-   import flash.display.Shape;
-   import flash.events.MouseEvent;
-   import flash.display.Graphics;
    import flash.display.DisplayObject;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
    
-   public class Panel extends com.google.analytics.debug.UISprite
+   public class Panel extends UISprite
    {
        
       
       private var _savedH:uint;
       
-      private var _data:com.google.analytics.debug.UISprite;
+      private var _data:UISprite;
       
       private var _mask:Sprite;
       
@@ -30,7 +30,7 @@ package com.google.analytics.debug
       
       private var _backgroundColor:uint;
       
-      private var _title:com.google.analytics.debug.Label;
+      private var _title:Label;
       
       private var _colapsed:Boolean;
       
@@ -47,11 +47,11 @@ package com.google.analytics.debug
          forcedHeight = param3;
          this.baseAlpha = param6;
          _background = new Shape();
-         _data = new com.google.analytics.debug.UISprite();
+         _data = new UISprite();
          _data.forcedWidth = param2;
          _data.forcedHeight = param3;
          _data.mouseEnabled = false;
-         _title = new com.google.analytics.debug.Label(param1,"uiLabel",16777215,Align.topLeft,param8);
+         _title = new Label(param1,"uiLabel",16777215,Align.topLeft,param8);
          _title.buttonMode = true;
          _title.margin.top = 0.6;
          _title.margin.left = 0.6;

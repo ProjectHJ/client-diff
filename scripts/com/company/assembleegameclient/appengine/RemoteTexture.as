@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.appengine
 {
-   import robotlegs.bender.framework.api.ILogger;
-   import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
-   import kabam.rotmg.appengine.api.RetryLoader;
+   import flash.display.BitmapData;
    import flash.net.URLLoaderDataFormat;
    import flash.utils.ByteArray;
    import ion.utils.png.PNGDecoder;
-   import flash.display.BitmapData;
+   import kabam.rotmg.appengine.api.RetryLoader;
+   import kabam.rotmg.appengine.impl.AppEngineRetryLoader;
    import kabam.rotmg.core.StaticInjectorContext;
    import org.swiftsuspenders.Injector;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class RemoteTexture
    {

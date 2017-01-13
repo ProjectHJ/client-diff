@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.utils.Dictionary;
-   import kabam.rotmg.core.model.PlayerModel;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import kabam.rotmg.core.StaticInjectorContext;
    import com.company.assembleegameclient.map.GroundLibrary;
    import com.company.assembleegameclient.map.RegionLibrary;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.util.MoreStringUtil;
+   import flash.utils.Dictionary;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.core.model.PlayerModel;
    
    public class GroupDivider
    {

@@ -1,8 +1,8 @@
 package kabam.rotmg.account.kongregate.services
 {
    import kabam.lib.tasks.BaseTask;
-   import kabam.rotmg.account.core.services.LoginTask;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.services.LoginTask;
    import kabam.rotmg.account.kongregate.view.KongregateApi;
    import kabam.rotmg.appengine.api.AppEngineClient;
    
@@ -17,7 +17,7 @@ package kabam.rotmg.account.kongregate.services
       public var api:KongregateApi;
       
       [Inject]
-      public var local:kabam.rotmg.account.kongregate.services.KongregateSharedObject;
+      public var local:KongregateSharedObject;
       
       [Inject]
       public var client:AppEngineClient;

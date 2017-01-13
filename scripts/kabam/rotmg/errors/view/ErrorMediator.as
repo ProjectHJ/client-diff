@@ -1,12 +1,12 @@
 package kabam.rotmg.errors.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import flash.display.DisplayObjectContainer;
-   import kabam.rotmg.errors.control.ErrorSignal;
-   import robotlegs.bender.framework.api.ILogger;
    import flash.display.LoaderInfo;
-   import flash.events.IEventDispatcher;
    import flash.events.ErrorEvent;
+   import flash.events.IEventDispatcher;
+   import kabam.rotmg.errors.control.ErrorSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class ErrorMediator extends Mediator
    {

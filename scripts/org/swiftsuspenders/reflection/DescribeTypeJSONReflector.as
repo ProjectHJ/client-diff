@@ -1,16 +1,16 @@
 package org.swiftsuspenders.reflection
 {
    import avmplus.DescribeTypeJSON;
-   import flash.utils.getQualifiedClassName;
-   import org.swiftsuspenders.typedescriptions.TypeDescription;
    import flash.utils.Dictionary;
-   import org.swiftsuspenders.typedescriptions.NoParamsConstructorInjectionPoint;
+   import flash.utils.getQualifiedClassName;
+   import org.swiftsuspenders.InjectorError;
    import org.swiftsuspenders.typedescriptions.ConstructorInjectionPoint;
    import org.swiftsuspenders.typedescriptions.MethodInjectionPoint;
+   import org.swiftsuspenders.typedescriptions.NoParamsConstructorInjectionPoint;
    import org.swiftsuspenders.typedescriptions.PostConstructInjectionPoint;
    import org.swiftsuspenders.typedescriptions.PreDestroyInjectionPoint;
    import org.swiftsuspenders.typedescriptions.PropertyInjectionPoint;
-   import org.swiftsuspenders.InjectorError;
+   import org.swiftsuspenders.typedescriptions.TypeDescription;
    
    public class DescribeTypeJSONReflector extends ReflectorBase implements Reflector
    {

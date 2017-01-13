@@ -1,22 +1,22 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.utils.Dictionary;
    import com.company.assembleegameclient.objects.animation.AnimationsData;
-   import flash.utils.getDefinitionByName;
-   import flash.display.BitmapData;
-   import com.company.util.AssetLibrary;
    import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.util.TextureRedrawer;
    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-   import kabam.rotmg.constants.ItemConstants;
-   import kabam.rotmg.constants.GeneralConstants;
+   import com.company.util.AssetLibrary;
    import com.company.util.ConversionUtil;
+   import flash.display.BitmapData;
+   import flash.utils.Dictionary;
+   import flash.utils.getDefinitionByName;
+   import kabam.rotmg.constants.GeneralConstants;
+   import kabam.rotmg.constants.ItemConstants;
    import kabam.rotmg.messaging.impl.data.StatData;
    
    public class ObjectLibrary
    {
       
-      public static var textureDataFactory:com.company.assembleegameclient.objects.TextureDataFactory = new com.company.assembleegameclient.objects.TextureDataFactory();
+      public static var textureDataFactory:TextureDataFactory = new TextureDataFactory();
       
       public static const IMAGE_SET_NAME:String = "lofiObj3";
       
@@ -52,7 +52,7 @@ package com.company.assembleegameclient.objects
       
       public static const TILE_FILTER_LIST:Vector.<String> = new <String>["ALL","Walkable","Unwalkable","Slow","Speed=1"];
       
-      public static const defaultProps_:com.company.assembleegameclient.objects.ObjectProperties = new com.company.assembleegameclient.objects.ObjectProperties(null);
+      public static const defaultProps_:ObjectProperties = new ObjectProperties(null);
       
       public static const TYPE_MAP:Object = {
          "ArenaGuard":ArenaGuard,
@@ -148,7 +148,7 @@ package com.company.assembleegameclient.objects
             }
             else
             {
-               propsLibrary_[_loc6_] = new com.company.assembleegameclient.objects.ObjectProperties(_loc3_);
+               propsLibrary_[_loc6_] = new ObjectProperties(_loc3_);
                xmlLibrary_[_loc6_] = _loc3_;
                idToType_[_loc4_] = _loc6_;
                typeToDisplayId_[_loc6_] = _loc5_;
@@ -198,7 +198,7 @@ package com.company.assembleegameclient.objects
          return String(_loc2_.@id);
       }
       
-      public static function getPropsFromId(param1:String) : com.company.assembleegameclient.objects.ObjectProperties
+      public static function getPropsFromId(param1:String) : ObjectProperties
       {
          var _loc2_:int = idToType_[param1];
          return propsLibrary_[_loc2_];

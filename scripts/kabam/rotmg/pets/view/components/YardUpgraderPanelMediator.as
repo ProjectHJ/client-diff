@@ -1,20 +1,20 @@
 package kabam.rotmg.pets.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.pets.data.PetsModel;
-   import kabam.rotmg.account.core.Account;
    import flash.events.MouseEvent;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.pets.data.PetYardEnum;
-   import kabam.rotmg.pets.view.dialogs.CaretakerQueryDialog;
+   import kabam.rotmg.pets.data.PetsModel;
    import kabam.rotmg.pets.view.YardUpgraderView;
+   import kabam.rotmg.pets.view.dialogs.CaretakerQueryDialog;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class YardUpgraderPanelMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.components.YardUpgraderPanel;
+      public var view:YardUpgraderPanel;
       
       [Inject]
       public var openDialog:OpenDialogSignal;

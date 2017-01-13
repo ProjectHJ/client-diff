@@ -1,21 +1,21 @@
 package kabam.rotmg.maploading.view
 {
-   import flash.display.Sprite;
-   import flash.display.DisplayObjectContainer;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import com.gskinner.motion.GTween;
    import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
    import flash.display.MovieClip;
-   import kabam.rotmg.assets.model.Animation;
+   import flash.display.Sprite;
+   import flash.events.Event;
    import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.ui.view.TitleView;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.account.core.view.ConfirmEmailModal;
    import kabam.rotmg.account.web.view.WebLoginDialogForced;
    import kabam.rotmg.account.web.view.WebRegisterDialog;
-   import com.gskinner.motion.GTween;
-   import flash.events.Event;
+   import kabam.rotmg.assets.model.Animation;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.view.TitleView;
    
    public class MapLoadingView extends Sprite
    {

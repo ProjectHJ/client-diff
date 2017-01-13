@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.objects.particles
 {
    import com.company.assembleegameclient.objects.GameObject;
-   import flash.display.BitmapData;
-   import com.company.util.AssetLibrary;
    import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.util.AssetLibrary;
+   import flash.display.BitmapData;
    
    public class ParticleGenerator extends ParticleEffect
    {
        
       
-      private var particlePool:Vector.<com.company.assembleegameclient.objects.particles.BaseParticle>;
+      private var particlePool:Vector.<BaseParticle>;
       
-      private var liveParticles:Vector.<com.company.assembleegameclient.objects.particles.BaseParticle>;
+      private var liveParticles:Vector.<BaseParticle>;
       
       private var targetGO:GameObject;
       
@@ -19,18 +19,18 @@ package com.company.assembleegameclient.objects.particles
       
       private var totalTime:Number = 0;
       
-      private var effectProps:com.company.assembleegameclient.objects.particles.EffectProperties;
+      private var effectProps:EffectProperties;
       
       private var bitmapData:BitmapData;
       
       private var friction:Number;
       
-      public function ParticleGenerator(param1:com.company.assembleegameclient.objects.particles.EffectProperties, param2:GameObject)
+      public function ParticleGenerator(param1:EffectProperties, param2:GameObject)
       {
          super();
          this.targetGO = param2;
-         this.particlePool = new Vector.<com.company.assembleegameclient.objects.particles.BaseParticle>();
-         this.liveParticles = new Vector.<com.company.assembleegameclient.objects.particles.BaseParticle>();
+         this.particlePool = new Vector.<BaseParticle>();
+         this.liveParticles = new Vector.<BaseParticle>();
          this.effectProps = param1;
          if(this.effectProps.bitmapFile)
          {
@@ -43,7 +43,7 @@ package com.company.assembleegameclient.objects.particles
          }
       }
       
-      public static function attachParticleGenerator(param1:com.company.assembleegameclient.objects.particles.EffectProperties, param2:GameObject) : ParticleGenerator
+      public static function attachParticleGenerator(param1:EffectProperties, param2:GameObject) : ParticleGenerator
       {
          return new ParticleGenerator(param1,param2);
       }
@@ -51,8 +51,8 @@ package com.company.assembleegameclient.objects.particles
       override public function update(param1:int, param2:int) : Boolean
       {
          var _loc4_:Number = NaN;
-         var _loc9_:com.company.assembleegameclient.objects.particles.BaseParticle = null;
-         var _loc10_:com.company.assembleegameclient.objects.particles.BaseParticle = null;
+         var _loc9_:BaseParticle = null;
+         var _loc10_:BaseParticle = null;
          var _loc3_:Number = param1 / 1000;
          _loc4_ = param2 / 1000;
          if(this.targetGO.map_ == null)
@@ -74,7 +74,7 @@ package com.company.assembleegameclient.objects.particles
             }
             else
             {
-               _loc9_ = new com.company.assembleegameclient.objects.particles.BaseParticle(this.bitmapData);
+               _loc9_ = new BaseParticle(this.bitmapData);
             }
             _loc9_.initialize(this.effectProps.life + this.effectProps.lifeVariance * (2 * Math.random() - 1),this.effectProps.speed + this.effectProps.speedVariance * (2 * Math.random() - 1),this.effectProps.speed + this.effectProps.speedVariance * (2 * Math.random() - 1),this.effectProps.rise + this.effectProps.riseVariance * (2 * Math.random() - 1),z_);
             map_.addObj(_loc9_,x_ + this.effectProps.rangeX * (2 * Math.random() - 1),y_ + this.effectProps.rangeY * (2 * Math.random() - 1));
@@ -108,7 +108,7 @@ package com.company.assembleegameclient.objects.particles
       
       override public function removeFromMap() : void
       {
-         var _loc1_:com.company.assembleegameclient.objects.particles.BaseParticle = null;
+         var _loc1_:BaseParticle = null;
          for each(_loc1_ in this.liveParticles)
          {
             map_.removeObj(_loc1_.objectId_);

@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.ui.dialogs
 {
-   import org.osflash.signals.Signal;
    import flash.events.Event;
+   import org.osflash.signals.Signal;
    
    public class CloseDialogComponent
    {
@@ -9,7 +9,7 @@ package com.company.assembleegameclient.ui.dialogs
       
       private const closeSignal:Signal = new Signal();
       
-      private var dialog:com.company.assembleegameclient.ui.dialogs.DialogCloser;
+      private var dialog:DialogCloser;
       
       private var types:Vector.<String>;
       
@@ -19,7 +19,7 @@ package com.company.assembleegameclient.ui.dialogs
          super();
       }
       
-      public function add(param1:com.company.assembleegameclient.ui.dialogs.DialogCloser, param2:String) : void
+      public function add(param1:DialogCloser, param2:String) : void
       {
          this.dialog = param1;
          this.types.push(param2);

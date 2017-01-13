@@ -1,18 +1,18 @@
 package org.swiftsuspenders.typedescriptions
 {
    import flash.utils.Dictionary;
-   import org.swiftsuspenders.InjectorError;
    import flash.utils.getQualifiedClassName;
+   import org.swiftsuspenders.InjectorError;
    
    public class TypeDescription
    {
        
       
-      public var ctor:org.swiftsuspenders.typedescriptions.ConstructorInjectionPoint;
+      public var ctor:ConstructorInjectionPoint;
       
-      public var injectionPoints:org.swiftsuspenders.typedescriptions.InjectionPoint;
+      public var injectionPoints:InjectionPoint;
       
-      public var preDestroyMethods:org.swiftsuspenders.typedescriptions.PreDestroyInjectionPoint;
+      public var preDestroyMethods:PreDestroyInjectionPoint;
       
       private var _postConstructAdded:Boolean;
       
@@ -27,7 +27,7 @@ package org.swiftsuspenders.typedescriptions
       
       public function setConstructor(param1:Array, param2:Array = null, param3:uint = 2147483647, param4:Dictionary = null) : TypeDescription
       {
-         this.ctor = new org.swiftsuspenders.typedescriptions.ConstructorInjectionPoint(this.createParameterMappings(param1,param2 || []),param3,param4);
+         this.ctor = new ConstructorInjectionPoint(this.createParameterMappings(param1,param2 || []),param3,param4);
          return this;
       }
       
@@ -60,7 +60,7 @@ package org.swiftsuspenders.typedescriptions
       
       public function addPreDestroyMethod(param1:String, param2:Array, param3:Array = null, param4:uint = 2147483647) : TypeDescription
       {
-         var _loc5_:org.swiftsuspenders.typedescriptions.PreDestroyInjectionPoint = new org.swiftsuspenders.typedescriptions.PreDestroyInjectionPoint(param1,this.createParameterMappings(param2,param3 || []),Math.min(param4,param2.length),0);
+         var _loc5_:PreDestroyInjectionPoint = new PreDestroyInjectionPoint(param1,this.createParameterMappings(param2,param3 || []),Math.min(param4,param2.length),0);
          if(this.preDestroyMethods)
          {
             this.preDestroyMethods.last.next = _loc5_;
@@ -74,7 +74,7 @@ package org.swiftsuspenders.typedescriptions
          return this;
       }
       
-      public function addInjectionPoint(param1:org.swiftsuspenders.typedescriptions.InjectionPoint) : void
+      public function addInjectionPoint(param1:InjectionPoint) : void
       {
          if(this.injectionPoints)
          {

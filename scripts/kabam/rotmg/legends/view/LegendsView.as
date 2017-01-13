@@ -1,22 +1,22 @@
 package kabam.rotmg.legends.view
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.screens.TitleMenuOption;
    import com.company.assembleegameclient.ui.Scrollbar;
-   import kabam.rotmg.legends.model.Legend;
-   import kabam.rotmg.ui.view.components.ScreenBase;
-   import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.filters.DropShadowFilter;
-   import flash.display.Shape;
-   import flash.display.Graphics;
    import com.company.rotmg.graphics.ScreenGraphic;
-   import kabam.rotmg.legends.model.Timespan;
-   import flash.events.MouseEvent;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.legends.model.Legend;
+   import kabam.rotmg.legends.model.Timespan;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.view.components.ScreenBase;
+   import org.osflash.signals.Signal;
    
    public class LegendsView extends Sprite
    {
@@ -28,7 +28,7 @@ package kabam.rotmg.legends.view
       
       public const close:Signal = new Signal();
       
-      private const items:Vector.<kabam.rotmg.legends.view.LegendListItem> = new Vector.<kabam.rotmg.legends.view.LegendListItem>(0);
+      private const items:Vector.<LegendListItem> = new Vector.<LegendListItem>(0);
       
       private const tabs:Object = {};
       
@@ -46,7 +46,7 @@ package kabam.rotmg.legends.view
       
       private var listContainer:Sprite;
       
-      private var selectedTab:kabam.rotmg.legends.view.LegendsTab;
+      private var selectedTab:LegendsTab;
       
       private var legends:Vector.<Legend>;
       
@@ -116,7 +116,7 @@ package kabam.rotmg.legends.view
          _loc1_ = new Shape();
          var _loc2_:Graphics = _loc1_.graphics;
          _loc2_.beginFill(0);
-         _loc2_.drawRect(0,0,kabam.rotmg.legends.view.LegendListItem.WIDTH,430);
+         _loc2_.drawRect(0,0,LegendListItem.WIDTH,430);
          _loc2_.endFill();
          this.mainContainer = new Sprite();
          this.mainContainer.x = 10;
@@ -161,9 +161,9 @@ package kabam.rotmg.legends.view
          }
       }
       
-      private function makeTab(param1:Timespan, param2:int) : kabam.rotmg.legends.view.LegendsTab
+      private function makeTab(param1:Timespan, param2:int) : LegendsTab
       {
-         var _loc3_:kabam.rotmg.legends.view.LegendsTab = new kabam.rotmg.legends.view.LegendsTab(param1);
+         var _loc3_:LegendsTab = new LegendsTab(param1);
          this.tabs[param1.getId()] = _loc3_;
          _loc3_.x = 20 + param2 * 90;
          _loc3_.y = 70;
@@ -172,7 +172,7 @@ package kabam.rotmg.legends.view
          return _loc3_;
       }
       
-      private function onTabSelected(param1:kabam.rotmg.legends.view.LegendsTab) : void
+      private function onTabSelected(param1:LegendsTab) : void
       {
          if(this.selectedTab != param1)
          {
@@ -180,13 +180,13 @@ package kabam.rotmg.legends.view
          }
       }
       
-      private function updateTabAndSelectTimespan(param1:kabam.rotmg.legends.view.LegendsTab) : void
+      private function updateTabAndSelectTimespan(param1:LegendsTab) : void
       {
          this.updateTabs(param1);
          this.timespanChanged.dispatch(this.selectedTab.getTimespan());
       }
       
-      private function updateTabs(param1:kabam.rotmg.legends.view.LegendsTab) : void
+      private function updateTabs(param1:LegendsTab) : void
       {
          this.selectedTab && this.selectedTab.setIsSelected(false);
          this.selectedTab = param1;
@@ -218,7 +218,7 @@ package kabam.rotmg.legends.view
       
       private function clearLegendsList() : void
       {
-         var _loc1_:kabam.rotmg.legends.view.LegendListItem = null;
+         var _loc1_:LegendListItem = null;
          for each(_loc1_ in this.items)
          {
             _loc1_.selected.remove(this.onItemSelected);
@@ -252,12 +252,12 @@ package kabam.rotmg.legends.view
          }
       }
       
-      private function makeItemFromLegend(param1:int) : kabam.rotmg.legends.view.LegendListItem
+      private function makeItemFromLegend(param1:int) : LegendListItem
       {
          var _loc2_:Legend = this.legends[param1];
          _loc2_.place = param1 + 1;
-         var _loc3_:kabam.rotmg.legends.view.LegendListItem = new kabam.rotmg.legends.view.LegendListItem(_loc2_);
-         _loc3_.y = param1 * kabam.rotmg.legends.view.LegendListItem.HEIGHT;
+         var _loc3_:LegendListItem = new LegendListItem(_loc2_);
+         _loc3_.y = param1 * LegendListItem.HEIGHT;
          _loc3_.selected.add(this.onItemSelected);
          this.listContainer.addChild(_loc3_);
          return _loc3_;
@@ -287,7 +287,7 @@ package kabam.rotmg.legends.view
          if(_loc1_)
          {
             _loc2_ = this.legends.indexOf(_loc1_);
-            _loc3_ = (_loc2_ + 0.5) * kabam.rotmg.legends.view.LegendListItem.HEIGHT;
+            _loc3_ = (_loc2_ + 0.5) * LegendListItem.HEIGHT;
             this.scrollBar.setPos((_loc3_ - 200) / (this.listContainer.height - 400));
          }
       }

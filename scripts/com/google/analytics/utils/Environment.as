@@ -1,10 +1,10 @@
 package com.google.analytics.utils
 {
-   import flash.system.Security;
-   import flash.system.Capabilities;
-   import com.google.analytics.external.HTMLDOM;
-   import flash.system.System;
    import com.google.analytics.debug.DebugConfiguration;
+   import com.google.analytics.external.HTMLDOM;
+   import flash.system.Capabilities;
+   import flash.system.Security;
+   import flash.system.System;
    
    public class Environment
    {
@@ -16,17 +16,17 @@ package com.google.analytics.utils
       
       private var _debug:DebugConfiguration;
       
-      private var _appVersion:com.google.analytics.utils.Version;
+      private var _appVersion:Version;
       
       private var _url:String;
       
-      private var _protocol:com.google.analytics.utils.Protocols;
+      private var _protocol:Protocols;
       
-      private var _userAgent:com.google.analytics.utils.UserAgent;
+      private var _userAgent:UserAgent;
       
       public function Environment(param1:String = "", param2:String = "", param3:String = "", param4:DebugConfiguration = null, param5:HTMLDOM = null)
       {
-         var _loc6_:com.google.analytics.utils.Version = null;
+         var _loc6_:Version = null;
          super();
          if(param2 == "")
          {
@@ -45,7 +45,7 @@ package com.google.analytics.utils
          }
          else
          {
-            _loc6_ = com.google.analytics.utils.Version.fromString(param3);
+            _loc6_ = Version.fromString(param3);
          }
          _url = param1;
          _appName = param2;
@@ -79,7 +79,7 @@ package com.google.analytics.utils
          return "";
       }
       
-      public function get protocol() : com.google.analytics.utils.Protocols
+      public function get protocol() : Protocols
       {
          if(!_protocol)
          {
@@ -88,17 +88,17 @@ package com.google.analytics.utils
          return _protocol;
       }
       
-      public function get flashVersion() : com.google.analytics.utils.Version
+      public function get flashVersion() : Version
       {
-         var _loc1_:com.google.analytics.utils.Version = com.google.analytics.utils.Version.fromString(Capabilities.version.split(" ")[1],",");
+         var _loc1_:Version = Version.fromString(Capabilities.version.split(" ")[1],",");
          return _loc1_;
       }
       
-      public function get userAgent() : com.google.analytics.utils.UserAgent
+      public function get userAgent() : UserAgent
       {
          if(!_userAgent)
          {
-            _userAgent = new com.google.analytics.utils.UserAgent(this,appName,appVersion.toString(4));
+            _userAgent = new UserAgent(this,appName,appVersion.toString(4));
          }
          return _userAgent;
       }
@@ -150,7 +150,7 @@ package com.google.analytics.utils
       {
          var _loc4_:String = null;
          var _loc5_:String = null;
-         var _loc1_:com.google.analytics.utils.Protocols = com.google.analytics.utils.Protocols.none;
+         var _loc1_:Protocols = Protocols.none;
          if(_url != "")
          {
             _loc4_ = _url.toLowerCase();
@@ -158,19 +158,19 @@ package com.google.analytics.utils
             switch(_loc5_)
             {
                case "file:":
-                  _loc1_ = com.google.analytics.utils.Protocols.file;
+                  _loc1_ = Protocols.file;
                   break;
                case "http:":
-                  _loc1_ = com.google.analytics.utils.Protocols.HTTP;
+                  _loc1_ = Protocols.HTTP;
                   break;
                case "https":
                   if(_loc4_.charAt(5) == ":")
                   {
-                     _loc1_ = com.google.analytics.utils.Protocols.HTTPS;
+                     _loc1_ = Protocols.HTTPS;
                   }
                   break;
                default:
-                  _protocol = com.google.analytics.utils.Protocols.none;
+                  _protocol = Protocols.none;
             }
          }
          var _loc2_:String = _dom.protocol;
@@ -216,7 +216,7 @@ package com.google.analytics.utils
          {
             return _loc1_;
          }
-         if(protocol == com.google.analytics.utils.Protocols.file)
+         if(protocol == Protocols.file)
          {
             return "localhost";
          }
@@ -247,14 +247,14 @@ package com.google.analytics.utils
          var _loc1_:String = null;
          var _loc2_:String = null;
          var _loc3_:int = 0;
-         if(protocol == com.google.analytics.utils.Protocols.HTTP || protocol == com.google.analytics.utils.Protocols.HTTPS)
+         if(protocol == Protocols.HTTP || protocol == Protocols.HTTPS)
          {
             _loc1_ = _url.toLowerCase();
-            if(protocol == com.google.analytics.utils.Protocols.HTTP)
+            if(protocol == Protocols.HTTP)
             {
                _loc2_ = _loc1_.split("http://").join("");
             }
-            else if(protocol == com.google.analytics.utils.Protocols.HTTPS)
+            else if(protocol == Protocols.HTTPS)
             {
                _loc2_ = _loc1_.split("https://").join("");
             }
@@ -265,19 +265,19 @@ package com.google.analytics.utils
             }
             return _loc2_;
          }
-         if(protocol == com.google.analytics.utils.Protocols.file)
+         if(protocol == Protocols.file)
          {
             return "localhost";
          }
          return "";
       }
       
-      public function set userAgent(param1:com.google.analytics.utils.UserAgent) : void
+      public function set userAgent(param1:UserAgent) : void
       {
          _userAgent = param1;
       }
       
-      public function set appVersion(param1:com.google.analytics.utils.Version) : void
+      public function set appVersion(param1:Version) : void
       {
          _appVersion = param1;
          userAgent.applicationVersion = param1.toString(4);
@@ -308,7 +308,7 @@ package com.google.analytics.utils
          return "";
       }
       
-      public function get appVersion() : com.google.analytics.utils.Version
+      public function get appVersion() : Version
       {
          return _appVersion;
       }

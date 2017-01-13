@@ -1,11 +1,11 @@
 package com.google.analytics.debug
 {
    import flash.display.Graphics;
-   import flash.text.TextFieldType;
-   import flash.text.TextFieldAutoSize;
    import flash.display.Shape;
-   import flash.text.TextField;
    import flash.events.TextEvent;
+   import flash.text.TextField;
+   import flash.text.TextFieldAutoSize;
+   import flash.text.TextFieldType;
    
    public class Label extends UISprite
    {

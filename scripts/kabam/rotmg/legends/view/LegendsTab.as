@@ -1,11 +1,11 @@
 package kabam.rotmg.legends.view
 {
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
+   import flash.events.MouseEvent;
    import kabam.rotmg.legends.model.Timespan;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.events.MouseEvent;
+   import org.osflash.signals.Signal;
    
    public class LegendsTab extends Sprite
    {

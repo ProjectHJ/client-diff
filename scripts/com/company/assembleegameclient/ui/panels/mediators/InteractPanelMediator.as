@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.ui.panels.mediators
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.assembleegameclient.objects.IInteractiveObject;
+   import com.company.assembleegameclient.objects.Pet;
    import com.company.assembleegameclient.ui.panels.InteractPanel;
    import kabam.rotmg.core.model.MapModel;
    import kabam.rotmg.pets.data.PetsModel;
-   import com.company.assembleegameclient.objects.IInteractiveObject;
-   import com.company.assembleegameclient.objects.Pet;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class InteractPanelMediator extends Mediator
    {

@@ -1,11 +1,11 @@
 package kabam.rotmg.pets.view.components
 {
-   import kabam.lib.ui.impl.LayoutList;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import org.osflash.signals.Signal;
-   import kabam.lib.ui.impl.VerticalLayout;
    import flash.display.DisplayObject;
    import flash.events.MouseEvent;
+   import kabam.lib.ui.impl.LayoutList;
+   import kabam.lib.ui.impl.VerticalLayout;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.Signal;
    
    public class CaretakerQueryDialogCategoryList extends LayoutList
    {

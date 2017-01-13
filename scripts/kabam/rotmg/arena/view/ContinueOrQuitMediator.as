@@ -1,23 +1,23 @@
 package kabam.rotmg.arena.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.lib.net.impl.SocketServer;
    import kabam.lib.net.api.MessageProvider;
-   import kabam.rotmg.ui.model.HUDModel;
-   import kabam.rotmg.arena.model.CurrentArenaRunModel;
-   import kabam.rotmg.game.model.GameModel;
-   import kabam.rotmg.external.command.RequestPlayerCreditsCompleteSignal;
+   import kabam.lib.net.impl.SocketServer;
    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
-   import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
+   import kabam.rotmg.arena.model.CurrentArenaRunModel;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.external.command.RequestPlayerCreditsCompleteSignal;
+   import kabam.rotmg.game.model.GameModel;
    import kabam.rotmg.messaging.impl.GameServerConnection;
+   import kabam.rotmg.messaging.impl.outgoing.arena.EnterArena;
+   import kabam.rotmg.ui.model.HUDModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class ContinueOrQuitMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.arena.view.ContinueOrQuitDialog;
+      public var view:ContinueOrQuitDialog;
       
       [Inject]
       public var closeDialogs:CloseDialogsSignal;

@@ -1,7 +1,7 @@
 package kabam.rotmg.ui.view.components
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.ui.SoundIcon;
+   import flash.display.Sprite;
    
    public class ScreenBase extends Sprite
    {

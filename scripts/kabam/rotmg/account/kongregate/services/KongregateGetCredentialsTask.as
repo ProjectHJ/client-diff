@@ -1,10 +1,10 @@
 package kabam.rotmg.account.kongregate.services
 {
    import kabam.lib.tasks.BaseTask;
+   import kabam.lib.tasks.Task;
+   import kabam.rotmg.account.core.Account;
    import kabam.rotmg.account.core.services.LoginTask;
    import kabam.rotmg.account.kongregate.view.KongregateApi;
-   import kabam.rotmg.account.core.Account;
-   import kabam.lib.tasks.Task;
    
    public class KongregateGetCredentialsTask extends BaseTask
    {
@@ -20,7 +20,7 @@ package kabam.rotmg.account.kongregate.services
       public var account:Account;
       
       [Inject]
-      public var local:kabam.rotmg.account.kongregate.services.KongregateSharedObject;
+      public var local:KongregateSharedObject;
       
       public function KongregateGetCredentialsTask()
       {

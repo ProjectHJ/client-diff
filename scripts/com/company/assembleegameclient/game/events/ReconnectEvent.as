@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.game.events
 {
    import flash.events.Event;
-   import kabam.rotmg.servers.api.Server;
    import flash.utils.ByteArray;
+   import kabam.rotmg.servers.api.Server;
    
    public class ReconnectEvent extends Event
    {

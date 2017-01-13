@@ -1,7 +1,7 @@
 package kabam.rotmg.promotions.signals
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.account.core.PaymentData;
+   import org.osflash.signals.Signal;
    
    public class MakeBeginnersPackagePaymentSignal extends Signal
    {

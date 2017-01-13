@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public class SpellComparison extends SlotComparison
    {

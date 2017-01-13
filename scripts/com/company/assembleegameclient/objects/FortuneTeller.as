@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.display.IGraphicsData;
    import com.company.assembleegameclient.map.Camera;
+   import flash.display.IGraphicsData;
    import kabam.rotmg.fortune.services.FortuneModel;
    
    public class FortuneTeller extends Character

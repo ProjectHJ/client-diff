@@ -1,22 +1,22 @@
 package com.company.assembleegameclient.ui.board
 {
-   import flash.display.Sprite;
-   import com.company.ui.BaseSimpleText;
-   import com.company.assembleegameclient.ui.Scrollbar;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+   import com.company.assembleegameclient.ui.Scrollbar;
+   import com.company.ui.BaseSimpleText;
+   import com.company.util.GraphicsUtil;
+   import flash.display.CapsStyle;
+   import flash.display.Graphics;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import com.company.util.GraphicsUtil;
-   import flash.events.Event;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
    import flash.display.Shape;
-   import flash.display.Graphics;
-   import kabam.rotmg.text.model.TextKey;
+   import flash.display.Sprite;
+   import flash.events.Event;
    import flash.events.MouseEvent;
+   import kabam.rotmg.text.model.TextKey;
    
    class EditBoard extends Sprite
    {

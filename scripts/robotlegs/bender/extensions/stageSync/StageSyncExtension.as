@@ -1,11 +1,11 @@
 package robotlegs.bender.extensions.stageSync
 {
-   import robotlegs.bender.framework.api.IExtension;
-   import robotlegs.bender.framework.api.IContext;
    import flash.display.DisplayObjectContainer;
-   import robotlegs.bender.framework.api.ILogger;
-   import org.hamcrest.object.instanceOf;
    import flash.events.Event;
+   import org.hamcrest.object.instanceOf;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
+   import robotlegs.bender.framework.api.ILogger;
    import robotlegs.bender.framework.impl.UID;
    
    public class StageSyncExtension implements IExtension

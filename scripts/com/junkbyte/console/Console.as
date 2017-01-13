@@ -1,27 +1,27 @@
 package com.junkbyte.console
 {
-   import flash.display.Sprite;
-   import com.junkbyte.console.core.LogReferences;
-   import com.junkbyte.console.view.PanelsManager;
    import com.junkbyte.console.core.CommandLine;
-   import com.junkbyte.console.core.KeyBinder;
-   import com.junkbyte.console.core.MemoryMonitor;
-   import com.junkbyte.console.core.Graphing;
-   import com.junkbyte.console.core.Remoting;
    import com.junkbyte.console.core.ConsoleTools;
+   import com.junkbyte.console.core.Graphing;
+   import com.junkbyte.console.core.KeyBinder;
+   import com.junkbyte.console.core.LogReferences;
    import com.junkbyte.console.core.Logs;
-   import flash.net.SharedObject;
-   import flash.events.Event;
-   import flash.events.KeyboardEvent;
-   import flash.display.LoaderInfo;
-   import flash.events.IEventDispatcher;
-   import flash.events.ErrorEvent;
-   import flash.geom.Rectangle;
+   import com.junkbyte.console.core.MemoryMonitor;
+   import com.junkbyte.console.core.Remoting;
+   import com.junkbyte.console.view.PanelsManager;
    import com.junkbyte.console.view.RollerPanel;
-   import flash.display.DisplayObjectContainer;
-   import flash.utils.getTimer;
    import com.junkbyte.console.vos.Log;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.LoaderInfo;
+   import flash.display.Sprite;
+   import flash.events.ErrorEvent;
+   import flash.events.Event;
+   import flash.events.IEventDispatcher;
+   import flash.events.KeyboardEvent;
+   import flash.geom.Rectangle;
+   import flash.net.SharedObject;
    import flash.system.Capabilities;
+   import flash.utils.getTimer;
    
    public class Console extends Sprite
    {
@@ -55,7 +55,7 @@ package com.junkbyte.console
       public static const FILTER_CHANNEL:String = "~";
        
       
-      private var _config:com.junkbyte.console.ConsoleConfig;
+      private var _config:ConsoleConfig;
       
       private var _panels:PanelsManager;
       
@@ -77,7 +77,7 @@ package com.junkbyte.console
       
       private var _paused:Boolean;
       
-      private var _rollerKey:com.junkbyte.console.KeyBind;
+      private var _rollerKey:KeyBind;
       
       private var _logs:Logs;
       
@@ -85,16 +85,16 @@ package com.junkbyte.console
       
       private var _soData:Object;
       
-      public function Console(param1:String = "", param2:com.junkbyte.console.ConsoleConfig = null)
+      public function Console(param1:String = "", param2:ConsoleConfig = null)
       {
          var password:String = param1;
-         var config:com.junkbyte.console.ConsoleConfig = param2;
+         var config:ConsoleConfig = param2;
          this._soData = {};
          super();
          name = "Console";
          if(config == null)
          {
-            config = new com.junkbyte.console.ConsoleConfig();
+            config = new ConsoleConfig();
          }
          this._config = config;
          if(password)
@@ -233,7 +233,7 @@ package com.junkbyte.console
          this._graphing.remove(param1,param2,param3);
       }
       
-      public function bindKey(param1:com.junkbyte.console.KeyBind, param2:Function, param3:Array = null) : void
+      public function bindKey(param1:KeyBind, param2:Function, param3:Array = null) : void
       {
          if(param1)
          {
@@ -265,12 +265,12 @@ package com.junkbyte.console
          }
          if(param1 && param1.length == 1)
          {
-            this._rollerKey = new com.junkbyte.console.KeyBind(param1,param2,param3,param4);
+            this._rollerKey = new KeyBind(param1,param2,param3,param4);
             this.bindKey(this._rollerKey,this.onRollerCaptureKey);
          }
       }
       
-      public function get rollerCaptureKey() : com.junkbyte.console.KeyBind
+      public function get rollerCaptureKey() : KeyBind
       {
          return this._rollerKey;
       }
@@ -652,7 +652,7 @@ package com.junkbyte.console
          return this._logs.getLogsAsString(param1);
       }
       
-      public function get config() : com.junkbyte.console.ConsoleConfig
+      public function get config() : ConsoleConfig
       {
          return this._config;
       }

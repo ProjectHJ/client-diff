@@ -1,11 +1,11 @@
 package com.gskinner.motion
 {
-   import flash.events.EventDispatcher;
    import flash.display.Shape;
-   import flash.utils.Dictionary;
    import flash.events.Event;
-   import flash.utils.getTimer;
+   import flash.events.EventDispatcher;
    import flash.events.IEventDispatcher;
+   import flash.utils.Dictionary;
+   import flash.utils.getTimer;
    
    public class GTween extends EventDispatcher
    {
@@ -60,7 +60,7 @@ package com.gskinner.motion
       
       public var ease:Function;
       
-      public var nextTween:com.gskinner.motion.GTween;
+      public var nextTween:GTween;
       
       public var pluginData:Object;
       
@@ -161,7 +161,7 @@ package com.gskinner.motion
       protected static function staticTick(param1:Event) : void
       {
          var _loc4_:* = null;
-         var _loc5_:com.gskinner.motion.GTween = null;
+         var _loc5_:GTween = null;
          var _loc2_:Number = time;
          time = getTimer() / 1000;
          if(pauseAll)
@@ -171,7 +171,7 @@ package com.gskinner.motion
          var _loc3_:Number = (time - _loc2_) * timeScaleAll;
          for(_loc4_ in tickList)
          {
-            _loc5_ = _loc4_ as com.gskinner.motion.GTween;
+            _loc5_ = _loc4_ as GTween;
             _loc5_.position = _loc5_._position + (!!_loc5_.useFrames?timeScaleAll:_loc3_) * _loc5_.timeScale;
          }
       }
@@ -529,8 +529,8 @@ package com.gskinner.motion
    }
 }
 
-import flash.utils.Proxy;
 import com.gskinner.motion.GTween;
+import flash.utils.Proxy;
 import flash.utils.flash_proxy;
 
 dynamic class TargetProxy extends Proxy

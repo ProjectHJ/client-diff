@@ -1,10 +1,10 @@
 package com.company.util
 {
-   import flash.utils.Dictionary;
    import flash.display.BitmapData;
-   import flash.geom.ColorTransform;
    import flash.filters.BitmapFilter;
+   import flash.geom.ColorTransform;
    import flash.geom.Point;
+   import flash.utils.Dictionary;
    
    public class CachingColorTransformer
    {

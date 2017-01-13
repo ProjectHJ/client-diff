@@ -3,17 +3,17 @@ package kabam.rotmg.classes.model
    public class CharacterSkinState
    {
       
-      public static const OWNED:kabam.rotmg.classes.model.CharacterSkinState = new kabam.rotmg.classes.model.CharacterSkinState(false,"OWNED",false);
+      public static const OWNED:CharacterSkinState = new CharacterSkinState(false,"OWNED",false);
       
-      public static const UNLISTED:kabam.rotmg.classes.model.CharacterSkinState = new kabam.rotmg.classes.model.CharacterSkinState(true,"UNLISTED",false);
+      public static const UNLISTED:CharacterSkinState = new CharacterSkinState(true,"UNLISTED",false);
       
-      public static const PURCHASABLE:kabam.rotmg.classes.model.CharacterSkinState = new kabam.rotmg.classes.model.CharacterSkinState(false,"PURCHASABLE",true);
+      public static const PURCHASABLE:CharacterSkinState = new CharacterSkinState(false,"PURCHASABLE",true);
       
-      public static const PURCHASING:kabam.rotmg.classes.model.CharacterSkinState = new kabam.rotmg.classes.model.CharacterSkinState(true,"PURCHASING",true);
+      public static const PURCHASING:CharacterSkinState = new CharacterSkinState(true,"PURCHASING",true);
       
-      public static const LOCKED:kabam.rotmg.classes.model.CharacterSkinState = new kabam.rotmg.classes.model.CharacterSkinState(true,"LOCKED",true);
+      public static const LOCKED:CharacterSkinState = new CharacterSkinState(true,"LOCKED",true);
       
-      public static const NULL:kabam.rotmg.classes.model.CharacterSkinState = new kabam.rotmg.classes.model.CharacterSkinState(true,"NULL",true);
+      public static const NULL:CharacterSkinState = new CharacterSkinState(true,"NULL",true);
        
       
       private var _isDisabled:Boolean;

@@ -1,8 +1,8 @@
 package kabam.rotmg.pets.controller.reskin
 {
-   import robotlegs.bender.bundles.mvcs.Command;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.pets.view.PetFormView;
+   import robotlegs.bender.bundles.mvcs.Command;
    
    public class ReskinPetFlowStartCommand extends Command
    {

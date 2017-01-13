@@ -4,11 +4,11 @@ package kabam.rotmg.arena.model
    {
        
       
-      public var entry:kabam.rotmg.arena.model.ArenaLeaderboardEntry;
+      public var entry:ArenaLeaderboardEntry;
       
       public function BestArenaRunModel()
       {
-         this.entry = new kabam.rotmg.arena.model.ArenaLeaderboardEntry();
+         this.entry = new ArenaLeaderboardEntry();
          super();
       }
    }

@@ -1,8 +1,8 @@
 package robotlegs.bender.framework.impl
 {
-   import robotlegs.bender.framework.api.ILogger;
-   import robotlegs.bender.framework.api.ILogTarget;
    import flash.utils.getTimer;
+   import robotlegs.bender.framework.api.ILogTarget;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class Logger implements ILogger
    {

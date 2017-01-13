@@ -3,8 +3,8 @@ package kabam.rotmg.pets.controller
    import com.company.assembleegameclient.editor.Command;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.messaging.impl.EvolvePetInfo;
-   import org.swiftsuspenders.Injector;
    import kabam.rotmg.pets.view.dialogs.evolving.EvolveDialog;
+   import org.swiftsuspenders.Injector;
    
    public class EvolvePetCommand extends Command
    {

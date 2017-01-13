@@ -1,15 +1,15 @@
 package kabam.rotmg.game.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+   import kabam.rotmg.core.model.PlayerModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class CreditDisplayMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.game.view.CreditDisplay;
+      public var view:CreditDisplay;
       
       [Inject]
       public var model:PlayerModel;

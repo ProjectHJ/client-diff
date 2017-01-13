@@ -1,9 +1,9 @@
 package kabam.rotmg.death.view
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.ui.dialogs.Dialog;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import org.osflash.signals.Signal;
    
    public class ZombifyDialog extends Sprite
    {

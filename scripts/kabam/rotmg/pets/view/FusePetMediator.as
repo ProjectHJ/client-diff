@@ -1,21 +1,21 @@
 package kabam.rotmg.pets.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.pets.data.PetSlotsState;
-   import kabam.rotmg.pets.controller.UpgradePetSignal;
-   import org.swiftsuspenders.Injector;
-   import kabam.rotmg.pets.view.dialogs.PetPickerDialog;
-   import kabam.rotmg.pets.data.FusePetRequestVO;
-   import kabam.rotmg.messaging.impl.PetUpgradeRequest;
    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.messaging.impl.PetUpgradeRequest;
+   import kabam.rotmg.pets.controller.UpgradePetSignal;
+   import kabam.rotmg.pets.data.FusePetRequestVO;
+   import kabam.rotmg.pets.data.PetSlotsState;
+   import kabam.rotmg.pets.view.dialogs.PetPickerDialog;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class FusePetMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.FusePetView;
+      public var view:FusePetView;
       
       [Inject]
       public var openDialog:OpenDialogSignal;
@@ -54,7 +54,7 @@ package kabam.rotmg.pets.view
       
       private function onOpenPetPicker(param1:String) : void
       {
-         this.petSlotsState.caller = kabam.rotmg.pets.view.FusePetView;
+         this.petSlotsState.caller = FusePetView;
          this.petSlotsState.selected = param1;
          this.openDialog.dispatch(this.injector.getInstance(PetPickerDialog));
       }

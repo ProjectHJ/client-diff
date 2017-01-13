@@ -1,16 +1,16 @@
 package robotlegs.bender.framework.impl
 {
-   import org.hamcrest.Matcher;
-   import org.hamcrest.core.allOf;
-   import org.hamcrest.object.instanceOf;
-   import org.hamcrest.core.not;
    import flash.display.DisplayObject;
    import flash.utils.Dictionary;
+   import org.hamcrest.Matcher;
+   import org.hamcrest.core.allOf;
+   import org.hamcrest.core.not;
+   import org.hamcrest.object.instanceOf;
    import org.swiftsuspenders.Injector;
-   import robotlegs.bender.framework.api.ILogger;
-   import robotlegs.bender.framework.api.LifecycleEvent;
    import robotlegs.bender.framework.api.IConfig;
    import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.ILogger;
+   import robotlegs.bender.framework.api.LifecycleEvent;
    
    public class ConfigManager
    {
@@ -20,7 +20,7 @@ package robotlegs.bender.framework.impl
       
       private const _uid:String = UID.create(ConfigManager);
       
-      private const _objectProcessor:robotlegs.bender.framework.impl.ObjectProcessor = new robotlegs.bender.framework.impl.ObjectProcessor();
+      private const _objectProcessor:ObjectProcessor = new ObjectProcessor();
       
       private const _configs:Dictionary = new Dictionary();
       

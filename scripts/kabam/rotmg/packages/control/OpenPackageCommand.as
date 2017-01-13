@@ -1,10 +1,10 @@
 package kabam.rotmg.packages.control
 {
-   import robotlegs.bender.bundles.mvcs.Command;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.packages.services.PackageModel;
    import kabam.rotmg.packages.model.PackageInfo;
+   import kabam.rotmg.packages.services.PackageModel;
    import kabam.rotmg.packages.view.PackageOfferDialog;
+   import robotlegs.bender.bundles.mvcs.Command;
    
    public class OpenPackageCommand extends Command
    {
@@ -20,7 +20,7 @@ package kabam.rotmg.packages.control
       public var packageId:int;
       
       [Inject]
-      public var alreadyBoughtPackage:kabam.rotmg.packages.control.AlreadyBoughtPackageSignal;
+      public var alreadyBoughtPackage:AlreadyBoughtPackageSignal;
       
       public function OpenPackageCommand()
       {

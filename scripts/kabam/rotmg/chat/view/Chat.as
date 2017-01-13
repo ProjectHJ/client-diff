@@ -7,11 +7,11 @@ package kabam.rotmg.chat.view
    {
        
       
-      public var list:kabam.rotmg.chat.view.ChatList;
+      public var list:ChatList;
       
-      private var input:kabam.rotmg.chat.view.ChatInput;
+      private var input:ChatInput;
       
-      private var notAllowed:kabam.rotmg.chat.view.ChatInputNotAllowed;
+      private var notAllowed:ChatInputNotAllowed;
       
       private var model:ChatModel;
       
@@ -20,7 +20,7 @@ package kabam.rotmg.chat.view
          super();
          mouseEnabled = true;
          mouseChildren = true;
-         this.list = new kabam.rotmg.chat.view.ChatList();
+         this.list = new ChatList();
          addChild(this.list);
       }
       
@@ -41,13 +41,13 @@ package kabam.rotmg.chat.view
       
       private function addChatInput() : void
       {
-         this.input = new kabam.rotmg.chat.view.ChatInput();
+         this.input = new ChatInput();
          addChild(this.input);
       }
       
       private function addInputNotAllowed() : void
       {
-         this.notAllowed = new kabam.rotmg.chat.view.ChatInputNotAllowed();
+         this.notAllowed = new ChatInputNotAllowed();
          addChild(this.notAllowed);
          this.list.y = this.model.bounds.height - this.model.lineHeight;
       }

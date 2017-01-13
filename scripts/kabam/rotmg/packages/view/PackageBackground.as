@@ -1,7 +1,7 @@
 package kabam.rotmg.packages.view
 {
-   import flash.display.Sprite;
    import flash.display.DisplayObject;
+   import flash.display.Sprite;
    
    public class PackageBackground extends Sprite
    {

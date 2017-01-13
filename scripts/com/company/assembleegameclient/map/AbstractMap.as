@@ -1,16 +1,16 @@
 package com.company.assembleegameclient.map
 {
-   import flash.display.Sprite;
-   import flash.utils.Dictionary;
-   import com.company.assembleegameclient.game.AGameSprite;
-   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.background.Background;
+   import com.company.assembleegameclient.game.AGameSprite;
    import com.company.assembleegameclient.map.mapoverlay.MapOverlay;
    import com.company.assembleegameclient.map.partyoverlay.PartyOverlay;
-   import com.company.assembleegameclient.objects.Party;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.objects.BasicObject;
+   import com.company.assembleegameclient.objects.Party;
+   import com.company.assembleegameclient.objects.Player;
+   import flash.display.Sprite;
    import flash.geom.Point;
+   import flash.utils.Dictionary;
+   import org.osflash.signals.Signal;
    
    public class AbstractMap extends Sprite
    {
@@ -38,17 +38,17 @@ package com.company.assembleegameclient.map
       
       public var map_:Sprite;
       
-      public var hurtOverlay_:com.company.assembleegameclient.map.HurtOverlay = null;
+      public var hurtOverlay_:HurtOverlay = null;
       
-      public var gradientOverlay_:com.company.assembleegameclient.map.GradientOverlay = null;
+      public var gradientOverlay_:GradientOverlay = null;
       
       public var mapOverlay_:MapOverlay = null;
       
       public var partyOverlay_:PartyOverlay = null;
       
-      public var squareList_:Vector.<com.company.assembleegameclient.map.Square>;
+      public var squareList_:Vector.<Square#55>;
       
-      public var squares_:Vector.<com.company.assembleegameclient.map.Square>;
+      public var squares_:Vector.<Square#55>;
       
       public var boDict_:Dictionary;
       
@@ -56,7 +56,7 @@ package com.company.assembleegameclient.map
       
       public var party_:Party = null;
       
-      public var quest_:com.company.assembleegameclient.map.Quest = null;
+      public var quest_:Quest = null;
       
       public var signalRenderSwitch:Signal;
       
@@ -68,8 +68,8 @@ package com.company.assembleegameclient.map
       {
          this.goDict_ = new Dictionary();
          this.map_ = new Sprite();
-         this.squareList_ = new Vector.<com.company.assembleegameclient.map.Square>();
-         this.squares_ = new Vector.<com.company.assembleegameclient.map.Square>();
+         this.squareList_ = new Vector.<Square#55>();
+         this.squares_ = new Vector.<Square#55>();
          this.boDict_ = new Dictionary();
          this.merchLookup_ = new Object();
          this.signalRenderSwitch = new Signal(Boolean);

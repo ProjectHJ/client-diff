@@ -4,17 +4,17 @@ package com.company.assembleegameclient.editor
    {
        
       
-      private var list_:Vector.<com.company.assembleegameclient.editor.CommandList>;
+      private var list_:Vector.<CommandList>;
       
       private var currPos:int = 0;
       
       public function CommandQueue()
       {
-         this.list_ = new Vector.<com.company.assembleegameclient.editor.CommandList>();
+         this.list_ = new Vector.<CommandList>();
          super();
       }
       
-      public function addCommandList(param1:com.company.assembleegameclient.editor.CommandList) : void
+      public function addCommandList(param1:CommandList) : void
       {
          this.list_.length = this.currPos;
          param1.execute();

@@ -17,11 +17,11 @@ package kabam.rotmg.news.view
       
       private const SPACER:Number = 4;
       
-      private const cellOne:kabam.rotmg.news.view.NewsCell = new kabam.rotmg.news.view.NewsCell(this.LARGE_CELL_WIDTH,this.LARGE_CELL_HEIGHT);
+      private const cellOne:NewsCell = new NewsCell(this.LARGE_CELL_WIDTH,this.LARGE_CELL_HEIGHT);
       
-      private const cellTwo:kabam.rotmg.news.view.NewsCell = new kabam.rotmg.news.view.NewsCell(this.SMALL_CELL_WIDTH,this.SMALL_CELL_HEIGHT);
+      private const cellTwo:NewsCell = new NewsCell(this.SMALL_CELL_WIDTH,this.SMALL_CELL_HEIGHT);
       
-      private const cellThree:kabam.rotmg.news.view.NewsCell = new kabam.rotmg.news.view.NewsCell(this.SMALL_CELL_WIDTH,this.SMALL_CELL_HEIGHT);
+      private const cellThree:NewsCell = new NewsCell(this.SMALL_CELL_WIDTH,this.SMALL_CELL_HEIGHT);
       
       public function NewsView()
       {

@@ -1,15 +1,15 @@
 package robotlegs.bender.extensions.viewManager.impl
 {
-   import flash.events.EventDispatcher;
-   import flash.display.DisplayObjectContainer;
-   import robotlegs.bender.extensions.viewManager.api.IViewHandler;
    import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.events.EventDispatcher;
+   import robotlegs.bender.extensions.viewManager.api.IViewHandler;
    
    public class ContainerBinding extends EventDispatcher
    {
        
       
-      private var _parent:robotlegs.bender.extensions.viewManager.impl.ContainerBinding;
+      private var _parent:ContainerBinding;
       
       private var _container:DisplayObjectContainer;
       
@@ -21,12 +21,12 @@ package robotlegs.bender.extensions.viewManager.impl
          this._container = param1;
       }
       
-      public function get parent() : robotlegs.bender.extensions.viewManager.impl.ContainerBinding
+      public function get parent() : ContainerBinding
       {
          return this._parent;
       }
       
-      public function set parent(param1:robotlegs.bender.extensions.viewManager.impl.ContainerBinding) : void
+      public function set parent(param1:ContainerBinding) : void
       {
          this._parent = param1;
       }

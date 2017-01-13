@@ -1,10 +1,10 @@
 package kabam.rotmg.pets.view.components
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import flash.display.Shape;
    import com.gskinner.motion.GTween;
+   import flash.display.Shape;
+   import flash.display.Sprite;
    import flash.geom.ColorTransform;
+   import org.osflash.signals.Signal;
    
    public class AnimatedAbilityBar extends Sprite
    {

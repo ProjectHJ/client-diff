@@ -1,12 +1,12 @@
 package robotlegs.bender.extensions.signalCommandMap.impl
 {
-   import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
    import flash.utils.Dictionary;
    import org.swiftsuspenders.Injector;
    import robotlegs.bender.extensions.commandCenter.api.ICommandCenter;
-   import robotlegs.bender.extensions.commandCenter.dsl.ICommandMapper;
    import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
+   import robotlegs.bender.extensions.commandCenter.dsl.ICommandMapper;
    import robotlegs.bender.extensions.commandCenter.dsl.ICommandUnmapper;
+   import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
    
    public class SignalCommandMap implements ISignalCommandMap
    {

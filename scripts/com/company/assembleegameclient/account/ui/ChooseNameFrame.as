@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.account.ui
 {
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.game.AGameSprite;
    import flash.events.MouseEvent;
    import kabam.rotmg.text.model.TextKey;
+   import org.osflash.signals.Signal;
    
    public class ChooseNameFrame extends Frame
    {
@@ -17,14 +17,14 @@ package com.company.assembleegameclient.account.ui
       
       public var isPurchase:Boolean;
       
-      private var nameInput:com.company.assembleegameclient.account.ui.TextInputField;
+      private var nameInput:TextInputField;
       
       public function ChooseNameFrame(param1:AGameSprite, param2:Boolean)
       {
          super(TextKey.CHOOSE_NAME_TITLE,TextKey.FRAME_CANCEL,TextKey.CHOOSE_NAME_CHOOSE,"/chooseName");
          this.gameSprite = param1;
          this.isPurchase = param2;
-         this.nameInput = new com.company.assembleegameclient.account.ui.TextInputField(TextKey.CHOOSE_NAME_NAME,false);
+         this.nameInput = new TextInputField(TextKey.CHOOSE_NAME_NAME,false);
          this.nameInput.inputText_.restrict = "A-Za-z";
          var _loc3_:int = 10;
          this.nameInput.inputText_.maxChars = _loc3_;

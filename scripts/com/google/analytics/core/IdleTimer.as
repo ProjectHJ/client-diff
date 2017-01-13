@@ -1,14 +1,14 @@
 package com.google.analytics.core
 {
-   import flash.display.Stage;
-   import flash.utils.Timer;
-   import flash.events.MouseEvent;
-   import flash.utils.getTimer;
-   import com.google.analytics.debug.VisualDebugMode;
    import com.google.analytics.debug.DebugConfiguration;
-   import flash.events.TimerEvent;
+   import com.google.analytics.debug.VisualDebugMode;
    import com.google.analytics.v4.Configuration;
    import flash.display.DisplayObject;
+   import flash.display.Stage;
+   import flash.events.MouseEvent;
+   import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import flash.utils.getTimer;
    
    public class IdleTimer
    {
@@ -26,9 +26,9 @@ package com.google.analytics.core
       
       private var _session:Timer;
       
-      private var _buffer:com.google.analytics.core.Buffer;
+      private var _buffer:Buffer;
       
-      public function IdleTimer(param1:Configuration, param2:DebugConfiguration, param3:DisplayObject, param4:com.google.analytics.core.Buffer)
+      public function IdleTimer(param1:Configuration, param2:DebugConfiguration, param3:DisplayObject, param4:Buffer)
       {
          super();
          var _loc5_:Number = param1.idleLoop;

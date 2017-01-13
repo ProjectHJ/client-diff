@@ -1,7 +1,7 @@
 package kabam.rotmg.account.core.signals
 {
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.util.offer.Offer;
+   import org.osflash.signals.Signal;
    
    public class PurchaseGoldSignal extends Signal
    {

@@ -1,9 +1,9 @@
 package kabam.rotmg.dialogs.view
 {
-   import flash.display.Sprite;
-   import flash.display.DisplayObjectContainer;
    import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
    import flash.display.Graphics;
+   import flash.display.Sprite;
    import flash.events.Event;
    
    public class DialogsView extends Sprite

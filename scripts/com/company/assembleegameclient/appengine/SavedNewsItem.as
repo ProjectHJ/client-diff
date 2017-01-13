@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.appengine
 {
-   import flash.display.BitmapData;
-   import com.company.util.AssetLibrary;
    import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.util.AssetLibrary;
+   import flash.display.BitmapData;
    
    public class SavedNewsItem
    {

@@ -1,10 +1,10 @@
 package kabam.rotmg.characters.deletion.view
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.ui.dialogs.Dialog;
-   import kabam.rotmg.text.model.TextKey;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import kabam.rotmg.text.model.TextKey;
+   import org.osflash.signals.Signal;
    
    public class ConfirmDeleteCharacterDialog extends Sprite
    {

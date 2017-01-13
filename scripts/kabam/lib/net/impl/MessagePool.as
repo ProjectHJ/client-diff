@@ -10,7 +10,7 @@ package kabam.lib.net.impl
       
       public var id:int;
       
-      private var tail:kabam.lib.net.impl.Message;
+      private var tail:Message;
       
       private var count:int = 0;
       
@@ -24,7 +24,7 @@ package kabam.lib.net.impl
       
       public function populate(param1:int) : MessagePool
       {
-         var _loc2_:kabam.lib.net.impl.Message = null;
+         var _loc2_:Message = null;
          this.count = this.count + param1;
          while(param1--)
          {
@@ -37,9 +37,9 @@ package kabam.lib.net.impl
          return this;
       }
       
-      public function require() : kabam.lib.net.impl.Message
+      public function require() : Message
       {
-         var _loc1_:kabam.lib.net.impl.Message = this.tail;
+         var _loc1_:Message = this.tail;
          if(_loc1_)
          {
             this.tail = this.tail.prev;
@@ -60,7 +60,7 @@ package kabam.lib.net.impl
          return this.count;
       }
       
-      function append(param1:kabam.lib.net.impl.Message) : void
+      function append(param1:Message) : void
       {
          this.tail && (this.tail.next = param1);
          param1.prev = this.tail;

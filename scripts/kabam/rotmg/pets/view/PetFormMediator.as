@@ -1,21 +1,21 @@
 package kabam.rotmg.pets.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.pets.data.PetFormModel;
    import kabam.rotmg.pets.controller.reskin.ReskinPetRequestSignal;
    import kabam.rotmg.pets.controller.reskin.UpdateSelectedPetForm;
-   import kabam.rotmg.pets.data.PetsModel;
-   import kabam.rotmg.pets.view.dialogs.PetPicker;
+   import kabam.rotmg.pets.data.PetFormModel;
    import kabam.rotmg.pets.data.PetVO;
-   import kabam.rotmg.pets.data.ReskinViewState;
+   import kabam.rotmg.pets.data.PetsModel;
    import kabam.rotmg.pets.data.ReskinPetVO;
+   import kabam.rotmg.pets.data.ReskinViewState;
+   import kabam.rotmg.pets.view.dialogs.PetPicker;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PetFormMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.PetFormView;
+      public var view:PetFormView;
       
       [Inject]
       public var petFormModel:PetFormModel;
@@ -32,11 +32,11 @@ package kabam.rotmg.pets.view
       [Inject]
       public var picker:PetPicker;
       
-      private var skinGroups:Vector.<kabam.rotmg.pets.view.PetSkinGroup>;
+      private var skinGroups:Vector.<PetSkinGroup>;
       
       public function PetFormMediator()
       {
-         this.skinGroups = new Vector.<kabam.rotmg.pets.view.PetSkinGroup>();
+         this.skinGroups = new Vector.<PetSkinGroup>();
          super();
       }
       
@@ -70,7 +70,7 @@ package kabam.rotmg.pets.view
       
       private function createPetSkinGroup(param1:uint) : void
       {
-         var _loc2_:kabam.rotmg.pets.view.PetSkinGroup = new kabam.rotmg.pets.view.PetSkinGroup(param1);
+         var _loc2_:PetSkinGroup = new PetSkinGroup(param1);
          _loc2_.skinSelected.add(this.onPetReskinSelected);
          this.skinGroups.push(_loc2_);
       }

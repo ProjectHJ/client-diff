@@ -1,9 +1,9 @@
 package kabam.rotmg.minimap.view
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.map.AbstractMap;
-   import flash.display.DisplayObjectContainer;
    import com.company.assembleegameclient.objects.GameObject;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.Sprite;
    
    public class MiniMap extends Sprite
    {

@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.outgoing.arena
 {
-   import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
    import flash.utils.IDataOutput;
+   import kabam.rotmg.messaging.impl.outgoing.OutgoingMessage;
    
    public class EnterArena extends OutgoingMessage
    {

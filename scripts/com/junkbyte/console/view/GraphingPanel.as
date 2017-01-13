@@ -1,12 +1,12 @@
 package com.junkbyte.console.view
 {
+   import com.junkbyte.console.Console;
    import com.junkbyte.console.vos.GraphGroup;
    import com.junkbyte.console.vos.GraphInterest;
-   import flash.display.Shape;
-   import flash.text.TextField;
    import flash.display.Graphics;
+   import flash.display.Shape;
    import flash.events.TextEvent;
-   import com.junkbyte.console.Console;
+   import flash.text.TextField;
    import flash.text.TextFormat;
    
    public class GraphingPanel extends ConsolePanel

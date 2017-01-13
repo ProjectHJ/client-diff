@@ -1,35 +1,35 @@
 package kabam.rotmg.pets.view.dialogs
 {
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.pets.data.PetVO;
    import flash.display.DisplayObject;
    import flash.events.MouseEvent;
+   import kabam.rotmg.pets.data.PetVO;
+   import org.osflash.signals.Signal;
    
    public class PetPicker extends GridList implements ClearsPetSlots
    {
        
       
       [Inject]
-      public var petIconFactory:kabam.rotmg.pets.view.dialogs.PetItemFactory;
+      public var petIconFactory:PetItemFactory;
       
       public var petPicked:Signal;
       
-      private var petItems:Vector.<kabam.rotmg.pets.view.dialogs.PetItem>;
+      private var petItems:Vector.<PetItem>;
       
       private var petSize:int;
       
-      private var items:Vector.<kabam.rotmg.pets.view.dialogs.PetItem>;
+      private var items:Vector.<PetItem>;
       
       public var doDisableUsed:Boolean = true;
       
       public function PetPicker()
       {
          this.petPicked = new PetVOSignal();
-         this.items = new Vector.<kabam.rotmg.pets.view.dialogs.PetItem>();
+         this.items = new Vector.<PetItem>();
          super();
       }
       
-      private static function sortByFirstAbilityPoints(param1:kabam.rotmg.pets.view.dialogs.PetItem, param2:kabam.rotmg.pets.view.dialogs.PetItem) : int
+      private static function sortByFirstAbilityPoints(param1:PetItem, param2:PetItem) : int
       {
          var _loc3_:int = param1.getPetVO().abilityList[0].points;
          var _loc4_:int = param2.getPetVO().abilityList[0].points;
@@ -46,7 +46,7 @@ package kabam.rotmg.pets.view.dialogs
       
       private function addToGridList() : void
       {
-         var _loc1_:kabam.rotmg.pets.view.dialogs.PetItem = null;
+         var _loc1_:PetItem = null;
          for each(_loc1_ in this.petItems)
          {
             this.items.push(_loc1_);
@@ -56,7 +56,7 @@ package kabam.rotmg.pets.view.dialogs
       private function makePetItems(param1:Vector.<PetVO>) : void
       {
          var _loc2_:PetVO = null;
-         this.petItems = new Vector.<kabam.rotmg.pets.view.dialogs.PetItem>();
+         this.petItems = new Vector.<PetItem>();
          for each(_loc2_ in param1)
          {
             this.addPet(_loc2_);
@@ -66,10 +66,10 @@ package kabam.rotmg.pets.view.dialogs
       
       private function setCorners() : void
       {
-         this.setPetItemState(getTopLeft(),kabam.rotmg.pets.view.dialogs.PetItem.TOP_LEFT);
-         this.setPetItemState(getTopRight(),kabam.rotmg.pets.view.dialogs.PetItem.TOP_RIGHT);
-         this.setPetItemState(getBottomLeft(),kabam.rotmg.pets.view.dialogs.PetItem.BOTTOM_LEFT);
-         this.setPetItemState(getBottomRight(),kabam.rotmg.pets.view.dialogs.PetItem.BOTTOM_RIGHT);
+         this.setPetItemState(getTopLeft(),PetItem.TOP_LEFT);
+         this.setPetItemState(getTopRight(),PetItem.TOP_RIGHT);
+         this.setPetItemState(getBottomLeft(),PetItem.BOTTOM_LEFT);
+         this.setPetItemState(getBottomRight(),PetItem.BOTTOM_RIGHT);
       }
       
       private function setPetItemState(param1:DisplayObject, param2:String) : void
@@ -85,12 +85,12 @@ package kabam.rotmg.pets.view.dialogs
          this.petSize = param1;
       }
       
-      public function getPets() : Vector.<kabam.rotmg.pets.view.dialogs.PetItem>
+      public function getPets() : Vector.<PetItem>
       {
          return this.petItems;
       }
       
-      public function getPet(param1:int) : kabam.rotmg.pets.view.dialogs.PetItem
+      public function getPet(param1:int) : PetItem
       {
          return this.petItems[param1];
       }

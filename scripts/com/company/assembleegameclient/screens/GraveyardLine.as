@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.screens
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import flash.display.Bitmap;
    import com.company.ui.BaseSimpleText;
-   import flash.events.MouseEvent;
-   import flash.net.navigateToURL;
-   import flash.net.URLRequest;
+   import flash.display.Bitmap;
    import flash.display.BitmapData;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import flash.net.URLRequest;
+   import flash.net.navigateToURL;
+   import org.osflash.signals.Signal;
    
    public class GraveyardLine extends Sprite
    {

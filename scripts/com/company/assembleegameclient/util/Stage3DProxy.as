@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.util
 {
-   import flash.events.IEventDispatcher;
-   import kabam.rotmg.stage3D.proxies.Context3DProxy;
    import flash.display.Stage3D;
    import flash.events.Event;
+   import flash.events.IEventDispatcher;
+   import kabam.rotmg.stage3D.proxies.Context3DProxy;
    
    public class Stage3DProxy implements IEventDispatcher
    {

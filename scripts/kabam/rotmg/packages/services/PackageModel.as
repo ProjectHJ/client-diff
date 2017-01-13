@@ -1,7 +1,7 @@
 package kabam.rotmg.packages.services
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.packages.model.PackageInfo;
+   import org.osflash.signals.Signal;
    
    public class PackageModel
    {

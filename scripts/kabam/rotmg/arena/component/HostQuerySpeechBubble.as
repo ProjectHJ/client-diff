@@ -1,13 +1,13 @@
 package kabam.rotmg.arena.component
 {
-   import flash.display.Sprite;
    import flash.display.Shape;
-   import kabam.rotmg.util.graphics.GraphicsHelper;
-   import kabam.rotmg.util.graphics.BevelRect;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import flash.display.Sprite;
    import flash.text.TextFieldAutoSize;
    import flashx.textLayout.formats.VerticalAlign;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.util.graphics.BevelRect;
+   import kabam.rotmg.util.graphics.GraphicsHelper;
    
    public class HostQuerySpeechBubble extends Sprite
    {

@@ -1,10 +1,10 @@
 package kabam.rotmg.packages.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.packages.services.GetPackagesTask;
-   import kabam.rotmg.packages.services.PackageModel;
    import kabam.rotmg.packages.control.OpenPackageSignal;
    import kabam.rotmg.packages.model.PackageInfo;
+   import kabam.rotmg.packages.services.GetPackagesTask;
+   import kabam.rotmg.packages.services.PackageModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PackageButtonMediator extends Mediator
    {
@@ -14,7 +14,7 @@ package kabam.rotmg.packages.view
       public var getPackageTask:GetPackagesTask;
       
       [Inject]
-      public var view:kabam.rotmg.packages.view.PackageButton;
+      public var view:PackageButton;
       
       [Inject]
       public var packageModel:PackageModel;

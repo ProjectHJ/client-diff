@@ -1,23 +1,23 @@
 package kabam.rotmg.game.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.ui.signals.UpdateHUDSignal;
-   import kabam.rotmg.ui.view.StatsDockedSignal;
    import com.company.assembleegameclient.objects.Player;
    import flash.events.MouseEvent;
+   import kabam.rotmg.ui.signals.UpdateHUDSignal;
+   import kabam.rotmg.ui.view.StatsDockedSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class StatsMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.game.view.components.StatsView;
+      public var view:StatsView;
       
       [Inject]
       public var updateHUD:UpdateHUDSignal;
       
       [Inject]
-      public var statsUndocked:kabam.rotmg.game.view.components.StatsUndockedSignal;
+      public var statsUndocked:StatsUndockedSignal;
       
       [Inject]
       public var statsDocked:StatsDockedSignal;
@@ -47,7 +47,7 @@ package kabam.rotmg.game.view.components
       
       private function onStatsDrag(param1:MouseEvent) : void
       {
-         if(this.view.currentState == kabam.rotmg.game.view.components.StatsView.STATE_DOCKED)
+         if(this.view.currentState == StatsView.STATE_DOCKED)
          {
             this.view.undock();
             this.statsUndocked.dispatch(this.view);

@@ -1,7 +1,7 @@
 package kabam.rotmg.ui.commands
 {
-   import kabam.rotmg.ui.view.KeysView;
    import flash.display.DisplayObjectContainer;
+   import kabam.rotmg.ui.view.KeysView;
    
    public class ShowHideKeyUICommand
    {

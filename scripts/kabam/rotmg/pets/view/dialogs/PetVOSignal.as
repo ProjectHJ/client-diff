@@ -1,7 +1,7 @@
 package kabam.rotmg.pets.view.dialogs
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.pets.data.PetVO;
+   import org.osflash.signals.Signal;
    
    public class PetVOSignal extends Signal
    {

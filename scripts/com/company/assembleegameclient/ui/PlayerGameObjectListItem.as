@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.ui
 {
-   import kabam.rotmg.tooltips.TooltipAble;
-   import kabam.rotmg.tooltips.HoverTooltipDelegate;
+   import com.company.assembleegameclient.objects.GameObject;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.ui.tooltip.PlayerToolTip;
+   import com.company.util.MoreColorUtil;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.MouseEvent;
-   import com.company.assembleegameclient.ui.tooltip.PlayerToolTip;
-   import com.company.assembleegameclient.objects.Player;
-   import flash.display.Sprite;
-   import com.company.assembleegameclient.objects.GameObject;
    import flash.geom.ColorTransform;
-   import com.company.util.MoreColorUtil;
-   import kabam.rotmg.core.signals.ShowTooltipSignal;
    import kabam.rotmg.core.signals.HideTooltipsSignal;
+   import kabam.rotmg.core.signals.ShowTooltipSignal;
+   import kabam.rotmg.tooltips.HoverTooltipDelegate;
+   import kabam.rotmg.tooltips.TooltipAble;
    
    public class PlayerGameObjectListItem extends GameObjectListItem implements TooltipAble
    {

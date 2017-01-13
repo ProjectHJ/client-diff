@@ -7,9 +7,9 @@ package org.swiftsuspenders.typedescriptions
    {
        
       
-      public var next:org.swiftsuspenders.typedescriptions.InjectionPoint;
+      public var next:InjectionPoint;
       
-      public var last:org.swiftsuspenders.typedescriptions.InjectionPoint;
+      public var last:InjectionPoint;
       
       public var injectParameters:Dictionary;
       

@@ -1,29 +1,29 @@
 package com.company.assembleegameclient.ui
 {
-   import kabam.rotmg.tooltips.TooltipAble;
-   import flash.geom.Matrix;
-   import kabam.rotmg.tooltips.HoverTooltipDelegate;
-   import flash.display.Shape;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
-   import kabam.rotmg.text.view.BitmapTextFactory;
+   import com.company.assembleegameclient.constants.InventoryOwnerTypes;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.util.GraphicsUtil;
+   import com.company.util.MoreColorUtil;
+   import com.company.util.SpriteUtil;
    import flash.display.Bitmap;
    import flash.display.BitmapData;
-   import com.company.util.SpriteUtil;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.geom.Point;
-   import com.company.util.GraphicsUtil;
-   import kabam.rotmg.core.signals.ShowTooltipSignal;
-   import kabam.rotmg.core.signals.HideTooltipsSignal;
-   import com.company.assembleegameclient.objects.Player;
-   import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-   import flash.display.LineScaleMode;
    import flash.display.CapsStyle;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.GraphicsStroke;
+   import flash.display.IGraphicsData;
    import flash.display.JointStyle;
-   import com.company.util.MoreColorUtil;
+   import flash.display.LineScaleMode;
+   import flash.display.Shape;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import kabam.rotmg.core.signals.HideTooltipsSignal;
+   import kabam.rotmg.core.signals.ShowTooltipSignal;
+   import kabam.rotmg.text.view.BitmapTextFactory;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.tooltips.HoverTooltipDelegate;
+   import kabam.rotmg.tooltips.TooltipAble;
    
    public class TradeSlot extends Slot implements TooltipAble
    {
@@ -37,7 +37,7 @@ package com.company.assembleegameclient.ui
       
       public var included_:Boolean;
       
-      public var equipmentToolTipFactory:com.company.assembleegameclient.ui.EquipmentToolTipFactory;
+      public var equipmentToolTipFactory:EquipmentToolTipFactory;
       
       public const hoverTooltipDelegate:HoverTooltipDelegate = new HoverTooltipDelegate();
       
@@ -59,7 +59,7 @@ package com.company.assembleegameclient.ui
       
       public function TradeSlot(param1:int, param2:Boolean, param3:Boolean, param4:int, param5:int, param6:Array, param7:uint)
       {
-         this.equipmentToolTipFactory = new com.company.assembleegameclient.ui.EquipmentToolTipFactory();
+         this.equipmentToolTipFactory = new EquipmentToolTipFactory();
          this.overlayFill_ = new GraphicsSolidFill(16711310,1);
          this.lineStyle_ = new GraphicsStroke(2,false,LineScaleMode.NORMAL,CapsStyle.NONE,JointStyle.ROUND,3,this.overlayFill_);
          this.overlayPath_ = new GraphicsPath(new Vector.<int>(),new Vector.<Number>());

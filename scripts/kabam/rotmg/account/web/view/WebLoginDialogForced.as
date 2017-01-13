@@ -1,20 +1,20 @@
 package kabam.rotmg.account.web.view
 {
    import com.company.assembleegameclient.account.ui.Frame;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.account.ui.TextInputField;
    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.events.MouseEvent;
-   import flash.events.KeyboardEvent;
-   import flash.events.Event;
    import com.company.util.KeyCodes;
-   import kabam.rotmg.account.web.model.AccountData;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormatAlign;
-   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.account.web.model.AccountData;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeMappedSignal;
    
    public class WebLoginDialogForced extends Frame

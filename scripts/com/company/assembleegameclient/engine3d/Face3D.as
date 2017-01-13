@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.engine3d
 {
-   import flash.display.GraphicsSolidFill;
+   import com.company.assembleegameclient.map.Camera;
+   import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.util.GraphicsUtil;
+   import com.company.util.Triangle;
    import flash.display.BitmapData;
    import flash.display.GraphicsBitmapFill;
    import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
-   import com.company.assembleegameclient.map.Camera;
-   import flash.geom.Utils3D;
-   import com.company.util.GraphicsUtil;
-   import com.company.util.Triangle;
-   import com.company.assembleegameclient.util.TextureRedrawer;
-   import flash.geom.Vector3D;
    import flash.display.GraphicsPathCommand;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.geom.Utils3D;
+   import flash.geom.Vector3D;
    
    public class Face3D
    {
@@ -35,7 +35,7 @@ package com.company.assembleegameclient.engine3d
       
       private var needGen_:Boolean = true;
       
-      private var textureMatrix_:com.company.assembleegameclient.engine3d.TextureMatrix = null;
+      private var textureMatrix_:TextureMatrix = null;
       
       public var bitmapFill_:GraphicsBitmapFill;
       
@@ -193,7 +193,7 @@ package com.company.assembleegameclient.engine3d
          var _loc1_:BitmapData = TextureRedrawer.redrawFace(this.origTexture_,this.shade_);
          if(this.textureMatrix_ == null)
          {
-            this.textureMatrix_ = new com.company.assembleegameclient.engine3d.TextureMatrix(_loc1_,this.uvt_);
+            this.textureMatrix_ = new TextureMatrix(_loc1_,this.uvt_);
          }
          else
          {

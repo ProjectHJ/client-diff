@@ -1,10 +1,10 @@
 package kabam.rotmg.promotions.model
 {
+   import com.company.assembleegameclient.util.TimeUtil;
+   import com.company.assembleegameclient.util.offer.Offer;
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.account.core.model.OfferModel;
    import org.osflash.signals.Signal;
-   import com.company.assembleegameclient.util.TimeUtil;
-   import com.company.assembleegameclient.util.offer.Offer;
    
    public class BeginnersPackageModel
    {

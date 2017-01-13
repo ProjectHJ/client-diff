@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.text.view.BitmapTextFactory;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class ItemTileSpriteMediator extends Mediator
    {
@@ -11,7 +11,7 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
       public var bitmapFactor:BitmapTextFactory;
       
       [Inject]
-      public var view:com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.ItemTileSprite;
+      public var view:ItemTileSprite;
       
       public function ItemTileSpriteMediator()
       {

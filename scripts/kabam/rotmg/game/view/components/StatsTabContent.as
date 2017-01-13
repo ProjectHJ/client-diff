@@ -7,11 +7,11 @@ package kabam.rotmg.game.view.components
    {
        
       
-      private var stats:kabam.rotmg.game.view.components.StatsView;
+      private var stats:StatsView;
       
       public function StatsTabContent(param1:uint)
       {
-         this.stats = new kabam.rotmg.game.view.components.StatsView();
+         this.stats = new StatsView();
          super();
          this.init();
          this.positionChildren(param1);

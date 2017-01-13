@@ -6,7 +6,7 @@ package com.hurlant.crypto.hash
    {
        
       
-      private var hash:com.hurlant.crypto.hash.IHash;
+      private var hash:IHash;
       
       private var bits:uint;
       
@@ -22,7 +22,7 @@ package com.hurlant.crypto.hash
       
       private var innerKey:ByteArray;
       
-      public function MAC(param1:com.hurlant.crypto.hash.IHash, param2:uint = 0)
+      public function MAC(param1:IHash, param2:uint = 0)
       {
          var _loc3_:int = 0;
          var _loc4_:int = 0;

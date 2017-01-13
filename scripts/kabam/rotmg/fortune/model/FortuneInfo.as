@@ -1,11 +1,11 @@
 package kabam.rotmg.fortune.model
 {
+   import flash.display.DisplayObject;
    import flash.events.Event;
    import flash.events.IOErrorEvent;
    import flash.net.URLRequest;
-   import flash.display.DisplayObject;
-   import kabam.display.Loader.LoaderProxy;
    import flash.utils.Dictionary;
+   import kabam.display.Loader.LoaderProxy;
    import kabam.display.Loader.LoaderProxyConcrete;
    
    public class FortuneInfo

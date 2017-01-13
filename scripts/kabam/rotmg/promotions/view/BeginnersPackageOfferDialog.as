@@ -1,12 +1,12 @@
 package kabam.rotmg.promotions.view
 {
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import org.osflash.signals.natives.NativeMappedSignal;
    import flash.events.MouseEvent;
    import kabam.rotmg.promotions.view.components.TransparentButton;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeMappedSignal;
    
    public class BeginnersPackageOfferDialog extends Sprite
    {

@@ -1,13 +1,13 @@
 package kabam.rotmg.text.view
 {
    import flash.display.Sprite;
-   import flash.text.TextLineMetrics;
-   import org.osflash.signals.Signal;
    import flash.text.TextField;
-   import kabam.rotmg.language.model.StringMap;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import kabam.rotmg.text.model.FontInfo;
    import flash.text.TextFormat;
+   import flash.text.TextLineMetrics;
+   import kabam.rotmg.language.model.StringMap;
+   import kabam.rotmg.text.model.FontInfo;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+   import org.osflash.signals.Signal;
    
    public class TextFieldDisplayConcrete extends Sprite implements TextFieldDisplay
    {

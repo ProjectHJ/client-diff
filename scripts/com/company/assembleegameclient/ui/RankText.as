@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.filters.DropShadowFilter;
    import com.company.assembleegameclient.util.FameUtil;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import flash.display.Sprite;
+   import flash.filters.DropShadowFilter;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
    
    public class RankText extends Sprite
    {

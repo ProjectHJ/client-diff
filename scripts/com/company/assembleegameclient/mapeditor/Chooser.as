@@ -1,18 +1,18 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.ui.Scrollbar;
-   import flash.display.Shape;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
+   import com.company.util.GraphicsUtil;
+   import flash.display.CapsStyle;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import com.company.util.GraphicsUtil;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    
    class Chooser extends Sprite
    {
@@ -26,7 +26,7 @@ package com.company.assembleegameclient.mapeditor
       
       public var layer_:int;
       
-      public var selected_:com.company.assembleegameclient.mapeditor.Element;
+      public var selected_:Element;
       
       protected var elementSprite_:Sprite;
       
@@ -34,7 +34,7 @@ package com.company.assembleegameclient.mapeditor
       
       private var mask_:Shape;
       
-      private var elements_:Vector.<com.company.assembleegameclient.mapeditor.Element>;
+      private var elements_:Vector.<Element>;
       
       private var outlineFill_:GraphicsSolidFill;
       
@@ -48,7 +48,7 @@ package com.company.assembleegameclient.mapeditor
       
       function Chooser(param1:int)
       {
-         this.elements_ = new Vector.<com.company.assembleegameclient.mapeditor.Element>();
+         this.elements_ = new Vector.<Element>();
          this.outlineFill_ = new GraphicsSolidFill(16777215,1);
          this.lineStyle_ = new GraphicsStroke(1,false,LineScaleMode.NORMAL,CapsStyle.NONE,JointStyle.ROUND,3,this.outlineFill_);
          this.backgroundFill_ = new GraphicsSolidFill(3552822,1);
@@ -80,7 +80,7 @@ package com.company.assembleegameclient.mapeditor
       
       public function setSelectedType(param1:int) : void
       {
-         var _loc2_:com.company.assembleegameclient.mapeditor.Element = null;
+         var _loc2_:Element = null;
          for each(_loc2_ in this.elements_)
          {
             if(_loc2_.type_ == param1)
@@ -91,12 +91,12 @@ package com.company.assembleegameclient.mapeditor
          }
       }
       
-      protected function addElement(param1:com.company.assembleegameclient.mapeditor.Element) : void
+      protected function addElement(param1:Element) : void
       {
          var _loc2_:int = 0;
          _loc2_ = this.elements_.length;
-         param1.x = _loc2_ % 2 == 0?Number(0):Number(2 + com.company.assembleegameclient.mapeditor.Element.WIDTH);
-         param1.y = int(_loc2_ / 2) * com.company.assembleegameclient.mapeditor.Element.HEIGHT + 6;
+         param1.x = _loc2_ % 2 == 0?Number(0):Number(2 + Element.WIDTH);
+         param1.y = int(_loc2_ / 2) * Element.HEIGHT + 6;
          this.elementSprite_.addChild(param1);
          if(_loc2_ == 0)
          {
@@ -108,7 +108,7 @@ package com.company.assembleegameclient.mapeditor
       
       protected function removeElements() : void
       {
-         this.elements_ = new Vector.<com.company.assembleegameclient.mapeditor.Element>();
+         this.elements_ = new Vector.<Element>();
          removeChild(this.elementSprite_);
          this.elementSprite_ = new Sprite();
          this.elementSprite_.x = 4;
@@ -123,11 +123,11 @@ package com.company.assembleegameclient.mapeditor
       
       protected function onMouseDown(param1:MouseEvent) : void
       {
-         var _loc2_:com.company.assembleegameclient.mapeditor.Element = param1.currentTarget as com.company.assembleegameclient.mapeditor.Element;
+         var _loc2_:Element = param1.currentTarget as Element;
          this.setSelected(_loc2_);
       }
       
-      protected function setSelected(param1:com.company.assembleegameclient.mapeditor.Element) : void
+      protected function setSelected(param1:Element) : void
       {
          if(this.selected_ != null)
          {

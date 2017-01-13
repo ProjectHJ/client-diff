@@ -1,8 +1,8 @@
 package kabam.rotmg.ui.view.components
 {
-   import flash.display.Sprite;
-   import com.company.rotmg.graphics.ScreenGraphic;
    import com.company.assembleegameclient.screens.TitleMenuOption;
+   import com.company.rotmg.graphics.ScreenGraphic;
+   import flash.display.Sprite;
    import flash.geom.Rectangle;
    
    public class MenuOptionsBar extends Sprite

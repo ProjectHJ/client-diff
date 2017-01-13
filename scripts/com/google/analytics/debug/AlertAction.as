@@ -4,7 +4,7 @@ package com.google.analytics.debug
    {
        
       
-      public var container:com.google.analytics.debug.Alert;
+      public var container:Alert;
       
       private var _callback;
       

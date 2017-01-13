@@ -1,7 +1,7 @@
 package com.adobe.images
 {
-   import flash.utils.ByteArray;
    import flash.display.BitmapData;
+   import flash.utils.ByteArray;
    
    public class PNGEncoder
    {

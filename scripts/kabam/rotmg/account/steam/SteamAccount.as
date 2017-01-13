@@ -1,7 +1,7 @@
 package kabam.rotmg.account.steam
 {
-   import kabam.rotmg.account.core.Account;
    import com.company.util.EmailValidator;
+   import kabam.rotmg.account.core.Account;
    
    public class SteamAccount implements Account
    {
@@ -10,7 +10,7 @@ package kabam.rotmg.account.steam
        
       
       [Inject]
-      public var api:kabam.rotmg.account.steam.SteamApi;
+      public var api:SteamApi;
       
       private var userId:String = "";
       

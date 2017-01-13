@@ -1,19 +1,19 @@
 package com.company.assembleegameclient.screens.charrects
 {
-   import com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.appengine.CharacterStats;
    import com.company.assembleegameclient.appengine.SavedCharacter;
-   import kabam.rotmg.classes.model.CharacterClass;
-   import flash.display.Sprite;
-   import flash.display.DisplayObject;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
+   import com.company.assembleegameclient.screens.events.DeleteCharacterEvent;
+   import com.company.assembleegameclient.ui.tooltip.MyPlayerToolTip;
    import com.company.assembleegameclient.util.FameUtil;
    import com.company.rotmg.graphics.DeleteXGraphic;
-   import com.company.assembleegameclient.screens.events.DeleteCharacterEvent;
+   import flash.display.DisplayObject;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.classes.model.CharacterClass;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
    
    public class CurrentCharacterRect extends CharacterRect
    {
@@ -35,7 +35,7 @@ package com.company.assembleegameclient.screens.charrects
       
       public var char:SavedCharacter;
       
-      public var myPlayerToolTipFactory:com.company.assembleegameclient.screens.charrects.MyPlayerToolTipFactory;
+      public var myPlayerToolTipFactory:MyPlayerToolTipFactory;
       
       private var charType:CharacterClass;
       
@@ -45,7 +45,7 @@ package com.company.assembleegameclient.screens.charrects
       
       public function CurrentCharacterRect(param1:String, param2:CharacterClass, param3:SavedCharacter, param4:CharacterStats)
       {
-         this.myPlayerToolTipFactory = new com.company.assembleegameclient.screens.charrects.MyPlayerToolTipFactory();
+         this.myPlayerToolTipFactory = new MyPlayerToolTipFactory();
          super();
          this.charName = param1;
          this.charType = param2;

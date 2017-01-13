@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.ui.panels
 {
-   import flash.events.MouseEvent;
-   import com.company.assembleegameclient.ui.guild.GuildChronicleScreen;
    import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.ui.guild.GuildChronicleScreen;
+   import flash.events.MouseEvent;
    import kabam.rotmg.text.model.TextKey;
    
    public class GuildChroniclePanel extends ButtonPanel

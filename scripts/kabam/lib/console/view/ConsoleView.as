@@ -6,15 +6,15 @@ package kabam.lib.console.view
    {
        
       
-      public var output:kabam.lib.console.view.ConsoleOutputView;
+      public var output:ConsoleOutputView;
       
-      public var input:kabam.lib.console.view.ConsoleInputView;
+      public var input:ConsoleInputView;
       
       public function ConsoleView()
       {
          super();
-         addChild(this.output = new kabam.lib.console.view.ConsoleOutputView());
-         addChild(this.input = new kabam.lib.console.view.ConsoleInputView());
+         addChild(this.output = new ConsoleOutputView());
+         addChild(this.input = new ConsoleInputView());
       }
       
       override public function set visible(param1:Boolean) : void

@@ -1,23 +1,23 @@
 package com.company.assembleegameclient.engine3d
 {
-   import flash.geom.Matrix3D;
-   import flash.geom.Vector3D;
-   import flash.display.IGraphicsData;
    import com.company.assembleegameclient.map.Camera;
    import flash.display.BitmapData;
+   import flash.display.IGraphicsData;
+   import flash.geom.Matrix3D;
    import flash.geom.Utils3D;
+   import flash.geom.Vector3D;
    
    public class Object3D
    {
        
       
-      public var model_:com.company.assembleegameclient.engine3d.Model3D = null;
+      public var model_:Model3D = null;
       
       public var vL_:Vector.<Number>;
       
       public var uvts_:Vector.<Number>;
       
-      public var faces_:Vector.<com.company.assembleegameclient.engine3d.ObjectFace3D>;
+      public var faces_:Vector.<ObjectFace3D>;
       
       public var vS_:Vector.<Number>;
       
@@ -25,10 +25,10 @@ package com.company.assembleegameclient.engine3d
       
       public var lToW_:Matrix3D;
       
-      public function Object3D(param1:com.company.assembleegameclient.engine3d.Model3D = null)
+      public function Object3D(param1:Model3D = null)
       {
          var _loc2_:ModelFace3D = null;
-         this.faces_ = new Vector.<com.company.assembleegameclient.engine3d.ObjectFace3D>();
+         this.faces_ = new Vector.<ObjectFace3D>();
          this.vS_ = new Vector.<Number>();
          this.vW_ = new Vector.<Number>();
          this.lToW_ = new Matrix3D();
@@ -40,7 +40,7 @@ package com.company.assembleegameclient.engine3d
             this.uvts_ = this.model_.uvts_.concat();
             for each(_loc2_ in this.model_.faces_)
             {
-               this.faces_.push(new com.company.assembleegameclient.engine3d.ObjectFace3D(this,_loc2_.indicies_,_loc2_.useTexture_));
+               this.faces_.push(new ObjectFace3D(this,_loc2_.indicies_,_loc2_.useTexture_));
             }
          }
          else
@@ -53,13 +53,13 @@ package com.company.assembleegameclient.engine3d
       
       public static function getObject(param1:String) : Object3D
       {
-         var _loc2_:com.company.assembleegameclient.engine3d.Model3D = com.company.assembleegameclient.engine3d.Model3D.getModel(param1);
+         var _loc2_:Model3D = Model3D.getModel(param1);
          return new Object3D(_loc2_);
       }
       
       public function dispose() : void
       {
-         var _loc1_:com.company.assembleegameclient.engine3d.ObjectFace3D = null;
+         var _loc1_:ObjectFace3D = null;
          this.vL_ = null;
          this.uvts_ = null;
          for each(_loc1_ in this.faces_)
@@ -75,7 +75,7 @@ package com.company.assembleegameclient.engine3d
       
       public function setPosition(param1:Number, param2:Number, param3:Number, param4:Number) : void
       {
-         var _loc5_:com.company.assembleegameclient.engine3d.ObjectFace3D = null;
+         var _loc5_:ObjectFace3D = null;
          this.lToW_.identity();
          this.lToW_.appendRotation(param4,Vector3D.Z_AXIS);
          this.lToW_.appendTranslation(param1,param2,param3);
@@ -98,7 +98,7 @@ package com.company.assembleegameclient.engine3d
       
       public function draw(param1:Vector.<IGraphicsData>, param2:Camera, param3:uint, param4:BitmapData) : void
       {
-         var _loc5_:com.company.assembleegameclient.engine3d.ObjectFace3D = null;
+         var _loc5_:ObjectFace3D = null;
          Utils3D.projectVectors(param2.wToS_,this.vW_,this.vS_,this.uvts_);
          for each(_loc5_ in this.faces_)
          {

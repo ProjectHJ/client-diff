@@ -1,14 +1,14 @@
 package kabam.rotmg.pets.view.components.slot
 {
-   import flash.display.Sprite;
-   import flash.display.Shape;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
    import flash.display.Bitmap;
-   import flash.geom.ColorTransform;
+   import flash.display.Shape;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import flash.geom.ColorTransform;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class FeedFuseSlot extends Sprite
    {

@@ -1,12 +1,12 @@
 package kabam.rotmg.game.view.components
 {
+   import com.company.assembleegameclient.objects.Player;
    import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.filters.GlowFilter;
    import kabam.rotmg.game.model.StatModel;
    import kabam.rotmg.text.model.TextKey;
    import org.osflash.signals.natives.NativeSignal;
-   import com.company.assembleegameclient.objects.Player;
-   import flash.filters.GlowFilter;
-   import flash.events.MouseEvent;
    
    public class StatsView extends Sprite
    {
@@ -38,7 +38,7 @@ package kabam.rotmg.game.view.components
       
       private var background:Sprite;
       
-      public var stats_:Vector.<kabam.rotmg.game.view.components.StatView>;
+      public var stats_:Vector.<StatView>;
       
       public var containerSprite:Sprite;
       
@@ -49,7 +49,7 @@ package kabam.rotmg.game.view.components
       public function StatsView()
       {
          this.background = this.createBackground();
-         this.stats_ = new Vector.<kabam.rotmg.game.view.components.StatView>();
+         this.stats_ = new Vector.<StatView>();
          this.containerSprite = new Sprite();
          super();
          addChild(this.background);
@@ -61,7 +61,7 @@ package kabam.rotmg.game.view.components
       
       private function createStats() : void
       {
-         var _loc3_:kabam.rotmg.game.view.components.StatView = null;
+         var _loc3_:StatView = null;
          var _loc1_:int = 0;
          var _loc2_:int = 0;
          while(_loc2_ < statsModel.length)
@@ -74,11 +74,11 @@ package kabam.rotmg.game.view.components
          }
       }
       
-      private function createStat(param1:int, param2:int) : kabam.rotmg.game.view.components.StatView
+      private function createStat(param1:int, param2:int) : StatView
       {
-         var _loc4_:kabam.rotmg.game.view.components.StatView = null;
+         var _loc4_:StatView = null;
          var _loc3_:StatModel = statsModel[param1];
-         _loc4_ = new kabam.rotmg.game.view.components.StatView(_loc3_.name,_loc3_.abbreviation,_loc3_.description,_loc3_.redOnZero);
+         _loc4_ = new StatView(_loc3_.name,_loc3_.abbreviation,_loc3_.description,_loc3_.redOnZero);
          _loc4_.x = param1 % 2 * this.WIDTH / 2;
          _loc4_.y = param2 * (this.HEIGHT / 3);
          return _loc4_;

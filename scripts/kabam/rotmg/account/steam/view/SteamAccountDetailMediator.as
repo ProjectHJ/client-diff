@@ -1,19 +1,19 @@
 package kabam.rotmg.account.steam.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.util.EmailValidator;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
    import kabam.rotmg.account.steam.SteamApi;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import com.company.util.EmailValidator;
-   import kabam.rotmg.account.core.view.RegisterWebAccountDialog;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class SteamAccountDetailMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.account.steam.view.SteamAccountDetailDialog;
+      public var view:SteamAccountDetailDialog;
       
       [Inject]
       public var account:Account;

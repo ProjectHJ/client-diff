@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.objects.particles
 {
+   import com.company.assembleegameclient.objects.GameObject;
    import flash.geom.Point;
    import kabam.rotmg.messaging.impl.data.WorldPosData;
-   import com.company.assembleegameclient.objects.GameObject;
    
    public class ConeBlastEffect extends ParticleEffect
    {

@@ -1,9 +1,9 @@
 package com.google.analytics.core
 {
-   import com.google.analytics.v4.Configuration;
-   import com.google.analytics.utils.Variables;
    import com.google.analytics.utils.Environment;
+   import com.google.analytics.utils.Variables;
    import com.google.analytics.utils.Version;
+   import com.google.analytics.v4.Configuration;
    
    public class BrowserInfo
    {

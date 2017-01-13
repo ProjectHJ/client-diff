@@ -1,10 +1,10 @@
 package robotlegs.bender.extensions.viewManager
 {
-   import robotlegs.bender.framework.api.IExtension;
-   import robotlegs.bender.extensions.viewManager.impl.StageObserver;
    import org.swiftsuspenders.Injector;
-   import robotlegs.bender.framework.api.IContext;
    import robotlegs.bender.extensions.viewManager.impl.ContainerRegistry;
+   import robotlegs.bender.extensions.viewManager.impl.StageObserver;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
    import robotlegs.bender.framework.impl.UID;
    
    public class StageObserverExtension implements IExtension

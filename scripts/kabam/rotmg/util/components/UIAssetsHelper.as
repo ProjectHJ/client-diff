@@ -1,9 +1,9 @@
 package kabam.rotmg.util.components
 {
-   import flash.display.Sprite;
-   import flash.display.BitmapData;
    import com.company.util.AssetLibrary;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Sprite;
    
    public class UIAssetsHelper
    {

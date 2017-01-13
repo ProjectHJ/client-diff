@@ -1,11 +1,11 @@
 package com.company.ui
 {
-   import flash.text.TextField;
-   import flash.text.TextFormat;
    import flash.events.Event;
-   import flash.text.TextLineMetrics;
    import flash.text.Font;
+   import flash.text.TextField;
    import flash.text.TextFieldType;
+   import flash.text.TextFormat;
+   import flash.text.TextLineMetrics;
    
    public class BaseSimpleText extends TextField
    {

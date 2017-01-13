@@ -1,11 +1,11 @@
 package robotlegs.bender.framework.impl
 {
-   import robotlegs.bender.framework.api.IContext;
-   import org.swiftsuspenders.Injector;
-   import robotlegs.bender.framework.api.ILifecycle;
-   import robotlegs.bender.framework.api.ILogger;
    import org.hamcrest.Matcher;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.ILifecycle;
    import robotlegs.bender.framework.api.ILogTarget;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class Context implements IContext
    {
@@ -13,17 +13,17 @@ package robotlegs.bender.framework.impl
       
       private const _injector:Injector = new Injector();
       
-      private var _lifecycle:robotlegs.bender.framework.impl.Lifecycle;
+      private var _lifecycle:Lifecycle;
       
       private const _uid:String = UID.create(Context);
       
-      private const _logManager:robotlegs.bender.framework.impl.LogManager = new robotlegs.bender.framework.impl.LogManager();
+      private const _logManager:LogManager = new LogManager();
       
-      private const _pin:robotlegs.bender.framework.impl.Pin = new robotlegs.bender.framework.impl.Pin();
+      private const _pin:Pin = new Pin();
       
-      private var _configManager:robotlegs.bender.framework.impl.ConfigManager;
+      private var _configManager:ConfigManager;
       
-      private var _extensionInstaller:robotlegs.bender.framework.impl.ExtensionInstaller;
+      private var _extensionInstaller:ExtensionInstaller;
       
       private var _logger:ILogger;
       
@@ -130,9 +130,9 @@ package robotlegs.bender.framework.impl
          this._injector.map(Injector).toValue(this._injector);
          this._injector.map(IContext).toValue(this);
          this._logger = this._logManager.getLogger(this);
-         this._lifecycle = new robotlegs.bender.framework.impl.Lifecycle(this);
-         this._configManager = new robotlegs.bender.framework.impl.ConfigManager(this);
-         this._extensionInstaller = new robotlegs.bender.framework.impl.ExtensionInstaller(this);
+         this._lifecycle = new Lifecycle(this);
+         this._configManager = new ConfigManager(this);
+         this._extensionInstaller = new ExtensionInstaller(this);
          this._lifecycle.beforeInitializing(this.beforeInitializing);
          this._lifecycle.afterInitializing(this.afterInitializing);
          this._lifecycle.beforeDestroying(this.beforeDestroying);

@@ -1,7 +1,7 @@
 package org.swiftsuspenders.typedescriptions
 {
-   import org.swiftsuspenders.Injector;
    import flash.utils.Dictionary;
+   import org.swiftsuspenders.Injector;
    
    public class ConstructorInjectionPoint extends MethodInjectionPoint
    {

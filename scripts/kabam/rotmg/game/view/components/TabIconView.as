@@ -1,7 +1,7 @@
 package kabam.rotmg.game.view.components
 {
-   import flash.display.Sprite;
    import flash.display.Bitmap;
+   import flash.display.Sprite;
    import flash.geom.ColorTransform;
    
    public class TabIconView extends TabView

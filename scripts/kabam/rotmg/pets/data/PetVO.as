@@ -2,13 +2,13 @@ package kabam.rotmg.pets.data
 {
    import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.util.AnimatedChar;
-   import org.osflash.signals.Signal;
-   import flash.display.Bitmap;
+   import com.company.assembleegameclient.util.AnimatedChars;
    import com.company.assembleegameclient.util.MaskedImage;
    import com.company.assembleegameclient.util.TextureRedrawer;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
-   import com.company.assembleegameclient.util.AnimatedChars;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import org.osflash.signals.Signal;
    
    public class PetVO
    {
@@ -203,7 +203,7 @@ package kabam.rotmg.pets.data
       {
          this.makeSkin();
          var _loc1_:MaskedImage = this.skin.imageFromAngle(0,AnimatedChar.STAND,0);
-         var _loc2_:int = this.rarity == PetRarityEnum.DIVINE.value?40:80;
+         var _loc2_:int = this.skin.getHeight() == 16?40:80;
          var _loc3_:BitmapData = TextureRedrawer.resize(_loc1_.image_,_loc1_.mask_,_loc2_,true,0,0);
          _loc3_ = GlowRedrawer.outlineGlow(_loc3_,0);
          return new Bitmap(_loc3_);

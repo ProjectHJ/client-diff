@@ -5,7 +5,7 @@ package kabam.rotmg.ui.signals
    public class ShowHideKeyUISignal extends Signal
    {
       
-      public static var instance:kabam.rotmg.ui.signals.ShowHideKeyUISignal;
+      public static var instance:ShowHideKeyUISignal;
        
       
       public function ShowHideKeyUISignal()

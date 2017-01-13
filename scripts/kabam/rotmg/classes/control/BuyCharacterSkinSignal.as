@@ -1,7 +1,7 @@
 package kabam.rotmg.classes.control
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.classes.model.CharacterSkin;
+   import org.osflash.signals.Signal;
    
    public class BuyCharacterSkinSignal extends Signal
    {

@@ -1,12 +1,12 @@
 package com.google.analytics.v4
 {
-   import com.google.analytics.core.Organic;
-   import com.google.analytics.core.ServerOperationMode;
    import com.google.analytics.campaign.CampaignKey;
    import com.google.analytics.core.Domain;
+   import com.google.analytics.core.DomainNameMode;
+   import com.google.analytics.core.Organic;
+   import com.google.analytics.core.ServerOperationMode;
    import com.google.analytics.debug.DebugConfiguration;
    import com.google.analytics.utils.Timespan;
-   import com.google.analytics.core.DomainNameMode;
    
    public class Configuration
    {

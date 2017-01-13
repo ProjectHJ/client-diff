@@ -1,21 +1,21 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.Sprite;
-   import com.company.ui.BaseSimpleText;
-   import flash.events.Event;
-   import flash.geom.Rectangle;
    import com.company.assembleegameclient.map.GroundLibrary;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.map.RegionLibrary;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.ui.BaseSimpleText;
+   import com.company.util.GraphicsUtil;
+   import flash.display.CapsStyle;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import com.company.util.GraphicsUtil;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
+   import flash.events.Event;
    import flash.filters.DropShadowFilter;
+   import flash.geom.Rectangle;
    
    public class InfoPane extends Sprite
    {
@@ -27,7 +27,7 @@ package com.company.assembleegameclient.mapeditor
       private static const CSS_TEXT:String = ".in { margin-left:10px; text-indent: -10px; }";
        
       
-      private var meMap_:com.company.assembleegameclient.mapeditor.MEMap;
+      private var meMap_:MEMap;
       
       private var rectText_:BaseSimpleText;
       
@@ -43,7 +43,7 @@ package com.company.assembleegameclient.mapeditor
       
       private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[this.lineStyle_,this.backgroundFill_,this.path_,GraphicsUtil.END_FILL,GraphicsUtil.END_STROKE];
       
-      public function InfoPane(param1:com.company.assembleegameclient.mapeditor.MEMap)
+      public function InfoPane(param1:MEMap)
       {
          this.outlineFill_ = new GraphicsSolidFill(16777215,1);
          this.lineStyle_ = new GraphicsStroke(1,false,LineScaleMode.NORMAL,CapsStyle.NONE,JointStyle.ROUND,3,this.outlineFill_);

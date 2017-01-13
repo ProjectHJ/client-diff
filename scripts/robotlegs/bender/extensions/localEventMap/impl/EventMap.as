@@ -1,8 +1,8 @@
 package robotlegs.bender.extensions.localEventMap.impl
 {
-   import robotlegs.bender.extensions.localEventMap.api.IEventMap;
-   import flash.events.IEventDispatcher;
    import flash.events.Event;
+   import flash.events.IEventDispatcher;
+   import robotlegs.bender.extensions.localEventMap.api.IEventMap;
    
    public class EventMap implements IEventMap
    {
@@ -10,9 +10,9 @@ package robotlegs.bender.extensions.localEventMap.impl
       
       private var _eventDispatcher:IEventDispatcher;
       
-      private const _listeners:Vector.<robotlegs.bender.extensions.localEventMap.impl.EventMapConfig> = new Vector.<robotlegs.bender.extensions.localEventMap.impl.EventMapConfig>();
+      private const _listeners:Vector.<EventMapConfig> = new Vector.<EventMapConfig>();
       
-      private const _suspendedListeners:Vector.<robotlegs.bender.extensions.localEventMap.impl.EventMapConfig> = new Vector.<robotlegs.bender.extensions.localEventMap.impl.EventMapConfig>();
+      private const _suspendedListeners:Vector.<EventMapConfig> = new Vector.<EventMapConfig>();
       
       private var _suspended:Boolean = false;
       
@@ -24,7 +24,7 @@ package robotlegs.bender.extensions.localEventMap.impl
       
       public function mapListener(param1:IEventDispatcher, param2:String, param3:Function, param4:Class = null, param5:Boolean = false, param6:int = 0, param7:Boolean = true) : void
       {
-         var eventConfig:robotlegs.bender.extensions.localEventMap.impl.EventMapConfig = null;
+         var eventConfig:EventMapConfig = null;
          var callback:Function = null;
          var dispatcher:IEventDispatcher = param1;
          var eventString:String = param2;
@@ -34,7 +34,7 @@ package robotlegs.bender.extensions.localEventMap.impl
          var priority:int = param6;
          var useWeakReference:Boolean = param7;
          eventClass = eventClass || Event;
-         var currentListeners:Vector.<robotlegs.bender.extensions.localEventMap.impl.EventMapConfig> = !!this._suspended?this._suspendedListeners:this._listeners;
+         var currentListeners:Vector.<EventMapConfig> = !!this._suspended?this._suspendedListeners:this._listeners;
          var i:int = currentListeners.length;
          while(i--)
          {
@@ -55,7 +55,7 @@ package robotlegs.bender.extensions.localEventMap.impl
          {
             callback = listener;
          }
-         eventConfig = new robotlegs.bender.extensions.localEventMap.impl.EventMapConfig(dispatcher,eventString,listener,eventClass,callback,useCapture);
+         eventConfig = new EventMapConfig(dispatcher,eventString,listener,eventClass,callback,useCapture);
          currentListeners.push(eventConfig);
          if(!this._suspended)
          {
@@ -65,9 +65,9 @@ package robotlegs.bender.extensions.localEventMap.impl
       
       public function unmapListener(param1:IEventDispatcher, param2:String, param3:Function, param4:Class = null, param5:Boolean = false) : void
       {
-         var _loc6_:robotlegs.bender.extensions.localEventMap.impl.EventMapConfig = null;
+         var _loc6_:EventMapConfig = null;
          param4 = param4 || Event;
-         var _loc7_:Vector.<robotlegs.bender.extensions.localEventMap.impl.EventMapConfig> = !!this._suspended?this._suspendedListeners:this._listeners;
+         var _loc7_:Vector.<EventMapConfig> = !!this._suspended?this._suspendedListeners:this._listeners;
          var _loc8_:int = _loc7_.length;
          while(_loc8_--)
          {
@@ -86,9 +86,9 @@ package robotlegs.bender.extensions.localEventMap.impl
       
       public function unmapListeners() : void
       {
-         var _loc2_:robotlegs.bender.extensions.localEventMap.impl.EventMapConfig = null;
+         var _loc2_:EventMapConfig = null;
          var _loc3_:IEventDispatcher = null;
-         var _loc1_:Vector.<robotlegs.bender.extensions.localEventMap.impl.EventMapConfig> = !!this._suspended?this._suspendedListeners:this._listeners;
+         var _loc1_:Vector.<EventMapConfig> = !!this._suspended?this._suspendedListeners:this._listeners;
          while(_loc2_ = _loc1_.pop())
          {
             if(!this._suspended)
@@ -101,7 +101,7 @@ package robotlegs.bender.extensions.localEventMap.impl
       
       public function suspend() : void
       {
-         var _loc1_:robotlegs.bender.extensions.localEventMap.impl.EventMapConfig = null;
+         var _loc1_:EventMapConfig = null;
          var _loc2_:IEventDispatcher = null;
          if(this._suspended)
          {
@@ -118,7 +118,7 @@ package robotlegs.bender.extensions.localEventMap.impl
       
       public function resume() : void
       {
-         var _loc1_:robotlegs.bender.extensions.localEventMap.impl.EventMapConfig = null;
+         var _loc1_:EventMapConfig = null;
          var _loc2_:IEventDispatcher = null;
          if(!this._suspended)
          {

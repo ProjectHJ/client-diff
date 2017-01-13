@@ -1,9 +1,9 @@
 package kabam.rotmg.tooltips.controller
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.tooltips.TooltipAble;
-   import kabam.rotmg.core.signals.ShowTooltipSignal;
    import kabam.rotmg.core.signals.HideTooltipsSignal;
+   import kabam.rotmg.core.signals.ShowTooltipSignal;
+   import kabam.rotmg.tooltips.TooltipAble;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class TooltipAbleMediator extends Mediator
    {

@@ -1,10 +1,10 @@
 package kabam.rotmg.ui.view
 {
-   import com.company.assembleegameclient.screens.TitleMenuOption;
    import com.company.assembleegameclient.constants.ScreenTypes;
+   import com.company.assembleegameclient.screens.TitleMenuOption;
+   import flash.text.TextFieldAutoSize;
    import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.text.TextFieldAutoSize;
    
    public class ButtonFactory
    {

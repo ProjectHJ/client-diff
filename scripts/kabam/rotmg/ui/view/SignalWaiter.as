@@ -1,8 +1,8 @@
 package kabam.rotmg.ui.view
 {
-   import org.osflash.signals.Signal;
-   import flash.utils.Dictionary;
    import com.adobe.utils.DictionaryUtil;
+   import flash.utils.Dictionary;
+   import org.osflash.signals.Signal;
    
    public class SignalWaiter
    {

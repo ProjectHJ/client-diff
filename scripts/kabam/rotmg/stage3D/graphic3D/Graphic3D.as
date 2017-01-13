@@ -1,20 +1,20 @@
 package kabam.rotmg.stage3D.graphic3D
 {
-   import kabam.rotmg.stage3D.proxies.TextureProxy;
-   import flash.geom.Matrix3D;
-   import kabam.rotmg.stage3D.proxies.Context3DProxy;
-   import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
-   import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
    import flash.display.BitmapData;
-   import flash.geom.Matrix;
-   import flash.display3D.VertexBuffer3D;
-   import flash.display3D.IndexBuffer3D;
    import flash.display.GraphicsBitmapFill;
-   import kabam.rotmg.stage3D.GraphicsFillExtra;
-   import flash.geom.ColorTransform;
-   import flash.display3D.Context3DProgramType;
    import flash.display.GraphicsGradientFill;
+   import flash.display3D.Context3DProgramType;
    import flash.display3D.Context3DVertexBufferFormat;
+   import flash.display3D.IndexBuffer3D;
+   import flash.display3D.VertexBuffer3D;
+   import flash.geom.ColorTransform;
+   import flash.geom.Matrix;
+   import flash.geom.Matrix3D;
+   import kabam.rotmg.stage3D.GraphicsFillExtra;
+   import kabam.rotmg.stage3D.proxies.Context3DProxy;
+   import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
+   import kabam.rotmg.stage3D.proxies.TextureProxy;
+   import kabam.rotmg.stage3D.proxies.VertexBuffer3DProxy;
    
    public class Graphic3D
    {
@@ -31,7 +31,7 @@ package kabam.rotmg.stage3D.graphic3D
       public var context3D:Context3DProxy;
       
       [Inject]
-      public var textureFactory:kabam.rotmg.stage3D.graphic3D.TextureFactory;
+      public var textureFactory:TextureFactory;
       
       [Inject]
       public var vertexBuffer:VertexBuffer3DProxy;

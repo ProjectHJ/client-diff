@@ -6,11 +6,11 @@ package com.hurlant.crypto.hash
    {
        
       
-      private var hash:com.hurlant.crypto.hash.IHash;
+      private var hash:IHash;
       
       private var bits:uint;
       
-      public function HMAC(param1:com.hurlant.crypto.hash.IHash, param2:uint = 0)
+      public function HMAC(param1:IHash, param2:uint = 0)
       {
          super();
          this.hash = param1;

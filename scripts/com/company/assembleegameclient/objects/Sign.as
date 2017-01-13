@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.objects
 {
-   import kabam.rotmg.language.model.StringMap;
-   import kabam.rotmg.text.model.FontModel;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.map.Camera;
+   import com.company.assembleegameclient.util.TextureRedrawer;
+   import flash.display.BitmapData;
    import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
    import flash.text.TextFormatAlign;
-   import com.company.assembleegameclient.util.TextureRedrawer;
    import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.language.model.StringMap;
+   import kabam.rotmg.text.model.FontModel;
    
    public class Sign extends GameObject
    {

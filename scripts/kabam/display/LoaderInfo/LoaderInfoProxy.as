@@ -1,7 +1,7 @@
 package kabam.display.LoaderInfo
 {
-   import flash.events.IEventDispatcher;
    import flash.display.LoaderInfo;
+   import flash.events.IEventDispatcher;
    
    public interface LoaderInfoProxy extends IEventDispatcher
    {

@@ -1,11 +1,11 @@
 package org.osflash.signals.natives
 {
-   import flash.events.IEventDispatcher;
-   import org.osflash.signals.SlotList;
+   import flash.errors.IllegalOperationError;
    import flash.events.Event;
+   import flash.events.IEventDispatcher;
    import org.osflash.signals.ISlot;
    import org.osflash.signals.Slot;
-   import flash.errors.IllegalOperationError;
+   import org.osflash.signals.SlotList;
    
    public class NativeSignal implements INativeDispatcher
    {

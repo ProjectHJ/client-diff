@@ -1,9 +1,9 @@
 package kabam.rotmg.pets.data
 {
+   import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
    import flash.utils.Dictionary;
    import kabam.rotmg.messaging.impl.data.SlotObjectData;
    import kabam.rotmg.text.model.TextKey;
-   import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
    
    public class PetFormModel
    {
@@ -15,7 +15,7 @@ package kabam.rotmg.pets.data
       
       private var branches:Dictionary;
       
-      private var selectedPet:kabam.rotmg.pets.data.PetVO;
+      private var selectedPet:PetVO;
       
       private var selectedSkin:int;
       
@@ -58,7 +58,7 @@ package kabam.rotmg.pets.data
       private function addPetToAppropriateRarityList(param1:XML) : void
       {
          var _loc2_:String = XMLList(param1.Rarity).valueOf();
-         var _loc3_:kabam.rotmg.pets.data.PetVO = this.convertXMLToPetVOForReskin(param1);
+         var _loc3_:PetVO = this.convertXMLToPetVOForReskin(param1);
          if(this.branches[_loc2_])
          {
             this.branches[_loc2_].push(_loc3_);
@@ -69,14 +69,14 @@ package kabam.rotmg.pets.data
          }
       }
       
-      public function setSelectedPet(param1:kabam.rotmg.pets.data.PetVO) : void
+      public function setSelectedPet(param1:PetVO) : void
       {
          this.selectedPet = param1;
       }
       
-      private function convertXMLToPetVOForReskin(param1:XML) : kabam.rotmg.pets.data.PetVO
+      private function convertXMLToPetVOForReskin(param1:XML) : PetVO
       {
-         var _loc2_:kabam.rotmg.pets.data.PetVO = new kabam.rotmg.pets.data.PetVO();
+         var _loc2_:PetVO = new PetVO();
          _loc2_.setType(param1.@type);
          _loc2_.setID(param1.@id);
          _loc2_.setSkin(this.fetchSkinTypeByID(param1.DefaultSkin[0]));
@@ -116,7 +116,7 @@ package kabam.rotmg.pets.data
          return param1.hasOwnProperty("PetSkin");
       }
       
-      public function getSelectedPet() : kabam.rotmg.pets.data.PetVO
+      public function getSelectedPet() : PetVO
       {
          return this.selectedPet;
       }

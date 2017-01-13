@@ -1,15 +1,15 @@
 package kabam.lib.console.view
 {
-   import flash.display.Sprite;
-   import kabam.lib.resizing.view.Resizable;
-   import flash.text.TextField;
    import com.junkbyte.console.Console;
-   import kabam.lib.console.model.Watch;
-   import flash.geom.Rectangle;
-   import flash.display.BlendMode;
-   import flash.text.TextFormat;
-   import flash.text.TextFieldAutoSize;
    import com.junkbyte.console.ConsoleConfig;
+   import flash.display.BlendMode;
+   import flash.display.Sprite;
+   import flash.geom.Rectangle;
+   import flash.text.TextField;
+   import flash.text.TextFieldAutoSize;
+   import flash.text.TextFormat;
+   import kabam.lib.console.model.Watch;
+   import kabam.lib.resizing.view.Resizable;
    
    public final class ConsoleOutputView extends Sprite implements Resizable
    {

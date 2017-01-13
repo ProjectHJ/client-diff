@@ -1,14 +1,14 @@
 package kabam.rotmg.news.services
 {
+   import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+   import flash.utils.getTimer;
    import kabam.lib.tasks.BaseTask;
    import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.news.model.NewsModel;
    import kabam.rotmg.language.model.LanguageModel;
-   import flash.utils.getTimer;
-   import kabam.rotmg.news.model.NewsCellVO;
    import kabam.rotmg.news.model.NewsCellLinkType;
-   import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+   import kabam.rotmg.news.model.NewsCellVO;
+   import kabam.rotmg.news.model.NewsModel;
    
    public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask
    {

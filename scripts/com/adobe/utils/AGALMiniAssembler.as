@@ -1,9 +1,9 @@
 package com.adobe.utils
 {
-   import flash.utils.Dictionary;
    import flash.utils.ByteArray;
-   import flash.utils.getTimer;
+   import flash.utils.Dictionary;
    import flash.utils.Endian;
+   import flash.utils.getTimer;
    
    public class AGALMiniAssembler
    {

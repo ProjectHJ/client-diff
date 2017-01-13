@@ -1,63 +1,63 @@
 package com.company.assembleegameclient.game
 {
-   import kabam.rotmg.messaging.impl.incoming.MapInfo;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.maploading.signals.MapLoadedSignal;
-   import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
-   import flash.filters.ColorMatrixFilter;
-   import com.company.util.MoreColorUtil;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.chat.view.Chat;
-   import com.company.assembleegameclient.ui.RankText;
+   import com.company.assembleegameclient.game.events.MoneyChangedEvent;
+   import com.company.assembleegameclient.map.Map;
+   import com.company.assembleegameclient.objects.GameObject;
+   import com.company.assembleegameclient.objects.IInteractiveObject;
+   import com.company.assembleegameclient.objects.Pet;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.objects.Projectile;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.tutorial.Tutorial;
    import com.company.assembleegameclient.ui.GuildText;
+   import com.company.assembleegameclient.ui.RankText;
+   import com.company.assembleegameclient.ui.menu.PlayerMenu;
+   import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.googleanalytics.GA;
+   import com.company.util.CachingColorTransformer;
+   import com.company.util.MoreColorUtil;
+   import com.company.util.MoreObjectUtil;
+   import com.company.util.PointUtil;
+   import flash.display.DisplayObject;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.external.ExternalInterface;
+   import flash.filters.ColorMatrixFilter;
+   import flash.utils.ByteArray;
+   import flash.utils.getTimer;
+   import kabam.lib.loopedprocs.LoopedCallback;
+   import kabam.lib.loopedprocs.LoopedProcess;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.arena.view.ArenaTimer;
+   import kabam.rotmg.arena.view.ArenaWaveCounter;
+   import kabam.rotmg.chat.view.Chat;
+   import kabam.rotmg.constants.GeneralConstants;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.core.model.MapModel;
+   import kabam.rotmg.core.model.PlayerModel;
    import kabam.rotmg.game.view.CreditDisplay;
    import kabam.rotmg.game.view.GiftStatusDisplay;
    import kabam.rotmg.game.view.NewsModalButton;
+   import kabam.rotmg.maploading.signals.HideMapLoadingSignal;
+   import kabam.rotmg.maploading.signals.MapLoadedSignal;
+   import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
+   import kabam.rotmg.messaging.impl.incoming.MapInfo;
+   import kabam.rotmg.news.model.NewsModel;
    import kabam.rotmg.news.view.NewsTicker;
-   import kabam.rotmg.arena.view.ArenaTimer;
-   import kabam.rotmg.arena.view.ArenaWaveCounter;
-   import kabam.rotmg.core.model.MapModel;
+   import kabam.rotmg.packages.services.PackageModel;
+   import kabam.rotmg.packages.view.PackageButton;
    import kabam.rotmg.promotions.model.BeginnersPackageModel;
    import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
-   import kabam.rotmg.packages.services.PackageModel;
-   import com.company.assembleegameclient.objects.GameObject;
-   import flash.display.DisplayObject;
-   import com.company.assembleegameclient.ui.menu.PlayerMenu;
-   import flash.events.MouseEvent;
-   import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.ui.view.HUDView;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.protip.signals.ShowProTipSignal;
-   import com.company.assembleegameclient.map.Map;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import com.company.util.MoreObjectUtil;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.questrewards.view.QuestRewardsPanel;
-   import kabam.rotmg.ui.UIUtils;
-   import kabam.rotmg.news.model.NewsModel;
    import kabam.rotmg.promotions.view.BeginnersPackageButton;
-   import kabam.rotmg.packages.view.PackageButton;
-   import flash.external.ExternalInterface;
-   import com.company.assembleegameclient.tutorial.Tutorial;
-   import com.company.assembleegameclient.objects.IInteractiveObject;
-   import kabam.rotmg.constants.GeneralConstants;
-   import com.company.assembleegameclient.objects.Pet;
-   import com.company.util.PointUtil;
-   import kabam.rotmg.stage3D.Renderer;
-   import flash.utils.getTimer;
-   import com.company.assembleegameclient.game.events.MoneyChangedEvent;
-   import flash.events.Event;
-   import kabam.lib.loopedprocs.LoopedProcess;
-   import kabam.lib.loopedprocs.LoopedCallback;
-   import com.company.util.CachingColorTransformer;
-   import com.company.assembleegameclient.util.TextureRedrawer;
-   import com.company.assembleegameclient.objects.Projectile;
-   import com.company.googleanalytics.GA;
+   import kabam.rotmg.protip.signals.ShowProTipSignal;
+   import kabam.rotmg.questrewards.view.QuestRewardsPanel;
    import kabam.rotmg.servers.api.Server;
-   import flash.utils.ByteArray;
-   import kabam.rotmg.core.model.PlayerModel;
-   import flash.display.Sprite;
-   import kabam.rotmg.messaging.impl.GameServerConnectionConcrete;
+   import kabam.rotmg.stage3D.Renderer;
+   import kabam.rotmg.ui.UIUtils;
+   import kabam.rotmg.ui.view.HUDView;
+   import org.osflash.signals.Signal;
    
    public class GameSprite extends AGameSprite
    {
@@ -75,7 +75,7 @@ package com.company.assembleegameclient.game
       
       public var isNexus_:Boolean = false;
       
-      public var idleWatcher_:com.company.assembleegameclient.game.IdleWatcher;
+      public var idleWatcher_:IdleWatcher;
       
       public var rankText_:RankText;
       
@@ -133,7 +133,7 @@ package com.company.assembleegameclient.game
          this.chatBox_.list.addEventListener(MouseEvent.MOUSE_DOWN,this.onChatDown);
          this.chatBox_.list.addEventListener(MouseEvent.MOUSE_UP,this.onChatUp);
          addChild(this.chatBox_);
-         this.idleWatcher_ = new com.company.assembleegameclient.game.IdleWatcher();
+         this.idleWatcher_ = new IdleWatcher();
       }
       
       public static function dispatchMapLoaded(param1:MapInfo) : void

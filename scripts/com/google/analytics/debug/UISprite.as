@@ -1,9 +1,9 @@
 package com.google.analytics.debug
 {
-   import flash.display.Sprite;
-   import flash.events.Event;
    import flash.display.DisplayObject;
+   import flash.display.Sprite;
    import flash.display.Stage;
+   import flash.events.Event;
    
    public class UISprite extends Sprite
    {
@@ -11,13 +11,13 @@ package com.google.analytics.debug
       
       private var _forcedWidth:uint;
       
-      public var margin:com.google.analytics.debug.Margin;
+      public var margin:Margin;
       
       protected var alignTarget:DisplayObject;
       
       protected var listenResize:Boolean;
       
-      public var alignement:com.google.analytics.debug.Align;
+      public var alignement:Align;
       
       private var _forcedHeight:uint;
       
@@ -25,9 +25,9 @@ package com.google.analytics.debug
       {
          super();
          listenResize = false;
-         alignement = com.google.analytics.debug.Align.none;
+         alignement = Align.none;
          this.alignTarget = param1;
-         margin = new com.google.analytics.debug.Margin();
+         margin = new Margin();
          addEventListener(Event.ADDED_TO_STAGE,_onAddedToStage);
          addEventListener(Event.REMOVED_FROM_STAGE,_onRemovedFromStage);
       }
@@ -85,7 +85,7 @@ package com.google.analytics.debug
          return width;
       }
       
-      public function alignTo(param1:com.google.analytics.debug.Align, param2:DisplayObject = null) : void
+      public function alignTo(param1:Align, param2:DisplayObject = null) : void
       {
          var _loc3_:uint = 0;
          var _loc4_:uint = 0;
@@ -138,43 +138,43 @@ package com.google.analytics.debug
          }
          switch(param1)
          {
-            case com.google.analytics.debug.Align.top:
+            case Align.top:
                x = _loc4_ / 2 - forcedWidth / 2;
                y = _loc6_ + margin.top;
                break;
-            case com.google.analytics.debug.Align.bottom:
+            case Align.bottom:
                x = _loc4_ / 2 - forcedWidth / 2;
                y = _loc6_ + _loc3_ - forcedHeight - margin.bottom;
                break;
-            case com.google.analytics.debug.Align.left:
+            case Align.left:
                x = _loc5_ + margin.left;
                y = _loc3_ / 2 - forcedHeight / 2;
                break;
-            case com.google.analytics.debug.Align.right:
+            case Align.right:
                x = _loc5_ + _loc4_ - forcedWidth - margin.right;
                y = _loc3_ / 2 - forcedHeight / 2;
                break;
-            case com.google.analytics.debug.Align.center:
+            case Align.center:
                x = _loc4_ / 2 - forcedWidth / 2;
                y = _loc3_ / 2 - forcedHeight / 2;
                break;
-            case com.google.analytics.debug.Align.topLeft:
+            case Align.topLeft:
                x = _loc5_ + margin.left;
                y = _loc6_ + margin.top;
                break;
-            case com.google.analytics.debug.Align.topRight:
+            case Align.topRight:
                x = _loc5_ + _loc4_ - forcedWidth - margin.right;
                y = _loc6_ + margin.top;
                break;
-            case com.google.analytics.debug.Align.bottomLeft:
+            case Align.bottomLeft:
                x = _loc5_ + margin.left;
                y = _loc6_ + _loc3_ - forcedHeight - margin.bottom;
                break;
-            case com.google.analytics.debug.Align.bottomRight:
+            case Align.bottomRight:
                x = _loc5_ + _loc4_ - forcedWidth - margin.right;
                y = _loc6_ + _loc3_ - forcedHeight - margin.bottom;
          }
-         if(!listenResize && param1 != com.google.analytics.debug.Align.none)
+         if(!listenResize && param1 != Align.none)
          {
             param2.addEventListener(Event.RESIZE,onResize,false,0,true);
             listenResize = true;
@@ -192,7 +192,7 @@ package com.google.analytics.debug
       
       public function resize() : void
       {
-         if(alignement != com.google.analytics.debug.Align.none)
+         if(alignement != Align.none)
          {
             alignTo(alignement,alignTarget);
          }

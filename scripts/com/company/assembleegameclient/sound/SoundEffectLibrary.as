@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.sound
 {
-   import flash.utils.Dictionary;
-   import flash.media.Sound;
-   import flash.events.IOErrorEvent;
-   import kabam.rotmg.application.api.ApplicationSetup;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import flash.net.URLRequest;
-   import flash.media.SoundTransform;
-   import flash.media.SoundChannel;
    import com.company.assembleegameclient.parameters.Parameters;
    import flash.events.Event;
+   import flash.events.IOErrorEvent;
+   import flash.media.Sound;
+   import flash.media.SoundChannel;
+   import flash.media.SoundTransform;
+   import flash.net.URLRequest;
+   import flash.utils.Dictionary;
+   import kabam.rotmg.application.api.ApplicationSetup;
+   import kabam.rotmg.core.StaticInjectorContext;
    
    public class SoundEffectLibrary
    {

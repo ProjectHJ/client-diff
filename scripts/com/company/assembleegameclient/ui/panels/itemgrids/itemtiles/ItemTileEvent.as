@@ -18,9 +18,9 @@ package com.company.assembleegameclient.ui.panels.itemgrids.itemtiles
       public static const ITEM_CTRL_CLICK:String = "ITEM_CTRL_CLICK";
        
       
-      public var tile:com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
+      public var tile:InteractiveItemTile;
       
-      public function ItemTileEvent(param1:String, param2:com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile)
+      public function ItemTileEvent(param1:String, param2:InteractiveItemTile)
       {
          super(param1,true);
          this.tile = param2;

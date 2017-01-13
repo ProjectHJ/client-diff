@@ -1,7 +1,7 @@
 package kabam.rotmg.packages.model
 {
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.util.TimeUtil;
+   import org.osflash.signals.Signal;
    
    public class PackageInfo
    {

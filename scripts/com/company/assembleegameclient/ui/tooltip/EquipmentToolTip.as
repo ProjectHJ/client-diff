@@ -1,28 +1,28 @@
 package com.company.assembleegameclient.ui.tooltip
 {
-   import flash.utils.Dictionary;
-   import flash.display.Bitmap;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.assembleegameclient.ui.LineBreakDesign;
-   import com.company.assembleegameclient.objects.Player;
-   import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
-   import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import flash.display.BitmapData;
-   import com.company.util.BitmapUtil;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.messaging.impl.data.StatData;
-   import kabam.rotmg.constants.ActivationType;
    import com.company.assembleegameclient.constants.InventoryOwnerTypes;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import com.company.util.KeyCodes;
+   import com.company.assembleegameclient.game.events.KeyInfoResponseSignal;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.ui.model.HUDModel;
+   import com.company.assembleegameclient.ui.LineBreakDesign;
+   import com.company.util.BitmapUtil;
+   import com.company.util.KeyCodes;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.filters.DropShadowFilter;
+   import flash.utils.Dictionary;
+   import kabam.rotmg.constants.ActivationType;
    import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.messaging.impl.data.StatData;
+   import kabam.rotmg.messaging.impl.incoming.KeyInfoResponse;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+   import kabam.rotmg.ui.model.HUDModel;
    
    public class EquipmentToolTip extends ToolTip
    {
@@ -62,7 +62,7 @@ package com.company.assembleegameclient.ui.tooltip
       
       private var objectXML:XML = null;
       
-      private var slotTypeToTextBuilder:com.company.assembleegameclient.ui.tooltip.SlotComparisonFactory;
+      private var slotTypeToTextBuilder:SlotComparisonFactory;
       
       private var restrictions:Vector.<Restriction>;
       
@@ -82,7 +82,7 @@ package com.company.assembleegameclient.ui.tooltip
       
       private var playerCanUse:Boolean;
       
-      private var comparisonResults:com.company.assembleegameclient.ui.tooltip.SlotComparisonResult;
+      private var comparisonResults:SlotComparisonResult;
       
       private var powerText:TextFieldDisplayConcrete;
       
@@ -109,7 +109,7 @@ package com.company.assembleegameclient.ui.tooltip
          var _loc6_:uint = this.playerCanUse || this.player == null?uint(3552822):uint(6036765);
          var _loc7_:uint = this.playerCanUse || param2 == null?uint(10197915):uint(10965039);
          super(_loc6_,1,_loc7_,1,true);
-         this.slotTypeToTextBuilder = new com.company.assembleegameclient.ui.tooltip.SlotComparisonFactory();
+         this.slotTypeToTextBuilder = new SlotComparisonFactory();
          this.objectXML = ObjectLibrary.xmlLibrary_[this.objectType];
          this.isEquippable = _loc5_ != -1;
          this.effects = new Vector.<Effect>();
@@ -1002,7 +1002,7 @@ package com.company.assembleegameclient.ui.tooltip
          }
          else
          {
-            this.comparisonResults = new com.company.assembleegameclient.ui.tooltip.SlotComparisonResult();
+            this.comparisonResults = new SlotComparisonResult();
          }
       }
       
@@ -1106,8 +1106,8 @@ package com.company.assembleegameclient.ui.tooltip
    }
 }
 
-import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
+import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 class Effect
 {

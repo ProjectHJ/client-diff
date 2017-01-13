@@ -1,9 +1,9 @@
 package kabam.rotmg.packages.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.packages.services.GetPackagesTask;
    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
    import kabam.rotmg.packages.control.BuyPackageSignal;
+   import kabam.rotmg.packages.services.GetPackagesTask;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PackageOfferDialogMediator extends Mediator
    {
@@ -13,7 +13,7 @@ package kabam.rotmg.packages.view
       public var getPackageTask:GetPackagesTask;
       
       [Inject]
-      public var view:kabam.rotmg.packages.view.PackageOfferDialog;
+      public var view:PackageOfferDialog;
       
       [Inject]
       public var closeDialogsSignal:CloseDialogsSignal;

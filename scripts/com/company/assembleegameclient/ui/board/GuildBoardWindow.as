@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.ui.board
 {
-   import flash.display.Sprite;
-   import flash.display.Shape;
    import com.company.assembleegameclient.ui.dialogs.Dialog;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.account.core.Account;
-   import flash.events.Event;
    import com.company.util.MoreObjectUtil;
    import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.core.StaticInjectorContext;
    
    public class GuildBoardWindow extends Sprite
    {
@@ -22,9 +22,9 @@ package com.company.assembleegameclient.ui.board
       
       private var text_:String;
       
-      private var viewBoard_:com.company.assembleegameclient.ui.board.ViewBoard;
+      private var viewBoard_:ViewBoard;
       
-      private var editBoard_:com.company.assembleegameclient.ui.board.EditBoard;
+      private var editBoard_:EditBoard;
       
       private var client:AppEngineClient;
       
@@ -76,7 +76,7 @@ package com.company.assembleegameclient.ui.board
       
       private function show() : void
       {
-         this.viewBoard_ = new com.company.assembleegameclient.ui.board.ViewBoard(this.text_,this.canEdit_);
+         this.viewBoard_ = new ViewBoard(this.text_,this.canEdit_);
          this.viewBoard_.addEventListener(Event.COMPLETE,this.onViewComplete);
          this.viewBoard_.addEventListener(Event.CHANGE,this.onViewChange);
          addChild(this.viewBoard_);
@@ -95,7 +95,7 @@ package com.company.assembleegameclient.ui.board
       {
          removeChild(this.viewBoard_);
          this.viewBoard_ = null;
-         this.editBoard_ = new com.company.assembleegameclient.ui.board.EditBoard(this.text_);
+         this.editBoard_ = new EditBoard(this.text_);
          this.editBoard_.addEventListener(Event.CANCEL,this.onEditCancel);
          this.editBoard_.addEventListener(Event.COMPLETE,this.onEditComplete);
          addChild(this.editBoard_);

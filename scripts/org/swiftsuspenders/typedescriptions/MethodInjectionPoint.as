@@ -1,11 +1,11 @@
 package org.swiftsuspenders.typedescriptions
 {
-   import org.swiftsuspenders.Injector;
-   import org.swiftsuspenders.dependencyproviders.DependencyProvider;
-   import org.swiftsuspenders.utils.SsInternal;
-   import org.swiftsuspenders.errors.InjectorMissingMappingError;
    import avmplus.getQualifiedClassName;
    import flash.utils.Dictionary;
+   import org.swiftsuspenders.Injector;
+   import org.swiftsuspenders.dependencyproviders.DependencyProvider;
+   import org.swiftsuspenders.errors.InjectorMissingMappingError;
+   import org.swiftsuspenders.utils.SsInternal;
    
    public class MethodInjectionPoint extends InjectionPoint
    {

@@ -1,7 +1,7 @@
 package kabam.rotmg.core
 {
-   import robotlegs.bender.framework.impl.Context;
    import org.swiftsuspenders.Injector;
+   import robotlegs.bender.framework.impl.Context;
    
    public class StaticInjectorContext extends Context
    {

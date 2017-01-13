@@ -1,8 +1,8 @@
 package kabam.rotmg.friends.service
 {
    import kabam.lib.tasks.BaseTask;
-   import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
    
    public class FriendDataRequestTask extends BaseTask
    {

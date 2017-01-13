@@ -4,13 +4,13 @@ package kabam.rotmg.classes.model
    {
        
       
-      private const skins:Vector.<kabam.rotmg.classes.model.CharacterSkin> = new Vector.<kabam.rotmg.classes.model.CharacterSkin>(0);
+      private const skins:Vector.<CharacterSkin> = new Vector.<CharacterSkin>(0);
       
       private const map:Object = {};
       
-      private var defaultSkin:kabam.rotmg.classes.model.CharacterSkin;
+      private var defaultSkin:CharacterSkin;
       
-      private var selectedSkin:kabam.rotmg.classes.model.CharacterSkin;
+      private var selectedSkin:CharacterSkin;
       
       private var maxLevelAchieved:int;
       
@@ -24,22 +24,22 @@ package kabam.rotmg.classes.model
          return this.skins.length;
       }
       
-      public function getDefaultSkin() : kabam.rotmg.classes.model.CharacterSkin
+      public function getDefaultSkin() : CharacterSkin
       {
          return this.defaultSkin;
       }
       
-      public function getSelectedSkin() : kabam.rotmg.classes.model.CharacterSkin
+      public function getSelectedSkin() : CharacterSkin
       {
          return this.selectedSkin;
       }
       
-      public function getSkinAt(param1:int) : kabam.rotmg.classes.model.CharacterSkin
+      public function getSkinAt(param1:int) : CharacterSkin
       {
          return this.skins[param1];
       }
       
-      public function addSkin(param1:kabam.rotmg.classes.model.CharacterSkin, param2:Boolean = false) : void
+      public function addSkin(param1:CharacterSkin, param2:Boolean = false) : void
       {
          param1.changed.add(this.onSkinChanged);
          this.skins.push(param1);
@@ -60,7 +60,7 @@ package kabam.rotmg.classes.model
          }
       }
       
-      private function onSkinChanged(param1:kabam.rotmg.classes.model.CharacterSkin) : void
+      private function onSkinChanged(param1:CharacterSkin) : void
       {
          if(param1.getIsSelected() && this.selectedSkin != param1)
          {
@@ -71,7 +71,7 @@ package kabam.rotmg.classes.model
       
       public function updateSkins(param1:int) : void
       {
-         var _loc2_:kabam.rotmg.classes.model.CharacterSkin = null;
+         var _loc2_:CharacterSkin = null;
          this.maxLevelAchieved = param1;
          for each(_loc2_ in this.skins)
          {
@@ -79,7 +79,7 @@ package kabam.rotmg.classes.model
          }
       }
       
-      private function updateSkinState(param1:kabam.rotmg.classes.model.CharacterSkin) : void
+      private function updateSkinState(param1:CharacterSkin) : void
       {
          if(!param1.skinSelectEnabled)
          {
@@ -91,7 +91,7 @@ package kabam.rotmg.classes.model
          }
       }
       
-      private function getSkinState(param1:kabam.rotmg.classes.model.CharacterSkin) : CharacterSkinState
+      private function getSkinState(param1:CharacterSkin) : CharacterSkinState
       {
          if(!param1.skinSelectEnabled)
          {
@@ -104,15 +104,15 @@ package kabam.rotmg.classes.model
          return CharacterSkinState.LOCKED;
       }
       
-      public function getSkin(param1:int) : kabam.rotmg.classes.model.CharacterSkin
+      public function getSkin(param1:int) : CharacterSkin
       {
          return this.map[param1] || this.defaultSkin;
       }
       
-      public function getListedSkins() : Vector.<kabam.rotmg.classes.model.CharacterSkin>
+      public function getListedSkins() : Vector.<CharacterSkin>
       {
-         var _loc2_:kabam.rotmg.classes.model.CharacterSkin = null;
-         var _loc1_:Vector.<kabam.rotmg.classes.model.CharacterSkin> = new Vector.<kabam.rotmg.classes.model.CharacterSkin>();
+         var _loc2_:CharacterSkin = null;
+         var _loc1_:Vector.<CharacterSkin> = new Vector.<CharacterSkin>();
          for each(_loc2_ in this.skins)
          {
             if(_loc2_.getState() != CharacterSkinState.UNLISTED)

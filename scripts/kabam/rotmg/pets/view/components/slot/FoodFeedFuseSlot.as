@@ -1,18 +1,18 @@
 package kabam.rotmg.pets.view.components.slot
 {
-   import org.osflash.signals.Signal;
-   import flash.filters.ColorMatrixFilter;
-   import flash.geom.ColorTransform;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.assembleegameclient.util.DisplayHierarchy;
    import com.company.util.MoreColorUtil;
    import flash.events.Event;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.constants.ItemConstants;
    import flash.events.MouseEvent;
-   import com.company.assembleegameclient.util.DisplayHierarchy;
+   import flash.filters.ColorMatrixFilter;
+   import flash.geom.ColorTransform;
+   import kabam.rotmg.constants.ItemConstants;
    import kabam.rotmg.pets.view.FeedPetView;
    import kabam.rotmg.pets.view.FusePetView;
    import kabam.rotmg.questrewards.components.ModalItemSlot;
+   import kabam.rotmg.text.model.TextKey;
+   import org.osflash.signals.Signal;
    
    public class FoodFeedFuseSlot extends FeedFuseSlot
    {

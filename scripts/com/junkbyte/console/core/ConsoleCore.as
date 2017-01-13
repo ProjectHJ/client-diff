@@ -1,8 +1,8 @@
 package com.junkbyte.console.core
 {
-   import flash.events.EventDispatcher;
    import com.junkbyte.console.Console;
    import com.junkbyte.console.ConsoleConfig;
+   import flash.events.EventDispatcher;
    
    public class ConsoleCore extends EventDispatcher
    {

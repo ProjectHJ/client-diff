@@ -1,7 +1,7 @@
 package kabam.lib.signals
 {
-   import org.osflash.signals.Signal;
    import org.osflash.signals.ISlot;
+   import org.osflash.signals.Signal;
    
    public class DeferredQueueSignal extends Signal
    {

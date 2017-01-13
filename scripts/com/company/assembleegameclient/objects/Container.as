@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.objects
 {
+   import com.company.assembleegameclient.game.GameSprite;
    import com.company.assembleegameclient.map.Map;
-   import com.company.util.PointUtil;
    import com.company.assembleegameclient.sound.SoundEffectLibrary;
    import com.company.assembleegameclient.ui.panels.Panel;
-   import com.company.assembleegameclient.game.GameSprite;
    import com.company.assembleegameclient.ui.panels.itemgrids.ContainerGrid;
+   import com.company.util.PointUtil;
    
    public class Container extends GameObject implements IInteractiveObject
    {

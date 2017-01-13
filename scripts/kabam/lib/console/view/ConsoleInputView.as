@@ -1,13 +1,13 @@
 package kabam.lib.console.view
 {
+   import flash.events.KeyboardEvent;
+   import flash.geom.Rectangle;
    import flash.text.TextField;
+   import flash.text.TextFieldType;
+   import flash.text.TextFormat;
+   import flash.ui.Keyboard;
    import kabam.lib.resizing.view.Resizable;
    import kabam.lib.util.StageLifecycleUtil;
-   import flash.events.KeyboardEvent;
-   import flash.ui.Keyboard;
-   import flash.geom.Rectangle;
-   import flash.text.TextFormat;
-   import flash.text.TextFieldType;
    
    public final class ConsoleInputView extends TextField implements Resizable
    {

@@ -1,9 +1,9 @@
 package com.hurlant.math
 {
    import com.hurlant.crypto.prng.Random;
+   import com.hurlant.util.Hex;
    import com.hurlant.util.Memory;
    import flash.utils.ByteArray;
-   import com.hurlant.util.Hex;
    
    use namespace bi_internal;
    
@@ -24,9 +24,9 @@ package com.hurlant.math
       
       public static const F2:int = 2 * DB - BI_FP;
       
-      public static const ZERO:com.hurlant.math.BigInteger = nbv(0);
+      public static const ZERO:BigInteger = nbv(0);
       
-      public static const ONE:com.hurlant.math.BigInteger = nbv(1);
+      public static const ONE:BigInteger = nbv(1);
       
       public static const lowprimes:Array = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311,313,317,331,337,347,349,353,359,367,373,379,383,389,397,401,409,419,421,431,433,439,443,449,457,461,463,467,479,487,491,499,503,509];
       
@@ -62,9 +62,9 @@ package com.hurlant.math
          }
       }
       
-      public static function nbv(param1:int) : com.hurlant.math.BigInteger
+      public static function nbv(param1:int) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          _loc2_.fromInt(param1);
          return _loc2_;
       }
@@ -216,19 +216,19 @@ package com.hurlant.math
          return _loc2_;
       }
       
-      public function negate() : com.hurlant.math.BigInteger
+      public function negate() : BigInteger
       {
-         var _loc1_:com.hurlant.math.BigInteger = this.nbi();
+         var _loc1_:BigInteger = this.nbi();
          ZERO.subTo(this,_loc1_);
          return _loc1_;
       }
       
-      public function abs() : com.hurlant.math.BigInteger
+      public function abs() : BigInteger
       {
          return this.s < 0?this.negate():this;
       }
       
-      public function compareTo(param1:com.hurlant.math.BigInteger) : int
+      public function compareTo(param1:BigInteger) : int
       {
          var _loc2_:int = this.s - param1.s;
          if(_loc2_ != 0)
@@ -293,9 +293,9 @@ package com.hurlant.math
          return DB * (this.t - 1) + this.nbits(this.a[this.t - 1] ^ this.s & DM);
       }
       
-      public function mod(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function mod(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = this.nbi();
+         var _loc2_:BigInteger = this.nbi();
          this.abs().divRemTo(param1,null,_loc2_);
          if(this.s < 0 && _loc2_.compareTo(ZERO) > 0)
          {
@@ -304,7 +304,7 @@ package com.hurlant.math
          return _loc2_;
       }
       
-      public function modPowInt(param1:int, param2:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function modPowInt(param1:int, param2:BigInteger) : BigInteger
       {
          var _loc3_:IReduction = null;
          if(param1 < 256 || param2.isEven())
@@ -318,7 +318,7 @@ package com.hurlant.math
          return this.exp(param1,_loc3_);
       }
       
-      bi_internal function copyTo(param1:com.hurlant.math.BigInteger) : void
+      bi_internal function copyTo(param1:BigInteger) : void
       {
          var _loc2_:int = this.t - 1;
          while(_loc2_ >= 0)
@@ -400,7 +400,7 @@ package com.hurlant.math
          }
       }
       
-      bi_internal function dlShiftTo(param1:int, param2:com.hurlant.math.BigInteger) : void
+      bi_internal function dlShiftTo(param1:int, param2:BigInteger) : void
       {
          var _loc3_:int = 0;
          _loc3_ = this.t - 1;
@@ -419,7 +419,7 @@ package com.hurlant.math
          param2.s = this.s;
       }
       
-      bi_internal function drShiftTo(param1:int, param2:com.hurlant.math.BigInteger) : void
+      bi_internal function drShiftTo(param1:int, param2:BigInteger) : void
       {
          var _loc3_:int = 0;
          _loc3_ = param1;
@@ -432,7 +432,7 @@ package com.hurlant.math
          param2.s = this.s;
       }
       
-      bi_internal function lShiftTo(param1:int, param2:com.hurlant.math.BigInteger) : void
+      bi_internal function lShiftTo(param1:int, param2:BigInteger) : void
       {
          var _loc8_:int = 0;
          var _loc3_:int = param1 % DB;
@@ -459,7 +459,7 @@ package com.hurlant.math
          param2.clamp();
       }
       
-      bi_internal function rShiftTo(param1:int, param2:com.hurlant.math.BigInteger) : void
+      bi_internal function rShiftTo(param1:int, param2:BigInteger) : void
       {
          var _loc7_:int = 0;
          param2.s = this.s;
@@ -488,7 +488,7 @@ package com.hurlant.math
          param2.clamp();
       }
       
-      bi_internal function subTo(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger) : void
+      bi_internal function subTo(param1:BigInteger, param2:BigInteger) : void
       {
          var _loc3_:int = 0;
          var _loc4_:* = 0;
@@ -534,7 +534,7 @@ package com.hurlant.math
          param2.clamp();
       }
       
-      bi_internal function am(param1:int, param2:int, param3:com.hurlant.math.BigInteger, param4:int, param5:int, param6:int) : int
+      bi_internal function am(param1:int, param2:int, param3:BigInteger, param4:int, param5:int, param6:int) : int
       {
          var _loc9_:* = 0;
          var _loc10_:* = 0;
@@ -553,10 +553,10 @@ package com.hurlant.math
          return param5;
       }
       
-      bi_internal function multiplyTo(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger) : void
+      bi_internal function multiplyTo(param1:BigInteger, param2:BigInteger) : void
       {
-         var _loc3_:com.hurlant.math.BigInteger = this.abs();
-         var _loc4_:com.hurlant.math.BigInteger = param1.abs();
+         var _loc3_:BigInteger = this.abs();
+         var _loc4_:BigInteger = param1.abs();
          var _loc5_:int = _loc3_.t;
          param2.t = _loc5_ + _loc4_.t;
          while(--_loc5_ >= 0)
@@ -577,10 +577,10 @@ package com.hurlant.math
          }
       }
       
-      bi_internal function squareTo(param1:com.hurlant.math.BigInteger) : void
+      bi_internal function squareTo(param1:BigInteger) : void
       {
          var _loc4_:int = 0;
-         var _loc2_:com.hurlant.math.BigInteger = this.abs();
+         var _loc2_:BigInteger = this.abs();
          var _loc3_:int = param1.t = 2 * _loc2_.t;
          while(--_loc3_ >= 0)
          {
@@ -605,18 +605,18 @@ package com.hurlant.math
          param1.clamp();
       }
       
-      bi_internal function divRemTo(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger = null, param3:com.hurlant.math.BigInteger = null) : void
+      bi_internal function divRemTo(param1:BigInteger, param2:BigInteger = null, param3:BigInteger = null) : void
       {
          var qd:int = 0;
-         var m:com.hurlant.math.BigInteger = param1;
-         var q:com.hurlant.math.BigInteger = param2;
-         var r:com.hurlant.math.BigInteger = param3;
-         var pm:com.hurlant.math.BigInteger = m.abs();
+         var m:BigInteger = param1;
+         var q:BigInteger = param2;
+         var r:BigInteger = param3;
+         var pm:BigInteger = m.abs();
          if(pm.t <= 0)
          {
             return;
          }
-         var pt:com.hurlant.math.BigInteger = this.abs();
+         var pt:BigInteger = this.abs();
          if(pt.t < pm.t)
          {
             if(q != null)
@@ -633,7 +633,7 @@ package com.hurlant.math
          {
             r = this.nbi();
          }
-         var y:com.hurlant.math.BigInteger = this.nbi();
+         var y:BigInteger = this.nbi();
          var ts:int = this.s;
          var ms:int = m.s;
          var nsh:int = DB - this.nbits(pm.a[pm.t - 1]);
@@ -659,7 +659,7 @@ package com.hurlant.math
          var e:Number = 1 << F2;
          var i:int = r.t;
          var j:int = i - ys;
-         var t:com.hurlant.math.BigInteger = q == null?this.nbi():q;
+         var t:BigInteger = q == null?this.nbi():q;
          y.dlShiftTo(j,t);
          if(r.compareTo(t) >= 0)
          {
@@ -741,16 +741,16 @@ package com.hurlant.math
          return (this.t > 0?this.a[0] & 1:this.s) == 0;
       }
       
-      bi_internal function exp(param1:int, param2:IReduction) : com.hurlant.math.BigInteger
+      bi_internal function exp(param1:int, param2:IReduction) : BigInteger
       {
-         var _loc7_:com.hurlant.math.BigInteger = null;
+         var _loc7_:BigInteger = null;
          if(param1 > 4294967295 || param1 < 1)
          {
             return ONE;
          }
-         var _loc3_:com.hurlant.math.BigInteger = this.nbi();
-         var _loc4_:com.hurlant.math.BigInteger = this.nbi();
-         var _loc5_:com.hurlant.math.BigInteger = param2.convert(this);
+         var _loc3_:BigInteger = this.nbi();
+         var _loc4_:BigInteger = this.nbi();
+         var _loc5_:BigInteger = param2.convert(this);
          var _loc6_:int = this.nbits(param1) - 1;
          _loc5_.copyTo(_loc3_);
          while(--_loc6_ >= 0)
@@ -777,12 +777,12 @@ package com.hurlant.math
       
       protected function nbi() : *
       {
-         return new com.hurlant.math.BigInteger();
+         return new BigInteger();
       }
       
-      public function clone() : com.hurlant.math.BigInteger
+      public function clone() : BigInteger
       {
-         var _loc1_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc1_:BigInteger = new BigInteger();
          this.copyTo(_loc1_);
          return _loc1_;
       }
@@ -850,9 +850,9 @@ package com.hurlant.math
          }
          var _loc2_:int = this.chunkSize(param1);
          var _loc3_:Number = Math.pow(param1,_loc2_);
-         var _loc4_:com.hurlant.math.BigInteger = nbv(_loc3_);
-         var _loc5_:com.hurlant.math.BigInteger = this.nbi();
-         var _loc6_:com.hurlant.math.BigInteger = this.nbi();
+         var _loc4_:BigInteger = nbv(_loc3_);
+         var _loc5_:BigInteger = this.nbi();
+         var _loc6_:BigInteger = this.nbi();
          var _loc7_:String = "";
          this.divRemTo(_loc4_,_loc5_,_loc6_);
          while(_loc5_.sigNum() > 0)
@@ -903,7 +903,7 @@ package com.hurlant.math
          }
          if(_loc5_)
          {
-            com.hurlant.math.BigInteger.ZERO.subTo(this,this);
+            BigInteger.ZERO.subTo(this,this);
          }
       }
       
@@ -954,22 +954,22 @@ package com.hurlant.math
          return _loc2_;
       }
       
-      public function equals(param1:com.hurlant.math.BigInteger) : Boolean
+      public function equals(param1:BigInteger) : Boolean
       {
          return this.compareTo(param1) == 0;
       }
       
-      public function min(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function min(param1:BigInteger) : BigInteger
       {
          return this.compareTo(param1) < 0?this:param1;
       }
       
-      public function max(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function max(param1:BigInteger) : BigInteger
       {
          return this.compareTo(param1) > 0?this:param1;
       }
       
-      protected function bitwiseTo(param1:com.hurlant.math.BigInteger, param2:Function, param3:com.hurlant.math.BigInteger) : void
+      protected function bitwiseTo(param1:BigInteger, param2:Function, param3:BigInteger) : void
       {
          var _loc4_:int = 0;
          var _loc5_:* = 0;
@@ -1011,9 +1011,9 @@ package com.hurlant.math
          return param1 & param2;
       }
       
-      public function and(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function and(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.bitwiseTo(param1,this.op_and,_loc2_);
          return _loc2_;
       }
@@ -1023,9 +1023,9 @@ package com.hurlant.math
          return param1 | param2;
       }
       
-      public function or(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function or(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.bitwiseTo(param1,this.op_or,_loc2_);
          return _loc2_;
       }
@@ -1035,9 +1035,9 @@ package com.hurlant.math
          return param1 ^ param2;
       }
       
-      public function xor(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function xor(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.bitwiseTo(param1,this.op_xor,_loc2_);
          return _loc2_;
       }
@@ -1047,16 +1047,16 @@ package com.hurlant.math
          return param1 & ~param2;
       }
       
-      public function andNot(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function andNot(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.bitwiseTo(param1,this.op_andnot,_loc2_);
          return _loc2_;
       }
       
-      public function not() : com.hurlant.math.BigInteger
+      public function not() : BigInteger
       {
-         var _loc1_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc1_:BigInteger = new BigInteger();
          var _loc2_:int = 0;
          while(_loc2_ < this.t)
          {
@@ -1068,9 +1068,9 @@ package com.hurlant.math
          return _loc1_;
       }
       
-      public function shiftLeft(param1:int) : com.hurlant.math.BigInteger
+      public function shiftLeft(param1:int) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          if(param1 < 0)
          {
             this.rShiftTo(-param1,_loc2_);
@@ -1082,9 +1082,9 @@ package com.hurlant.math
          return _loc2_;
       }
       
-      public function shiftRight(param1:int) : com.hurlant.math.BigInteger
+      public function shiftRight(param1:int) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          if(param1 < 0)
          {
             this.lShiftTo(-param1,_loc2_);
@@ -1182,29 +1182,29 @@ package com.hurlant.math
          return (this.a[_loc2_] & 1 << param1 % DB) != 0;
       }
       
-      protected function changeBit(param1:int, param2:Function) : com.hurlant.math.BigInteger
+      protected function changeBit(param1:int, param2:Function) : BigInteger
       {
-         var _loc3_:com.hurlant.math.BigInteger = com.hurlant.math.BigInteger.ONE.shiftLeft(param1);
+         var _loc3_:BigInteger = BigInteger.ONE.shiftLeft(param1);
          this.bitwiseTo(_loc3_,param2,_loc3_);
          return _loc3_;
       }
       
-      public function setBit(param1:int) : com.hurlant.math.BigInteger
+      public function setBit(param1:int) : BigInteger
       {
          return this.changeBit(param1,this.op_or);
       }
       
-      public function clearBit(param1:int) : com.hurlant.math.BigInteger
+      public function clearBit(param1:int) : BigInteger
       {
          return this.changeBit(param1,this.op_andnot);
       }
       
-      public function flipBit(param1:int) : com.hurlant.math.BigInteger
+      public function flipBit(param1:int) : BigInteger
       {
          return this.changeBit(param1,this.op_xor);
       }
       
-      protected function addTo(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger) : void
+      protected function addTo(param1:BigInteger, param2:BigInteger) : void
       {
          var _loc3_:int = 0;
          var _loc4_:* = 0;
@@ -1250,45 +1250,45 @@ package com.hurlant.math
          param2.clamp();
       }
       
-      public function add(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function add(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.addTo(param1,_loc2_);
          return _loc2_;
       }
       
-      public function subtract(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function subtract(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.subTo(param1,_loc2_);
          return _loc2_;
       }
       
-      public function multiply(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function multiply(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.multiplyTo(param1,_loc2_);
          return _loc2_;
       }
       
-      public function divide(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function divide(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.divRemTo(param1,_loc2_,null);
          return _loc2_;
       }
       
-      public function remainder(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function remainder(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
          this.divRemTo(param1,null,_loc2_);
          return _loc2_;
       }
       
-      public function divideAndRemainder(param1:com.hurlant.math.BigInteger) : Array
+      public function divideAndRemainder(param1:BigInteger) : Array
       {
-         var _loc2_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
-         var _loc3_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc2_:BigInteger = new BigInteger();
+         var _loc3_:BigInteger = new BigInteger();
          this.divRemTo(param1,_loc2_,_loc3_);
          return [_loc2_,_loc3_];
       }
@@ -1318,12 +1318,12 @@ package com.hurlant.math
          }
       }
       
-      public function pow(param1:int) : com.hurlant.math.BigInteger
+      public function pow(param1:int) : BigInteger
       {
          return this.exp(param1,new NullReduction());
       }
       
-      bi_internal function multiplyLowerTo(param1:com.hurlant.math.BigInteger, param2:int, param3:com.hurlant.math.BigInteger) : void
+      bi_internal function multiplyLowerTo(param1:BigInteger, param2:int, param3:BigInteger) : void
       {
          var _loc5_:int = 0;
          var _loc4_:int = Math.min(this.t + param1.t,param2);
@@ -1348,7 +1348,7 @@ package com.hurlant.math
          param3.clamp();
       }
       
-      bi_internal function multiplyUpperTo(param1:com.hurlant.math.BigInteger, param2:int, param3:com.hurlant.math.BigInteger) : void
+      bi_internal function multiplyUpperTo(param1:BigInteger, param2:int, param3:BigInteger) : void
       {
          param2--;
          var _loc4_:int = param3.t = this.t + param1.t - param2;
@@ -1367,15 +1367,15 @@ package com.hurlant.math
          param3.drShiftTo(1,param3);
       }
       
-      public function modPow(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function modPow(param1:BigInteger, param2:BigInteger) : BigInteger
       {
          var _loc4_:int = 0;
          var _loc6_:IReduction = null;
          var _loc12_:* = 0;
-         var _loc15_:com.hurlant.math.BigInteger = null;
-         var _loc16_:com.hurlant.math.BigInteger = null;
+         var _loc15_:BigInteger = null;
+         var _loc16_:BigInteger = null;
          var _loc3_:int = param1.bitLength();
-         var _loc5_:com.hurlant.math.BigInteger = nbv(1);
+         var _loc5_:BigInteger = nbv(1);
          if(_loc3_ <= 0)
          {
             return _loc5_;
@@ -1419,18 +1419,18 @@ package com.hurlant.math
          _loc7_[1] = _loc6_.convert(this);
          if(_loc4_ > 1)
          {
-            _loc16_ = new com.hurlant.math.BigInteger();
+            _loc16_ = new BigInteger();
             _loc6_.sqrTo(_loc7_[1],_loc16_);
             while(_loc8_ <= _loc10_)
             {
-               _loc7_[_loc8_] = new com.hurlant.math.BigInteger();
+               _loc7_[_loc8_] = new BigInteger();
                _loc6_.mulTo(_loc16_,_loc7_[_loc8_ - 2],_loc7_[_loc8_]);
                _loc8_ = _loc8_ + 2;
             }
          }
          var _loc11_:int = param1.t - 1;
          var _loc13_:Boolean = true;
-         var _loc14_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc14_:BigInteger = new BigInteger();
          _loc3_ = this.nbits(param1.a[_loc11_]) - 1;
          while(_loc11_ >= 0)
          {
@@ -1498,11 +1498,11 @@ package com.hurlant.math
          return _loc6_.revert(_loc5_);
       }
       
-      public function gcd(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function gcd(param1:BigInteger) : BigInteger
       {
-         var _loc6_:com.hurlant.math.BigInteger = null;
-         var _loc2_:com.hurlant.math.BigInteger = this.s < 0?this.negate():this.clone();
-         var _loc3_:com.hurlant.math.BigInteger = param1.s < 0?param1.negate():param1.clone();
+         var _loc6_:BigInteger = null;
+         var _loc2_:BigInteger = this.s < 0?this.negate():this.clone();
+         var _loc3_:BigInteger = param1.s < 0?param1.negate():param1.clone();
          if(_loc2_.compareTo(_loc3_) < 0)
          {
             _loc6_ = _loc2_;
@@ -1580,19 +1580,19 @@ package com.hurlant.math
          return _loc3_;
       }
       
-      public function modInverse(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function modInverse(param1:BigInteger) : BigInteger
       {
          var _loc2_:Boolean = param1.isEven();
          if(this.isEven() && _loc2_ || param1.sigNum() == 0)
          {
-            return com.hurlant.math.BigInteger.ZERO;
+            return BigInteger.ZERO;
          }
-         var _loc3_:com.hurlant.math.BigInteger = param1.clone();
-         var _loc4_:com.hurlant.math.BigInteger = this.clone();
-         var _loc5_:com.hurlant.math.BigInteger = nbv(1);
-         var _loc6_:com.hurlant.math.BigInteger = nbv(0);
-         var _loc7_:com.hurlant.math.BigInteger = nbv(0);
-         var _loc8_:com.hurlant.math.BigInteger = nbv(1);
+         var _loc3_:BigInteger = param1.clone();
+         var _loc4_:BigInteger = this.clone();
+         var _loc5_:BigInteger = nbv(1);
+         var _loc6_:BigInteger = nbv(0);
+         var _loc7_:BigInteger = nbv(0);
+         var _loc8_:BigInteger = nbv(1);
          while(_loc3_.sigNum() != 0)
          {
             while(_loc3_.isEven())
@@ -1650,9 +1650,9 @@ package com.hurlant.math
                _loc8_.subTo(_loc6_,_loc8_);
             }
          }
-         if(_loc4_.compareTo(com.hurlant.math.BigInteger.ONE) != 0)
+         if(_loc4_.compareTo(BigInteger.ONE) != 0)
          {
-            return com.hurlant.math.BigInteger.ZERO;
+            return BigInteger.ZERO;
          }
          if(_loc8_.compareTo(param1) >= 0)
          {
@@ -1675,7 +1675,7 @@ package com.hurlant.math
          var _loc2_:int = 0;
          var _loc4_:int = 0;
          var _loc5_:int = 0;
-         var _loc3_:com.hurlant.math.BigInteger = this.abs();
+         var _loc3_:BigInteger = this.abs();
          if(_loc3_.t == 1 && _loc3_.a[0] <= lowprimes[lowprimes.length - 1])
          {
             _loc2_ = 0;
@@ -1716,33 +1716,33 @@ package com.hurlant.math
       
       protected function millerRabin(param1:int) : Boolean
       {
-         var _loc7_:com.hurlant.math.BigInteger = null;
+         var _loc7_:BigInteger = null;
          var _loc8_:int = 0;
-         var _loc2_:com.hurlant.math.BigInteger = this.subtract(com.hurlant.math.BigInteger.ONE);
+         var _loc2_:BigInteger = this.subtract(BigInteger.ONE);
          var _loc3_:int = _loc2_.getLowestSetBit();
          if(_loc3_ <= 0)
          {
             return false;
          }
-         var _loc4_:com.hurlant.math.BigInteger = _loc2_.shiftRight(_loc3_);
+         var _loc4_:BigInteger = _loc2_.shiftRight(_loc3_);
          param1 = param1 + 1 >> 1;
          if(param1 > lowprimes.length)
          {
             param1 = int(lowprimes.length);
          }
-         var _loc5_:com.hurlant.math.BigInteger = new com.hurlant.math.BigInteger();
+         var _loc5_:BigInteger = new BigInteger();
          var _loc6_:int = 0;
          while(_loc6_ < param1)
          {
             _loc5_.fromInt(lowprimes[_loc6_]);
             _loc7_ = _loc5_.modPow(_loc4_,this);
-            if(_loc7_.compareTo(com.hurlant.math.BigInteger.ONE) != 0 && _loc7_.compareTo(_loc2_) != 0)
+            if(_loc7_.compareTo(BigInteger.ONE) != 0 && _loc7_.compareTo(_loc2_) != 0)
             {
                _loc8_ = 1;
                while(_loc8_++ < _loc3_ && _loc7_.compareTo(_loc2_) != 0)
                {
                   _loc7_ = _loc7_.modPowInt(2,this);
-                  if(_loc7_.compareTo(com.hurlant.math.BigInteger.ONE) == 0)
+                  if(_loc7_.compareTo(BigInteger.ONE) == 0)
                   {
                      return false;
                   }
@@ -1761,7 +1761,7 @@ package com.hurlant.math
       {
          if(!this.testBit(param1 - 1))
          {
-            this.bitwiseTo(com.hurlant.math.BigInteger.ONE.shiftLeft(param1 - 1),this.op_or,this);
+            this.bitwiseTo(BigInteger.ONE.shiftLeft(param1 - 1),this.op_or,this);
          }
          if(this.isEven())
          {
@@ -1772,7 +1772,7 @@ package com.hurlant.math
             this.dAddOffset(2,0);
             while(this.bitLength() > param1)
             {
-               this.subTo(com.hurlant.math.BigInteger.ONE.shiftLeft(param1 - 1),this);
+               this.subTo(BigInteger.ONE.shiftLeft(param1 - 1),this);
             }
          }
       }

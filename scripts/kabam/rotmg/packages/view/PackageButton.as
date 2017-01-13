@@ -1,17 +1,17 @@
 package kabam.rotmg.packages.view
 {
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.filters.DropShadowFilter;
-   import org.osflash.signals.Signal;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.ui.UIUtils;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.packages.model.PackageInfo;
    import com.company.assembleegameclient.util.TimeUtil;
-   import kabam.rotmg.text.model.TextKey;
+   import flash.display.DisplayObject;
    import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.packages.model.PackageInfo;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.ui.UIUtils;
+   import org.osflash.signals.Signal;
    
    public class PackageButton extends BasePackageButton
    {

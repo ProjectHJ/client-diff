@@ -1,10 +1,10 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.BitmapData;
-   import flash.geom.Rectangle;
-   import flash.geom.Matrix;
-   import flash.display.Sprite;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Sprite;
+   import flash.geom.Matrix;
+   import flash.geom.Rectangle;
    
    public class BigBitmapData
    {

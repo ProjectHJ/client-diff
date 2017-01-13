@@ -1,16 +1,16 @@
 package kabam.rotmg.pets.view.components.slot
 {
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.pets.view.components.PetIconFactory;
-   import flash.filters.ColorMatrixFilter;
-   import kabam.rotmg.text.model.TextKey;
+   import com.company.util.MoreColorUtil;
    import flash.events.MouseEvent;
+   import flash.filters.ColorMatrixFilter;
+   import flash.geom.ColorTransform;
+   import kabam.rotmg.pets.data.PetFamilyKeys;
    import kabam.rotmg.pets.data.PetVO;
    import kabam.rotmg.pets.view.components.PetIcon;
+   import kabam.rotmg.pets.view.components.PetIconFactory;
+   import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.stringBuilder.AppendingLineBuilder;
-   import kabam.rotmg.pets.data.PetFamilyKeys;
-   import flash.geom.ColorTransform;
-   import com.company.util.MoreColorUtil;
+   import org.osflash.signals.Signal;
    
    public class PetFeedFuseSlot extends FeedFuseSlot
    {

@@ -1,12 +1,12 @@
 package com.junkbyte.console.core
 {
+   import com.junkbyte.console.Console;
    import com.junkbyte.console.vos.GraphGroup;
-   import flash.geom.Rectangle;
    import com.junkbyte.console.vos.GraphInterest;
+   import flash.geom.Rectangle;
+   import flash.system.System;
    import flash.utils.ByteArray;
    import flash.utils.getTimer;
-   import flash.system.System;
-   import com.junkbyte.console.Console;
    
    public class Graphing extends ConsoleCore
    {

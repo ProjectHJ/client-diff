@@ -1,31 +1,31 @@
 package kabam.rotmg.friends.view
 {
-   import flash.display.Sprite;
-   import com.company.assembleegameclient.ui.dialogs.DialogCloser;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.assembleegameclient.ui.DeprecatedTextButton;
    import com.company.assembleegameclient.account.ui.TextInputField;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import com.company.assembleegameclient.ui.DeprecatedTextButton;
+   import com.company.assembleegameclient.ui.dialogs.DialogCloser;
+   import com.company.ui.BaseSimpleText;
+   import com.company.util.GraphicsUtil;
+   import flash.display.CapsStyle;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import kabam.rotmg.friends.model.FriendVO;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   import flash.events.FocusEvent;
-   import kabam.rotmg.friends.model.FriendConstant;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import com.company.ui.BaseSimpleText;
-   import flash.text.TextFormatAlign;
-   import com.company.util.GraphicsUtil;
-   import kabam.rotmg.pets.util.PetsViewAssetFactory;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.FocusEvent;
+   import flash.events.MouseEvent;
+   import flash.text.TextFieldAutoSize;
+   import flash.text.TextFormatAlign;
+   import kabam.rotmg.friends.model.FriendConstant;
+   import kabam.rotmg.friends.model.FriendVO;
+   import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
    
    public class FriendListView extends Sprite implements DialogCloser
    {
@@ -45,7 +45,7 @@ package kabam.rotmg.friends.view
       
       public var tabSignal;
       
-      public var _tabView:kabam.rotmg.friends.view.FriendTabView;
+      public var _tabView:FriendTabView;
       
       public var _w:int;
       
@@ -63,9 +63,9 @@ package kabam.rotmg.friends.view
       
       private var _nameInput:TextInputField;
       
-      private var _friendsContainer:kabam.rotmg.friends.view.FriendListContainer;
+      private var _friendsContainer:FriendListContainer;
       
-      private var _invitationsContainer:kabam.rotmg.friends.view.FriendListContainer;
+      private var _invitationsContainer:FriendListContainer;
       
       private var _currentServerName:String;
       
@@ -97,7 +97,7 @@ package kabam.rotmg.friends.view
       {
          this._w = TEXT_WIDTH;
          addEventListener(Event.REMOVED_FROM_STAGE,this.onRemovedFromStage);
-         this._tabView = new kabam.rotmg.friends.view.FriendTabView(TEXT_WIDTH,TEXT_HEIGHT);
+         this._tabView = new FriendTabView(TEXT_WIDTH,TEXT_HEIGHT);
          this._tabView.tabSelected.add(this.onTabClicked);
          addChild(this._tabView);
          this.createFriendTab();
@@ -221,7 +221,7 @@ package kabam.rotmg.friends.view
          this._friendTotalText.x = 400;
          this._friendTotalText.y = 0;
          _loc1_.addChild(this._friendTotalText);
-         this._friendsContainer = new kabam.rotmg.friends.view.FriendListContainer(TEXT_WIDTH,TEXT_HEIGHT - 110);
+         this._friendsContainer = new FriendListContainer(TEXT_WIDTH,TEXT_HEIGHT - 110);
          this._friendsContainer.x = 3;
          this._friendsContainer.y = 80;
          _loc1_.addChild(this._friendsContainer);
@@ -236,7 +236,7 @@ package kabam.rotmg.friends.view
          var _loc1_:Sprite = null;
          _loc1_ = new Sprite();
          _loc1_.name = FriendConstant.INVITE_TAB;
-         this._invitationsContainer = new kabam.rotmg.friends.view.FriendListContainer(TEXT_WIDTH,TEXT_HEIGHT - 30);
+         this._invitationsContainer = new FriendListContainer(TEXT_WIDTH,TEXT_HEIGHT - 30);
          this._invitationsContainer.x = 3;
          _loc1_.addChild(this._invitationsContainer);
          this._inviteDefaultText = new TextFieldDisplayConcrete().setSize(18).setColor(16777215).setBold(true).setAutoSize(TextFieldAutoSize.CENTER);

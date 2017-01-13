@@ -1,7 +1,7 @@
 package com.junkbyte.console.vos
 {
-   import flash.utils.ByteArray;
    import flash.geom.Rectangle;
+   import flash.utils.ByteArray;
    
    public class GraphGroup
    {

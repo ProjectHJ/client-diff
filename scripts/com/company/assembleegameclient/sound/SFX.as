@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.sound
 {
-   import flash.media.SoundTransform;
    import com.company.assembleegameclient.parameters.Parameters;
    import com.company.googleanalytics.GA;
+   import flash.media.SoundTransform;
    
    public class SFX
    {

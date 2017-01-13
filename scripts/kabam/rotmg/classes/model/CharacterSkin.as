@@ -1,7 +1,7 @@
 package kabam.rotmg.classes.model
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.assets.model.CharacterTemplate;
+   import org.osflash.signals.Signal;
    
    public class CharacterSkin
    {
@@ -27,13 +27,13 @@ package kabam.rotmg.classes.model
       
       public var is16x16:Boolean = false;
       
-      private var state:kabam.rotmg.classes.model.CharacterSkinState;
+      private var state:CharacterSkinState;
       
       private var isSelected:Boolean;
       
       public function CharacterSkin()
       {
-         this.state = kabam.rotmg.classes.model.CharacterSkinState.NULL;
+         this.state = CharacterSkinState.NULL;
          super();
       }
       
@@ -51,12 +51,12 @@ package kabam.rotmg.classes.model
          }
       }
       
-      public function getState() : kabam.rotmg.classes.model.CharacterSkinState
+      public function getState() : CharacterSkinState
       {
          return this.state;
       }
       
-      public function setState(param1:kabam.rotmg.classes.model.CharacterSkinState) : void
+      public function setState(param1:CharacterSkinState) : void
       {
          if(this.state != param1)
          {

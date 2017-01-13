@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.objects.particles
 {
    import com.company.assembleegameclient.objects.thrown.BitmapParticle;
-   import flash.display.Sprite;
-   import flash.utils.Timer;
-   import flash.events.TimerEvent;
    import flash.display.BitmapData;
+   import flash.display.Sprite;
+   import flash.events.TimerEvent;
    import flash.geom.Point;
+   import flash.utils.Timer;
    
    public class ParticleField extends BitmapParticle
    {
@@ -93,7 +93,7 @@ package com.company.assembleegameclient.objects.particles
       
       private function onTimer(param1:TimerEvent) : void
       {
-         var _loc2_:Square = new Square(this.getStartPoint(),this.getEndPoint(),this.getLifespan());
+         var _loc2_:Square = new Square#182(this.getStartPoint(),this.getEndPoint(),this.getLifespan());
          _loc2_.complete.add(this.onSquareComplete);
          this.squares.push(_loc2_);
          this.spriteSource.addChild(_loc2_);
@@ -109,7 +109,7 @@ package com.company.assembleegameclient.objects.particles
          return this.bitmapSize == this.SMALL?uint(100):uint(50);
       }
       
-      private function onSquareComplete(param1:Square) : void
+      private function onSquareComplete(param1:Square#182) : void
       {
          param1.complete.removeAll();
          this.spriteSource.removeChild(param1);
@@ -149,7 +149,7 @@ import flash.display.Shape;
 import flash.geom.Point;
 import org.osflash.signals.Signal;
 
-class Square extends Shape
+class Square#182 extends Shape
 {
     
    
@@ -167,7 +167,7 @@ class Square extends Shape
    
    public var complete:Signal;
    
-   function Square(param1:Point, param2:Point, param3:uint)
+   function Square#182(param1:Point, param2:Point, param3:uint)
    {
       this.complete = new Signal();
       super();

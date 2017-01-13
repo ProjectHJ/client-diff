@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.ui.tooltip
 {
-   import flash.display.Bitmap;
    import com.company.assembleegameclient.objects.GameObject;
-   import flash.display.BitmapData;
    import com.company.util.BitmapUtil;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
    
    public class PortraitToolTip extends ToolTip
    {

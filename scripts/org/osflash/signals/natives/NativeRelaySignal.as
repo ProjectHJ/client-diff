@@ -1,11 +1,11 @@
 package org.osflash.signals.natives
 {
-   import org.osflash.signals.Signal;
-   import flash.events.IEventDispatcher;
    import flash.events.Event;
+   import flash.events.IEventDispatcher;
    import org.osflash.signals.ISlot;
-   import org.osflash.signals.SlotList;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.Slot;
+   import org.osflash.signals.SlotList;
    
    public class NativeRelaySignal extends Signal implements INativeDispatcher
    {

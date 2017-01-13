@@ -1,17 +1,17 @@
 package kabam.rotmg.promotions.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.promotions.model.BeginnersPackageModel;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.promotions.signals.MakeBeginnersPackagePaymentSignal;
    import kabam.rotmg.account.core.PaymentData;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.promotions.model.BeginnersPackageModel;
+   import kabam.rotmg.promotions.signals.MakeBeginnersPackagePaymentSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class WebChoosePaymentTypeDialogMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.promotions.view.WebChoosePaymentTypeDialog;
+      public var view:WebChoosePaymentTypeDialog;
       
       [Inject]
       public var model:BeginnersPackageModel;

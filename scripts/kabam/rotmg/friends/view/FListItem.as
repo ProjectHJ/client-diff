@@ -1,8 +1,8 @@
 package kabam.rotmg.friends.view
 {
    import flash.display.Sprite;
-   import org.osflash.signals.Signal;
    import kabam.rotmg.friends.model.FriendVO;
+   import org.osflash.signals.Signal;
    
    public class FListItem extends Sprite
    {

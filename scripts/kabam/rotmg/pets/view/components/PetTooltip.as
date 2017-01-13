@@ -1,17 +1,17 @@
 package kabam.rotmg.pets.view.components
 {
-   import com.company.assembleegameclient.ui.tooltip.ToolTip;
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.LineBreakDesign;
+   import com.company.assembleegameclient.ui.tooltip.ToolTip;
    import flash.display.Bitmap;
-   import kabam.rotmg.pets.data.PetVO;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.pets.data.PetFamilyKeys;
-   import kabam.rotmg.pets.util.PetsConstants;
+   import flash.display.Sprite;
    import kabam.rotmg.pets.data.AbilityVO;
+   import kabam.rotmg.pets.data.PetFamilyKeys;
    import kabam.rotmg.pets.data.PetRarityEnum;
+   import kabam.rotmg.pets.data.PetVO;
+   import kabam.rotmg.pets.util.PetsConstants;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.ui.model.TabStripModel;
    
    public class PetTooltip extends ToolTip
@@ -57,6 +57,7 @@ package kabam.rotmg.pets.view.components
       
       private function addChildren() : void
       {
+         this.clearChildren();
          this.petsContent.graphics.beginFill(0,0);
          this.petsContent.graphics.drawRect(0,0,PetsConstants.TOOLTIP_WIDTH,PetsConstants.TOOLTIP_HEIGHT);
          this.petsContent.addChild(this.petBitmap);
@@ -64,7 +65,19 @@ package kabam.rotmg.pets.view.components
          this.petsContent.addChild(this.petRarityTextField);
          this.petsContent.addChild(this.petFamilyTextField);
          this.petsContent.addChild(this.lineBreak);
-         addChild(this.petsContent);
+         if(!contains(this.petsContent))
+         {
+            addChild(this.petsContent);
+         }
+      }
+      
+      private function clearChildren() : void
+      {
+         this.petsContent.graphics.clear();
+         while(this.petsContent.numChildren > 0)
+         {
+            this.petsContent.removeChildAt(0);
+         }
       }
       
       private function addAbilities() : void

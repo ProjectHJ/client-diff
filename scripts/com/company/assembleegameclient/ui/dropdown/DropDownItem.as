@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.ui.dropdown
 {
-   import flash.display.Sprite;
    import com.company.ui.BaseSimpleText;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
    

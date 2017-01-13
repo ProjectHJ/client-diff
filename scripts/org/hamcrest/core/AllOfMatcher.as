@@ -1,7 +1,7 @@
 package org.hamcrest.core
 {
-   import org.hamcrest.DiagnosingMatcher;
    import org.hamcrest.Description;
+   import org.hamcrest.DiagnosingMatcher;
    import org.hamcrest.Matcher;
    
    public class AllOfMatcher extends DiagnosingMatcher

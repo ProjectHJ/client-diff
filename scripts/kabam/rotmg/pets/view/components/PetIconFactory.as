@@ -1,10 +1,10 @@
 package kabam.rotmg.pets.view.components
 {
-   import kabam.rotmg.pets.data.PetVO;
-   import flash.display.BitmapData;
-   import flash.display.Bitmap;
    import com.company.assembleegameclient.util.TextureRedrawer;
    import com.company.assembleegameclient.util.redrawers.GlowRedrawer;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import kabam.rotmg.pets.data.PetVO;
    
    public class PetIconFactory
    {

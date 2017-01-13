@@ -1,9 +1,9 @@
 package kabam.rotmg.stage3D.Object3D
 {
-   import flash.display3D.VertexBuffer3D;
-   import flash.utils.Dictionary;
    import flash.display3D.Context3D;
+   import flash.display3D.VertexBuffer3D;
    import flash.utils.ByteArray;
+   import flash.utils.Dictionary;
    
    public class Model3D_stage3d
    {
@@ -11,7 +11,7 @@ package kabam.rotmg.stage3D.Object3D
       
       public var name:String;
       
-      public var groups:Vector.<kabam.rotmg.stage3D.Object3D.OBJGroup>;
+      public var groups:Vector.<OBJGroup>;
       
       public var vertexBuffer:VertexBuffer3D;
       
@@ -26,14 +26,14 @@ package kabam.rotmg.stage3D.Object3D
       public function Model3D_stage3d()
       {
          super();
-         this.groups = new Vector.<kabam.rotmg.stage3D.Object3D.OBJGroup>();
+         this.groups = new Vector.<OBJGroup>();
          this._materials = new Dictionary();
          this._vertices = new Vector.<Number>();
       }
       
       public function dispose() : void
       {
-         var _loc1_:kabam.rotmg.stage3D.Object3D.OBJGroup = null;
+         var _loc1_:OBJGroup = null;
          for each(_loc1_ in this.groups)
          {
             _loc1_.dispose();
@@ -51,7 +51,7 @@ package kabam.rotmg.stage3D.Object3D
       
       public function CreatBuffer(param1:Context3D) : void
       {
-         var _loc2_:kabam.rotmg.stage3D.Object3D.OBJGroup = null;
+         var _loc2_:OBJGroup = null;
          for each(_loc2_ in this.groups)
          {
             if(_loc2_._indices.length > 0)
@@ -68,7 +68,7 @@ package kabam.rotmg.stage3D.Object3D
       public function readBytes(param1:ByteArray) : void
       {
          var _loc2_:Vector.<String> = null;
-         var _loc3_:kabam.rotmg.stage3D.Object3D.OBJGroup = null;
+         var _loc3_:OBJGroup = null;
          var _loc10_:String = null;
          var _loc11_:Array = null;
          var _loc12_:String = null;
@@ -109,13 +109,13 @@ package kabam.rotmg.stage3D.Object3D
                   }
                   if(_loc3_ === null)
                   {
-                     _loc3_ = new kabam.rotmg.stage3D.Object3D.OBJGroup(null,_loc4_);
+                     _loc3_ = new OBJGroup(null,_loc4_);
                      this.groups.push(_loc3_);
                   }
                   _loc3_._faces.push(_loc2_);
                   continue;
                case "g":
-                  _loc3_ = new kabam.rotmg.stage3D.Object3D.OBJGroup(_loc11_[1],_loc4_);
+                  _loc3_ = new OBJGroup(_loc11_[1],_loc4_);
                   this.groups.push(_loc3_);
                   continue;
                case "o":

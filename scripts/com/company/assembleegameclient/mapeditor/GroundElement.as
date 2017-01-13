@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.Shape;
-   import com.company.assembleegameclient.ui.tooltip.ToolTip;
-   import flash.display.IGraphicsData;
-   import com.company.assembleegameclient.map.Camera;
-   import flash.geom.Rectangle;
-   import com.company.assembleegameclient.map.GroundLibrary;
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.map.SquareFace;
    import com.company.assembleegameclient.map.AnimateProperties;
+   import com.company.assembleegameclient.map.Camera;
+   import com.company.assembleegameclient.map.GroundLibrary;
+   import com.company.assembleegameclient.map.SquareFace;
+   import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import flash.display.BitmapData;
+   import flash.display.IGraphicsData;
+   import flash.display.Shape;
+   import flash.geom.Rectangle;
    
    class GroundElement extends Element
    {

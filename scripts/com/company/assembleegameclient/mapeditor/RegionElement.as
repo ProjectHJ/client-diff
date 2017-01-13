@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.mapeditor
 {
+   import com.company.assembleegameclient.map.RegionLibrary;
    import com.company.assembleegameclient.ui.tooltip.ToolTip;
    import flash.display.Shape;
-   import com.company.assembleegameclient.map.RegionLibrary;
    
    public class RegionElement extends Element
    {

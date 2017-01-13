@@ -1,11 +1,11 @@
 package kabam.rotmg.external.command
 {
-   import robotlegs.bender.bundles.mvcs.Command;
+   import kabam.lib.tasks.DispatchSignalTask;
    import kabam.lib.tasks.TaskMonitor;
-   import org.swiftsuspenders.Injector;
    import kabam.lib.tasks.TaskSequence;
    import kabam.rotmg.external.service.RequestPlayerCreditsTask;
-   import kabam.lib.tasks.DispatchSignalTask;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.bundles.mvcs.Command;
    
    public class RequestPlayerCreditsCommand extends Command
    {
@@ -18,7 +18,7 @@ package kabam.rotmg.external.command
       public var injector:Injector;
       
       [Inject]
-      public var requestPlayerCreditsComplete:kabam.rotmg.external.command.RequestPlayerCreditsCompleteSignal;
+      public var requestPlayerCreditsComplete:RequestPlayerCreditsCompleteSignal;
       
       public function RequestPlayerCreditsCommand()
       {

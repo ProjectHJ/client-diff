@@ -1,12 +1,12 @@
 package kabam.rotmg.death.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.objects.Player;
+   import flash.utils.Dictionary;
    import kabam.rotmg.death.control.ZombifySignal;
    import kabam.rotmg.game.signals.SetWorldInteractionSignal;
    import kabam.rotmg.messaging.impl.incoming.Death;
-   import com.company.assembleegameclient.objects.Player;
-   import flash.utils.Dictionary;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class ZombifyGameMediator extends Mediator
    {

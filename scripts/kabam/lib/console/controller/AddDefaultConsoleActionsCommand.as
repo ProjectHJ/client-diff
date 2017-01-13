@@ -1,10 +1,10 @@
 package kabam.lib.console.controller
 {
-   import kabam.lib.console.signals.RegisterConsoleActionSignal;
-   import kabam.lib.console.signals.ListActionsSignal;
    import kabam.lib.console.signals.ClearConsoleSignal;
-   import kabam.lib.console.signals.RemoveConsoleSignal;
    import kabam.lib.console.signals.CopyConsoleTextSignal;
+   import kabam.lib.console.signals.ListActionsSignal;
+   import kabam.lib.console.signals.RegisterConsoleActionSignal;
+   import kabam.lib.console.signals.RemoveConsoleSignal;
    import kabam.lib.console.vo.ConsoleAction;
    
    public class AddDefaultConsoleActionsCommand

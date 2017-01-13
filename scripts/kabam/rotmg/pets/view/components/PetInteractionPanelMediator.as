@@ -1,18 +1,18 @@
 package kabam.rotmg.pets.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import flash.events.MouseEvent;
    import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.pets.view.FusePetView;
    import kabam.rotmg.pets.view.FeedPetView;
+   import kabam.rotmg.pets.view.FusePetView;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PetInteractionPanelMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.components.PetInteractionPanel;
+      public var view:PetInteractionPanel;
       
       [Inject]
       public var openNoModalDialog:OpenDialogNoModalSignal;

@@ -1,9 +1,9 @@
 package kabam.rotmg.classes.view
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.util.components.VerticalScrollingList;
    import flash.display.DisplayObject;
+   import flash.display.Sprite;
    import kabam.lib.ui.api.Size;
+   import kabam.rotmg.util.components.VerticalScrollingList;
    
    public class CharacterSkinListView extends Sprite
    {

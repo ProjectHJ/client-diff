@@ -1,20 +1,20 @@
 package kabam.rotmg.ui.view
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import com.company.assembleegameclient.ui.icons.IconButtonFactory;
    import com.company.assembleegameclient.objects.ImageFactory;
-   import flash.display.Bitmap;
-   import com.company.assembleegameclient.ui.icons.IconButton;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import org.osflash.signals.natives.NativeSignal;
+   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.BoostPanelButton;
    import com.company.assembleegameclient.ui.ExperienceBoostTimerPopup;
-   import kabam.rotmg.text.model.TextKey;
+   import com.company.assembleegameclient.ui.icons.IconButton;
+   import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+   import flash.display.Bitmap;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
-   import com.company.assembleegameclient.objects.Player;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeSignal;
    
    public class CharacterDetailsView extends Sprite
    {

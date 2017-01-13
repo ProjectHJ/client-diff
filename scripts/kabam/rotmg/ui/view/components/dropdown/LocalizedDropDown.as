@@ -1,9 +1,9 @@
 package kabam.rotmg.ui.view.components.dropdown
 {
    import flash.display.Sprite;
-   import kabam.rotmg.ui.view.SignalWaiter;
    import flash.events.Event;
    import flash.events.MouseEvent;
+   import kabam.rotmg.ui.view.SignalWaiter;
    
    public class LocalizedDropDown extends Sprite
    {
@@ -15,9 +15,9 @@ package kabam.rotmg.ui.view.components.dropdown
       
       protected const h_:int = 36;
       
-      protected var selected_:kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem;
+      protected var selected_:LocalizedDropDownItem;
       
-      private var items_:Vector.<kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem>;
+      private var items_:Vector.<LocalizedDropDownItem>;
       
       private var all_:Sprite;
       
@@ -25,7 +25,7 @@ package kabam.rotmg.ui.view.components.dropdown
       
       public function LocalizedDropDown(param1:Vector.<String>)
       {
-         this.items_ = new Vector.<kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem>();
+         this.items_ = new Vector.<LocalizedDropDownItem>();
          this.all_ = new Sprite();
          this.waiter = new SignalWaiter();
          super();
@@ -63,7 +63,7 @@ package kabam.rotmg.ui.view.components.dropdown
       
       private function makeDropDownItems() : void
       {
-         var _loc1_:kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem = null;
+         var _loc1_:LocalizedDropDownItem = null;
          if(this.strings_.length > 0)
          {
             _loc1_ = this.makeDropDownItem(this.strings_[0]);
@@ -84,9 +84,9 @@ package kabam.rotmg.ui.view.components.dropdown
          }
       }
       
-      private function makeDropDownItem(param1:String) : kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem
+      private function makeDropDownItem(param1:String) : LocalizedDropDownItem
       {
-         var _loc2_:kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem = new kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem(param1,0,this.h_);
+         var _loc2_:LocalizedDropDownItem = new LocalizedDropDownItem(param1,0,this.h_);
          this.waiter.push(_loc2_.getTextChanged());
          return _loc2_;
       }
@@ -120,7 +120,7 @@ package kabam.rotmg.ui.view.components.dropdown
       
       private function onComplete() : void
       {
-         var _loc2_:kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem = null;
+         var _loc2_:LocalizedDropDownItem = null;
          var _loc1_:int = 83;
          for each(_loc2_ in this.items_)
          {
@@ -144,7 +144,7 @@ package kabam.rotmg.ui.view.components.dropdown
          this.selected_.addEventListener(MouseEvent.CLICK,this.onClick);
          this.selected_.removeEventListener(MouseEvent.CLICK,this.onSelect);
          this.hideAll();
-         var _loc2_:kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem = param1.target as kabam.rotmg.ui.view.components.dropdown.LocalizedDropDownItem;
+         var _loc2_:LocalizedDropDownItem = param1.target as LocalizedDropDownItem;
          this.setValue(_loc2_.getValue());
       }
       

@@ -8,13 +8,13 @@ package robotlegs.bender.framework.impl
       
       private const _fromStates:Vector.<String> = new Vector.<String>();
       
-      private const _dispatcher:robotlegs.bender.framework.impl.MessageDispatcher = new robotlegs.bender.framework.impl.MessageDispatcher();
+      private const _dispatcher:MessageDispatcher = new MessageDispatcher();
       
       private const _callbacks:Array = [];
       
       private var _name:String;
       
-      private var _lifecycle:robotlegs.bender.framework.impl.Lifecycle;
+      private var _lifecycle:Lifecycle;
       
       private var _transitionState:String;
       
@@ -28,7 +28,7 @@ package robotlegs.bender.framework.impl
       
       private var _reverse:Boolean;
       
-      public function LifecycleTransition(param1:String, param2:robotlegs.bender.framework.impl.Lifecycle)
+      public function LifecycleTransition(param1:String, param2:Lifecycle)
       {
          super();
          this._name = param1;

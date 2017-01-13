@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.screens
 {
-   import flash.display.Sprite;
-   import flash.geom.Rectangle;
-   import flash.display.Shape;
    import com.company.assembleegameclient.ui.Scrollbar;
-   import flash.utils.getTimer;
-   import flash.events.Event;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.text.model.TextKey;
    import com.company.assembleegameclient.util.FameUtil;
-   import flash.display.BitmapData;
    import com.company.util.BitmapUtil;
    import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.geom.Rectangle;
+   import flash.utils.getTimer;
+   import kabam.rotmg.text.model.TextKey;
    
    public class ScoringBox extends Sprite
    {
@@ -23,7 +23,7 @@ package com.company.assembleegameclient.screens
       
       private var linesSprite_:Sprite;
       
-      private var scoreTextLines_:Vector.<com.company.assembleegameclient.screens.ScoreTextLine>;
+      private var scoreTextLines_:Vector.<ScoreTextLine>;
       
       private var scrollbar_:Scrollbar;
       
@@ -34,7 +34,7 @@ package com.company.assembleegameclient.screens
          var _loc4_:XML = null;
          this.mask_ = new Shape();
          this.linesSprite_ = new Sprite();
-         this.scoreTextLines_ = new Vector.<com.company.assembleegameclient.screens.ScoreTextLine>();
+         this.scoreTextLines_ = new Vector.<ScoreTextLine>();
          super();
          this.rect_ = param1;
          graphics.lineStyle(1,4802889,2);
@@ -71,7 +71,7 @@ package com.company.assembleegameclient.screens
       
       public function showScore() : void
       {
-         var _loc1_:com.company.assembleegameclient.screens.ScoreTextLine = null;
+         var _loc1_:ScoreTextLine = null;
          this.animateScore();
          this.startTime_ = -int.MAX_VALUE;
          for each(_loc1_ in this.scoreTextLines_)
@@ -98,13 +98,13 @@ package com.company.assembleegameclient.screens
          {
             return;
          }
-         this.scoreTextLines_.push(new com.company.assembleegameclient.screens.ScoreTextLine(20,11776947,param6,param1,param2,param3,param4,param7,param8,param9));
+         this.scoreTextLines_.push(new ScoreTextLine(20,11776947,param6,param1,param2,param3,param4,param7,param8,param9));
       }
       
       private function onEnterFrame(param1:Event) : void
       {
          var _loc3_:Number = NaN;
-         var _loc6_:com.company.assembleegameclient.screens.ScoreTextLine = null;
+         var _loc6_:ScoreTextLine = null;
          var _loc2_:Number = this.startTime_ + 2000 * (this.scoreTextLines_.length - 1) / 2;
          _loc3_ = getTimer();
          var _loc4_:int = Math.min(this.scoreTextLines_.length,2 * (getTimer() - this.startTime_) / 2000 + 1);

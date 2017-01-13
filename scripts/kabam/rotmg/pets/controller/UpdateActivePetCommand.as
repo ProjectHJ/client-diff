@@ -1,9 +1,9 @@
 package kabam.rotmg.pets.controller
 {
-   import robotlegs.bender.bundles.mvcs.Command;
-   import kabam.rotmg.pets.data.PetsModel;
    import kabam.rotmg.pets.data.PetSlotsState;
    import kabam.rotmg.pets.data.PetVO;
+   import kabam.rotmg.pets.data.PetsModel;
+   import robotlegs.bender.bundles.mvcs.Command;
    
    public class UpdateActivePetCommand extends Command
    {
@@ -16,7 +16,7 @@ package kabam.rotmg.pets.controller
       public var petsModel:PetsModel;
       
       [Inject]
-      public var notifyActivePetUpdated:kabam.rotmg.pets.controller.NotifyActivePetUpdated;
+      public var notifyActivePetUpdated:NotifyActivePetUpdated;
       
       [Inject]
       public var petSlotsState:PetSlotsState;

@@ -1,8 +1,8 @@
 package kabam.rotmg.messaging.impl.data
 {
-   import kabam.rotmg.text.model.TextKey;
    import flash.utils.IDataInput;
    import flash.utils.IDataOutput;
+   import kabam.rotmg.text.model.TextKey;
    
    public class StatData
    {

@@ -1,39 +1,39 @@
 package kabam.rotmg.chat.control
 {
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.game.model.GameModel;
-   import kabam.rotmg.game.signals.AddTextLineSignal;
-   import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
-   import kabam.rotmg.language.model.StringMap;
-   import kabam.rotmg.chat.model.TellModel;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.ui.model.HUDModel;
-   import kabam.rotmg.friends.model.FriendModel;
-   import kabam.rotmg.messaging.impl.incoming.Text;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.chat.model.ChatMessage;
-   import com.company.assembleegameclient.objects.TextureDataConcrete;
-   import kabam.rotmg.account.core.view.ConfirmEmailModal;
-   import kabam.rotmg.news.view.NewsTicker;
-   import kabam.rotmg.fortune.services.FortuneModel;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.servers.api.ServerModel;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.game.model.AddSpeechBalloonVO;
    import com.company.assembleegameclient.objects.GameObject;
+   import com.company.assembleegameclient.objects.TextureDataConcrete;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.view.ConfirmEmailModal;
+   import kabam.rotmg.chat.model.ChatMessage;
+   import kabam.rotmg.chat.model.TellModel;
    import kabam.rotmg.chat.view.ChatListItemFactory;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.fortune.services.FortuneModel;
+   import kabam.rotmg.friends.model.FriendModel;
+   import kabam.rotmg.game.model.AddSpeechBalloonVO;
+   import kabam.rotmg.game.model.GameModel;
+   import kabam.rotmg.game.signals.AddSpeechBalloonSignal;
+   import kabam.rotmg.game.signals.AddTextLineSignal;
+   import kabam.rotmg.language.model.StringMap;
+   import kabam.rotmg.messaging.impl.incoming.Text;
+   import kabam.rotmg.news.view.NewsTicker;
+   import kabam.rotmg.servers.api.ServerModel;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.model.HUDModel;
    
    public class TextHandler
    {
        
       
-      private const NORMAL_SPEECH_COLORS:kabam.rotmg.chat.control.TextColors = new kabam.rotmg.chat.control.TextColors(14802908,16777215,5526612);
+      private const NORMAL_SPEECH_COLORS:TextColors = new TextColors(14802908,16777215,5526612);
       
-      private const ENEMY_SPEECH_COLORS:kabam.rotmg.chat.control.TextColors = new kabam.rotmg.chat.control.TextColors(5644060,16549442,13484223);
+      private const ENEMY_SPEECH_COLORS:TextColors = new TextColors(5644060,16549442,13484223);
       
-      private const TELL_SPEECH_COLORS:kabam.rotmg.chat.control.TextColors = new kabam.rotmg.chat.control.TextColors(2493110,61695,13880567);
+      private const TELL_SPEECH_COLORS:TextColors = new TextColors(2493110,61695,13880567);
       
-      private const GUILD_SPEECH_COLORS:kabam.rotmg.chat.control.TextColors = new kabam.rotmg.chat.control.TextColors(4098560,10944349,13891532);
+      private const GUILD_SPEECH_COLORS:TextColors = new TextColors(4098560,10944349,13891532);
       
       [Inject]
       public var account:Account;
@@ -54,7 +54,7 @@ package kabam.rotmg.chat.control
       public var tellModel:TellModel;
       
       [Inject]
-      public var spamFilter:kabam.rotmg.chat.control.SpamFilter;
+      public var spamFilter:SpamFilter;
       
       [Inject]
       public var openDialogSignal:OpenDialogSignal;
@@ -237,7 +237,7 @@ package kabam.rotmg.chat.control
       
       private function showSpeechBaloon(param1:Text, param2:String) : void
       {
-         var _loc4_:kabam.rotmg.chat.control.TextColors = null;
+         var _loc4_:TextColors = null;
          var _loc5_:Boolean = false;
          var _loc6_:Boolean = false;
          var _loc7_:AddSpeechBalloonVO = null;
@@ -252,7 +252,7 @@ package kabam.rotmg.chat.control
          }
       }
       
-      private function getColors(param1:Text, param2:GameObject) : kabam.rotmg.chat.control.TextColors
+      private function getColors(param1:Text, param2:GameObject) : TextColors
       {
          if(param2.props_.isEnemy_)
          {

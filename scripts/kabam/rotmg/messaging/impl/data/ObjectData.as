@@ -8,11 +8,11 @@ package kabam.rotmg.messaging.impl.data
       
       public var objectType_:int;
       
-      public var status_:kabam.rotmg.messaging.impl.data.ObjectStatusData;
+      public var status_:ObjectStatusData;
       
       public function ObjectData()
       {
-         this.status_ = new kabam.rotmg.messaging.impl.data.ObjectStatusData();
+         this.status_ = new ObjectStatusData();
          super();
       }
       

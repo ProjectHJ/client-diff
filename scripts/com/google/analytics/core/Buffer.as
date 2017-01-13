@@ -1,18 +1,18 @@
 package com.google.analytics.core
 {
-   import flash.net.SharedObject;
-   import flash.events.NetStatusEvent;
-   import flash.net.SharedObjectFlushStatus;
-   import com.google.analytics.data.UTMV;
-   import com.google.analytics.data.UTMX;
-   import com.google.analytics.data.UTMZ;
    import com.google.analytics.data.UTMA;
    import com.google.analytics.data.UTMB;
    import com.google.analytics.data.UTMC;
    import com.google.analytics.data.UTMK;
-   import com.google.analytics.debug.VisualDebugMode;
+   import com.google.analytics.data.UTMV;
+   import com.google.analytics.data.UTMX;
+   import com.google.analytics.data.UTMZ;
    import com.google.analytics.debug.DebugConfiguration;
+   import com.google.analytics.debug.VisualDebugMode;
    import com.google.analytics.v4.Configuration;
+   import flash.events.NetStatusEvent;
+   import flash.net.SharedObject;
+   import flash.net.SharedObjectFlushStatus;
    
    public dynamic class Buffer
    {

@@ -1,10 +1,10 @@
 package kabam.rotmg.tooltips
 {
+   import kabam.rotmg.tooltips.view.TooltipsMediator;
+   import kabam.rotmg.tooltips.view.TooltipsView;
+   import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
    import robotlegs.bender.framework.api.IConfig;
    import robotlegs.bender.framework.api.IContext;
-   import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-   import kabam.rotmg.tooltips.view.TooltipsView;
-   import kabam.rotmg.tooltips.view.TooltipsMediator;
    
    public class TooltipsConfig implements IConfig
    {

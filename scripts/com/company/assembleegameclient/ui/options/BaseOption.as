@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.ui.options
 {
    import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import flash.events.MouseEvent;
    import flash.events.Event;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public class BaseOption extends Option
    {

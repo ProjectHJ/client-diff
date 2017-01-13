@@ -1,20 +1,20 @@
 package kabam.rotmg.account.ui.components
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.ui.BaseSimpleText;
-   import kabam.lib.util.DateValidator;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.display.LineScaleMode;
    import flash.display.CapsStyle;
    import flash.display.JointStyle;
-   import flash.text.TextFieldAutoSize;
-   import flash.events.TextEvent;
-   import flash.events.FocusEvent;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
    import flash.events.Event;
-   import org.osflash.signals.Signal;
+   import flash.events.FocusEvent;
+   import flash.events.TextEvent;
    import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.lib.util.DateValidator;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import org.osflash.signals.Signal;
    
    public class DateField extends Sprite
    {

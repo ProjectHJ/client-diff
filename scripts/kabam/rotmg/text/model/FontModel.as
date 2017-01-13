@@ -1,8 +1,8 @@
 package kabam.rotmg.text.model
 {
-   import flash.text.TextFormat;
-   import flash.text.TextField;
    import flash.text.Font;
+   import flash.text.TextField;
+   import flash.text.TextFormat;
    
    public class FontModel
    {
@@ -12,7 +12,7 @@ package kabam.rotmg.text.model
       public static const MyriadPro_Bold:Class = FontModel_MyriadPro_Bold;
        
       
-      private var fontInfo:kabam.rotmg.text.model.FontInfo;
+      private var fontInfo:FontInfo;
       
       public function FontModel()
       {
@@ -20,11 +20,11 @@ package kabam.rotmg.text.model
          Font.registerFont(MyriadPro);
          Font.registerFont(MyriadPro_Bold);
          var _loc1_:Font = new MyriadPro();
-         this.fontInfo = new kabam.rotmg.text.model.FontInfo();
+         this.fontInfo = new FontInfo();
          this.fontInfo.setName(_loc1_.fontName);
       }
       
-      public function getFont() : kabam.rotmg.text.model.FontInfo
+      public function getFont() : FontInfo
       {
          return this.fontInfo;
       }

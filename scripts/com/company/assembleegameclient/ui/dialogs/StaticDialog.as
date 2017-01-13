@@ -1,27 +1,27 @@
 package com.company.assembleegameclient.ui.dialogs
 {
-   import flash.display.Sprite;
-   import flash.display.Shape;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.assembleegameclient.util.StageProxy;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
-   import kabam.rotmg.ui.view.SignalWaiter;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import flash.text.TextFieldAutoSize;
-   import flash.filters.DropShadowFilter;
-   import flash.events.MouseEvent;
+   import com.company.assembleegameclient.util.StageProxy;
    import com.company.googleanalytics.GA;
    import com.company.util.GraphicsUtil;
-   import flash.display.Graphics;
-   import flash.events.Event;
-   import flash.display.LineScaleMode;
    import flash.display.CapsStyle;
+   import flash.display.Graphics;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.GraphicsStroke;
+   import flash.display.IGraphicsData;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
    
    public class StaticDialog extends Sprite
    {

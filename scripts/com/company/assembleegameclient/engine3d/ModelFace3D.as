@@ -4,13 +4,13 @@ package com.company.assembleegameclient.engine3d
    {
        
       
-      public var model_:com.company.assembleegameclient.engine3d.Model3D;
+      public var model_:Model3D;
       
       public var indicies_:Vector.<int>;
       
       public var useTexture_:Boolean;
       
-      public function ModelFace3D(param1:com.company.assembleegameclient.engine3d.Model3D, param2:Vector.<int>, param3:Boolean)
+      public function ModelFace3D(param1:Model3D, param2:Vector.<int>, param3:Boolean)
       {
          super();
          this.model_ = param1;

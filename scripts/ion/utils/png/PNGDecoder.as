@@ -1,7 +1,7 @@
 package ion.utils.png
 {
-   import flash.utils.ByteArray;
    import flash.display.BitmapData;
+   import flash.utils.ByteArray;
    
    public class PNGDecoder
    {

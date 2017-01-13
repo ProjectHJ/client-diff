@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.tutorial
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.game.GameSprite;
-   import flash.display.Shape;
-   import flash.events.Event;
-   import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.objects.GameObject;
-   import flash.utils.getTimer;
-   import flash.filters.BlurFilter;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.util.PointUtil;
    import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.filters.BlurFilter;
+   import flash.utils.getTimer;
    import kabam.rotmg.assets.EmbeddedData;
-   import com.company.assembleegameclient.parameters.Parameters;
    
    public class Tutorial extends Sprite
    {
@@ -53,7 +53,7 @@ package com.company.assembleegameclient.tutorial
       
       public var gs_:GameSprite;
       
-      public var steps_:Vector.<com.company.assembleegameclient.tutorial.Step>;
+      public var steps_:Vector.<Step>;
       
       public var currStepId_:int = 0;
       
@@ -63,13 +63,13 @@ package com.company.assembleegameclient.tutorial
       
       private var boxes_:Shape;
       
-      private var tutorialMessage_:com.company.assembleegameclient.tutorial.TutorialMessage = null;
+      private var tutorialMessage_:TutorialMessage = null;
       
       public function Tutorial(param1:GameSprite)
       {
          var _loc2_:XML = null;
          var _loc3_:Graphics = null;
-         this.steps_ = new Vector.<com.company.assembleegameclient.tutorial.Step>();
+         this.steps_ = new Vector.<Step>();
          this.darkBox_ = new Sprite();
          this.boxesBack_ = new Shape();
          this.boxes_ = new Shape();
@@ -77,7 +77,7 @@ package com.company.assembleegameclient.tutorial
          this.gs_ = param1;
          for each(_loc2_ in EmbeddedData.tutorialXML.Step)
          {
-            this.steps_.push(new com.company.assembleegameclient.tutorial.Step(_loc2_));
+            this.steps_.push(new Step(_loc2_));
          }
          addChild(this.boxesBack_);
          addChild(this.boxes_);
@@ -105,7 +105,7 @@ package com.company.assembleegameclient.tutorial
       
       private function onEnterFrame(param1:Event) : void
       {
-         var _loc4_:com.company.assembleegameclient.tutorial.Step = null;
+         var _loc4_:Step = null;
          var _loc5_:Boolean = false;
          var _loc6_:Requirement = null;
          var _loc7_:int = 0;
@@ -189,7 +189,7 @@ package com.company.assembleegameclient.tutorial
          {
             return;
          }
-         var _loc2_:com.company.assembleegameclient.tutorial.Step = this.steps_[this.currStepId_];
+         var _loc2_:Step = this.steps_[this.currStepId_];
          if(param1 != _loc2_.action_)
          {
             return;

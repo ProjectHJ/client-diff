@@ -1,16 +1,16 @@
 package kabam.rotmg.classes.view
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import flash.display.Bitmap;
-   import kabam.rotmg.util.components.StarsView;
+   import flash.display.Sprite;
+   import flash.filters.DropShadowFilter;
    import kabam.rotmg.assets.model.Animation;
-   import kabam.rotmg.ui.view.SignalWaiter;
+   import kabam.rotmg.assets.services.IconFactory;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.assets.services.IconFactory;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import kabam.rotmg.util.components.StarsView;
    
    public class ClassDetailView extends Sprite
    {

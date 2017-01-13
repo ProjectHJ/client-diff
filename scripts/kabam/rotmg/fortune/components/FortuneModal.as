@@ -1,50 +1,50 @@
 package kabam.rotmg.fortune.components
 {
-   import kabam.rotmg.account.core.view.EmptyFrame;
-   import flash.text.TextField;
-   import org.osflash.signals.Signal;
-   import flash.display.DisplayObject;
+   import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.map.ParticleModalMap;
+   import com.company.assembleegameclient.objects.GameObject;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.objects.particles.LightningEffect;
+   import com.company.assembleegameclient.objects.particles.NovaEffect;
+   import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+   import com.company.assembleegameclient.ui.dialogs.Dialog;
+   import com.company.assembleegameclient.util.Currency;
+   import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.util.AssetLibrary;
    import com.gskinner.motion.GTween;
    import com.gskinner.motion.easing.Sine;
-   import kabam.rotmg.util.components.SimpleButton;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import kabam.rotmg.util.components.CountdownTimer;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.fortune.services.FortuneModel;
-   import kabam.rotmg.fortune.model.FortuneInfo;
-   import com.company.assembleegameclient.map.ParticleModalMap;
-   import flash.utils.Timer;
-   import kabam.rotmg.ui.view.components.MapBackground;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
    import flash.display.Sprite;
-   import kabam.rotmg.game.view.CreditDisplay;
-   import com.company.assembleegameclient.game.GameSprite;
+   import flash.events.Event;
    import flash.events.MouseEvent;
-   import com.company.assembleegameclient.util.Currency;
+   import flash.events.TimerEvent;
+   import flash.filters.GlowFilter;
+   import flash.text.TextField;
+   import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
    import flash.text.TextFormatAlign;
-   import flash.text.TextFieldAutoSize;
-   import flash.filters.GlowFilter;
-   import flash.events.Event;
-   import flash.events.TimerEvent;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.game.model.GameModel;
-   import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.ui.view.NotEnoughGoldDialog;
-   import com.company.assembleegameclient.ui.dialogs.Dialog;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+   import flash.utils.Timer;
    import flash.utils.getTimer;
-   import com.company.assembleegameclient.objects.GameObject;
-   import com.company.assembleegameclient.objects.particles.NovaEffect;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.view.EmptyFrame;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.fortune.model.FortuneInfo;
+   import kabam.rotmg.fortune.services.FortuneModel;
+   import kabam.rotmg.game.model.GameModel;
+   import kabam.rotmg.game.view.CreditDisplay;
    import kabam.rotmg.messaging.impl.data.WorldPosData;
-   import com.company.assembleegameclient.objects.particles.LightningEffect;
-   import org.swiftsuspenders.Injector;
-   import com.company.util.AssetLibrary;
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.util.TextureRedrawer;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+   import kabam.rotmg.ui.view.components.MapBackground;
+   import kabam.rotmg.util.components.CountdownTimer;
    import kabam.rotmg.util.components.InfoHoverPaneFactory;
+   import kabam.rotmg.util.components.SimpleButton;
+   import org.osflash.signals.Signal;
+   import org.swiftsuspenders.Injector;
    
    public class FortuneModal extends EmptyFrame
    {
@@ -84,11 +84,11 @@ package kabam.rotmg.fortune.components
       public static const closed:Signal = new Signal();
        
       
-      public var crystalMain:kabam.rotmg.fortune.components.CrystalMain;
+      public var crystalMain:CrystalMain;
       
-      public var crystals:Vector.<kabam.rotmg.fortune.components.CrystalSmall>;
+      public var crystals:Vector.<CrystalSmall>;
       
-      public var crystalClicked:kabam.rotmg.fortune.components.CrystalSmall = null;
+      public var crystalClicked:CrystalSmall = null;
       
       private var buyButtonGold:SimpleButton;
       
@@ -124,7 +124,7 @@ package kabam.rotmg.fortune.components
       
       private var currenttooltipItem:int = 0;
       
-      public var tooltipItems:Vector.<kabam.rotmg.fortune.components.ItemWithTooltip>;
+      public var tooltipItems:Vector.<ItemWithTooltip>;
       
       private var lastUpdate_:int;
       
@@ -186,8 +186,8 @@ package kabam.rotmg.fortune.components
       
       public function FortuneModal(param1:GameSprite = null)
       {
-         this.crystalMain = new kabam.rotmg.fortune.components.CrystalMain();
-         this.crystals = Vector.<kabam.rotmg.fortune.components.CrystalSmall>([new kabam.rotmg.fortune.components.CrystalSmall(),new kabam.rotmg.fortune.components.CrystalSmall(),new kabam.rotmg.fortune.components.CrystalSmall()]);
+         this.crystalMain = new CrystalMain();
+         this.crystals = Vector.<CrystalSmall>([new CrystalSmall(),new CrystalSmall(),new CrystalSmall()]);
          this.buyButtonGold = new SimpleButton("Play for ",0,Currency.INVALID);
          this.buyButtonFortune = new SimpleButton("Play for ",0,Currency.INVALID);
          this.resetButton = new SimpleButton("Return",0,Currency.INVALID);
@@ -269,7 +269,7 @@ package kabam.rotmg.fortune.components
       
       private function removeInfoHover(param1:MouseEvent) : void
       {
-         if(!(param1.relatedObject is kabam.rotmg.fortune.components.ItemWithTooltip))
+         if(!(param1.relatedObject is ItemWithTooltip))
          {
             this.onHoverPanel.visible = false;
          }
@@ -375,11 +375,11 @@ package kabam.rotmg.fortune.components
       
       private function onItemSwitch(param1:TimerEvent = null) : void
       {
-         var _loc5_:kabam.rotmg.fortune.components.ItemWithTooltip = null;
+         var _loc5_:ItemWithTooltip = null;
          this.tooltipItemIDIndex++;
          if(this.tooltipItems == null)
          {
-            this.tooltipItems = Vector.<kabam.rotmg.fortune.components.ItemWithTooltip>([new kabam.rotmg.fortune.components.ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[this.tooltipItemIDIndex],ITEM_SIZE_IN_MC),new kabam.rotmg.fortune.components.ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[this.tooltipItemIDIndex + 1],ITEM_SIZE_IN_MC)]);
+            this.tooltipItems = Vector.<ItemWithTooltip>([new ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[this.tooltipItemIDIndex],ITEM_SIZE_IN_MC),new ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[this.tooltipItemIDIndex + 1],ITEM_SIZE_IN_MC)]);
          }
          if(this.tooltipItemIDIndex >= this.fortuneInfo._rollsWithContentsUnique.length)
          {
@@ -391,7 +391,7 @@ package kabam.rotmg.fortune.components
             _loc5_ = this.tooltipItems[this.currenttooltipItem];
             this.doEaseInAnimation(_loc5_,{"alpha":0},this.removeChildAfterTween);
          }
-         var _loc3_:kabam.rotmg.fortune.components.ItemWithTooltip = new kabam.rotmg.fortune.components.ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[this.tooltipItemIDIndex],ITEM_SIZE_IN_MC,true);
+         var _loc3_:ItemWithTooltip = new ItemWithTooltip(this.fortuneInfo._rollsWithContentsUnique[this.tooltipItemIDIndex],ITEM_SIZE_IN_MC,true);
          _loc3_.onMouseOver.add(this.onItemSwitchPause);
          _loc3_.onMouseOut.add(this.onItemSwitchContinue);
          _loc3_.setXPos(this.crystalMain.getCenterX());
@@ -468,7 +468,7 @@ package kabam.rotmg.fortune.components
       private function onCountdownComplete() : void
       {
          var _loc2_:int = 0;
-         var _loc1_:kabam.rotmg.fortune.components.CrystalSmall = null;
+         var _loc1_:CrystalSmall = null;
          do
          {
             _loc2_ = int(Math.random() * 3);
@@ -560,7 +560,7 @@ package kabam.rotmg.fortune.components
             }
          }
          this.itemSwitchTimer.delay = this.SWITCH_DELAY_FAST;
-         this.crystalMain.setAnimationStage(kabam.rotmg.fortune.components.CrystalMain.ANIMATION_STAGE_WAITING);
+         this.crystalMain.setAnimationStage(CrystalMain.ANIMATION_STAGE_WAITING);
          var _loc3_:Object = this.makeBasicParams();
          if(param1 == Currency.FORTUNE)
          {
@@ -720,7 +720,7 @@ package kabam.rotmg.fortune.components
             _loc1_++;
          }
          this.setGameStage(this.GAME_STAGE_SPIN);
-         this.crystalMain.setAnimationStage(kabam.rotmg.fortune.components.CrystalMain.ANIMATION_STAGE_INNERROTATION);
+         this.crystalMain.setAnimationStage(CrystalMain.ANIMATION_STAGE_INNERROTATION);
          new TimerCallback(this.SPIN_TIME,this.onFirstBuyAnimateComplete);
          this.setString(3);
       }
@@ -737,7 +737,7 @@ package kabam.rotmg.fortune.components
             this.setString(4);
          }
          this.ballClickEnable(this.crystalClicked);
-         this.crystalMain.setAnimationStage(kabam.rotmg.fortune.components.CrystalMain.ANIMATION_STAGE_BUZZING);
+         this.crystalMain.setAnimationStage(CrystalMain.ANIMATION_STAGE_BUZZING);
          this.doNova(this.crystalMain.getCenterX(),this.crystalMain.getCenterY(),10,65535);
          var _loc1_:int = 0;
          while(_loc1_ < 3)
@@ -755,7 +755,7 @@ package kabam.rotmg.fortune.components
          {
             return;
          }
-         new TimerCallback(this.NOVA_DELAY_TIME,this.crystalMain.setAnimationStage,kabam.rotmg.fortune.components.CrystalMain.ANIMATION_STAGE_PULSE);
+         new TimerCallback(this.NOVA_DELAY_TIME,this.crystalMain.setAnimationStage,CrystalMain.ANIMATION_STAGE_PULSE);
          this.countdownTimer.start(this.COUNTDOWN_AMOUNT);
          this.countdownTimer.setXPos(this.crystalMain.getCenterX());
          this.countdownTimer.setYPos(this.crystalMain.getCenterY());
@@ -821,7 +821,7 @@ package kabam.rotmg.fortune.components
             {
                _loc2_++;
             }
-            this.crystals[_loc3_].setGlowState(kabam.rotmg.fortune.components.CrystalSmall.GLOW_STATE_FADE);
+            this.crystals[_loc3_].setGlowState(CrystalSmall.GLOW_STATE_FADE);
             _loc3_++;
          }
          this.chooseingState = false;
@@ -968,7 +968,7 @@ package kabam.rotmg.fortune.components
          }
       }
       
-      private function ballClickEnable(param1:kabam.rotmg.fortune.components.CrystalSmall = null) : void
+      private function ballClickEnable(param1:CrystalSmall = null) : void
       {
          var _loc2_:int = 0;
          while(_loc2_ < 3)

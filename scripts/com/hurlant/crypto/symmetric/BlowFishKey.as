@@ -1,7 +1,7 @@
 package com.hurlant.crypto.symmetric
 {
-   import flash.utils.ByteArray;
    import com.hurlant.util.Memory;
+   import flash.utils.ByteArray;
    
    public class BlowFishKey implements ISymmetricKey
    {

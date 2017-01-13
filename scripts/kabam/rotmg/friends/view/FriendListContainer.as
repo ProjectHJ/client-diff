@@ -1,10 +1,10 @@
 package kabam.rotmg.friends.view
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.ui.Scrollbar;
    import flash.display.DisplayObject;
-   import flash.events.Event;
    import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
    
    public class FriendListContainer extends Sprite
    {

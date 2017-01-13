@@ -1,17 +1,17 @@
 package com.company.assembleegameclient.util
 {
-   import flash.geom.Rectangle;
-   import flash.geom.Point;
-   import com.company.util.ImageSet;
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.map.Square;
-   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.map.GroundLibrary;
+   import com.company.assembleegameclient.map.GroundProperties;
    import com.company.assembleegameclient.map.Map;
+   import com.company.assembleegameclient.map.Square#55;
+   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.util.AssetLibrary;
    import com.company.util.BitmapUtil;
-   import com.company.assembleegameclient.map.GroundProperties;
+   import com.company.util.ImageSet;
    import com.company.util.PointUtil;
+   import flash.display.BitmapData;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
    
    public class TileRedrawer
    {
@@ -78,7 +78,7 @@ package com.company.assembleegameclient.util
          super();
       }
       
-      public static function redraw(param1:Square, param2:Boolean) : BitmapData
+      public static function redraw(param1:Square#55, param2:Boolean) : BitmapData
       {
          var _loc3_:Array = null;
          var _loc5_:BitmapData = null;
@@ -226,7 +226,7 @@ package com.company.assembleegameclient.util
          param1.copyPixels(_loc9_,param2,param3,_loc10_,p0,true);
       }
       
-      private static function getSig(param1:Square) : Array
+      private static function getSig(param1:Square#55) : Array
       {
          var _loc6_:int = 0;
          var _loc7_:Square = null;
@@ -289,7 +289,7 @@ package com.company.assembleegameclient.util
          return _loc3_;
       }
       
-      private static function getCompositeSig(param1:Square) : Array
+      private static function getCompositeSig(param1:Square#55) : Array
       {
          var _loc14_:Square = null;
          var _loc15_:Square = null;
@@ -390,7 +390,7 @@ package com.company.assembleegameclient.util
          return _loc2_;
       }
       
-      private static function getEdgeSig(param1:Square) : Array
+      private static function getEdgeSig(param1:Square#55) : Array
       {
          var _loc7_:int = 0;
          var _loc8_:Square = null;

@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.ui.tooltip
 {
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public class TextToolTip extends ToolTip

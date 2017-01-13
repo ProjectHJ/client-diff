@@ -1,9 +1,9 @@
 package kabam.rotmg.news.view
 {
    import flash.display.Sprite;
+   import flash.events.TimerEvent;
    import flash.text.TextField;
    import flash.utils.Timer;
-   import flash.events.TimerEvent;
    import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.text.model.FontModel;
    

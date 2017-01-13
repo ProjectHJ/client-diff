@@ -1,16 +1,16 @@
 package kabam.rotmg.pets.view
 {
    import flash.display.Sprite;
-   import kabam.rotmg.pets.view.components.PopupWindowBackground;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.pets.view.components.PetsButtonBar;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.ui.view.SignalWaiter;
+   import kabam.rotmg.pets.data.PetVO;
    import kabam.rotmg.pets.util.PetsConstants;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
-   import kabam.rotmg.pets.data.PetVO;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.pets.view.components.PetsButtonBar;
+   import kabam.rotmg.pets.view.components.PopupWindowBackground;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.Signal;
    
    public class AvailablePetsView extends Sprite
    {

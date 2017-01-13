@@ -1,13 +1,13 @@
 package kabam.rotmg.account.steam.services
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.account.steam.SteamApi;
-   import robotlegs.bender.framework.api.ILogger;
-   import org.osflash.signals.Signal;
    import flash.display.Loader;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.net.URLRequest;
+   import kabam.rotmg.account.steam.SteamApi;
    import org.osflash.signals.OnceSignal;
+   import org.osflash.signals.Signal;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class LiveSteamApi extends Sprite implements SteamApi
    {

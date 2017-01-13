@@ -1,13 +1,13 @@
 package com.junkbyte.console.vos
 {
-   import flash.utils.ByteArray;
    import com.junkbyte.console.core.Executer;
+   import flash.utils.ByteArray;
    
    public class GraphInterest
    {
        
       
-      private var _ref:com.junkbyte.console.vos.WeakRef;
+      private var _ref:WeakRef;
       
       public var _prop:String;
       
@@ -38,7 +38,7 @@ package com.junkbyte.console.vos
       
       public function setObject(param1:Object, param2:String) : Number
       {
-         this._ref = new com.junkbyte.console.vos.WeakRef(param1);
+         this._ref = new WeakRef(param1);
          this._prop = param2;
          this.useExec = this._prop.search(/[^\w\d]/) >= 0;
          this.v = this.getCurrentValue();

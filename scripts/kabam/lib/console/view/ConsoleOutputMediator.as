@@ -1,13 +1,13 @@
 package kabam.lib.console.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.lib.console.signals.ConsoleLogSignal;
-   import kabam.lib.console.signals.ConsoleWatchSignal;
-   import kabam.lib.console.signals.ConsoleUnwatchSignal;
-   import kabam.lib.console.signals.ClearConsoleSignal;
-   import kabam.lib.console.signals.CopyConsoleTextSignal;
-   import kabam.lib.console.model.Watch;
    import flash.system.System;
+   import kabam.lib.console.model.Watch;
+   import kabam.lib.console.signals.ClearConsoleSignal;
+   import kabam.lib.console.signals.ConsoleLogSignal;
+   import kabam.lib.console.signals.ConsoleUnwatchSignal;
+   import kabam.lib.console.signals.ConsoleWatchSignal;
+   import kabam.lib.console.signals.CopyConsoleTextSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public final class ConsoleOutputMediator extends Mediator
    {
@@ -29,7 +29,7 @@ package kabam.lib.console.view
       public var copy:CopyConsoleTextSignal;
       
       [Inject]
-      public var view:kabam.lib.console.view.ConsoleOutputView;
+      public var view:ConsoleOutputView;
       
       public function ConsoleOutputMediator()
       {

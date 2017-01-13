@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
    import com.company.util.GraphicsUtil;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.display.Sprite;
    import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    
    public class BackgroundFilledText extends Sprite
    {

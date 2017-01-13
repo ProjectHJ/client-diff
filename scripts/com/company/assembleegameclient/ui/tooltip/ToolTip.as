@@ -1,19 +1,19 @@
 package com.company.assembleegameclient.ui.tooltip
 {
-   import flash.display.Sprite;
+   import com.company.util.GraphicsUtil;
+   import flash.display.CapsStyle;
    import flash.display.DisplayObject;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
-   import com.company.util.GraphicsUtil;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import kabam.rotmg.ui.view.SignalWaiter;
    
    public class ToolTip extends Sprite
    {

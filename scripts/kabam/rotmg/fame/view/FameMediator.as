@@ -1,28 +1,28 @@
 package kabam.rotmg.fame.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.fame.model.FameModel;
-   import kabam.rotmg.death.model.DeathModel;
-   import kabam.rotmg.core.signals.SetScreenSignal;
-   import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
-   import kabam.rotmg.core.signals.TrackPageViewSignal;
-   import kabam.rotmg.fame.service.RequestCharacterFameTask;
-   import kabam.rotmg.assets.services.CharacterFactory;
-   import kabam.rotmg.messaging.impl.incoming.Death;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.objects.TextureData;
    import com.company.assembleegameclient.util.AnimatedChar;
    import com.company.assembleegameclient.util.MaskedImage;
    import com.company.assembleegameclient.util.TextureRedrawer;
+   import flash.display.BitmapData;
+   import kabam.rotmg.assets.services.CharacterFactory;
+   import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
+   import kabam.rotmg.core.signals.SetScreenSignal;
+   import kabam.rotmg.core.signals.TrackPageViewSignal;
+   import kabam.rotmg.death.model.DeathModel;
+   import kabam.rotmg.fame.model.FameModel;
+   import kabam.rotmg.fame.service.RequestCharacterFameTask;
    import kabam.rotmg.legends.view.LegendsView;
+   import kabam.rotmg.messaging.impl.incoming.Death;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class FameMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.fame.view.FameView;
+      public var view:FameView;
       
       [Inject]
       public var fameModel:FameModel;

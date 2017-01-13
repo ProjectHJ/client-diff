@@ -12,7 +12,7 @@ package robotlegs.bender.extensions.matching
       
       protected const _noneOfTypes:Vector.<Class> = new Vector.<Class>();
       
-      protected var _typeFilter:robotlegs.bender.extensions.matching.ITypeFilter;
+      protected var _typeFilter:ITypeFilter;
       
       public function TypeMatcher()
       {
@@ -37,7 +37,7 @@ package robotlegs.bender.extensions.matching
          return this;
       }
       
-      public function createTypeFilter() : robotlegs.bender.extensions.matching.ITypeFilter
+      public function createTypeFilter() : ITypeFilter
       {
          return this._typeFilter = this._typeFilter || this.buildTypeFilter();
       }
@@ -53,7 +53,7 @@ package robotlegs.bender.extensions.matching
          return new TypeMatcher().allOf(this._allOfTypes).anyOf(this._anyOfTypes).noneOf(this._noneOfTypes);
       }
       
-      protected function buildTypeFilter() : robotlegs.bender.extensions.matching.ITypeFilter
+      protected function buildTypeFilter() : ITypeFilter
       {
          if(this._allOfTypes.length == 0 && this._anyOfTypes.length == 0 && this._noneOfTypes.length == 0)
          {

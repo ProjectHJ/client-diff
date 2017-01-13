@@ -1,21 +1,21 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.pets.view.components.PopupWindowBackground;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import kabam.rotmg.util.components.LegacyBuyButton;
-   import org.osflash.signals.natives.NativeSignal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.objects.SellableObject;
-   import org.osflash.signals.Signal;
-   import flash.events.MouseEvent;
+   import com.company.assembleegameclient.util.Currency;
+   import flash.display.Sprite;
    import flash.events.Event;
-   import kabam.rotmg.util.components.UIAssetsHelper;
-   import kabam.rotmg.text.view.TextFieldConcreteBuilder;
+   import flash.events.MouseEvent;
    import kabam.rotmg.fortune.components.ItemWithTooltip;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.pets.view.components.PopupWindowBackground;
    import kabam.rotmg.text.model.TextKey;
-   import com.company.assembleegameclient.util.Currency;
+   import kabam.rotmg.text.view.TextFieldConcreteBuilder;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.util.components.LegacyBuyButton;
+   import kabam.rotmg.util.components.UIAssetsHelper;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeSignal;
    
    public class ConfirmBuyModal extends Sprite
    {

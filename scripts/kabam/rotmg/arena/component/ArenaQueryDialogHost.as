@@ -1,17 +1,17 @@
 package kabam.rotmg.arena.component
 {
-   import flash.display.Sprite;
    import flash.display.Bitmap;
-   import kabam.rotmg.arena.view.HostQueryDialog;
    import flash.display.BitmapData;
+   import flash.display.Sprite;
+   import kabam.rotmg.arena.view.HostQueryDialog;
    
    public class ArenaQueryDialogHost extends Sprite
    {
        
       
-      private const speechBubble:kabam.rotmg.arena.component.HostQuerySpeechBubble = this.makeSpeechBubble();
+      private const speechBubble:HostQuerySpeechBubble = this.makeSpeechBubble();
       
-      private const detailBubble:kabam.rotmg.arena.component.HostQueryDetailBubble = this.makeDetailBubble();
+      private const detailBubble:HostQueryDetailBubble = this.makeDetailBubble();
       
       private const icon:Bitmap = this.makeHostIcon();
       
@@ -20,19 +20,19 @@ package kabam.rotmg.arena.component
          super();
       }
       
-      private function makeSpeechBubble() : kabam.rotmg.arena.component.HostQuerySpeechBubble
+      private function makeSpeechBubble() : HostQuerySpeechBubble
       {
-         var _loc1_:kabam.rotmg.arena.component.HostQuerySpeechBubble = null;
-         _loc1_ = new kabam.rotmg.arena.component.HostQuerySpeechBubble(HostQueryDialog.QUERY);
+         var _loc1_:HostQuerySpeechBubble = null;
+         _loc1_ = new HostQuerySpeechBubble(HostQueryDialog.QUERY);
          _loc1_.x = 60;
          addChild(_loc1_);
          return _loc1_;
       }
       
-      private function makeDetailBubble() : kabam.rotmg.arena.component.HostQueryDetailBubble
+      private function makeDetailBubble() : HostQueryDetailBubble
       {
-         var _loc1_:kabam.rotmg.arena.component.HostQueryDetailBubble = null;
-         _loc1_ = new kabam.rotmg.arena.component.HostQueryDetailBubble();
+         var _loc1_:HostQueryDetailBubble = null;
+         _loc1_ = new HostQueryDetailBubble();
          _loc1_.y = 60;
          return _loc1_;
       }

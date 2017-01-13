@@ -1,7 +1,7 @@
 package kabam.lib.resizing.signals
 {
-   import org.osflash.signals.Signal;
    import flash.geom.Rectangle;
+   import org.osflash.signals.Signal;
    
    public class Resize extends Signal
    {

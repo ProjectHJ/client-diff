@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.game.AGameSprite;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.MouseEvent;
    import kabam.rotmg.messaging.impl.incoming.TradeStart;
@@ -17,33 +17,33 @@ package com.company.assembleegameclient.ui
       
       public var gs_:AGameSprite;
       
-      private var myInv_:com.company.assembleegameclient.ui.TradeInventory;
+      private var myInv_:TradeInventory;
       
-      private var yourInv_:com.company.assembleegameclient.ui.TradeInventory;
+      private var yourInv_:TradeInventory;
       
-      private var cancelButton_:com.company.assembleegameclient.ui.DeprecatedTextButton;
+      private var cancelButton_:DeprecatedTextButton;
       
-      private var tradeButton_:com.company.assembleegameclient.ui.TradeButton;
+      private var tradeButton_:TradeButton;
       
       public function TradePanel(param1:AGameSprite, param2:TradeStart)
       {
          super();
          this.gs_ = param1;
          var _loc3_:String = this.gs_.map.player_.name_;
-         this.myInv_ = new com.company.assembleegameclient.ui.TradeInventory(param1,_loc3_,param2.myItems_,true);
+         this.myInv_ = new TradeInventory(param1,_loc3_,param2.myItems_,true);
          this.myInv_.x = 14;
          this.myInv_.y = 0;
          this.myInv_.addEventListener(Event.CHANGE,this.onMyInvChange);
          addChild(this.myInv_);
-         this.yourInv_ = new com.company.assembleegameclient.ui.TradeInventory(param1,param2.yourName_,param2.yourItems_,false);
+         this.yourInv_ = new TradeInventory(param1,param2.yourName_,param2.yourItems_,false);
          this.yourInv_.x = 14;
          this.yourInv_.y = 174;
          addChild(this.yourInv_);
-         this.cancelButton_ = new com.company.assembleegameclient.ui.DeprecatedTextButton(16,TextKey.PLAYERMENU_CANCEL,80);
+         this.cancelButton_ = new DeprecatedTextButton(16,TextKey.PLAYERMENU_CANCEL,80);
          this.cancelButton_.addEventListener(MouseEvent.CLICK,this.onCancelClick);
          this.cancelButton_.textChanged.addOnce(this.onCancelTextChanged);
          addChild(this.cancelButton_);
-         this.tradeButton_ = new com.company.assembleegameclient.ui.TradeButton(16,80);
+         this.tradeButton_ = new TradeButton(16,80);
          this.tradeButton_.x = 3 * WIDTH / 4 - this.tradeButton_.bWidth / 2;
          this.tradeButton_.addEventListener(MouseEvent.CLICK,this.onTradeClick);
          addChild(this.tradeButton_);
@@ -69,7 +69,7 @@ package com.company.assembleegameclient.ui
       {
          if(this.myInv_.isOffer(param1) && this.yourInv_.isOffer(param2))
          {
-            this.yourInv_.setMessage(com.company.assembleegameclient.ui.TradeInventory.TRADEACCEPTED_MESSAGE);
+            this.yourInv_.setMessage(TradeInventory.TRADEACCEPTED_MESSAGE);
          }
       }
       
@@ -103,7 +103,7 @@ package com.company.assembleegameclient.ui
       private function onTradeClick(param1:MouseEvent) : void
       {
          this.gs_.gsc_.acceptTrade(this.myInv_.getOffer(),this.yourInv_.getOffer());
-         this.myInv_.setMessage(com.company.assembleegameclient.ui.TradeInventory.TRADEACCEPTED_MESSAGE);
+         this.myInv_.setMessage(TradeInventory.TRADEACCEPTED_MESSAGE);
       }
       
       public function checkTrade() : void
@@ -115,21 +115,21 @@ package com.company.assembleegameclient.ui
          var _loc5_:Boolean = true;
          if(_loc3_ - _loc1_ - _loc2_ > 0)
          {
-            this.myInv_.setMessage(com.company.assembleegameclient.ui.TradeInventory.NOTENOUGHSPACE_MESSAGE);
+            this.myInv_.setMessage(TradeInventory.NOTENOUGHSPACE_MESSAGE);
             _loc5_ = false;
          }
          else
          {
-            this.myInv_.setMessage(com.company.assembleegameclient.ui.TradeInventory.CLICKITEMS_MESSAGE);
+            this.myInv_.setMessage(TradeInventory.CLICKITEMS_MESSAGE);
          }
          if(_loc1_ - _loc3_ - _loc4_ > 0)
          {
-            this.yourInv_.setMessage(com.company.assembleegameclient.ui.TradeInventory.NOTENOUGHSPACE_MESSAGE);
+            this.yourInv_.setMessage(TradeInventory.NOTENOUGHSPACE_MESSAGE);
             _loc5_ = false;
          }
          else
          {
-            this.yourInv_.setMessage(com.company.assembleegameclient.ui.TradeInventory.TRADEWAITING_MESSAGE);
+            this.yourInv_.setMessage(TradeInventory.TRADEWAITING_MESSAGE);
          }
          if(_loc5_)
          {

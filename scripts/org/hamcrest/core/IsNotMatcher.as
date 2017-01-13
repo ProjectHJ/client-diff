@@ -1,8 +1,8 @@
 package org.hamcrest.core
 {
    import org.hamcrest.BaseMatcher;
-   import org.hamcrest.Matcher;
    import org.hamcrest.Description;
+   import org.hamcrest.Matcher;
    
    public class IsNotMatcher extends BaseMatcher
    {

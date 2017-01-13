@@ -1,9 +1,9 @@
 package kabam.rotmg.ui.model
 {
-   import flash.utils.Timer;
-   import org.osflash.signals.natives.NativeSignal;
-   import org.osflash.signals.Signal;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeSignal;
    
    public class PotionModel
    {

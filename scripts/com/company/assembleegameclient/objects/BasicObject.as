@@ -1,10 +1,10 @@
 package com.company.assembleegameclient.objects
 {
-   import com.company.assembleegameclient.map.Map;
-   import com.company.assembleegameclient.map.Square;
-   import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
-   import flash.display.IGraphicsData;
    import com.company.assembleegameclient.map.Camera;
+   import com.company.assembleegameclient.map.Map;
+   import com.company.assembleegameclient.map.Square#55;
+   import flash.display.IGraphicsData;
+   import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
    
    public class BasicObject
    {
@@ -14,7 +14,7 @@ package com.company.assembleegameclient.objects
       
       public var map_:Map;
       
-      public var square_:Square;
+      public var square_:Square#55;
       
       public var objectId_:int;
       

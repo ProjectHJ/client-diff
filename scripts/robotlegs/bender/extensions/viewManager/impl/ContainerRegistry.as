@@ -1,17 +1,17 @@
 package robotlegs.bender.extensions.viewManager.impl
 {
+   import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
    import flash.events.EventDispatcher;
    import flash.utils.Dictionary;
-   import flash.display.DisplayObjectContainer;
-   import flash.display.DisplayObject;
    
    public class ContainerRegistry extends EventDispatcher
    {
        
       
-      private const _bindings:Vector.<robotlegs.bender.extensions.viewManager.impl.ContainerBinding> = new Vector.<robotlegs.bender.extensions.viewManager.impl.ContainerBinding>();
+      private const _bindings:Vector.<ContainerBinding> = new Vector.<ContainerBinding>();
       
-      private const _rootBindings:Vector.<robotlegs.bender.extensions.viewManager.impl.ContainerBinding> = new Vector.<robotlegs.bender.extensions.viewManager.impl.ContainerBinding>();
+      private const _rootBindings:Vector.<ContainerBinding> = new Vector.<ContainerBinding>();
       
       private const _bindingByContainer:Dictionary = new Dictionary();
       
@@ -20,31 +20,31 @@ package robotlegs.bender.extensions.viewManager.impl
          super();
       }
       
-      public function get bindings() : Vector.<robotlegs.bender.extensions.viewManager.impl.ContainerBinding>
+      public function get bindings() : Vector.<ContainerBinding>
       {
          return this._bindings;
       }
       
-      public function get rootBindings() : Vector.<robotlegs.bender.extensions.viewManager.impl.ContainerBinding>
+      public function get rootBindings() : Vector.<ContainerBinding>
       {
          return this._rootBindings;
       }
       
-      public function addContainer(param1:DisplayObjectContainer) : robotlegs.bender.extensions.viewManager.impl.ContainerBinding
+      public function addContainer(param1:DisplayObjectContainer) : ContainerBinding
       {
          return this._bindingByContainer[param1] = this._bindingByContainer[param1] || this.createBinding(param1);
       }
       
-      public function removeContainer(param1:DisplayObjectContainer) : robotlegs.bender.extensions.viewManager.impl.ContainerBinding
+      public function removeContainer(param1:DisplayObjectContainer) : ContainerBinding
       {
-         var _loc2_:robotlegs.bender.extensions.viewManager.impl.ContainerBinding = this._bindingByContainer[param1];
+         var _loc2_:ContainerBinding = this._bindingByContainer[param1];
          _loc2_ && this.removeBinding(_loc2_);
          return _loc2_;
       }
       
-      public function findParentBinding(param1:DisplayObject) : robotlegs.bender.extensions.viewManager.impl.ContainerBinding
+      public function findParentBinding(param1:DisplayObject) : ContainerBinding
       {
-         var _loc3_:robotlegs.bender.extensions.viewManager.impl.ContainerBinding = null;
+         var _loc3_:ContainerBinding = null;
          var _loc2_:DisplayObjectContainer = param1.parent;
          while(_loc2_)
          {
@@ -58,15 +58,15 @@ package robotlegs.bender.extensions.viewManager.impl
          return null;
       }
       
-      public function getBinding(param1:DisplayObjectContainer) : robotlegs.bender.extensions.viewManager.impl.ContainerBinding
+      public function getBinding(param1:DisplayObjectContainer) : ContainerBinding
       {
          return this._bindingByContainer[param1];
       }
       
-      private function createBinding(param1:DisplayObjectContainer) : robotlegs.bender.extensions.viewManager.impl.ContainerBinding
+      private function createBinding(param1:DisplayObjectContainer) : ContainerBinding
       {
-         var _loc3_:robotlegs.bender.extensions.viewManager.impl.ContainerBinding = null;
-         var _loc2_:robotlegs.bender.extensions.viewManager.impl.ContainerBinding = new robotlegs.bender.extensions.viewManager.impl.ContainerBinding(param1);
+         var _loc3_:ContainerBinding = null;
+         var _loc2_:ContainerBinding = new ContainerBinding(param1);
          this._bindings.push(_loc2_);
          _loc2_.addEventListener(ContainerBindingEvent.BINDING_EMPTY,this.onBindingEmpty);
          _loc2_.parent = this.findParentBinding(param1);
@@ -93,9 +93,9 @@ package robotlegs.bender.extensions.viewManager.impl
          return _loc2_;
       }
       
-      private function removeBinding(param1:robotlegs.bender.extensions.viewManager.impl.ContainerBinding) : void
+      private function removeBinding(param1:ContainerBinding) : void
       {
-         var _loc3_:robotlegs.bender.extensions.viewManager.impl.ContainerBinding = null;
+         var _loc3_:ContainerBinding = null;
          delete this._bindingByContainer[param1.container];
          var _loc2_:int = this._bindings.indexOf(param1);
          this._bindings.splice(_loc2_,1);
@@ -118,13 +118,13 @@ package robotlegs.bender.extensions.viewManager.impl
          dispatchEvent(new ContainerRegistryEvent(ContainerRegistryEvent.CONTAINER_REMOVE,param1.container));
       }
       
-      private function addRootBinding(param1:robotlegs.bender.extensions.viewManager.impl.ContainerBinding) : void
+      private function addRootBinding(param1:ContainerBinding) : void
       {
          this._rootBindings.push(param1);
          dispatchEvent(new ContainerRegistryEvent(ContainerRegistryEvent.ROOT_CONTAINER_ADD,param1.container));
       }
       
-      private function removeRootBinding(param1:robotlegs.bender.extensions.viewManager.impl.ContainerBinding) : void
+      private function removeRootBinding(param1:ContainerBinding) : void
       {
          var _loc2_:int = this._rootBindings.indexOf(param1);
          this._rootBindings.splice(_loc2_,1);
@@ -133,7 +133,7 @@ package robotlegs.bender.extensions.viewManager.impl
       
       private function onBindingEmpty(param1:ContainerBindingEvent) : void
       {
-         this.removeBinding(param1.target as robotlegs.bender.extensions.viewManager.impl.ContainerBinding);
+         this.removeBinding(param1.target as ContainerBinding);
       }
    }
 }

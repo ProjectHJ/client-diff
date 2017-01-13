@@ -1,9 +1,9 @@
 package kabam.rotmg.account.steam.view
 {
    import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+   import com.company.assembleegameclient.ui.dialogs.Dialog;
    import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeMappedSignal;
-   import com.company.assembleegameclient.ui.dialogs.Dialog;
    
    public class SteamSessionRequestErrorDialog extends DebugDialog
    {

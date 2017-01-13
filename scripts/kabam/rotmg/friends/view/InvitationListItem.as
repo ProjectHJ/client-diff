@@ -1,19 +1,19 @@
 package kabam.rotmg.friends.view
 {
-   import flash.display.Bitmap;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.icons.IconButton;
    import com.company.assembleegameclient.ui.icons.IconButtonFactory;
-   import kabam.rotmg.core.StaticInjectorContext;
    import com.company.util.AssetLibrary;
+   import flash.display.Bitmap;
    import flash.display.BitmapData;
-   import flash.geom.ColorTransform;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.events.MouseEvent;
    import flash.events.Event;
-   import kabam.rotmg.friends.model.FriendVO;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import flash.events.MouseEvent;
+   import flash.geom.ColorTransform;
+   import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.friends.model.FriendConstant;
+   import kabam.rotmg.friends.model.FriendVO;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    
    public class InvitationListItem extends FListItem
    {

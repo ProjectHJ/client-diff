@@ -1,10 +1,10 @@
 package kabam.rotmg.pets.view
 {
    import flash.display.Sprite;
+   import kabam.rotmg.pets.util.PetsViewAssetFactory;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    import kabam.rotmg.ui.view.SignalWaiter;
-   import kabam.rotmg.pets.util.PetsViewAssetFactory;
    
    public class StatusBox extends Sprite
    {

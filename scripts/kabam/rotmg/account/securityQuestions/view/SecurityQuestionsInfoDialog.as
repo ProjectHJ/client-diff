@@ -1,10 +1,10 @@
 package kabam.rotmg.account.securityQuestions.view
 {
    import com.company.assembleegameclient.account.ui.Frame;
+   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.filters.DropShadowFilter;
    
    public class SecurityQuestionsInfoDialog extends Frame
    {

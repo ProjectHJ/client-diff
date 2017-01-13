@@ -8,7 +8,7 @@ package com.company.assembleegameclient.objects.particles
       
       private var go_:GameObject;
       
-      private var partProps_:com.company.assembleegameclient.objects.particles.ParticleProperties;
+      private var partProps_:ParticleProperties;
       
       private var cooldown_:Number;
       

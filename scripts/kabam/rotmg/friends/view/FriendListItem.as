@@ -1,17 +1,17 @@
 package kabam.rotmg.friends.view
 {
-   import flash.display.Bitmap;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.icons.IconButton;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import kabam.rotmg.core.StaticInjectorContext;
    import com.company.assembleegameclient.ui.icons.IconButtonFactory;
    import com.company.util.AssetLibrary;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.events.MouseEvent;
+   import flash.display.Bitmap;
    import flash.events.Event;
-   import kabam.rotmg.friends.model.FriendVO;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.friends.model.FriendConstant;
+   import kabam.rotmg.friends.model.FriendVO;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    
    public class FriendListItem extends FListItem
    {
@@ -37,7 +37,7 @@ package kabam.rotmg.friends.view
       
       private var _jumpButton:IconButton;
       
-      private var _removeButton:kabam.rotmg.friends.view.FriendRemoveButton;
+      private var _removeButton:FriendRemoveButton;
       
       public function FriendListItem(param1:FriendVO, param2:Number, param3:Number, param4:String)
       {
@@ -76,7 +76,7 @@ package kabam.rotmg.friends.view
          this._whisperButton.y = 4;
          this._whisperButton.addEventListener(MouseEvent.CLICK,this.onWhisperClicked);
          addChild(this._whisperButton);
-         this._removeButton = new kabam.rotmg.friends.view.FriendRemoveButton(TextKey.FRIEND_REMOVE_BUTTON,TextKey.FRIEND_REMOVE_BUTTON_DESC);
+         this._removeButton = new FriendRemoveButton(TextKey.FRIEND_REMOVE_BUTTON,TextKey.FRIEND_REMOVE_BUTTON_DESC);
          this._removeButton.addEventListener(MouseEvent.CLICK,this.onRemoveClicked);
          this._removeButton.x = this.width - 30;
          this._removeButton.y = 11;

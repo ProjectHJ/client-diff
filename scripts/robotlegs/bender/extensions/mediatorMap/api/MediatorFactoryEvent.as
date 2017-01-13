@@ -14,11 +14,11 @@ package robotlegs.bender.extensions.mediatorMap.api
       
       private var _view:Object;
       
-      private var _mapping:robotlegs.bender.extensions.mediatorMap.api.IMediatorMapping;
+      private var _mapping:IMediatorMapping;
       
-      private var _factory:robotlegs.bender.extensions.mediatorMap.api.IMediatorFactory;
+      private var _factory:IMediatorFactory;
       
-      public function MediatorFactoryEvent(param1:String, param2:Object, param3:Object, param4:robotlegs.bender.extensions.mediatorMap.api.IMediatorMapping, param5:robotlegs.bender.extensions.mediatorMap.api.IMediatorFactory)
+      public function MediatorFactoryEvent(param1:String, param2:Object, param3:Object, param4:IMediatorMapping, param5:IMediatorFactory)
       {
          super(param1);
          this._mediator = param2;
@@ -37,12 +37,12 @@ package robotlegs.bender.extensions.mediatorMap.api
          return this._view;
       }
       
-      public function get mapping() : robotlegs.bender.extensions.mediatorMap.api.IMediatorMapping
+      public function get mapping() : IMediatorMapping
       {
          return this._mapping;
       }
       
-      public function get factory() : robotlegs.bender.extensions.mediatorMap.api.IMediatorFactory
+      public function get factory() : IMediatorFactory
       {
          return this._factory;
       }

@@ -1,15 +1,15 @@
 package kabam.rotmg.stage3D.graphic3D
 {
-   import kabam.rotmg.stage3D.proxies.Program3DProxy;
    import kabam.rotmg.stage3D.proxies.Context3DProxy;
-   import kabam.rotmg.stage3D.shaders.VertextShader;
-   import kabam.rotmg.stage3D.shaders.FragmentShaderRepeat;
+   import kabam.rotmg.stage3D.proxies.Program3DProxy;
    import kabam.rotmg.stage3D.shaders.FragmentShader;
+   import kabam.rotmg.stage3D.shaders.FragmentShaderRepeat;
+   import kabam.rotmg.stage3D.shaders.VertextShader;
    
    public class Program3DFactory
    {
       
-      private static var instance:kabam.rotmg.stage3D.graphic3D.Program3DFactory;
+      private static var instance:Program3DFactory;
       
       public static const TYPE_REPEAT_ON:Boolean = true;
       
@@ -29,11 +29,11 @@ package kabam.rotmg.stage3D.graphic3D
          }
       }
       
-      public static function getInstance() : kabam.rotmg.stage3D.graphic3D.Program3DFactory
+      public static function getInstance() : Program3DFactory
       {
          if(instance == null)
          {
-            instance = new kabam.rotmg.stage3D.graphic3D.Program3DFactory("yoThisIsInternal");
+            instance = new Program3DFactory("yoThisIsInternal");
          }
          return instance;
       }

@@ -1,12 +1,12 @@
 package kabam.rotmg.minimap.view
 {
+   import com.company.util.AssetLibrary;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
    import flash.display.Sprite;
+   import flash.events.MouseEvent;
    import flash.geom.ColorTransform;
    import org.osflash.signals.Signal;
-   import flash.display.Bitmap;
-   import com.company.util.AssetLibrary;
-   import flash.display.BitmapData;
-   import flash.events.MouseEvent;
    
    public class MiniMapZoomButtons extends Sprite
    {

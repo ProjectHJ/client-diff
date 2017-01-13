@@ -1,10 +1,10 @@
 package kabam.rotmg.stage3D.graphic3D
 {
-   import org.swiftsuspenders.dependencyproviders.DependencyProvider;
-   import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
-   import org.swiftsuspenders.Injector;
    import flash.utils.Dictionary;
    import kabam.rotmg.stage3D.proxies.Context3DProxy;
+   import kabam.rotmg.stage3D.proxies.IndexBuffer3DProxy;
+   import org.swiftsuspenders.Injector;
+   import org.swiftsuspenders.dependencyproviders.DependencyProvider;
    
    public class IndexBufferFactory implements DependencyProvider
    {

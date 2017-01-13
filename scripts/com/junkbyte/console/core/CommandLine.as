@@ -1,12 +1,12 @@
 package com.junkbyte.console.core
 {
+   import com.junkbyte.console.Console;
    import com.junkbyte.console.vos.WeakObject;
    import com.junkbyte.console.vos.WeakRef;
-   import flash.utils.ByteArray;
-   import flash.events.Event;
-   import flash.utils.getQualifiedClassName;
    import flash.display.DisplayObjectContainer;
-   import com.junkbyte.console.Console;
+   import flash.events.Event;
+   import flash.utils.ByteArray;
+   import flash.utils.getQualifiedClassName;
    
    public class CommandLine extends ConsoleCore
    {

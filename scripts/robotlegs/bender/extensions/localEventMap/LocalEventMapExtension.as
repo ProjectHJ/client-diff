@@ -1,9 +1,9 @@
 package robotlegs.bender.extensions.localEventMap
 {
-   import robotlegs.bender.framework.api.IExtension;
-   import robotlegs.bender.framework.api.IContext;
    import robotlegs.bender.extensions.localEventMap.api.IEventMap;
    import robotlegs.bender.extensions.localEventMap.impl.EventMap;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
    import robotlegs.bender.framework.impl.UID;
    
    public class LocalEventMapExtension implements IExtension

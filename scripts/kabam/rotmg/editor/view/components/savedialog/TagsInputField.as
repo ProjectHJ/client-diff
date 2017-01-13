@@ -1,12 +1,12 @@
 package kabam.rotmg.editor.view.components.savedialog
 {
-   import flash.display.Sprite;
    import com.company.ui.BaseSimpleText;
-   import flash.events.FocusEvent;
-   import flash.filters.DropShadowFilter;
-   import flash.display.LineScaleMode;
    import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
+   import flash.events.FocusEvent;
+   import flash.filters.DropShadowFilter;
    
    public class TagsInputField extends Sprite
    {

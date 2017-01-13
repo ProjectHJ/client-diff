@@ -1,18 +1,18 @@
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
    import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class ShieldComparison extends SlotComparison
    {
        
       
-      private var projectileComparison:com.company.assembleegameclient.ui.tooltip.slotcomparisons.GeneralProjectileComparison;
+      private var projectileComparison:GeneralProjectileComparison;
       
       public function ShieldComparison()
       {
-         this.projectileComparison = new com.company.assembleegameclient.ui.tooltip.slotcomparisons.GeneralProjectileComparison();
+         this.projectileComparison = new GeneralProjectileComparison();
          super();
       }
       

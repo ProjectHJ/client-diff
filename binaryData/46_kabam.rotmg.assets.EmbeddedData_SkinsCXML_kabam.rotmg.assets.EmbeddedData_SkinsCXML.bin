@@ -1229,4 +1229,26 @@
       <NoSkinSelect/>
       <DisplayId>{skins.Dragon_Tamer}</DisplayId>
    </Object>
+   <Object type="0x138" id="Inuit">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>117</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0307</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Inuit}</DisplayId>
+   </Object>
+   <Object type="0x139" id="Snowcloaked Rogue">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>118</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0300</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Snowcloaked_Rogue}</DisplayId>
+   </Object>
 </Objects>

@@ -1,9 +1,9 @@
 package com.google.analytics
 {
+   import com.google.analytics.debug.DebugConfiguration;
+   import com.google.analytics.v4.Configuration;
    import com.google.analytics.v4.GoogleAnalyticsAPI;
    import flash.events.IEventDispatcher;
-   import com.google.analytics.v4.Configuration;
-   import com.google.analytics.debug.DebugConfiguration;
    
    public interface AnalyticsTracker extends GoogleAnalyticsAPI, IEventDispatcher
    {

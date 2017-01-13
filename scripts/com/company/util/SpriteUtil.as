@@ -1,7 +1,7 @@
 package com.company.util
 {
-   import flash.display.DisplayObjectContainer;
    import flash.display.DisplayObject;
+   import flash.display.DisplayObjectContainer;
    
    public class SpriteUtil
    {

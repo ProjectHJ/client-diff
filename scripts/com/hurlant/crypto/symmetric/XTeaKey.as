@@ -1,8 +1,8 @@
 package com.hurlant.crypto.symmetric
 {
-   import flash.utils.ByteArray;
    import com.hurlant.crypto.prng.Random;
    import com.hurlant.util.Memory;
+   import flash.utils.ByteArray;
    
    public class XTeaKey implements ISymmetricKey
    {

@@ -51,8 +51,8 @@ package com.company.assembleegameclient.objects.particles
 }
 
 import com.company.assembleegameclient.objects.particles.Particle;
-import flash.geom.Vector3D;
 import com.company.assembleegameclient.util.FreeList;
+import flash.geom.Vector3D;
 
 class FountainParticle extends Particle
 {

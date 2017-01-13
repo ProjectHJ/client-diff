@@ -1,7 +1,7 @@
 package com.hurlant.util.der
 {
-   import flash.utils.ByteArray;
    import com.hurlant.util.Hex;
+   import flash.utils.ByteArray;
    
    public class ByteString extends ByteArray implements IAsn1Type
    {

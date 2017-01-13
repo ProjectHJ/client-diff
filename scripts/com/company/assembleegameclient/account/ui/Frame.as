@@ -1,23 +1,23 @@
 package com.company.assembleegameclient.account.ui
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-   import flash.text.TextFieldAutoSize;
-   import kabam.rotmg.account.web.view.LabeledField;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.filters.DropShadowFilter;
-   import flash.events.Event;
    import com.company.googleanalytics.GA;
+   import com.company.util.GraphicsUtil;
+   import flash.display.CapsStyle;
+   import flash.display.DisplayObject;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import com.company.util.GraphicsUtil;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.filters.DropShadowFilter;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.account.web.view.LabeledField;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class Frame extends Sprite
    {
@@ -33,7 +33,7 @@ package com.company.assembleegameclient.account.ui
       
       public var analyticsPageName_:String;
       
-      public var textInputFields_:Vector.<com.company.assembleegameclient.account.ui.TextInputField>;
+      public var textInputFields_:Vector.<TextInputField>;
       
       public var navigationLinks_:Vector.<DeprecatedClickableText>;
       
@@ -57,7 +57,7 @@ package com.company.assembleegameclient.account.ui
       
       public function Frame(param1:String, param2:String, param3:String, param4:String = "", param5:int = 288)
       {
-         this.textInputFields_ = new Vector.<com.company.assembleegameclient.account.ui.TextInputField>();
+         this.textInputFields_ = new Vector.<TextInputField>();
          this.navigationLinks_ = new Vector.<DeprecatedClickableText>();
          this.titleFill_ = new GraphicsSolidFill(5066061,1);
          this.backgroundFill_ = new GraphicsSolidFill(3552822,1);
@@ -112,7 +112,7 @@ package com.company.assembleegameclient.account.ui
          this.h_ = this.h_ + param1.getHeight();
       }
       
-      public function addTextInputField(param1:com.company.assembleegameclient.account.ui.TextInputField) : void
+      public function addTextInputField(param1:TextInputField) : void
       {
          this.textInputFields_.push(param1);
          addChild(param1);

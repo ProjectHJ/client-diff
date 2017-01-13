@@ -1,8 +1,8 @@
 package kabam.rotmg.messaging.impl.outgoing
 {
-   import kabam.rotmg.messaging.impl.data.WorldPosData;
-   import kabam.rotmg.messaging.impl.data.MoveRecord;
    import flash.utils.IDataOutput;
+   import kabam.rotmg.messaging.impl.data.MoveRecord;
+   import kabam.rotmg.messaging.impl.data.WorldPosData;
    
    public class Move extends OutgoingMessage
    {

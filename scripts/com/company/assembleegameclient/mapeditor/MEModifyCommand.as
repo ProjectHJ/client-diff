@@ -6,7 +6,7 @@ package com.company.assembleegameclient.mapeditor
    {
        
       
-      private var map_:com.company.assembleegameclient.mapeditor.MEMap;
+      private var map_:MEMap;
       
       private var x_:int;
       
@@ -18,7 +18,7 @@ package com.company.assembleegameclient.mapeditor
       
       private var newType_:int;
       
-      public function MEModifyCommand(param1:com.company.assembleegameclient.mapeditor.MEMap, param2:int, param3:int, param4:int, param5:int, param6:int)
+      public function MEModifyCommand(param1:MEMap, param2:int, param3:int, param4:int, param5:int, param6:int)
       {
          super();
          this.map_ = param1;

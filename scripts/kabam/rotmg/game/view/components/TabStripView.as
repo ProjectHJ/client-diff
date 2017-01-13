@@ -1,18 +1,18 @@
 package kabam.rotmg.game.view.components
 {
-   import flash.display.Sprite;
-   import com.company.assembleegameclient.ui.icons.IconButtonFactory;
    import com.company.assembleegameclient.objects.ImageFactory;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.ui.icons.IconButton;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.events.MouseEvent;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
+   import com.company.assembleegameclient.ui.icons.IconButtonFactory;
+   import com.company.ui.BaseSimpleText;
    import com.company.util.GraphicsUtil;
    import flash.display.Bitmap;
-   import com.company.ui.BaseSimpleText;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.text.model.TextKey;
+   import org.osflash.signals.Signal;
    
    public class TabStripView extends Sprite
    {
@@ -38,7 +38,7 @@ package kabam.rotmg.game.view.components
       
       private var _height:Number;
       
-      public var tabs:Vector.<kabam.rotmg.game.view.components.TabView>;
+      public var tabs:Vector.<TabView>;
       
       private var contents:Vector.<Sprite>;
       
@@ -48,7 +48,7 @@ package kabam.rotmg.game.view.components
       
       public function TabStripView(param1:Number = 186, param2:Number = 153)
       {
-         this.tabs = new Vector.<kabam.rotmg.game.view.components.TabView>();
+         this.tabs = new Vector.<TabView>();
          this.contents = new Vector.<Sprite>();
          super();
          this._width = param1;
@@ -71,7 +71,7 @@ package kabam.rotmg.game.view.components
       
       private function onTabClicked(param1:MouseEvent) : void
       {
-         this.selectTab(param1.target.parent as kabam.rotmg.game.view.components.TabView);
+         this.selectTab(param1.target.parent as TabView);
       }
       
       public function setSelectedTab(param1:uint) : void
@@ -79,9 +79,9 @@ package kabam.rotmg.game.view.components
          this.selectTab(this.tabs[param1]);
       }
       
-      private function selectTab(param1:kabam.rotmg.game.view.components.TabView) : void
+      private function selectTab(param1:TabView) : void
       {
-         var _loc2_:kabam.rotmg.game.view.components.TabView = null;
+         var _loc2_:TabView = null;
          if(param1)
          {
             _loc2_ = this.tabs[this.currentTabIndex];
@@ -118,13 +118,13 @@ package kabam.rotmg.game.view.components
             this.containerSprite.removeChild(this.contents[_loc1_]);
             _loc1_++;
          }
-         this.tabs = new Vector.<kabam.rotmg.game.view.components.TabView>();
+         this.tabs = new Vector.<TabView>();
          this.contents = new Vector.<Sprite>();
       }
       
       public function addTab(param1:*, param2:Sprite) : void
       {
-         var _loc4_:kabam.rotmg.game.view.components.TabView = null;
+         var _loc4_:TabView = null;
          var _loc3_:int = this.tabs.length;
          if(param1 is Bitmap)
          {

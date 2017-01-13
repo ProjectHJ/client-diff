@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.map.mapoverlay
 {
+   import com.company.assembleegameclient.map.Camera;
    import flash.display.Sprite;
    import kabam.rotmg.game.view.components.QueuedStatusText;
    import kabam.rotmg.game.view.components.QueuedStatusTextList;
-   import com.company.assembleegameclient.map.Camera;
    
    public class MapOverlay extends Sprite
    {

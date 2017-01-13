@@ -6,14 +6,14 @@ package com.adobe.serialization.json
       
       private var value;
       
-      private var tokenizer:com.adobe.serialization.json.JSONTokenizer;
+      private var tokenizer:JSONTokenizer;
       
-      private var token:com.adobe.serialization.json.JSONToken;
+      private var token:JSONToken;
       
       public function JSONDecoder(param1:String)
       {
          super();
-         this.tokenizer = new com.adobe.serialization.json.JSONTokenizer(param1);
+         this.tokenizer = new JSONTokenizer(param1);
          this.nextToken();
          this.value = this.parseValue();
       }
@@ -23,7 +23,7 @@ package com.adobe.serialization.json
          return this.value;
       }
       
-      private function nextToken() : com.adobe.serialization.json.JSONToken
+      private function nextToken() : JSONToken
       {
          return this.token = this.tokenizer.getNextToken();
       }

@@ -1,8 +1,8 @@
 package com.google.analytics.utils
 {
-   import flash.system.System;
    import com.google.analytics.core.Utils;
    import flash.system.Capabilities;
+   import flash.system.System;
    
    public class UserAgent
    {
@@ -10,18 +10,18 @@ package com.google.analytics.utils
       public static var minimal:Boolean = false;
        
       
-      private var _localInfo:com.google.analytics.utils.Environment;
+      private var _localInfo:Environment;
       
       private var _applicationProduct:String;
       
-      private var _version:com.google.analytics.utils.Version;
+      private var _version:Version;
       
-      public function UserAgent(param1:com.google.analytics.utils.Environment, param2:String = "", param3:String = "")
+      public function UserAgent(param1:Environment, param2:String = "", param3:String = "")
       {
          super();
          _localInfo = param1;
          applicationProduct = param2;
-         _version = com.google.analytics.utils.Version.fromString(param3);
+         _version = Version.fromString(param3);
       }
       
       public function get tamarinProductToken() : String
@@ -100,7 +100,7 @@ package com.google.analytics.utils
       
       public function set applicationVersion(param1:String) : void
       {
-         _version = com.google.analytics.utils.Version.fromString(param1);
+         _version = Version.fromString(param1);
       }
       
       public function get applicationProductToken() : String

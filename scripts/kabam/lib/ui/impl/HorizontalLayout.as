@@ -1,7 +1,7 @@
 package kabam.lib.ui.impl
 {
-   import kabam.lib.ui.api.Layout;
    import flash.display.DisplayObject;
+   import kabam.lib.ui.api.Layout;
    
    public class HorizontalLayout implements Layout
    {

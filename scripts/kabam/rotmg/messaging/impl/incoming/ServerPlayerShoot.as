@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl.incoming
 {
-   import kabam.rotmg.messaging.impl.data.WorldPosData;
    import flash.utils.IDataInput;
+   import kabam.rotmg.messaging.impl.data.WorldPosData;
    
    public class ServerPlayerShoot extends IncomingMessage
    {

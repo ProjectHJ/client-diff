@@ -1,9 +1,9 @@
 package kabam.rotmg.promotions.view
 {
    import flash.display.Sprite;
-   import kabam.lib.resizing.view.Resizable;
    import flash.events.MouseEvent;
    import flash.geom.Rectangle;
+   import kabam.lib.resizing.view.Resizable;
    
    public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Resizable
    {

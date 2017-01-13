@@ -1,13 +1,13 @@
 package kabam.rotmg.pets.view.dialogs
 {
    import com.company.assembleegameclient.game.GameSprite;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import flash.events.Event;
-   import com.company.googleanalytics.GA;
    import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.text.model.TextKey;
    import com.company.assembleegameclient.ui.dialogs.Dialog;
+   import com.company.googleanalytics.GA;
+   import flash.events.Event;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.text.model.TextKey;
    
    public class LeavePetYard extends PetDialog
    {

@@ -1,15 +1,15 @@
 package org.swiftsuspenders.reflection
 {
-   import flash.utils.describeType;
-   import org.swiftsuspenders.typedescriptions.TypeDescription;
    import flash.utils.Dictionary;
-   import org.swiftsuspenders.typedescriptions.NoParamsConstructorInjectionPoint;
+   import flash.utils.describeType;
+   import org.swiftsuspenders.InjectorError;
    import org.swiftsuspenders.typedescriptions.ConstructorInjectionPoint;
-   import org.swiftsuspenders.typedescriptions.PropertyInjectionPoint;
    import org.swiftsuspenders.typedescriptions.MethodInjectionPoint;
+   import org.swiftsuspenders.typedescriptions.NoParamsConstructorInjectionPoint;
    import org.swiftsuspenders.typedescriptions.PostConstructInjectionPoint;
    import org.swiftsuspenders.typedescriptions.PreDestroyInjectionPoint;
-   import org.swiftsuspenders.InjectorError;
+   import org.swiftsuspenders.typedescriptions.PropertyInjectionPoint;
+   import org.swiftsuspenders.typedescriptions.TypeDescription;
    
    public class DescribeTypeReflector extends ReflectorBase implements Reflector
    {

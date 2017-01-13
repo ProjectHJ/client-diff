@@ -1,12 +1,12 @@
 package kabam.rotmg.ui.signals
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.ui.model.Key;
+   import org.osflash.signals.Signal;
    
    public class HideKeySignal extends Signal
    {
       
-      public static var instance:kabam.rotmg.ui.signals.HideKeySignal;
+      public static var instance:HideKeySignal;
        
       
       public function HideKeySignal()

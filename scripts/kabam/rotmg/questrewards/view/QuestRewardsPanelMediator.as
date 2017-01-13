@@ -1,18 +1,18 @@
 package kabam.rotmg.questrewards.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import kabam.rotmg.dialogs.control.OpenDialogNoModalSignal;
    import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import flash.events.MouseEvent;
-   import flash.events.KeyboardEvent;
-   import com.company.assembleegameclient.parameters.Parameters;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class QuestRewardsPanelMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.questrewards.view.QuestRewardsPanel;
+      public var view:QuestRewardsPanel;
       
       [Inject]
       public var openNoModalDialog:OpenDialogNoModalSignal;
@@ -28,7 +28,7 @@ package kabam.rotmg.questrewards.view
       override public function initialize() : void
       {
          this.view.init();
-         if(kabam.rotmg.questrewards.view.QuestRewardsPanel.hasQuests())
+         if(QuestRewardsPanel.hasQuests())
          {
             if(!QuestRewardsContainer.modalIsOpen)
             {

@@ -1,11 +1,11 @@
 package kabam.rotmg.account.steam.services
 {
+   import com.company.assembleegameclient.ui.dialogs.DebugDialog;
    import kabam.lib.tasks.BaseTask;
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.account.steam.SteamApi;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.appengine.api.AppEngineClient;
-   import com.company.assembleegameclient.ui.dialogs.DebugDialog;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    
    public class SteamGetCredentialsTask extends BaseTask
    {

@@ -7,7 +7,7 @@ package com.company.assembleegameclient.ui.options
    {
        
       
-      private var sliderBar:com.company.assembleegameclient.ui.options.VolumeSliderBar;
+      private var sliderBar:VolumeSliderBar;
       
       private var disabled_:Boolean;
       
@@ -16,7 +16,7 @@ package com.company.assembleegameclient.ui.options
       public function SliderOption(param1:String, param2:Function = null, param3:Boolean = false)
       {
          super(param1,"","");
-         this.sliderBar = new com.company.assembleegameclient.ui.options.VolumeSliderBar(Parameters.data_[paramName_]);
+         this.sliderBar = new VolumeSliderBar(Parameters.data_[paramName_]);
          this.sliderBar.addEventListener(Event.CHANGE,this.onChange);
          this.callbackFunc = param2;
          addChild(this.sliderBar);

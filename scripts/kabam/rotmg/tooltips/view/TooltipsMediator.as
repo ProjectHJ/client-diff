@@ -1,16 +1,16 @@
 package kabam.rotmg.tooltips.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.core.signals.ShowTooltipSignal;
-   import kabam.rotmg.core.signals.HideTooltipsSignal;
    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import kabam.rotmg.core.signals.HideTooltipsSignal;
+   import kabam.rotmg.core.signals.ShowTooltipSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class TooltipsMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.tooltips.view.TooltipsView;
+      public var view:TooltipsView;
       
       [Inject]
       public var showTooltip:ShowTooltipSignal;

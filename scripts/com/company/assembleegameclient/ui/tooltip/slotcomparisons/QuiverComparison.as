@@ -1,15 +1,15 @@
 package com.company.assembleegameclient.ui.tooltip.slotcomparisons
 {
+   import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
    import com.company.assembleegameclient.util.ConditionEffect;
    import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import com.company.assembleegameclient.ui.tooltip.TooltipHelper;
    
    public class QuiverComparison extends SlotComparison
    {
        
       
-      private var projectileComparison:com.company.assembleegameclient.ui.tooltip.slotcomparisons.GeneralProjectileComparison;
+      private var projectileComparison:GeneralProjectileComparison;
       
       private var condition:XMLList;
       
@@ -17,7 +17,7 @@ package com.company.assembleegameclient.ui.tooltip.slotcomparisons
       
       public function QuiverComparison()
       {
-         this.projectileComparison = new com.company.assembleegameclient.ui.tooltip.slotcomparisons.GeneralProjectileComparison();
+         this.projectileComparison = new GeneralProjectileComparison();
          super();
       }
       

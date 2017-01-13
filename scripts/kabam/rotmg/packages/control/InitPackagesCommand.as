@@ -1,7 +1,7 @@
 package kabam.rotmg.packages.control
 {
-   import kabam.rotmg.promotions.model.BeginnersPackageModel;
    import kabam.rotmg.packages.services.PackageModel;
+   import kabam.rotmg.promotions.model.BeginnersPackageModel;
    
    public class InitPackagesCommand
    {
@@ -14,10 +14,10 @@ package kabam.rotmg.packages.control
       public var packageModel:PackageModel;
       
       [Inject]
-      public var beginnersPackageAvailable:kabam.rotmg.packages.control.BeginnersPackageAvailableSignal;
+      public var beginnersPackageAvailable:BeginnersPackageAvailableSignal;
       
       [Inject]
-      public var packageAvailable:kabam.rotmg.packages.control.PackageAvailableSignal;
+      public var packageAvailable:PackageAvailableSignal;
       
       public function InitPackagesCommand()
       {

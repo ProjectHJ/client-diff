@@ -1,7 +1,7 @@
 package kabam.rotmg.fortune.components
 {
-   import flash.utils.Timer;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
    
    public class TimerCallback
    {

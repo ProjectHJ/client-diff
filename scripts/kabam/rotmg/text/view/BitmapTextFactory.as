@@ -1,13 +1,13 @@
 package kabam.rotmg.text.view
 {
-   import flash.filters.GlowFilter;
+   import com.company.util.PointUtil;
    import flash.display.BitmapData;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+   import flash.filters.GlowFilter;
    import flash.geom.Matrix;
    import flash.text.TextFieldAutoSize;
-   import com.company.util.PointUtil;
    import kabam.rotmg.text.model.FontModel;
    import kabam.rotmg.text.model.TextAndMapProvider;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public class BitmapTextFactory
    {
@@ -17,12 +17,12 @@ package kabam.rotmg.text.view
       
       public var padding:int = 0;
       
-      private var textfield:kabam.rotmg.text.view.TextFieldDisplayConcrete;
+      private var textfield:TextFieldDisplayConcrete;
       
       public function BitmapTextFactory(param1:FontModel, param2:TextAndMapProvider)
       {
          super();
-         this.textfield = new kabam.rotmg.text.view.TextFieldDisplayConcrete();
+         this.textfield = new TextFieldDisplayConcrete();
          this.textfield.setFont(param1.getFont());
          this.textfield.setTextField(param2.getTextField());
          this.textfield.setStringMap(param2.getStringMap());

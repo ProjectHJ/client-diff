@@ -1,15 +1,15 @@
 package kabam.rotmg.pets.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.core.signals.ShowTooltipSignal;
    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import kabam.rotmg.core.signals.ShowTooltipSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PetAbilityDisplayMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.components.PetAbilityDisplay;
+      public var view:PetAbilityDisplay;
       
       [Inject]
       public var showToolTip:ShowTooltipSignal;

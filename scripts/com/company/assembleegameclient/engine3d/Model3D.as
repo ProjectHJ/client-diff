@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.engine3d
 {
+   import com.company.util.ConversionUtil;
+   import flash.display3D.Context3D;
    import flash.utils.ByteArray;
    import kabam.rotmg.stage3D.Object3D.Model3D_stage3d;
-   import flash.display3D.Context3D;
-   import com.company.util.ConversionUtil;
    import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
    
    public class Model3D
@@ -18,13 +18,13 @@ package com.company.assembleegameclient.engine3d
       
       public var uvts_:Vector.<Number>;
       
-      public var faces_:Vector.<com.company.assembleegameclient.engine3d.ModelFace3D>;
+      public var faces_:Vector.<ModelFace3D>;
       
       public function Model3D()
       {
          this.vL_ = new Vector.<Number>();
          this.uvts_ = new Vector.<Number>();
-         this.faces_ = new Vector.<com.company.assembleegameclient.engine3d.ModelFace3D>();
+         this.faces_ = new Vector.<ModelFace3D>();
          super();
       }
       
@@ -152,7 +152,7 @@ package com.company.assembleegameclient.engine3d
                _loc21_.push(_loc7_[_loc19_[_loc22_]]);
                _loc22_++;
             }
-            _loc12_.faces_.push(new com.company.assembleegameclient.engine3d.ModelFace3D(_loc12_,_loc21_,_loc20_ == null || _loc20_.substr(0,5) != "Solid"));
+            _loc12_.faces_.push(new ModelFace3D(_loc12_,_loc21_,_loc20_ == null || _loc20_.substr(0,5) != "Solid"));
             _loc14_++;
          }
          _loc12_.orderFaces();
@@ -195,7 +195,7 @@ package com.company.assembleegameclient.engine3d
       
       public function orderFaces() : void
       {
-         this.faces_.sort(com.company.assembleegameclient.engine3d.ModelFace3D.compare);
+         this.faces_.sort(ModelFace3D.compare);
       }
    }
 }

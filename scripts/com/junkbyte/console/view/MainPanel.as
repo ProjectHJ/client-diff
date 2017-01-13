@@ -1,27 +1,27 @@
 package com.junkbyte.console.view
 {
-   import flash.text.TextField;
+   import com.junkbyte.console.Console;
+   import com.junkbyte.console.core.LogReferences;
+   import com.junkbyte.console.core.Remoting;
+   import com.junkbyte.console.vos.Log;
    import flash.display.Shape;
    import flash.display.Sprite;
    import flash.events.Event;
-   import flash.events.MouseEvent;
+   import flash.events.FocusEvent;
    import flash.events.KeyboardEvent;
-   import flash.ui.Keyboard;
-   import flash.geom.ColorTransform;
-   import com.junkbyte.console.vos.Log;
-   import com.junkbyte.console.Console;
-   import com.junkbyte.console.core.LogReferences;
-   import flash.geom.Rectangle;
-   import com.junkbyte.console.core.Remoting;
+   import flash.events.MouseEvent;
    import flash.events.TextEvent;
+   import flash.geom.ColorTransform;
+   import flash.geom.Rectangle;
    import flash.net.FileReference;
-   import flash.system.System;
    import flash.system.Security;
    import flash.system.SecurityPanel;
+   import flash.system.System;
+   import flash.text.TextField;
    import flash.text.TextFieldAutoSize;
-   import flash.text.TextFormat;
    import flash.text.TextFieldType;
-   import flash.events.FocusEvent;
+   import flash.text.TextFormat;
+   import flash.ui.Keyboard;
    
    public class MainPanel extends ConsolePanel
    {

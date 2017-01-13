@@ -8,11 +8,11 @@ package com.company.assembleegameclient.tutorial
       
       public var action_:String;
       
-      public var uiDrawBoxes_:Vector.<com.company.assembleegameclient.tutorial.UIDrawBox>;
+      public var uiDrawBoxes_:Vector.<UIDrawBox>;
       
-      public var uiDrawArrows_:Vector.<com.company.assembleegameclient.tutorial.UIDrawArrow>;
+      public var uiDrawArrows_:Vector.<UIDrawArrow>;
       
-      public var reqs_:Vector.<com.company.assembleegameclient.tutorial.Requirement>;
+      public var reqs_:Vector.<Requirement>;
       
       public var satisfiedSince_:int = 0;
       
@@ -21,21 +21,21 @@ package com.company.assembleegameclient.tutorial
          var _loc2_:XML = null;
          var _loc3_:XML = null;
          var _loc4_:XML = null;
-         this.uiDrawBoxes_ = new Vector.<com.company.assembleegameclient.tutorial.UIDrawBox>();
-         this.uiDrawArrows_ = new Vector.<com.company.assembleegameclient.tutorial.UIDrawArrow>();
-         this.reqs_ = new Vector.<com.company.assembleegameclient.tutorial.Requirement>();
+         this.uiDrawBoxes_ = new Vector.<UIDrawBox>();
+         this.uiDrawArrows_ = new Vector.<UIDrawArrow>();
+         this.reqs_ = new Vector.<Requirement>();
          super();
          for each(_loc2_ in param1.UIDrawBox)
          {
-            this.uiDrawBoxes_.push(new com.company.assembleegameclient.tutorial.UIDrawBox(_loc2_));
+            this.uiDrawBoxes_.push(new UIDrawBox(_loc2_));
          }
          for each(_loc3_ in param1.UIDrawArrow)
          {
-            this.uiDrawArrows_.push(new com.company.assembleegameclient.tutorial.UIDrawArrow(_loc3_));
+            this.uiDrawArrows_.push(new UIDrawArrow(_loc3_));
          }
          for each(_loc4_ in param1.Requirement)
          {
-            this.reqs_.push(new com.company.assembleegameclient.tutorial.Requirement(_loc4_));
+            this.reqs_.push(new Requirement(_loc4_));
          }
       }
       

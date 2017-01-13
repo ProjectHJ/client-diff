@@ -1,23 +1,23 @@
 package kabam.rotmg.pets.view
 {
-   import com.company.assembleegameclient.ui.dialogs.DialogCloser;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.pets.view.components.PopupWindowBackground;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import flash.display.Sprite;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-   import org.osflash.signals.natives.NativeSignal;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
+   import com.company.assembleegameclient.ui.dialogs.DialogCloser;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
-   import kabam.rotmg.pets.view.dialogs.PetPicker;
-   import kabam.rotmg.pets.data.PetVO;
    import kabam.lib.ui.api.Size;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import kabam.rotmg.pets.util.PetsConstants;
+   import kabam.rotmg.pets.data.PetVO;
    import kabam.rotmg.pets.data.ReskinViewState;
+   import kabam.rotmg.pets.util.PetsConstants;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.pets.view.components.PopupWindowBackground;
+   import kabam.rotmg.pets.view.dialogs.PetPicker;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeSignal;
    
    public class PetFormView extends PetInteractionView implements DialogCloser
    {
@@ -43,7 +43,7 @@ package kabam.rotmg.pets.view
       
       private var reskinContainer:Sprite;
       
-      private var skinGroups:Vector.<kabam.rotmg.pets.view.PetSkinGroup>;
+      private var skinGroups:Vector.<PetSkinGroup>;
       
       private var posY:uint = 60;
       
@@ -78,9 +78,9 @@ package kabam.rotmg.pets.view
          this.reskinRequest.dispatch();
       }
       
-      public function createSkinGroups(param1:Vector.<kabam.rotmg.pets.view.PetSkinGroup>) : void
+      public function createSkinGroups(param1:Vector.<PetSkinGroup>) : void
       {
-         var _loc2_:kabam.rotmg.pets.view.PetSkinGroup = null;
+         var _loc2_:PetSkinGroup = null;
          var _loc3_:uint = 0;
          while(_loc3_ < this.NUM_CATEGORIES)
          {

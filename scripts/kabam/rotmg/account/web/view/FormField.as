@@ -1,10 +1,10 @@
 package kabam.rotmg.account.web.view
 {
-   import flash.display.Sprite;
    import com.company.ui.BaseSimpleText;
-   import flash.display.LineScaleMode;
    import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
    
    public class FormField extends Sprite
    {

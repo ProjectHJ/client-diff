@@ -1,8 +1,8 @@
 package kabam.rotmg.pets.view.dialogs
 {
    import flash.display.Sprite;
-   import kabam.rotmg.pets.view.components.PetIcon;
    import kabam.rotmg.pets.data.PetVO;
+   import kabam.rotmg.pets.view.components.PetIcon;
    
    public class PetItem extends Sprite implements Disableable
    {
@@ -20,7 +20,7 @@ package kabam.rotmg.pets.view.dialogs
       private static const CUT_STATES:Array = [TOP_LEFT,TOP_RIGHT,BOTTOM_RIGHT,BOTTOM_LEFT];
        
       
-      public var itemBackgroundFactory:kabam.rotmg.pets.view.dialogs.ItemBackgroundFactory;
+      public var itemBackgroundFactory:ItemBackgroundFactory;
       
       private var petIcon:PetIcon;
       
@@ -28,11 +28,11 @@ package kabam.rotmg.pets.view.dialogs
       
       private var size:int;
       
-      private var backgroundGraphic:kabam.rotmg.pets.view.dialogs.PetItemBackground;
+      private var backgroundGraphic:PetItemBackground;
       
       public function PetItem()
       {
-         this.itemBackgroundFactory = new kabam.rotmg.pets.view.dialogs.ItemBackgroundFactory();
+         this.itemBackgroundFactory = new ItemBackgroundFactory();
          super();
       }
       

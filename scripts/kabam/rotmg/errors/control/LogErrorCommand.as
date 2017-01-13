@@ -1,7 +1,7 @@
 package kabam.rotmg.errors.control
 {
-   import robotlegs.bender.framework.api.ILogger;
    import flash.events.ErrorEvent;
+   import robotlegs.bender.framework.api.ILogger;
    
    public class LogErrorCommand
    {

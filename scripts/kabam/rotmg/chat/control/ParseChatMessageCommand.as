@@ -1,12 +1,12 @@
 package kabam.rotmg.chat.control
 {
-   import kabam.rotmg.ui.model.HUDModel;
-   import kabam.rotmg.game.signals.AddTextLineSignal;
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.chat.model.ChatMessage;
    import com.company.assembleegameclient.parameters.Parameters;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.chat.model.ChatMessage;
+   import kabam.rotmg.game.signals.AddTextLineSignal;
    import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.ui.model.HUDModel;
    
    public class ParseChatMessageCommand
    {

@@ -4357,6 +4357,38 @@
       <feedPower>5000</feedPower>
       <DisplayId>{equip.Dragon_Tamer_Skin}</DisplayId>
    </Object>
+   <Object type="0x13a" id="Inuit Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>117</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Customize_your_Archer_with_the_Inuit_Skin.}</Description>
+      <Activate skinType="312">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Inuit_Skin}</DisplayId>
+   </Object>
+   <Object type="0x13b" id="Snowcloaked Rogue Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>118</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Customize_your_Rogue__with_the_Snowcloaked_Rogue_Skin.}</Description>
+      <Activate skinType="313">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Snowcloaked_Rogue_Skin}</DisplayId>
+   </Object>
    <Object type="0xab0" id="Minor Health Potion">
       <Class>Equipment</Class>
       <Item/>
@@ -15962,5 +15994,22 @@
       <BagType>5</BagType>
       <Soulbound/>
       <feedPower>200000</feedPower>
+   </Object>
+   <Object type="0x6b5" id="Dragon Buddies">
+      <DisplayId>{equip.Dragon_Buddies}</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>lofiChar8x8</File>
+         <Index>0xe2</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Summon_a_trail_of_buddies_that_follow_you_around.}</Description>
+      <Sound>use_potion</Sound>
+      <Activate objectId="Dragon Chain 1">Pet</Activate>
+      <Consumable/>
+      <BagType>5</BagType>
+      <Soulbound/>
+      <feedPower>5000</feedPower>
    </Object>
 </Objects>

@@ -3,16 +3,16 @@ package com.company.assembleegameclient.ui.menu
    import com.company.assembleegameclient.game.AGameSprite;
    import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.GameObjectListItem;
-   import com.company.util.AssetLibrary;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.events.MouseEvent;
    import com.company.assembleegameclient.util.GuildUtil;
+   import com.company.util.AssetLibrary;
    import flash.events.Event;
-   import kabam.rotmg.core.StaticInjectorContext;
+   import flash.events.MouseEvent;
    import kabam.rotmg.chat.control.ShowChatInputSignal;
+   import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.friends.controller.FriendActionSignal;
-   import kabam.rotmg.friends.model.FriendRequestVO;
    import kabam.rotmg.friends.model.FriendConstant;
+   import kabam.rotmg.friends.model.FriendRequestVO;
+   import kabam.rotmg.text.model.TextKey;
    
    public class PlayerMenu extends Menu
    {

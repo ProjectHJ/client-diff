@@ -1,10 +1,10 @@
 package com.company.assembleegameclient.mapeditor
 {
-   import flash.display.Sprite;
    import com.company.util.IntPoint;
-   import flash.display.Shape;
-   import flash.events.Event;
    import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
    
    public class EditTileProperties extends Sprite
    {
@@ -14,7 +14,7 @@ package com.company.assembleegameclient.mapeditor
       
       private var darkBox_:Shape;
       
-      private var frame_:com.company.assembleegameclient.mapeditor.EditTilePropertiesFrame;
+      private var frame_:EditTilePropertiesFrame;
       
       public function EditTileProperties(param1:Vector.<IntPoint>, param2:String)
       {
@@ -27,7 +27,7 @@ package com.company.assembleegameclient.mapeditor
          _loc3_.drawRect(0,0,800,600);
          _loc3_.endFill();
          addChild(this.darkBox_);
-         this.frame_ = new com.company.assembleegameclient.mapeditor.EditTilePropertiesFrame(param2);
+         this.frame_ = new EditTilePropertiesFrame(param2);
          this.frame_.addEventListener(Event.COMPLETE,this.onComplete);
          this.frame_.addEventListener(Event.CANCEL,this.onCancel);
          addChild(this.frame_);

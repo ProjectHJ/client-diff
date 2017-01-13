@@ -1,17 +1,17 @@
 package kabam.rotmg.chat.view
 {
    import flash.display.Sprite;
-   import flash.utils.Timer;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
    import kabam.rotmg.chat.model.ChatModel;
    
    public class ChatList extends Sprite
    {
        
       
-      private var listItems:Vector.<kabam.rotmg.chat.view.ChatListItem>;
+      private var listItems:Vector.<ChatListItem>;
       
-      private var visibleItems:Vector.<kabam.rotmg.chat.view.ChatListItem>;
+      private var visibleItems:Vector.<ChatListItem>;
       
       private var visibleItemCount:int;
       
@@ -21,7 +21,7 @@ package kabam.rotmg.chat.view
       
       private const timer:Timer = new Timer(1000);
       
-      private const itemsToRemove:Vector.<kabam.rotmg.chat.view.ChatListItem> = new Vector.<kabam.rotmg.chat.view.ChatListItem>();
+      private const itemsToRemove:Vector.<ChatListItem> = new Vector.<ChatListItem>();
       
       private var ignoreTimeOuts:Boolean = false;
       
@@ -32,8 +32,8 @@ package kabam.rotmg.chat.view
          super();
          mouseEnabled = true;
          mouseChildren = true;
-         this.listItems = new Vector.<kabam.rotmg.chat.view.ChatListItem>();
-         this.visibleItems = new Vector.<kabam.rotmg.chat.view.ChatListItem>();
+         this.listItems = new Vector.<ChatListItem>();
+         this.visibleItems = new Vector.<ChatListItem>();
          this.visibleItemCount = param1;
          this.maxLength = param2;
          this.index = 0;
@@ -44,8 +44,8 @@ package kabam.rotmg.chat.view
       
       private function onCheckTimeout(param1:TimerEvent) : void
       {
-         var _loc2_:kabam.rotmg.chat.view.ChatListItem = null;
-         var _loc3_:kabam.rotmg.chat.view.ChatListItem = null;
+         var _loc2_:ChatListItem = null;
+         var _loc3_:ChatListItem = null;
          for each(_loc2_ in this.visibleItems)
          {
             if(_loc2_.isTimedOut() && !this.ignoreTimeOuts)
@@ -76,9 +76,9 @@ package kabam.rotmg.chat.view
          this.visibleItemCount = param1.visibleItemCount;
       }
       
-      public function addMessage(param1:kabam.rotmg.chat.view.ChatListItem) : void
+      public function addMessage(param1:ChatListItem) : void
       {
-         var _loc2_:kabam.rotmg.chat.view.ChatListItem = null;
+         var _loc2_:ChatListItem = null;
          if(this.listItems.length > this.maxLength)
          {
             _loc2_ = this.listItems.shift();
@@ -96,7 +96,7 @@ package kabam.rotmg.chat.view
          }
       }
       
-      private function onItemTimedOut(param1:kabam.rotmg.chat.view.ChatListItem) : void
+      private function onItemTimedOut(param1:ChatListItem) : void
       {
          var _loc2_:int = this.visibleItems.indexOf(param1);
          if(_loc2_ != -1)
@@ -107,7 +107,7 @@ package kabam.rotmg.chat.view
          }
       }
       
-      private function displayNewItem(param1:kabam.rotmg.chat.view.ChatListItem) : void
+      private function displayNewItem(param1:ChatListItem) : void
       {
          this.index++;
          this.addNewItem(param1);
@@ -130,7 +130,7 @@ package kabam.rotmg.chat.view
       
       public function showAvailable() : void
       {
-         var _loc4_:kabam.rotmg.chat.view.ChatListItem = null;
+         var _loc4_:ChatListItem = null;
          var _loc1_:int = this.index - this.visibleItems.length - 1;
          var _loc2_:int = Math.max(0,this.index - this.visibleItemCount - 1);
          var _loc3_:int = _loc1_;
@@ -212,7 +212,7 @@ package kabam.rotmg.chat.view
          }
       }
       
-      private function addNewItem(param1:kabam.rotmg.chat.view.ChatListItem) : void
+      private function addNewItem(param1:ChatListItem) : void
       {
          this.visibleItems.push(param1);
          addChild(param1);
@@ -233,7 +233,7 @@ package kabam.rotmg.chat.view
       
       private function scrollItemsUp() : void
       {
-         var _loc1_:kabam.rotmg.chat.view.ChatListItem = this.listItems[--this.index - this.visibleItemCount];
+         var _loc1_:ChatListItem = this.listItems[--this.index - this.visibleItemCount];
          this.addOldItem(_loc1_);
          this.removeNewestVisibleIfNeeded();
          this.positionItems();
@@ -246,7 +246,7 @@ package kabam.rotmg.chat.view
          {
             this.index = 0;
          }
-         var _loc1_:kabam.rotmg.chat.view.ChatListItem = this.listItems[this.index];
+         var _loc1_:ChatListItem = this.listItems[this.index];
          this.index++;
          this.addNewItem(_loc1_);
          this.removeOldestVisibleIfNeeded();
@@ -254,7 +254,7 @@ package kabam.rotmg.chat.view
          this.positionItems();
       }
       
-      private function addOldItem(param1:kabam.rotmg.chat.view.ChatListItem) : void
+      private function addOldItem(param1:ChatListItem) : void
       {
          this.visibleItems.unshift(param1);
          addChild(param1);
@@ -270,7 +270,7 @@ package kabam.rotmg.chat.view
       
       private function positionItems() : void
       {
-         var _loc3_:kabam.rotmg.chat.view.ChatListItem = null;
+         var _loc3_:ChatListItem = null;
          var _loc1_:int = 0;
          var _loc2_:int = this.visibleItems.length;
          while(_loc2_--)

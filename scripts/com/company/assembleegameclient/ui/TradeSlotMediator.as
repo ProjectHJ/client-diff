@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.ui
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.text.view.BitmapTextFactory;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class TradeSlotMediator extends Mediator
    {
@@ -11,7 +11,7 @@ package com.company.assembleegameclient.ui
       public var bitmapFactory:BitmapTextFactory;
       
       [Inject]
-      public var view:com.company.assembleegameclient.ui.TradeSlot;
+      public var view:TradeSlot;
       
       public function TradeSlotMediator()
       {

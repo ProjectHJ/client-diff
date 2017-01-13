@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.ui.options
 {
-   import flash.display.Sprite;
    import flash.display.Shape;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
    import flash.geom.Point;
    import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.filters.DropShadowFilter;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
    
    public class VolumeSliderBar extends Sprite
    {

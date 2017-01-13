@@ -4,7 +4,7 @@ package org.osflash.signals
    {
        
       
-      protected var _signal:org.osflash.signals.IOnceSignal;
+      protected var _signal:IOnceSignal;
       
       protected var _enabled:Boolean = true;
       
@@ -16,7 +16,7 @@ package org.osflash.signals
       
       protected var _params:Array;
       
-      public function Slot(param1:Function, param2:org.osflash.signals.IOnceSignal, param3:Boolean = false, param4:int = 0)
+      public function Slot(param1:Function, param2:IOnceSignal, param3:Boolean = false, param4:int = 0)
       {
          super();
          this._listener = param1;

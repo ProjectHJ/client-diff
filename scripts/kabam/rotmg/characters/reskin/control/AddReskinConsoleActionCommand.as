@@ -11,7 +11,7 @@ package kabam.rotmg.characters.reskin.control
       public var register:RegisterConsoleActionSignal;
       
       [Inject]
-      public var openReskinDialogSignal:kabam.rotmg.characters.reskin.control.OpenReskinDialogSignal;
+      public var openReskinDialogSignal:OpenReskinDialogSignal;
       
       public function AddReskinConsoleActionCommand()
       {

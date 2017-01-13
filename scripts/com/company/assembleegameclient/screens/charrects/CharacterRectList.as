@@ -1,22 +1,22 @@
 package com.company.assembleegameclient.screens.charrects
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.classes.model.ClassesModel;
-   import kabam.rotmg.core.model.PlayerModel;
-   import kabam.rotmg.assets.services.CharacterFactory;
-   import org.osflash.signals.Signal;
-   import flash.display.DisplayObject;
+   import com.company.assembleegameclient.appengine.CharacterStats;
    import com.company.assembleegameclient.appengine.SavedCharacter;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObject;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.assets.services.CharacterFactory;
    import kabam.rotmg.classes.model.CharacterClass;
    import kabam.rotmg.classes.model.CharacterSkin;
-   import flash.display.BitmapData;
-   import flash.display.Bitmap;
-   import flash.events.Event;
-   import com.company.assembleegameclient.appengine.CharacterStats;
+   import kabam.rotmg.classes.model.ClassesModel;
    import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.core.model.PlayerModel;
+   import org.osflash.signals.Signal;
    import org.swiftsuspenders.Injector;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import flash.events.MouseEvent;
    
    public class CharacterRectList extends Sprite
    {

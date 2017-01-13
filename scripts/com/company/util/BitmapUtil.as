@@ -2,15 +2,15 @@ package com.company.util
 {
    import flash.display.BitmapData;
    import flash.geom.Matrix;
-   import flash.geom.Rectangle;
    import flash.geom.Point;
+   import flash.geom.Rectangle;
    import flash.utils.Dictionary;
    
    public class BitmapUtil
    {
        
       
-      public function BitmapUtil(param1:StaticEnforcer)
+      public function BitmapUtil(param1:StaticEnforcer#108)
       {
          super();
       }
@@ -213,11 +213,11 @@ package com.company.util
    }
 }
 
-class StaticEnforcer
+class StaticEnforcer#108
 {
     
    
-   function StaticEnforcer()
+   function StaticEnforcer#108()
    {
       super();
    }

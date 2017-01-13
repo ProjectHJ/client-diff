@@ -1,17 +1,17 @@
 package kabam.rotmg.core.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.core.signals.SetScreenSignal;
+   import flash.display.Sprite;
    import kabam.rotmg.core.model.ScreenModel;
    import kabam.rotmg.core.signals.GotoPreviousScreenSignal;
-   import flash.display.Sprite;
+   import kabam.rotmg.core.signals.SetScreenSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class ScreensMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.core.view.ScreensView;
+      public var view:ScreensView;
       
       [Inject]
       public var setScreen:SetScreenSignal;

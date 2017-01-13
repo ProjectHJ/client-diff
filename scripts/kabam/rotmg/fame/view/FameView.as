@@ -1,29 +1,29 @@
 package kabam.rotmg.fame.view
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import flash.display.DisplayObjectContainer;
-   import flash.display.Bitmap;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import com.company.assembleegameclient.screens.ScoringBox;
-   import com.company.assembleegameclient.screens.ScoreTextLine;
-   import com.company.assembleegameclient.screens.TitleMenuOption;
-   import flash.display.BitmapData;
-   import com.gskinner.motion.GTween;
-   import com.company.assembleegameclient.sound.SoundEffectLibrary;
-   import flash.text.TextFieldAutoSize;
-   import flash.filters.DropShadowFilter;
    import com.company.assembleegameclient.objects.ObjectLibrary;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
-   import com.company.rotmg.graphics.FameIconBackgroundDesign;
-   import flash.geom.Rectangle;
+   import com.company.assembleegameclient.screens.ScoreTextLine;
+   import com.company.assembleegameclient.screens.ScoringBox;
+   import com.company.assembleegameclient.screens.TitleMenuOption;
+   import com.company.assembleegameclient.sound.SoundEffectLibrary;
    import com.company.assembleegameclient.util.FameUtil;
-   import com.company.util.BitmapUtil;
+   import com.company.rotmg.graphics.FameIconBackgroundDesign;
    import com.company.rotmg.graphics.ScreenGraphic;
-   import kabam.rotmg.ui.view.components.ScreenBase;
-   import org.osflash.signals.natives.NativeMappedSignal;
+   import com.company.util.BitmapUtil;
+   import com.gskinner.motion.GTween;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.DisplayObjectContainer;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.geom.Rectangle;
+   import flash.text.TextFieldAutoSize;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.view.components.ScreenBase;
+   import org.osflash.signals.Signal;
+   import org.osflash.signals.natives.NativeMappedSignal;
    
    public class FameView extends Sprite
    {

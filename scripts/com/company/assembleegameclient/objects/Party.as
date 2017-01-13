@@ -1,8 +1,8 @@
 package com.company.assembleegameclient.objects
 {
    import com.company.assembleegameclient.map.Map;
-   import flash.utils.Dictionary;
    import com.company.util.PointUtil;
+   import flash.utils.Dictionary;
    import kabam.rotmg.messaging.impl.incoming.AccountList;
    
    public class Party

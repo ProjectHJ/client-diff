@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.ui.panels
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.game.AGameSprite;
+   import flash.display.Sprite;
    
    public class Panel extends Sprite
    {

@@ -1,22 +1,22 @@
 package com.company.assembleegameclient.util
 {
-   import kabam.rotmg.text.model.TextKey;
    import com.company.assembleegameclient.util.offer.Offer;
-   import kabam.rotmg.core.StaticInjectorContext;
+   import flash.net.URLVariables;
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.application.api.ApplicationSetup;
-   import flash.net.URLVariables;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.text.model.TextKey;
    
    public class PaymentMethod
    {
       
-      public static const GO_METHOD:com.company.assembleegameclient.util.PaymentMethod = new com.company.assembleegameclient.util.PaymentMethod(TextKey.PAYMENTS_GOOGLE_CHECKOUT,"co","");
+      public static const GO_METHOD:PaymentMethod = new PaymentMethod(TextKey.PAYMENTS_GOOGLE_CHECKOUT,"co","");
       
-      public static const PAYPAL_METHOD:com.company.assembleegameclient.util.PaymentMethod = new com.company.assembleegameclient.util.PaymentMethod(TextKey.PAYMENTS_PAYPAL,"ps","P3");
+      public static const PAYPAL_METHOD:PaymentMethod = new PaymentMethod(TextKey.PAYMENTS_PAYPAL,"ps","P3");
       
-      public static const CREDITS_METHOD:com.company.assembleegameclient.util.PaymentMethod = new com.company.assembleegameclient.util.PaymentMethod(TextKey.PAYMENTS_CREDIT_CARDS,"ps","CH");
+      public static const CREDITS_METHOD:PaymentMethod = new PaymentMethod(TextKey.PAYMENTS_CREDIT_CARDS,"ps","CH");
       
-      public static const PAYMENT_METHODS:Vector.<com.company.assembleegameclient.util.PaymentMethod> = new <com.company.assembleegameclient.util.PaymentMethod>[GO_METHOD,PAYPAL_METHOD,CREDITS_METHOD];
+      public static const PAYMENT_METHODS:Vector.<PaymentMethod> = new <PaymentMethod>[GO_METHOD,PAYPAL_METHOD,CREDITS_METHOD];
        
       
       public var label_:String;
@@ -33,9 +33,9 @@ package com.company.assembleegameclient.util
          this.paymentid_ = param3;
       }
       
-      public static function getPaymentMethodByLabel(param1:String) : com.company.assembleegameclient.util.PaymentMethod
+      public static function getPaymentMethodByLabel(param1:String) : PaymentMethod
       {
-         var _loc2_:com.company.assembleegameclient.util.PaymentMethod = null;
+         var _loc2_:PaymentMethod = null;
          for each(_loc2_ in PAYMENT_METHODS)
          {
             if(_loc2_.label_ == param1)

@@ -1,10 +1,10 @@
 package com.company.assembleegameclient.screens
 {
+   import com.company.assembleegameclient.screens.charrects.CharacterRectList;
+   import flash.display.Graphics;
+   import flash.display.Shape;
    import flash.display.Sprite;
    import kabam.rotmg.core.model.PlayerModel;
-   import flash.display.Shape;
-   import flash.display.Graphics;
-   import com.company.assembleegameclient.screens.charrects.CharacterRectList;
    
    public class CharacterList extends Sprite
    {

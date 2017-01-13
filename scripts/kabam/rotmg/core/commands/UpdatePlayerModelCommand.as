@@ -1,8 +1,8 @@
 package kabam.rotmg.core.commands
 {
+   import com.company.assembleegameclient.appengine.SavedCharactersList;
    import com.company.assembleegameclient.editor.Command;
    import kabam.rotmg.core.model.PlayerModel;
-   import com.company.assembleegameclient.appengine.SavedCharactersList;
    
    public class UpdatePlayerModelCommand extends Command
    {

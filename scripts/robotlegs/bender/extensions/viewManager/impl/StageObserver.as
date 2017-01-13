@@ -1,8 +1,8 @@
 package robotlegs.bender.extensions.viewManager.impl
 {
+   import flash.display.DisplayObject;
    import flash.display.DisplayObjectContainer;
    import flash.events.Event;
-   import flash.display.DisplayObject;
    import flash.utils.getQualifiedClassName;
    
    public class StageObserver
@@ -11,9 +11,9 @@ package robotlegs.bender.extensions.viewManager.impl
       
       private const _filter:RegExp = /^mx\.|^spark\.|^flash\./;
       
-      private var _registry:robotlegs.bender.extensions.viewManager.impl.ContainerRegistry;
+      private var _registry:ContainerRegistry;
       
-      public function StageObserver(param1:robotlegs.bender.extensions.viewManager.impl.ContainerRegistry)
+      public function StageObserver(param1:ContainerRegistry)
       {
          var _loc2_:ContainerBinding = null;
          super();

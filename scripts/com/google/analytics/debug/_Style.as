@@ -1,7 +1,7 @@
 package com.google.analytics.debug
 {
-   import flash.text.StyleSheet;
    import flash.net.URLLoader;
+   import flash.text.StyleSheet;
    
    public class _Style
    {

@@ -1,13 +1,13 @@
 package kabam.rotmg.language.control
 {
-   import kabam.rotmg.language.model.LanguageModel;
-   import kabam.rotmg.ui.signals.ShowLoadingUISignal;
-   import org.swiftsuspenders.Injector;
-   import kabam.rotmg.language.service.GetLanguageService;
    import kabam.lib.console.signals.HideConsoleSignal;
+   import kabam.lib.tasks.DispatchSignalTask;
    import kabam.lib.tasks.TaskMonitor;
    import kabam.lib.tasks.TaskSequence;
-   import kabam.lib.tasks.DispatchSignalTask;
+   import kabam.rotmg.language.model.LanguageModel;
+   import kabam.rotmg.language.service.GetLanguageService;
+   import kabam.rotmg.ui.signals.ShowLoadingUISignal;
+   import org.swiftsuspenders.Injector;
    
    public class SetLanguageCommand
    {
@@ -29,7 +29,7 @@ package kabam.rotmg.language.control
       public var task:GetLanguageService;
       
       [Inject]
-      public var reload:kabam.rotmg.language.control.ReloadCurrentScreenSignal;
+      public var reload:ReloadCurrentScreenSignal;
       
       [Inject]
       public var hideConsole:HideConsoleSignal;

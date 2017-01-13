@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.game
 {
-   import kabam.rotmg.game.signals.AddTextLineSignal;
-   import flash.events.MouseEvent;
-   import flash.events.KeyboardEvent;
-   import kabam.rotmg.chat.model.ChatMessage;
    import com.company.assembleegameclient.parameters.Parameters;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.chat.model.ChatMessage;
    import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.game.signals.AddTextLineSignal;
    
    public class IdleWatcher
    {
@@ -19,7 +19,7 @@ package com.company.assembleegameclient.game
       private static const KICK_MINUTES:int = 20;
        
       
-      public var gs_:com.company.assembleegameclient.game.GameSprite = null;
+      public var gs_:GameSprite = null;
       
       public var idleTime_:int = 0;
       
@@ -31,7 +31,7 @@ package com.company.assembleegameclient.game
          this.addTextLine = StaticInjectorContext.getInjector().getInstance(AddTextLineSignal);
       }
       
-      public function start(param1:com.company.assembleegameclient.game.GameSprite) : void
+      public function start(param1:GameSprite) : void
       {
          this.gs_ = param1;
          this.idleTime_ = 0;

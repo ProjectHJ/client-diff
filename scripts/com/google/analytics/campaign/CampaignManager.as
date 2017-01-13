@@ -1,13 +1,13 @@
 package com.google.analytics.campaign
 {
-   import com.google.analytics.utils.URL;
-   import com.google.analytics.utils.Protocols;
-   import com.google.analytics.v4.Configuration;
-   import com.google.analytics.debug.VisualDebugMode;
-   import com.google.analytics.utils.Variables;
+   import com.google.analytics.core.Buffer;
    import com.google.analytics.core.OrganicReferrer;
    import com.google.analytics.debug.DebugConfiguration;
-   import com.google.analytics.core.Buffer;
+   import com.google.analytics.debug.VisualDebugMode;
+   import com.google.analytics.utils.Protocols;
+   import com.google.analytics.utils.URL;
+   import com.google.analytics.utils.Variables;
+   import com.google.analytics.v4.Configuration;
    
    public class CampaignManager
    {

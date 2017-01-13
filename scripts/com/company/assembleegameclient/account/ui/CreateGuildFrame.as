@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.account.ui
 {
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.game.GameSprite;
-   import flash.events.MouseEvent;
    import com.company.assembleegameclient.game.events.GuildResultEvent;
    import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import flash.events.MouseEvent;
    import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.game.model.GameModel;
-   import com.company.assembleegameclient.parameters.Parameters;
    import kabam.rotmg.text.model.TextKey;
+   import org.osflash.signals.Signal;
    
    public class CreateGuildFrame extends Frame
    {
@@ -16,7 +16,7 @@ package com.company.assembleegameclient.account.ui
       
       public const close:Signal = new Signal();
       
-      private var name_:com.company.assembleegameclient.account.ui.TextInputField;
+      private var name_:TextInputField;
       
       private var gs_:GameSprite;
       
@@ -24,7 +24,7 @@ package com.company.assembleegameclient.account.ui
       {
          super(TextKey.GUILD_TITLE,TextKey.FRAME_CANCEL,TextKey.GUILD_CREATE,"/createGuild");
          this.gs_ = param1;
-         this.name_ = new com.company.assembleegameclient.account.ui.TextInputField(TextKey.GUILD_NAME,false);
+         this.name_ = new TextInputField(TextKey.GUILD_NAME,false);
          this.name_.inputText_.restrict = "A-Za-z ";
          var _loc2_:int = 20;
          this.name_.inputText_.maxChars = _loc2_;

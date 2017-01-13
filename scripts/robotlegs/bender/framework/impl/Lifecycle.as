@@ -1,11 +1,11 @@
 package robotlegs.bender.framework.impl
 {
    import flash.events.EventDispatcher;
-   import robotlegs.bender.framework.api.ILifecycle;
-   import robotlegs.bender.framework.api.LifecycleState;
-   import flash.utils.Dictionary;
-   import robotlegs.bender.framework.api.LifecycleEvent;
    import flash.events.IEventDispatcher;
+   import flash.utils.Dictionary;
+   import robotlegs.bender.framework.api.ILifecycle;
+   import robotlegs.bender.framework.api.LifecycleEvent;
+   import robotlegs.bender.framework.api.LifecycleState;
    
    public class Lifecycle extends EventDispatcher implements ILifecycle
    {
@@ -19,13 +19,13 @@ package robotlegs.bender.framework.impl
       
       private var _reversePriority:int;
       
-      private var _initialize:robotlegs.bender.framework.impl.LifecycleTransition;
+      private var _initialize:LifecycleTransition;
       
-      private var _suspend:robotlegs.bender.framework.impl.LifecycleTransition;
+      private var _suspend:LifecycleTransition;
       
-      private var _resume:robotlegs.bender.framework.impl.LifecycleTransition;
+      private var _resume:LifecycleTransition;
       
-      private var _destroy:robotlegs.bender.framework.impl.LifecycleTransition;
+      private var _destroy:LifecycleTransition;
       
       public function Lifecycle(param1:Object)
       {
@@ -182,10 +182,10 @@ package robotlegs.bender.framework.impl
       
       private function configureTransitions() : void
       {
-         this._initialize = new robotlegs.bender.framework.impl.LifecycleTransition(LifecycleEvent.PRE_INITIALIZE,this).fromStates(LifecycleState.UNINITIALIZED).toStates(LifecycleState.INITIALIZING,LifecycleState.ACTIVE).withEvents(LifecycleEvent.PRE_INITIALIZE,LifecycleEvent.INITIALIZE,LifecycleEvent.POST_INITIALIZE);
-         this._suspend = new robotlegs.bender.framework.impl.LifecycleTransition(LifecycleEvent.PRE_SUSPEND,this).fromStates(LifecycleState.ACTIVE).toStates(LifecycleState.SUSPENDING,LifecycleState.SUSPENDED).withEvents(LifecycleEvent.PRE_SUSPEND,LifecycleEvent.SUSPEND,LifecycleEvent.POST_SUSPEND).inReverse();
-         this._resume = new robotlegs.bender.framework.impl.LifecycleTransition(LifecycleEvent.PRE_RESUME,this).fromStates(LifecycleState.SUSPENDED).toStates(LifecycleState.RESUMING,LifecycleState.ACTIVE).withEvents(LifecycleEvent.PRE_RESUME,LifecycleEvent.RESUME,LifecycleEvent.POST_RESUME);
-         this._destroy = new robotlegs.bender.framework.impl.LifecycleTransition(LifecycleEvent.PRE_DESTROY,this).fromStates(LifecycleState.SUSPENDED,LifecycleState.ACTIVE).toStates(LifecycleState.DESTROYING,LifecycleState.DESTROYED).withEvents(LifecycleEvent.PRE_DESTROY,LifecycleEvent.DESTROY,LifecycleEvent.POST_DESTROY).inReverse();
+         this._initialize = new LifecycleTransition(LifecycleEvent.PRE_INITIALIZE,this).fromStates(LifecycleState.UNINITIALIZED).toStates(LifecycleState.INITIALIZING,LifecycleState.ACTIVE).withEvents(LifecycleEvent.PRE_INITIALIZE,LifecycleEvent.INITIALIZE,LifecycleEvent.POST_INITIALIZE);
+         this._suspend = new LifecycleTransition(LifecycleEvent.PRE_SUSPEND,this).fromStates(LifecycleState.ACTIVE).toStates(LifecycleState.SUSPENDING,LifecycleState.SUSPENDED).withEvents(LifecycleEvent.PRE_SUSPEND,LifecycleEvent.SUSPEND,LifecycleEvent.POST_SUSPEND).inReverse();
+         this._resume = new LifecycleTransition(LifecycleEvent.PRE_RESUME,this).fromStates(LifecycleState.SUSPENDED).toStates(LifecycleState.RESUMING,LifecycleState.ACTIVE).withEvents(LifecycleEvent.PRE_RESUME,LifecycleEvent.RESUME,LifecycleEvent.POST_RESUME);
+         this._destroy = new LifecycleTransition(LifecycleEvent.PRE_DESTROY,this).fromStates(LifecycleState.SUSPENDED,LifecycleState.ACTIVE).toStates(LifecycleState.DESTROYING,LifecycleState.DESTROYED).withEvents(LifecycleEvent.PRE_DESTROY,LifecycleEvent.DESTROY,LifecycleEvent.POST_DESTROY).inReverse();
       }
       
       private function flipPriority(param1:String, param2:int) : int

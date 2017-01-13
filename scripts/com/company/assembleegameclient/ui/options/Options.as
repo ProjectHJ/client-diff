@@ -1,36 +1,36 @@
 package com.company.assembleegameclient.ui.options
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.ui.UIUtils;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import com.company.assembleegameclient.ui.StatusBar;
-   import flash.ui.MouseCursorData;
-   import flash.display.BitmapData;
-   import flash.ui.MouseCursor;
-   import flash.geom.Point;
-   import com.company.util.AssetLibrary;
-   import flash.ui.Mouse;
    import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.screens.TitleMenuOption;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
-   import flash.system.Capabilities;
-   import flash.events.KeyboardEvent;
-   import com.company.util.KeyCodes;
-   import flash.display.StageDisplayState;
    import com.company.assembleegameclient.sound.Music;
    import com.company.assembleegameclient.sound.SFX;
+   import com.company.assembleegameclient.ui.StatusBar;
+   import com.company.rotmg.graphics.ScreenGraphic;
+   import com.company.util.AssetLibrary;
+   import com.company.util.KeyCodes;
+   import flash.display.BitmapData;
+   import flash.display.Sprite;
+   import flash.display.StageDisplayState;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.geom.Point;
    import flash.net.URLRequest;
    import flash.net.URLRequestMethod;
    import flash.net.navigateToURL;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import flash.system.Capabilities;
    import flash.text.TextFieldAutoSize;
-   import flash.filters.DropShadowFilter;
-   import com.company.rotmg.graphics.ScreenGraphic;
+   import flash.ui.Mouse;
+   import flash.ui.MouseCursor;
+   import flash.ui.MouseCursorData;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+   import kabam.rotmg.ui.UIUtils;
    
    public class Options extends Sprite
    {
@@ -62,9 +62,9 @@ package com.company.assembleegameclient.ui.options
       
       private var homeButton_:TitleMenuOption;
       
-      private var tabs_:Vector.<com.company.assembleegameclient.ui.options.OptionsTabTitle>;
+      private var tabs_:Vector.<OptionsTabTitle>;
       
-      private var selected_:com.company.assembleegameclient.ui.options.OptionsTabTitle = null;
+      private var selected_:OptionsTabTitle = null;
       
       private var options_:Vector.<Sprite>;
       
@@ -72,8 +72,8 @@ package com.company.assembleegameclient.ui.options
       {
          var _loc2_:TextFieldDisplayConcrete = null;
          var _loc5_:int = 0;
-         var _loc6_:com.company.assembleegameclient.ui.options.OptionsTabTitle = null;
-         this.tabs_ = new Vector.<com.company.assembleegameclient.ui.options.OptionsTabTitle>();
+         var _loc6_:OptionsTabTitle = null;
+         this.tabs_ = new Vector.<OptionsTabTitle>();
          this.options_ = new Vector.<Sprite>();
          super();
          this.gs_ = param1;
@@ -128,7 +128,7 @@ package com.company.assembleegameclient.ui.options
          var _loc4_:int = 0;
          while(_loc4_ < TABS.length)
          {
-            _loc6_ = new com.company.assembleegameclient.ui.options.OptionsTabTitle(TABS[_loc4_]);
+            _loc6_ = new OptionsTabTitle(TABS[_loc4_]);
             _loc6_.x = _loc3_;
             _loc6_.y = 70;
             addChild(_loc6_);
@@ -245,11 +245,11 @@ package com.company.assembleegameclient.ui.options
       
       private function onTabClick(param1:MouseEvent) : void
       {
-         var _loc2_:com.company.assembleegameclient.ui.options.OptionsTabTitle = param1.currentTarget as com.company.assembleegameclient.ui.options.OptionsTabTitle;
+         var _loc2_:OptionsTabTitle = param1.currentTarget as OptionsTabTitle;
          this.setSelected(_loc2_);
       }
       
-      private function setSelected(param1:com.company.assembleegameclient.ui.options.OptionsTabTitle) : void
+      private function setSelected(param1:OptionsTabTitle) : void
       {
          if(param1 == this.selected_)
          {

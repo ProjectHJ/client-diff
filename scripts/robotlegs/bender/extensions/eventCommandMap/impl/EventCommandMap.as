@@ -1,13 +1,13 @@
 package robotlegs.bender.extensions.eventCommandMap.impl
 {
-   import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
+   import flash.events.IEventDispatcher;
    import flash.utils.Dictionary;
    import org.swiftsuspenders.Injector;
-   import flash.events.IEventDispatcher;
    import robotlegs.bender.extensions.commandCenter.api.ICommandCenter;
-   import robotlegs.bender.extensions.commandCenter.dsl.ICommandMapper;
    import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
+   import robotlegs.bender.extensions.commandCenter.dsl.ICommandMapper;
    import robotlegs.bender.extensions.commandCenter.dsl.ICommandUnmapper;
+   import robotlegs.bender.extensions.eventCommandMap.api.IEventCommandMap;
    
    public class EventCommandMap implements IEventCommandMap
    {

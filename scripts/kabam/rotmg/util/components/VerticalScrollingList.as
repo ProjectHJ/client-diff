@@ -1,19 +1,19 @@
 package kabam.rotmg.util.components
 {
+   import flash.display.DisplayObject;
    import flash.display.Sprite;
    import kabam.lib.ui.api.List;
-   import org.osflash.signals.Signal;
-   import kabam.lib.ui.impl.VerticalLayout;
-   import kabam.lib.ui.impl.LayoutList;
    import kabam.lib.ui.api.Size;
-   import flash.display.DisplayObject;
+   import kabam.lib.ui.impl.LayoutList;
+   import kabam.lib.ui.impl.VerticalLayout;
+   import org.osflash.signals.Signal;
    
    public class VerticalScrollingList extends Sprite implements List
    {
       
       public static const SCROLLBAR_PADDING:int = 2;
       
-      public static const SCROLLBAR_GUTTER:int = kabam.rotmg.util.components.VerticalScrollbar.WIDTH + SCROLLBAR_PADDING;
+      public static const SCROLLBAR_GUTTER:int = VerticalScrollbar.WIDTH + SCROLLBAR_PADDING;
        
       
       public const scrollStateChanged:Signal = new Signal(Boolean);
@@ -22,7 +22,7 @@ package kabam.rotmg.util.components
       
       private var list:LayoutList;
       
-      private var scrollbar:kabam.rotmg.util.components.VerticalScrollbar;
+      private var scrollbar:VerticalScrollbar;
       
       private var isEnabled:Boolean = true;
       
@@ -115,11 +115,13 @@ package kabam.rotmg.util.components
       
       private function refreshScrollbar() : void
       {
+         var _loc3_:int = 0;
+         var _loc5_:* = false;
          var _loc1_:Size = this.list.getSize();
          var _loc2_:int = _loc1_.height;
-         var _loc3_:int = this.list.getSizeOfItems().height;
+         _loc3_ = this.list.getSizeOfItems().height;
          var _loc4_:* = _loc3_ > _loc2_;
-         var _loc5_:* = this.scrollbar.visible != _loc4_;
+         _loc5_ = this.scrollbar.visible != _loc4_;
          this.scrollbar.setIsEnabled(false);
          this.scrollbar.visible = _loc4_;
          _loc4_ && this.scrollbar.setIsEnabled(true);
@@ -142,7 +144,7 @@ package kabam.rotmg.util.components
       
       private function makeScrollbar() : void
       {
-         this.scrollbar = new kabam.rotmg.util.components.VerticalScrollbar();
+         this.scrollbar = new VerticalScrollbar();
          this.scrollbar.positionChanged.add(this.onPositionChanged);
          this.scrollbar.visible = false;
          addChild(this.scrollbar);

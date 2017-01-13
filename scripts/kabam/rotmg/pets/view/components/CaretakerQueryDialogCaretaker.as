@@ -1,17 +1,17 @@
 package kabam.rotmg.pets.view.components
 {
-   import flash.display.Sprite;
    import flash.display.Bitmap;
-   import kabam.rotmg.pets.view.dialogs.CaretakerQueryDialog;
    import flash.display.BitmapData;
+   import flash.display.Sprite;
+   import kabam.rotmg.pets.view.dialogs.CaretakerQueryDialog;
    
    public class CaretakerQueryDialogCaretaker extends Sprite
    {
        
       
-      private const speechBubble:kabam.rotmg.pets.view.components.CaretakerQuerySpeechBubble = this.makeSpeechBubble();
+      private const speechBubble:CaretakerQuerySpeechBubble = this.makeSpeechBubble();
       
-      private const detailBubble:kabam.rotmg.pets.view.components.CaretakerQueryDetailBubble = this.makeDetailBubble();
+      private const detailBubble:CaretakerQueryDetailBubble = this.makeDetailBubble();
       
       private const icon:Bitmap = this.makeCaretakerIcon();
       
@@ -20,19 +20,19 @@ package kabam.rotmg.pets.view.components
          super();
       }
       
-      private function makeSpeechBubble() : kabam.rotmg.pets.view.components.CaretakerQuerySpeechBubble
+      private function makeSpeechBubble() : CaretakerQuerySpeechBubble
       {
-         var _loc1_:kabam.rotmg.pets.view.components.CaretakerQuerySpeechBubble = null;
-         _loc1_ = new kabam.rotmg.pets.view.components.CaretakerQuerySpeechBubble(CaretakerQueryDialog.QUERY);
+         var _loc1_:CaretakerQuerySpeechBubble = null;
+         _loc1_ = new CaretakerQuerySpeechBubble(CaretakerQueryDialog.QUERY);
          _loc1_.x = 60;
          addChild(_loc1_);
          return _loc1_;
       }
       
-      private function makeDetailBubble() : kabam.rotmg.pets.view.components.CaretakerQueryDetailBubble
+      private function makeDetailBubble() : CaretakerQueryDetailBubble
       {
-         var _loc1_:kabam.rotmg.pets.view.components.CaretakerQueryDetailBubble = null;
-         _loc1_ = new kabam.rotmg.pets.view.components.CaretakerQueryDetailBubble();
+         var _loc1_:CaretakerQueryDetailBubble = null;
+         _loc1_ = new CaretakerQueryDetailBubble();
          _loc1_.y = 60;
          return _loc1_;
       }

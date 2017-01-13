@@ -1,16 +1,16 @@
 package com.company.assembleegameclient.account.ui
 {
+   import flash.display.CapsStyle;
+   import flash.display.Graphics;
+   import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
    import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
-   import flash.events.MouseEvent;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import flash.display.Graphics;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
-   import flash.display.JointStyle;
-   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.text.view.stringBuilder.StringBuilder;
    
    public class CheckBoxField extends Sprite
    {

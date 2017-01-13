@@ -1,14 +1,14 @@
 package com.company.assembleegameclient.objects.thrown
 {
+   import com.company.assembleegameclient.map.Camera;
+   import com.company.assembleegameclient.map.Square#55;
    import com.company.assembleegameclient.objects.BasicObject;
+   import com.company.util.GraphicsUtil;
+   import flash.display.BitmapData;
    import flash.display.GraphicsBitmapFill;
    import flash.display.GraphicsPath;
-   import flash.geom.Matrix;
-   import flash.display.BitmapData;
-   import com.company.assembleegameclient.map.Square;
    import flash.display.IGraphicsData;
-   import com.company.assembleegameclient.map.Camera;
-   import com.company.util.GraphicsUtil;
+   import flash.geom.Matrix;
    
    public class BitmapParticle extends BasicObject
    {

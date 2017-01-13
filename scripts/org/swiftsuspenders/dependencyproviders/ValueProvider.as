@@ -1,7 +1,7 @@
 package org.swiftsuspenders.dependencyproviders
 {
-   import org.swiftsuspenders.Injector;
    import flash.utils.Dictionary;
+   import org.swiftsuspenders.Injector;
    
    public class ValueProvider implements DependencyProvider
    {

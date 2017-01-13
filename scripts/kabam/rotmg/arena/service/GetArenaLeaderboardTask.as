@@ -1,12 +1,12 @@
 package kabam.rotmg.arena.service
 {
+   import com.company.util.MoreObjectUtil;
    import kabam.lib.tasks.BaseTask;
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.arena.control.ReloadLeaderboard;
-   import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
-   import com.company.util.MoreObjectUtil;
+   import kabam.rotmg.arena.model.ArenaLeaderboardFilter;
    
    public class GetArenaLeaderboardTask extends BaseTask
    {
@@ -21,7 +21,7 @@ package kabam.rotmg.arena.service
       public var client:AppEngineClient;
       
       [Inject]
-      public var factory:kabam.rotmg.arena.service.ArenaLeaderboardFactory;
+      public var factory:ArenaLeaderboardFactory;
       
       [Inject]
       public var reloadLeaderboard:ReloadLeaderboard;

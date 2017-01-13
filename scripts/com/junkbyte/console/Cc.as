@@ -1,17 +1,17 @@
 package com.junkbyte.console
 {
-   import flash.display.DisplayObjectContainer;
    import flash.display.DisplayObject;
-   import flash.events.Event;
+   import flash.display.DisplayObjectContainer;
    import flash.display.LoaderInfo;
+   import flash.events.Event;
    import flash.geom.Rectangle;
    
    public class Cc
    {
       
-      private static var _console:com.junkbyte.console.Console;
+      private static var _console:Console;
       
-      private static var _config:com.junkbyte.console.ConsoleConfig;
+      private static var _config:ConsoleConfig;
        
       
       public function Cc()
@@ -19,11 +19,11 @@ package com.junkbyte.console
          super();
       }
       
-      public static function get config() : com.junkbyte.console.ConsoleConfig
+      public static function get config() : ConsoleConfig
       {
          if(!_config)
          {
-            _config = new com.junkbyte.console.ConsoleConfig();
+            _config = new ConsoleConfig();
          }
          return _config;
       }
@@ -39,7 +39,7 @@ package com.junkbyte.console
          }
          else
          {
-            _console = new com.junkbyte.console.Console(param2,config);
+            _console = new Console(param2,config);
             if(param1)
             {
                param1.addChild(_console);
@@ -62,7 +62,7 @@ package com.junkbyte.console
          }
          else
          {
-            _console = new com.junkbyte.console.Console(param2,config);
+            _console = new Console(param2,config);
             if(param1)
             {
                param1.addEventListener(Event.ADDED_TO_STAGE,addedToStageHandle);
@@ -138,7 +138,7 @@ package com.junkbyte.console
       {
          if(_console)
          {
-            _console.addCh(param1,rest,com.junkbyte.console.Console.LOG);
+            _console.addCh(param1,rest,Console.LOG);
          }
       }
       
@@ -146,7 +146,7 @@ package com.junkbyte.console
       {
          if(_console)
          {
-            _console.addCh(param1,rest,com.junkbyte.console.Console.INFO);
+            _console.addCh(param1,rest,Console.INFO);
          }
       }
       
@@ -154,7 +154,7 @@ package com.junkbyte.console
       {
          if(_console)
          {
-            _console.addCh(param1,rest,com.junkbyte.console.Console.DEBUG);
+            _console.addCh(param1,rest,Console.DEBUG);
          }
       }
       
@@ -162,7 +162,7 @@ package com.junkbyte.console
       {
          if(_console)
          {
-            _console.addCh(param1,rest,com.junkbyte.console.Console.WARN);
+            _console.addCh(param1,rest,Console.WARN);
          }
       }
       
@@ -170,7 +170,7 @@ package com.junkbyte.console
       {
          if(_console)
          {
-            _console.addCh(param1,rest,com.junkbyte.console.Console.ERROR);
+            _console.addCh(param1,rest,Console.ERROR);
          }
       }
       
@@ -178,7 +178,7 @@ package com.junkbyte.console
       {
          if(_console)
          {
-            _console.addCh(param1,rest,com.junkbyte.console.Console.FATAL);
+            _console.addCh(param1,rest,Console.FATAL);
          }
       }
       
@@ -582,7 +582,7 @@ package com.junkbyte.console
          return "";
       }
       
-      public static function get instance() : com.junkbyte.console.Console
+      public static function get instance() : Console
       {
          return _console;
       }

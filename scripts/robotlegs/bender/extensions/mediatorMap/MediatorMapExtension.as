@@ -1,15 +1,15 @@
 package robotlegs.bender.extensions.mediatorMap
 {
-   import robotlegs.bender.framework.api.IExtension;
    import org.swiftsuspenders.Injector;
-   import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
-   import robotlegs.bender.extensions.viewManager.api.IViewManager;
-   import robotlegs.bender.extensions.mediatorMap.impl.DefaultMediatorManager;
-   import robotlegs.bender.framework.api.IContext;
    import robotlegs.bender.extensions.mediatorMap.api.IMediatorFactory;
+   import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
+   import robotlegs.bender.extensions.mediatorMap.impl.DefaultMediatorManager;
    import robotlegs.bender.extensions.mediatorMap.impl.MediatorFactory;
    import robotlegs.bender.extensions.mediatorMap.impl.MediatorMap;
    import robotlegs.bender.extensions.viewManager.api.IViewHandler;
+   import robotlegs.bender.extensions.viewManager.api.IViewManager;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
    import robotlegs.bender.framework.impl.UID;
    
    public class MediatorMapExtension implements IExtension

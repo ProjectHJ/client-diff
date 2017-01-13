@@ -1,16 +1,16 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.game.AGameSprite;
    import com.company.ui.BaseSimpleText;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.events.MouseEvent;
+   import flash.display.Sprite;
    import flash.events.Event;
-   import kabam.rotmg.messaging.impl.data.TradeItem;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
    import kabam.rotmg.constants.GeneralConstants;
+   import kabam.rotmg.messaging.impl.data.TradeItem;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class TradeInventory extends Sprite
    {
@@ -38,13 +38,13 @@ package com.company.assembleegameclient.ui
       
       private var taglineText_:TextFieldDisplayConcrete;
       
-      public var slots_:Vector.<com.company.assembleegameclient.ui.TradeSlot>;
+      public var slots_:Vector.<TradeSlot>;
       
       public function TradeInventory(param1:AGameSprite, param2:String, param3:Vector.<TradeItem>, param4:Boolean)
       {
          var _loc6_:TradeItem = null;
-         var _loc7_:com.company.assembleegameclient.ui.TradeSlot = null;
-         this.slots_ = new Vector.<com.company.assembleegameclient.ui.TradeSlot>();
+         var _loc7_:TradeSlot = null;
+         this.slots_ = new Vector.<TradeSlot>();
          super();
          this.gs_ = param1;
          this.playerName_ = param2;
@@ -65,7 +65,7 @@ package com.company.assembleegameclient.ui
          while(_loc5_ < GeneralConstants.NUM_EQUIPMENT_SLOTS + GeneralConstants.NUM_INVENTORY_SLOTS)
          {
             _loc6_ = param3[_loc5_];
-            _loc7_ = new com.company.assembleegameclient.ui.TradeSlot(_loc6_.item_,_loc6_.tradeable_,_loc6_.included_,_loc6_.slotType_,_loc5_ - 3,cuts[_loc5_],_loc5_);
+            _loc7_ = new TradeSlot(_loc6_.item_,_loc6_.tradeable_,_loc6_.included_,_loc6_.slotType_,_loc5_ - 3,cuts[_loc5_],_loc5_);
             _loc7_.setPlayer(this.gs_.map.player_);
             _loc7_.x = int(_loc5_ % 4) * (Slot.WIDTH + 4);
             _loc7_.y = int(_loc5_ / 4) * (Slot.HEIGHT + 4) + 46;
@@ -175,7 +175,7 @@ package com.company.assembleegameclient.ui
       
       private function onSlotClick(param1:MouseEvent) : void
       {
-         var _loc2_:com.company.assembleegameclient.ui.TradeSlot = param1.currentTarget as com.company.assembleegameclient.ui.TradeSlot;
+         var _loc2_:TradeSlot = param1.currentTarget as TradeSlot;
          _loc2_.setIncluded(!_loc2_.included_);
          dispatchEvent(new Event(Event.CHANGE));
       }

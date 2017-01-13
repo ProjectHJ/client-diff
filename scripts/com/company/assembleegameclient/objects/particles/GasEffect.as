@@ -9,7 +9,7 @@ package com.company.assembleegameclient.objects.particles
       
       public var go_:GameObject;
       
-      public var props:com.company.assembleegameclient.objects.particles.EffectProperties;
+      public var props:EffectProperties;
       
       public var color_:int;
       
@@ -17,7 +17,7 @@ package com.company.assembleegameclient.objects.particles
       
       public var type:String;
       
-      public function GasEffect(param1:GameObject, param2:com.company.assembleegameclient.objects.particles.EffectProperties)
+      public function GasEffect(param1:GameObject, param2:EffectProperties)
       {
          super();
          this.go_ = param1;

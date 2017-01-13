@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.ui.menu
 {
-   import com.company.assembleegameclient.ui.GameObjectListItem;
    import com.company.assembleegameclient.map.AbstractMap;
    import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.ui.GameObjectListItem;
    import com.company.assembleegameclient.ui.LineBreakDesign;
-   import org.osflash.signals.Signal;
-   import flash.events.MouseEvent;
    import flash.events.Event;
+   import flash.events.MouseEvent;
+   import org.osflash.signals.Signal;
    
    public class PlayerGroupMenu extends Menu
    {
@@ -20,7 +20,7 @@ package com.company.assembleegameclient.ui.menu
       
       public var players_:Vector.<Player>;
       
-      public var teleportOption_:com.company.assembleegameclient.ui.menu.MenuOption;
+      public var teleportOption_:MenuOption;
       
       public var lineBreakDesign_:LineBreakDesign;
       

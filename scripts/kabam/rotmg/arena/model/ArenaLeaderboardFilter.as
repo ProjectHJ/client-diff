@@ -8,7 +8,7 @@ package kabam.rotmg.arena.model
       
       private var key:String;
       
-      private var entries:Vector.<kabam.rotmg.arena.model.ArenaLeaderboardEntry>;
+      private var entries:Vector.<ArenaLeaderboardEntry>;
       
       public function ArenaLeaderboardFilter(param1:String, param2:String)
       {
@@ -27,12 +27,12 @@ package kabam.rotmg.arena.model
          return this.key;
       }
       
-      public function getEntries() : Vector.<kabam.rotmg.arena.model.ArenaLeaderboardEntry>
+      public function getEntries() : Vector.<ArenaLeaderboardEntry>
       {
          return this.entries;
       }
       
-      public function setEntries(param1:Vector.<kabam.rotmg.arena.model.ArenaLeaderboardEntry>) : void
+      public function setEntries(param1:Vector.<ArenaLeaderboardEntry>) : void
       {
          this.entries = param1;
       }

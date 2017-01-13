@@ -1,9 +1,9 @@
 package robotlegs.bender.extensions.modularity.impl
 {
-   import robotlegs.bender.framework.api.ILogger;
-   import org.swiftsuspenders.Injector;
    import flash.display.DisplayObjectContainer;
+   import org.swiftsuspenders.Injector;
    import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.ILogger;
    import robotlegs.bender.framework.impl.UID;
    
    public class ContextViewBasedExistenceWatcher

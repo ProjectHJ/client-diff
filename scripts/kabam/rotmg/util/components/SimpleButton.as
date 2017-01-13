@@ -1,29 +1,29 @@
 package kabam.rotmg.util.components
 {
-   import kabam.rotmg.util.components.api.BuyButton;
-   import flash.display.BitmapData;
-   import flash.filters.ColorMatrixFilter;
-   import kabam.rotmg.assets.services.IconFactory;
-   import com.company.util.MoreColorUtil;
-   import flash.text.TextField;
-   import flash.display.Bitmap;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
-   import kabam.rotmg.ui.view.SignalWaiter;
+   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.util.Currency;
    import com.company.util.GraphicsUtil;
-   import flash.events.MouseEvent;
-   import flash.ui.Mouse;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import flash.display.Graphics;
-   import flash.display.GraphicsStroke;
-   import flash.display.LineScaleMode;
+   import com.company.util.MoreColorUtil;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
    import flash.display.CapsStyle;
+   import flash.display.Graphics;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.GraphicsStroke;
+   import flash.display.IGraphicsData;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.events.MouseEvent;
+   import flash.filters.ColorMatrixFilter;
+   import flash.text.TextField;
+   import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
    import flash.text.TextFormatAlign;
-   import flash.text.TextFieldAutoSize;
+   import flash.ui.Mouse;
+   import kabam.rotmg.assets.services.IconFactory;
+   import kabam.rotmg.ui.view.SignalWaiter;
+   import kabam.rotmg.util.components.api.BuyButton;
    
    public class SimpleButton extends BuyButton
    {

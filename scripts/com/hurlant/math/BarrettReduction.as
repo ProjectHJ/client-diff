@@ -6,44 +6,44 @@ package com.hurlant.math
    {
        
       
-      private var m:com.hurlant.math.BigInteger;
+      private var m:BigInteger;
       
-      private var r2:com.hurlant.math.BigInteger;
+      private var r2:BigInteger;
       
-      private var q3:com.hurlant.math.BigInteger;
+      private var q3:BigInteger;
       
-      private var mu:com.hurlant.math.BigInteger;
+      private var mu:BigInteger;
       
-      function BarrettReduction(param1:com.hurlant.math.BigInteger)
+      function BarrettReduction(param1:BigInteger)
       {
          super();
-         this.r2 = new com.hurlant.math.BigInteger();
-         this.q3 = new com.hurlant.math.BigInteger();
-         com.hurlant.math.BigInteger.ONE.dlShiftTo(2 * param1.t,this.r2);
+         this.r2 = new BigInteger();
+         this.q3 = new BigInteger();
+         BigInteger.ONE.dlShiftTo(2 * param1.t,this.r2);
          this.mu = this.r2.divide(param1);
          this.m = param1;
       }
       
-      public function revert(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function revert(param1:BigInteger) : BigInteger
       {
          return param1;
       }
       
-      public function mulTo(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger, param3:com.hurlant.math.BigInteger) : void
+      public function mulTo(param1:BigInteger, param2:BigInteger, param3:BigInteger) : void
       {
          param1.multiplyTo(param2,param3);
          this.reduce(param3);
       }
       
-      public function sqrTo(param1:com.hurlant.math.BigInteger, param2:com.hurlant.math.BigInteger) : void
+      public function sqrTo(param1:BigInteger, param2:BigInteger) : void
       {
          param1.squareTo(param2);
          this.reduce(param2);
       }
       
-      public function convert(param1:com.hurlant.math.BigInteger) : com.hurlant.math.BigInteger
+      public function convert(param1:BigInteger) : BigInteger
       {
-         var _loc2_:com.hurlant.math.BigInteger = null;
+         var _loc2_:BigInteger = null;
          if(param1.s < 0 || param1.t > 2 * this.m.t)
          {
             return param1.mod(this.m);
@@ -52,15 +52,15 @@ package com.hurlant.math
          {
             return param1;
          }
-         _loc2_ = new com.hurlant.math.BigInteger();
+         _loc2_ = new BigInteger();
          param1.copyTo(_loc2_);
          this.reduce(_loc2_);
          return _loc2_;
       }
       
-      public function reduce(param1:com.hurlant.math.BigInteger) : void
+      public function reduce(param1:BigInteger) : void
       {
-         var _loc2_:com.hurlant.math.BigInteger = param1 as com.hurlant.math.BigInteger;
+         var _loc2_:BigInteger = param1 as BigInteger;
          _loc2_.drShiftTo(this.m.t - 1,this.r2);
          if(_loc2_.t > this.m.t + 1)
          {

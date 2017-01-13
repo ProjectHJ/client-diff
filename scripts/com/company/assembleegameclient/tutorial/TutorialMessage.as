@@ -1,20 +1,20 @@
 package com.company.assembleegameclient.tutorial
 {
-   import flash.display.Sprite;
-   import flash.geom.Rectangle;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
+   import com.company.util.GraphicsUtil;
+   import flash.display.CapsStyle;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
-   import flash.utils.getTimer;
-   import flash.events.Event;
-   import com.company.util.GraphicsUtil;
-   import flash.events.MouseEvent;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
    import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.geom.Rectangle;
+   import flash.utils.getTimer;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
    
    public class TutorialMessage extends Sprite
@@ -23,7 +23,7 @@ package com.company.assembleegameclient.tutorial
       public static const BORDER:int = 8;
        
       
-      private var tutorial_:com.company.assembleegameclient.tutorial.Tutorial;
+      private var tutorial_:Tutorial;
       
       private var rect_:Rectangle;
       
@@ -41,7 +41,7 @@ package com.company.assembleegameclient.tutorial
       
       private const graphicsData_:Vector.<IGraphicsData> = new <IGraphicsData>[this.lineStyle_,this.fill_,this.path_,GraphicsUtil.END_FILL,GraphicsUtil.END_STROKE];
       
-      public function TutorialMessage(param1:com.company.assembleegameclient.tutorial.Tutorial, param2:String, param3:Boolean, param4:Rectangle)
+      public function TutorialMessage(param1:Tutorial, param2:String, param3:Boolean, param4:Rectangle)
       {
          this.fill_ = new GraphicsSolidFill(3552822,1);
          this.lineStyle_ = new GraphicsStroke(1,false,LineScaleMode.NORMAL,CapsStyle.NONE,JointStyle.ROUND,3,new GraphicsSolidFill(16777215));
@@ -106,7 +106,7 @@ package com.company.assembleegameclient.tutorial
       
       private function onNextButton(param1:MouseEvent) : void
       {
-         this.tutorial_.doneAction(com.company.assembleegameclient.tutorial.Tutorial.NEXT_ACTION);
+         this.tutorial_.doneAction(Tutorial.NEXT_ACTION);
       }
    }
 }

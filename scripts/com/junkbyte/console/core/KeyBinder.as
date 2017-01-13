@@ -1,10 +1,10 @@
 package com.junkbyte.console.core
 {
+   import com.junkbyte.console.Console;
    import com.junkbyte.console.KeyBind;
    import flash.events.KeyboardEvent;
    import flash.text.TextField;
    import flash.text.TextFieldType;
-   import com.junkbyte.console.Console;
    
    public class KeyBinder extends ConsoleCore
    {

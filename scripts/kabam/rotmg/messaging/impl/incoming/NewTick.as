@@ -1,8 +1,8 @@
 package kabam.rotmg.messaging.impl.incoming
 {
-   import kabam.rotmg.messaging.impl.data.ObjectStatusData;
-   import flash.utils.IDataInput;
    import com.company.assembleegameclient.util.FreeList;
+   import flash.utils.IDataInput;
+   import kabam.rotmg.messaging.impl.data.ObjectStatusData;
    
    public class NewTick extends IncomingMessage
    {

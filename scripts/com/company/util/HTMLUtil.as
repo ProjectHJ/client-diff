@@ -1,9 +1,9 @@
 package com.company.util
 {
+   import flash.external.ExternalInterface;
    import flash.xml.XMLDocument;
    import flash.xml.XMLNode;
    import flash.xml.XMLNodeType;
-   import flash.external.ExternalInterface;
    
    public class HTMLUtil
    {

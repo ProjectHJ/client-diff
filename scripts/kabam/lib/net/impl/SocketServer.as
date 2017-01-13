@@ -1,16 +1,16 @@
 package kabam.lib.net.impl
 {
-   import kabam.lib.net.api.MessageProvider;
-   import flash.net.Socket;
-   import org.osflash.signals.Signal;
-   import flash.utils.Timer;
-   import flash.utils.ByteArray;
    import com.hurlant.crypto.symmetric.ICipher;
    import flash.events.Event;
-   import flash.events.ProgressEvent;
    import flash.events.IOErrorEvent;
+   import flash.events.ProgressEvent;
    import flash.events.SecurityErrorEvent;
    import flash.events.TimerEvent;
+   import flash.net.Socket;
+   import flash.utils.ByteArray;
+   import flash.utils.Timer;
+   import kabam.lib.net.api.MessageProvider;
+   import org.osflash.signals.Signal;
    
    public class SocketServer
    {
@@ -25,7 +25,7 @@ package kabam.lib.net.impl
       public var socket:Socket;
       
       [Inject]
-      public var socketServerModel:kabam.lib.net.impl.SocketServerModel;
+      public var socketServerModel:SocketServerModel;
       
       public const connected:Signal = new Signal();
       
@@ -35,13 +35,13 @@ package kabam.lib.net.impl
       
       public var delayTimer:Timer;
       
-      private const unsentPlaceholder:kabam.lib.net.impl.Message = new kabam.lib.net.impl.Message(0);
+      private const unsentPlaceholder:Message = new Message(0);
       
       private const data:ByteArray = new ByteArray();
       
-      private var head:kabam.lib.net.impl.Message;
+      private var head:Message;
       
-      private var tail:kabam.lib.net.impl.Message;
+      private var tail:Message;
       
       private var messageLen:int = -1;
       
@@ -126,7 +126,7 @@ package kabam.lib.net.impl
          this.socket.removeEventListener(SecurityErrorEvent.SECURITY_ERROR,this.onSecurityError);
       }
       
-      public function sendMessage(param1:kabam.lib.net.impl.Message) : void
+      public function sendMessage(param1:Message) : void
       {
          this.tail.next = param1;
          this.tail = param1;
@@ -135,8 +135,8 @@ package kabam.lib.net.impl
       
       private function sendPendingMessages() : void
       {
-         var _loc1_:kabam.lib.net.impl.Message = this.head.next;
-         var _loc2_:kabam.lib.net.impl.Message = _loc1_;
+         var _loc1_:Message = this.head.next;
+         var _loc2_:Message = _loc1_;
          while(_loc2_)
          {
             this.data.clear();
@@ -187,7 +187,7 @@ package kabam.lib.net.impl
       private function onSocketData(param1:ProgressEvent = null) : void
       {
          var messageId:uint = 0;
-         var message:kabam.lib.net.impl.Message = null;
+         var message:Message = null;
          var data:ByteArray = null;
          var errorMessage:String = null;
          var _:ProgressEvent = param1;

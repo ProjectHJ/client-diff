@@ -1,14 +1,14 @@
 package kabam.rotmg.pets.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.pets.data.PetsModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PetsTabContentMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.components.PetsTabContentView;
+      public var view:PetsTabContentView;
       
       [Inject]
       public var model:PetsModel;

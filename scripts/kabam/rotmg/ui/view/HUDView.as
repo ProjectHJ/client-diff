@@ -1,24 +1,24 @@
 package kabam.rotmg.ui.view
 {
-   import flash.display.Sprite;
-   import flash.geom.Point;
-   import kabam.rotmg.minimap.view.MiniMapImp;
-   import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
-   import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.game.view.components.TabStripView;
-   import com.company.assembleegameclient.ui.panels.InteractPanel;
-   import com.company.assembleegameclient.ui.TradePanel;
-   import com.company.assembleegameclient.game.GameSprite;
-   import flash.display.IGraphicsData;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsPath;
-   import com.company.util.GraphicsUtil;
    import com.company.assembleegameclient.game.AGameSprite;
-   import kabam.rotmg.messaging.impl.incoming.TradeStart;
-   import flash.events.Event;
-   import kabam.rotmg.messaging.impl.incoming.TradeChanged;
-   import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
+   import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.ui.TradePanel;
+   import com.company.assembleegameclient.ui.panels.InteractPanel;
+   import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
+   import com.company.util.GraphicsUtil;
    import com.company.util.SpriteUtil;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.geom.Point;
+   import kabam.rotmg.game.view.components.TabStripView;
+   import kabam.rotmg.messaging.impl.incoming.TradeAccepted;
+   import kabam.rotmg.messaging.impl.incoming.TradeChanged;
+   import kabam.rotmg.messaging.impl.incoming.TradeStart;
+   import kabam.rotmg.minimap.view.MiniMapImp;
    
    public class HUDView extends Sprite implements UnFocusAble
    {
@@ -38,15 +38,15 @@ package kabam.rotmg.ui.view
       
       private const INTERACT_PANEL_POSITION:Point = new Point(0,500);
       
-      private var background:kabam.rotmg.ui.view.CharacterWindowBackground;
+      private var background:CharacterWindowBackground;
       
       private var miniMap:MiniMapImp;
       
       private var equippedGrid:EquippedGrid;
       
-      private var statMeters:kabam.rotmg.ui.view.StatMetersView;
+      private var statMeters:StatMetersView;
       
-      private var characterDetails:kabam.rotmg.ui.view.CharacterDetailsView;
+      private var characterDetails:CharacterDetailsView;
       
       private var equippedGridBG:Sprite;
       
@@ -68,11 +68,11 @@ package kabam.rotmg.ui.view
       
       private function createAssets() : void
       {
-         this.background = new kabam.rotmg.ui.view.CharacterWindowBackground();
+         this.background = new CharacterWindowBackground();
          this.miniMap = new MiniMapImp(192,192);
          this.tabStrip = new TabStripView();
-         this.characterDetails = new kabam.rotmg.ui.view.CharacterDetailsView();
-         this.statMeters = new kabam.rotmg.ui.view.StatMetersView();
+         this.characterDetails = new CharacterDetailsView();
+         this.statMeters = new StatMetersView();
       }
       
       private function addAssets() : void

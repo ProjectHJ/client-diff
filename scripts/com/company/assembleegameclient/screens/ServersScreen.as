@@ -1,20 +1,20 @@
 package com.company.assembleegameclient.screens
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import flash.display.Shape;
    import com.company.assembleegameclient.ui.Scrollbar;
-   import kabam.rotmg.servers.api.Server;
-   import org.osflash.signals.Signal;
-   import flash.events.Event;
    import com.company.googleanalytics.GA;
-   import kabam.rotmg.ui.view.components.MenuOptionsBar;
-   import kabam.rotmg.ui.view.ButtonFactory;
    import flash.display.Graphics;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.text.model.TextKey;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
    import flash.filters.DropShadowFilter;
+   import kabam.rotmg.servers.api.Server;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.ui.view.ButtonFactory;
+   import kabam.rotmg.ui.view.components.MenuOptionsBar;
    import kabam.rotmg.ui.view.components.ScreenBase;
+   import org.osflash.signals.Signal;
    
    public class ServersScreen extends Sprite
    {
@@ -26,7 +26,7 @@ package com.company.assembleegameclient.screens
       
       private var content_:Sprite;
       
-      private var serverBoxes_:com.company.assembleegameclient.screens.ServerBoxes;
+      private var serverBoxes_:ServerBoxes;
       
       private var scrollBar_:Scrollbar;
       
@@ -81,7 +81,7 @@ package com.company.assembleegameclient.screens
       
       private function makeServerBoxes() : void
       {
-         this.serverBoxes_ = new com.company.assembleegameclient.screens.ServerBoxes(this.servers);
+         this.serverBoxes_ = new ServerBoxes(this.servers);
          this.serverBoxes_.y = 8;
          this.serverBoxes_.addEventListener(Event.COMPLETE,this.onDone);
          this.content_.addChild(this.serverBoxes_);

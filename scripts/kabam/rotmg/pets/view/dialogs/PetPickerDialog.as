@@ -1,9 +1,9 @@
 package kabam.rotmg.pets.view.dialogs
 {
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import kabam.lib.ui.api.Size;
    import com.company.assembleegameclient.ui.LineBreakDesign;
+   import kabam.lib.ui.api.Size;
    import kabam.rotmg.pets.util.PetsViewAssetFactory;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
    
    public class PetPickerDialog extends PetDialog
    {
@@ -13,11 +13,11 @@ package kabam.rotmg.pets.view.dialogs
       private static const pickerHeight:int = 217;
        
       
-      public var petPicker:kabam.rotmg.pets.view.dialogs.PetPicker;
+      public var petPicker:PetPicker;
       
       public var closeButton:DialogCloseButton;
       
-      public function PetPickerDialog(param1:kabam.rotmg.pets.view.dialogs.PetPicker)
+      public function PetPickerDialog(param1:PetPicker)
       {
          super("PetPicker.title","PetPicker.text",null,null,null);
          this.petPicker = param1;

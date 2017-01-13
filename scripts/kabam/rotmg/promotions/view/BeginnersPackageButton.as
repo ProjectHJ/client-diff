@@ -1,15 +1,15 @@
 package kabam.rotmg.promotions.view
 {
-   import kabam.rotmg.packages.view.BasePackageButton;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import flash.display.DisplayObject;
    import flash.display.Sprite;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import kabam.rotmg.packages.view.BasePackageButton;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.ui.UIUtils;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeMappedSignal;
-   import flash.events.MouseEvent;
    
    public class BeginnersPackageButton extends BasePackageButton
    {

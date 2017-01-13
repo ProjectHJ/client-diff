@@ -1,45 +1,45 @@
 package com.company.assembleegameclient.game
 {
-   import net.hires.debug.Stats;
-   import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
-   import kabam.rotmg.game.signals.AddTextLineSignal;
-   import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
-   import kabam.rotmg.game.view.components.StatsTabHotKeyInputSignal;
-   import kabam.rotmg.minimap.control.MiniMapZoomSignal;
-   import kabam.rotmg.game.signals.UseBuyPotionSignal;
-   import kabam.rotmg.game.model.PotionInventoryModel;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.ui.model.TabStripModel;
-   import kabam.rotmg.core.view.Layers;
-   import kabam.rotmg.game.signals.ExitGameSignal;
-   import kabam.rotmg.pets.controller.reskin.ReskinPetFlowStartSignal;
-   import flash.events.MouseEvent;
-   import flash.events.Event;
-   import flash.display.Stage;
-   import flash.events.KeyboardEvent;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import com.company.assembleegameclient.objects.Player;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import kabam.rotmg.constants.UseType;
-   import com.company.assembleegameclient.tutorial.doneAction;
-   import com.company.assembleegameclient.tutorial.Tutorial;
-   import kabam.rotmg.chat.model.ChatMessage;
+   import com.company.assembleegameclient.map.Square#55;
    import com.company.assembleegameclient.objects.GameObject;
-   import com.company.assembleegameclient.map.Square;
-   import kabam.rotmg.ui.UIUtils;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import com.company.util.KeyCodes;
-   import kabam.rotmg.game.model.UseBuyPotionVO;
-   import kabam.rotmg.friends.view.FriendListView;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.assembleegameclient.objects.Player;
+   import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.tutorial.Tutorial;
+   import com.company.assembleegameclient.tutorial.doneAction;
    import com.company.assembleegameclient.ui.options.Options;
-   import flash.system.Capabilities;
-   import flash.display.StageDisplayState;
    import com.company.assembleegameclient.util.TextureRedrawer;
-   import kabam.rotmg.constants.GeneralConstants;
-   import kabam.rotmg.messaging.impl.GameServerConnection;
-   import org.swiftsuspenders.Injector;
+   import com.company.util.KeyCodes;
+   import flash.display.Stage;
+   import flash.display.StageDisplayState;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
+   import flash.system.Capabilities;
    import kabam.rotmg.application.api.ApplicationSetup;
+   import kabam.rotmg.chat.model.ChatMessage;
+   import kabam.rotmg.constants.GeneralConstants;
+   import kabam.rotmg.constants.UseType;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.core.view.Layers;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.friends.view.FriendListView;
+   import kabam.rotmg.game.model.PotionInventoryModel;
+   import kabam.rotmg.game.model.UseBuyPotionVO;
+   import kabam.rotmg.game.signals.AddTextLineSignal;
+   import kabam.rotmg.game.signals.ExitGameSignal;
+   import kabam.rotmg.game.signals.GiftStatusUpdateSignal;
+   import kabam.rotmg.game.signals.SetTextBoxVisibilitySignal;
+   import kabam.rotmg.game.signals.UseBuyPotionSignal;
+   import kabam.rotmg.game.view.components.StatsTabHotKeyInputSignal;
+   import kabam.rotmg.messaging.impl.GameServerConnection;
+   import kabam.rotmg.minimap.control.MiniMapZoomSignal;
+   import kabam.rotmg.pets.controller.reskin.ReskinPetFlowStartSignal;
+   import kabam.rotmg.ui.UIUtils;
+   import kabam.rotmg.ui.model.TabStripModel;
+   import net.hires.debug.Stats;
+   import org.swiftsuspenders.Injector;
    
    public class MapUserInput
    {
@@ -51,7 +51,7 @@ package com.company.assembleegameclient.game
       private static var arrowWarning_:Boolean = false;
        
       
-      public var gs_:com.company.assembleegameclient.game.GameSprite;
+      public var gs_:GameSprite;
       
       private var moveLeft_:Boolean = false;
       
@@ -103,7 +103,7 @@ package com.company.assembleegameclient.game
       
       private var reskinPetFlowStart:ReskinPetFlowStartSignal;
       
-      public function MapUserInput(param1:com.company.assembleegameclient.game.GameSprite)
+      public function MapUserInput(param1:GameSprite)
       {
          super();
          this.gs_ = param1;

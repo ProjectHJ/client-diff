@@ -1,20 +1,20 @@
 package kabam.rotmg.account.core.view
 {
    import com.company.assembleegameclient.account.ui.Frame;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.account.ui.TextInputField;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.text.model.TextKey;
    import com.company.util.EmailValidator;
+   import com.company.util.MoreObjectUtil;
+   import flash.events.MouseEvent;
+   import flash.filters.DropShadowFilter;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.web.model.AccountData;
    import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.core.StaticInjectorContext;
-   import com.company.util.MoreObjectUtil;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.filters.DropShadowFilter;
-   import kabam.rotmg.account.web.model.AccountData;
+   import org.osflash.signals.Signal;
    
    public class ConfirmEmailModal extends Frame
    {

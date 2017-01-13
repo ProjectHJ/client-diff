@@ -1,11 +1,11 @@
 package kabam.rotmg.account.web.services
 {
    import kabam.lib.tasks.BaseTask;
-   import kabam.rotmg.account.core.services.SendConfirmEmailAddressTask;
    import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.core.signals.TrackEventSignal;
+   import kabam.rotmg.account.core.services.SendConfirmEmailAddressTask;
    import kabam.rotmg.appengine.api.AppEngineClient;
    import kabam.rotmg.core.service.TrackingData;
+   import kabam.rotmg.core.signals.TrackEventSignal;
    
    public class WebSendVerificationEmailTask extends BaseTask implements SendConfirmEmailAddressTask
    {

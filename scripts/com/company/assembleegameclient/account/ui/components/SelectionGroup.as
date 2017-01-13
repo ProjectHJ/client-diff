@@ -4,11 +4,11 @@ package com.company.assembleegameclient.account.ui.components
    {
        
       
-      private var selectables:Vector.<com.company.assembleegameclient.account.ui.components.Selectable>;
+      private var selectables:Vector.<Selectable>;
       
-      private var selected:com.company.assembleegameclient.account.ui.components.Selectable;
+      private var selected:Selectable;
       
-      public function SelectionGroup(param1:Vector.<com.company.assembleegameclient.account.ui.components.Selectable>)
+      public function SelectionGroup(param1:Vector.<Selectable>)
       {
          super();
          this.selectables = param1;
@@ -16,7 +16,7 @@ package com.company.assembleegameclient.account.ui.components
       
       public function setSelected(param1:String) : void
       {
-         var _loc2_:com.company.assembleegameclient.account.ui.components.Selectable = null;
+         var _loc2_:Selectable = null;
          for each(_loc2_ in this.selectables)
          {
             if(_loc2_.getValue() == param1)
@@ -27,12 +27,12 @@ package com.company.assembleegameclient.account.ui.components
          }
       }
       
-      public function getSelected() : com.company.assembleegameclient.account.ui.components.Selectable
+      public function getSelected() : Selectable
       {
          return this.selected;
       }
       
-      private function replaceSelected(param1:com.company.assembleegameclient.account.ui.components.Selectable) : void
+      private function replaceSelected(param1:Selectable) : void
       {
          if(this.selected != null)
          {

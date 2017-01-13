@@ -1,12 +1,12 @@
 package kabam.rotmg.arena.component
 {
+   import com.company.assembleegameclient.ui.GuildText;
+   import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
    import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import flash.display.Bitmap;
    import kabam.rotmg.arena.model.ArenaLeaderboardEntry;
    import kabam.rotmg.text.view.StaticTextDisplay;
-   import com.company.assembleegameclient.ui.GuildText;
-   import flash.display.Bitmap;
    import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
-   import com.company.assembleegameclient.ui.panels.itemgrids.EquippedGrid;
    
    public class AbridgedPlayerTooltip extends ToolTip
    {

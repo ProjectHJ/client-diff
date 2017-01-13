@@ -6,13 +6,13 @@ package com.company.assembleegameclient.objects.animation
    {
        
       
-      public var animationsData_:com.company.assembleegameclient.objects.animation.AnimationsData;
+      public var animationsData_:AnimationsData;
       
       public var nextRun_:Vector.<int> = null;
       
       public var running_:RunningAnimation = null;
       
-      public function Animations(param1:com.company.assembleegameclient.objects.animation.AnimationsData)
+      public function Animations(param1:AnimationsData)
       {
          super();
          this.animationsData_ = param1;
@@ -62,8 +62,8 @@ package com.company.assembleegameclient.objects.animation
 }
 
 import com.company.assembleegameclient.objects.animation.AnimationData;
-import flash.display.BitmapData;
 import com.company.assembleegameclient.objects.animation.FrameData;
+import flash.display.BitmapData;
 
 class RunningAnimation
 {

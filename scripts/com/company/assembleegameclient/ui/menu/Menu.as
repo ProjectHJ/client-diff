@@ -1,20 +1,20 @@
 package com.company.assembleegameclient.ui.menu
 {
-   import flash.display.Sprite;
-   import kabam.rotmg.ui.view.UnFocusAble;
+   import com.company.util.GraphicsUtil;
+   import com.company.util.RectangleUtil;
+   import flash.display.CapsStyle;
+   import flash.display.GraphicsPath;
    import flash.display.GraphicsSolidFill;
    import flash.display.GraphicsStroke;
-   import flash.display.GraphicsPath;
    import flash.display.IGraphicsData;
+   import flash.display.JointStyle;
+   import flash.display.LineScaleMode;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.MouseEvent;
-   import flash.geom.Rectangle;
-   import com.company.util.RectangleUtil;
-   import com.company.util.GraphicsUtil;
-   import flash.display.LineScaleMode;
-   import flash.display.CapsStyle;
-   import flash.display.JointStyle;
    import flash.filters.DropShadowFilter;
+   import flash.geom.Rectangle;
+   import kabam.rotmg.ui.view.UnFocusAble;
    
    public class Menu extends Sprite implements UnFocusAble
    {

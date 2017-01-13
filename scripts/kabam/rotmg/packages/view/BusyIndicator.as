@@ -1,10 +1,10 @@
 package kabam.rotmg.packages.view
 {
-   import flash.display.Sprite;
-   import flash.utils.Timer;
    import flash.display.BlendMode;
+   import flash.display.Sprite;
    import flash.events.Event;
    import flash.events.TimerEvent;
+   import flash.utils.Timer;
    
    public class BusyIndicator extends Sprite
    {

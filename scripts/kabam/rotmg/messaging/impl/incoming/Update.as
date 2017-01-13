@@ -1,9 +1,9 @@
 package kabam.rotmg.messaging.impl.incoming
 {
+   import com.company.assembleegameclient.util.FreeList;
+   import flash.utils.IDataInput;
    import kabam.rotmg.messaging.impl.data.GroundTileData;
    import kabam.rotmg.messaging.impl.data.ObjectData;
-   import flash.utils.IDataInput;
-   import com.company.assembleegameclient.util.FreeList;
    
    public class Update extends IncomingMessage
    {

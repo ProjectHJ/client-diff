@@ -3,19 +3,19 @@ package com.hurlant.crypto.symmetric
    import com.hurlant.util.Memory;
    import flash.utils.ByteArray;
    
-   public class SimpleIVMode implements IMode, com.hurlant.crypto.symmetric.ICipher
+   public class SimpleIVMode implements IMode, ICipher
    {
        
       
-      protected var mode:com.hurlant.crypto.symmetric.IVMode;
+      protected var mode:IVMode;
       
-      protected var cipher:com.hurlant.crypto.symmetric.ICipher;
+      protected var cipher:ICipher;
       
-      public function SimpleIVMode(param1:com.hurlant.crypto.symmetric.IVMode)
+      public function SimpleIVMode(param1:IVMode)
       {
          super();
          this.mode = param1;
-         this.cipher = param1 as com.hurlant.crypto.symmetric.ICipher;
+         this.cipher = param1 as ICipher;
       }
       
       public function getBlockSize() : uint

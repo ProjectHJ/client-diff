@@ -1,17 +1,17 @@
 package kabam.rotmg.friends.view
 {
-   import flash.display.Sprite;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.game.view.components.TabView;
-   import flash.events.MouseEvent;
    import com.company.ui.BaseSimpleText;
-   import kabam.rotmg.game.view.components.TabTextView;
-   import kabam.rotmg.game.view.components.TabBackground;
-   import flash.display.GraphicsSolidFill;
-   import kabam.rotmg.game.view.components.TabConstants;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
    import com.company.util.GraphicsUtil;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.game.view.components.TabBackground;
+   import kabam.rotmg.game.view.components.TabConstants;
+   import kabam.rotmg.game.view.components.TabTextView;
+   import kabam.rotmg.game.view.components.TabView;
+   import org.osflash.signals.Signal;
    
    public class FriendTabView extends Sprite
    {

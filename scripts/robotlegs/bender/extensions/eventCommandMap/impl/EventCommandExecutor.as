@@ -1,10 +1,10 @@
 package robotlegs.bender.extensions.eventCommandMap.impl
 {
-   import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
-   import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
-   import robotlegs.bender.extensions.commandCenter.impl.CommandMappingList;
-   import org.swiftsuspenders.Injector;
    import flash.events.Event;
+   import org.swiftsuspenders.Injector;
+   import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
+   import robotlegs.bender.extensions.commandCenter.api.ICommandTrigger;
+   import robotlegs.bender.extensions.commandCenter.impl.CommandMappingList;
    
    public class EventCommandExecutor
    {
@@ -20,7 +20,7 @@ package robotlegs.bender.extensions.eventCommandMap.impl
       
       private var _eventClass:Class;
       
-      private var _factory:robotlegs.bender.extensions.eventCommandMap.impl.EventCommandFactory;
+      private var _factory:EventCommandFactory;
       
       public function EventCommandExecutor(param1:ICommandTrigger, param2:CommandMappingList, param3:Injector, param4:Class)
       {
@@ -29,7 +29,7 @@ package robotlegs.bender.extensions.eventCommandMap.impl
          this._mappingList = param2;
          this._injector = param3.createChildInjector();
          this._eventClass = param4;
-         this._factory = new robotlegs.bender.extensions.eventCommandMap.impl.EventCommandFactory(this._injector);
+         this._factory = new EventCommandFactory(this._injector);
       }
       
       public function execute(param1:Event) : void

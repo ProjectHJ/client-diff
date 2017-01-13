@@ -1,12 +1,12 @@
 package com.company.assembleegameclient.ui
 {
-   import flash.display.Sprite;
    import com.company.assembleegameclient.objects.Player;
-   import flash.events.Event;
-   import flash.display.Bitmap;
-   import com.company.util.AssetLibrary;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.util.TextureRedrawer;
+   import com.company.util.AssetLibrary;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Sprite;
+   import flash.events.Event;
    import flash.events.MouseEvent;
    
    public class BoostPanelButton extends Sprite
@@ -17,7 +17,7 @@ package com.company.assembleegameclient.ui
       public static const IMAGE_ID:int = 22;
        
       
-      private var boostPanel:com.company.assembleegameclient.ui.BoostPanel;
+      private var boostPanel:BoostPanel;
       
       private var player:Player;
       
@@ -38,7 +38,7 @@ package com.company.assembleegameclient.ui
       
       private function onButtonOver(param1:Event) : void
       {
-         addChild(this.boostPanel = new com.company.assembleegameclient.ui.BoostPanel(this.player));
+         addChild(this.boostPanel = new BoostPanel(this.player));
          this.boostPanel.resized.add(this.positionBoostPanel);
          this.positionBoostPanel();
       }

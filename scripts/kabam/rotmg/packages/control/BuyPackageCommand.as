@@ -1,7 +1,7 @@
 package kabam.rotmg.packages.control
 {
-   import kabam.rotmg.packages.services.BuyPackageTask;
    import kabam.lib.tasks.TaskMonitor;
+   import kabam.rotmg.packages.services.BuyPackageTask;
    
    public class BuyPackageCommand
    {

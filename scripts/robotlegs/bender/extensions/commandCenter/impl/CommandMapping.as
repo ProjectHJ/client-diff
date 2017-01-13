@@ -1,8 +1,8 @@
 package robotlegs.bender.extensions.commandCenter.impl
 {
+   import robotlegs.bender.extensions.commandCenter.api.CommandMappingError;
    import robotlegs.bender.extensions.commandCenter.api.ICommandMapping;
    import robotlegs.bender.extensions.commandCenter.dsl.ICommandMappingConfig;
-   import robotlegs.bender.extensions.commandCenter.api.CommandMappingError;
    import robotlegs.bender.framework.impl.MappingConfigValidator;
    
    public class CommandMapping implements ICommandMapping, ICommandMappingConfig

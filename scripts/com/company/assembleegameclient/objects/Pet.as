@@ -1,18 +1,18 @@
 package com.company.assembleegameclient.objects
 {
+   import com.company.assembleegameclient.game.GameSprite;
+   import com.company.assembleegameclient.ui.panels.Panel;
+   import com.company.assembleegameclient.ui.tooltip.TextToolTip;
+   import com.company.assembleegameclient.ui.tooltip.ToolTip;
+   import com.company.assembleegameclient.util.AnimatedChar;
+   import com.company.assembleegameclient.util.AnimatedChars;
+   import com.company.assembleegameclient.util.MaskedImage;
+   import kabam.rotmg.core.StaticInjectorContext;
    import kabam.rotmg.game.signals.TextPanelMessageUpdateSignal;
    import kabam.rotmg.pets.data.PetVO;
-   import com.company.assembleegameclient.util.AnimatedChar;
    import kabam.rotmg.pets.data.PetsModel;
-   import com.company.assembleegameclient.ui.tooltip.ToolTip;
-   import com.company.assembleegameclient.ui.tooltip.TextToolTip;
-   import kabam.rotmg.text.model.TextKey;
-   import com.company.assembleegameclient.ui.panels.Panel;
-   import com.company.assembleegameclient.game.GameSprite;
    import kabam.rotmg.pets.view.petPanel.PetPanel;
-   import com.company.assembleegameclient.util.MaskedImage;
-   import com.company.assembleegameclient.util.AnimatedChars;
-   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.text.model.TextKey;
    
    public class Pet extends GameObject implements IInteractiveObject
    {

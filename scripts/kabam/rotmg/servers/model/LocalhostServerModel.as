@@ -1,8 +1,8 @@
 package kabam.rotmg.servers.model
 {
-   import kabam.rotmg.servers.api.ServerModel;
-   import kabam.rotmg.servers.api.Server;
    import com.company.assembleegameclient.parameters.Parameters;
+   import kabam.rotmg.servers.api.Server;
+   import kabam.rotmg.servers.api.ServerModel;
    
    public class LocalhostServerModel implements ServerModel
    {

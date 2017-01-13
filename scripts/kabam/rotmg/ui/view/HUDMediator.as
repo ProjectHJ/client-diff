@@ -1,20 +1,20 @@
 package kabam.rotmg.ui.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
+   import com.company.assembleegameclient.objects.Player;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
+   import kabam.rotmg.game.view.components.StatsUndockedSignal;
+   import kabam.rotmg.game.view.components.StatsView;
    import kabam.rotmg.ui.model.HUDModel;
    import kabam.rotmg.ui.signals.UpdateHUDSignal;
-   import kabam.rotmg.game.view.components.StatsUndockedSignal;
-   import flash.display.Sprite;
-   import kabam.rotmg.game.view.components.StatsView;
-   import flash.events.MouseEvent;
-   import com.company.assembleegameclient.objects.Player;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class HUDMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.ui.view.HUDView;
+      public var view:HUDView;
       
       [Inject]
       public var hudModel:HUDModel;
@@ -26,7 +26,7 @@ package kabam.rotmg.ui.view
       public var statsUndocked:StatsUndockedSignal;
       
       [Inject]
-      public var statsDocked:kabam.rotmg.ui.view.StatsDockedSignal;
+      public var statsDocked:StatsDockedSignal;
       
       private var stats:Sprite;
       

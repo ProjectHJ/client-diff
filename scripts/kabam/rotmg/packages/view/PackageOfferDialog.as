@@ -1,23 +1,23 @@
 package kabam.rotmg.packages.view
 {
-   import flash.display.Sprite;
-   import kabam.lib.resizing.view.Resizable;
-   import org.osflash.signals.Signal;
-   import kabam.display.Loader.LoaderProxy;
-   import flash.display.DisplayObject;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.packages.model.PackageInfo;
-   import flash.geom.Rectangle;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
    import com.company.assembleegameclient.ui.DeprecatedTextButton;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.text.TextFieldAutoSize;
-   import flash.events.MouseEvent;
-   import flash.events.IOErrorEvent;
+   import flash.display.DisplayObject;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import flash.events.IOErrorEvent;
+   import flash.events.MouseEvent;
+   import flash.geom.Rectangle;
    import flash.net.URLRequest;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import flash.text.TextFieldAutoSize;
+   import kabam.display.Loader.LoaderProxy;
    import kabam.display.Loader.LoaderProxyConcrete;
+   import kabam.lib.resizing.view.Resizable;
+   import kabam.rotmg.packages.model.PackageInfo;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import org.osflash.signals.Signal;
    
    public class PackageOfferDialog extends Sprite implements Resizable
    {

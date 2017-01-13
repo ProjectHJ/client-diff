@@ -1,12 +1,12 @@
 package kabam.rotmg.arena.component
 {
    import flash.display.Sprite;
+   import flash.events.TimerEvent;
+   import flash.filters.DropShadowFilter;
    import flash.utils.Timer;
+   import kabam.rotmg.text.model.TextKey;
    import kabam.rotmg.text.view.StaticTextDisplay;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.events.TimerEvent;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.filters.DropShadowFilter;
    
    public class LeaderboardWeeklyResetTimer extends Sprite
    {

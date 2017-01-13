@@ -6,15 +6,15 @@ package com.company.assembleegameclient.mapeditor
    {
        
       
-      private var map_:com.company.assembleegameclient.mapeditor.MEMap;
+      private var map_:MEMap;
       
       private var x_:int;
       
       private var y_:int;
       
-      private var oldTile_:com.company.assembleegameclient.mapeditor.METile;
+      private var oldTile_:METile;
       
-      public function MEClearCommand(param1:com.company.assembleegameclient.mapeditor.MEMap, param2:int, param3:int, param4:com.company.assembleegameclient.mapeditor.METile)
+      public function MEClearCommand(param1:MEMap, param2:int, param3:int, param4:METile)
       {
          super();
          this.map_ = param1;

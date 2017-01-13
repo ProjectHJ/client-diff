@@ -1,16 +1,16 @@
 package com.company.assembleegameclient.ui.panels.mediators
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import com.company.assembleegameclient.ui.panels.GuildRegisterPanel;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.ui.model.HUDModel;
    import com.company.assembleegameclient.account.ui.CreateGuildFrame;
    import com.company.assembleegameclient.game.GameSprite;
    import com.company.assembleegameclient.objects.Player;
    import com.company.assembleegameclient.ui.dialogs.Dialog;
-   import kabam.rotmg.text.model.TextKey;
+   import com.company.assembleegameclient.ui.panels.GuildRegisterPanel;
    import flash.events.Event;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.ui.model.HUDModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class GuildRegisterPanelMediator extends Mediator
    {

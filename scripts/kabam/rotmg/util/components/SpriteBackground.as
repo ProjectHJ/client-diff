@@ -1,21 +1,21 @@
 package kabam.rotmg.util.components
 {
-   import flash.display.Sprite;
+   import com.company.assembleegameclient.util.Currency;
+   import com.company.util.GraphicsUtil;
+   import com.company.util.MoreColorUtil;
+   import flash.display.Bitmap;
    import flash.display.BitmapData;
+   import flash.display.GraphicsPath;
+   import flash.display.GraphicsSolidFill;
+   import flash.display.IGraphicsData;
+   import flash.display.Sprite;
    import flash.filters.ColorMatrixFilter;
    import kabam.rotmg.assets.services.IconFactory;
-   import com.company.util.MoreColorUtil;
    import kabam.rotmg.text.view.TextFieldDisplayConcrete;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import flash.display.Bitmap;
-   import flash.display.GraphicsSolidFill;
-   import flash.display.GraphicsPath;
-   import flash.display.IGraphicsData;
-   import kabam.rotmg.ui.view.SignalWaiter;
-   import com.company.util.GraphicsUtil;
-   import com.company.assembleegameclient.util.Currency;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    import kabam.rotmg.text.view.stringBuilder.StringBuilder;
+   import kabam.rotmg.ui.view.SignalWaiter;
    
    public class SpriteBackground extends Sprite
    {

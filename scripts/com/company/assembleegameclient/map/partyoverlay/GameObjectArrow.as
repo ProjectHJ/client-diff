@@ -1,19 +1,19 @@
 package com.company.assembleegameclient.map.partyoverlay
 {
-   import flash.display.Sprite;
-   import com.company.assembleegameclient.ui.menu.Menu;
-   import flash.display.DisplayObjectContainer;
-   import com.company.assembleegameclient.objects.GameObject;
-   import flash.display.Shape;
-   import com.company.assembleegameclient.ui.tooltip.ToolTip;
-   import flash.events.MouseEvent;
-   import flash.geom.Point;
    import com.company.assembleegameclient.map.Camera;
-   import flash.geom.Rectangle;
+   import com.company.assembleegameclient.objects.GameObject;
+   import com.company.assembleegameclient.ui.menu.Menu;
+   import com.company.assembleegameclient.ui.tooltip.ToolTip;
    import com.company.util.RectangleUtil;
    import com.company.util.Trig;
+   import flash.display.DisplayObjectContainer;
    import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
    
    public class GameObjectArrow extends Sprite
    {

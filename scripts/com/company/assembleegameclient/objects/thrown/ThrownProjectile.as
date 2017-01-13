@@ -1,9 +1,9 @@
 package com.company.assembleegameclient.objects.thrown
 {
-   import flash.geom.Point;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.objects.ObjectLibrary;
    import com.company.assembleegameclient.util.TextureRedrawer;
+   import flash.display.BitmapData;
+   import flash.geom.Point;
    
    public class ThrownProjectile extends BitmapParticle
    {

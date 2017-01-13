@@ -1,15 +1,15 @@
 package kabam.rotmg.friends.model
 {
-   import kabam.rotmg.servers.api.ServerModel;
-   import kabam.rotmg.friends.service.FriendDataRequestTask;
-   import flash.utils.Dictionary;
-   import kabam.rotmg.servers.api.Server;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import org.swiftsuspenders.Injector;
    import com.company.assembleegameclient.objects.Player;
-   import com.company.assembleegameclient.util.FameUtil;
    import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.assembleegameclient.util.FameUtil;
+   import flash.utils.Dictionary;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.friends.service.FriendDataRequestTask;
+   import kabam.rotmg.servers.api.Server;
+   import kabam.rotmg.servers.api.ServerModel;
+   import org.osflash.signals.Signal;
+   import org.swiftsuspenders.Injector;
    
    public class FriendModel
    {
@@ -22,9 +22,9 @@ package kabam.rotmg.friends.model
       
       public var invitationsTask:FriendDataRequestTask;
       
-      private var _onlineFriends:Vector.<kabam.rotmg.friends.model.FriendVO>;
+      private var _onlineFriends:Vector.<FriendVO>;
       
-      private var _offlineFriends:Vector.<kabam.rotmg.friends.model.FriendVO>;
+      private var _offlineFriends:Vector.<FriendVO>;
       
       private var _friends:Dictionary;
       
@@ -58,8 +58,8 @@ package kabam.rotmg.friends.model
          this._invitationTotal = 0;
          this._invitationTotal = 0;
          this._friends = new Dictionary(true);
-         this._onlineFriends = new Vector.<kabam.rotmg.friends.model.FriendVO>();
-         this._offlineFriends = new Vector.<kabam.rotmg.friends.model.FriendVO>();
+         this._onlineFriends = new Vector.<FriendVO>();
+         this._offlineFriends = new Vector.<FriendVO>();
          this._friendsLoadInProcess = false;
          this._invitationsLoadInProgress = false;
          this.loadData();
@@ -137,14 +137,14 @@ package kabam.rotmg.friends.model
          var _loc2_:String = null;
          var _loc3_:String = null;
          var _loc4_:String = null;
-         var _loc5_:kabam.rotmg.friends.model.FriendVO = null;
+         var _loc5_:FriendVO = null;
          var _loc6_:XML = null;
          this._onlineFriends.length = 0;
          this._offlineFriends.length = 0;
          for each(_loc6_ in param1.Account)
          {
             _loc2_ = _loc6_.Name;
-            _loc5_ = this._friends[_loc2_] != null?this._friends[_loc2_].vo as kabam.rotmg.friends.model.FriendVO:new kabam.rotmg.friends.model.FriendVO(Player.fromPlayerXML(_loc2_,_loc6_.Character[0]));
+            _loc5_ = this._friends[_loc2_] != null?this._friends[_loc2_].vo as FriendVO:new FriendVO(Player.fromPlayerXML(_loc2_,_loc6_.Character[0]));
             if(_loc6_.hasOwnProperty("Online"))
             {
                _loc4_ = String(_loc6_.Online);
@@ -184,7 +184,7 @@ package kabam.rotmg.friends.model
             {
                _loc2_ = _loc3_.Name;
                _loc4_ = Player.fromPlayerXML(_loc2_,_loc3_.Character[0]);
-               this._invitations[_loc2_] = new kabam.rotmg.friends.model.FriendVO(_loc4_);
+               this._invitations[_loc2_] = new FriendVO(_loc4_);
                this._invitationTotal++;
             }
          }
@@ -198,20 +198,20 @@ package kabam.rotmg.friends.model
       public function updateFriendVO(param1:String, param2:Player) : void
       {
          var _loc3_:Object = null;
-         var _loc4_:kabam.rotmg.friends.model.FriendVO = null;
+         var _loc4_:FriendVO = null;
          if(this.isMyFriend(param1))
          {
             _loc3_ = this._friends[param1];
-            _loc4_ = _loc3_.vo as kabam.rotmg.friends.model.FriendVO;
+            _loc4_ = _loc3_.vo as FriendVO;
             _loc4_.updatePlayer(param2);
          }
       }
       
-      public function getFilterFriends(param1:String) : Vector.<kabam.rotmg.friends.model.FriendVO>
+      public function getFilterFriends(param1:String) : Vector.<FriendVO>
       {
-         var _loc3_:kabam.rotmg.friends.model.FriendVO = null;
+         var _loc3_:FriendVO = null;
          var _loc2_:RegExp = new RegExp(param1,"gix");
-         var _loc4_:Vector.<kabam.rotmg.friends.model.FriendVO> = new Vector.<kabam.rotmg.friends.model.FriendVO>();
+         var _loc4_:Vector.<FriendVO> = new Vector.<FriendVO>();
          var _loc5_:int = 0;
          while(_loc5_ < this._onlineFriends.length)
          {
@@ -240,15 +240,15 @@ package kabam.rotmg.friends.model
          return this._friendTotal >= FriendConstant.FRIEMD_MAX_CAP;
       }
       
-      public function getAllFriends() : Vector.<kabam.rotmg.friends.model.FriendVO>
+      public function getAllFriends() : Vector.<FriendVO>
       {
          return this._onlineFriends.concat(this._offlineFriends);
       }
       
-      public function getAllInvitations() : Vector.<kabam.rotmg.friends.model.FriendVO>
+      public function getAllInvitations() : Vector.<FriendVO>
       {
-         var _loc2_:kabam.rotmg.friends.model.FriendVO = null;
-         var _loc1_:* = new Vector.<kabam.rotmg.friends.model.FriendVO>();
+         var _loc2_:FriendVO = null;
+         var _loc1_:* = new Vector.<FriendVO>();
          for each(_loc2_ in this._invitations)
          {
             _loc1_.push(_loc2_);
@@ -281,9 +281,9 @@ package kabam.rotmg.friends.model
          return false;
       }
       
-      private function removeFromList(param1:Vector.<kabam.rotmg.friends.model.FriendVO>, param2:String) : *
+      private function removeFromList(param1:Vector.<FriendVO>, param2:String) : *
       {
-         var _loc3_:kabam.rotmg.friends.model.FriendVO = null;
+         var _loc3_:FriendVO = null;
          var _loc4_:int = 0;
          while(_loc4_ < param1.length)
          {
@@ -297,7 +297,7 @@ package kabam.rotmg.friends.model
          }
       }
       
-      private function sortFriend(param1:kabam.rotmg.friends.model.FriendVO, param2:kabam.rotmg.friends.model.FriendVO) : Number
+      private function sortFriend(param1:FriendVO, param2:FriendVO) : Number
       {
          if(param1.getName() < param2.getName())
          {

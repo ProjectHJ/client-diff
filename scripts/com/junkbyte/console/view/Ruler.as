@@ -1,24 +1,24 @@
 package com.junkbyte.console.view
 {
-   import flash.display.Sprite;
    import com.junkbyte.console.Console;
    import com.junkbyte.console.ConsoleConfig;
-   import flash.geom.Rectangle;
-   import flash.display.Shape;
-   import flash.text.TextField;
-   import flash.display.Bitmap;
-   import flash.events.MouseEvent;
-   import flash.display.BitmapData;
-   import flash.geom.Matrix;
-   import flash.display.BlendMode;
-   import flash.geom.Point;
    import com.junkbyte.console.ConsoleStyle;
-   import flash.ui.Mouse;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.BlendMode;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
    import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.geom.Matrix;
+   import flash.geom.Point;
+   import flash.geom.Rectangle;
+   import flash.text.TextField;
+   import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
    import flash.text.TextFormatAlign;
-   import flash.text.TextFieldAutoSize;
-   import flash.display.Graphics;
+   import flash.ui.Mouse;
    
    public class Ruler extends Sprite
    {

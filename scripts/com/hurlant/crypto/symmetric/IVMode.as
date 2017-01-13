@@ -1,16 +1,16 @@
 package com.hurlant.crypto.symmetric
 {
    import com.hurlant.crypto.prng.Random;
-   import flash.utils.ByteArray;
    import com.hurlant.util.Memory;
+   import flash.utils.ByteArray;
    
    public class IVMode
    {
        
       
-      protected var key:com.hurlant.crypto.symmetric.ISymmetricKey;
+      protected var key:ISymmetricKey;
       
-      protected var padding:com.hurlant.crypto.symmetric.IPad;
+      protected var padding:IPad;
       
       protected var prng:Random;
       
@@ -20,7 +20,7 @@ package com.hurlant.crypto.symmetric
       
       protected var blockSize:uint;
       
-      public function IVMode(param1:com.hurlant.crypto.symmetric.ISymmetricKey, param2:com.hurlant.crypto.symmetric.IPad = null)
+      public function IVMode(param1:ISymmetricKey, param2:IPad = null)
       {
          super();
          this.key = param1;

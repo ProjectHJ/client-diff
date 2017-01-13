@@ -1,14 +1,14 @@
 package robotlegs.bender.extensions.modularity
 {
-   import robotlegs.bender.framework.api.IExtension;
-   import robotlegs.bender.framework.api.IContext;
-   import org.swiftsuspenders.Injector;
-   import robotlegs.bender.framework.api.ILogger;
    import flash.display.DisplayObjectContainer;
-   import robotlegs.bender.extensions.modularity.impl.ModularContextEvent;
-   import robotlegs.bender.extensions.viewManager.api.IViewManager;
-   import robotlegs.bender.extensions.modularity.impl.ViewManagerBasedExistenceWatcher;
+   import org.swiftsuspenders.Injector;
    import robotlegs.bender.extensions.modularity.impl.ContextViewBasedExistenceWatcher;
+   import robotlegs.bender.extensions.modularity.impl.ModularContextEvent;
+   import robotlegs.bender.extensions.modularity.impl.ViewManagerBasedExistenceWatcher;
+   import robotlegs.bender.extensions.viewManager.api.IViewManager;
+   import robotlegs.bender.framework.api.IContext;
+   import robotlegs.bender.framework.api.IExtension;
+   import robotlegs.bender.framework.api.ILogger;
    import robotlegs.bender.framework.impl.UID;
    
    public class ModularityExtension implements IExtension

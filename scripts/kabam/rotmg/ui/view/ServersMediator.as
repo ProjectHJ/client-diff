@@ -1,12 +1,12 @@
 package kabam.rotmg.ui.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import com.company.assembleegameclient.screens.ServersScreen;
-   import kabam.rotmg.servers.api.ServerModel;
-   import kabam.rotmg.core.signals.SetScreenSignal;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
    import kabam.rotmg.account.securityQuestions.data.SecurityQuestionsModel;
    import kabam.rotmg.account.securityQuestions.view.SecurityQuestionsInfoDialog;
+   import kabam.rotmg.core.signals.SetScreenSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.servers.api.ServerModel;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class ServersMediator extends Mediator
    {

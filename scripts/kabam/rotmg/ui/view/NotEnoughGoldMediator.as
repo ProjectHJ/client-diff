@@ -1,10 +1,10 @@
 package kabam.rotmg.ui.view
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
    import kabam.rotmg.account.core.Account;
    import kabam.rotmg.account.core.services.GetOffersTask;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
    import kabam.rotmg.account.core.signals.OpenMoneyWindowSignal;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class NotEnoughGoldMediator extends Mediator
    {
@@ -17,7 +17,7 @@ package kabam.rotmg.ui.view
       public var getOffers:GetOffersTask;
       
       [Inject]
-      public var view:kabam.rotmg.ui.view.NotEnoughGoldDialog;
+      public var view:NotEnoughGoldDialog;
       
       [Inject]
       public var closeDialogs:CloseDialogsSignal;

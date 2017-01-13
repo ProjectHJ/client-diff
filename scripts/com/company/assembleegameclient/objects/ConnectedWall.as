@@ -1,11 +1,11 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.geom.Vector3D;
-   import flash.display.BitmapData;
-   import com.company.util.AssetLibrary;
    import com.company.assembleegameclient.engine3d.ObjectFace3D;
-   import kabam.rotmg.stage3D.GraphicsFillExtra;
    import com.company.assembleegameclient.parameters.Parameters;
+   import com.company.util.AssetLibrary;
+   import flash.display.BitmapData;
+   import flash.geom.Vector3D;
+   import kabam.rotmg.stage3D.GraphicsFillExtra;
    
    public class ConnectedWall extends ConnectedObject
    {

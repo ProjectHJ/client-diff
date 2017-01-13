@@ -1,14 +1,14 @@
 package robotlegs.bender.extensions.mediatorMap.impl
 {
    import flash.events.EventDispatcher;
-   import robotlegs.bender.extensions.mediatorMap.api.IMediatorFactory;
    import flash.utils.Dictionary;
    import org.swiftsuspenders.Injector;
-   import robotlegs.bender.extensions.mediatorMap.api.IMediatorMapping;
    import robotlegs.bender.extensions.matching.ITypeFilter;
+   import robotlegs.bender.extensions.mediatorMap.api.IMediatorFactory;
+   import robotlegs.bender.extensions.mediatorMap.api.IMediatorMapping;
    import robotlegs.bender.extensions.mediatorMap.api.MediatorFactoryEvent;
-   import robotlegs.bender.framework.impl.guardsApprove;
    import robotlegs.bender.framework.impl.applyHooks;
+   import robotlegs.bender.framework.impl.guardsApprove;
    
    public class MediatorFactory extends EventDispatcher implements IMediatorFactory
    {

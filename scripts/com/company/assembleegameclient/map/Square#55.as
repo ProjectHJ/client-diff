@@ -1,13 +1,13 @@
 package com.company.assembleegameclient.map
 {
-   import flash.geom.Vector3D;
-   import com.company.assembleegameclient.objects.GameObject;
-   import flash.display.BitmapData;
    import com.company.assembleegameclient.engine3d.TextureMatrix;
-   import flash.display.IGraphicsData;
+   import com.company.assembleegameclient.objects.GameObject;
    import com.company.assembleegameclient.util.TileRedrawer;
+   import flash.display.BitmapData;
+   import flash.display.IGraphicsData;
+   import flash.geom.Vector3D;
    
-   public class Square
+   public class Square#55
    {
       
       public static const UVT:Vector.<Number> = new <Number>[0,0,0,1,0,0,1,1,0,0,1,0];
@@ -15,7 +15,7 @@ package com.company.assembleegameclient.map
       private static const LOOKUP:Vector.<int> = new <int>[26171,44789,20333,70429,98257,59393,33961];
        
       
-      public var map_:com.company.assembleegameclient.map.Map;
+      public var map_:Map;
       
       public var x_:int;
       
@@ -29,7 +29,7 @@ package com.company.assembleegameclient.map
       
       public var obj_:GameObject = null;
       
-      public var props_:com.company.assembleegameclient.map.GroundProperties;
+      public var props_:GroundProperties;
       
       public var texture_:BitmapData = null;
       
@@ -37,18 +37,18 @@ package com.company.assembleegameclient.map
       
       public var lastDamage_:int = 0;
       
-      public var faces_:Vector.<com.company.assembleegameclient.map.SquareFace>;
+      public var faces_:Vector.<SquareFace>;
       
-      public var topFace_:com.company.assembleegameclient.map.SquareFace = null;
+      public var topFace_:SquareFace = null;
       
       public var baseTexMatrix_:TextureMatrix = null;
       
       public var lastVisible_:int;
       
-      public function Square(param1:com.company.assembleegameclient.map.Map, param2:int, param3:int)
+      public function Square#55(param1:Map, param2:int, param3:int)
       {
          this.props_ = GroundLibrary.defaultProps_;
-         this.faces_ = new Vector.<com.company.assembleegameclient.map.SquareFace>();
+         this.faces_ = new Vector.<SquareFace>();
          super();
          this.map_ = param1;
          this.x_ = param2;
@@ -67,7 +67,7 @@ package com.company.assembleegameclient.map
       
       public function dispose() : void
       {
-         var _loc1_:com.company.assembleegameclient.map.SquareFace = null;
+         var _loc1_:SquareFace = null;
          this.map_ = null;
          this.center_ = null;
          this.vin_ = null;
@@ -103,7 +103,7 @@ package com.company.assembleegameclient.map
       
       public function draw(param1:Vector.<IGraphicsData>, param2:Camera, param3:int) : void
       {
-         var _loc4_:com.company.assembleegameclient.map.SquareFace = null;
+         var _loc4_:SquareFace = null;
          if(this.texture_ == null)
          {
             return;
@@ -142,11 +142,11 @@ package com.company.assembleegameclient.map
          var _loc1_:BitmapData = null;
          if(this.props_.animate_.type_ != AnimateProperties.NO_ANIMATE)
          {
-            this.faces_.push(new com.company.assembleegameclient.map.SquareFace(this.texture_,this.vin_,this.props_.xOffset_,this.props_.xOffset_,this.props_.animate_.type_,this.props_.animate_.dx_,this.props_.animate_.dy_));
+            this.faces_.push(new SquareFace(this.texture_,this.vin_,this.props_.xOffset_,this.props_.xOffset_,this.props_.animate_.type_,this.props_.animate_.dx_,this.props_.animate_.dy_));
             _loc1_ = TileRedrawer.redraw(this,false);
             if(_loc1_ != null)
             {
-               this.faces_.push(new com.company.assembleegameclient.map.SquareFace(_loc1_,this.vin_,0,0,AnimateProperties.NO_ANIMATE,0,0));
+               this.faces_.push(new SquareFace(_loc1_,this.vin_,0,0,AnimateProperties.NO_ANIMATE,0,0));
             }
          }
          else
@@ -167,7 +167,7 @@ package com.company.assembleegameclient.map
                   _loc3_ = this.props_.yOffset_;
                }
             }
-            this.faces_.push(new com.company.assembleegameclient.map.SquareFace(_loc1_ != null?_loc1_:this.texture_,this.vin_,_loc2_,_loc3_,AnimateProperties.NO_ANIMATE,0,0));
+            this.faces_.push(new SquareFace(_loc1_ != null?_loc1_:this.texture_,this.vin_,_loc2_,_loc3_,AnimateProperties.NO_ANIMATE,0,0));
          }
          if(this.props_.sink_)
          {
@@ -187,7 +187,7 @@ package com.company.assembleegameclient.map
                _loc5_[_loc6_] = 1;
                _loc6_ = _loc6_ + 3;
             }
-            this.topFace_ = new com.company.assembleegameclient.map.SquareFace(_loc4_,_loc5_,0,0,this.props_.topAnimate_.type_,this.props_.topAnimate_.dx_,this.props_.topAnimate_.dy_);
+            this.topFace_ = new SquareFace(_loc4_,_loc5_,0,0,this.props_.topAnimate_.type_,this.props_.topAnimate_.dx_,this.props_.topAnimate_.dy_);
          }
       }
    }

@@ -7,11 +7,11 @@ package kabam.lib.tasks
    {
        
       
-      private var _started:kabam.lib.tasks.TaskStartedSignal;
+      private var _started:TaskStartedSignal;
       
-      private var _finished:kabam.lib.tasks.TaskResultSignal;
+      private var _finished:TaskResultSignal;
       
-      private var _lastly:kabam.lib.tasks.TaskResultSignal;
+      private var _lastly:TaskResultSignal;
       
       private var _isStarted:Boolean;
       
@@ -71,17 +71,17 @@ package kabam.lib.tasks
       
       public final function get started() : Signal
       {
-         return this._started = this._started || new kabam.lib.tasks.TaskStartedSignal();
+         return this._started = this._started || new TaskStartedSignal();
       }
       
-      public final function get finished() : kabam.lib.tasks.TaskResultSignal
+      public final function get finished() : TaskResultSignal
       {
-         return this._finished = this._finished || new kabam.lib.tasks.TaskResultSignal();
+         return this._finished = this._finished || new TaskResultSignal();
       }
       
-      public final function get lastly() : kabam.lib.tasks.TaskResultSignal
+      public final function get lastly() : TaskResultSignal
       {
-         return this._lastly = this._lastly || new kabam.lib.tasks.TaskResultSignal();
+         return this._lastly = this._lastly || new TaskResultSignal();
       }
       
       public function get isStarted() : Boolean

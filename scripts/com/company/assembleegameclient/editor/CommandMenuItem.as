@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.editor
 {
-   import flash.display.Sprite;
    import com.company.ui.BaseSimpleText;
+   import flash.display.Sprite;
    import flash.events.MouseEvent;
    
    public class CommandMenuItem extends Sprite

@@ -3,16 +3,16 @@ package org.osflash.signals
    public final class SlotList
    {
       
-      public static const NIL:org.osflash.signals.SlotList = new org.osflash.signals.SlotList(null,null);
+      public static const NIL:SlotList = new SlotList(null,null);
        
       
-      public var head:org.osflash.signals.ISlot;
+      public var head:ISlot;
       
-      public var tail:org.osflash.signals.SlotList;
+      public var tail:SlotList;
       
       public var nonEmpty:Boolean = false;
       
-      public function SlotList(param1:org.osflash.signals.ISlot, param2:org.osflash.signals.SlotList = null)
+      public function SlotList(param1:ISlot, param2:SlotList = null)
       {
          super();
          if(!param1 && !param2)
@@ -46,7 +46,7 @@ package org.osflash.signals
             return 1;
          }
          var _loc1_:uint = 0;
-         var _loc2_:org.osflash.signals.SlotList = this;
+         var _loc2_:SlotList = this;
          while(_loc2_.nonEmpty)
          {
             _loc1_++;
@@ -55,12 +55,12 @@ package org.osflash.signals
          return _loc1_;
       }
       
-      public function prepend(param1:org.osflash.signals.ISlot) : org.osflash.signals.SlotList
+      public function prepend(param1:ISlot) : SlotList
       {
-         return new org.osflash.signals.SlotList(param1,this);
+         return new SlotList(param1,this);
       }
       
-      public function append(param1:org.osflash.signals.ISlot) : org.osflash.signals.SlotList
+      public function append(param1:ISlot) : SlotList
       {
          if(!param1)
          {
@@ -68,38 +68,38 @@ package org.osflash.signals
          }
          if(!this.nonEmpty)
          {
-            return new org.osflash.signals.SlotList(param1);
+            return new SlotList(param1);
          }
          if(this.tail == NIL)
          {
-            return new org.osflash.signals.SlotList(param1).prepend(this.head);
+            return new SlotList(param1).prepend(this.head);
          }
-         var _loc2_:org.osflash.signals.SlotList = new org.osflash.signals.SlotList(this.head);
-         var _loc3_:org.osflash.signals.SlotList = _loc2_;
-         var _loc4_:org.osflash.signals.SlotList = this.tail;
+         var _loc2_:SlotList = new SlotList(this.head);
+         var _loc3_:SlotList = _loc2_;
+         var _loc4_:SlotList = this.tail;
          while(_loc4_.nonEmpty)
          {
-            _loc3_ = _loc3_.tail = new org.osflash.signals.SlotList(_loc4_.head);
+            _loc3_ = _loc3_.tail = new SlotList(_loc4_.head);
             _loc4_ = _loc4_.tail;
          }
-         _loc3_.tail = new org.osflash.signals.SlotList(param1);
+         _loc3_.tail = new SlotList(param1);
          return _loc2_;
       }
       
-      public function insertWithPriority(param1:org.osflash.signals.ISlot) : org.osflash.signals.SlotList
+      public function insertWithPriority(param1:ISlot) : SlotList
       {
          if(!this.nonEmpty)
          {
-            return new org.osflash.signals.SlotList(param1);
+            return new SlotList(param1);
          }
          var _loc2_:int = param1.priority;
          if(_loc2_ > this.head.priority)
          {
             return this.prepend(param1);
          }
-         var _loc3_:org.osflash.signals.SlotList = new org.osflash.signals.SlotList(this.head);
-         var _loc4_:org.osflash.signals.SlotList = _loc3_;
-         var _loc5_:org.osflash.signals.SlotList = this.tail;
+         var _loc3_:SlotList = new SlotList(this.head);
+         var _loc4_:SlotList = _loc3_;
+         var _loc5_:SlotList = this.tail;
          while(_loc5_.nonEmpty)
          {
             if(_loc2_ > _loc5_.head.priority)
@@ -107,14 +107,14 @@ package org.osflash.signals
                _loc4_.tail = _loc5_.prepend(param1);
                return _loc3_;
             }
-            _loc4_ = _loc4_.tail = new org.osflash.signals.SlotList(_loc5_.head);
+            _loc4_ = _loc4_.tail = new SlotList(_loc5_.head);
             _loc5_ = _loc5_.tail;
          }
-         _loc4_.tail = new org.osflash.signals.SlotList(param1);
+         _loc4_.tail = new SlotList(param1);
          return _loc3_;
       }
       
-      public function filterNot(param1:Function) : org.osflash.signals.SlotList
+      public function filterNot(param1:Function) : SlotList
       {
          if(!this.nonEmpty || param1 == null)
          {
@@ -124,9 +124,9 @@ package org.osflash.signals
          {
             return this.tail;
          }
-         var _loc2_:org.osflash.signals.SlotList = new org.osflash.signals.SlotList(this.head);
-         var _loc3_:org.osflash.signals.SlotList = _loc2_;
-         var _loc4_:org.osflash.signals.SlotList = this.tail;
+         var _loc2_:SlotList = new SlotList(this.head);
+         var _loc3_:SlotList = _loc2_;
+         var _loc4_:SlotList = this.tail;
          while(_loc4_.nonEmpty)
          {
             if(_loc4_.head.listener == param1)
@@ -134,7 +134,7 @@ package org.osflash.signals
                _loc3_.tail = _loc4_.tail;
                return _loc2_;
             }
-            _loc3_ = _loc3_.tail = new org.osflash.signals.SlotList(_loc4_.head);
+            _loc3_ = _loc3_.tail = new SlotList(_loc4_.head);
             _loc4_ = _loc4_.tail;
          }
          return this;
@@ -146,7 +146,7 @@ package org.osflash.signals
          {
             return false;
          }
-         var _loc2_:org.osflash.signals.SlotList = this;
+         var _loc2_:SlotList = this;
          while(_loc2_.nonEmpty)
          {
             if(_loc2_.head.listener == param1)
@@ -158,13 +158,13 @@ package org.osflash.signals
          return false;
       }
       
-      public function find(param1:Function) : org.osflash.signals.ISlot
+      public function find(param1:Function) : ISlot
       {
          if(!this.nonEmpty)
          {
             return null;
          }
-         var _loc2_:org.osflash.signals.SlotList = this;
+         var _loc2_:SlotList = this;
          while(_loc2_.nonEmpty)
          {
             if(_loc2_.head.listener == param1)
@@ -179,7 +179,7 @@ package org.osflash.signals
       public function toString() : String
       {
          var _loc1_:* = "";
-         var _loc2_:org.osflash.signals.SlotList = this;
+         var _loc2_:SlotList = this;
          while(_loc2_.nonEmpty)
          {
             _loc1_ = _loc1_ + (_loc2_.head + " -> ");

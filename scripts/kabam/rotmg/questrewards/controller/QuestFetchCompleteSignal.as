@@ -1,7 +1,7 @@
 package kabam.rotmg.questrewards.controller
 {
-   import org.osflash.signals.Signal;
    import kabam.rotmg.messaging.impl.incoming.QuestFetchResponse;
+   import org.osflash.signals.Signal;
    
    public class QuestFetchCompleteSignal extends Signal
    {

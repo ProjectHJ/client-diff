@@ -1,7 +1,7 @@
 package kabam.rotmg.application.impl
 {
-   import kabam.rotmg.application.api.ApplicationSetup;
    import com.company.assembleegameclient.parameters.Parameters;
+   import kabam.rotmg.application.api.ApplicationSetup;
    
    public class PrivateSetup implements ApplicationSetup
    {

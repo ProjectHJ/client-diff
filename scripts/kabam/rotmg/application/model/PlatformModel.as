@@ -1,13 +1,13 @@
 package kabam.rotmg.application.model
 {
    import flash.display.DisplayObjectContainer;
-   import flash.system.Capabilities;
    import flash.display.LoaderInfo;
+   import flash.system.Capabilities;
    
    public class PlatformModel
    {
       
-      private static var platform:kabam.rotmg.application.model.PlatformType;
+      private static var platform:PlatformType;
        
       
       [Inject]
@@ -30,27 +30,27 @@ package kabam.rotmg.application.model
          return Capabilities.playerType == this.DESKTOP;
       }
       
-      public function getPlatform() : kabam.rotmg.application.model.PlatformType
+      public function getPlatform() : PlatformType
       {
          return platform = platform || this.determinePlatform();
       }
       
-      private function determinePlatform() : kabam.rotmg.application.model.PlatformType
+      private function determinePlatform() : PlatformType
       {
          var _loc1_:Object = LoaderInfo(this.root.stage.root.loaderInfo).parameters;
          if(this.isKongregate(_loc1_))
          {
-            return kabam.rotmg.application.model.PlatformType.KONGREGATE;
+            return PlatformType.KONGREGATE;
          }
          if(this.isSteam(_loc1_))
          {
-            return kabam.rotmg.application.model.PlatformType.STEAM;
+            return PlatformType.STEAM;
          }
          if(this.isKabam(_loc1_))
          {
-            return kabam.rotmg.application.model.PlatformType.KABAM;
+            return PlatformType.KABAM;
          }
-         return kabam.rotmg.application.model.PlatformType.WEB;
+         return PlatformType.WEB;
       }
       
       private function isKongregate(param1:Object) : Boolean

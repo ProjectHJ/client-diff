@@ -7,7 +7,7 @@ package kabam.rotmg.pets.view.components
        
       
       [Inject]
-      public var view:kabam.rotmg.pets.view.components.PetTooltip;
+      public var view:PetTooltip;
       
       public function PetTooltipMediator()
       {

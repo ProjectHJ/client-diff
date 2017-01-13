@@ -1,24 +1,24 @@
 package com.company.assembleegameclient.ui.guild
 {
-   import flash.display.Sprite;
-   import flash.geom.ColorTransform;
-   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import com.company.assembleegameclient.ui.dialogs.Dialog;
+   import com.company.assembleegameclient.util.GuildUtil;
+   import com.company.rotmg.graphics.DeleteXGraphic;
+   import com.company.util.MoreColorUtil;
    import flash.display.Bitmap;
    import flash.display.Graphics;
-   import flash.events.MouseEvent;
-   import com.company.util.MoreColorUtil;
-   import com.company.assembleegameclient.util.GuildUtil;
-   import com.company.assembleegameclient.ui.dialogs.Dialog;
-   import kabam.rotmg.text.model.TextKey;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import flash.display.Sprite;
    import flash.events.Event;
-   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+   import flash.events.MouseEvent;
    import flash.filters.DropShadowFilter;
+   import flash.geom.ColorTransform;
    import flash.text.TextFieldAutoSize;
-   import com.company.rotmg.graphics.DeleteXGraphic;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.text.model.TextKey;
+   import kabam.rotmg.text.view.TextFieldDisplayConcrete;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
    
    class MemberListLine extends Sprite
    {

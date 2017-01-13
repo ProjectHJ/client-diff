@@ -1,10 +1,10 @@
 package robotlegs.bender.framework.impl
 {
    import flash.utils.Dictionary;
+   import org.swiftsuspenders.reflection.DescribeTypeReflector;
    import org.swiftsuspenders.reflection.Reflector;
    import robotlegs.bender.framework.api.IContext;
    import robotlegs.bender.framework.api.ILogger;
-   import org.swiftsuspenders.reflection.DescribeTypeReflector;
    
    public class ExtensionInstaller
    {

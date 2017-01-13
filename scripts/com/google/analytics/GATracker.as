@@ -1,28 +1,28 @@
 package com.google.analytics
 {
-   import com.google.analytics.utils.Version;
-   import com.google.analytics.external.AdSenseGlobals;
-   import com.google.analytics.utils.Environment;
-   import flash.events.Event;
-   import com.google.analytics.v4.Configuration;
-   import com.google.analytics.core.IdleTimer;
-   import com.google.analytics.debug.DebugConfiguration;
    import com.google.analytics.core.Buffer;
-   import com.google.analytics.v4.GoogleAnalyticsAPI;
-   import com.google.analytics.v4.Bridge;
+   import com.google.analytics.core.Ecommerce;
    import com.google.analytics.core.EventTracker;
-   import flash.display.DisplayObject;
-   import com.google.analytics.external.JavascriptProxy;
-   import com.google.analytics.external.HTMLDOM;
-   import flash.events.EventDispatcher;
    import com.google.analytics.core.GIFRequest;
-   import com.google.analytics.debug.Layout;
+   import com.google.analytics.core.IdleTimer;
+   import com.google.analytics.core.ServerOperationMode;
    import com.google.analytics.core.TrackerCache;
    import com.google.analytics.core.TrackerMode;
+   import com.google.analytics.debug.DebugConfiguration;
+   import com.google.analytics.debug.Layout;
    import com.google.analytics.events.AnalyticsEvent;
-   import com.google.analytics.core.Ecommerce;
+   import com.google.analytics.external.AdSenseGlobals;
+   import com.google.analytics.external.HTMLDOM;
+   import com.google.analytics.external.JavascriptProxy;
+   import com.google.analytics.utils.Environment;
+   import com.google.analytics.utils.Version;
+   import com.google.analytics.v4.Bridge;
+   import com.google.analytics.v4.Configuration;
+   import com.google.analytics.v4.GoogleAnalyticsAPI;
    import com.google.analytics.v4.Tracker;
-   import com.google.analytics.core.ServerOperationMode;
+   import flash.display.DisplayObject;
+   import flash.events.Event;
+   import flash.events.EventDispatcher;
    
    public class GATracker implements AnalyticsTracker
    {

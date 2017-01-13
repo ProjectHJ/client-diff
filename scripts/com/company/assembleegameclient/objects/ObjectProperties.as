@@ -1,7 +1,7 @@
 package com.company.assembleegameclient.objects
 {
-   import flash.utils.Dictionary;
    import com.company.assembleegameclient.sound.SoundEffectLibrary;
+   import flash.utils.Dictionary;
    
    public class ObjectProperties
    {
@@ -55,7 +55,7 @@ package com.company.assembleegameclient.objects
       
       public var sounds_:Object = null;
       
-      public var portrait_:com.company.assembleegameclient.objects.TextureData = null;
+      public var portrait_:TextureData = null;
       
       public var minSize_:int = 100;
       

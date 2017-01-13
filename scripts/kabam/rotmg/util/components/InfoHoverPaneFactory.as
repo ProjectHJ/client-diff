@@ -1,7 +1,7 @@
 package kabam.rotmg.util.components
 {
-   import flash.display.Sprite;
    import flash.display.DisplayObject;
+   import flash.display.Sprite;
    import kabam.rotmg.pets.view.components.PopupWindowBackground;
    
    public class InfoHoverPaneFactory extends Sprite

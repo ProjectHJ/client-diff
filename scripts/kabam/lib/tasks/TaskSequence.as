@@ -4,7 +4,7 @@ package kabam.lib.tasks
    {
        
       
-      private var tasks:Vector.<kabam.lib.tasks.Task>;
+      private var tasks:Vector.<Task>;
       
       private var index:int;
       
@@ -13,7 +13,7 @@ package kabam.lib.tasks
       public function TaskSequence()
       {
          super();
-         this.tasks = new Vector.<kabam.lib.tasks.Task>();
+         this.tasks = new Vector.<Task>();
       }
       
       public function getContinueOnFail() : Boolean
@@ -26,7 +26,7 @@ package kabam.lib.tasks
          this.continueOnFail = param1;
       }
       
-      public function add(param1:kabam.lib.tasks.Task) : void
+      public function add(param1:Task) : void
       {
          this.tasks.push(param1);
       }
@@ -39,7 +39,7 @@ package kabam.lib.tasks
       
       override protected function onReset() : void
       {
-         var _loc1_:kabam.lib.tasks.Task = null;
+         var _loc1_:Task = null;
          for each(_loc1_ in this.tasks)
          {
             _loc1_.reset();
@@ -65,12 +65,12 @@ package kabam.lib.tasks
       
       private function doNextTask() : void
       {
-         var _loc1_:kabam.lib.tasks.Task = this.tasks[this.index++];
+         var _loc1_:Task = this.tasks[this.index++];
          _loc1_.lastly.addOnce(this.onTaskFinished);
          _loc1_.start();
       }
       
-      private function onTaskFinished(param1:kabam.lib.tasks.Task, param2:Boolean, param3:String) : void
+      private function onTaskFinished(param1:Task, param2:Boolean, param3:String) : void
       {
          if(param2 || this.continueOnFail)
          {

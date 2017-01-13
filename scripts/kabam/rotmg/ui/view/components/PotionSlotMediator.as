@@ -1,29 +1,29 @@
 package kabam.rotmg.ui.view.components
 {
-   import robotlegs.bender.bundles.mvcs.Mediator;
-   import kabam.rotmg.ui.model.HUDModel;
-   import kabam.rotmg.ui.signals.UpdateHUDSignal;
-   import kabam.rotmg.game.model.PotionInventoryModel;
-   import kabam.rotmg.game.signals.UseBuyPotionSignal;
-   import kabam.rotmg.pets.data.PetSlotsState;
+   import com.company.assembleegameclient.map.Map;
    import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.ui.model.PotionModel;
-   import flash.display.DisplayObject;
+   import com.company.assembleegameclient.parameters.Parameters;
    import com.company.assembleegameclient.ui.panels.itemgrids.itemtiles.InteractiveItemTile;
    import com.company.assembleegameclient.util.DisplayHierarchy;
-   import com.company.assembleegameclient.map.Map;
-   import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
-   import com.company.assembleegameclient.parameters.Parameters;
-   import kabam.rotmg.messaging.impl.GameServerConnection;
+   import flash.display.DisplayObject;
    import kabam.rotmg.constants.ItemConstants;
+   import kabam.rotmg.game.model.PotionInventoryModel;
    import kabam.rotmg.game.model.UseBuyPotionVO;
+   import kabam.rotmg.game.signals.UseBuyPotionSignal;
+   import kabam.rotmg.messaging.impl.GameServerConnection;
+   import kabam.rotmg.pets.data.PetSlotsState;
+   import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
+   import kabam.rotmg.ui.model.HUDModel;
+   import kabam.rotmg.ui.model.PotionModel;
+   import kabam.rotmg.ui.signals.UpdateHUDSignal;
+   import robotlegs.bender.bundles.mvcs.Mediator;
    
    public class PotionSlotMediator extends Mediator
    {
        
       
       [Inject]
-      public var view:kabam.rotmg.ui.view.components.PotionSlotView;
+      public var view:PotionSlotView;
       
       [Inject]
       public var hudModel:HUDModel;

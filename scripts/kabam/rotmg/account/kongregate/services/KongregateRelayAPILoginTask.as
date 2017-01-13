@@ -1,11 +1,11 @@
 package kabam.rotmg.account.kongregate.services
 {
    import kabam.lib.tasks.BaseTask;
-   import kabam.rotmg.account.core.services.RelayLoginTask;
    import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.account.core.services.RelayLoginTask;
+   import kabam.rotmg.account.kongregate.signals.KongregateAlreadyRegisteredSignal;
    import kabam.rotmg.account.kongregate.view.KongregateApi;
    import kabam.rotmg.account.web.model.AccountData;
-   import kabam.rotmg.account.kongregate.signals.KongregateAlreadyRegisteredSignal;
    import kabam.rotmg.appengine.api.AppEngineClient;
    
    public class KongregateRelayAPILoginTask extends BaseTask implements RelayLoginTask

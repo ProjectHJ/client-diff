@@ -1,34 +1,34 @@
 package kabam.rotmg.questrewards.view
 {
-   import kabam.rotmg.account.core.view.EmptyFrame;
-   import org.osflash.signals.Signal;
-   import kabam.rotmg.questrewards.components.ModalItemSlot;
-   import kabam.rotmg.util.components.LegacyBuyButton;
-   import kabam.display.Loader.LoaderProxy;
+   import com.company.assembleegameclient.map.ParticleModalMap;
+   import com.company.assembleegameclient.objects.ObjectLibrary;
+   import com.company.assembleegameclient.util.Currency;
+   import com.gskinner.motion.GTween;
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
    import flash.display.DisplayObject;
+   import flash.display.Graphics;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.IOErrorEvent;
+   import flash.filters.DropShadowFilter;
+   import flash.filters.GlowFilter;
+   import flash.net.URLRequest;
    import flash.text.TextField;
+   import flash.text.TextFieldAutoSize;
    import flash.text.TextFormat;
    import flash.text.TextFormatAlign;
-   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
-   import com.company.assembleegameclient.objects.ObjectLibrary;
-   import flash.events.Event;
-   import flash.display.BitmapData;
-   import flash.display.Bitmap;
-   import flash.events.IOErrorEvent;
-   import flash.net.URLRequest;
-   import flash.display.Shape;
-   import flash.display.Graphics;
-   import com.gskinner.motion.GTween;
-   import flash.display.Sprite;
-   import kabam.rotmg.pets.view.components.DialogCloseButton;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.text.model.FontModel;
-   import flash.filters.GlowFilter;
-   import com.company.assembleegameclient.map.ParticleModalMap;
-   import flash.filters.DropShadowFilter;
-   import flash.text.TextFieldAutoSize;
-   import com.company.assembleegameclient.util.Currency;
+   import kabam.display.Loader.LoaderProxy;
    import kabam.display.Loader.LoaderProxyConcrete;
+   import kabam.rotmg.account.core.view.EmptyFrame;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.pets.view.components.DialogCloseButton;
+   import kabam.rotmg.questrewards.components.ModalItemSlot;
+   import kabam.rotmg.text.model.FontModel;
+   import kabam.rotmg.text.view.stringBuilder.LineBuilder;
+   import kabam.rotmg.util.components.LegacyBuyButton;
+   import org.osflash.signals.Signal;
    
    public class QuestRewardsView extends EmptyFrame
    {

@@ -1,13 +1,13 @@
 package kabam.rotmg.chat.view
 {
-   import flash.display.Sprite;
-   import flash.display.DisplayObject;
-   import flash.events.MouseEvent;
-   import kabam.rotmg.ui.model.HUDModel;
    import com.company.assembleegameclient.objects.Player;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import flash.utils.getTimer;
+   import flash.display.DisplayObject;
+   import flash.display.Sprite;
+   import flash.events.MouseEvent;
    import flash.geom.Rectangle;
+   import flash.utils.getTimer;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.ui.model.HUDModel;
    
    public class ChatListItem extends Sprite
    {

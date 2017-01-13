@@ -1,14 +1,14 @@
 package kabam.rotmg.friends.controller
 {
-   import kabam.rotmg.appengine.api.AppEngineClient;
-   import kabam.rotmg.account.core.Account;
-   import kabam.rotmg.friends.model.FriendRequestVO;
-   import kabam.rotmg.dialogs.control.OpenDialogSignal;
-   import kabam.rotmg.game.signals.AddTextLineSignal;
-   import kabam.rotmg.friends.model.FriendConstant;
-   import kabam.rotmg.core.StaticInjectorContext;
-   import kabam.rotmg.chat.model.ChatMessage;
    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+   import kabam.rotmg.account.core.Account;
+   import kabam.rotmg.appengine.api.AppEngineClient;
+   import kabam.rotmg.chat.model.ChatMessage;
+   import kabam.rotmg.core.StaticInjectorContext;
+   import kabam.rotmg.dialogs.control.OpenDialogSignal;
+   import kabam.rotmg.friends.model.FriendConstant;
+   import kabam.rotmg.friends.model.FriendRequestVO;
+   import kabam.rotmg.game.signals.AddTextLineSignal;
    
    public class FriendActionCommand
    {

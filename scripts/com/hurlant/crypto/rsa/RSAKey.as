@@ -1,10 +1,10 @@
 package com.hurlant.crypto.rsa
 {
-   import com.hurlant.math.BigInteger;
    import com.hurlant.crypto.prng.Random;
-   import flash.utils.ByteArray;
-   import com.hurlant.util.Memory;
    import com.hurlant.crypto.tls.TLSError;
+   import com.hurlant.math.BigInteger;
+   import com.hurlant.util.Memory;
+   import flash.utils.ByteArray;
    
    public class RSAKey
    {

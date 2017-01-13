@@ -1,7 +1,7 @@
 package kabam.rotmg.legends.model
 {
-   import kabam.rotmg.fame.model.FameVO;
    import flash.display.BitmapData;
+   import kabam.rotmg.fame.model.FameVO;
    
    public class Legend implements FameVO
    {

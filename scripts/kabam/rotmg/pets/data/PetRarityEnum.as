@@ -3,15 +3,15 @@ package kabam.rotmg.pets.data
    public class PetRarityEnum
    {
       
-      public static const COMMON:kabam.rotmg.pets.data.PetRarityEnum = new kabam.rotmg.pets.data.PetRarityEnum("Pets.common",0);
+      public static const COMMON:PetRarityEnum = new PetRarityEnum("Pets.common",0);
       
-      public static const UNCOMMON:kabam.rotmg.pets.data.PetRarityEnum = new kabam.rotmg.pets.data.PetRarityEnum("Pets.uncommon",1);
+      public static const UNCOMMON:PetRarityEnum = new PetRarityEnum("Pets.uncommon",1);
       
-      public static const RARE:kabam.rotmg.pets.data.PetRarityEnum = new kabam.rotmg.pets.data.PetRarityEnum("Pets.rare",2);
+      public static const RARE:PetRarityEnum = new PetRarityEnum("Pets.rare",2);
       
-      public static const LEGENDARY:kabam.rotmg.pets.data.PetRarityEnum = new kabam.rotmg.pets.data.PetRarityEnum("Pets.legendary",3);
+      public static const LEGENDARY:PetRarityEnum = new PetRarityEnum("Pets.legendary",3);
       
-      public static const DIVINE:kabam.rotmg.pets.data.PetRarityEnum = new kabam.rotmg.pets.data.PetRarityEnum("Pets.divine",4);
+      public static const DIVINE:PetRarityEnum = new PetRarityEnum("Pets.divine",4);
       
       public static const MAX_ORDINAL:int = 4;
        
@@ -32,11 +32,11 @@ package kabam.rotmg.pets.data
          return [COMMON,UNCOMMON,RARE,LEGENDARY,DIVINE];
       }
       
-      public static function selectByValue(param1:String) : kabam.rotmg.pets.data.PetRarityEnum
+      public static function selectByValue(param1:String) : PetRarityEnum
       {
-         var _loc2_:kabam.rotmg.pets.data.PetRarityEnum = null;
-         var _loc3_:kabam.rotmg.pets.data.PetRarityEnum = null;
-         for each(_loc3_ in kabam.rotmg.pets.data.PetRarityEnum.list)
+         var _loc2_:PetRarityEnum = null;
+         var _loc3_:PetRarityEnum = null;
+         for each(_loc3_ in PetRarityEnum.list)
          {
             if(param1 == _loc3_.value)
             {
@@ -46,11 +46,11 @@ package kabam.rotmg.pets.data
          return _loc2_;
       }
       
-      public static function selectByOrdinal(param1:int) : kabam.rotmg.pets.data.PetRarityEnum
+      public static function selectByOrdinal(param1:int) : PetRarityEnum
       {
-         var _loc2_:kabam.rotmg.pets.data.PetRarityEnum = null;
-         var _loc3_:kabam.rotmg.pets.data.PetRarityEnum = null;
-         for each(_loc3_ in kabam.rotmg.pets.data.PetRarityEnum.list)
+         var _loc2_:PetRarityEnum = null;
+         var _loc3_:PetRarityEnum = null;
+         for each(_loc3_ in PetRarityEnum.list)
          {
             if(param1 == _loc3_.ordinal)
             {

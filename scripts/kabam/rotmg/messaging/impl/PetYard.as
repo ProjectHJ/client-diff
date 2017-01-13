@@ -1,7 +1,7 @@
 package kabam.rotmg.messaging.impl
 {
-   import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
    import flash.utils.IDataInput;
+   import kabam.rotmg.messaging.impl.incoming.IncomingMessage;
    
    public class PetYard extends IncomingMessage
    {

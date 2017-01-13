@@ -1,16 +1,16 @@
 package kabam.rotmg.account.web.view
 {
+   import com.company.assembleegameclient.account.ui.CheckBoxField;
    import com.company.assembleegameclient.account.ui.Frame;
-   import org.osflash.signals.Signal;
    import com.company.assembleegameclient.account.ui.TextInputField;
    import com.company.assembleegameclient.ui.DeprecatedClickableText;
-   import com.company.assembleegameclient.account.ui.CheckBoxField;
-   import kabam.rotmg.text.model.TextKey;
-   import flash.events.MouseEvent;
-   import flash.events.KeyboardEvent;
-   import flash.events.Event;
    import com.company.util.KeyCodes;
+   import flash.events.Event;
+   import flash.events.KeyboardEvent;
+   import flash.events.MouseEvent;
    import kabam.rotmg.account.web.model.AccountData;
+   import kabam.rotmg.text.model.TextKey;
+   import org.osflash.signals.Signal;
    import org.osflash.signals.natives.NativeMappedSignal;
    
    public class WebLoginDialog extends Frame

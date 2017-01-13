@@ -16,9 +16,9 @@ package kabam.rotmg.util.components
       
       private var _positionChanged:Signal;
       
-      public const groove:kabam.rotmg.util.components.VerticalScrollbarGroove = new kabam.rotmg.util.components.VerticalScrollbarGroove();
+      public const groove:VerticalScrollbarGroove = new VerticalScrollbarGroove();
       
-      public const bar:kabam.rotmg.util.components.VerticalScrollbarBar = new kabam.rotmg.util.components.VerticalScrollbarBar();
+      public const bar:VerticalScrollbarBar = new VerticalScrollbarBar();
       
       private var position:Number = 0;
       
