@@ -1643,7 +1643,7 @@
          <File>lofiChar16x8</File>
          <Index>0x7a</Index>
       </Texture>
-      <Size>100</Size>
+      <Size>85</Size>
       <NoMiniMap/>
       <DisplayId>{monsters.Dragon_Chain_1}</DisplayId>
    </Object>
@@ -1653,7 +1653,7 @@
          <File>lofiChar16x8</File>
          <Index>0x7a</Index>
       </Texture>
-      <Size>80</Size>
+      <Size>70</Size>
       <NoMiniMap/>
       <DisplayId>{monsters.Dragon_Chain_2}</DisplayId>
    </Object>
@@ -1663,7 +1663,7 @@
          <File>lofiChar16x8</File>
          <Index>0x7a</Index>
       </Texture>
-      <Size>60</Size>
+      <Size>55</Size>
       <NoMiniMap/>
       <DisplayId>{monsters.Dragon_Chain_3}</DisplayId>
    </Object>

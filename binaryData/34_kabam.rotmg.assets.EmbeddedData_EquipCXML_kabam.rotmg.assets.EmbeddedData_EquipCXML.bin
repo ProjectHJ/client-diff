@@ -16012,4 +16012,332 @@
       <Soulbound/>
       <feedPower>5000</feedPower>
    </Object>
+   <Object type="0x16d6" id="Enchanted Ice Blade">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x19</Index>
+      </Texture>
+      <SlotType>1</SlotType>
+      <Description>{equip.A_lightweight_blade,_imbued_with_frosty_runes._Thanks_to:_P}</Description>
+      <RateOfFire>1</RateOfFire>
+      <Sound>weapon/glass_sword</Sound>
+      <Projectile>
+         <ObjectId>Enchanted Ice Blade Slash</ObjectId>
+         <Speed>100</Speed>
+         <MinDamage>180</MinDamage>
+         <MaxDamage>210</MaxDamage>
+         <LifetimeMS>450</LifetimeMS>
+      </Projectile>
+      <BagType>6</BagType>
+      <FameBonus>3</FameBonus>
+      <OldSound>bladeSwing</OldSound>
+      <feedPower>400</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Enchanted_Ice_Blade}</DisplayId>
+   </Object>
+   <Object type="0x16d7" id="Staff of Iceblast">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x1a</Index>
+      </Texture>
+      <SlotType>17</SlotType>
+      <Description>{equip.A_frozen_staff,_used_for_creating_powerful_chilly_blasts_ar}</Description>
+      <RateOfFire>0.4</RateOfFire>
+      <Sound>weapon/sprite_wand</Sound>
+      <Projectile>
+         <ObjectId>Iceblast Missile</ObjectId>
+         <Speed>110</Speed>
+         <MinDamage>80</MinDamage>
+         <MaxDamage>95</MaxDamage>
+         <LifetimeMS>364</LifetimeMS>
+         <Amplitude>0.15</Amplitude>
+         <Frequency>2</Frequency>
+      </Projectile>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <NumProjectiles>10</NumProjectiles>
+      <ArcGap>36</ArcGap>
+      <OldSound>magicShoot</OldSound>
+      <feedPower>600</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Staff_of_Iceblast}</DisplayId>
+   </Object>
+   <Object type="0x16d8" id="Eternal Snowflake Wand">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x1b</Index>
+      </Texture>
+      <SlotType>8</SlotType>
+      <Description>{equip.A_cool_wand_that_creates_a_flurry_of_beautiful_snowflakes._}</Description>
+      <RateOfFire>0.33</RateOfFire>
+      <Sound>weapon/wand_of_death</Sound>
+      <Projectile>
+         <ObjectId>Eternal Snowflake Shot</ObjectId>
+         <Speed>6</Speed>
+         <MinDamage>300</MinDamage>
+         <MaxDamage>400</MaxDamage>
+         <LifetimeMS>11000</LifetimeMS>
+         <Parametric/>
+         <PassesCover/>
+      </Projectile>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <OldSound>magicShoot</OldSound>
+      <feedPower>650</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Eternal_Snowflake_Wand}</DisplayId>
+   </Object>
+   <Object type="0x16d9" id="Artic Bow">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x1c</Index>
+      </Texture>
+      <SlotType>3</SlotType>
+      <Description>{equip.A_bow,_fashioned_from_solid_ice,_enchanted_not_to_melt._Its}</Description>
+      <RateOfFire>1.25</RateOfFire>
+      <Sound>weapon/double_bow</Sound>
+      <Projectile>
+         <ObjectId>Artic Arrow</ObjectId>
+         <Speed>185</Speed>
+         <MinDamage>60</MinDamage>
+         <MaxDamage>80</MaxDamage>
+         <LifetimeMS>420</LifetimeMS>
+         <MultiHit/>
+      </Projectile>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <NumProjectiles>2</NumProjectiles>
+      <OldSound>arrowShoot</OldSound>
+      <feedPower>1200</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Artic_Bow}</DisplayId>
+   </Object>
+   <Object type="0x16da" id="Frost Drake Hide Armor">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x1d</Index>
+      </Texture>
+      <SlotType>6</SlotType>
+      <Description>{equip.Protective_leather_armor_fashioned_from_the_frozen,_but_res}</Description>
+      <ActivateOnEquip stat="21" amount="17">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="28" amount="5">IncrementStat</ActivateOnEquip>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <feedPower>435</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Frost_Drake_Hide_Armor}</DisplayId>
+   </Object>
+   <Object type="0x16db" id="Frost Elementalist Robe">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x1e</Index>
+      </Texture>
+      <SlotType>14</SlotType>
+      <Description>{equip.An_excellent_robe,_woven_from_icy_threads._Its_typically_on}</Description>
+      <ActivateOnEquip stat="20" amount="4">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="21" amount="13">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="27" amount="6">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="3" amount="55">IncrementStat</ActivateOnEquip>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <feedPower>435</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Frost_Elementalist_Robe}</DisplayId>
+   </Object>
+   <Object type="0x16dc" id="Ice Crown">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x1f</Index>
+      </Texture>
+      <SlotType>9</SlotType>
+      <Description>{equip.An_ancient_artifact,_once_worn_by_a_corrupt_king_of_the_fro}</Description>
+      <ActivateOnEquip stat="28" amount="6">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="20" amount="6">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="0" amount="110">IncrementStat</ActivateOnEquip>
+      <BagType>6</BagType>
+      <FameBonus>5</FameBonus>
+      <feedPower>500</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Ice_Crown}</DisplayId>
+   </Object>
+   <Object type="0x16dd" id="Frost Citadel Armor">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x24</Index>
+      </Texture>
+      <SlotType>7</SlotType>
+      <Description>{equip.A_sturdy_suit_of_armor,_reinforced_with_ice_plating._ItAPOS}</Description>
+      <ActivateOnEquip stat="21" amount="24">IncrementStat</ActivateOnEquip>
+      <BagType>4</BagType>
+      <FameBonus>4</FameBonus>
+      <feedPower>435</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Frost_Citadel_Armor}</DisplayId>
+   </Object>
+   <Object type="0x16de" id="Tome of Frigid Protection">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x25</Index>
+      </Texture>
+      <SlotType>4</SlotType>
+      <Description>{equip.A_tome_that_allows_the_caster_to_encase_themselves_in_extre}</Description>
+      <Sound>spell/major_heal</Sound>
+      <ActivateOnEquip stat="26" amount="4">IncrementStat</ActivateOnEquip>
+      <ActivateOnEquip stat="0" amount="40">IncrementStat</ActivateOnEquip>
+      <Usable/>
+      <BagType>6</BagType>
+      <FameBonus>6</FameBonus>
+      <MpCost>120</MpCost>
+      <Activate amount="200" range="6" useWisMod="true">HealNova</Activate>
+      <Activate effect="Armored" duration="4" useWisMod="true">ConditionEffectSelf</Activate>
+      <feedPower>1300</feedPower>
+      <Soulbound/>
+      <DisplayId>{equip.Tome_of_Frigid_Protection}</DisplayId>
+   </Object>
+   <Object type="0x16eb" id="Chinese Dress Trickster Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>119</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Fashionable_AND_dangerous._Thanks_to:_Beige}</Description>
+      <Activate skinType="5859">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Chinese_Dress_Trickster_Skin}</DisplayId>
+   </Object>
+   <Object type="0x16ec" id="Penguin Knight Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>120</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Looks_a_lot_less_cute_once_its_sword_is_in_your_eye._Thanks}</Description>
+      <Activate skinType="5860">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Penguin_Knight_Skin}</DisplayId>
+   </Object>
+   <Object type="0x16ed" id="Frimar Knight Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>121</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Smaller_than_the_real_Frimar,_but_no_less_dangerous._Thanks}</Description>
+      <Activate skinType="5861">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Frimar_Knight_Skin}</DisplayId>
+   </Object>
+   <Object type="0x16ef" id="Frozen King Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>122</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Once_sat_on_a_Frozen_Throne,_but_decided_to_go_adventuring.}</Description>
+      <Activate skinType="5862">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Frozen_King_Skin}</DisplayId>
+   </Object>
+   <Object type="0x16f0" id="Blizzard Sorcerer Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>123</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Some_say_the_world_will_end_in_fire,_some_say_in_ice._Thank}</Description>
+      <Activate skinType="5863">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Blizzard_Sorcerer_Skin}</DisplayId>
+   </Object>
+   <Object type="0x16f1" id="Ice King Priest Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>124</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Crown_not_included_to_preserve_sanity._Thanks_to:_Kingged}</Description>
+      <Activate skinType="5864">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Ice_King_Priest_Skin}</DisplayId>
+   </Object>
+   <Object type="0x16f2" id="Icicle Dial Mystic Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>125</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.In_case_of_emergency_use_icicle_to_stab_enemy._Thanks_to:_P}</Description>
+      <Activate skinType="5865">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Icicle_Dial_Mystic_Skin}</DisplayId>
+   </Object>
+   <Object type="0x16f3" id="Yuki Onna Mystic Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>126</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{equip.Do_not_follow,_unless_you_like_frostbite._Thanks_to:_Beige}</Description>
+      <Activate skinType="5866">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <feedPower>5000</feedPower>
+      <DisplayId>{equip.Yuki_Onna_Mystic_Skin}</DisplayId>
+   </Object>
 </Objects>

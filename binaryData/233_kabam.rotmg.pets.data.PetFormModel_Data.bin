@@ -4290,4 +4290,371 @@
       <DisplayId>{pets.Gummy_Bear_Pet_Stone}</DisplayId>
       <feedPower>500</feedPower>
    </Object>
+   <Object id="Fire Rooster" type="0x19be">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Farm</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Fire Rooster Skin</DefaultSkin>
+      <Size>80</Size>
+      <DisplayId>{pets.Fire_Rooster}</DisplayId>
+   </Object>
+   <Object type="0x19bf" id="Fire Rooster Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Fire_Rooster_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>118</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19c0" id="Fire Rooster Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>118</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Celebrate_the_2017_Lunar_New_Year_of_the_RoosterBANG_Thanks_}</Description>
+      <Activate skinId="6590">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Fire_Rooster_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Rooster of Good Fortune" type="0x19c1">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Farm</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Rooster of Good Fortune Skin</DefaultSkin>
+      <Size>80</Size>
+      <DisplayId>{pets.Rooster_of_Good_Fortune}</DisplayId>
+   </Object>
+   <Object type="0x19c2" id="Rooster of Good Fortune Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Rooster_of_Good_Fortune_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>119</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19c3" id="Rooster of Good Fortune Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>119</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Lucky_youBANG_YouAPOSve_been_blessed_by_luck_for_the_entire_}</Description>
+      <Activate skinId="6593">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Rooster_of_Good_Fortune_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Mini Chinese Dragon" type="0x19c4">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Reptile</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Mini Chinese Dragon Skin</DefaultSkin>
+      <Size>80</Size>
+      <WhileMoving>
+         <Z>0.25</Z>
+         <Flying/>
+      </WhileMoving>
+      <DisplayId>{pets.Mini_Chinese_Dragon}</DisplayId>
+   </Object>
+   <Object type="0x19c5" id="Mini Chinese Dragon Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Mini_Chinese_Dragon_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>120</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19c6" id="Mini Chinese Dragon Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>120</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Smaller_than_his_Western_counterpart,_but_no_less_dangerousB}</Description>
+      <Activate skinId="6596">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Mini_Chinese_Dragon_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Gingerbread Man" type="0x19c7">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>? ? ? ?</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Gingerbread Man Skin</DefaultSkin>
+      <Size>80</Size>
+      <DisplayId>{pets.Gingerbread_Man}</DisplayId>
+   </Object>
+   <Object type="0x19c8" id="Gingerbread Man Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Gingerbread_Man_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>121</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19c9" id="Gingerbread Man Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>121</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.DonAPOSt_eat_meBANG_DonAPOSt_eat_meBANG_Thanks_to:_Nmin}</Description>
+      <Activate skinId="6599">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Gingerbread_Man_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Mini Polaris" type="0x19ca">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>? ? ? ?</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Mini Polaris Skin</DefaultSkin>
+      <Size>80</Size>
+      <DisplayId>{pets.Mini_Polaris}</DisplayId>
+   </Object>
+   <Object type="0x19cb" id="Mini Polaris Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Mini_Polaris_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>122</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19cc" id="Mini Polaris Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>122</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Little_Polaris_didnAPOSt_want_to_become_a_boss_like_Papa_Pol}</Description>
+      <Activate skinId="6602">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Mini_Polaris_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Mini Paper Lantern" type="0x19cd">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>? ? ? ?</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Mini Paper Lantern Skin</DefaultSkin>
+      <Size>80</Size>
+      <WhileMoving>
+         <Z>0.25</Z>
+         <Flying/>
+      </WhileMoving>
+      <DisplayId>{pets.Mini_Paper_Lantern}</DisplayId>
+   </Object>
+   <Object type="0x19ce" id="Mini Paper Lantern Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Mini_Paper_Lantern_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>35</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19cf" id="Mini Paper Lantern Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x26</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Small_Lantern_of_the_?_?_?_?_family.}</Description>
+      <Activate skinId="6605">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Mini_Paper_Lantern_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Paper Lantern" type="0x19d0">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>? ? ? ?</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Paper Lantern Skin</DefaultSkin>
+      <Size>80</Size>
+      <WhileMoving>
+         <Z>0.25</Z>
+         <Flying/>
+      </WhileMoving>
+      <DisplayId>{pets.Paper_Lantern}</DisplayId>
+   </Object>
+   <Object type="0x19d1" id="Paper Lantern Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Paper_Lantern_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>36</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19d2" id="Paper Lantern Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x26</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Light_it_up_and_get_ready_for_the_festivitiesBANG_Thanks_to:}</Description>
+      <Activate skinId="6608">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Paper_Lantern_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Chinese Dragon" type="0x19d3">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Reptile</Family>
+      <Rarity>Divine</Rarity>
+      <DefaultSkin>Chinese Dragon Skin</DefaultSkin>
+      <Size>80</Size>
+      <WhileMoving>
+         <Z>0.25</Z>
+         <Flying/>
+      </WhileMoving>
+      <DisplayId>{pets.Chinese_Dragon}</DisplayId>
+   </Object>
+   <Object type="0x19d4" id="Chinese Dragon Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Chinese_Dragon_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>37</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19d5" id="Chinese Dragon Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <Texture>
+         <File>d2LofiObjEmbed</File>
+         <Index>0x28</Index>
+      </Texture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Smaller_than_his_Western_counterpart,_but_no_less_dangerousB}</Description>
+      <Activate skinId="6611">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Chinese_Dragon_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
+   <Object id="Desert Cobra" type="0x19d6">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Reptile</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Desert Cobra Skin</DefaultSkin>
+      <Size>80</Size>
+      <DisplayId>{pets.Desert_Cobra}</DisplayId>
+   </Object>
+   <Object type="0x19d7" id="Desert Cobra Skin">
+      <PetSkin/>
+      <PetSkin/>
+      <DisplayId>{pets.Desert_Cobra_Skin}</DisplayId>
+      <Class>PetSkin</Class>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>123</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x19d8" id="Desert Cobra Pet Stone">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>123</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>{pets.Transform_your_pet_into_Desert_Cobra_of_the_Reptile_family._}</Description>
+      <Activate skinId="6614">PetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>4</BagType>
+      <DisplayId>{pets.Desert_Cobra_Pet_Stone}</DisplayId>
+      <feedPower>5000</feedPower>
+   </Object>
 </Objects>

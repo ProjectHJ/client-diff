@@ -1251,4 +1251,92 @@
       <NoSkinSelect/>
       <DisplayId>{skins.Snowcloaked_Rogue}</DisplayId>
    </Object>
+   <Object type="0x16e3" id="Chinese Dress Trickster">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>119</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0324</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Chinese_Dress_Trickster}</DisplayId>
+   </Object>
+   <Object type="0x16e4" id="Penguin Knight">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>120</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031e</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Penguin_Knight}</DisplayId>
+   </Object>
+   <Object type="0x16e5" id="Frimar Knight">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>121</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x031e</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Frimar_Knight}</DisplayId>
+   </Object>
+   <Object type="0x16e6" id="Frozen King">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>122</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0321</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Frozen_King}</DisplayId>
+   </Object>
+   <Object type="0x16e7" id="Blizzard Sorcerer">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>123</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0325</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Blizzard_Sorcerer}</DisplayId>
+   </Object>
+   <Object type="0x16e8" id="Ice King Priest">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>124</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0310</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Ice_King_Priest}</DisplayId>
+   </Object>
+   <Object type="0x16e9" id="Icicle Dial Mystic">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>125</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0323</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Icicle_Dial_Mystic}</DisplayId>
+   </Object>
+   <Object type="0x16ea" id="Yuki Onna Mystic">
+      <Skin/>
+      <Class>Skin</Class>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>126</Index>
+      </AnimatedTexture>
+      <PlayerClassType>0x0323</PlayerClassType>
+      <NoSkinSelect/>
+      <DisplayId>{skins.Yuki_Onna_Mystic}</DisplayId>
+   </Object>
 </Objects>

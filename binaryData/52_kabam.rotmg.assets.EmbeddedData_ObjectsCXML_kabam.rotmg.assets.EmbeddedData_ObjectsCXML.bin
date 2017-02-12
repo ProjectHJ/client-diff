@@ -1792,4 +1792,166 @@
       </Texture>
       <ShadowSize>0</ShadowSize>
    </Object>
+   <Object type="0x7412" id="Nexus Anchor">
+      <Class>Character</Class>
+      <NoMiniMap/>
+      <Texture>
+         <File>lofiInterfaceBig</File>
+         <Index>6</Index>
+      </Texture>
+      <AltTexture id="1">
+         <Texture>
+            <File>invisible</File>
+            <Index>0</Index>
+         </Texture>
+      </AltTexture>
+      <MaxHitPoints>100000</MaxHitPoints>
+      <Size>0</Size>
+      <DisplayId>{objects.Nexus_Anchor}</DisplayId>
+   </Object>
+   <Object type="0x7413" id="Nexus Chinese Dragon">
+      <Class>Character</Class>
+      <AnimatedTexture>
+         <File>petsDivine</File>
+         <Index>37</Index>
+      </AnimatedTexture>
+      <MaxHitPoints>100000</MaxHitPoints>
+      <Size>120</Size>
+      <ShadowSize>60</ShadowSize>
+      <Z>0.8</Z>
+      <Flying/>
+      <DisplayId>{objects.Nexus_Chinese_Dragon}</DisplayId>
+   </Object>
+   <Object type="0x7414" id="Nexus Paper Lantern">
+      <Class>Character</Class>
+      <Texture>
+         <File>d3LofiObjEmbed16</File>
+         <Index>0x2a</Index>
+      </Texture>
+      <Animation prob="0.2" period="10" periodJitter="5">
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x29</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x2a</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x29</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x2a</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x29</Index>
+            </Texture>
+         </Frame>
+      </Animation>
+      <Animation prob="0.2" period="35" periodJitter="10">
+         <Frame time="0.3">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x29</Index>
+            </Texture>
+         </Frame>
+         <Frame time="1.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x28</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.3">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x29</Index>
+            </Texture>
+         </Frame>
+      </Animation>
+      <MaxHitPoints>100000</MaxHitPoints>
+      <Size>80</Size>
+      <ShadowSize>180</ShadowSize>
+      <ShadowColor>0xff8271</ShadowColor>
+      <Z>0.5</Z>
+      <Flying/>
+      <DisplayId>{objects.Nexus_Paper_Lantern}</DisplayId>
+   </Object>
+   <Object type="0x7415" id="Nexus Paper Lantern Small">
+      <Class>Character</Class>
+      <Texture>
+         <File>d3LofiObjEmbed16</File>
+         <Index>0x22</Index>
+      </Texture>
+      <Animation prob="0.2" period="10" periodJitter="5">
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x21</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x22</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x21</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x22</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x21</Index>
+            </Texture>
+         </Frame>
+      </Animation>
+      <Animation prob="0.2" period="35" periodJitter="10">
+         <Frame time="0.3">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x21</Index>
+            </Texture>
+         </Frame>
+         <Frame time="1.2">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x20</Index>
+            </Texture>
+         </Frame>
+         <Frame time="0.3">
+            <Texture>
+               <File>d3LofiObjEmbed16</File>
+               <Index>0x21</Index>
+            </Texture>
+         </Frame>
+      </Animation>
+      <MaxHitPoints>100000</MaxHitPoints>
+      <Size>80</Size>
+      <ShadowSize>100</ShadowSize>
+      <ShadowColor>0xff8271</ShadowColor>
+      <Z>0.4</Z>
+      <Flying/>
+      <DisplayId>{objects.Nexus_Paper_Lantern_Small}</DisplayId>
+   </Object>
 </Objects>
