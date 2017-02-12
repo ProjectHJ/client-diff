@@ -872,6 +872,9 @@ package kabam.rotmg.messaging.impl
          if(param4.hasOwnProperty("Consumable"))
          {
             param1.equipment_[param2] = -1;
+            if(param4.hasOwnProperty("Activate") && param4.Activate == "UnlockSkin")
+            {
+            }
          }
       }
       
@@ -1194,8 +1197,17 @@ package kabam.rotmg.messaging.impl
       
       private function onReskinUnlock(param1:ReskinUnlock) : void
       {
-         var _loc2_:CharacterSkin = this.classesModel.getCharacterClass(this.model.player.objectType_).skins.getSkin(param1.skinID);
-         _loc2_.setState(CharacterSkinState.OWNED);
+         var _loc2_:* = null;
+         var _loc3_:CharacterSkin = null;
+         for(_loc2_ in this.model.player.lockedSlot)
+         {
+            if(this.model.player.lockedSlot[_loc2_] == param1.skinID)
+            {
+               this.model.player.lockedSlot[_loc2_] = 0;
+            }
+         }
+         _loc3_ = this.classesModel.getCharacterClass(this.model.player.objectType_).skins.getSkin(param1.skinID);
+         _loc3_.setState(CharacterSkinState.OWNED);
       }
       
       private function onEnemyShoot(param1:EnemyShoot) : void
@@ -1607,6 +1619,7 @@ package kabam.rotmg.messaging.impl
          var _loc7_:StatData = null;
          var _loc8_:int = 0;
          var _loc9_:int = 0;
+         var _loc10_:int = 0;
          var _loc4_:Player = param1 as Player;
          var _loc5_:Merchant = param1 as Merchant;
          var _loc6_:Pet = param1 as Pet;
@@ -1681,7 +1694,12 @@ package kabam.rotmg.messaging.impl
                case StatData.INVENTORY_9_STAT:
                case StatData.INVENTORY_10_STAT:
                case StatData.INVENTORY_11_STAT:
-                  param1.equipment_[_loc7_.statType_ - StatData.INVENTORY_0_STAT] = _loc8_;
+                  _loc9_ = _loc7_.statType_ - StatData.INVENTORY_0_STAT;
+                  if(_loc8_ != -1)
+                  {
+                     param1.lockedSlot[_loc9_] = 0;
+                  }
+                  param1.equipment_[_loc9_] = _loc8_;
                   continue;
                case StatData.NUM_STARS_STAT:
                   _loc4_.numStars_ = _loc8_;
@@ -1838,8 +1856,8 @@ package kabam.rotmg.messaging.impl
                case StatData.BACKPACK_5_STAT:
                case StatData.BACKPACK_6_STAT:
                case StatData.BACKPACK_7_STAT:
-                  _loc9_ = _loc7_.statType_ - StatData.BACKPACK_0_STAT + GeneralConstants.NUM_EQUIPMENT_SLOTS + GeneralConstants.NUM_INVENTORY_SLOTS;
-                  (param1 as Player).equipment_[_loc9_] = _loc8_;
+                  _loc10_ = _loc7_.statType_ - StatData.BACKPACK_0_STAT + GeneralConstants.NUM_EQUIPMENT_SLOTS + GeneralConstants.NUM_INVENTORY_SLOTS;
+                  (param1 as Player).equipment_[_loc10_] = _loc8_;
                   continue;
                case StatData.NEW_CON_STAT:
                   param1.condition_[ConditionEffect.CE_SECOND_BATCH] = _loc8_;

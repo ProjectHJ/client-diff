@@ -248,6 +248,7 @@ package com.company.assembleegameclient.objects
          _loc5_.level_ = int(param2.Level);
          _loc5_.exp_ = int(param2.Exp);
          _loc5_.equipment_ = ConversionUtil.toIntVector(param2.Equipment);
+         _loc5_.lockedSlot = new Vector.<int>(_loc5_.equipment_.length);
          _loc5_.maxHP_ = int(param2.MaxHitPoints);
          _loc5_.hp_ = int(param2.HitPoints);
          _loc5_.maxMP_ = int(param2.MaxMagicPoints);

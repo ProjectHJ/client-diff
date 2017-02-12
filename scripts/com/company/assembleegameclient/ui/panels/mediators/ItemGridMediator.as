@@ -115,9 +115,16 @@ package com.company.assembleegameclient.ui.panels.mediators
          if(_loc3_ is InteractiveItemTile)
          {
             _loc4_ = _loc3_ as InteractiveItemTile;
-            if(this.canSwapItems(_loc2_,_loc4_))
+            if(this.view.curPlayer.lockedSlot[_loc4_.tileId] == 0)
             {
-               this.swapItemTiles(_loc2_,_loc4_);
+               if(this.canSwapItems(_loc2_,_loc4_))
+               {
+                  this.swapItemTiles(_loc2_,_loc4_);
+               }
+            }
+            else
+            {
+               this.addTextLine.dispatch(ChatMessage.make(Parameters.ERROR_CHAT_NAME,"You cannot put items into this slot right now."));
             }
          }
          else if(_loc3_ is TabStripView)

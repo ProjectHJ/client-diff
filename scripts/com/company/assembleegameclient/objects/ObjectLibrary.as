@@ -248,7 +248,7 @@ package com.company.assembleegameclient.objects
       public static function getRedrawnTextureFromType(param1:int, param2:int, param3:Boolean, param4:Boolean = true, param5:Number = 5) : BitmapData
       {
          var _loc6_:BitmapData = getBitmapData(param1);
-         if(Parameters.itemTypes16.indexOf(param1) != -1)
+         if(Parameters.itemTypes16.indexOf(param1) != -1 || _loc6_.height == 16)
          {
             param2 = param2 * 0.5;
          }
